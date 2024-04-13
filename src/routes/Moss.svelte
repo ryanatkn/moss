@@ -13,19 +13,26 @@
 	const {
 		size,
 		image = false,
-		src = `${base}/favicon.png`,
-		alt = 'the Fuz logo, a little brown spider',
+		src,
+		alt = 'the Moss logo, a fuzzy tuft of green moss',
 	}: Props = $props();
 
 	// color:
-	// #6a3e1b
-	// hsl(27, 60%, 26%)
-	// rgb(106, 62, 27)
+	// #298e29
+	// hsl(120, 55%, 36%)
+	// rgb(41, 142, 41)
 </script>
 
-{#if image}<img {src} {alt} width={size} height={size} />{:else}<span
-		style:--color="var(--color_f_5)"
+{#if image}<img src={src ?? `${base}/favicon.png`} {alt} width={size} height={size} />{:else}<span
+		aria-label={alt}
+		style:--color="var(--color_b_5)"
 		class="inline_block"
 		style:width={size}
 		style:height={size}><Fuz_Logo /></span
 	>{/if}
+
+<style>
+	span {
+		transform: scaleX(-1) rotate(180deg);
+	}
+</style>
