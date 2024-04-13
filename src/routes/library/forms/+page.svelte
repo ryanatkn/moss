@@ -1,12 +1,11 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-
 	import {fly} from 'svelte/transition';
-	import Alert from '$lib/Alert.svelte';
-	import Tome_Detail from '$lib/Tome_Detail.svelte';
-	import Mdn_Link from '$lib/Mdn_Link.svelte';
-	import {get_tome} from '$lib/tome.js';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
+	import Alert from '@ryanatkn/fuz/Alert.svelte';
+	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
+	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	const LIBRARY_ITEM_NAME = 'forms';
 

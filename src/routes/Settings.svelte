@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Color_Scheme_Input from '$lib/Color_Scheme_Input.svelte';
-	import Theme_Input from '$lib/Theme_Input.svelte';
+	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
+	import Theme_Input from '@ryanatkn/fuz/Theme_Input.svelte';
 </script>
 
 <div class="p_xl box">

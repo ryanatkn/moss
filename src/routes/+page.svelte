@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {base} from '$app/paths';
+	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
+	import Card from '@ryanatkn/fuz/Card.svelte';
 
-	import Library_Footer from '$lib/Library_Footer.svelte';
-	import Card from '$lib/Card.svelte';
 	import {get_pkg} from '$routes/pkg.js';
 	import Spider from '$routes/Spider.svelte';
 

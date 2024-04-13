@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-	import Fuz_Logo from '$lib/Fuz_Logo.svelte';
+	import Fuz_Logo from '@ryanatkn/fuz/Fuz_Logo.svelte';
 	import {random_int, shuffle} from '@ryanatkn/belt/random.js';
 	import {create_random_alea} from '@ryanatkn/belt/random_alea.js';
 

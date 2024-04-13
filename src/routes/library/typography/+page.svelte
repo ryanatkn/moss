@@ -1,18 +1,18 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
+	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
+	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Details from '@ryanatkn/fuz/Details.svelte';
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Font_Weight_Control from '$routes/Font_Weight_Control.svelte';
 	import Font_Size_Control from '$routes/Font_Size_Control.svelte';
-	import Tome_Detail from '$lib/Tome_Detail.svelte';
-	import Mdn_Link from '$lib/Mdn_Link.svelte';
-	import Tome_Link from '$lib/Tome_Link.svelte';
 	import {default_variables} from '$lib/variables.js';
-	import {get_tome} from '$lib/tome.js';
 	import Icon_Sizes from '$routes/library/typography/Icon_Sizes.svelte';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import {line_height_names, size_names} from '$lib/variable_data.js';
-	import Details from '$lib/Details.svelte';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
 
 	const LIBRARY_ITEM_NAME = 'typography';
 

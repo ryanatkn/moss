@@ -1,12 +1,13 @@
 <script lang="ts">
-	import Tome_Detail from '$lib/Tome_Detail.svelte';
-	import {get_tome} from '$lib/tome.js';
+	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
+	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+
 	import Hue_Swatch from '$routes/library/colors/Hue_Swatch.svelte';
 	import Color_Swatch from '$routes/library/colors/Color_Swatch.svelte';
-	import Tome_Link from '$lib/Tome_Link.svelte';
-	import Mdn_Link from '$lib/Mdn_Link.svelte';
-	import Color_Scheme_Input from '$lib/Color_Scheme_Input.svelte';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
 
 	const LIBRARY_ITEM_NAME = 'colors';
 

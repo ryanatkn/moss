@@ -1,9 +1,10 @@
 <script lang="ts">
-	import Tome_Detail from '$lib/Tome_Detail.svelte';
-	import {get_tome} from '$lib/tome.js';
+	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+
 	import {radius_variants} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
 
 	const LIBRARY_ITEM_NAME = 'borders';
 

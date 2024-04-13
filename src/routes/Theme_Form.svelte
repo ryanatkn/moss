@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {swallow} from '@ryanatkn/belt/dom.js';
+	import Copy_To_Clipboard from '@ryanatkn/fuz/Copy_To_Clipboard.svelte';
+	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
 
-	import Copy_To_Clipboard from '$lib/Copy_To_Clipboard.svelte';
-	import Dialog from '$lib/Dialog.svelte';
 	import {render_theme_style, type Style_Variable, type Theme} from '$lib/theme.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
 

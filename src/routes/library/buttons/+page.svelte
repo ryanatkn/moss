@@ -1,11 +1,10 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {slide} from 'svelte/transition';
-
-	import Tome_Detail from '$lib/Tome_Detail.svelte';
-	import {get_tome} from '$lib/tome.js';
-	import Color_Scheme_Input from '$lib/Color_Scheme_Input.svelte';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
+	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	const LIBRARY_ITEM_NAME = 'buttons';
 

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import {base} from '$app/paths';
-
-	import Fuz_Logo from '$lib/Fuz_Logo.svelte';
+	import Fuz_Logo from '@ryanatkn/fuz/Fuz_Logo.svelte';
 
 	// TODO think about this API
 	interface Props {

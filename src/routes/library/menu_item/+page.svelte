@@ -1,10 +1,9 @@
 <script lang="ts">
 	import {swallow} from '@ryanatkn/belt/dom.js';
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-
-	import {get_tome} from '$lib/tome.js';
-	import Tome_Detail from '$lib/Tome_Detail.svelte';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
+	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	const LIBRARY_ITEM_NAME = 'menu item';
 	const tome = get_tome(LIBRARY_ITEM_NAME);

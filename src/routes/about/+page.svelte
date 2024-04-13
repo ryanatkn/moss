@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Package_Detail from '$lib/Package_Detail.svelte';
-	import Library_Footer from '$lib/Library_Footer.svelte';
-	import Breadcrumb from '$lib/Breadcrumb.svelte';
-	import Spider from '$routes/Spider.svelte';
+	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
+	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
+	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
 
+	import Spider from '$routes/Spider.svelte';
 	import {get_pkg} from '$routes/pkg.js';
 
 	const pkg = get_pkg();

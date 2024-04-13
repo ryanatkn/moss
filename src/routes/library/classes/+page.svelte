@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
+	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import Github_Logo from '@ryanatkn/fuz/Github_Logo.svelte';
+	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Details from '@ryanatkn/fuz/Details.svelte';
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
-	import Tome_Detail from '$lib/Tome_Detail.svelte';
-	import Tome_Link from '$lib/Tome_Link.svelte';
-	import Github_Logo from '$lib/Github_Logo.svelte';
-	import {get_tome} from '$lib/tome.js';
 	import style_utilities_text from '$lib/style_utilities.css?raw';
 	import style_components_text from '$lib/style_components.css?raw';
-	import Details from '$lib/Details.svelte';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
 
 	const LIBRARY_ITEM_NAME = 'classes';
 

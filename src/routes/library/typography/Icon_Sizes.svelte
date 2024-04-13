@@ -1,6 +1,7 @@
 <script lang="ts">
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
 
 	// TODO move to a single source of truth (JSON or ts), generate CSS and use to render here
 	const sizes = {

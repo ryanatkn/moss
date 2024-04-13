@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
+	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
+	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import {get_color_scheme} from '@ryanatkn/fuz/Themed.svelte';
+	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
-	import Tome_Detail from '$lib/Tome_Detail.svelte';
-	import Color_Scheme_Input from '$lib/Color_Scheme_Input.svelte';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import Tome_Link from '$lib/Tome_Link.svelte';
-	import {get_tome} from '$lib/tome.js';
-	import {get_color_scheme} from '$lib/theme.js';
-	import Tome_Subheading from '$lib/Tome_Subheading.svelte';
 
 	const LIBRARY_ITEM_NAME = 'light and shadow';
 
