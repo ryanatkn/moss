@@ -72,5 +72,50 @@
         }
       }
     ]
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./style_animations.css": {
+      "default": "./dist/style_animations.css"
+    },
+    "./style_components.css": {
+      "default": "./dist/style_components.css"
+    },
+    "./style_reset.css": {
+      "default": "./dist/style_reset.css"
+    },
+    "./style_utilities.css": {
+      "default": "./dist/style_utilities.css"
+    },
+    "./style.css": {
+      "default": "./dist/style.css"
+    },
+    "./style.gen.css.js": {
+      "default": "./dist/style.gen.css.js",
+      "types": "./dist/style.gen.css.d.ts"
+    },
+    "./theme.css": {
+      "default": "./dist/theme.css"
+    },
+    "./theme.gen.css.js": {
+      "default": "./dist/theme.gen.css.js",
+      "types": "./dist/theme.gen.css.d.ts"
+    },
+    "./theme.js": {
+      "default": "./dist/theme.js",
+      "types": "./dist/theme.d.ts"
+    },
+    "./themes.js": {
+      "default": "./dist/themes.js",
+      "types": "./dist/themes.d.ts"
+    },
+    "./variable_data.js": {
+      "default": "./dist/variable_data.js",
+      "types": "./dist/variable_data.d.ts"
+    },
+    "./variables.js": {
+      "default": "./dist/variables.js",
+      "types": "./dist/variables.d.ts"
+    }
   }
 }
