@@ -22,7 +22,7 @@
 <Tome_Detail {tome}>
 	<section>
 		<p>
-			Fuz is designed around the idea of stacking light and shadow with highlights and shading. The
+			Moss is designed around the idea of stacking light and shadow with highlights and shading. The
 			goal is easy authoring with simple and consistent rules for arbitrary compositions and states.
 		</p>
 		<p>

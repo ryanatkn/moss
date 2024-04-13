@@ -84,7 +84,7 @@
 	<aside>both the docs and implementation of these need more work</aside>
 	<section>
 		<Tome_Subheading text="Optional CSS classes" slug="css-classes" />
-		<p>Fuz has three optional CSS files with different kinds of classes:</p>
+		<p>Moss has three optional CSS files with different kinds of classes:</p>
 		<Code
 			content={`<!-- +layout.svelte -->
 <script>
@@ -98,7 +98,7 @@
 	// ...`}
 		/>
 		<p>
-			Utility classes use plain CSS for convenient HTML authoring. Many are based on Fuz style <Tome_Link
+			Utility classes use plain CSS for convenient HTML authoring. Many are based on Moss style <Tome_Link
 				name="variables"
 			/>.
 		</p>
@@ -114,7 +114,7 @@
 	<section>
 		<Tome_Subheading text="Utility classes" slug="utility-classes" />
 		<p>
-			Fuz provides an arbitrary set of utility classes for CSS, and defers to CSS in <a
+			Moss provides an arbitrary set of utility classes for CSS, and defers to CSS in <a
 				href="https://svelte.dev/docs/svelte-components#style">Svelte's <code>{'<'}style></code></a
 			> for complex and uncommon patterns.
 		</p>

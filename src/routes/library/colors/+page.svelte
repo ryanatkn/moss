@@ -35,7 +35,7 @@
 	<section>
 		<Tome_Subheading text="Color semantics" slug="color-semantics" />
 		<p>
-			Fuz provides a palette of color and hue <Tome_Link name="variables" /> designed to support concise
+			Moss provides a palette of color and hue <Tome_Link name="variables" /> designed to support concise
 			authoring in light and dark modes, as well as straightforward <Tome_Link name="themes"
 				>theming</Tome_Link
 			> by both developers and end-users at runtime. The colors have more semantics than just plain values,
@@ -45,8 +45,8 @@
 		<h4>Adapting colors to dark mode</h4>
 		<p>
 			A color's subjective appearance depends on the context in which it's viewed, especially the
-			surrounding colors and values. Fuz's semantic colors are designed to work across color
-			schemes, so each Fuz color <Tome_Link name="variables">variable</Tome_Link> has two values, one
+			surrounding colors and values. Moss' semantic colors are designed to work across color
+			schemes, so each Moss color <Tome_Link name="variables">variable</Tome_Link> has two values, one
 			for light and one for dark mode. The exceptions are the lightest (1) and darkest (9) variants,
 			although this may change if it yields better results.
 		</p>
@@ -61,22 +61,22 @@
 		<p>
 			A downside of this approach is that changing a color like the primary "a" affects the many
 			places it's used. Sometimes you may want to change the color of a specific element or state,
-			not all the things. In those cases, use plain CSS and optionally Fuz variables. Compared to
-			most libraries, Fuz provides fewer handles for granular color customizations, but the benefits
-			include consistency, efficiency, DRY authoring, and ease of app-wide theming.
+			not all the things. In those cases, use plain CSS and optionally Moss variables. Compared to
+			most libraries, Moss provides fewer handles for granular color customizations, but the
+			benefits include consistency, efficiency, DRY authoring, and ease of app-wide theming.
 		</p>
 	</section>
 	<section>
 		<Tome_Subheading text="Caveats" slug="caveats" />
 		<p>
-			For performance reasons, Fuz does not currently have an extensive set of variants, like
+			For performance reasons, Moss does not currently have an extensive set of variants, like
 			specialized states for elements or color values like "blue". Each of the 7 hues has 9 color
 			values, handling most cases, and the base colors can be customized with the <Mdn_Link
 				href="Web/CSS/color_value/color-mix"
 			/> CSS function.
 		</p>
 		<p>
-			Variants may be expanded when/if Fuz includes a Vite plugin or other build tooling for
+			Variants may be expanded when/if Moss includes a Vite plugin or other build tooling for
 			optimization. A downside of removing unused styles is that they won't be available to your
 			end-users at runtime.
 		</p>
@@ -94,7 +94,7 @@
 		</p>
 		<p>
 			Hue variables are also useful to construct custom colors not covered by the color variables.
-			For example, Fuz's base stylesheet uses <code>hue_a</code> for the semi-transparent
+			For example, Moss's base stylesheet uses <code>hue_a</code> for the semi-transparent
 			<code>::selection</code>. (try selecting some text -
 			<span class="color_a_5">same hue!</span>)
 		</p>

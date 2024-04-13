@@ -34,7 +34,7 @@
 		<p>
 			Buttons have a <code>.selected</code> state that can be used for various UI purposes, like
 			showing a selected item in a menu or a styling button's <code>aria-pressed</code> state. Instead
-			of having two distinct styles of buttons with outlined and filled variants, Fuz makes filled buttons
+			of having two distinct styles of buttons with outlined and filled variants, Moss makes filled buttons
 			the default, and selected buttons are outlined.
 		</p>
 		<button disabled class:mb_xs>disabled button</button>
