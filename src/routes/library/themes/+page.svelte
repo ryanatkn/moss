@@ -7,13 +7,14 @@
 	import {get_tome} from '@ryanatkn/fuz/tome.js';
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import {type Theme, save_theme, get_theme, get_color_scheme} from '@ryanatkn/fuz/theme.js';
+	import {get_theme, get_color_scheme} from '@ryanatkn/fuz/Themed.svelte';
 	import {default_themes} from '@ryanatkn/fuz/themes.js';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 	import Theme_Input from '@ryanatkn/fuz/Theme_Input.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 	import Themed_Scope from '@ryanatkn/fuz/Themed_Scope.svelte';
 
+	import {type Theme, save_theme} from '$lib/theme.js';
 	import Theme_Form from '$routes/Theme_Form.svelte';
 
 	const LIBRARY_ITEM_NAME = 'themes';
