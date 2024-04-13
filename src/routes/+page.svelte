@@ -25,9 +25,9 @@
 					is to fill out its API so it's more widely useful.
 				</p>
 				<p>
-					To learn more see <a href="https://www.fuz.dev/library">the docs</a>
-					and <a href="https://github.com/ryanatkn/fuz#readme">readme</a>. Feel free to take the
-					ideas and <a href="https://github.com/ryanatkn/fuz">code</a> for your own purposes.
+					To learn more see <a href="{base}/library">the docs</a>
+					and <a href="https://github.com/ryanatkn/moss#readme">readme</a>. Feel free to take the
+					ideas and <a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.
 				</p>
 			</div>
 		</section>
