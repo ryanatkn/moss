@@ -17,7 +17,7 @@ Compared to most UI libraries, Moss has fewer features and more opinions.
 To learn more see [the docs](https://moss.ryanatkn.com/library) and [contributing.md](contributing.md).
 Feel free to take the ideas and code for your own purposes.
 
-The CSS framework:
+About Moss:
 
 - plain CSS
 - designed around variables aka style variables aka design tokens,

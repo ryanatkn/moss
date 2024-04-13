@@ -49,7 +49,7 @@ export const package_json = {
 		typescript: '^5.4.5',
 		uvu: '^0.5.6',
 	},
-	eslintConfig: {root: true, extends: '@ryanatkn'},
+	eslintConfig: {root: true, extends: '@ryanatkn', rules: {'no-console': 1}},
 	prettier: {
 		plugins: ['prettier-plugin-svelte'],
 		useTabs: true,
