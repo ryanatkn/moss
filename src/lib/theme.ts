@@ -1,8 +1,6 @@
 import {default_variables} from '$lib/variables.js';
 import {default_themes} from '$lib/themes.js'; // TODO shoudln't be a dep, see usage below
 
-// TODO BLOCK remove references to Svelte/Kit
-
 // TODO this is more like `Color_Scheme_Setting`, because `Color_Scheme` is an arbitrary string if it means `color-scheme` - https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
 export type Color_Scheme = 'dark' | 'light' | 'auto';
 
@@ -80,8 +78,6 @@ export const load_theme = (fallback: Theme = default_themes[0], key = THEME_STOR
 	return fallback;
 };
 
-// TODO can we add `nonce="%sveltekit.nonce%"` to this script to fix the CSP issues? does it even work on the style tag below?
-
 /**
  * Creates an HTML script string to be inserted into the `head`
  * that initializes the dark/light color scheme.
@@ -105,16 +101,6 @@ export const create_theme_setup_script = (
 	} catch (_) { ${fallback === 'dark' ? "document.documentElement.classList.add('dark');" : ''} }
 `;
 
-/**
- * Creates an HTML style string to be inserted into the `head`
- * that overrides the theme for a part of the page.
- * @param style same as the result of a call to `render_theme_style`
- * @returns HTML string with the style tag and its contents
- */
-export const create_theme_style_html = (style: string): string => `<style nonce="%sveltekit.nonce%">
-	${style}
-</style>`;
-
 export interface Theme {
 	name: string;
 	variables: Style_Variable[];
@@ -132,8 +118,8 @@ export interface Render_Theme_Style_Options {
 	id?: string | null;
 	empty_default_theme?: boolean;
 	/**
-	 * Any integer >= 1, defaults to 2,
-	 * needed because SvelteKit may insert `svelte:head` content in any order.
+	 * Repeats the theme selector to handle unpredictable head content insertion order.
+	 * Accepts any integer >= 1, defaults to 2.
 	 */
 	specificity?: number;
 }
