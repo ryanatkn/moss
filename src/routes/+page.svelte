@@ -34,16 +34,6 @@
 		<section>
 			<Card href="{base}/library">library{#snippet icon()}🧶{/snippet}</Card>
 		</section>
-		<section class="panel p_lg">
-			<!-- TODO ideally this wouldn't duplicate metadata like descriptions, but adding fuz_gitops to this repo is heavy -->
-			<h2 class="mt_0">other packages</h2>
-			<menu class="unstyled">
-				<a class="chip" href="https://template.fuz.dev/">fuz_template</a>
-				<a class="chip" href="https://gitops.fuz.dev/">fuz_gitops</a>
-				<a class="chip" href="https://code.fuz.dev/">fuz_code</a>
-				<a class="chip" href="https://mastodon.fuz.dev/">fuz_mastodon</a>
-			</menu>
-		</section>
 		<section>
 			<Library_Footer {pkg}>
 				{#snippet logo_header()}
@@ -52,18 +42,12 @@
 				<div hidden>
 					@ryanatkn@hci.social on <a rel="me" href="https://hci.social/@ryanatkn">Mastodon</a>
 				</div>
+				<div hidden>
+					@webdevladder@mastodon.social on <a rel="me" href="https://mastodon.social/@webdevladder"
+						>Mastodon</a
+					>
+				</div>
 			</Library_Footer>
 		</section>
 	</div>
 </main>
-
-<style>
-	menu {
-		width: 100%;
-		display: flex;
-		gap: var(--space_lg);
-		flex-direction: column;
-		align-items: center;
-		font-size: var(--size_lg);
-	}
-</style>
