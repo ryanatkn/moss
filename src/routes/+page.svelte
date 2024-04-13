@@ -4,7 +4,7 @@
 	import Card from '@ryanatkn/fuz/Card.svelte';
 
 	import {get_pkg} from '$routes/pkg.js';
-	import Moss from '$routes/Moss.svelte';
+	import Moss_Logo from '$routes/Moss_Logo.svelte';
 
 	const pkg = get_pkg();
 </script>
@@ -13,7 +13,7 @@
 	<div class="box width_md">
 		<section class="box">
 			<h1 class="mt_xl4 mb_lg">moss</h1>
-			<div class="box mb_xl"><Moss size="120px" /></div>
+			<div class="box mb_xl"><Moss_Logo size="120px" /></div>
 			<blockquote>magical organic stylesheets</blockquote>
 			<div class="width_sm panel p_md">
 				<p>Fuz is a CSS framework. It's in early alpha and there will be many breaking changes.</p>

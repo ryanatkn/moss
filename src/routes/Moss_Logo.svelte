@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {base} from '$app/paths';
-	import Fuz_Logo from '@ryanatkn/fuz/Fuz_Logo.svelte';
+	import Spider from '@ryanatkn/fuz/Spider.svelte';
 
 	// TODO think about this API
 	interface Props {
@@ -17,6 +17,8 @@
 		alt = 'the Moss logo, a fuzzy tuft of green moss',
 	}: Props = $props();
 
+	// TODO publish a plain SVG probably
+
 	// color:
 	// #298e29
 	// hsl(120, 55%, 36%)
@@ -28,7 +30,7 @@
 		style:--color="var(--color_b_5)"
 		class="inline_block"
 		style:width={size}
-		style:height={size}><Fuz_Logo /></span
+		style:height={size}><Spider /></span
 	>{/if}
 
 <style>

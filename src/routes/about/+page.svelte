@@ -3,7 +3,7 @@
 	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
 
-	import Moss from '$routes/Moss.svelte';
+	import Moss_Logo from '$routes/Moss_Logo.svelte';
 	import {get_pkg} from '$routes/pkg.js';
 
 	const pkg = get_pkg();
@@ -16,7 +16,7 @@
 		<header class="box">
 			<h1 class="mt_xl4">{pkg.repo_name}</h1>
 		</header>
-		<Breadcrumb><Moss size="32px" /></Breadcrumb>
+		<Breadcrumb><Moss_Logo size="32px" /></Breadcrumb>
 	</section>
 	<section class="box w_100 mb_lg">
 		<div class="panel p_md width_md">
@@ -26,7 +26,7 @@
 	<section class="box mb_xl7">
 		<Library_Footer {pkg}>
 			<div class="mb_xl5">
-				<Breadcrumb><Moss size="32px" /></Breadcrumb>
+				<Breadcrumb><Moss_Logo size="32px" /></Breadcrumb>
 			</div>
 		</Library_Footer>
 	</section>
