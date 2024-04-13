@@ -1,5 +1,4 @@
 <script lang="ts">
-	import {writable} from 'svelte/store';
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
 	import Details from '@ryanatkn/fuz/Details.svelte';
@@ -7,15 +6,16 @@
 	import {get_tome} from '@ryanatkn/fuz/tome.js';
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import {get_theme, get_color_scheme} from '@ryanatkn/fuz/Themed.svelte';
+	import {get_color_scheme} from '@ryanatkn/fuz/Themed.svelte';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 	import Theme_Input from '@ryanatkn/fuz/Theme_Input.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import Themed_Scope from '@ryanatkn/fuz/Themed_Scope.svelte';
 
 	import {default_themes} from '$lib/themes.js';
-	import {type Theme, save_theme} from '$lib/theme.js';
+	import type {Theme} from '$lib/theme.js';
 	import Theme_Form from '$routes/Theme_Form.svelte';
+
+	// TODO BLOCK separate correctly from the Themed docs
 
 	const LIBRARY_ITEM_NAME = 'themes';
 
@@ -23,15 +23,7 @@
 
 	const themes = default_themes.slice();
 
-	const selected_theme = get_theme();
 	const selected_color_scheme = get_color_scheme();
-
-	// This is only needed for the custom controls below,
-	// it's automated by default with `Theme_Input` and the top-level `Themed`.
-	const select_theme = (theme: Theme): void => {
-		$selected_theme = theme;
-		save_theme(theme);
-	};
 
 	// let show_create_theme_dialog = false;
 	let editing_theme: null | Theme = $state(null);
@@ -148,143 +140,6 @@
 				>create a new theme (todo)</button
 			> -->
 		<aside>The builtin themes need more work, but the proof of concept is ready!</aside>
-	</section>
-	<section class="theme">
-		<Tome_Subheading text="Scoped themes" slug="scoped-themes" />
-		<Details>
-			{#snippet summary()}⚠️ Scoped themes are a work in progress and may not be supported depending
-				on complexity. It shouldn't worsen the unscoped API.{/snippet}
-			<div class="mb_lg">
-				<p>Scope a theme to one branch of the DOM tree with <code>Themed_Scope</code>:</p>
-				<Code content={`import Themed_Scope from '@ryanatkn/fuz/Themed_Scope.svelte';`} lang="ts" />
-				<Code content={`<Themed_Scope {selected_theme}>\n\t\t...\n</Themed_Scope>`} />
-			</div>
-			<div>
-				<!-- TODO this is a lot of copypasta -->
-				{#each themes as theme (theme.name)}
-					<!-- TODO @multiple proper equality check, won't work when we allow editing, need an id or unique names and a deep equality check -->
-					{@const selected =
-						$selected_color_scheme === 'light' && theme.name === $selected_theme.name}
-					<Themed_Scope selected_theme={writable(theme)} selected_color_scheme={writable('light')}>
-						<div class="box row p_sm">
-							<button
-								type="button"
-								class="icon_button"
-								class:selected
-								onclick={() => {
-									select_theme(theme);
-									$selected_color_scheme = 'light';
-								}}
-								>{#if selected}★{:else}☆{/if}</button
-							>
-							<div style:flex="1" class="p_md">
-								the <code>{theme.name}</code> theme
-							</div>
-						</div>
-					</Themed_Scope>
-				{/each}
-				{#each themes as theme (theme.name)}
-					<!-- TODO @multiple proper equality check, won't work when we allow editing, need an id or unique names and a deep equality check -->
-					{@const selected =
-						$selected_color_scheme === 'dark' && theme.name === $selected_theme.name}
-					<Themed_Scope selected_theme={writable(theme)} selected_color_scheme={writable('dark')}>
-						<div class="box row p_sm">
-							<button
-								type="button"
-								class="icon_button"
-								class:selected
-								onclick={() => {
-									select_theme(theme);
-									$selected_color_scheme = 'dark';
-								}}
-								>{#if selected}★{:else}☆{/if}</button
-							>
-							<div style:flex="1" class="p_md">
-								the <code>{theme.name}</code> theme
-							</div>
-						</div>
-					</Themed_Scope>
-				{/each}
-			</div>
-		</Details>
-	</section>
-	<section class="theme">
-		<Tome_Subheading text="Theme usage" slug="theme-usage" />
-		<p>Themes are plain CSS that can be sourced in a variety of ways.</p>
-		<p>To use fuz's base theme:</p>
-		<Code
-			content={`<!-- +layout.svelte -->
-<script>
-	import '@ryanatkn/moss/style.css';
-	import '@ryanatkn/moss/theme.css';
-	import Themed from '@ryanatkn/fuz/Themed.svelte';
-	import type {Snippet} from 'svelte';
-
-	interface Props {
-		children: Snippet;
-	}
-	
-	const {children}: Props = $props();
-<script>
-
-<!-- enable theme and color-scheme support -->
-<Themed>
-	{@render children()}
-</Themed>`}
-		/>
-		<p>
-			<code>Themed</code> can be customized with the nonreactive, bindable, writable store props
-			<code>selected_theme</code>
-			and <code>selected_color_scheme</code>:
-		</p>
-		<Code
-			content={`<Themed {selected_theme} {selected_color_scheme}>
-	{@render children()}
-</Themed>`}
-		/>
-		<p>
-			<code>Themed</code> sets the writable stores <code>selected_theme</code>
-			and <code>selected_color_scheme</code> in the Svelte context:
-		</p>
-		<Code
-			content={`// get values from the Svelte context provided by
-// the nearest \`Themed\` or \`Themed_Scope\` ancestor:
-
-import {get_theme} from '@ryanatkn/moss/theme.js';
-const selected_theme = get_theme();
-$selected_theme.name; // '${$selected_theme.name}'
-
-import {get_color_scheme} from '@ryanatkn/moss/theme.js';
-const selected_color_scheme = get_color_scheme();
-$selected_color_scheme; // '${$selected_color_scheme}'`}
-			lang="js"
-		/>
-		<Details>
-			{#snippet summary()}More about <code>Themed</code>{/snippet}
-			<aside>
-				<p>
-					<code>Themed</code> initializes the system's theme support. Without it, the page will not
-					reflect the user's system
-					<code>color-scheme</code>. By default, <code>Themed</code> applies the base theme to the
-					root of the page via <code>create_theme_setup_script</code>. It uses JS to add the
-					<code>.dark</code> CSS class to the <code>:root</code> element.
-				</p>
-				<p>
-					This strategy enables color scheme and theme support with minimal CSS and optimal
-					performance for most use cases. The system supports plain CSS usage that can be static or
-					dynamic, scoped or global, or imported at buildtime or runtime. It also allows runtime
-					access to the data if you want to pay the performance costs.
-				</p>
-				<p>
-					The theme setup script interacts with <code>sync_color_scheme</code> to save the user's
-					preference to <code>localStorage</code>. See also <code>Color_Scheme_Input</code>.
-				</p>
-				<p>
-					The setup script avoids flash-on-load due to color scheme, but currently themes flash in
-					after loading. We'll try to fix this when the system stabilizes.
-				</p>
-			</aside>
-		</Details>
 	</section>
 </Tome_Detail>
 
