@@ -54,7 +54,10 @@
   },
   "eslintConfig": {
     "root": true,
-    "extends": "@ryanatkn"
+    "extends": "@ryanatkn",
+    "rules": {
+      "no-console": 1
+    }
   },
   "prettier": {
     "plugins": [
