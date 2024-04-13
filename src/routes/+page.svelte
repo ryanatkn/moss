@@ -1,21 +1,22 @@
 <script lang="ts">
-	import Card from '@ryanatkn/fuz/Card.svelte';
 	import {base} from '$app/paths';
-	import {random_item} from '@ryanatkn/belt/random.js';
-
-	import Mreows, {items} from '$routes/Mreows.svelte';
-
-	let mreows: Array<{icon: string}> | undefined = $state([random_item(items), items[4]]);
 </script>
 
-<main class="prose">
+<main>
 	<section class="box">
-		<header class="prose">
-			<h1 class="mt_xl2">fuz_template</h1>
+		<header class="box">
+			<h1 class="mt_xl2 mb_xl2">moss</h1>
+			<img
+				src="{base}/favicon.png"
+				alt="the Moss logo, a fuzzy tuft of green moss"
+				style:width="var(--icon_size_xl2)"
+				style:height="var(--icon_size_xl2)"
+				class="mb_xl2"
+			/>
+			<blockquote>magical organic stylesheets</blockquote>
+			<a href="https://github.com/ryanatkn/moss">source code</a>
 		</header>
-		<Card href="{base}/about" icon={mreows ? mreows[0].icon : '✨'}>about</Card>
 	</section>
-	<Mreows bind:mreows />
 </main>
 
 <style>

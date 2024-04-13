@@ -1,11 +1,19 @@
 {
-  "name": "@ryanatkn/fuz_template",
+  "name": "@ryanatkn/moss",
   "version": "0.0.1",
-  "description": "a static web app and Node library template with TypeScript, Svelte, SvelteKit, Vite, esbuild, Fuz, and Gro",
-  "icon": "❄",
+  "description": "magical organic stylesheets",
+  "icon": "🌿",
   "public": true,
-  "homepage": "https://template.fuz.dev/",
-  "repository": "https://github.com/ryanatkn/fuz_template",
+  "license": "MIT",
+  "homepage": "https://moss.ryanatkn.com/",
+  "repository": "https://github.com/ryanatkn/moss",
+  "author": {
+    "name": "Ryan Atkinson",
+    "email": "mail@ryanatkn.com",
+    "url": "https://www.ryanatkn.com/"
+  },
+  "bugs": "https://github.com/ryanatkn/moss/issues",
+  "funding": "https://www.ryanatkn.com/funding",
   "type": "module",
   "engines": {
     "node": ">=20.10"
