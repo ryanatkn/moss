@@ -69,14 +69,14 @@
 		</Tome_Subheading>
 		<details>
 			<summary>Click this <code>summary</code> to see the rest of the <code>details</code></summary>
-			<p>See also the <Tome_Link name="Details" /> component.</p>
+			<p>The children of the <code>details</code> excluding the <code>summary</code>.</p>
 			<Code
 				content={`<details>
 	<summary>
 		Click this <code>summary</code>
 		to see the rest of the <code>details</code>
 	</summary>
-	<p>See also the <Tome_Link name="Details" /> component.</p>
+	<p>The children of the <code>details</code> excluding the <code>summary</code>.</p>
 	<Code code={'...'} />
 </details>`}
 			/>
