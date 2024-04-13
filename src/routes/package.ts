@@ -107,7 +107,6 @@ export const src_json = {
 				{name: 'save_theme', kind: 'function'},
 				{name: 'load_theme', kind: 'function'},
 				{name: 'create_theme_setup_script', kind: 'function'},
-				{name: 'create_theme_style_html', kind: 'function'},
 				{name: 'Theme', kind: 'type'},
 				{name: 'Style_Variable', kind: 'type'},
 				{name: 'Render_Theme_Style_Options', kind: 'type'},
