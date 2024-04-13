@@ -8,7 +8,7 @@
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 	import {get_theme, get_color_scheme} from '@ryanatkn/fuz/Themed.svelte';
-	import {default_themes} from '@ryanatkn/fuz/themes.js';
+	import {default_themes} from '@ryanatkn/moss/themes.js';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 	import Theme_Input from '@ryanatkn/fuz/Theme_Input.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
@@ -215,8 +215,8 @@
 		<Code
 			content={`<!-- +layout.svelte -->
 <script>
-	import '@ryanatkn/fuz/style.css';
-	import '@ryanatkn/fuz/theme.css';
+	import '@ryanatkn/moss/style.css';
+	import '@ryanatkn/moss/theme.css';
 	import Themed from '@ryanatkn/fuz/Themed.svelte';
 	import type {Snippet} from 'svelte';
 
@@ -250,11 +250,11 @@
 			content={`// get values from the Svelte context provided by
 // the nearest \`Themed\` or \`Themed_Scope\` ancestor:
 
-import {get_theme} from '@ryanatkn/fuz/theme.js';
+import {get_theme} from '@ryanatkn/moss/theme.js';
 const selected_theme = get_theme();
 $selected_theme.name; // '${$selected_theme.name}'
 
-import {get_color_scheme} from '@ryanatkn/fuz/theme.js';
+import {get_color_scheme} from '@ryanatkn/moss/theme.js';
 const selected_color_scheme = get_color_scheme();
 $selected_color_scheme; // '${$selected_color_scheme}'`}
 			lang="js"

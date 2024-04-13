@@ -16,10 +16,7 @@
 			<div class="box mb_xl"><Spider size="120px" /></div>
 			<blockquote>magical organic stylesheets</blockquote>
 			<div class="width_sm panel p_md">
-				<p>
-					Fuz is a Svelte UI library and CSS design system. It's in early alpha and there will be
-					many breaking changes.
-				</p>
+				<p>Fuz is a CSS framework. It's in early alpha and there will be many breaking changes.</p>
 				<p>
 					Fuz is being made to support <a href="https://www.ryanatkn.com/table">my other projects</a
 					>

@@ -88,13 +88,13 @@
 		<Code
 			content={`<!-- +layout.svelte -->
 <script>
-	import '@ryanatkn/fuz/style.css';
-	import '@ryanatkn/fuz/theme.css'; // or bring your own
-	// or import individual parts of \`@ryanatkn/fuz/style.css\`:
-	import '@ryanatkn/fuz/style_reset.css'; // required
-	import '@ryanatkn/fuz/style_utilities.css'; // optional
-	import '@ryanatkn/fuz/style_components.css'; // optional
-	import '@ryanatkn/fuz/style_animations.css'; // optional
+	import '@ryanatkn/moss/style.css';
+	import '@ryanatkn/moss/theme.css'; // or bring your own
+	// or import individual parts of \`@ryanatkn/moss/style.css\`:
+	import '@ryanatkn/moss/style_reset.css'; // required
+	import '@ryanatkn/moss/style_utilities.css'; // optional
+	import '@ryanatkn/moss/style_components.css'; // optional
+	import '@ryanatkn/moss/style_animations.css'; // optional
 	// ...`}
 		/>
 		<p>
@@ -137,7 +137,7 @@
 		<!-- TODO maybe add a github source link? -->
 		<Details>
 			{#snippet summary()}
-				<span class="font_mono">@ryanatkn/fuz/style_utilities.css</span>
+				<span class="font_mono">@ryanatkn/moss/style_utilities.css</span>
 			{/snippet}
 			<p class="source_link">
 				<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_utilities.css"
@@ -148,7 +148,7 @@
 		</Details>
 		<Details>
 			{#snippet summary()}
-				<span class="font_mono">@ryanatkn/fuz/style_components.css</span>
+				<span class="font_mono">@ryanatkn/moss/style_components.css</span>
 			{/snippet}
 			<p class="source_link">
 				<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_components.css"

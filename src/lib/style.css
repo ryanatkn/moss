@@ -2,7 +2,7 @@
 
 /*
 
-A CSS Fuz theme file like `@ryanatkn/fuz/theme.css`
+A CSS Fuz theme file like `@ryanatkn/moss/theme.css`
 is expected to be imported alongside this one
 containing the base variable declarations.
 By default that's the `'base'` theme's variables,
@@ -654,7 +654,7 @@ thead {
 	text-align: left;
 }
 
-/* @ryanatkn/fuz/style_components.css */
+/* @ryanatkn/moss/style_components.css */
 
 .box {
 	display: flex;
@@ -844,7 +844,7 @@ a.chip {
 	}
 }
 
-/* @ryanatkn/fuz/style_utilities.css */
+/* @ryanatkn/moss/style_utilities.css */
 
 /* TODO @multiple docs in library */
 
