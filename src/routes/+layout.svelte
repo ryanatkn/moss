@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-	<title>Fuz - friendly user zystem</title>
+	<title>Fuz - magical organic stylesheets</title>
 </svelte:head>
 
 <Themed>

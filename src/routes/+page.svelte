@@ -12,9 +12,9 @@
 <main class="box w_100">
 	<div class="box width_md">
 		<section class="box">
-			<h1 class="mt_xl4 mb_lg">fuz</h1>
+			<h1 class="mt_xl4 mb_lg">moss</h1>
 			<div class="box mb_xl"><Spider size="120px" /></div>
-			<blockquote>friendly user zystem</blockquote>
+			<blockquote>magical organic stylesheets</blockquote>
 			<div class="width_sm panel p_md">
 				<p>
 					Fuz is a Svelte UI library and CSS design system. It's in early alpha and there will be

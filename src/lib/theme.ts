@@ -1,6 +1,3 @@
-import {getContext, setContext} from 'svelte';
-import type {Writable} from 'svelte/store';
-
 import {default_variables} from '$lib/variables.js';
 import {default_themes} from '$lib/themes.js'; // TODO shoudln't be a dep, see usage below
 
@@ -189,15 +186,3 @@ export const render_theme_variable = (
 		(comments && variable.summary ? ' /* ' + variable.summary + ' */' : '')
 	);
 };
-
-// TODO change API to use runes
-
-const THEME_KEY = Symbol('theme');
-export const get_theme = (): Writable<Theme> => getContext(THEME_KEY);
-export const set_theme = (store: Writable<Theme>): Writable<Theme> => setContext(THEME_KEY, store);
-
-const COLOR_SCHEME_KEY = Symbol('color_scheme');
-export const get_color_scheme = (): Writable<Color_Scheme | null> => getContext(COLOR_SCHEME_KEY);
-export const set_color_scheme = (
-	store: Writable<Color_Scheme | null>,
-): Writable<Color_Scheme | null> => setContext(COLOR_SCHEME_KEY, store);
