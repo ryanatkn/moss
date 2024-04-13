@@ -16,6 +16,7 @@
 	import Theme_Form from '$routes/Theme_Form.svelte';
 
 	// TODO BLOCK separate correctly from the Themed docs
+	// - show stylesheets
 
 	const LIBRARY_ITEM_NAME = 'themes';
 
@@ -36,52 +37,7 @@
 			<Mdn_Link href="Web/CSS/color-scheme" />
 			and custom themes based on <Tome_Link name="variables" />, which use
 			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link>.
-			<code>Themed</code> is a singleton component that's mounted at the top-level of the page:
 		</p>
-		<Code content={`import Themed from '@ryanatkn/fuz/Themed.svelte';`} lang="ts" />
-		<Code content={`<!-- +layout.svelte -->\n<Themed>\n\t{@render children()}\n</Themed>`} />
-		<Details>
-			{#snippet summary()}Why the singleton?{/snippet}
-			<aside>
-				<p>
-					By default <code>Themed</code> syncs its settings to the global <code>:root</code> tag and
-					persists to <code>localStorage</code>.
-				</p>
-				<p>These behaviors can be customized with its props:</p>
-				<ul>
-					<li><code>sync_color_scheme</code></li>
-					<li><code>load_color_scheme</code></li>
-					<li><code>save_color_scheme</code></li>
-					<li><code>load_theme</code></li>
-					<li><code>save_theme</code></li>
-				</ul>
-				<p>See <code>Themed_Scope</code> below to theme one branch of the DOM tree.</p>
-			</aside>
-		</Details>
-		<Details>
-			{#snippet summary()}Why nested children?{/snippet}
-			<aside>
-				<p>
-					<code>Themed</code> is designed to wrap every page at the top level so it can provide the
-					selected theme and color scheme in the Svelte context. It works without children, but
-					<code>get_theme</code> and <code>get_color_scheme</code> will fail unless you call
-					<code>set_theme</code> and <code>set_color_scheme</code> yourself.
-				</p>
-				<p>
-					These context helpers provide the <code>writable</code> stores to your code, and they also
-					reduce boilerplate in the helper components documented below.
-				</p>
-				<p>
-					If you set stores in context manually, they must be the same references as the <code
-						>Themed</code
-					> props:
-				</p>
-				<Code
-					content={'<' +
-						`script>\n\tconst theme = writable(...);\n\tconst color_scheme = writable(...);\n\tset_theme(theme);\n\tset_color_scheme(color_scheme);\n</script>\n<Themed\n\tselected_theme={theme}\n\tselected_color_scheme={color_scheme}\n/>\n<!-- sibling content... -->`}
-				/>
-			</aside>
-		</Details>
 	</section>
 	<section class="theme">
 		<Tome_Subheading text="Color scheme" slug="color-scheme" />
