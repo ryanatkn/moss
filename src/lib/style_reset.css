@@ -1,10 +1,10 @@
 /*
 
-A CSS Fuz theme file like `@ryanatkn/moss/theme.css`
+A CSS Moss theme file like `@ryanatkn/moss/theme.css`
 is expected to be imported alongside this one
 containing the base variable declarations.
 By default that's the `'base'` theme's variables,
-which is generated from the default values in `@ryanatkn/fuz/variables.js`.
+which is generated from the default values in `@ryanatkn/moss/variables.js`.
 
 Some notes:
 

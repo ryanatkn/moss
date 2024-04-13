@@ -33,11 +33,11 @@ About Moss:
   - encourages plain HTML elements like `button` and `a` over Svelte components
     unless the gains are substantial
 - stylesheets:
-  - [`@ryanatkn/style.css`](/src/lib/style.css), which is composed of:
-    - [`@ryanatkn/style_reset.css`](/src/lib/style_reset.css) - required
-    - [`@ryanatkn/style_utilities.css`](/src/lib/style_utilities.css) - optional
-    - [`@ryanatkn/style_components.css`](/src/lib/style_components.css) - optional
-    - [`@ryanatkn/style_animations.css`](/src/lib/style_animations.css) - optional
+  - [`@ryanatkn/moss/style.css`](/src/lib/style.css), which is composed of:
+    - [`@ryanatkn/moss/style_reset.css`](/src/lib/style_reset.css) - required
+    - [`@ryanatkn/moss/style_utilities.css`](/src/lib/style_utilities.css) - optional
+    - [`@ryanatkn/moss/style_components.css`](/src/lib/style_components.css) - optional
+    - [`@ryanatkn/moss/style_animations.css`](/src/lib/style_animations.css) - optional
   - [`theme.css`](/src/lib/theme.css) - or bring your own
   - prefers Svelte's `<style>` for nontrivial cases
     because its utility classes are not nearly as featureful and complete as Tailwind -

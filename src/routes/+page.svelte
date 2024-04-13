@@ -16,12 +16,13 @@
 			<div class="box mb_xl"><Moss_Logo size="120px" /></div>
 			<blockquote>magical organic stylesheets</blockquote>
 			<div class="width_sm panel p_md">
-				<p>Fuz is a CSS framework. It's in early alpha and there will be many breaking changes.</p>
+				<p>Moss is a CSS framework. It's in early alpha and there will be many breaking changes.</p>
 				<p>
-					Fuz is being made to support <a href="https://www.ryanatkn.com/table">my other projects</a
+					Moss is being made to support <a href="https://www.ryanatkn.com/table"
+						>my other projects</a
 					>
-					that focus on end-users. Fuz emphasizes capability and efficiency and tries to be simple for
-					those goals. Compared to most UI libraries, Fuz has fewer features and more opinions.
+					that focus on end-users. It's grown slowly over 5 years to fit my needs, and my goal for 2024
+					is to fill out its API so it's more widely useful.
 				</p>
 				<p>
 					To learn more see <a href="https://www.fuz.dev/library">the docs</a>

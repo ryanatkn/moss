@@ -7,6 +7,7 @@
 	import type {Snippet} from 'svelte';
 	import Themed from '@ryanatkn/fuz/Themed.svelte';
 	import Spiders from '@ryanatkn/fuz/Spiders.svelte';
+	import 'prismjs';
 
 	import {set_pkg} from '$routes/pkg.js';
 	import {package_json, src_json} from '$routes/package.js';
@@ -28,7 +29,7 @@
 </script>
 
 <svelte:head>
-	<title>Fuz - magical organic stylesheets</title>
+	<title>Moss - magical organic stylesheets</title>
 </svelte:head>
 
 <Themed>
