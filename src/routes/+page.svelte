@@ -13,7 +13,7 @@
 				style:height="var(--icon_size_xl2)"
 				class="mb_xl2"
 			/>
-			<blockquote>magical organic stylesheets</blockquote>
+			<blockquote>CSS framework 🌿 magical organic stylesheets</blockquote>
 			<a href="https://github.com/ryanatkn/moss">source code</a>
 		</header>
 	</section>

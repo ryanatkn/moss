@@ -2,7 +2,7 @@
 
 # @ryanatkn/moss 🌿
 
-> magical organic stylesheets
+> CSS framework 🌿 magical organic stylesheets
 
 [**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
 
