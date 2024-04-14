@@ -23,11 +23,12 @@
 						Moss is a CSS framework that can be used with any website or JS framework. Moss exports <a
 							href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
 							>a single static stylesheet</a
-						>, and it also provides the underlying data and helpers for more complex usage.
+						>, and also the underlying data and helpers for more complex usage.
 					</p>
 					<p>
-						Moss is in early alpha and will have many breaking changes. If you would like to help it
-						get to 1.0, join <a href="https://discord.gg/YU5tyeK72X">the Discord</a> and see
+						Moss is in early alpha and will have many breaking changes to get to 1.0. If you would
+						like to help it succeed, join <a href="https://discord.gg/YU5tyeK72X">the Discord</a>
+						and see
 						<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a
 						>.
 					</p>
