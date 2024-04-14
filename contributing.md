@@ -8,7 +8,7 @@ I'm an independent dev making this library to support [my other projects](http:/
 that focus on end-users.
 I'm trying to make Moss the best CSS framework it can be
 to enable advanced joy and utility for end-users.
-To achieve this goal, I've been growing it slowly and methodically,
+To achieve this goal, I've been growing it slowly and methodically over 5+ years,
 with regular breaking changes and experimental patterns.
 
 I'm looking for collaborators to help Moss get to 1.0.
