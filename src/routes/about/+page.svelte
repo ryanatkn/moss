@@ -2,8 +2,8 @@
 	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
 	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
+	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
 
-	import Moss_Logo from '$routes/Moss_Logo.svelte';
 	import {get_pkg} from '$routes/pkg.js';
 
 	const pkg = get_pkg();

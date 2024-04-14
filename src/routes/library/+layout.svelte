@@ -2,11 +2,11 @@
 	import type {Snippet} from 'svelte';
 	import Library from '@ryanatkn/fuz/Library.svelte';
 	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
+	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
 
 	import {tomes} from '$routes/library/tomes.js';
 	import {set_selected_variable} from '$routes/style_variable_helpers.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
-	import Moss_Logo from '$routes/Moss_Logo.svelte';
 	import {get_pkg} from '$routes/pkg.js';
 
 	interface Props {

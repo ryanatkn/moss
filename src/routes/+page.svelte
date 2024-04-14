@@ -2,9 +2,9 @@
 	import {base} from '$app/paths';
 	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
 	import Card from '@ryanatkn/fuz/Card.svelte';
+	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
 
 	import {get_pkg} from '$routes/pkg.js';
-	import Moss_Logo from '$routes/Moss_Logo.svelte';
 
 	const pkg = get_pkg();
 </script>
