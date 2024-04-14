@@ -8,6 +8,10 @@
 
 coming soon
 
+## Contributing
+
+See [contributing.md](contributing.md).
+
 ## License [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)
 
 [MIT](LICENSE)
