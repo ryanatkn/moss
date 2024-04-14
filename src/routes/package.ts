@@ -6,7 +6,8 @@ import type {Src_Json} from '@ryanatkn/gro/src_json.js';
 export const package_json = {
 	name: '@ryanatkn/moss',
 	version: '0.0.1',
-	description: 'CSS framework 🌿 magical organic stylesheets',
+	description: 'CSS framework',
+	motto: 'magical organic stylesheets',
 	icon: '🌿',
 	public: true,
 	license: 'MIT',
@@ -31,7 +32,7 @@ export const package_json = {
 		'@ryanatkn/eslint-config': '^0.1.2',
 		'@ryanatkn/fuz': '^0.96.3',
 		'@ryanatkn/fuz_code': '^0.11.0',
-		'@ryanatkn/gro': '^0.115.0',
+		'@ryanatkn/gro': '^0.115.1',
 		'@sveltejs/adapter-static': '^3.0.1',
 		'@sveltejs/kit': '^2.5.5',
 		'@sveltejs/package': '^2.3.1',
