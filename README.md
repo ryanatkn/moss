@@ -7,7 +7,7 @@
 [**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
 
 Moss is a CSS framework that can be used with any website and JS framework.
-It centers the design system on _style variables_,
+It centers its design system on _style variables_,
 which are [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
 with more capabilities.
 
