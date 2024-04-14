@@ -355,6 +355,7 @@ export const src_json = {
 				{name: 'icon_size_lg', kind: 'variable'},
 				{name: 'icon_size_xl', kind: 'variable'},
 				{name: 'icon_size_xl2', kind: 'variable'},
+				{name: 'icon_size_xl3', kind: 'variable'},
 				{name: 'duration_1', kind: 'variable'},
 				{name: 'duration_2', kind: 'variable'},
 				{name: 'duration_3', kind: 'variable'},

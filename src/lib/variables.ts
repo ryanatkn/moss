@@ -648,6 +648,7 @@ export const icon_size_md: Style_Variable = {name: 'icon_size_md', light: '48px'
 export const icon_size_lg: Style_Variable = {name: 'icon_size_lg', light: '80px'};
 export const icon_size_xl: Style_Variable = {name: 'icon_size_xl', light: '128px'};
 export const icon_size_xl2: Style_Variable = {name: 'icon_size_xl2', light: '192px'};
+export const icon_size_xl3: Style_Variable = {name: 'icon_size_xl3', light: '256px'};
 
 /* durations */
 // TODO maybe change the scale from xs-xl, and add an xs here around 0.04s or 0.03s
@@ -931,6 +932,7 @@ export const default_variables: Style_Variable[] = [
 	icon_size_lg,
 	icon_size_xl,
 	icon_size_xl2,
+	icon_size_xl3,
 
 	/* durations */
 	duration_1,

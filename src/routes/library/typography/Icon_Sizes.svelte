@@ -3,8 +3,10 @@
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 
+	// TODO BLOCK fix this to be data driven
 	// TODO move to a single source of truth (JSON or ts), generate CSS and use to render here
 	const sizes = {
+		icon_size_xl3: '256px',
 		icon_size_xl2: '192px',
 		icon_size_xl: '128px',
 		icon_size_lg: '80px',
