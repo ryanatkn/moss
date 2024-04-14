@@ -1,6 +1,7 @@
 # Contributing to Moss
 
-Hey, thanks for your interest in contributing to Moss.
+Hey, thanks for your interest in contributing to [Moss](https://github.com/ryanatkn/moss)
+([moss.ryanatkn.com](https://moss.ryanatkn.com/)).
 The project is currently in early alpha.
 There will be many breaking changes ahead,
 and I'm welcoming help from people who would like to see it succeed.
