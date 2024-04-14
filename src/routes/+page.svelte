@@ -16,7 +16,10 @@
 			<div class="box mb_xl"><Moss_Logo size="120px" /></div>
 			<blockquote>magical organic stylesheets</blockquote>
 			<div class="width_sm panel p_md">
-				<p>Moss is a CSS framework. It's in early alpha and there will be many breaking changes.</p>
+				<p>
+					Moss is a CSS framework that's compatible with all websites and JS frameworks due to being
+					a single stylesheet. It's in early alpha and there will be many breaking changes.
+				</p>
 				<p>
 					Moss is being made to support <a href="https://www.ryanatkn.com/table"
 						>my other projects</a

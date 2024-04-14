@@ -5,12 +5,18 @@ The project is currently in early alpha,
 and there will be many breaking changes ahead.
 
 I'm an independent dev making this library to support [my other projects](http://www.ryanatkn.com/)
-that focus on end-users. Like every UI library, Moss can't satisfy everyone's needs,
-and it has opinions and design choices that make it more specialized than most UI libraries.
+that focus on end-users.
 
-That said, Moss does want to be broadly useful,
-and I invite developers who vibe with the design
-to join [the Discord](https://discord.gg/YU5tyeK72X) and help make Moss the best it can be.
+I'm trying to make Moss the best CSS framework it can be
+to enable advanced joy and utility for end-users.
+To achieve this goal, I've been growing it slowly and methodically,
+with regular breaking changes and experimental patterns.
+
+I'm looking for collaborators to help Moss get to 1.0.
+Programmers, designers, beginners, all are welcome -
+Let's chat publicly about your ideas
+on [Discord](https://discord.gg/YU5tyeK72X),
+or open [issues](https://github.com/ryanatkn/moss) here on GitHub.
 
 ## Community
 

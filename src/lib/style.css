@@ -1085,6 +1085,9 @@ text
 .icon_size_xl2 {
 	font-size: var(--icon_size_xl2);
 }
+.icon_size_xl3 {
+	font-size: var(--icon_size_xl3);
+}
 
 .text_align_center {
 	text-align: center;

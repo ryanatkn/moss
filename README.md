@@ -6,7 +6,14 @@
 
 [**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
 
-Moss is a CSS framework.
+Moss is a CSS framework that can be used with any website and JS framework.
+It grows a full styling system around _style variables_,
+which are a Moss specialization of [CSS custom properties](Web/CSS/--*).
+
+Usage can be as simple as importing a single stylesheet,
+and it's built with a data-driven approach that makes its insides available in many forms,
+like deconstructed CSS files and
+TypeScript modules that provide data, types, and helpers around the variable and build systems.
 It's in early alpha and there will be many breaking changes.
 
 Moss is being made to support [my other projects](https://www.ryanatkn.com/table)
