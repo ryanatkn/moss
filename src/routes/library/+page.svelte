@@ -11,4 +11,8 @@
 	const pkg = get_pkg();
 </script>
 
-<Library_Content {tomes} {pkg} />
+<Library_Content {tomes} {pkg}>
+	{#snippet repo_name()}
+		<h1 class="mb_sm">moss</h1>
+	{/snippet}
+</Library_Content>

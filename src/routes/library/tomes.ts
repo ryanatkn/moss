@@ -1,5 +1,6 @@
 import {init_tome, type Tome} from '@ryanatkn/fuz/tome.js';
 
+import introduction from '$routes/library/introduction/+page.svelte';
 import themes from '$routes/library/themes/+page.svelte';
 import colors from '$routes/library/colors/+page.svelte';
 import buttons from '$routes/library/buttons/+page.svelte';
@@ -16,6 +17,14 @@ import borders from '$routes/library/borders/+page.svelte';
 // TODO maybe decouple `related` from `Tome` to get bidirectionality for free
 
 export const tomes: Tome[] = [
+	{
+		name: 'introduction',
+		slug: 'introduction',
+		pathname: '',
+		category: 'guide',
+		component: introduction,
+		related: [],
+	},
 	{
 		name: 'themes',
 		slug: 'themes',

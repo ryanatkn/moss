@@ -6,6 +6,7 @@
 	import {tomes} from '$routes/library/tomes.js';
 	import {set_selected_variable} from '$routes/style_variable_helpers.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
+	import Moss_Logo from '$routes/Moss_Logo.svelte';
 	import {get_pkg} from '$routes/pkg.js';
 
 	interface Props {
@@ -20,6 +21,15 @@
 </script>
 
 <Library {tomes} {pkg}>
+	{#snippet breadcrumb_children(is_primary_nav)}
+		{#if is_primary_nav}
+			<div class="icon row">
+				<Moss_Logo size="32px" /> <span class="ml_sm">moss</span>
+			</div>
+		{:else}
+			<Moss_Logo size="32px" />
+		{/if}
+	{/snippet}
 	{@render children()}
 </Library>
 
