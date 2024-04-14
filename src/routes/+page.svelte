@@ -14,7 +14,7 @@
 		<section class="box">
 			<h1 class="mt_xl4 mb_lg">moss</h1>
 			<div class="box mb_xl"><Moss_Logo size="120px" /></div>
-			<blockquote>magical organic stylesheets</blockquote>
+			<blockquote>CSS framework 🌿 magical organic stylesheets</blockquote>
 			<div class="width_sm panel p_md">
 				<p>
 					Moss is a CSS framework that's compatible with all websites and JS frameworks due to being

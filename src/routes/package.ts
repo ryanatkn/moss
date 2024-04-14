@@ -6,7 +6,7 @@ import type {Src_Json} from '@ryanatkn/gro/src_json.js';
 export const package_json = {
 	name: '@ryanatkn/moss',
 	version: '0.0.1',
-	description: 'magical organic stylesheets',
+	description: 'CSS framework 🌿 magical organic stylesheets',
 	icon: '🌿',
 	public: true,
 	license: 'MIT',
