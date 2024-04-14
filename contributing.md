@@ -6,19 +6,18 @@ The project is currently in early alpha.
 There will be many breaking changes ahead,
 and I'm welcoming help from people who would like to see it succeed.
 
-I'm looking for collaborators to help Moss get to 1.0:
+I'm looking for collaborators to help Moss get to 1.0 and beyond:
 programmers, designers, beginner or otherwise, all friends of the web are welcome -
 let's chat publicly on [Discord](https://discord.gg/YU5tyeK72X)
 or here in the [Github issues](https://github.com/ryanatkn/moss).
 
 I'm trying to make Moss the best CSS framework it can be
 to enable advanced joy and utility for end-users.
-It supports [my other projects](http://www.ryanatkn.com/) that focus on end-users.
-Towards this goal, I've been growing Moss slowly and methodically over 5+ years,
-with regular breaking changes and experimental patterns,
-while using it in many different websites.
+Towards this goal, I've been growing Moss slowly and methodically over 5+ years
+to support [my other projects](http://www.ryanatkn.com/),
+with regular breaking changes and experimental patterns.
 
-> Though I'm focused on the end-user, I also care a lot about DX,
+> Though I'm focused on end-users, I also care a lot about DX,
 > and have built tools like [Gro](https://github.com/ryanatkn/gro)
 > to support a productive envionrment.
 
