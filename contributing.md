@@ -6,7 +6,6 @@ and there will be many breaking changes ahead.
 
 I'm an independent dev making this library to support [my other projects](http://www.ryanatkn.com/)
 that focus on end-users.
-
 I'm trying to make Moss the best CSS framework it can be
 to enable advanced joy and utility for end-users.
 To achieve this goal, I've been growing it slowly and methodically,
