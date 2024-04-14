@@ -36,8 +36,8 @@
 						Moss is being made to support <a href="https://www.ryanatkn.com/table"
 							>my other projects</a
 						>
-						that focus on end-users. It's grown slowly over 5 years to fit my needs, and my goal for
-						2024 is to fill out its API so it's more widely useful.
+						that focus on end-users. It's grown slowly over 5 years to fit those needs, and my goal for
+						2024 is to fill out its API so it's more complete, coherent, and widely useful.
 					</p>
 					<p>
 						To learn more see <a href="{base}/library">the docs</a>
