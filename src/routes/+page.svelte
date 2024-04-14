@@ -50,7 +50,7 @@
 		<section>
 			<Card href="{base}/library">library{#snippet icon()}🧶{/snippet}</Card>
 		</section>
-		<section>
+		<section class="flex panel bg shadow_md">
 			<Library_Footer {pkg}>
 				{#snippet logo_header()}
 					<a href="{base}/about" class="mb_xs">about</a>
