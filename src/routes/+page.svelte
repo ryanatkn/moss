@@ -14,6 +14,7 @@
 				class="mb_xl2"
 			/>
 			<blockquote>CSS framework 🌿 magical organic stylesheets</blockquote>
+			<p>coming soon</p>
 			<a href="https://github.com/ryanatkn/moss">source code</a>
 		</header>
 	</section>
