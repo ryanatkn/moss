@@ -3,7 +3,7 @@
 Hey, thanks for your interest in contributing to Moss.
 The project is currently in early alpha.
 There will be many breaking changes ahead,
-and I'm welcoming help from people who can see improvements to Moss.
+and I'm welcoming help from people who would like to see it succeed.
 
 I'm looking for collaborators to help Moss get to 1.0.
 Programmers, designers, beginner or w/e, all are welcome -
