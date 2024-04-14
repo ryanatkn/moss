@@ -5,8 +5,8 @@ The project is currently in early alpha.
 There will be many breaking changes ahead,
 and I'm welcoming help from people who would like to see it succeed.
 
-I'm looking for collaborators to help Moss get to 1.0.
-Programmers, designers, beginner or w/e, all are welcome -
+I'm looking for collaborators to help Moss get to 1.0:
+programmers, designers, beginner or w/e, all are welcome -
 let's chat publicly on [Discord](https://discord.gg/YU5tyeK72X)
 or here in the [Github issues](https://github.com/ryanatkn/moss).
 

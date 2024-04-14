@@ -8,7 +8,7 @@
 
 Moss is a CSS framework that can be used with any website and JS framework.
 It grows a full styling system around _style variables_,
-which are a Moss specialization of [CSS custom properties](Web/CSS/--*).
+which are a Moss specialization of [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
 
 Usage can be as simple as importing a single stylesheet,
 and it's built with a data-driven approach that makes its insides available in many forms,
