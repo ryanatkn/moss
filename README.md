@@ -4,6 +4,8 @@
 
 > CSS framework 🌿 magical organic stylesheets
 
+⚠️ Moss is in early alpha and the docs are a work in progress.
+
 [**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
 
 ## Contributing
