@@ -25,7 +25,7 @@ export const package_json = {
 		test: 'gro test',
 		deploy: 'gro deploy',
 	},
-	files: ['dist'],
+	files: ['dist', 'CHANGELOG.md'],
 	devDependencies: {
 		'@changesets/changelog-git': '^0.2.0',
 		'@ryanatkn/belt': '^0.20.10',
