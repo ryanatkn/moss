@@ -33,8 +33,9 @@
 			goals. Compared to most UI libraries, Moss has fewer features and more opinions.
 		</p>
 		<p>
-			To learn more see <a href="https://moss.ryanatkn.com/library">the docs</a> and [contributing.md](contributing.md).
-			Feel free to take the ideas and code for your own purposes.
+			To learn more see <a href="https://moss.ryanatkn.com/library">the docs</a> and
+			<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>. Feel
+			free to take the ideas and code for your own purposes.
 		</p>
 		<p>Some features:</p>
 		<ul>
@@ -44,15 +45,10 @@
 				designed around variables aka style variables aka design tokens, a specialization of <a
 					href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a
 				>
-			</li>
-			<ul>
-				<li>variables are a more primitive building block than classes</li>
-				<li>includes optional utility and semantic classes that use the variables</li>
-			</ul>
-			<li>
-				the only required parts of the library are <code>@ryanatkn/moss/style.css</code> and either
-				<code>@ryanatkn/moss/theme.css</code> or your own theme file, everything else can be used a la
-				carte
+				<ul>
+					<li>variables are a more primitive building block than classes</li>
+					<li>includes optional utility and semantic classes that use the variables</li>
+				</ul>
 			</li>
 			<li>
 				<!-- TODO inner link -->
