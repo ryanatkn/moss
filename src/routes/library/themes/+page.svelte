@@ -1,12 +1,9 @@
 <script lang="ts">
-	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
-	import Details from '@ryanatkn/fuz/Details.svelte';
 	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
 	import {get_tome} from '@ryanatkn/fuz/tome.js';
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import {get_color_scheme} from '@ryanatkn/fuz/Themed.svelte';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 	import Theme_Input from '@ryanatkn/fuz/Theme_Input.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
