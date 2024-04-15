@@ -96,6 +96,9 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .display_contents {
 	display: contents;
 }
+/* TODO lots of these, but optimize first? .display_table {
+	display: table;
+} */
 .flex {
 	display: flex;
 }
