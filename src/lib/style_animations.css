@@ -1,0 +1,9 @@
+/* use `reverse` to fade out and `alternate` to flash */
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

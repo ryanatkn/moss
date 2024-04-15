@@ -1,35 +1,33 @@
 <script lang="ts">
-	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
-	import {parse_package_meta} from '@ryanatkn/gro/package_meta.js';
 	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
+	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
+	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
 
-	import {package_json, src_json} from '$routes/package.js';
+	import {get_pkg} from '$routes/pkg.js';
 
-	const pkg = parse_package_meta(package_json.homepage, package_json, src_json);
+	const pkg = get_pkg();
 
 	// TODO standardize
 </script>
 
 <main class="width_md">
-	<div class="prose">
-		<section class="box">
-			<header class="box">
-				<h1 class="mt_xl2">fuz_template</h1>
-			</header>
-			<div style:--size="var(--size_xl)">
-				<Breadcrumb>{package_json.icon}</Breadcrumb>
-			</div>
-		</section>
-	</div>
-	<section class="box w_100 mb_lg">
+	<section>
+		<header class="box">
+			<h1 class="mt_xl4">{pkg.repo_name}</h1>
+		</header>
+		<Breadcrumb><Moss_Logo size="32px" /></Breadcrumb>
+	</section>
+	<section>
 		<div class="panel p_md width_md">
 			<Package_Detail {pkg} />
 		</div>
 	</section>
-	<section class="box">
-		<Library_Footer {pkg} root_url="https://www.fuz.dev/">
-			<div class="mb_xl"><Breadcrumb>{package_json.icon}</Breadcrumb></div>
+	<section class="box mb_xl7">
+		<Library_Footer {pkg}>
+			<div class="mb_xl5">
+				<Breadcrumb><Moss_Logo size="32px" /></Breadcrumb>
+			</div>
 		</Library_Footer>
 	</section>
 </main>
@@ -45,8 +43,5 @@
 		display: flex;
 		align-items: baseline;
 		text-align: center;
-	}
-	section {
-		margin-bottom: var(--space_xl5);
 	}
 </style>

@@ -1,15 +1,21 @@
 <script lang="ts">
-	import '@ryanatkn/fuz/style.css';
-	import '@ryanatkn/fuz/theme.css';
-	import '$routes/style.css';
+	import '$lib/style.css';
+	import '$lib/theme.css';
+	import '@ryanatkn/fuz_code/prism.css';
 
-	import Themed from '@ryanatkn/fuz/Themed.svelte';
-	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
-	import Contextmenu_Root from '@ryanatkn/fuz/Contextmenu_Root.svelte';
-	import {contextmenu_action} from '@ryanatkn/fuz/contextmenu.svelte.js';
+	import {parse_package_meta} from '@ryanatkn/gro/package_meta.js';
 	import type {Snippet} from 'svelte';
+	import Themed from '@ryanatkn/fuz/Themed.svelte';
+	import Spiders from '@ryanatkn/fuz/Spiders.svelte';
+	import 'prismjs'; // TODO BLOCK why needed?
 
-	import Settings from '$routes/Settings.svelte';
+	import {set_pkg} from '$routes/pkg.js';
+	import {package_json, src_json} from '$routes/package.js';
+	// TODO re-enable this, see comment below
+	// import Contextmenu_Root from '$lib/Contextmenu_Root.svelte';
+	// import Dialog from '$lib/Dialog.svelte';
+	// import Settings from '$routes/Settings.svelte';
+	// import {contextmenu_action} from '$lib/contextmenu.svelte.js';
 
 	interface Props {
 		children: Snippet;
@@ -17,14 +23,32 @@
 
 	const {children}: Props = $props();
 
-	let show_settings = $state(false);
+	set_pkg(parse_package_meta(package_json.homepage, package_json, src_json));
+
+	// let show_settings = $state(false);
 </script>
 
 <svelte:head>
-	<title>@ryanatkn/moss</title>
+	<title>Moss - magical organic stylesheets</title>
 </svelte:head>
 
-<svelte:body
+<Themed>
+	<!-- TODO add all of this and fixed scoped, so the library examples work as expected,
+		or maybe disable this main contextmenu when in the library -->
+	<!-- <Contextmenu_Root> -->
+	{@render children()}
+	<Spiders />
+	<!-- </Contextmenu_Root> -->
+	<!-- {#if show_settings}
+		<Dialog onclose={() => (show_settings = false)}>
+			<div class="pane">
+				<Settings />
+			</div>
+		</Dialog>
+	{/if} -->
+</Themed>
+
+<!-- <svelte:body
 	use:contextmenu_action={[
 		{
 			snippet: 'text',
@@ -47,17 +71,4 @@
 			},
 		},
 	]}
-/>
-
-<Themed>
-	<Contextmenu_Root>
-		{@render children()}
-		{#if show_settings}
-			<Dialog onclose={() => (show_settings = false)}>
-				<div class="pane">
-					<Settings />
-				</div>
-			</Dialog>
-		{/if}
-	</Contextmenu_Root>
-</Themed>
+/> -->
