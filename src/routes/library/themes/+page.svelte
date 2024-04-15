@@ -24,8 +24,6 @@
 
 	const themes = default_themes.slice();
 
-	const selected_color_scheme = get_color_scheme();
-
 	// let show_create_theme_dialog = false;
 	let editing_theme: null | Theme = $state(null);
 </script>
@@ -33,7 +31,7 @@
 <Tome_Detail {tome}>
 	<section class="theme">
 		<p>
-			<code>Themed</code> adds global support for both the browser's
+			Moss supports both the browser's
 			<Mdn_Link href="Web/CSS/color-scheme" />
 			and custom themes based on <Tome_Link name="variables" />, which use
 			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link>.
@@ -42,44 +40,17 @@
 	<section class="theme">
 		<Tome_Subheading text="Color scheme" slug="color-scheme" />
 		<p>
-			<code>Themed</code> defaults to automatic
-			<Mdn_Link href="Web/CSS/color-scheme" />
-			detection with
+			Moss supports
+			<Mdn_Link href="Web/CSS/color-scheme" /> with dark and light modes. It detects the default with
 			<Mdn_Link href="Web/CSS/@media/prefers-color-scheme" />, and users can also set it directly:
 		</p>
-		<Color_Scheme_Input />
-		<Code
-			content={`import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';`}
-			lang="ts"
-		/>
-		<Code content="<Color_Scheme_Input />" />
-		<p>Pass a prop to override the default:</p>
-		<Code
-			content={`<Color_Scheme_Input\n\tselected_color_scheme={writable(${
-				$selected_color_scheme
-					? "'" + JSON.stringify($selected_color_scheme).replace(/"/gu, '') + "'"
-					: 'null'
-			})}\n/>`}
-		/>
+		<div class="flex mb_lg">
+			<Color_Scheme_Input />
+		</div>
 		<p>
 			The builtin themes support both dark and light color schemes. Custom themes may support one or
 			both color schemes.
 		</p>
-		<Details>
-			{#snippet summary()}More about <code>Color_Scheme_Input</code>{/snippet}
-			<aside>
-				<p>
-					<code>Color_Scheme_Input</code> enables users to choose and persist the color scheme without
-					boilerplate.
-				</p>
-				<p>
-					By default, <code>Color_Scheme_Input</code> works with <code>Themed</code> to save the
-					user's preference to <code>localStorage</code>. To customize this behavior, pass a custom
-					<code>selected_color_scheme</code>
-					or <code>select</code> function prop.
-				</p>
-			</aside>
-		</Details>
 	</section>
 	<section class="theme">
 		<Tome_Subheading text="Builtin themes" slug="builtin-themes" />

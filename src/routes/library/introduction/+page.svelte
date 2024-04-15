@@ -9,7 +9,11 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<blockquote>⚠️ The docs are a work in progress.</blockquote>
+		<blockquote>
+			⚠️ Docs are a work in progress. Moss was recently extracted from
+			<a href="https://www.fuz.dev/">Fuz</a>, and these docs are incomplete and misleading in some
+			cases, because they now need to deal with the inner workings of the CSS.
+		</blockquote>
 		<p>
 			Moss is a CSS framework that can be used with any website and JS framework. It centers its
 			design system on <em>style variables</em>, which are
@@ -33,7 +37,7 @@
 		</p>
 		<p>Some features:</p>
 		<ul>
-			<li>plain CSS</li>
+			<li>plain CSS, most users import a single stylesheet</li>
 			<li>zero dependencies</li>
 			<li>
 				designed around variables aka style variables aka design tokens, a specialization of <a
@@ -100,6 +104,12 @@
 					</li>
 				</ul>
 			</li>
+		</ul>
+		<p>TODO:</p>
+		<ul>
+			<li>do a pass on all of the existing docs</li>
+			<li>describe in depth the mechanics of the CSS, starting with dark mode</li>
+			<li>write docs about build tooling</li>
 		</ul>
 	</section>
 </Tome_Detail>
