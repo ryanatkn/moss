@@ -58,12 +58,6 @@
 				(including dark mode)
 			</li>
 			<li>styles HTML tags directly, so you don't need to add `.btn` to buttons</li>
-			<ul>
-				<li>
-					encourages plain HTML elements like `button` and `a` over Svelte components unless the
-					gains are substantial
-				</li>
-			</ul>
 			<li>
 				stylesheets:
 				<ul>
@@ -98,13 +92,6 @@
 						<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.css"
 							><code>@ryanatkn/moss/theme.css</code></a
 						> - or bring your own
-					</li>
-					<li>
-						prefers Svelte's <code>{'<'}style></code> for nontrivial cases because its utility classes
-						are not nearly as featureful and complete as Tailwind - instead of providing a full interface
-						to CSS through classes, Moss provides an arbitrary subset that defers to Svelte CSS for complex
-						and uncommon patterns (advanced build tooling like a compiler could change this, but I have
-						no current plans for that)
 					</li>
 					<li>
 						it probably makes sense to include a Vite plugin to remove unused styles, but the

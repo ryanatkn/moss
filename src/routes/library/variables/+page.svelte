@@ -16,8 +16,6 @@
 	const variables = default_variables.slice().sort((a, b) => a.name.localeCompare(b.name));
 
 	// TODO maybe FAQ? need a standardized pattern -- first add the "on this page" menu functionality
-
-	// TODO BLOCK update discussion now that Svelte isn't a dependency
 </script>
 
 <Tome_Detail {tome}>
@@ -77,40 +75,6 @@ export interface Style_Variable {
 				<Style_Variable_Button name={variable.name} classes="menu_item" />
 			{/each}
 		</div>
-	</section>
-	<section>
-		<Tome_Subheading text={'Why the name "style variable"'} slug="why-the-name-style-variable" />
-		<p>
-			Moss "style variables" are often called "design tokens" or "CSS variables" in other
-			frameworks.
-		</p>
-		<p>
-			These are named "variables" or "style variables" instead of the common name "design tokens"
-			because Moss is made by a programmer designing more for devs and end-users than designers.
-			Their functionality is like JS variables but for CSS, and they're implemented with CSS custom
-			properties, which are commonly called CSS variables. I'm familiar with tokens as secrets for
-			authentication, and I don't like overloading the term - especially for sensitive secrets!
-			Wikipedia has several programming usages for tokens but no page about design tokens. Maybe
-			I'll change my mind?
-		</p>
-	</section>
-	<section>
-		<p>
-			Variables are <code>snake_case</code> so that they're also valid JS identifiers, not for
-			stylistic or contrarian reasons. This choice leaks to the CSS class naming conventions, so
-			that variable-derived utility classes match their corresponding variable names. This fits
-			nicely with
-			<a href="https://svelte.dev/docs/element-directives#class-name"
-				>Svelte's class shorthand syntax</a
-			>.
-		</p>
-		<p>
-			The naming convention also supports my goal of thinking about Moss and your app as having a
-			single unified flat namespace, where every identifier regardless of module is unique and part
-			of a larger whole - the system's vocabulary, referenceable in every appropriate context - JS,
-			HTML, and CSS, on the client and server, and in tests and dev tools. This makes each
-			identifier a globally meaningful term. Maybe this needs a blog post.
-		</p>
 	</section>
 </Tome_Detail>
 
