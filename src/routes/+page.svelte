@@ -26,15 +26,15 @@
 				>, and it also exports the underlying data and helpers for more complex usage.
 			</p>
 			<p>
-				Moss is in early alpha and will have many breaking changes to get to 1.0. If you would like
-				to help it succeed, join <a href="https://discord.gg/YU5tyeK72X">the Discord</a>
-				and see
+				Moss is in early alpha and will have many breaking changes to get to 1.0. To follow along or
+				lend some help, see <a href="https://discord.gg/YU5tyeK72X">the Discord</a>
+				and
 				<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>.
 			</p>
 			<p>
-				Moss is being made to support <a href="https://www.ryanatkn.com/table">my other projects</a>
+				Moss is being made to support <a href="https://www.ryanatkn.com/">my other projects</a>
 				that focus on end-users. It's grown slowly over 5 years to fit those needs, and my goal for 2024
-				is to fill out its API so it's more complete, coherent, and widely useful.
+				is to fill out its APIs so it's more complete, coherent, and widely useful.
 			</p>
 			<p>
 				To learn more see <a href="{base}/library">the docs</a>

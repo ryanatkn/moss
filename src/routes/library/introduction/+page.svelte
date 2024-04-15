@@ -12,7 +12,7 @@
 		<blockquote>
 			⚠️ Docs are a work in progress. Moss was recently extracted from
 			<a href="https://www.fuz.dev/">Fuz</a>, and these docs are incomplete and misleading in some
-			cases, because they now need to deal with the inner workings of the CSS and agnostic to
+			cases, because they now need to deal with the inner workings of the CSS and be agnostic to
 			Svelte.
 		</blockquote>
 		<p>
