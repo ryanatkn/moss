@@ -20,10 +20,10 @@
 	<section class="width_sm panel p_sm shadow_inset_inverse_md">
 		<div class="panel p_sm bg shadow_md">
 			<p>
-				Moss is a CSS framework that can be used with any website or JS framework. Moss exports <a
+				Moss is a CSS framework that can be used with any website or JS framework. Moss has <a
 					href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
 					>a single static stylesheet</a
-				>, and also the underlying data and helpers for more complex usage.
+				>, and it also exports the underlying data and helpers for more complex usage.
 			</p>
 			<p>
 				Moss is in early alpha and will have many breaking changes to get to 1.0. If you would like
