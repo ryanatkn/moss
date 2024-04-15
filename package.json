@@ -27,7 +27,8 @@
     "deploy": "gro deploy"
   },
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
