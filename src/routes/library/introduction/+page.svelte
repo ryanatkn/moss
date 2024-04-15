@@ -12,7 +12,8 @@
 		<blockquote>
 			⚠️ Docs are a work in progress. Moss was recently extracted from
 			<a href="https://www.fuz.dev/">Fuz</a>, and these docs are incomplete and misleading in some
-			cases, because they now need to deal with the inner workings of the CSS.
+			cases, because they now need to deal with the inner workings of the CSS and agnostic to JS
+			frameworks like Svelte.
 		</blockquote>
 		<p>
 			Moss is a CSS framework that can be used with any website and JS framework. It centers its
