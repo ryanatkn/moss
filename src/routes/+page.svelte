@@ -13,9 +13,7 @@
 	<section class="box">
 		<h1 class="mt_xl4 mb_lg">moss</h1>
 		<div class="box mb_xl"><Moss_Logo size="120px" /></div>
-		<blockquote class="shadow_inset_inverse_md">
-			CSS framework 🌿 magical organic stylesheets
-		</blockquote>
+		<blockquote class="shadow_inset_inverse_md">magical organic stylesheets 🌿</blockquote>
 	</section>
 	<section class="width_sm panel p_sm shadow_inset_inverse_md">
 		<div class="panel p_sm bg shadow_md">
