@@ -16,8 +16,8 @@
 			Svelte.
 		</blockquote>
 		<p>
-			Moss is a CSS framework that can be used with any website and JS framework. It centers its
-			design system on <em>style variables</em>, which are
+			Moss is a CSS framework that can be used with any website and JS framework. Its design system
+			centers on <em>style variables</em>, which are
 			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a> with more
 			capabilities.
 		</p>
