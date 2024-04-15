@@ -9,6 +9,7 @@
 
 <Tome_Detail {tome}>
 	<section>
+		<blockquote>⚠️ The docs are a work in progress.</blockquote>
 		<p>
 			Moss is a CSS framework that can be used with any website and JS framework. It centers its
 			design system on <em>style variables</em>, which are
@@ -33,6 +34,7 @@
 		<p>Some features:</p>
 		<ul>
 			<li>plain CSS</li>
+			<li>zero dependencies</li>
 			<li>
 				designed around variables aka style variables aka design tokens, a specialization of <a
 					href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a
@@ -43,8 +45,9 @@
 				<li>includes optional utility and semantic classes that use the variables</li>
 			</ul>
 			<li>
-				the only required parts of the library are `@ryanatkn/moss/style.css` and either
-				`@ryanatkn/moss/theme.css` or your own theme file, everything else can be used a la carte
+				the only required parts of the library are <code>@ryanatkn/moss/style.css</code> and either
+				<code>@ryanatkn/moss/theme.css</code> or your own theme file, everything else can be used a la
+				carte
 			</li>
 			<li>
 				<!-- TODO inner link -->
@@ -54,7 +57,6 @@
 				>
 				(including dark mode)
 			</li>
-			<li>zero dependencies except for Svelte</li>
 			<li>styles HTML tags directly, so you don't need to add `.btn` to buttons</li>
 			<ul>
 				<li>

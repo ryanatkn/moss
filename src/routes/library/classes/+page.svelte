@@ -102,10 +102,7 @@
 				name="variables"
 			/>.
 		</p>
-		<p>
-			Semantic classes are named groupings of styles that are like the CSS equivalent of Svelte
-			components.
-		</p>
+		<p>Component classes are semantic groupings of styles.</p>
 		<aside>
 			With more sophisticated build tooling, these classes could be generated on demand instead of
 			distributed as static files, or unused classes could be removed with a Vite plugin.
@@ -113,11 +110,6 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Utility classes" slug="utility-classes" />
-		<p>
-			Moss provides an arbitrary set of utility classes for CSS, and defers to CSS in <a
-				href="https://svelte.dev/docs/svelte-components#style">Svelte's <code>{'<'}style></code></a
-			> for complex and uncommon patterns.
-		</p>
 		<ul class="classes unstyled">
 			{#each style_utilities_items as c}
 				<li>.{c}</li>
