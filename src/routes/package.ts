@@ -357,7 +357,7 @@ export const src_json = {
 				{name: 'shadow_outset_md', kind: 'variable'},
 				{name: 'shadow_outset_lg', kind: 'variable'},
 				{name: 'shadow_outset_xl', kind: 'variable'},
-				{name: 'shadow_inset_inverse_md', kind: 'variable'},
+				{name: 'shadow_inset_md', kind: 'variable'},
 				{name: 'icon_size_xs', kind: 'variable'},
 				{name: 'icon_size_sm', kind: 'variable'},
 				{name: 'icon_size_md', kind: 'variable'},
