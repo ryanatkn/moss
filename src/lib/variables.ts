@@ -623,6 +623,8 @@ export const input_height_inner: Style_Variable = {
 
 // TODO maybe extract  `0.1` etc as `shadow_opacity_xs`, but what about using colors? do we need composable versions of the color declarations?
 
+// TODO @multiple add back highlight (maybe through the generic colors, a-g|fg|bg)
+
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
 	light:

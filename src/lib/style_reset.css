@@ -479,14 +479,14 @@ button:hover,
 button:focus {
 	--border_color: var(--border_color_2);
 	background: var(--button_bg_hover);
-	box-shadow: var(--shadow_outset_md);
+	box-shadow: var(--shadow_outset_sm); /* TODO @multiple add back highlight */
 }
 button:active {
 	--border_color: var(--border_color_5);
 	--outline_width: var(--outline_width_3);
 	/* TODO use of `background` vs `background-color` in this file is not intentional */
 	background: var(--button_bg_active);
-	box-shadow: var(--shadow_inset_md);
+	box-shadow: var(--shadow_inset_sm); /* TODO @multiple add back highlight */
 }
 button.inline,
 p button {
