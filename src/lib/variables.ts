@@ -649,41 +649,66 @@ export const shadow_xl: Style_Variable = {
 	dark: '3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6)',
 };
 
-export const shadow_outset_xs: Style_Variable = {
-	name: 'shadow_outset_xs',
+export const shadow_inset_xs: Style_Variable = {
+	name: 'shadow_inset_xs',
 	light:
 		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.11) inset, 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.11) inset',
 	dark: '0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.11) inset, 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.11) inset',
 };
-export const shadow_outset_sm: Style_Variable = {
-	name: 'shadow_outset_sm',
+export const shadow_inset_sm: Style_Variable = {
+	name: 'shadow_inset_sm',
 	light:
 		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15) inset, 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15) inset',
 	dark: '1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.15) inset, 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.15) inset',
 };
-export const shadow_outset_md: Style_Variable = {
-	name: 'shadow_outset_md',
+export const shadow_inset_md: Style_Variable = {
+	name: 'shadow_inset_md',
 	light:
 		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.25) inset, 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.25) inset',
 	dark: '1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.25) inset, 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.25) inset',
 };
-export const shadow_outset_lg: Style_Variable = {
-	name: 'shadow_outset_lg',
+export const shadow_inset_lg: Style_Variable = {
+	name: 'shadow_inset_lg',
 	light:
 		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4) inset, 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4) inset',
 	dark: '2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4) inset, 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4) inset',
 };
-export const shadow_outset_xl: Style_Variable = {
-	name: 'shadow_outset_xl',
+export const shadow_inset_xl: Style_Variable = {
+	name: 'shadow_inset_xl',
 	light:
 		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6) inset, 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6) inset',
 	dark: '3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6) inset, 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6) inset',
 };
 
-export const shadow_inset_md: Style_Variable = {
-	name: 'shadow_inset_md', // TODO better name? this is the "pressed" version for buttons
+export const shadow_outset_xs: Style_Variable = {
+	name: 'shadow_outset_xs',
 	light:
-		'0 2px 4px 1px inset var(--darken_2), 0 -2px 4px 1px inset var(--lighten_2), 0 3px 6px 2px inset var(--darken_1), 0 -3px 6px 2px inset var(--lighten_2)',
+		'-0.5px -1px 3px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.11) inset, -0.5px -1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.11) inset',
+	dark: '-0.5px -1px 3px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.11) inset, -0.5px -1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.11) inset',
+};
+export const shadow_outset_sm: Style_Variable = {
+	name: 'shadow_outset_sm',
+	light:
+		'-1px -2px 5px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15) inset, -1px -4px 10px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15) inset',
+	dark: '-1px -2px 5px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.15) inset, -1px -4px 10px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.15) inset',
+};
+export const shadow_outset_md: Style_Variable = {
+	name: 'shadow_outset_md',
+	light:
+		'-1.5px -3px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.25) inset, -1.5px -6px 18px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.25) inset',
+	dark: '-1.5px -3px 8px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.25) inset, -1.5px -6px 18px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.25) inset',
+};
+export const shadow_outset_lg: Style_Variable = {
+	name: 'shadow_outset_lg',
+	light:
+		'-2px -4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4) inset, -2px -8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4) inset',
+	dark: '-2px -4px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4) inset, -2px -8px 30px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4) inset',
+};
+export const shadow_outset_xl: Style_Variable = {
+	name: 'shadow_outset_xl',
+	light:
+		'-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6) inset',
+	dark: '-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6) inset',
 };
 
 /* icons */
@@ -977,7 +1002,11 @@ export const default_variables: Style_Variable[] = [
 	shadow_outset_md,
 	shadow_outset_lg,
 	shadow_outset_xl,
+	shadow_inset_xs,
+	shadow_inset_sm,
 	shadow_inset_md,
+	shadow_inset_lg,
+	shadow_inset_xl,
 
 	/* icons */
 	icon_size_xs,
