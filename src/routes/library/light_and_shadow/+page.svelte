@@ -8,6 +8,7 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import {shadow_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'light and shadow';
 
@@ -145,12 +146,11 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Box shadows" slug="box-shadows" />
-		<div class="shadow_example" style:box-shadow="var(--shadow_md)">
-			<Style_Variable_Button name="shadow_md" />
-		</div>
-		<div class="shadow_example" style:box-shadow="var(--shadow_lg)">
-			<Style_Variable_Button name="shadow_lg" />
-		</div>
+		{#each shadow_variants as variant}
+			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
+				<Style_Variable_Button name="shadow_{variant}" />
+			</div>
+		{/each}
 		<div class="shadow_example" style:box-shadow="var(--shadow_inset_md)">
 			<Style_Variable_Button name="shadow_inset_md" />
 		</div>

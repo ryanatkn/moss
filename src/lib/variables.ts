@@ -610,24 +610,47 @@ export const input_height_inner: Style_Variable = {
 	light: 'calc(var(--input_height) - 2 * var(--border_width) - 2 * var(--input_padding_y))',
 };
 
+// TODO BLOCK think about more API surface area like colors, `shadow_xs_a-g` or use a variable `--shadow_color`
+
 /* shadows */
-// TODO these need work - improve the visuals, and probably add sm, maybe xl/xs with inset variants
 // TODO these shouldn't use tint, use lighten/darken instead,
 // but ideally we'd have a blend mode make the colors right,
 // which would require a pseduo-element,
 // but that's heavier and requires the element to be positioned (I think?)
+export const shadow_xs: Style_Variable = {
+	name: 'shadow_xs',
+	light: '1px 2px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2)',
+	dark: '1px 2px 4px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+};
+export const shadow_sm: Style_Variable = {
+	name: 'shadow_sm',
+	light: '2px 4px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.25)',
+	dark: '2px 4px 8px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+};
 export const shadow_md: Style_Variable = {
 	name: 'shadow_md',
-	light:
-		'2px 4px 9px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.28), 2px 12px 36px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.28)',
-	dark: '2px 4px 9px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 2px 12px 36px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+	// original
+	// light: '2px 4px 9px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.28), 2px 12px 36px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.28)',
+	// dark: '2px 4px 9px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 2px 12px 36px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+	light: '2px 5px 10px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.3)',
+	dark: '2px 5px 10px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
 };
 export const shadow_lg: Style_Variable = {
 	name: 'shadow_lg',
+	//  original:
+	// light: '2px 6px 14px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.8), 2px 6px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.8)',
+	// dark: '2px 6px 14px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 2px 6px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
 	light:
-		'2px 6px 14px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.8), 2px 6px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.8)',
-	dark: '2px 6px 14px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 2px 6px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.35), 0px 8px 24px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15)',
+	dark: '3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 0px 8px 24px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
 };
+export const shadow_xl: Style_Variable = {
+	name: 'shadow_xl',
+	light:
+		'4px 8px 20px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4), 0px 10px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2)',
+	dark: '4px 8px 20px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 0px 10px 30px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+};
+// TODO BLOCK I think `shadow_inset_md should be `shadow_outset_md` and `shadow_inset_inverse_md` should be `shadow_inset_md`
 export const shadow_inset_md: Style_Variable = {
 	name: 'shadow_inset_md',
 	light:
@@ -920,8 +943,11 @@ export const default_variables: Style_Variable[] = [
 	input_height_inner,
 
 	/* shadows */
+	shadow_xs,
+	shadow_sm,
 	shadow_md,
 	shadow_lg,
+	shadow_xl,
 	shadow_inset_md,
 	shadow_inset_inverse_md,
 
