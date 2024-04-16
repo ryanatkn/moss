@@ -49,6 +49,7 @@ export const tomes: Tome[] = [
 		component: colors,
 		related: ['themes', 'light and shadow', 'buttons'],
 	},
+	// TODO maybe a `tint` section here or added to `colors`
 	{
 		name: 'light and shadow',
 		slug: 'light_and_shadow',

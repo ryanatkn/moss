@@ -8,6 +8,7 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import {shadow_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'light and shadow';
 
@@ -26,8 +27,10 @@
 			goal is easy authoring with simple and consistent rules for arbitrary compositions and states.
 		</p>
 		<p>
-			Light mode's starting point is plain white documents (like paper), and dark mode's is a
-			lightless void (like videogames and augmented reality). The <Tome_Link name="colors" /> docs elaborate.
+			Light mode's starting point is plain white documents (like paper) where we can think of
+			applying UI subtractively in the color-value-space by assembling elements that contrast
+			against the white background, while dark mode's is a lightless void where we add light (I
+			think of videogames and augmented reality). The <Tome_Link name="colors" /> docs elaborate.
 		</p>
 		<p>
 			Opacity is used to enable arbitrary stacking that visually inherits its context. Not all cases
@@ -145,18 +148,21 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Box shadows" slug="box-shadows" />
-		<div class="shadow_example" style:box-shadow="var(--shadow_md)">
-			<Style_Variable_Button name="shadow_md" />
-		</div>
-		<div class="shadow_example" style:box-shadow="var(--shadow_lg)">
-			<Style_Variable_Button name="shadow_lg" />
-		</div>
-		<div class="shadow_example" style:box-shadow="var(--shadow_inset_md)">
-			<Style_Variable_Button name="shadow_inset_md" />
-		</div>
-		<div class="shadow_example" style:box-shadow="var(--shadow_inset_inverse_md)">
-			<Style_Variable_Button name="shadow_inset_inverse_md" />
-		</div>
+		{#each shadow_variants as variant}
+			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
+				<Style_Variable_Button name="shadow_{variant}" />
+			</div>
+		{/each}
+		{#each shadow_variants as variant}
+			<div class="shadow_example" style:box-shadow="var(--shadow_inset_{variant})">
+				<Style_Variable_Button name="shadow_inset_{variant}" />
+			</div>
+		{/each}
+		{#each shadow_variants as variant}
+			<div class="shadow_example" style:box-shadow="var(--shadow_outset_{variant})">
+				<Style_Variable_Button name="shadow_outset_{variant}" />
+			</div>
+		{/each}
 	</section>
 </Tome_Detail>
 

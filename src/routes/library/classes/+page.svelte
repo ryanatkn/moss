@@ -14,6 +14,7 @@
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
+	// TODO show these with `Details` hiding their expanded set of values (interpolated using this shorthand as the source of truth? isn't that complex)
 	const style_utilities_items = [
 		'relative|absolute|fixed|sticky|static',
 		'overflow_auto|hidden|scroll|clip|visible',
@@ -51,6 +52,11 @@
 		'border_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset',
 		'radius_0|50|100', // TODO probably add 25/75 or 10-90
 		'radius_xs3-xl',
+		'fade_0|100',
+		'fade_1-6',
+		'shadow_xs-xl',
+		'shadow_inset|outset_xs-xl',
+		'shadow_inherit|initial|none',
 		'w|h_0|100',
 		'w|h_xs-xl15',
 		'p|pt|pr|pb|pl|px|py_0',
@@ -60,9 +66,6 @@
 		'm|mt|mr|mb|ml|mx|my_xs5-xl15',
 		'gap_xs5-xl15',
 		'row|column_gap_xs5-xl15',
-		'fade_0|100',
-		'fade_1-6',
-		'shadow_md|lg|inset|inset_active',
 	];
 	const style_components_items = [
 		'selectable',
@@ -74,7 +77,7 @@
 		'chevron',
 		'chip',
 		'formatted',
-		'width_sm-lg',
+		'width_xs-md',
 	];
 
 	// TODO extract a `Github_Link` like `Mdn_Link`
