@@ -621,6 +621,8 @@ export const input_height_inner: Style_Variable = {
 // which would require a pseduo-element,
 // but that's heavier and requires the element to be positioned (I think?)
 
+// TODO maybe extract  `0.1` etc as `shadow_opacity_xs`, but what about using colors? do we need composable versions of the color declarations?
+
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
 	light:
