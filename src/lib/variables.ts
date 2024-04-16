@@ -618,41 +618,47 @@ export const input_height_inner: Style_Variable = {
 // but ideally we'd have a blend mode make the colors right,
 // which would require a pseduo-element,
 // but that's heavier and requires the element to be positioned (I think?)
-export const shadow_xs2: Style_Variable = {
-	name: 'shadow_xs2',
+export const shadow_xs: Style_Variable = {
+	name: 'shadow_xs',
 	light:
 		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.11), 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.11)',
 	dark: '0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.11), 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.11)',
 };
-export const shadow_xs: Style_Variable = {
-	name: 'shadow_xs',
+export const shadow_sm: Style_Variable = {
+	name: 'shadow_sm',
 	light:
 		'1px 2px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.13), 1px 3px 6px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.13)',
 	dark: '1px 2px 4px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.13), 1px 3px 6px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.13)',
 };
-export const shadow_sm: Style_Variable = {
-	name: 'shadow_sm',
+export const shadow_md: Style_Variable = {
+	name: 'shadow_md',
 	light:
 		'1px 3px 6px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15), 1px 6px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15)',
 	dark: '1px 3px 6px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.15), 1px 6px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.15)',
 };
-export const shadow_md: Style_Variable = {
-	name: 'shadow_md',
+export const shadow_lg: Style_Variable = {
+	name: 'shadow_lg',
 	light:
 		'2px 4px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2), 2px 10px 24px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2)',
 	dark: '2px 4px 8px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.2), 2px 10px 24px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.2)',
 };
-export const shadow_lg: Style_Variable = {
-	name: 'shadow_lg',
+export const shadow_xl: Style_Variable = {
+	name: 'shadow_xl',
 	light:
 		'2px 5px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4), 2px 6px 36px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4)',
 	dark: '2px 5px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4), 2px 6px 36px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4)',
 };
-export const shadow_xl: Style_Variable = {
-	name: 'shadow_xl',
+export const shadow_xl2: Style_Variable = {
+	name: 'shadow_xl2',
 	light:
 		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6)',
 	dark: '3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6)',
+};
+export const shadow_xl3: Style_Variable = {
+	name: 'shadow_xl3',
+	light:
+		'4px 8px 24px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.8), 4px 12px 64px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.8)',
+	dark: '4px 8px 24px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.8), 4px 12px 64px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.8)',
 };
 
 // TODO BLOCK I think `shadow_inset_md should be `shadow_outset_md` and `shadow_inset_inverse_md` should be `shadow_inset_md`
@@ -948,12 +954,13 @@ export const default_variables: Style_Variable[] = [
 	input_height_inner,
 
 	/* shadows */
-	shadow_xs2,
 	shadow_xs,
 	shadow_sm,
 	shadow_md,
 	shadow_lg,
 	shadow_xl,
+	shadow_xl2,
+	shadow_xl3,
 	shadow_inset_md,
 	shadow_inset_inverse_md,
 
