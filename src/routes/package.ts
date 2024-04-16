@@ -347,6 +347,7 @@ export const src_json = {
 				{name: 'input_height', kind: 'variable'},
 				{name: 'input_height_sm', kind: 'variable'},
 				{name: 'input_height_inner', kind: 'variable'},
+				{name: 'shadow_xs2', kind: 'variable'},
 				{name: 'shadow_xs', kind: 'variable'},
 				{name: 'shadow_sm', kind: 'variable'},
 				{name: 'shadow_md', kind: 'variable'},
