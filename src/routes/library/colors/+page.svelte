@@ -76,9 +76,10 @@
 			/> CSS function.
 		</p>
 		<p>
-			Variants may be expanded when/if Moss includes a Vite plugin or other build tooling for
+			Variants will be expanded when Moss includes a Vite plugin or other build tooling for
 			optimization. A downside of removing unused styles is that they won't be available to your
-			end-users at runtime.
+			end-users at runtime. We'll probably end up with an interpreted language like Tailwind's
+			just-in-time compiler.
 		</p>
 	</section>
 	<section>
