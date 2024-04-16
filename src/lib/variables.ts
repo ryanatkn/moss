@@ -675,8 +675,8 @@ export const shadow_md: Style_Variable = {
 export const shadow_lg: Style_Variable = {
 	name: 'shadow_lg',
 	light:
-		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.35), 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.35)',
-	dark: '2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.35), 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.35)',
+		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4), 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4)',
+	dark: '2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4), 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4)',
 };
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',

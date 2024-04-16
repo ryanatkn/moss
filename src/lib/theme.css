@@ -219,8 +219,8 @@
 		1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15);
 	--shadow_md: 1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.25),
 		1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.25);
-	--shadow_lg: 2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.35),
-		2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.35);
+	--shadow_lg: 2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4),
+		2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4);
 	--shadow_xl: 3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6),
 		3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6);
 	--shadow_inset_md: 0px 2px 4px 1px inset var(--lighten_2), 0px -2px 4px 1px inset var(--darken_2),
@@ -337,8 +337,8 @@
 		1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.15);
 	--shadow_md: 1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.25),
 		1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.25);
-	--shadow_lg: 2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.35),
-		2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.35);
+	--shadow_lg: 2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4),
+		2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.4);
 	--shadow_xl: 3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6),
 		3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6);
 }
