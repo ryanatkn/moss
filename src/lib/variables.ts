@@ -619,37 +619,35 @@ export const input_height_inner: Style_Variable = {
 // but that's heavier and requires the element to be positioned (I think?)
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
-	light: '1px 2px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2)',
-	dark: '1px 2px 4px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+	light:
+		'1px 2px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.1), 1px 3px 6px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.1)',
+	dark: '1px 2px 4px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_2)), 1px 3px 6px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_2))',
 };
 export const shadow_sm: Style_Variable = {
 	name: 'shadow_sm',
-	light: '2px 4px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.25)',
-	dark: '2px 4px 8px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+	light:
+		'1px 3px 6px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15), 1px 6px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15)',
+	dark: '1px 3px 6px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_3)), 1px 6px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_3))',
 };
 export const shadow_md: Style_Variable = {
 	name: 'shadow_md',
-	// original
-	// light: '2px 4px 9px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.28), 2px 12px 36px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.28)',
-	// dark: '2px 4px 9px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 2px 12px 36px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
-	light: '2px 5px 10px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.3)',
-	dark: '2px 5px 10px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+	light:
+		'2px 4px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2), 2px 10px 24px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2)',
+	dark: '2px 4px 8px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_4)), 2px 10px 24px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_4))',
 };
 export const shadow_lg: Style_Variable = {
 	name: 'shadow_lg',
-	//  original:
-	// light: '2px 6px 14px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.8), 2px 6px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.8)',
-	// dark: '2px 6px 14px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 2px 6px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
 	light:
-		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.35), 0px 8px 24px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15)',
-	dark: '3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 0px 8px 24px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+		'2px 5px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4), 2px 6px 36px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4)',
+	dark: '2px 5px 12px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 2px 6px 36px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
 };
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
 	light:
-		'4px 8px 20px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4), 0px 10px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2)',
-	dark: '4px 8px 20px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5)), 0px 10px 30px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_5))',
+		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6)',
+	dark: '3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_6)), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, var(--fade_6))',
 };
+
 // TODO BLOCK I think `shadow_inset_md should be `shadow_outset_md` and `shadow_inset_inverse_md` should be `shadow_inset_md`
 export const shadow_inset_md: Style_Variable = {
 	name: 'shadow_inset_md',
