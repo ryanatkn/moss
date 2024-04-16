@@ -479,7 +479,7 @@ button:hover,
 button:focus {
 	--border_color: var(--border_color_2);
 	background: var(--button_bg_hover);
-	box-shadow: var(--shadow_inset_md);
+	box-shadow: var(--shadow_outset_md);
 }
 button:active {
 	--border_color: var(--border_color_5);

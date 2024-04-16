@@ -2573,8 +2573,8 @@ other
 .shadow_lg {
 	box-shadow: var(--shadow_lg);
 }
-.shadow_inset_md {
-	box-shadow: var(--shadow_inset_md);
+.shadow_outset_md {
+	box-shadow: var(--shadow_outset_md);
 }
 .shadow_inset_inverse_md {
 	box-shadow: var(--shadow_inset_inverse_md);

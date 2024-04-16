@@ -151,8 +151,8 @@
 				<Style_Variable_Button name="shadow_{variant}" />
 			</div>
 		{/each}
-		<div class="shadow_example" style:box-shadow="var(--shadow_inset_md)">
-			<Style_Variable_Button name="shadow_inset_md" />
+		<div class="shadow_example" style:box-shadow="var(--shadow_outset_md)">
+			<Style_Variable_Button name="shadow_outset_md" />
 		</div>
 		<div class="shadow_example" style:box-shadow="var(--shadow_inset_inverse_md)">
 			<Style_Variable_Button name="shadow_inset_inverse_md" />
