@@ -27,8 +27,10 @@
 			goal is easy authoring with simple and consistent rules for arbitrary compositions and states.
 		</p>
 		<p>
-			Light mode's starting point is plain white documents (like paper), and dark mode's is a
-			lightless void (like videogames and augmented reality). The <Tome_Link name="colors" /> docs elaborate.
+			Light mode's starting point is plain white documents (like paper) where we can think of
+			applying UI subtractively in the color-value-space by assembling elements that contrast
+			against the white background, while dark mode's is a lightless void where we add light (I
+			think of videogames and augmented reality). The <Tome_Link name="colors" /> docs elaborate.
 		</p>
 		<p>
 			Opacity is used to enable arbitrary stacking that visually inherits its context. Not all cases
