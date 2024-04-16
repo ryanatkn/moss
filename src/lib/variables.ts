@@ -611,7 +611,7 @@ export const input_height_inner: Style_Variable = {
 };
 
 // TODO BLOCK think about more API surface area like colors, `shadow_xs_a-g` or use a variable `--shadow_color`
-// rewrite this helpers so we get the color variants declared here statically
+// rewrite this with helpers so we get the color variants declared here statically, without repeating things like the px values
 
 /* shadows */
 // TODO these shouldn't use tint, use lighten/darken instead,
