@@ -148,6 +148,10 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Box shadows" slug="box-shadows" />
+		<aside>
+			⚠️ This section is incomplete. For the next iteration, I'm considering highlights, colored
+			shadows, and interaction with CSS variables.
+		</aside>
 		{#each shadow_variants as variant}
 			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
 				<Style_Variable_Button name="shadow_{variant}" />
