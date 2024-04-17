@@ -22,15 +22,13 @@
 			capabilities.
 		</p>
 		<p>
-			Usage can be as simple as importing a single stylesheet, and it's built with a data-driven
-			approach that makes its insides available in many forms, like deconstructed CSS files and
-			TypeScript modules that provide data, types, and helpers around the variable and build
-			systems. It's in early alpha and there will be many breaking changes.
-		</p>
-		<p>
-			Moss is being made to support <a href="https://www.ryanatkn.com/table">my other projects</a> that
-			focus on end-users. Moss emphasizes capability and efficiency and tries to be simple for those
-			goals. Compared to most UI libraries, Moss has fewer features and more opinions.
+			Usage Moss can be as simple as importing <a
+				href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
+				>a single static stylesheet</a
+			>, and it's built with a data-driven approach that makes its insides available in many forms,
+			like deconstructed CSS files and TypeScript modules that provide data, types, and helpers
+			around the variable and build systems. It's in early alpha and there will be many breaking
+			changes.
 		</p>
 		<p>
 			To learn more see <a href="https://moss.ryanatkn.com/library">the docs</a> and
@@ -39,15 +37,18 @@
 		</p>
 		<p>Some features:</p>
 		<ul>
-			<li>plain CSS, most users import a single stylesheet</li>
+			<li>
+				plain CSS, most users import a single stylesheet (optimizing it is currently out of scope,
+				see tools like <a href="https://github.com/FullHuman/purgecss">PurgeCSS</a>)
+			</li>
 			<li>zero dependencies</li>
 			<li>
-				designed around variables aka style variables aka design tokens, a specialization of <a
-					href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a
-				>
+				designed around <em>style variables</em>, a specialization of
+				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a>
+				and design tokens
 				<ul>
 					<li>variables are a more primitive building block than classes</li>
-					<li>includes optional utility and semantic classes that use the variables</li>
+					<li>includes optional utility and component classes that use the variables</li>
 				</ul>
 			</li>
 			<li>

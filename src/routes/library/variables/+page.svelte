@@ -32,7 +32,7 @@
 			both developers and end-users. Variables can be composed in multiple ways:
 		</p>
 		<ul>
-			<li>by CSS classes, both utility and semantic</li>
+			<li>by CSS classes, both utility and component</li>
 			<li>
 				by other variables, both in calculations and to add useful semantics (e.g. <code
 					>button_bg_hover</code
