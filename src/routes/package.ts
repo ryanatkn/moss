@@ -102,6 +102,11 @@ export const src_json = {
 			declarations: [
 				{name: 'Color_Scheme', kind: 'type'},
 				{name: 'color_schemes', kind: 'variable'},
+				{name: 'Theme', kind: 'type'},
+				{name: 'Style_Variable', kind: 'type'},
+				{name: 'Render_Theme_Style_Options', kind: 'type'},
+				{name: 'render_theme_style', kind: 'function'},
+				{name: 'render_theme_variable', kind: 'function'},
 				{name: 'sync_color_scheme', kind: 'function'},
 				{name: 'COLOR_SCHEME_STORAGE_KEY', kind: 'variable'},
 				{name: 'save_color_scheme', kind: 'function'},
@@ -110,11 +115,6 @@ export const src_json = {
 				{name: 'save_theme', kind: 'function'},
 				{name: 'load_theme', kind: 'function'},
 				{name: 'create_theme_setup_script', kind: 'function'},
-				{name: 'Theme', kind: 'type'},
-				{name: 'Style_Variable', kind: 'type'},
-				{name: 'Render_Theme_Style_Options', kind: 'type'},
-				{name: 'render_theme_style', kind: 'function'},
-				{name: 'render_theme_variable', kind: 'function'},
 			],
 		},
 		'./themes.js': {
