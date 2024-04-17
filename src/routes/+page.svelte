@@ -17,7 +17,7 @@
 			<blockquote class="shadow_inset_xs">magical organic stylesheets 🌿</blockquote>
 		</div>
 	</section>
-	<section class="width_sm panel p_xs bg shadow_sm">
+	<section class="width_sm p_xs radius_md shadow_sm">
 		<div class="panel p_lg bg shadow_md">
 			<p>
 				Moss is a CSS framework that can be used with any website or JS framework. Moss has <a
