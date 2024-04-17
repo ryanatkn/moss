@@ -120,7 +120,10 @@
 		</ul>
 	</section>
 	<section>
-		<Tome_Subheading text="Semantic classes" slug="semantic-classes" />
+		<Tome_Subheading text="Component classes" slug="semantic-classes" />
+		<aside>
+			These are like utility classes but don't map as cleanly to a single style property.
+		</aside>
 		<ul class="classes unstyled">
 			{#each style_components_items as c}
 				<li>.{c}</li>
