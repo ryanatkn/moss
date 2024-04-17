@@ -149,8 +149,24 @@
 	<section>
 		<Tome_Subheading text="Box shadows" slug="box-shadows" />
 		<aside>
-			⚠️ This section is incomplete. For the next iteration, I'm considering highlights, colored
-			shadows, and interaction with CSS variables.
+			<p>⚠️ This section is incomplete.</p>
+			<ul>
+				<li>
+					For buttons and similar cases, add variants that combine a shadow and glow? Maybe <code
+						>shaded_</code
+					>?
+				</li>
+				<li>
+					Should glows and shadows be reversed for dark mode like this? Ties into the bigger
+					question about how light works in dark mode.
+				</li>
+				<li>
+					Colored shadows/glows? By composing variables? <code>--shadow|glow_color</code>
+					or
+					<code>--color</code> or something else?
+				</li>
+				<li>Tweak values? Seems we need another variant at the low end - keep 5 total?</li>
+			</ul>
 		</aside>
 		{#each shadow_variants as variant}
 			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
@@ -167,6 +183,27 @@
 				<Style_Variable_Button name="shadow_outset_{variant}" />
 			</div>
 		{/each}
+		<p>
+			Glows are the inverse of shadows. Notice how glows use the same color as the <code>bg</code> and
+			are therefore invisible against a plain background.
+		</p>
+		<div class="p_lg panel fg_3">
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
+					<Style_Variable_Button name="glow_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--glow_inset_{variant})">
+					<Style_Variable_Button name="glow_inset_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
+					<Style_Variable_Button name="glow_outset_{variant}" />
+				</div>
+			{/each}
+		</div>
 	</section>
 </Tome_Detail>
 

@@ -718,6 +718,99 @@ export const shadow_outset_xl: Style_Variable = {
 	dark: '-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 82%, 0.6) inset',
 };
 
+export const glow_xs: Style_Variable = {
+	name: 'glow_xs',
+	light:
+		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1), 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1)',
+	dark: '0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.1), 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.1)',
+};
+export const glow_sm: Style_Variable = {
+	name: 'glow_sm',
+	light:
+		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15), 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15)',
+	dark: '1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.15), 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.15)',
+};
+export const glow_md: Style_Variable = {
+	name: 'glow_md',
+	light:
+		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2), 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2)',
+	dark: '1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.2), 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.2)',
+};
+export const glow_lg: Style_Variable = {
+	name: 'glow_lg',
+	light:
+		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4), 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4)',
+	dark: '2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.4), 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.4)',
+};
+export const glow_xl: Style_Variable = {
+	name: 'glow_xl',
+	light:
+		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6)',
+	dark: '3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.6), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.6)',
+};
+
+export const glow_inset_xs: Style_Variable = {
+	name: 'glow_inset_xs',
+	light:
+		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1) inset, 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1) inset',
+	dark: '0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.1) inset, 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.1) inset',
+};
+export const glow_inset_sm: Style_Variable = {
+	name: 'glow_inset_sm',
+	light:
+		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15) inset, 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15) inset',
+	dark: '1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.15) inset, 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.15) inset',
+};
+export const glow_inset_md: Style_Variable = {
+	name: 'glow_inset_md',
+	light:
+		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset, 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset',
+	dark: '1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.2) inset, 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.2) inset',
+};
+export const glow_inset_lg: Style_Variable = {
+	name: 'glow_inset_lg',
+	light:
+		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4) inset, 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4) inset',
+	dark: '2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.4) inset, 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.4) inset',
+};
+export const glow_inset_xl: Style_Variable = {
+	name: 'glow_inset_xl',
+	light:
+		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset, 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset',
+	dark: '3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.6) inset, 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.6) inset',
+};
+
+export const glow_outset_xs: Style_Variable = {
+	name: 'glow_outset_xs',
+	light:
+		'-0.5px -1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1) inset, -0.5px -1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1) inset',
+	dark: '-0.5px -1px 3px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.1) inset, -0.5px -1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.1) inset',
+};
+export const glow_outset_sm: Style_Variable = {
+	name: 'glow_outset_sm',
+	light:
+		'-1px -2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15) inset, -1px -4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15) inset',
+	dark: '-1px -2px 5px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.15) inset, -1px -4px 10px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.15) inset',
+};
+export const glow_outset_md: Style_Variable = {
+	name: 'glow_outset_md',
+	light:
+		'-1.5px -3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset, -1.5px -6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset',
+	dark: '-1.5px -3px 8px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.2) inset, -1.5px -6px 18px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.2) inset',
+};
+export const glow_outset_lg: Style_Variable = {
+	name: 'glow_outset_lg',
+	light:
+		'-2px -4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4) inset, -2px -8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4) inset',
+	dark: '-2px -4px 12px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.4) inset, -2px -8px 30px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.4) inset',
+};
+export const glow_outset_xl: Style_Variable = {
+	name: 'glow_outset_xl',
+	light:
+		'-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset',
+	dark: '-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.6) inset',
+};
+
 /* icons */
 /* these decrease by the golden ratio, rounded to the nearest pixel,
 	and they're insensitive to font size (`px` not `rem`) */
@@ -1014,6 +1107,21 @@ export const default_variables: Style_Variable[] = [
 	shadow_inset_md,
 	shadow_inset_lg,
 	shadow_inset_xl,
+	glow_xs,
+	glow_sm,
+	glow_md,
+	glow_lg,
+	glow_xl,
+	glow_outset_xs,
+	glow_outset_sm,
+	glow_outset_md,
+	glow_outset_lg,
+	glow_outset_xl,
+	glow_inset_xs,
+	glow_inset_sm,
+	glow_inset_md,
+	glow_inset_lg,
+	glow_inset_xl,
 
 	/* icons */
 	icon_size_xs,
