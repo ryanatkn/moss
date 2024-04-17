@@ -21,15 +21,14 @@
 <Tome_Detail {tome}>
 	<section>
 		<p>
-			Variables are <Mdn_Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*"
-				>CSS custom properties</Mdn_Link
-			>
-			that can be grouped into a <Tome_Link name="themes">theme</Tome_Link>. Each variable can have
-			values for light and/or dark color schemes.
+			Style variables, or just "variables" in Moss, are <Mdn_Link
+				href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</Mdn_Link
+			> that can be grouped into a <Tome_Link name="themes">theme</Tome_Link>. Each variable can
+			have values for light and/or dark color schemes. They're design tokens with an API.
 		</p>
 		<p>
 			The goal of the variables system is to provide runtime theming that's efficient and ergnomic
-			both developers and end-users. Variables can be composed in multiple ways:
+			for both developers and end-users. Variables can be composed in multiple ways:
 		</p>
 		<ul>
 			<li>by CSS classes, both utility and component</li>
@@ -45,9 +44,9 @@
 			</li>
 		</ul>
 		<p>
-			Variables also provide an interface that user-generated content can safely use in most cases.
-			The result is a non-dogmatic system that aligns with modern CSS to deliver high-capability UX
-			and DX with minimal overhead.
+			Variables also provide an interface that's generally secure for user-generated content. The
+			result is a flexible system that aligns with modern CSS to deliver high-capability UX and DX
+			with minimal overhead.
 		</p>
 	</section>
 	<section>

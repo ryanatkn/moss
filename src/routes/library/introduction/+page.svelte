@@ -12,14 +12,14 @@
 		<blockquote>
 			⚠️ Docs are a work in progress. Moss was recently extracted from
 			<a href="https://www.fuz.dev/">Fuz</a>, and these docs are incomplete and misleading in some
-			cases, because they now need to deal with the inner workings of the CSS and be agnostic to
-			Svelte.
+			cases, because they now need to be agnostic to Svelte and deal with more inner workings of the
+			CSS.
 		</blockquote>
 		<p>
 			Moss is a CSS framework that can be used with any website and JS framework. Its design system
 			centers on <em>style variables</em>, which are
-			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a> with more
-			capabilities.
+			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a> and design
+			tokens with more capabilities.
 		</p>
 		<p>
 			Usage Moss can be as simple as importing <a
