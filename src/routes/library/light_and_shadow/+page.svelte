@@ -183,21 +183,24 @@
 	<section>
 		<Tome_Subheading text="Box shadows" slug="box-shadows" />
 		<aside>
-			<p>⚠️ This section is incomplete.</p>
+			<p>⚠️ This section is incomplete and has many open questions:</p>
 			<ul>
 				<li>
-					For buttons and similar cases, add variants that combine a shadow and glow? Maybe <code
-						>shaded_</code
-					>?
-				</li>
-				<li>
 					Should glows and shadows be reversed for dark mode like this? Ties into the bigger
-					question about how light works in dark mode.
+					question about how light works in dark mode. Maybe the current color-scheme-aware "shadow"
+					just needs a rename, like "shade", and then "shadow" becomes more intuitively
+					color-scheme-agnostic.
 				</li>
 				<li>
 					Colored shadows/glows? By composing variables? <code>--shadow|glow_color</code>
 					or
 					<code>--color</code> or something else?
+				</li>
+				<li>
+					For buttons and similar cases, add variants that combine a shadow and glow? Maybe <code
+						>shaded_</code
+					>? Currently doing <code>box-shadow: var(--shadow_outset_xs), var(--glow_inset_xs);</code>
+					- maybe also add semantic vars like base/hover/active?
 				</li>
 				<li>Tweak values? Seems we need another variant at the low end - keep 5 total?</li>
 			</ul>

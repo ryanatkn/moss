@@ -103,11 +103,21 @@
 				</ul>
 			</li>
 		</ul>
-		<p>TODO:</p>
-		<ul>
-			<li>do a pass on all of the existing docs</li>
-			<li>describe in depth the mechanics of the CSS, starting with dark mode</li>
-			<li>write docs about build tooling</li>
-		</ul>
+		<p>
+			In the docs, you'll see I'm writing asides with open questions and other discussion of
+			uncertainties. Your input is appreciated in the <a href="https://discord.gg/YU5tyeK72X"
+				>Discord</a
+			>, the
+			<a href="https://github.com/ryanatkn/moss/issues">GitHub issues</a>, or
+			<a href="https://www.webdevladder.net/">other social media</a>, on these and other topics 🌿
+		</p>
+		<aside>
+			<p>⚠️ TODO:</p>
+			<ul>
+				<li>do a pass on all of the existing docs</li>
+				<li>describe in depth the mechanics of the CSS, starting with dark mode</li>
+				<li>write docs about build tooling</li>
+			</ul>
+		</aside>
 	</section>
 </Tome_Detail>

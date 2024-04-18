@@ -627,6 +627,8 @@ export const input_height_inner: Style_Variable = {
 
 // TODO maybe even scale these out programmatically? at runtime for the TS? data could always be baked as ts/json
 
+// TODO extract color vars - abstracting opacity too?
+
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
 	light:
