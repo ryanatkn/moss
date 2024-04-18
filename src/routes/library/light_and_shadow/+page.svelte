@@ -282,6 +282,7 @@
 		</section>
 		<section>
 			<Tome_Subheading text="Down variants" slug="down-variants" tag="h4" />
+			<aside>⚠️ The highlights here are too subtle. Parameterize alpha?</aside>
 			<p>
 				Down is color-scheme-agnostic and the inverse of up. Composes two shadows, an inset dark
 				shadow and outset highlight.
