@@ -187,12 +187,9 @@
 				<p>⚠️ This section is incomplete and has many open questions:</p>
 				<ul>
 					<li>
-						Does shade imply an inverse like highlight? What about lift/depth? Maybe the variants
-						are done through the colors, so it becomes shadow|depth|lift or keep as
-						shadow|shadow_inset|shadow_outset or something else?
-					</li>
-					<li>
-						Colored shadows/glows? By composing variables? <code>--shadow|glow_color</code>
+						What about lift/depth? Colored shadows/glows? Maybe the variants are done through the
+						colors, so it becomes shadow|depth|lift or keep as shadow|shadow_inset|shadow_outset or
+						something else? By composing variables? <code>--shadow|glow_color</code>
 						or
 						<code>--shadow|glow</code> or something else? Abstracting alpha too?
 					</li>
@@ -327,7 +324,7 @@
 		border-radius: var(--radius_xs3);
 	}
 	.shadow_example:not(:last-child) {
-		margin-bottom: var(--space_md);
+		margin-bottom: var(--space_lg);
 	}
 	small {
 		height: var(--input_height_sm);
