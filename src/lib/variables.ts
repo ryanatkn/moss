@@ -947,25 +947,26 @@ export const highlight_outset_xl: Style_Variable = {
 	dark: shadow_outset_xl.light,
 };
 
+// TODO increase intensity of the highlight
 export const depth_xs: Style_Variable = {
 	name: 'depth_xs',
-	light: glow_outset_xs.light + ', ' + shadow_inset_xs.light,
+	light: shadow_inset_xs.light + ', ' + glow_outset_xs.light,
 };
 export const depth_sm: Style_Variable = {
 	name: 'depth_sm',
-	light: glow_outset_sm.light + ', ' + shadow_inset_sm.light,
+	light: shadow_inset_sm.light + ', ' + glow_outset_sm.light,
 };
 export const depth_md: Style_Variable = {
 	name: 'depth_md',
-	light: glow_outset_md.light + ', ' + shadow_inset_md.light,
+	light: shadow_inset_md.light + ', ' + glow_outset_md.light,
 };
 export const depth_lg: Style_Variable = {
 	name: 'depth_lg',
-	light: glow_outset_lg.light + ', ' + shadow_inset_lg.light,
+	light: shadow_inset_lg.light + ', ' + glow_outset_lg.light,
 };
 export const depth_xl: Style_Variable = {
 	name: 'depth_xl',
-	light: glow_outset_xl.light + ', ' + shadow_inset_xl.light,
+	light: shadow_inset_xl.light + ', ' + glow_outset_xl.light,
 };
 
 export const lift_xs: Style_Variable = {
