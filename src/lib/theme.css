@@ -245,31 +245,29 @@
 		2px 8px 30px hsla(var(--shadow_color) / 0.4) inset;
 	--shadow_inset_xl: 3px 6px 16px hsla(var(--shadow_color) / 0.6) inset,
 		3px 8px 48px hsla(var(--shadow_color) / 0.6) inset;
-	--glow_xs: 0.5px 1px 3px hsla(var(--glow_color) / 0.1),
-		0.5px 1.5px 4px hsla(var(--glow_color) / 0.1);
-	--glow_sm: 1px 2px 5px hsla(var(--glow_color) / 0.15), 1px 4px 10px hsla(var(--glow_color) / 0.15);
-	--glow_md: 1.5px 3px 8px hsla(var(--glow_color) / 0.2),
-		1.5px 6px 18px hsla(var(--glow_color) / 0.2);
-	--glow_lg: 2px 4px 12px hsla(var(--glow_color) / 0.4), 2px 8px 30px hsla(var(--glow_color) / 0.4);
-	--glow_xl: 3px 6px 16px hsla(var(--glow_color) / 0.6), 3px 8px 48px hsla(var(--glow_color) / 0.6);
-	--glow_outset_xs: -0.5px -1px 3px hsla(var(--glow_color) / 0.1) inset,
-		-0.5px -1.5px 4px hsla(var(--glow_color) / 0.1) inset;
-	--glow_outset_sm: -1px -2px 5px hsla(var(--glow_color) / 0.15) inset,
-		-1px -4px 10px hsla(var(--glow_color) / 0.15) inset;
-	--glow_outset_md: -1.5px -3px 8px hsla(var(--glow_color) / 0.2) inset,
-		-1.5px -6px 18px hsla(var(--glow_color) / 0.2) inset;
-	--glow_outset_lg: -2px -4px 12px hsla(var(--glow_color) / 0.4) inset,
-		-2px -8px 30px hsla(var(--glow_color) / 0.4) inset;
-	--glow_outset_xl: -3px -6px 16px hsla(var(--glow_color) / 0.6) inset,
-		-3px -8px 48px hsla(var(--glow_color) / 0.6) inset;
-	--glow_inset_xs: 0.5px 1px 3px hsla(var(--glow_color) / 0.1) inset,
-		0.5px 1.5px 4px hsla(var(--glow_color) / 0.1) inset;
-	--glow_inset_sm: 1px 2px 5px hsla(var(--glow_color) / 0.15) inset,
-		1px 4px 10px hsla(var(--glow_color) / 0.15) inset;
-	--glow_inset_md: 1.5px 3px 8px hsla(var(--glow_color) / 0.2) inset,
-		1.5px 6px 18px hsla(var(--glow_color) / 0.2) inset;
-	--glow_inset_lg: 2px 4px 12px hsla(var(--glow_color) / 0.4) inset,
-		2px 8px 30px hsla(var(--glow_color) / 0.4) inset;
+	--glow_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1), 0px 0px 4px hsla(var(--glow_color) / 0.1);
+	--glow_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15), 0px 0px 10px hsla(var(--glow_color) / 0.15);
+	--glow_md: 0px 0px 8px hsla(var(--glow_color) / 0.2), 0px 0px 18px hsla(var(--glow_color) / 0.2);
+	--glow_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4), 0px 0px 30px hsla(var(--glow_color) / 0.4);
+	--glow_xl: 0px 0px 16px hsla(var(--glow_color) / 0.6), 0px 0px 48px hsla(var(--glow_color) / 0.6);
+	--glow_outset_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1) inset,
+		0px 0px 4px hsla(var(--glow_color) / 0.1) inset;
+	--glow_outset_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15) inset,
+		0px 0px 10px hsla(var(--glow_color) / 0.15) inset;
+	--glow_outset_md: 0px 0px 8px hsla(var(--glow_color) / 0.2) inset,
+		0px 0px 18px hsla(var(--glow_color) / 0.2) inset;
+	--glow_outset_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4) inset,
+		0px 0px 30px hsla(var(--glow_color) / 0.4) inset;
+	--glow_outset_xl: 0px 0px 16px hsla(var(--glow_color) / 0.6) inset,
+		0px 0px 48px hsla(var(--glow_color) / 0.6) inset;
+	--glow_inset_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1) inset,
+		0px 0px 4px hsla(var(--glow_color) / 0.1) inset;
+	--glow_inset_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15) inset,
+		0px 0px 10px hsla(var(--glow_color) / 0.15) inset;
+	--glow_inset_md: 0px 0px 8px hsla(var(--glow_color) / 0.2) inset,
+		0px 0px 18px hsla(var(--glow_color) / 0.2) inset;
+	--glow_inset_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4) inset,
+		0px 0px 30px hsla(var(--glow_color) / 0.4) inset;
 	--shade_xs: 0.5px 1px 3px hsla(var(--shadow_color) / 0.1),
 		0.5px 1.5px 4px hsla(var(--shadow_color) / 0.1);
 	--shade_sm: 1px 2px 5px hsla(var(--shadow_color) / 0.15),
@@ -300,76 +298,74 @@
 		2px 8px 30px hsla(var(--shadow_color) / 0.4) inset;
 	--shade_inset_xl: 3px 6px 16px hsla(var(--shadow_color) / 0.6) inset,
 		3px 8px 48px hsla(var(--shadow_color) / 0.6) inset;
-	--highlight_xs: 0.5px 1px 3px hsla(var(--glow_color) / 0.1),
-		0.5px 1.5px 4px hsla(var(--glow_color) / 0.1);
-	--highlight_sm: 1px 2px 5px hsla(var(--glow_color) / 0.15),
-		1px 4px 10px hsla(var(--glow_color) / 0.15);
-	--highlight_md: 1.5px 3px 8px hsla(var(--glow_color) / 0.2),
-		1.5px 6px 18px hsla(var(--glow_color) / 0.2);
-	--highlight_lg: 2px 4px 12px hsla(var(--glow_color) / 0.4),
-		2px 8px 30px hsla(var(--glow_color) / 0.4);
-	--highlight_xl: 3px 6px 16px hsla(var(--glow_color) / 0.6),
-		3px 8px 48px hsla(var(--glow_color) / 0.6);
-	--highlight_outset_xs: -0.5px -1px 3px hsla(var(--glow_color) / 0.1) inset,
-		-0.5px -1.5px 4px hsla(var(--glow_color) / 0.1) inset;
-	--highlight_outset_sm: -1px -2px 5px hsla(var(--glow_color) / 0.15) inset,
-		-1px -4px 10px hsla(var(--glow_color) / 0.15) inset;
-	--highlight_outset_md: -1.5px -3px 8px hsla(var(--glow_color) / 0.2) inset,
-		-1.5px -6px 18px hsla(var(--glow_color) / 0.2) inset;
-	--highlight_outset_lg: -2px -4px 12px hsla(var(--glow_color) / 0.4) inset,
-		-2px -8px 30px hsla(var(--glow_color) / 0.4) inset;
-	--highlight_outset_xl: -3px -6px 16px hsla(var(--glow_color) / 0.6) inset,
-		-3px -8px 48px hsla(var(--glow_color) / 0.6) inset;
-	--highlight_inset_xs: 0.5px 1px 3px hsla(var(--glow_color) / 0.1) inset,
-		0.5px 1.5px 4px hsla(var(--glow_color) / 0.1) inset;
-	--highlight_inset_sm: 1px 2px 5px hsla(var(--glow_color) / 0.15) inset,
-		1px 4px 10px hsla(var(--glow_color) / 0.15) inset;
-	--highlight_inset_md: 1.5px 3px 8px hsla(var(--glow_color) / 0.2) inset,
-		1.5px 6px 18px hsla(var(--glow_color) / 0.2) inset;
-	--highlight_inset_lg: 2px 4px 12px hsla(var(--glow_color) / 0.4) inset,
-		2px 8px 30px hsla(var(--glow_color) / 0.4) inset;
-	--highlight_inset_xl: 3px 6px 16px hsla(var(--glow_color) / 0.6) inset,
-		3px 8px 48px hsla(var(--glow_color) / 0.6) inset;
+	--highlight_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1),
+		0px 0px 4px hsla(var(--glow_color) / 0.1);
+	--highlight_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15),
+		0px 0px 10px hsla(var(--glow_color) / 0.15);
+	--highlight_md: 0px 0px 8px hsla(var(--glow_color) / 0.2),
+		0px 0px 18px hsla(var(--glow_color) / 0.2);
+	--highlight_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4),
+		0px 0px 30px hsla(var(--glow_color) / 0.4);
+	--highlight_xl: 0px 0px 16px hsla(var(--glow_color) / 0.6),
+		0px 0px 48px hsla(var(--glow_color) / 0.6);
+	--highlight_outset_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1) inset,
+		0px 0px 4px hsla(var(--glow_color) / 0.1) inset;
+	--highlight_outset_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15) inset,
+		0px 0px 10px hsla(var(--glow_color) / 0.15) inset;
+	--highlight_outset_md: 0px 0px 8px hsla(var(--glow_color) / 0.2) inset,
+		0px 0px 18px hsla(var(--glow_color) / 0.2) inset;
+	--highlight_outset_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4) inset,
+		0px 0px 30px hsla(var(--glow_color) / 0.4) inset;
+	--highlight_outset_xl: 0px 0px 16px hsla(var(--glow_color) / 0.6) inset,
+		0px 0px 48px hsla(var(--glow_color) / 0.6) inset;
+	--highlight_inset_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1) inset,
+		0px 0px 4px hsla(var(--glow_color) / 0.1) inset;
+	--highlight_inset_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15) inset,
+		0px 0px 10px hsla(var(--glow_color) / 0.15) inset;
+	--highlight_inset_md: 0px 0px 8px hsla(var(--glow_color) / 0.2) inset,
+		0px 0px 18px hsla(var(--glow_color) / 0.2) inset;
+	--highlight_inset_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4) inset,
+		0px 0px 30px hsla(var(--glow_color) / 0.4) inset;
+	--highlight_inset_xl: 0px 0px 16px hsla(var(--glow_color) / 0.6) inset,
+		0px 0px 48px hsla(var(--glow_color) / 0.6) inset;
 	--down_xs: 0.5px 1px 3px hsla(var(--shadow_color) / 0.1) inset,
 		0.5px 1.5px 4px hsla(var(--shadow_color) / 0.1) inset,
-		-0.5px -1px 3px hsla(var(--glow_color) / 0.1) inset,
-		-0.5px -1.5px 4px hsla(var(--glow_color) / 0.1) inset;
+		0px 0px 3px hsla(var(--glow_color) / 0.1) inset, 0px 0px 4px hsla(var(--glow_color) / 0.1) inset;
 	--down_sm: 1px 2px 5px hsla(var(--shadow_color) / 0.15) inset,
 		1px 4px 10px hsla(var(--shadow_color) / 0.15) inset,
-		-1px -2px 5px hsla(var(--glow_color) / 0.15) inset,
-		-1px -4px 10px hsla(var(--glow_color) / 0.15) inset;
+		0px 0px 5px hsla(var(--glow_color) / 0.15) inset,
+		0px 0px 10px hsla(var(--glow_color) / 0.15) inset;
 	--down_md: 1.5px 3px 8px hsla(var(--shadow_color) / 0.2) inset,
 		1.5px 6px 18px hsla(var(--shadow_color) / 0.2) inset,
-		-1.5px -3px 8px hsla(var(--glow_color) / 0.2) inset,
-		-1.5px -6px 18px hsla(var(--glow_color) / 0.2) inset;
+		0px 0px 8px hsla(var(--glow_color) / 0.2) inset,
+		0px 0px 18px hsla(var(--glow_color) / 0.2) inset;
 	--down_lg: 2px 4px 12px hsla(var(--shadow_color) / 0.4) inset,
 		2px 8px 30px hsla(var(--shadow_color) / 0.4) inset,
-		-2px -4px 12px hsla(var(--glow_color) / 0.4) inset,
-		-2px -8px 30px hsla(var(--glow_color) / 0.4) inset;
+		0px 0px 12px hsla(var(--glow_color) / 0.4) inset,
+		0px 0px 30px hsla(var(--glow_color) / 0.4) inset;
 	--down_xl: 3px 6px 16px hsla(var(--shadow_color) / 0.6) inset,
 		3px 8px 48px hsla(var(--shadow_color) / 0.6) inset,
-		-3px -6px 16px hsla(var(--glow_color) / 0.6) inset,
-		-3px -8px 48px hsla(var(--glow_color) / 0.6) inset;
+		0px 0px 16px hsla(var(--glow_color) / 0.6) inset,
+		0px 0px 48px hsla(var(--glow_color) / 0.6) inset;
 	--up_xs: -0.5px -1px 3px hsla(var(--shadow_color) / 0.1) inset,
 		-0.5px -1.5px 4px hsla(var(--shadow_color) / 0.1) inset,
-		0.5px 1px 3px hsla(var(--glow_color) / 0.1) inset,
-		0.5px 1.5px 4px hsla(var(--glow_color) / 0.1) inset;
+		0px 0px 3px hsla(var(--glow_color) / 0.1) inset, 0px 0px 4px hsla(var(--glow_color) / 0.1) inset;
 	--up_sm: -1px -2px 5px hsla(var(--shadow_color) / 0.15) inset,
 		-1px -4px 10px hsla(var(--shadow_color) / 0.15) inset,
-		1px 2px 5px hsla(var(--glow_color) / 0.15) inset,
-		1px 4px 10px hsla(var(--glow_color) / 0.15) inset;
+		0px 0px 5px hsla(var(--glow_color) / 0.15) inset,
+		0px 0px 10px hsla(var(--glow_color) / 0.15) inset;
 	--up_md: -1.5px -3px 8px hsla(var(--shadow_color) / 0.2) inset,
 		-1.5px -6px 18px hsla(var(--shadow_color) / 0.2) inset,
-		1.5px 3px 8px hsla(var(--glow_color) / 0.2) inset,
-		1.5px 6px 18px hsla(var(--glow_color) / 0.2) inset;
+		0px 0px 8px hsla(var(--glow_color) / 0.2) inset,
+		0px 0px 18px hsla(var(--glow_color) / 0.2) inset;
 	--up_lg: -2px -4px 12px hsla(var(--shadow_color) / 0.4) inset,
 		-2px -8px 30px hsla(var(--shadow_color) / 0.4) inset,
-		2px 4px 12px hsla(var(--glow_color) / 0.4) inset,
-		2px 8px 30px hsla(var(--glow_color) / 0.4) inset;
+		0px 0px 12px hsla(var(--glow_color) / 0.4) inset,
+		0px 0px 30px hsla(var(--glow_color) / 0.4) inset;
 	--up_xl: -3px -6px 16px hsla(var(--shadow_color) / 0.6) inset,
 		-3px -8px 48px hsla(var(--shadow_color) / 0.6) inset,
-		3px 6px 16px hsla(var(--glow_color) / 0.6) inset,
-		3px 8px 48px hsla(var(--glow_color) / 0.6) inset;
+		0px 0px 16px hsla(var(--glow_color) / 0.6) inset,
+		0px 0px 48px hsla(var(--glow_color) / 0.6) inset;
 	--icon_size_xs: 18px;
 	--icon_size_sm: 32px;
 	--icon_size_md: 48px;
@@ -473,34 +469,32 @@
 	--border_color_3: hsl(var(--tint_hue), 60%, 80%, 50%);
 	--border_color_4: hsl(var(--tint_hue), 60%, 80%, 40%);
 	--border_color_5: hsl(var(--tint_hue), 60%, 80%, 25%);
-	--shade_xs: 0.5px 1px 3px hsla(var(--glow_color) / 0.1),
-		0.5px 1.5px 4px hsla(var(--glow_color) / 0.1);
-	--shade_sm: 1px 2px 5px hsla(var(--glow_color) / 0.15),
-		1px 4px 10px hsla(var(--glow_color) / 0.15);
-	--shade_md: 1.5px 3px 8px hsla(var(--glow_color) / 0.2),
-		1.5px 6px 18px hsla(var(--glow_color) / 0.2);
-	--shade_lg: 2px 4px 12px hsla(var(--glow_color) / 0.4), 2px 8px 30px hsla(var(--glow_color) / 0.4);
-	--shade_xl: 3px 6px 16px hsla(var(--glow_color) / 0.6), 3px 8px 48px hsla(var(--glow_color) / 0.6);
-	--shade_outset_xs: -0.5px -1px 3px hsla(var(--glow_color) / 0.1) inset,
-		-0.5px -1.5px 4px hsla(var(--glow_color) / 0.1) inset;
-	--shade_outset_sm: -1px -2px 5px hsla(var(--glow_color) / 0.15) inset,
-		-1px -4px 10px hsla(var(--glow_color) / 0.15) inset;
-	--shade_outset_md: -1.5px -3px 8px hsla(var(--glow_color) / 0.2) inset,
-		-1.5px -6px 18px hsla(var(--glow_color) / 0.2) inset;
-	--shade_outset_lg: -2px -4px 12px hsla(var(--glow_color) / 0.4) inset,
-		-2px -8px 30px hsla(var(--glow_color) / 0.4) inset;
-	--shade_outset_xl: -3px -6px 16px hsla(var(--glow_color) / 0.6) inset,
-		-3px -8px 48px hsla(var(--glow_color) / 0.6) inset;
-	--shade_inset_xs: 0.5px 1px 3px hsla(var(--glow_color) / 0.1) inset,
-		0.5px 1.5px 4px hsla(var(--glow_color) / 0.1) inset;
-	--shade_inset_sm: 1px 2px 5px hsla(var(--glow_color) / 0.15) inset,
-		1px 4px 10px hsla(var(--glow_color) / 0.15) inset;
-	--shade_inset_md: 1.5px 3px 8px hsla(var(--glow_color) / 0.2) inset,
-		1.5px 6px 18px hsla(var(--glow_color) / 0.2) inset;
-	--shade_inset_lg: 2px 4px 12px hsla(var(--glow_color) / 0.4) inset,
-		2px 8px 30px hsla(var(--glow_color) / 0.4) inset;
-	--shade_inset_xl: 3px 6px 16px hsla(var(--glow_color) / 0.6) inset,
-		3px 8px 48px hsla(var(--glow_color) / 0.6) inset;
+	--shade_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1), 0px 0px 4px hsla(var(--glow_color) / 0.1);
+	--shade_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15),
+		0px 0px 10px hsla(var(--glow_color) / 0.15);
+	--shade_md: 0px 0px 8px hsla(var(--glow_color) / 0.2), 0px 0px 18px hsla(var(--glow_color) / 0.2);
+	--shade_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4), 0px 0px 30px hsla(var(--glow_color) / 0.4);
+	--shade_xl: 0px 0px 16px hsla(var(--glow_color) / 0.6), 0px 0px 48px hsla(var(--glow_color) / 0.6);
+	--shade_outset_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1) inset,
+		0px 0px 4px hsla(var(--glow_color) / 0.1) inset;
+	--shade_outset_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15) inset,
+		0px 0px 10px hsla(var(--glow_color) / 0.15) inset;
+	--shade_outset_md: 0px 0px 8px hsla(var(--glow_color) / 0.2) inset,
+		0px 0px 18px hsla(var(--glow_color) / 0.2) inset;
+	--shade_outset_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4) inset,
+		0px 0px 30px hsla(var(--glow_color) / 0.4) inset;
+	--shade_outset_xl: 0px 0px 16px hsla(var(--glow_color) / 0.6) inset,
+		0px 0px 48px hsla(var(--glow_color) / 0.6) inset;
+	--shade_inset_xs: 0px 0px 3px hsla(var(--glow_color) / 0.1) inset,
+		0px 0px 4px hsla(var(--glow_color) / 0.1) inset;
+	--shade_inset_sm: 0px 0px 5px hsla(var(--glow_color) / 0.15) inset,
+		0px 0px 10px hsla(var(--glow_color) / 0.15) inset;
+	--shade_inset_md: 0px 0px 8px hsla(var(--glow_color) / 0.2) inset,
+		0px 0px 18px hsla(var(--glow_color) / 0.2) inset;
+	--shade_inset_lg: 0px 0px 12px hsla(var(--glow_color) / 0.4) inset,
+		0px 0px 30px hsla(var(--glow_color) / 0.4) inset;
+	--shade_inset_xl: 0px 0px 16px hsla(var(--glow_color) / 0.6) inset,
+		0px 0px 48px hsla(var(--glow_color) / 0.6) inset;
 	--highlight_xs: 0.5px 1px 3px hsla(var(--shadow_color) / 0.1),
 		0.5px 1.5px 4px hsla(var(--shadow_color) / 0.1);
 	--highlight_sm: 1px 2px 5px hsla(var(--shadow_color) / 0.15),
