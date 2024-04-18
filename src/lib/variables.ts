@@ -1324,6 +1324,7 @@ export const default_variables: Style_Variable[] = [
 	glow_inset_sm,
 	glow_inset_md,
 	glow_inset_lg,
+	glow_inset_xl,
 	shade_xs,
 	shade_sm,
 	shade_md,
