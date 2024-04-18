@@ -2134,6 +2134,36 @@ light and shadow
 .highlight_inset_xl {
 	box-shadow: var(--highlight_inset_xl);
 }
+.depth_xs {
+	box-shadow: var(--depth_xs);
+}
+.depth_sm {
+	box-shadow: var(--depth_sm);
+}
+.depth_md {
+	box-shadow: var(--depth_md);
+}
+.depth_lg {
+	box-shadow: var(--depth_lg);
+}
+.depth_xl {
+	box-shadow: var(--depth_xl);
+}
+.lift_xs {
+	box-shadow: var(--lift_xs);
+}
+.lift_sm {
+	box-shadow: var(--lift_sm);
+}
+.lift_md {
+	box-shadow: var(--lift_md);
+}
+.lift_lg {
+	box-shadow: var(--lift_lg);
+}
+.lift_xl {
+	box-shadow: var(--lift_xl);
+}
 /* higher specificity */
 /* TODO which order should these be in? */
 .shadow_inherit {

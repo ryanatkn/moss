@@ -305,6 +305,32 @@
 		<section>
 			<Color_Scheme_Input />
 		</section>
+		<section>
+			<h4>Depth variants</h4>
+			<p>
+				Depth is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of lift.
+			</p>
+			<div class="p_lg panel fg_3">
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--depth_{variant})">
+						<Style_Variable_Button name="depth_{variant}" />
+					</div>
+				{/each}
+			</div>
+		</section>
+		<section>
+			<h4>Lift variants</h4>
+			<p>
+				Lift is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of depth.
+			</p>
+			<div class="p_lg panel fg_3">
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--lift_{variant})">
+						<Style_Variable_Button name="lift_{variant}" />
+					</div>
+				{/each}
+			</div>
+		</section>
 	</section>
 </Tome_Detail>
 
