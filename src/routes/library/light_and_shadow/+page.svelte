@@ -22,16 +22,37 @@
 
 <Tome_Detail {tome}>
 	<section>
+		<aside class="mb_lg">
+			⚠️ These concepts are still developing - some things are incomplete or inconsistent, and there
+			will be a lot of breaking changes.
+		</aside>
 		<p>
-			Moss is designed around the idea of stacking light and shadow with highlights and shading. The
-			goal is easy authoring with simple and consistent rules for arbitrary compositions and states.
+			Moss is designed around two simplistic models of light, one for dark mode and one for light
+			mode. The goal is easy authoring with simple and consistent rules for arbitrary compositions
+			and states.
 		</p>
 		<p>
 			Light mode's starting point is plain white documents (like paper) where we can think of
-			applying UI subtractively in the color-value-space by assembling elements that contrast
-			against the white background, while dark mode's is a lightless void where we add light (I
-			think of videogames and augmented reality). The <Tome_Link name="colors" /> docs elaborate.
+			assembling elements that contrast against the white background, replacing some of the white
+			blankness with color and darkened values. Shadows make natural sense, and white glows against
+			a white background are invisible.
 		</p>
+		<p>
+			In contrast, dark mode's starting point is a lightless void where we add light. We add
+			elements which emanate light. I think of videogames and virtual/augmented/actual reality.
+			Black shadows don't work against a black background, and glows make natural sense.
+		</p>
+		<p>
+			This distinction leads to complication. For example, applying a black shadow to an element has
+			a particular visual impact on the typical light mode page, but viewed in dark mode, it would
+			disappear completely against a black background.
+		</p>
+		<aside>
+			The <Tome_Link name="colors" /> docs elaborate more on this point. I have multiple design questions
+			about this - I may write down all of the considerations in one place, and maybe make a post/video
+			about it. Broadly, I like the "light and shadow" framing to thinking about UI. I think "dark mode"
+			is more interesting than it lets on, because of
+		</aside>
 		<p>
 			Opacity is used to enable arbitrary stacking that visually inherits its context. Not all cases
 			are properly handled yet, and some choices are made for performance reasons, like avoiding

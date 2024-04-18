@@ -625,6 +625,8 @@ export const input_height_inner: Style_Variable = {
 
 // TODO @multiple add back highlight (maybe through the generic colors, a-g|fg|bg)
 
+// TODO maybe even scale these out programmatically? at runtime for the TS?
+
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
 	light:

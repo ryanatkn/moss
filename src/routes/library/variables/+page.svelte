@@ -44,12 +44,16 @@
 			</li>
 		</ul>
 		<p>
-			Variables also provide an interface that's generally secure for user-generated content. The
-			result is a flexible system that aligns with modern CSS to deliver high-capability UX and DX
-			with minimal overhead.
+			Variables also provide an interface that's generally secure for user-generated content, if
+			you're into that kind of thing.
+		</p>
+		<p>
+			The result is a flexible system that aligns with modern CSS to deliver high-capability UX and
+			DX with minimal overhead.
 		</p>
 	</section>
 	<section>
+		<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.ts">/src/lib/theme.ts</a>
 		<Code
 			lang="ts"
 			content={`export interface Theme {
