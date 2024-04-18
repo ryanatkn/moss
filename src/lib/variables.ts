@@ -629,6 +629,8 @@ export const input_height_inner: Style_Variable = {
 
 // TODO extract color vars - abstracting opacity too?
 
+// TODO should glow/shadow be the same thing, just a different color? maybe that concept is higher level?
+
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
 	light:
@@ -813,6 +815,84 @@ export const glow_outset_xl: Style_Variable = {
 	light:
 		'-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset',
 	dark: '-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 18%, 0.6) inset',
+};
+
+export const shade_xs: Style_Variable = {
+	name: 'shade_xs',
+	light: shadow_xs.light,
+	dark: glow_xs.dark,
+};
+export const shade_sm: Style_Variable = {
+	name: 'shade_sm',
+	light: shadow_sm.light,
+	dark: glow_sm.dark,
+};
+export const shade_md: Style_Variable = {
+	name: 'shade_md',
+	light: shadow_md.light,
+	dark: glow_md.dark,
+};
+export const shade_lg: Style_Variable = {
+	name: 'shade_lg',
+	light: shadow_lg.light,
+	dark: glow_lg.dark,
+};
+export const shade_xl: Style_Variable = {
+	name: 'shade_xl',
+	light: shadow_xl.light,
+	dark: glow_xl.dark,
+};
+
+export const shade_inset_xs: Style_Variable = {
+	name: 'shade_inset_xs',
+	light: shadow_inset_xs.light,
+	dark: glow_inset_xs.dark,
+};
+export const shade_inset_sm: Style_Variable = {
+	name: 'shade_inset_sm',
+	light: shadow_inset_sm.light,
+	dark: glow_inset_sm.dark,
+};
+export const shade_inset_md: Style_Variable = {
+	name: 'shade_inset_md',
+	light: shadow_inset_md.light,
+	dark: glow_inset_md.dark,
+};
+export const shade_inset_lg: Style_Variable = {
+	name: 'shade_inset_lg',
+	light: shadow_inset_lg.light,
+	dark: glow_inset_lg.dark,
+};
+export const shade_inset_xl: Style_Variable = {
+	name: 'shade_inset_xl',
+	light: shadow_inset_xl.light,
+	dark: glow_inset_xl.dark,
+};
+
+export const shade_outset_xs: Style_Variable = {
+	name: 'shade_outset_xs',
+	light: shadow_outset_xs.light,
+	dark: glow_outset_xs.dark,
+};
+export const shade_outset_sm: Style_Variable = {
+	name: 'shade_outset_sm',
+	light: shadow_outset_sm.light,
+	dark: glow_outset_sm.dark,
+};
+export const shade_outset_md: Style_Variable = {
+	name: 'shade_outset_md',
+	light: shadow_outset_md.light,
+	dark: glow_outset_md.dark,
+};
+export const shade_outset_lg: Style_Variable = {
+	name: 'shade_outset_lg',
+	light: shadow_outset_lg.light,
+	dark: glow_outset_lg.dark,
+};
+export const shade_outset_xl: Style_Variable = {
+	name: 'shade_outset_xl',
+	light: shadow_outset_xl.light,
+	dark: glow_outset_xl.dark,
 };
 
 /* icons */
@@ -1125,7 +1205,21 @@ export const default_variables: Style_Variable[] = [
 	glow_inset_sm,
 	glow_inset_md,
 	glow_inset_lg,
-	glow_inset_xl,
+	shade_xs,
+	shade_sm,
+	shade_md,
+	shade_lg,
+	shade_xl,
+	shade_outset_xs,
+	shade_outset_sm,
+	shade_outset_md,
+	shade_outset_lg,
+	shade_outset_xl,
+	shade_inset_xs,
+	shade_inset_sm,
+	shade_inset_md,
+	shade_inset_lg,
+	shade_inset_xl,
 
 	/* icons */
 	icon_size_xs,

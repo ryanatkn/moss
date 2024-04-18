@@ -186,10 +186,9 @@
 			<p>⚠️ This section is incomplete and has many open questions:</p>
 			<ul>
 				<li>
-					Should glows and shadows be reversed for dark mode like this? Ties into the bigger
-					question about how light works in dark mode. Maybe the current color-scheme-aware "shadow"
-					just needs a rename, like "shade", and then "shadow" becomes more intuitively
-					color-scheme-agnostic.
+					Does shade imply an inverse like highlight? What about lift/depth? Maybe the variants are
+					done through the colors, so it becomes shadow|depth|lift or keep as
+					shadow|shadow_inset|shadow_outset or something else?
 				</li>
 				<li>
 					Colored shadows/glows? By composing variables? <code>--shadow|glow_color</code>
@@ -205,6 +204,7 @@
 				<li>Tweak values? Seems we need another variant at the low end - keep 5 total?</li>
 			</ul>
 		</aside>
+		<h4>Shadow variants</h4>
 		{#each shadow_variants as variant}
 			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
 				<Style_Variable_Button name="shadow_{variant}" />
@@ -221,6 +221,7 @@
 			</div>
 		{/each}
 		<div class="mb_xl7"><Color_Scheme_Input /></div>
+		<h4>Glow variants</h4>
 		<p>
 			Glows are the inverse of shadows. Notice how glows use the same color as the <code>bg</code> and
 			are therefore invisible against a plain background.
@@ -246,6 +247,26 @@
 				</div>
 			{/each}
 		</div>
+		<h4>Shade variants</h4>
+		<p>Shade is like shadow and glow but color-scheme-aware. Inverse of highlight.</p>
+		<div class="p_lg panel fg_3">
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--shade_{variant})">
+					<Style_Variable_Button name="shade_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--shade_inset_{variant})">
+					<Style_Variable_Button name="shade_inset_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--shade_outset_{variant})">
+					<Style_Variable_Button name="shade_outset_{variant}" />
+				</div>
+			{/each}
+		</div>
+		<!-- TODO does shade imply the inverse highlight? -->
 	</section>
 </Tome_Detail>
 
