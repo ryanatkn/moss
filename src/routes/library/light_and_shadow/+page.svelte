@@ -20,6 +20,8 @@
 	};
 
 	// TODO this is a good usecase for h4 subheadings
+
+	// <!-- TODO BLOCK -->
 </script>
 
 <Tome_Detail {tome}>
@@ -69,7 +71,9 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Shades and highlights" slug="shades-and-highlights" />
-		<Tome_Subheading tag="h4"><code>darken</code> and <code>lighten</code></Tome_Subheading>
+		<Tome_Subheading text="darken and lighten" slug="darken-and-lighten" tag="h4"
+			><code>darken</code> and <code>lighten</code></Tome_Subheading
+		>
 		<aside><p>⚠️ This will change.</p></aside>
 		<div class="swatch">
 			{#each {length: 9} as _, i}
@@ -91,7 +95,9 @@
 		</div>
 	</section>
 	<section>
-		<Tome_Subheading tag="h4"><code>bg</code> and <code>fg</code></Tome_Subheading>
+		<Tome_Subheading text="bg and fg" slug="bg-and-fg" tag="h4"
+			><code>bg</code> and <code>fg</code></Tome_Subheading
+		>
 		<p>
 			In light mode, <code>bg</code> is the same as <code>lighten</code> and <code>fg</code> is the
 			same as <code>darken</code>. In dark mode, they're swapped.
@@ -201,7 +207,7 @@
 			</aside>
 		</section>
 		<section>
-			<Tome_Subheading tag="h4">Shadow variants</Tome_Subheading>
+			<Tome_Subheading text="Shadow variants" slug="shadow-variants" tag="h4" />
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}
 					<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
@@ -224,8 +230,11 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
-			<Tome_Subheading tag="h4">Shade variants</Tome_Subheading>
-			<p>Shade is color-scheme-aware, shadow in light mode and glow in dark mode.</p>
+			<Tome_Subheading text="Shade variants" slug="shade-variants" tag="h4" />
+			<p>
+				Shade is color-scheme-aware, black in light mode and white in dark mode. (⚠️ this doesn't
+				make sense with colors, semantics at each API layer need to be thought through)
+			</p>
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}
 					<div class="shadow_example" style:box-shadow="var(--shade_{variant})">
@@ -248,7 +257,9 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
-			<Tome_Subheading tag="h4">Depth/lower (TODO name?) variants</Tome_Subheading>
+			<Tome_Subheading text="Depth variants" slug="depth-variants" tag="h4"
+				>Depth/lower (TODO name?) variants</Tome_Subheading
+			>
 			<p>
 				Depth is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of lift.
 			</p>
@@ -261,7 +272,7 @@
 			</div>
 		</section>
 		<section>
-			<Tome_Subheading tag="h4">Lift variants</Tome_Subheading>
+			<Tome_Subheading text="Lift variants" slug="lift-variants" tag="h4" />
 			<p>
 				Lift is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of depth.
 			</p>
