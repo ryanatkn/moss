@@ -224,7 +224,7 @@
 			<h4>Glow variants</h4>
 			<p>
 				Glows are the inverse of shadows. Notice how glows use the same color as the <code>bg</code>
-				and are therefore invisible against a plain background.
+				and are therefore invisible against the base background.
 			</p>
 			<aside>
 				⚠️ "glow" and "shadow" do indeed seem to be misnomers by being color-scheme-aware. Expect
@@ -247,6 +247,9 @@
 					</div>
 				{/each}
 			</div>
+		</section>
+		<section>
+			<Color_Scheme_Input />
 		</section>
 		<section>
 			<h4>Shade variants</h4>
@@ -273,6 +276,9 @@
 			</div>
 		</section>
 		<section>
+			<Color_Scheme_Input />
+		</section>
+		<section>
 			<h4>Highlight variants</h4>
 			<p>
 				Highlight is color-scheme-aware, glow in light mode and shadow in dark mode. Inverse of
@@ -296,7 +302,9 @@
 				{/each}
 			</div>
 		</section>
-		<!-- TODO does shade imply the inverse highlight? -->
+		<section>
+			<Color_Scheme_Input />
+		</section>
 	</section>
 </Tome_Detail>
 
