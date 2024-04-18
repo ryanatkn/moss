@@ -246,11 +246,6 @@
 						<Style_Variable_Button name="glow_inset_{variant}" />
 					</div>
 				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
-						<Style_Variable_Button name="glow_outset_{variant}" />
-					</div>
-				{/each}
 			</div>
 		</section>
 		<section>
@@ -259,7 +254,7 @@
 		<section>
 			<Tome_Subheading text="Color variants" slug="shade-variants" tag="h4" />
 			<p>⚠️ TODO this isn't working with the nested variable like I was hoping</p>
-			<div class="p_lg panel fg_3" style:--shadow_color="50 50% 50%">
+			<div class="p_lg panel fg_3" style:--shadow_color="50, 50%, 50%">
 				{#each shadow_variants as variant}
 					<div class="shadow_example shadow_{variant}">
 						<Style_Variable_Button name="shadow_{variant}" />
