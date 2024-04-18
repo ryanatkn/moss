@@ -24,9 +24,9 @@
 			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with more capabilities.
 		</p>
 		<p>
-			Usage Moss can be as simple as importing <a
+			Using Moss unoptimized is as simple as importing <a
 				href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-				>a single static stylesheet</a
+				>its one static stylesheet</a
 			>, and it's built with a data-driven approach that makes its insides available in many forms,
 			like deconstructed CSS files and TypeScript modules that provide data, types, and helpers
 			around the variable and build systems. It's in early alpha and there will be many breaking
