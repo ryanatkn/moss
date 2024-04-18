@@ -830,7 +830,7 @@ export const up_sm: Style_Variable = {
 	light:
 		create_shadow_sm('shadow_color', {inset: true, scale: -1}) +
 		', ' +
-		create_shadow_sm('glow_color', {scale: -15}),
+		create_shadow_sm('glow_color', {scale: -1}),
 };
 export const up_md: Style_Variable = {
 	name: 'up_md',
