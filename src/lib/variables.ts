@@ -790,6 +790,27 @@ export const glow_inset_xl: Style_Variable = {
 	light: create_shadow_xl('glow_color', {scale: 0, inset: true}),
 };
 
+export const glow_outset_xs: Style_Variable = {
+	name: 'glow_outset_xs',
+	light: create_shadow_xs('glow_color', {scale: 0, inset: true}),
+};
+export const glow_outset_sm: Style_Variable = {
+	name: 'glow_outset_sm',
+	light: create_shadow_sm('glow_color', {scale: 0, inset: true}),
+};
+export const glow_outset_md: Style_Variable = {
+	name: 'glow_outset_md',
+	light: create_shadow_md('glow_color', {scale: 0, inset: true}),
+};
+export const glow_outset_lg: Style_Variable = {
+	name: 'glow_outset_lg',
+	light: create_shadow_lg('glow_color', {scale: 0, inset: true}),
+};
+export const glow_outset_xl: Style_Variable = {
+	name: 'glow_outset_xl',
+	light: create_shadow_xl('glow_color', {scale: 0, inset: true}),
+};
+
 // TODO BLOCK delete these or change to use `create_shadow`
 export const shade_xs: Style_Variable = {
 	name: 'shade_xs',
