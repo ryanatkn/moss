@@ -246,6 +246,11 @@
 						<Style_Variable_Button name="glow_inset_{variant}" />
 					</div>
 				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
+						<Style_Variable_Button name="glow_outset_{variant}" />
+					</div>
+				{/each}
 			</div>
 		</section>
 		<section>
@@ -319,6 +324,7 @@
 		height: var(--input_height_sm);
 	}
 	.shadow_example {
+		position: relative;
 		padding: var(--space_md);
 		font-family: var(--font_mono);
 		border-radius: var(--radius_xs3);

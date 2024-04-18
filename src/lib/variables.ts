@@ -754,104 +754,111 @@ export const shadow_outset_xl: Style_Variable = {
 	light: create_shadow_xl('shadow_color', {inset: true, scale: -1}),
 };
 
+// TODO BLOCK change to just colors and remove these? include the 0 scale versions separately?
 export const glow_xs: Style_Variable = {
 	name: 'glow_xs',
-	light: create_shadow_xs('glow_color', {scale: 0}),
+	light: create_shadow_xs('glow_color'),
 };
 export const glow_sm: Style_Variable = {
 	name: 'glow_sm',
-	light: create_shadow_sm('glow_color', {scale: 0}),
+	light: create_shadow_sm('glow_color'),
 };
 export const glow_md: Style_Variable = {
 	name: 'glow_md',
-	light: create_shadow_md('glow_color', {scale: 0}),
+	light: create_shadow_md('glow_color'),
 };
 export const glow_lg: Style_Variable = {
 	name: 'glow_lg',
-	light: create_shadow_lg('glow_color', {scale: 0}),
+	light: create_shadow_lg('glow_color'),
 };
 export const glow_xl: Style_Variable = {
 	name: 'glow_xl',
-	light: create_shadow_xl('glow_color', {scale: 0}),
+	light: create_shadow_xl('glow_color'),
 };
 
 export const glow_inset_xs: Style_Variable = {
 	name: 'glow_inset_xs',
-	light: create_shadow_xs('glow_color', {scale: 0, inset: true}),
+	light: create_shadow_xs('glow_color', {inset: true}),
 };
 export const glow_inset_sm: Style_Variable = {
 	name: 'glow_inset_sm',
-	light: create_shadow_sm('glow_color', {scale: 0, inset: true}),
+	light: create_shadow_sm('glow_color', {inset: true}),
 };
 export const glow_inset_md: Style_Variable = {
 	name: 'glow_inset_md',
-	light: create_shadow_md('glow_color', {scale: 0, inset: true}),
+	light: create_shadow_md('glow_color', {inset: true}),
 };
 export const glow_inset_lg: Style_Variable = {
 	name: 'glow_inset_lg',
-	light: create_shadow_lg('glow_color', {scale: 0, inset: true}),
+	light: create_shadow_lg('glow_color', {inset: true}),
 };
 export const glow_inset_xl: Style_Variable = {
 	name: 'glow_inset_xl',
-	light: create_shadow_xl('glow_color', {scale: 0, inset: true}),
+	light: create_shadow_xl('glow_color', {inset: true}),
+};
+
+export const glow_outset_xs: Style_Variable = {
+	name: 'glow_outset_xs',
+	light: create_shadow_xs('glow_color', {inset: true, scale: -1}),
+};
+export const glow_outset_sm: Style_Variable = {
+	name: 'glow_outset_sm',
+	light: create_shadow_sm('glow_color', {inset: true, scale: -1}),
+};
+export const glow_outset_md: Style_Variable = {
+	name: 'glow_outset_md',
+	light: create_shadow_md('glow_color', {inset: true, scale: -1}),
+};
+export const glow_outset_lg: Style_Variable = {
+	name: 'glow_outset_lg',
+	light: create_shadow_lg('glow_color', {inset: true, scale: -1}),
+};
+export const glow_outset_xl: Style_Variable = {
+	name: 'glow_outset_xl',
+	light: create_shadow_xl('glow_color', {inset: true, scale: -1}),
 };
 
 // TODO increase intensity of the highlight
 export const down_xs: Style_Variable = {
 	name: 'down_xs',
-	light: create_shadow_xs('shadow_color', {inset: true}) + ', ' + create_shadow_xs('glow_color'),
+	light: `var(--shadow_inset_xs), var(--glow_xs)`,
 };
 export const down_sm: Style_Variable = {
 	name: 'down_sm',
-	light: create_shadow_sm('shadow_color', {inset: true}) + ', ' + create_shadow_sm('glow_color'),
+	light: `var(--shadow_inset_sm), var(--glow_sm)`,
 };
 export const down_md: Style_Variable = {
 	name: 'down_md',
-	light: create_shadow_md('shadow_color', {inset: true}) + ', ' + create_shadow_md('glow_color'),
+	light: `var(--shadow_inset_md), var(--glow_md)`,
 };
 export const down_lg: Style_Variable = {
 	name: 'down_lg',
-	light: create_shadow_lg('shadow_color', {inset: true}) + ', ' + create_shadow_lg('glow_color'),
+	light: `var(--shadow_inset_lg), var(--glow_lg)`,
 };
 export const down_xl: Style_Variable = {
 	name: 'down_xl',
-	light: create_shadow_xl('shadow_color', {inset: true}) + ', ' + create_shadow_xl('glow_color'),
+	light: `var(--shadow_inset_xl), var(--glow_xl)`,
 };
 
 export const up_xs: Style_Variable = {
 	name: 'up_xs',
-	light:
-		create_shadow_xs('shadow_color', {inset: true, scale: -1}) +
-		', ' +
-		create_shadow_xs('glow_color', {scale: -1}),
+	light: 'var(--shadow_outset_xs), var(--glow_xs)',
 };
 export const up_sm: Style_Variable = {
 	name: 'up_sm',
-	light:
-		create_shadow_sm('shadow_color', {inset: true, scale: -1}) +
-		', ' +
-		create_shadow_sm('glow_color', {scale: -1}),
+	light: 'var(--shadow_outset_sm), var(--glow_sm)',
 };
 export const up_md: Style_Variable = {
 	name: 'up_md',
-	light:
-		create_shadow_md('shadow_color', {inset: true, scale: -1}) +
-		', ' +
-		create_shadow_md('glow_color', {scale: -1}),
+	light: 'var(--shadow_outset_md), var(--glow_md)',
 };
 export const up_lg: Style_Variable = {
 	name: 'up_lg',
-	light:
-		create_shadow_lg('shadow_color', {inset: true, scale: -1}) +
-		', ' +
-		create_shadow_lg('glow_color', {scale: -1}),
+	light: 'var(--shadow_outset_lg), var(--glow_lg)',
 };
 export const up_xl: Style_Variable = {
 	name: 'up_xl',
-	light:
-		create_shadow_xl('shadow_color', {inset: true, scale: -1}) +
-		', ' +
-		create_shadow_xl('glow_color', {scale: -1}),
+	light: 'var(--shadow_outset_xl), var(--glow_xl)',
 };
 
 /* icons */
@@ -1142,16 +1149,16 @@ export const default_variables: Style_Variable[] = [
 	shadow_md,
 	shadow_lg,
 	shadow_xl,
-	shadow_outset_xs,
-	shadow_outset_sm,
-	shadow_outset_md,
-	shadow_outset_lg,
-	shadow_outset_xl,
 	shadow_inset_xs,
 	shadow_inset_sm,
 	shadow_inset_md,
 	shadow_inset_lg,
 	shadow_inset_xl,
+	shadow_outset_xs,
+	shadow_outset_sm,
+	shadow_outset_md,
+	shadow_outset_lg,
+	shadow_outset_xl,
 	glow_xs,
 	glow_sm,
 	glow_md,
@@ -1162,6 +1169,11 @@ export const default_variables: Style_Variable[] = [
 	glow_inset_md,
 	glow_inset_lg,
 	glow_inset_xl,
+	glow_outset_xs,
+	glow_outset_sm,
+	glow_outset_md,
+	glow_outset_lg,
+	glow_outset_xl,
 	down_xs,
 	down_sm,
 	down_md,
