@@ -155,11 +155,11 @@
 	<section>
 		<Tome_Subheading text="Stacking opacity" slug="stacking-opacity" />
 		<Code
-			content={`<div style:background-color="var(--fg_1)" class="p_sm">
-	<div style:background-color="var(--fg_1)" class="p_sm">
-		<div style:background-color="var(--fg_1)" class="p_sm">
-			<div style:background-color="var(--fg_1)" class="p_sm">
-				<div style:background-color="var(--bg_4)" class="p_sm">
+			content={`<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
+	<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
+		<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
+			<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
+				<div style:background-color="var(--bg_4)" class="p_sm radius_xs3">
 					...
 				</div>
 			</div>
@@ -167,11 +167,11 @@
 	</div>
 </div>`}
 		/>
-		<div style:background-color="var(--fg_1)" class="p_sm">
-			<div style:background-color="var(--fg_1)" class="p_sm">
-				<div style:background-color="var(--fg_1)" class="p_sm">
-					<div style:background-color="var(--fg_1)" class="p_sm">
-						<div style:background-color="var(--bg_4)" class="p_sm">
+		<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
+			<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
+				<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
+					<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
+						<div style:background-color="var(--bg_4)" class="p_sm radius_xs3">
 							these variables have opacity, but notice how contrast changes with depth, creating
 							limitations
 						</div>
@@ -182,90 +182,130 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Box shadows" slug="box-shadows" />
-		<aside>
-			<p>⚠️ This section is incomplete and has many open questions:</p>
-			<ul>
-				<li>
-					Does shade imply an inverse like highlight? What about lift/depth? Maybe the variants are
-					done through the colors, so it becomes shadow|depth|lift or keep as
-					shadow|shadow_inset|shadow_outset or something else?
-				</li>
-				<li>
-					Colored shadows/glows? By composing variables? <code>--shadow|glow_color</code>
-					or
-					<code>--shadow|glow</code> or something else? Abstracting alpha too?
-				</li>
-				<li>
-					For buttons and similar cases, add variants that combine a shadow and glow? Maybe <code
-						>shaded_</code
-					>? Currently doing <code>box-shadow: var(--shadow_outset_xs), var(--glow_inset_xs);</code>
-					- maybe also add semantic vars like base/hover/active?
-				</li>
-				<li>Tweak values? Seems we need another variant at the low end - keep 5 total?</li>
-			</ul>
-		</aside>
-		<h4>Shadow variants</h4>
-		{#each shadow_variants as variant}
-			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
-				<Style_Variable_Button name="shadow_{variant}" />
+		<section>
+			<aside>
+				<p>⚠️ This section is incomplete and has many open questions:</p>
+				<ul>
+					<li>
+						Does shade imply an inverse like highlight? What about lift/depth? Maybe the variants
+						are done through the colors, so it becomes shadow|depth|lift or keep as
+						shadow|shadow_inset|shadow_outset or something else?
+					</li>
+					<li>
+						Colored shadows/glows? By composing variables? <code>--shadow|glow_color</code>
+						or
+						<code>--shadow|glow</code> or something else? Abstracting alpha too?
+					</li>
+					<li>
+						For buttons and similar cases, add variants that combine a shadow and glow? Maybe <code
+							>shaded_</code
+						>? Currently doing
+						<code>box-shadow: var(--shadow_outset_xs), var(--glow_inset_xs);</code>
+						- maybe also add semantic vars like base/hover/active?
+					</li>
+					<li>Tweak values? Seems we need another variant at the low end - keep 5 total?</li>
+				</ul>
+			</aside>
+		</section>
+		<section>
+			<h4>Shadow variants</h4>
+			<div class="p_lg panel fg_3">
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
+						<Style_Variable_Button name="shadow_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--shadow_inset_{variant})">
+						<Style_Variable_Button name="shadow_inset_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--shadow_outset_{variant})">
+						<Style_Variable_Button name="shadow_outset_{variant}" />
+					</div>
+				{/each}
 			</div>
-		{/each}
-		{#each shadow_variants as variant}
-			<div class="shadow_example" style:box-shadow="var(--shadow_inset_{variant})">
-				<Style_Variable_Button name="shadow_inset_{variant}" />
+		</section>
+		<section>
+			<Color_Scheme_Input />
+		</section>
+		<section>
+			<h4>Glow variants</h4>
+			<p>
+				Glows are the inverse of shadows. Notice how glows use the same color as the <code>bg</code>
+				and are therefore invisible against a plain background.
+			</p>
+			<aside>
+				⚠️ "glow" and "shadow" do indeed seem to be misnomers by being color-scheme-aware. Expect
+				breaking changes.
+			</aside>
+			<div class="p_lg panel fg_3">
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
+						<Style_Variable_Button name="glow_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--glow_inset_{variant})">
+						<Style_Variable_Button name="glow_inset_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
+						<Style_Variable_Button name="glow_outset_{variant}" />
+					</div>
+				{/each}
 			</div>
-		{/each}
-		{#each shadow_variants as variant}
-			<div class="shadow_example" style:box-shadow="var(--shadow_outset_{variant})">
-				<Style_Variable_Button name="shadow_outset_{variant}" />
+		</section>
+		<section>
+			<h4>Shade variants</h4>
+			<p>
+				Shade is color-scheme-aware, shadow in light mode and glow in dark mode. Inverse of
+				highlight.
+			</p>
+			<div class="p_lg panel fg_3">
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--shade_{variant})">
+						<Style_Variable_Button name="shade_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--shade_inset_{variant})">
+						<Style_Variable_Button name="shade_inset_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--shade_outset_{variant})">
+						<Style_Variable_Button name="shade_outset_{variant}" />
+					</div>
+				{/each}
 			</div>
-		{/each}
-		<div class="mb_xl7"><Color_Scheme_Input /></div>
-		<h4>Glow variants</h4>
-		<p>
-			Glows are the inverse of shadows. Notice how glows use the same color as the <code>bg</code> and
-			are therefore invisible against a plain background.
-		</p>
-		<aside>
-			⚠️ "glow" and "shadow" do indeed seem to be misnomers by being color-scheme-aware. Expect
-			breaking changes.
-		</aside>
-		<div class="p_lg panel fg_3">
-			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
-					<Style_Variable_Button name="glow_{variant}" />
-				</div>
-			{/each}
-			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--glow_inset_{variant})">
-					<Style_Variable_Button name="glow_inset_{variant}" />
-				</div>
-			{/each}
-			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
-					<Style_Variable_Button name="glow_outset_{variant}" />
-				</div>
-			{/each}
-		</div>
-		<h4>Shade variants</h4>
-		<p>Shade is like shadow and glow but color-scheme-aware. Inverse of highlight.</p>
-		<div class="p_lg panel fg_3">
-			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--shade_{variant})">
-					<Style_Variable_Button name="shade_{variant}" />
-				</div>
-			{/each}
-			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--shade_inset_{variant})">
-					<Style_Variable_Button name="shade_inset_{variant}" />
-				</div>
-			{/each}
-			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--shade_outset_{variant})">
-					<Style_Variable_Button name="shade_outset_{variant}" />
-				</div>
-			{/each}
-		</div>
+		</section>
+		<section>
+			<h4>Highlight variants</h4>
+			<p>
+				Highlight is color-scheme-aware, glow in light mode and shadow in dark mode. Inverse of
+				shade.
+			</p>
+			<div class="p_lg panel fg_3">
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--highlight_{variant})">
+						<Style_Variable_Button name="highlight_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--highlight_inset_{variant})">
+						<Style_Variable_Button name="highlight_inset_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--highlight_outset_{variant})">
+						<Style_Variable_Button name="highlight_outset_{variant}" />
+					</div>
+				{/each}
+			</div>
+		</section>
 		<!-- TODO does shade imply the inverse highlight? -->
 	</section>
 </Tome_Detail>
@@ -282,9 +322,12 @@
 		height: var(--input_height_sm);
 	}
 	.shadow_example {
-		margin-bottom: var(--space_xl8);
 		padding: var(--space_md);
 		font-family: var(--font_mono);
+		border-radius: var(--radius_xs3);
+	}
+	.shadow_example:not(:last-child) {
+		margin-bottom: var(--space_md);
 	}
 	small {
 		height: var(--input_height_sm);

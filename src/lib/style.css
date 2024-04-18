@@ -2089,6 +2089,51 @@ light and shadow
 .shade_inset_xl {
 	box-shadow: var(--shade_inset_xl);
 }
+.highlight_xs {
+	box-shadow: var(--highlight_xs);
+}
+.highlight_sm {
+	box-shadow: var(--highlight_sm);
+}
+.highlight_md {
+	box-shadow: var(--highlight_md);
+}
+.highlight_lg {
+	box-shadow: var(--highlight_lg);
+}
+.highlight_xl {
+	box-shadow: var(--highlight_xl);
+}
+.highlight_outset_xs {
+	box-shadow: var(--highlight_outset_xs);
+}
+.highlight_outset_sm {
+	box-shadow: var(--highlight_outset_sm);
+}
+.highlight_outset_md {
+	box-shadow: var(--highlight_outset_md);
+}
+.highlight_outset_lg {
+	box-shadow: var(--highlight_outset_lg);
+}
+.highlight_outset_xl {
+	box-shadow: var(--highlight_outset_xl);
+}
+.highlight_inset_xs {
+	box-shadow: var(--highlight_inset_xs);
+}
+.highlight_inset_sm {
+	box-shadow: var(--highlight_inset_sm);
+}
+.highlight_inset_md {
+	box-shadow: var(--highlight_inset_md);
+}
+.highlight_inset_lg {
+	box-shadow: var(--highlight_inset_lg);
+}
+.highlight_inset_xl {
+	box-shadow: var(--highlight_inset_xl);
+}
 /* higher specificity */
 /* TODO which order should these be in? */
 .shadow_inherit {
