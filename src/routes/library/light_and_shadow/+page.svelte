@@ -231,11 +231,8 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
-			<Tome_Subheading text="Shade variants" slug="shade-variants" tag="h4" />
-			<p>
-				Shade is color-scheme-aware, black in light mode and white in dark mode. (⚠️ this doesn't
-				make sense with colors, semantics at each API layer need to be thought through)
-			</p>
+			<Tome_Subheading text="Color variants" slug="shade-variants" tag="h4" />
+			<p>TODO</p>
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}
 					<div class="shadow_example" style:box-shadow="var(--shade_{variant})">
@@ -260,7 +257,8 @@
 		<section>
 			<Tome_Subheading text="Down variants" slug="down-variants" tag="h4" />
 			<p>
-				Down is color-scheme-agnostic and the inverse of up. Composes the shadow and glow variants.
+				Down is color-scheme-agnostic and the inverse of up. Composes two shadows, an inset dark
+				shadow and outset highlight.
 			</p>
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}
@@ -273,7 +271,8 @@
 		<section>
 			<Tome_Subheading text="Up variants" slug="up-variants" tag="h4" />
 			<p>
-				Up is color-scheme-agnostic and the inverse of down. Composes the shadow and glow variants.
+				Up is color-scheme-agnostic and the inverse of down. Composes two shadows, an inset dark
+				shadow and outset highlight.
 			</p>
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}

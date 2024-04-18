@@ -633,166 +633,202 @@ export const input_height_inner: Style_Variable = {
 // - shadow and glow - color-scheme-agnostic
 // - lift and depth that have both shadow and glow, color-scheme-aware
 
+export const get_shadow_xs = (
+	suffix?: string,
+	inverse_x?: boolean,
+	inverse_y?: boolean,
+): string => {
+	const x_sign = inverse_x ? '-' : '';
+	const y_sign = inverse_y ? '-' : '';
+	return `${x_sign}0.5px ${y_sign}1px 3px hsla(var(--shadow_color) / 0.1)${suffix ? ' ' + suffix : ''}, ${x_sign}0.5px ${y_sign}1.5px 4px hsla(var(--shadow_color) / 0.1)${suffix ? ' ' + suffix : ''}`;
+};
+export const get_shadow_sm = (
+	suffix?: string,
+	inverse_x?: boolean,
+	inverse_y?: boolean,
+): string => {
+	const x_sign = inverse_x ? '-' : '';
+	const y_sign = inverse_y ? '-' : '';
+	return `${x_sign}1px ${y_sign}2px 5px hsla(var(--shadow_color) / 0.15)${suffix ? ' ' + suffix : ''}, ${x_sign}1px ${y_sign}4px 10px hsla(var(--shadow_color) / 0.15)${suffix ? ' ' + suffix : ''}`;
+};
+export const get_shadow_md = (
+	suffix?: string,
+	inverse_x?: boolean,
+	inverse_y?: boolean,
+): string => {
+	const x_sign = inverse_x ? '-' : '';
+	const y_sign = inverse_y ? '-' : '';
+	return `${x_sign}1.5px ${y_sign}3px 8px hsla(var(--shadow_color) / 0.2)${suffix ? ' ' + suffix : ''}, ${x_sign}1.5px ${y_sign}6px 18px hsla(var(--shadow_color) / 0.2)${suffix ? ' ' + suffix : ''}`;
+};
+export const get_shadow_lg = (
+	suffix?: string,
+	inverse_x?: boolean,
+	inverse_y?: boolean,
+): string => {
+	const x_sign = inverse_x ? '-' : '';
+	const y_sign = inverse_y ? '-' : '';
+	return `${x_sign}2px ${y_sign}4px 12px hsla(var(--shadow_color) / 0.4)${suffix ? ' ' + suffix : ''}, ${x_sign}2px ${y_sign}8px 30px hsla(var(--shadow_color) / 0.4)${suffix ? ' ' + suffix : ''}`;
+};
+export const get_shadow_xl = (
+	suffix?: string,
+	inverse_x?: boolean,
+	inverse_y?: boolean,
+): string => {
+	const x_sign = inverse_x ? '-' : '';
+	const y_sign = inverse_y ? '-' : '';
+	return `${x_sign}3px ${y_sign}6px 16px hsla(var(--shadow_color) / 0.6)${suffix ? ' ' + suffix : ''}, ${x_sign}3px ${y_sign}8px 48px hsla(var(--shadow_color) / 0.6)${suffix ? ' ' + suffix : ''}`;
+};
+
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
 	light: 'var(--tint_hue) var(--tint_saturation) 6%', // TODO BLOCK extract variable
 };
+// TODO use this or delete
+export const glow_color: Style_Variable = {
+	name: 'glow_color',
+	light: 'var(--tint_hue) var(--tint_saturation) 94%', // TODO BLOCK extract variable
+};
 
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
-	light:
-		'0.5px 1px 3px hsla(var(--shadow_color) / 0.1), 0.5px 1.5px 4px hsla(var(--shadow_color) / 0.1)',
+	light: get_shadow_xs(),
 };
 export const shadow_sm: Style_Variable = {
 	name: 'shadow_sm',
-	light:
-		'1px 2px 5px hsla(var(--shadow_color) / 0.15), 1px 4px 10px hsla(var(--shadow_color) / 0.15)',
+	light: get_shadow_sm(),
 };
 export const shadow_md: Style_Variable = {
 	name: 'shadow_md',
-	light:
-		'1.5px 3px 8px hsla(var(--shadow_color) / 0.2), 1.5px 6px 18px hsla(var(--shadow_color) / 0.2)',
+	light: get_shadow_md(),
 };
 export const shadow_lg: Style_Variable = {
 	name: 'shadow_lg',
-	light:
-		'2px 4px 12px hsla(var(--shadow_color) / 0.4), 2px 8px 30px hsla(var(--shadow_color) / 0.4)',
+	light: get_shadow_lg(),
 };
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
-	light:
-		'3px 6px 16px hsla(var(--shadow_color) / 0.6), 3px 8px 48px hsla(var(--shadow_color) / 0.6)',
+	light: get_shadow_xl(),
 };
 
 export const shadow_inset_xs: Style_Variable = {
 	name: 'shadow_inset_xs',
-	light:
-		'0.5px 1px 3px hsla(var(--shadow_color) / 0.1) inset, 0.5px 1.5px 4px hsla(var(--shadow_color) / 0.1) inset',
+	light: get_shadow_xs('inset'),
 };
 export const shadow_inset_sm: Style_Variable = {
 	name: 'shadow_inset_sm',
-	light:
-		'1px 2px 5px hsla(var(--shadow_color) / 0.15) inset, 1px 4px 10px hsla(var(--shadow_color) / 0.15) inset',
+	light: get_shadow_sm('inset'),
 };
 export const shadow_inset_md: Style_Variable = {
 	name: 'shadow_inset_md',
-	light:
-		'1.5px 3px 8px hsla(var(--shadow_color) / 0.2) inset, 1.5px 6px 18px hsla(var(--shadow_color) / 0.2) inset',
+	light: get_shadow_md('inset'),
 };
 export const shadow_inset_lg: Style_Variable = {
 	name: 'shadow_inset_lg',
-	light:
-		'2px 4px 12px hsla(var(--shadow_color) / 0.4) inset, 2px 8px 30px hsla(var(--shadow_color) / 0.4) inset',
+	light: get_shadow_lg('inset'),
 };
 export const shadow_inset_xl: Style_Variable = {
 	name: 'shadow_inset_xl',
-	light:
-		'3px 6px 16px hsla(var(--shadow_color) / 0.6) inset, 3px 8px 48px hsla(var(--shadow_color) / 0.6) inset',
+	light: get_shadow_xl('inset'),
 };
 
 export const shadow_outset_xs: Style_Variable = {
 	name: 'shadow_outset_xs',
-	light:
-		'-0.5px -1px 3px hsla(var(--shadow_color) / 0.1) inset, -0.5px -1.5px 4px hsla(var(--shadow_color) / 0.1) inset',
+	light: get_shadow_xs('inset', true, true),
 };
 export const shadow_outset_sm: Style_Variable = {
 	name: 'shadow_outset_sm',
-	light:
-		'-1px -2px 5px hsla(var(--shadow_color) / 0.15) inset, -1px -4px 10px hsla(var(--shadow_color) / 0.15) inset',
+	light: get_shadow_sm('inset', true, true),
 };
 export const shadow_outset_md: Style_Variable = {
 	name: 'shadow_outset_md',
-	light:
-		'-1.5px -3px 8px hsla(var(--shadow_color) / 0.2) inset, -1.5px -6px 18px hsla(var(--shadow_color) / 0.2) inset',
+	light: get_shadow_md('inset', true, true),
 };
 export const shadow_outset_lg: Style_Variable = {
 	name: 'shadow_outset_lg',
-	light:
-		'-2px -4px 12px hsla(var(--shadow_color) / 0.4) inset, -2px -8px 30px hsla(var(--shadow_color) / 0.4) inset',
+	light: get_shadow_lg('inset', true, true),
 };
 export const shadow_outset_xl: Style_Variable = {
 	name: 'shadow_outset_xl',
-	light:
-		'-3px -6px 16px hsla(var(--shadow_color) / 0.6) inset, -3px -8px 48px hsla(var(--shadow_color) / 0.6) inset',
+	light: get_shadow_xl('inset', true, true),
 };
 
 // TODO BLOCK delete these, compose the values with helpers
 export const glow_xs: Style_Variable = {
 	name: 'glow_xs',
 	light:
-		'0.5px 1px 3px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.1), 0.5px 1.5px 4px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.1)',
+		'0.5px 1px 3px hsla(var(--shadow_color) / 0.1), 0.5px 1.5px 4px hsla(var(--shadow_color) / 0.1)',
 };
 export const glow_sm: Style_Variable = {
 	name: 'glow_sm',
 	light:
-		'1px 2px 5px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.15), 1px 4px 10px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.15)',
+		'1px 2px 5px hsla(var(--shadow_color) / 0.15), 1px 4px 10px hsla(var(--shadow_color) / 0.15)',
 };
 export const glow_md: Style_Variable = {
 	name: 'glow_md',
 	light:
-		'1.5px 3px 8px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2), 1.5px 6px 18px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2)',
+		'1.5px 3px 8px hsla(var(--shadow_color) / 0.2), 1.5px 6px 18px hsla(var(--shadow_color) / 0.2)',
 };
 export const glow_lg: Style_Variable = {
 	name: 'glow_lg',
 	light:
-		'2px 4px 12px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.4), 2px 8px 30px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.4)',
+		'2px 4px 12px hsla(var(--shadow_color) / 0.4), 2px 8px 30px hsla(var(--shadow_color) / 0.4)',
 };
 export const glow_xl: Style_Variable = {
 	name: 'glow_xl',
 	light:
-		'3px 6px 16px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.6), 3px 8px 48px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.6)',
+		'3px 6px 16px hsla(var(--shadow_color) / 0.6), 3px 8px 48px hsla(var(--shadow_color) / 0.6)',
 };
 
 export const glow_inset_xs: Style_Variable = {
 	name: 'glow_inset_xs',
 	light:
-		'0.5px 1px 3px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2) inset, 0.5px 1.5px 4px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2) inset',
+		'0.5px 1px 3px hsla(var(--shadow_color) / 0.2) inset, 0.5px 1.5px 4px hsla(var(--shadow_color) / 0.2) inset',
 };
 export const glow_inset_sm: Style_Variable = {
 	name: 'glow_inset_sm',
 	light:
-		'1px 2px 5px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.25) inset, 1px 4px 10px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.25) inset',
+		'1px 2px 5px hsla(var(--shadow_color) / 0.25) inset, 1px 4px 10px hsla(var(--shadow_color) / 0.25) inset',
 };
 export const glow_inset_md: Style_Variable = {
 	name: 'glow_inset_md',
 	light:
-		'1.5px 3px 8px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.3) inset, 1.5px 6px 18px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.3) inset',
+		'1.5px 3px 8px hsla(var(--shadow_color) / 0.3) inset, 1.5px 6px 18px hsla(var(--shadow_color) / 0.3) inset',
 };
 export const glow_inset_lg: Style_Variable = {
 	name: 'glow_inset_lg',
 	light:
-		'2px 4px 12px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.5) inset, 2px 8px 30px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.5) inset',
+		'2px 4px 12px hsla(var(--shadow_color) / 0.5) inset, 2px 8px 30px hsla(var(--shadow_color) / 0.5) inset',
 };
 export const glow_inset_xl: Style_Variable = {
 	name: 'glow_inset_xl',
 	light:
-		'3px 6px 16px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.7) inset, 3px 8px 48px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.7) inset',
+		'3px 6px 16px hsla(var(--shadow_color) / 0.7) inset, 3px 8px 48px hsla(var(--shadow_color) / 0.7) inset',
 };
 
 export const glow_outset_xs: Style_Variable = {
 	name: 'glow_outset_xs',
 	light:
-		'-0.5px -1px 3px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2) inset, -0.5px -1.5px 4px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2) inset',
+		'-0.5px -1px 3px hsla(var(--shadow_color) / 0.2) inset, -0.5px -1.5px 4px hsla(var(--shadow_color) / 0.2) inset',
 };
 export const glow_outset_sm: Style_Variable = {
 	name: 'glow_outset_sm',
 	light:
-		'-1px -2px 5px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.25) inset, -1px -4px 10px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.25) inset',
+		'-1px -2px 5px hsla(var(--shadow_color) / 0.25) inset, -1px -4px 10px hsla(var(--shadow_color) / 0.25) inset',
 };
 export const glow_outset_md: Style_Variable = {
 	name: 'glow_outset_md',
 	light:
-		'-1.5px -3px 8px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.3) inset, -1.5px -6px 18px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.3) inset',
+		'-1.5px -3px 8px hsla(var(--shadow_color) / 0.3) inset, -1.5px -6px 18px hsla(var(--shadow_color) / 0.3) inset',
 };
 export const glow_outset_lg: Style_Variable = {
 	name: 'glow_outset_lg',
 	light:
-		'-2px -4px 12px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.5) inset, -2px -8px 30px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.5) inset',
+		'-2px -4px 12px hsla(var(--shadow_color) / 0.5) inset, -2px -8px 30px hsla(var(--shadow_color) / 0.5) inset',
 };
 export const glow_outset_xl: Style_Variable = {
 	name: 'glow_outset_xl',
 	light:
-		'-3px -6px 16px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.7) inset, -3px -8px 48px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.7) inset',
+		'-3px -6px 16px hsla(var(--shadow_color) / 0.7) inset, -3px -8px 48px hsla(var(--shadow_color) / 0.7) inset',
 };
 
 export const shade_xs: Style_Variable = {
