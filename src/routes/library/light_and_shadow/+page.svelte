@@ -225,6 +225,10 @@
 			Glows are the inverse of shadows. Notice how glows use the same color as the <code>bg</code> and
 			are therefore invisible against a plain background.
 		</p>
+		<aside>
+			⚠️ "glow" and "shadow" do indeed seem to be misnomers by being color-scheme-aware. Expect
+			breaking changes.
+		</aside>
 		<div class="p_lg panel fg_3">
 			{#each shadow_variants as variant}
 				<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
