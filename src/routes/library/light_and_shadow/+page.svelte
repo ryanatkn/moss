@@ -18,6 +18,8 @@
 	const toggle_color_scheme = () => {
 		color_scheme.update((c) => (c === 'light' ? 'dark' : 'light'));
 	};
+
+	// TODO this is a good usecase for h4 subheadings
 </script>
 
 <Tome_Detail {tome}>
@@ -67,7 +69,8 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Shades and highlights" slug="shades-and-highlights" />
-		<h4><code>darken</code> and <code>lighten</code></h4>
+		<Tome_Subheading tag="h4"><code>darken</code> and <code>lighten</code></Tome_Subheading>
+		<aside><p>⚠️ This will change.</p></aside>
 		<div class="swatch">
 			{#each {length: 9} as _, i}
 				{@const name = 'darken_' + (i + 1)}
@@ -88,7 +91,7 @@
 		</div>
 	</section>
 	<section>
-		<h4><code>bg</code> and <code>fg</code></h4>
+		<Tome_Subheading tag="h4"><code>bg</code> and <code>fg</code></Tome_Subheading>
 		<p>
 			In light mode, <code>bg</code> is the same as <code>lighten</code> and <code>fg</code> is the
 			same as <code>darken</code>. In dark mode, they're swapped.
@@ -198,7 +201,7 @@
 			</aside>
 		</section>
 		<section>
-			<h4>Shadow variants</h4>
+			<Tome_Subheading tag="h4">Shadow variants</Tome_Subheading>
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}
 					<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
@@ -221,42 +224,8 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
-			<h4>Glow variants</h4>
-			<p>
-				Glows are the inverse of shadows. Notice how glows use the same color as the <code>bg</code>
-				and are therefore invisible against the base background.
-			</p>
-			<aside>
-				⚠️ "glow" and "shadow" do indeed seem to be misnomers by being color-scheme-aware. Expect
-				breaking changes.
-			</aside>
-			<div class="p_lg panel fg_3">
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
-						<Style_Variable_Button name="glow_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--glow_inset_{variant})">
-						<Style_Variable_Button name="glow_inset_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
-						<Style_Variable_Button name="glow_outset_{variant}" />
-					</div>
-				{/each}
-			</div>
-		</section>
-		<section>
-			<Color_Scheme_Input />
-		</section>
-		<section>
-			<h4>Shade variants</h4>
-			<p>
-				Shade is color-scheme-aware, shadow in light mode and glow in dark mode. Inverse of
-				highlight.
-			</p>
+			<Tome_Subheading tag="h4">Shade variants</Tome_Subheading>
+			<p>Shade is color-scheme-aware, shadow in light mode and glow in dark mode.</p>
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}
 					<div class="shadow_example" style:box-shadow="var(--shade_{variant})">
@@ -279,34 +248,7 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
-			<h4>Highlight variants</h4>
-			<p>
-				Highlight is color-scheme-aware, glow in light mode and shadow in dark mode. Inverse of
-				shade.
-			</p>
-			<div class="p_lg panel fg_3">
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--highlight_{variant})">
-						<Style_Variable_Button name="highlight_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--highlight_inset_{variant})">
-						<Style_Variable_Button name="highlight_inset_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--highlight_outset_{variant})">
-						<Style_Variable_Button name="highlight_outset_{variant}" />
-					</div>
-				{/each}
-			</div>
-		</section>
-		<section>
-			<Color_Scheme_Input />
-		</section>
-		<section>
-			<h4>Depth variants</h4>
+			<Tome_Subheading tag="h4">Depth variants</Tome_Subheading>
 			<p>
 				Depth is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of lift.
 			</p>
@@ -319,7 +261,7 @@
 			</div>
 		</section>
 		<section>
-			<h4>Lift variants</h4>
+			<Tome_Subheading tag="h4">Lift variants</Tome_Subheading>
 			<p>
 				Lift is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of depth.
 			</p>

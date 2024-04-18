@@ -623,8 +623,6 @@ export const input_height_inner: Style_Variable = {
 
 // TODO maybe extract  `0.1` etc as `shadow_opacity_xs`, but what about using colors? do we need composable versions of the color declarations?
 
-// TODO @multiple add back highlight (maybe through the generic colors, a-g|fg|bg)
-
 // TODO maybe even scale these out programmatically? at runtime for the TS? data could always be baked as ts/json
 
 // TODO extract color vars - abstracting opacity too?
@@ -742,53 +740,53 @@ export const glow_xl: Style_Variable = {
 export const glow_inset_xs: Style_Variable = {
 	name: 'glow_inset_xs',
 	light:
-		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1) inset, 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1) inset',
+		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset, 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset',
 };
 export const glow_inset_sm: Style_Variable = {
 	name: 'glow_inset_sm',
 	light:
-		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15) inset, 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15) inset',
+		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.25) inset, 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.25) inset',
 };
 export const glow_inset_md: Style_Variable = {
 	name: 'glow_inset_md',
 	light:
-		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset, 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset',
+		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.3) inset, 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.3) inset',
 };
 export const glow_inset_lg: Style_Variable = {
 	name: 'glow_inset_lg',
 	light:
-		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4) inset, 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4) inset',
+		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.5) inset, 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.5) inset',
 };
 export const glow_inset_xl: Style_Variable = {
 	name: 'glow_inset_xl',
 	light:
-		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset, 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset',
+		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.7) inset, 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.7) inset',
 };
 
 export const glow_outset_xs: Style_Variable = {
 	name: 'glow_outset_xs',
 	light:
-		'-0.5px -1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1) inset, -0.5px -1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1) inset',
+		'-0.5px -1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset, -0.5px -1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset',
 };
 export const glow_outset_sm: Style_Variable = {
 	name: 'glow_outset_sm',
 	light:
-		'-1px -2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15) inset, -1px -4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15) inset',
+		'-1px -2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.25) inset, -1px -4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.25) inset',
 };
 export const glow_outset_md: Style_Variable = {
 	name: 'glow_outset_md',
 	light:
-		'-1.5px -3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset, -1.5px -6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset',
+		'-1.5px -3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.3) inset, -1.5px -6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.3) inset',
 };
 export const glow_outset_lg: Style_Variable = {
 	name: 'glow_outset_lg',
 	light:
-		'-2px -4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4) inset, -2px -8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4) inset',
+		'-2px -4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.5) inset, -2px -8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.5) inset',
 };
 export const glow_outset_xl: Style_Variable = {
 	name: 'glow_outset_xl',
 	light:
-		'-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6) inset',
+		'-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.7) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.7) inset',
 };
 
 export const shade_xs: Style_Variable = {
