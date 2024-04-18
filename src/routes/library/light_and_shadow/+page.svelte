@@ -248,7 +248,7 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
-			<Tome_Subheading tag="h4">Depth variants</Tome_Subheading>
+			<Tome_Subheading tag="h4">Depth/lower (TODO name?) variants</Tome_Subheading>
 			<p>
 				Depth is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of lift.
 			</p>
