@@ -645,44 +645,44 @@ export const create_shadow_xs = (color: string, options?: Create_Shadow_Options)
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	return `${scale_x * 0.5}px ${scale_y * 1}px 3px hsla(var(--${color}) / 0.1)${suffix}, ${scale_x * 0.5}px ${scale_y * 1.5}px 4px hsla(var(--${color}) / 0.1)${suffix}`;
+	return `${scale_x * 0.5}px ${scale_y * 1}px 3px hsla(var(--${color}), 0.1)${suffix}, ${scale_x * 0.5}px ${scale_y * 1.5}px 4px hsla(var(--${color}), 0.1)${suffix}`;
 };
 export const create_shadow_sm = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	return `${scale_x * 1}px ${scale_y * 2}px 5px hsla(var(--${color}) / 0.15)${suffix}, ${scale_x * 1}px ${scale_y * 4}px 10px hsla(var(--${color}) / 0.15)${suffix}`;
+	return `${scale_x * 1}px ${scale_y * 2}px 5px hsla(var(--${color}), 0.15)${suffix}, ${scale_x * 1}px ${scale_y * 4}px 10px hsla(var(--${color}), 0.15)${suffix}`;
 };
 export const create_shadow_md = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	return `${scale_x * 1.5}px ${scale_y * 3}px 8px hsla(var(--${color}) / 0.2)${suffix}, ${scale_x * 1.5}px ${scale_y * 6}px 18px hsla(var(--${color}) / 0.2)${suffix}`;
+	return `${scale_x * 1.5}px ${scale_y * 3}px 8px hsla(var(--${color}), 0.2)${suffix}, ${scale_x * 1.5}px ${scale_y * 6}px 18px hsla(var(--${color}), 0.2)${suffix}`;
 };
 export const create_shadow_lg = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	return `${scale_x * 2}px ${scale_y * 4}px 12px hsla(var(--${color}) / 0.4)${suffix}, ${scale_x * 2}px ${scale_y * 8}px 30px hsla(var(--${color}) / 0.4)${suffix}`;
+	return `${scale_x * 2}px ${scale_y * 4}px 12px hsla(var(--${color}), 0.4)${suffix}, ${scale_x * 2}px ${scale_y * 8}px 30px hsla(var(--${color}), 0.4)${suffix}`;
 };
 export const create_shadow_xl = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	return `${scale_x * 3}px ${scale_y * 6}px 16px hsla(var(--${color}) / 0.6)${suffix}, ${scale_x * 3}px ${scale_y * 8}px 48px hsla(var(--${color}) / 0.6)${suffix}`;
+	return `${scale_x * 3}px ${scale_y * 6}px 16px hsla(var(--${color}), 0.6)${suffix}, ${scale_x * 3}px ${scale_y * 8}px 48px hsla(var(--${color}), 0.6)${suffix}`;
 };
 
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
-	light: 'var(--tint_hue) var(--tint_saturation) 6%', // TODO BLOCK maybe no tint, and design around blend modes?
+	light: 'var(--tint_hue), var(--tint_saturation), 6%', // TODO BLOCK maybe no tint, and design around blend modes?
 };
 export const glow_color: Style_Variable = {
 	name: 'glow_color',
-	light: 'var(--tint_hue) var(--tint_saturation) 94%', // TODO BLOCK maybe no tint, and design around blend modes?
+	light: 'var(--tint_hue), var(--tint_saturation), 94%', // TODO BLOCK maybe no tint, and design around blend modes?
 };
 
 export const shadow_xs: Style_Variable = {
