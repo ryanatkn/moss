@@ -136,6 +136,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Fading opacity" slug="fading-opacity" />
+		<aside><p>⚠️ This will change.</p></aside>
 		<div class="swatch">
 			<div>
 				<div class="color" style:background-color="var(--color_a_5)"></div>
