@@ -39,10 +39,7 @@
 		</p>
 		<p>Some features:</p>
 		<ul>
-			<li>
-				plain CSS, most users import a single stylesheet (optimizing it is currently out of scope,
-				see tools like <a href="https://github.com/FullHuman/purgecss">PurgeCSS</a>)
-			</li>
+			<li>plain CSS, most users import a single stylesheet</li>
 			<li>zero dependencies</li>
 			<li>
 				designed around <em>style variables</em>, a specialization of
@@ -62,45 +59,44 @@
 				(including dark mode)
 			</li>
 			<li>styles HTML tags directly, so you don't need to add `.btn` to buttons</li>
+		</ul>
+		<p>The stylesheets:</p>
+		<ul>
 			<li>
-				stylesheets:
+				<Module_Link path="style.css"><code>@ryanatkn/moss/style.css</code></Module_Link>, which is
+				composed of:
 				<ul>
 					<li>
-						<Module_Link path="style.css"><code>@ryanatkn/moss/style.css</code></Module_Link>, which
-						is composed of:
-						<ul>
-							<li>
-								<Module_Link path="style_reset.css"
-									><code>@ryanatkn/moss/style_reset.css</code></Module_Link
-								> - required
-							</li>
-							<li>
-								<Module_Link path="style_utilities.css"
-									><code>@ryanatkn/moss/style_utilities.css</code></Module_Link
-								> - optional
-							</li>
-							<li>
-								<Module_Link path="style_components.css"
-									><code>@ryanatkn/moss/style_components.css</code></Module_Link
-								> - optional
-							</li>
-							<li>
-								<Module_Link path="style_animations.css"
-									><code>@ryanatkn/moss/style_animations.css</code></Module_Link
-								> - optional
-							</li>
-						</ul>
+						<Module_Link path="style_reset.css"
+							><code>@ryanatkn/moss/style_reset.css</code></Module_Link
+						> - required
 					</li>
 					<li>
-						<Module_Link path="theme.css"><code>@ryanatkn/moss/theme.css</code></Module_Link> - or bring
-						your own
+						<Module_Link path="style_utilities.css"
+							><code>@ryanatkn/moss/style_utilities.css</code></Module_Link
+						> - optional
 					</li>
 					<li>
-						it probably makes sense to include a Vite plugin to remove unused styles, but the
-						primary apps I'm building provide these styles to users and therefore won't remove
-						unused code, so the feature isn't urgent
+						<Module_Link path="style_components.css"
+							><code>@ryanatkn/moss/style_components.css</code></Module_Link
+						> - optional
+					</li>
+					<li>
+						<Module_Link path="style_animations.css"
+							><code>@ryanatkn/moss/style_animations.css</code></Module_Link
+						> - optional
 					</li>
 				</ul>
+			</li>
+			<li>
+				<Module_Link path="theme.css"><code>@ryanatkn/moss/theme.css</code></Module_Link> - or bring
+				your own
+			</li>
+			<li>
+				optimizing the stylesheet is currently out of Moss's scope, see tools like <a
+					href="https://github.com/FullHuman/purgecss">PurgeCSS</a
+				> - I'll probably include a Vite plugin to remove unused styles through a separate project like
+				Fuz, and I encourage publishing your own integrations individually
 			</li>
 		</ul>
 		<p>
