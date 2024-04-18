@@ -693,12 +693,11 @@ export const create_shadow_xl = (color: string, options?: Create_Shadow_Options)
 
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
-	light: 'var(--tint_hue) var(--tint_saturation) 6%', // TODO BLOCK extract variable
+	light: 'var(--tint_hue) var(--tint_saturation) 6%', // TODO BLOCK maybe no tint, and design around blend modes?
 };
-// TODO use this or delete
 export const glow_color: Style_Variable = {
 	name: 'glow_color',
-	light: 'var(--tint_hue) var(--tint_saturation) 94%', // TODO BLOCK extract variable
+	light: 'var(--tint_hue) var(--tint_saturation) 94%', // TODO BLOCK maybe no tint, and design around blend modes?
 };
 
 export const shadow_xs: Style_Variable = {
@@ -1310,6 +1309,7 @@ export const default_variables: Style_Variable[] = [
 
 	/* shadows */
 	shadow_color,
+	glow_color,
 	shadow_xs,
 	shadow_sm,
 	shadow_md,
