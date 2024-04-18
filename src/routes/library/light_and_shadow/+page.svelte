@@ -194,7 +194,7 @@
 				<li>
 					Colored shadows/glows? By composing variables? <code>--shadow|glow_color</code>
 					or
-					<code>--color</code> or something else?
+					<code>--shadow|glow</code> or something else? Abstracting alpha too?
 				</li>
 				<li>
 					For buttons and similar cases, add variants that combine a shadow and glow? Maybe <code
