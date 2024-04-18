@@ -231,6 +231,29 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
+			<Tome_Subheading text="Glow variants" slug="glow-variants" tag="h4" />
+			<div class="p_lg panel fg_3">
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
+						<Style_Variable_Button name="shadow_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--glow_inset_{variant})">
+						<Style_Variable_Button name="shadow_inset_{variant}" />
+					</div>
+				{/each}
+				{#each shadow_variants as variant}
+					<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
+						<Style_Variable_Button name="shadow_outset_{variant}" />
+					</div>
+				{/each}
+			</div>
+		</section>
+		<section>
+			<Color_Scheme_Input />
+		</section>
+		<section>
 			<Tome_Subheading text="Color variants" slug="shade-variants" tag="h4" />
 			<p>TODO</p>
 			<div class="p_lg panel fg_3">
