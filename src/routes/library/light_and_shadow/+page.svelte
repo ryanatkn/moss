@@ -32,26 +32,39 @@
 			and states.
 		</p>
 		<p>
-			Light mode's starting point is plain white documents (like paper) where we can think of
-			assembling elements that contrast against the white background, replacing some of the white
-			blankness with color and darkened values. Shadows make natural sense, and white glows against
-			a white background are invisible.
+			Light mode's starting point is plain white documents (like paper) where we can think of UI
+			construction as assembling elements that contrast against the white background, replacing some
+			of the white blankness with darkened values/color/shape. Black shadows on the white background
+			make natural sense, and white glows against a white background are invisible.
 		</p>
 		<p>
 			In contrast, dark mode's starting point is a lightless void where we add light. We add
 			elements which emanate light. I think of videogames and virtual/augmented/actual reality.
-			Black shadows don't work against a black background, and glows make natural sense.
+			Black shadows don't work against a black background, and white glows make natural sense
+			against a black background.
 		</p>
 		<p>
 			This distinction leads to complication. For example, applying a black shadow to an element has
 			a particular visual impact on the typical light mode page, but viewed in dark mode, it would
 			disappear completely against a black background.
 		</p>
+		<p>
+			Moss provides APIs that simplify or hide the complexity. For the <code>lighten</code>
+			and <code>darken</code> variables are the same in light and dark modes, but
+			<code>fg</code>
+			and <code>bg</code> swap places. Some variables are color-scheme-aware like this.
+		</p>
 		<aside>
-			The <Tome_Link name="colors" /> docs elaborate more on this point. I have multiple design questions
-			about this - I may write down all of the considerations in one place, and maybe make a post/video
-			about it. Broadly, I like the "light and shadow" framing to thinking about UI. I think "dark mode"
-			is more interesting than it lets on, because of
+			<p>
+				Currently, the choice is to make "shadow" change semantically to a glow in dark mode, but
+				this is likely to change as things become clearer.
+			</p>
+			<p>
+				The <Tome_Link name="colors" /> docs elaborate more on this point. I have multiple design questions
+				about this - I may write down all of the considerations in one place, and maybe make a post/video
+				about it. Broadly, I like the "light and shadow" framing to thinking about UI. I think "dark
+				mode" is more interesting than it lets on, because of
+			</p>
 		</aside>
 		<p>
 			Opacity is used to enable arbitrary stacking that visually inherits its context. Not all cases
