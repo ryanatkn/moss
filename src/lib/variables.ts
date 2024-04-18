@@ -635,7 +635,7 @@ export const input_height_inner: Style_Variable = {
 
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
-	light: 'var(--tint_hue) var(--tint_saturation) 6%', // TODO ?
+	light: 'var(--tint_hue) var(--tint_saturation) 6%', // TODO BLOCK extract variable
 };
 
 export const shadow_xs: Style_Variable = {
