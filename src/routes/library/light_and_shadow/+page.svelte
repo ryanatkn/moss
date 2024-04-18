@@ -258,21 +258,21 @@
 		</section>
 		<section>
 			<Tome_Subheading text="Color variants" slug="shade-variants" tag="h4" />
-			<p>⚠️ TODO</p>
-			<div class="p_lg panel fg_3">
+			<p>⚠️ TODO this isn't working with the nested variable like I was hoping</p>
+			<div class="p_lg panel fg_3" style:--shadow_color="50 50% 50%">
 				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--shade_{variant})">
-						<Style_Variable_Button name="shade_{variant}" />
+					<div class="shadow_example shadow_{variant}">
+						<Style_Variable_Button name="shadow_{variant}" />
 					</div>
 				{/each}
 				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--shade_inset_{variant})">
-						<Style_Variable_Button name="shade_inset_{variant}" />
+					<div class="shadow_example shadow_inset_{variant}">
+						<Style_Variable_Button name="shadow_inset_{variant}" />
 					</div>
 				{/each}
 				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--shade_outset_{variant})">
-						<Style_Variable_Button name="shade_outset_{variant}" />
+					<div class="shadow_example shadow_outset_{variant}">
+						<Style_Variable_Button name="shadow_outset_{variant}" />
 					</div>
 				{/each}
 			</div>
