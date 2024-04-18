@@ -949,44 +949,44 @@ export const highlight_outset_xl: Style_Variable = {
 
 export const depth_xs: Style_Variable = {
 	name: 'depth_xs',
-	light: glow_outset_xs.light, // + ', ' + shadow_inset_xs.light,
+	light: glow_outset_xs.light + ', ' + shadow_inset_xs.light,
 };
 export const depth_sm: Style_Variable = {
 	name: 'depth_sm',
-	light: glow_outset_sm.light, // + ', ' + shadow_inset_sm.light,
+	light: glow_outset_sm.light + ', ' + shadow_inset_sm.light,
 };
 export const depth_md: Style_Variable = {
 	name: 'depth_md',
-	light: glow_outset_md.light, // + ', ' + shadow_inset_md.light,
+	light: glow_outset_md.light + ', ' + shadow_inset_md.light,
 };
 export const depth_lg: Style_Variable = {
 	name: 'depth_lg',
-	light: glow_outset_lg.light, // + ', ' + shadow_inset_lg.light,
+	light: glow_outset_lg.light + ', ' + shadow_inset_lg.light,
 };
 export const depth_xl: Style_Variable = {
 	name: 'depth_xl',
-	light: glow_outset_xl.light, // + ', ' + shadow_inset_xl.light,
+	light: glow_outset_xl.light + ', ' + shadow_inset_xl.light,
 };
 
 export const lift_xs: Style_Variable = {
 	name: 'lift_xs',
-	light: shadow_outset_xs.light, // + ', ' + glow_inset_xs.light,
+	light: shadow_outset_xs.light + ', ' + glow_inset_xs.light,
 };
 export const lift_sm: Style_Variable = {
 	name: 'lift_sm',
-	light: shadow_outset_sm.light, // + ', ' + glow_inset_sm.light,
+	light: shadow_outset_sm.light + ', ' + glow_inset_sm.light,
 };
 export const lift_md: Style_Variable = {
 	name: 'lift_md',
-	light: shadow_outset_md.light, // + ', ' + glow_inset_md.light,
+	light: shadow_outset_md.light + ', ' + glow_inset_md.light,
 };
 export const lift_lg: Style_Variable = {
 	name: 'lift_lg',
-	light: shadow_outset_lg.light, // + ', ' + glow_inset_lg.light,
+	light: shadow_outset_lg.light + ', ' + glow_inset_lg.light,
 };
 export const lift_xl: Style_Variable = {
 	name: 'lift_xl',
-	light: shadow_outset_xl.light, // + ', ' + glow_inset_xl.light,
+	light: shadow_outset_xl.light + ', ' + glow_inset_xl.light,
 };
 
 // TODO
