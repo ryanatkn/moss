@@ -220,6 +220,7 @@
 				<Style_Variable_Button name="shadow_outset_{variant}" />
 			</div>
 		{/each}
+		<div class="mb_xl7"><Color_Scheme_Input /></div>
 		<p>
 			Glows are the inverse of shadows. Notice how glows use the same color as the <code>bg</code> and
 			are therefore invisible against a plain background.
