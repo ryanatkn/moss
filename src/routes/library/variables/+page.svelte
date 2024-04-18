@@ -8,6 +8,7 @@
 
 	import {default_variables} from '$lib/variables.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import Module_Link from '$routes/Module_Link.svelte';
 
 	const LIBRARY_ITEM_NAME = 'variables';
 
@@ -53,7 +54,9 @@
 		</p>
 	</section>
 	<section>
-		<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.ts">/src/lib/theme.ts</a>
+		<div class="mb_md">
+			<Module_Link path="theme.js" />
+		</div>
 		<Code
 			lang="ts"
 			content={`export interface Theme {

@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 	import {get_tome} from '@ryanatkn/fuz/tome.js';
+
+	import Module_Link from '$routes/Module_Link.svelte';
 
 	const LIBRARY_ITEM_NAME = 'introduction';
 
@@ -18,8 +21,7 @@
 		<p>
 			Moss is a CSS framework that can be used with any website and JS framework. Its design system
 			centers on <em>style variables</em>, which are
-			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a> and design
-			tokens with more capabilities.
+			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with more capabilities.
 		</p>
 		<p>
 			Usage Moss can be as simple as importing <a
@@ -44,7 +46,7 @@
 			<li>zero dependencies</li>
 			<li>
 				designed around <em>style variables</em>, a specialization of
-				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</a>
+				<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link>
 				and design tokens
 				<ul>
 					<li>variables are a more primitive building block than classes</li>
@@ -64,36 +66,34 @@
 				stylesheets:
 				<ul>
 					<li>
-						<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-							><code>@ryanatkn/moss/style.css</code></a
-						>, which is composed of:
+						<Module_Link path="style.css"><code>@ryanatkn/moss/style.css</code></Module_Link>, which
+						is composed of:
 						<ul>
 							<li>
-								<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style_reset.css"
-									><code>@ryanatkn/moss/style_reset.css</code></a
+								<Module_Link path="style_reset.css"
+									><code>@ryanatkn/moss/style_reset.css</code></Module_Link
 								> - required
 							</li>
 							<li>
-								<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style_utilities.css"
-									><code>@ryanatkn/moss/style_utilities.css</code></a
+								<Module_Link path="style_utilities.css"
+									><code>@ryanatkn/moss/style_utilities.css</code></Module_Link
 								> - optional
 							</li>
 							<li>
-								<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style_components.css"
-									><code>@ryanatkn/moss/style_components.css</code></a
+								<Module_Link path="style_components.css"
+									><code>@ryanatkn/moss/style_components.css</code></Module_Link
 								> - optional
 							</li>
 							<li>
-								<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style_animations.css"
-									><code>@ryanatkn/moss/style_animations.css</code></a
+								<Module_Link path="style_animations.css"
+									><code>@ryanatkn/moss/style_animations.css</code></Module_Link
 								> - optional
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.css"
-							><code>@ryanatkn/moss/theme.css</code></a
-						> - or bring your own
+						<Module_Link path="theme.css"><code>@ryanatkn/moss/theme.css</code></Module_Link> - or bring
+						your own
 					</li>
 					<li>
 						it probably makes sense to include a Vite plugin to remove unused styles, but the
