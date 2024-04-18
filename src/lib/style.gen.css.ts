@@ -10,16 +10,32 @@ export const gen: Gen = async ({origin_id}) => {
 
 	// The style utilities override everything else, so they go last,
 	// and some selectors in previous files may need to lower specificity with `:where`.
+
+	const sheets = await Promise.all([
+		concat_stylesheet('./src/lib/style_reset.css'),
+
+		concat_stylesheet('./src/lib/style_components.css'),
+
+		concat_stylesheet('./src/lib/style_animations.css'),
+
+		concat_stylesheet('./src/lib/style_utilities.css'),
+	]);
+
 	return `${banner}
 
-${await readFile('./src/lib/style_reset.css', 'utf8')}
-
-${await readFile('./src/lib/style_components.css', 'utf8')}
-
-${await readFile('./src/lib/style_animations.css', 'utf8')}
-
-${await readFile('./src/lib/style_utilities.css', 'utf8')}
+${sheets.join('\n\n')}
 
     ${banner}
   `;
+};
+
+const concat_stylesheet = async (path: string): Promise<string> => {
+	const contents = await readFile(path, 'utf8');
+
+	return `
+/* @source ${path} */
+
+${contents}
+
+/* end ${path} */\n\n`;
 };
