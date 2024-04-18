@@ -471,7 +471,7 @@ button {
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
 	background: var(--button_bg);
-	box-shadow: var(--lift_xs);
+	box-shadow: var(--up_xs);
 	border-width: var(--border_width);
 	border-style: var(--border_style);
 	border-color: var(--border_color);
@@ -484,14 +484,14 @@ button:hover,
 button:focus {
 	--border_color: var(--border_color_2);
 	background: var(--button_bg_hover);
-	box-shadow: var(--lift_sm);
+	box-shadow: var(--up_sm);
 }
 button:active {
 	--border_color: var(--border_color_5);
 	--outline_width: var(--outline_width_3);
 	/* TODO use of `background` vs `background-color` in this file is not intentional */
 	background: var(--button_bg_active);
-	box-shadow: var(--depth_sm);
+	box-shadow: var(--down_sm);
 }
 button.inline,
 p button {
@@ -2134,35 +2134,35 @@ light and shadow
 .highlight_inset_xl {
 	box-shadow: var(--highlight_inset_xl);
 }
-.depth_xs {
-	box-shadow: var(--depth_xs);
+.down_xs {
+	box-shadow: var(--down_xs);
 }
-.depth_sm {
-	box-shadow: var(--depth_sm);
+.down_sm {
+	box-shadow: var(--down_sm);
 }
-.depth_md {
-	box-shadow: var(--depth_md);
+.down_md {
+	box-shadow: var(--down_md);
 }
-.depth_lg {
-	box-shadow: var(--depth_lg);
+.down_lg {
+	box-shadow: var(--down_lg);
 }
-.depth_xl {
-	box-shadow: var(--depth_xl);
+.down_xl {
+	box-shadow: var(--down_xl);
 }
-.lift_xs {
-	box-shadow: var(--lift_xs);
+.up_xs {
+	box-shadow: var(--up_xs);
 }
-.lift_sm {
-	box-shadow: var(--lift_sm);
+.up_sm {
+	box-shadow: var(--up_sm);
 }
-.lift_md {
-	box-shadow: var(--lift_md);
+.up_md {
+	box-shadow: var(--up_md);
 }
-.lift_lg {
-	box-shadow: var(--lift_lg);
+.up_lg {
+	box-shadow: var(--up_lg);
 }
-.lift_xl {
-	box-shadow: var(--lift_xl);
+.up_xl {
+	box-shadow: var(--up_xl);
 }
 /* higher specificity */
 /* TODO which order should these be in? */

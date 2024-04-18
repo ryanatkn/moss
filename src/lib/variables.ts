@@ -636,158 +636,158 @@ export const input_height_inner: Style_Variable = {
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
 	light:
-		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.1), 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.1)',
+		'0.5px 1px 3px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.1), 0.5px 1.5px 4px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.1)',
 };
 export const shadow_sm: Style_Variable = {
 	name: 'shadow_sm',
 	light:
-		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15), 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15)',
+		'1px 2px 5px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.15), 1px 4px 10px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.15)',
 };
 export const shadow_md: Style_Variable = {
 	name: 'shadow_md',
 	light:
-		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2), 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2)',
+		'1.5px 3px 8px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.2), 1.5px 6px 18px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.2)',
 };
 export const shadow_lg: Style_Variable = {
 	name: 'shadow_lg',
 	light:
-		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4), 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4)',
+		'2px 4px 12px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.4), 2px 8px 30px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.4)',
 };
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
 	light:
-		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6)',
+		'3px 6px 16px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.6), 3px 8px 48px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.6)',
 };
 
 export const shadow_inset_xs: Style_Variable = {
 	name: 'shadow_inset_xs',
 	light:
-		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.1) inset, 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.1) inset',
+		'0.5px 1px 3px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.1) inset, 0.5px 1.5px 4px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.1) inset',
 };
 export const shadow_inset_sm: Style_Variable = {
 	name: 'shadow_inset_sm',
 	light:
-		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15) inset, 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15) inset',
+		'1px 2px 5px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.15) inset, 1px 4px 10px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.15) inset',
 };
 export const shadow_inset_md: Style_Variable = {
 	name: 'shadow_inset_md',
 	light:
-		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2) inset, 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2) inset',
+		'1.5px 3px 8px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.2) inset, 1.5px 6px 18px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.2) inset',
 };
 export const shadow_inset_lg: Style_Variable = {
 	name: 'shadow_inset_lg',
 	light:
-		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4) inset, 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4) inset',
+		'2px 4px 12px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.4) inset, 2px 8px 30px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.4) inset',
 };
 export const shadow_inset_xl: Style_Variable = {
 	name: 'shadow_inset_xl',
 	light:
-		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6) inset, 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6) inset',
+		'3px 6px 16px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.6) inset, 3px 8px 48px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.6) inset',
 };
 
 export const shadow_outset_xs: Style_Variable = {
 	name: 'shadow_outset_xs',
 	light:
-		'-0.5px -1px 3px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.1) inset, -0.5px -1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.1) inset',
+		'-0.5px -1px 3px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.1) inset, -0.5px -1.5px 4px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.1) inset',
 };
 export const shadow_outset_sm: Style_Variable = {
 	name: 'shadow_outset_sm',
 	light:
-		'-1px -2px 5px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15) inset, -1px -4px 10px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.15) inset',
+		'-1px -2px 5px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.15) inset, -1px -4px 10px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.15) inset',
 };
 export const shadow_outset_md: Style_Variable = {
 	name: 'shadow_outset_md',
 	light:
-		'-1.5px -3px 8px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2) inset, -1.5px -6px 18px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.2) inset',
+		'-1.5px -3px 8px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.2) inset, -1.5px -6px 18px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.2) inset',
 };
 export const shadow_outset_lg: Style_Variable = {
 	name: 'shadow_outset_lg',
 	light:
-		'-2px -4px 12px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4) inset, -2px -8px 30px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.4) inset',
+		'-2px -4px 12px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.4) inset, -2px -8px 30px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.4) inset',
 };
 export const shadow_outset_xl: Style_Variable = {
 	name: 'shadow_outset_xl',
 	light:
-		'-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 6%, 0.6) inset',
+		'-3px -6px 16px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.6) inset, -3px -8px 48px hsla(var(--shadow_color, var(--tint_hue) var(--tint_saturation) 6%) / 0.6) inset',
 };
 
 // TODO BLOCK delete these, compose the values with helpers
 export const glow_xs: Style_Variable = {
 	name: 'glow_xs',
 	light:
-		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1), 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.1)',
+		'0.5px 1px 3px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.1), 0.5px 1.5px 4px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.1)',
 };
 export const glow_sm: Style_Variable = {
 	name: 'glow_sm',
 	light:
-		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15), 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.15)',
+		'1px 2px 5px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.15), 1px 4px 10px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.15)',
 };
 export const glow_md: Style_Variable = {
 	name: 'glow_md',
 	light:
-		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2), 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2)',
+		'1.5px 3px 8px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2), 1.5px 6px 18px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2)',
 };
 export const glow_lg: Style_Variable = {
 	name: 'glow_lg',
 	light:
-		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4), 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.4)',
+		'2px 4px 12px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.4), 2px 8px 30px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.4)',
 };
 export const glow_xl: Style_Variable = {
 	name: 'glow_xl',
 	light:
-		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6), 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.6)',
+		'3px 6px 16px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.6), 3px 8px 48px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.6)',
 };
 
 export const glow_inset_xs: Style_Variable = {
 	name: 'glow_inset_xs',
 	light:
-		'0.5px 1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset, 0.5px 1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset',
+		'0.5px 1px 3px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2) inset, 0.5px 1.5px 4px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2) inset',
 };
 export const glow_inset_sm: Style_Variable = {
 	name: 'glow_inset_sm',
 	light:
-		'1px 2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.25) inset, 1px 4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.25) inset',
+		'1px 2px 5px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.25) inset, 1px 4px 10px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.25) inset',
 };
 export const glow_inset_md: Style_Variable = {
 	name: 'glow_inset_md',
 	light:
-		'1.5px 3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.3) inset, 1.5px 6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.3) inset',
+		'1.5px 3px 8px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.3) inset, 1.5px 6px 18px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.3) inset',
 };
 export const glow_inset_lg: Style_Variable = {
 	name: 'glow_inset_lg',
 	light:
-		'2px 4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.5) inset, 2px 8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.5) inset',
+		'2px 4px 12px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.5) inset, 2px 8px 30px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.5) inset',
 };
 export const glow_inset_xl: Style_Variable = {
 	name: 'glow_inset_xl',
 	light:
-		'3px 6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.7) inset, 3px 8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.7) inset',
+		'3px 6px 16px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.7) inset, 3px 8px 48px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.7) inset',
 };
 
 export const glow_outset_xs: Style_Variable = {
 	name: 'glow_outset_xs',
 	light:
-		'-0.5px -1px 3px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset, -0.5px -1.5px 4px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.2) inset',
+		'-0.5px -1px 3px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2) inset, -0.5px -1.5px 4px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.2) inset',
 };
 export const glow_outset_sm: Style_Variable = {
 	name: 'glow_outset_sm',
 	light:
-		'-1px -2px 5px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.25) inset, -1px -4px 10px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.25) inset',
+		'-1px -2px 5px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.25) inset, -1px -4px 10px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.25) inset',
 };
 export const glow_outset_md: Style_Variable = {
 	name: 'glow_outset_md',
 	light:
-		'-1.5px -3px 8px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.3) inset, -1.5px -6px 18px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.3) inset',
+		'-1.5px -3px 8px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.3) inset, -1.5px -6px 18px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.3) inset',
 };
 export const glow_outset_lg: Style_Variable = {
 	name: 'glow_outset_lg',
 	light:
-		'-2px -4px 12px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.5) inset, -2px -8px 30px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.5) inset',
+		'-2px -4px 12px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.5) inset, -2px -8px 30px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.5) inset',
 };
 export const glow_outset_xl: Style_Variable = {
 	name: 'glow_outset_xl',
 	light:
-		'-3px -6px 16px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.7) inset, -3px -8px 48px hsla(var(--tint_hue), var(--tint_saturation), 94%, 0.7) inset',
+		'-3px -6px 16px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.7) inset, -3px -8px 48px hsla(var(--glow_color, var(--tint_hue) var(--tint_saturation) 94%) / 0.7) inset',
 };
 
 export const shade_xs: Style_Variable = {
@@ -947,45 +947,45 @@ export const highlight_outset_xl: Style_Variable = {
 };
 
 // TODO increase intensity of the highlight
-export const depth_xs: Style_Variable = {
-	name: 'depth_xs',
+export const down_xs: Style_Variable = {
+	name: 'down_xs',
 	light: shadow_inset_xs.light + ', ' + glow_outset_xs.light,
 };
-export const depth_sm: Style_Variable = {
-	name: 'depth_sm',
+export const down_sm: Style_Variable = {
+	name: 'down_sm',
 	light: shadow_inset_sm.light + ', ' + glow_outset_sm.light,
 };
-export const depth_md: Style_Variable = {
-	name: 'depth_md',
+export const down_md: Style_Variable = {
+	name: 'down_md',
 	light: shadow_inset_md.light + ', ' + glow_outset_md.light,
 };
-export const depth_lg: Style_Variable = {
-	name: 'depth_lg',
+export const down_lg: Style_Variable = {
+	name: 'down_lg',
 	light: shadow_inset_lg.light + ', ' + glow_outset_lg.light,
 };
-export const depth_xl: Style_Variable = {
-	name: 'depth_xl',
+export const down_xl: Style_Variable = {
+	name: 'down_xl',
 	light: shadow_inset_xl.light + ', ' + glow_outset_xl.light,
 };
 
-export const lift_xs: Style_Variable = {
-	name: 'lift_xs',
+export const up_xs: Style_Variable = {
+	name: 'up_xs',
 	light: shadow_outset_xs.light + ', ' + glow_inset_xs.light,
 };
-export const lift_sm: Style_Variable = {
-	name: 'lift_sm',
+export const up_sm: Style_Variable = {
+	name: 'up_sm',
 	light: shadow_outset_sm.light + ', ' + glow_inset_sm.light,
 };
-export const lift_md: Style_Variable = {
-	name: 'lift_md',
+export const up_md: Style_Variable = {
+	name: 'up_md',
 	light: shadow_outset_md.light + ', ' + glow_inset_md.light,
 };
-export const lift_lg: Style_Variable = {
-	name: 'lift_lg',
+export const up_lg: Style_Variable = {
+	name: 'up_lg',
 	light: shadow_outset_lg.light + ', ' + glow_inset_lg.light,
 };
-export const lift_xl: Style_Variable = {
-	name: 'lift_xl',
+export const up_xl: Style_Variable = {
+	name: 'up_xl',
 	light: shadow_outset_xl.light + ', ' + glow_inset_xl.light,
 };
 
@@ -1423,16 +1423,16 @@ export const default_variables: Style_Variable[] = [
 	highlight_inset_md,
 	highlight_inset_lg,
 	highlight_inset_xl,
-	depth_xs,
-	depth_sm,
-	depth_md,
-	depth_lg,
-	depth_xl,
-	lift_xs,
-	lift_sm,
-	lift_md,
-	lift_lg,
-	lift_xl,
+	down_xs,
+	down_sm,
+	down_md,
+	down_lg,
+	down_xl,
+	up_xs,
+	up_sm,
+	up_md,
+	up_lg,
+	up_xl,
 
 	/* icons */
 	icon_size_xs,

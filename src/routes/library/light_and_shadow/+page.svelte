@@ -190,9 +190,9 @@
 				<p>⚠️ This section is incomplete and has many open questions:</p>
 				<ul>
 					<li>
-						What about lift/depth? Colored shadows/glows? Maybe the variants are done through the
-						colors, so it becomes shadow|depth|lift or keep as shadow|shadow_inset|shadow_outset or
-						something else? By composing variables? <code>--shadow|glow_color</code>
+						Colored shadows/glows? Maybe the variants are done through the colors, so it becomes
+						shadow|depth|lift or keep as shadow|shadow_inset|shadow_outset or something else? By
+						composing variables? <code>--shadow|glow_color</code>
 						or
 						<code>--shadow|glow</code> or something else? Abstracting alpha too?
 					</li>
@@ -258,29 +258,27 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
-			<Tome_Subheading text="Depth variants" slug="depth-variants" tag="h4"
-				>Depth/lower (TODO name?) variants</Tome_Subheading
-			>
+			<Tome_Subheading text="Down variants" slug="down-variants" tag="h4" />
 			<p>
-				Depth is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of lift.
+				Down is color-scheme-agnostic and the inverse of up. Composes the shadow and glow variants.
 			</p>
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--depth_{variant})">
-						<Style_Variable_Button name="depth_{variant}" />
+					<div class="shadow_example" style:box-shadow="var(--down_{variant})">
+						<Style_Variable_Button name="down_{variant}" />
 					</div>
 				{/each}
 			</div>
 		</section>
 		<section>
-			<Tome_Subheading text="Lift variants" slug="lift-variants" tag="h4" />
+			<Tome_Subheading text="Up variants" slug="up-variants" tag="h4" />
 			<p>
-				Lift is color-scheme-agnostic, and composes the shadow and glow variants. Inverse of depth.
+				Up is color-scheme-agnostic and the inverse of down. Composes the shadow and glow variants.
 			</p>
 			<div class="p_lg panel fg_3">
 				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--lift_{variant})">
-						<Style_Variable_Button name="lift_{variant}" />
+					<div class="shadow_example" style:box-shadow="var(--up_{variant})">
+						<Style_Variable_Button name="up_{variant}" />
 					</div>
 				{/each}
 			</div>

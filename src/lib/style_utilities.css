@@ -1273,35 +1273,35 @@ light and shadow
 .highlight_inset_xl {
 	box-shadow: var(--highlight_inset_xl);
 }
-.depth_xs {
-	box-shadow: var(--depth_xs);
+.down_xs {
+	box-shadow: var(--down_xs);
 }
-.depth_sm {
-	box-shadow: var(--depth_sm);
+.down_sm {
+	box-shadow: var(--down_sm);
 }
-.depth_md {
-	box-shadow: var(--depth_md);
+.down_md {
+	box-shadow: var(--down_md);
 }
-.depth_lg {
-	box-shadow: var(--depth_lg);
+.down_lg {
+	box-shadow: var(--down_lg);
 }
-.depth_xl {
-	box-shadow: var(--depth_xl);
+.down_xl {
+	box-shadow: var(--down_xl);
 }
-.lift_xs {
-	box-shadow: var(--lift_xs);
+.up_xs {
+	box-shadow: var(--up_xs);
 }
-.lift_sm {
-	box-shadow: var(--lift_sm);
+.up_sm {
+	box-shadow: var(--up_sm);
 }
-.lift_md {
-	box-shadow: var(--lift_md);
+.up_md {
+	box-shadow: var(--up_md);
 }
-.lift_lg {
-	box-shadow: var(--lift_lg);
+.up_lg {
+	box-shadow: var(--up_lg);
 }
-.lift_xl {
-	box-shadow: var(--lift_xl);
+.up_xl {
+	box-shadow: var(--up_xl);
 }
 /* higher specificity */
 /* TODO which order should these be in? */
