@@ -1199,17 +1199,6 @@ export const default_variables: Style_Variable[] = [
 		the semantic variants	that handle `color-schema` automatically include `--bg_1` and `--bg_2`
 	*/
 	// TODO some of these may be too subtle, but there may be cases where it's needed so keeping them for now
-	tone_0,
-	tone_1,
-	tone_2,
-	tone_3,
-	tone_4,
-	tone_5,
-	tone_6,
-	tone_7,
-	tone_8,
-	tone_9,
-	tone_100,
 	darken_1,
 	darken_2,
 	darken_3,
