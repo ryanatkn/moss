@@ -1,4 +1,5 @@
 import type {Style_Variable} from '$lib/theme.js';
+import {icon_sizes} from '$lib/variable_data.js';
 
 /*
 
@@ -771,13 +772,19 @@ export const shadow_outset_xl: Style_Variable = {
 /* icons */
 /* these decrease by the golden ratio, rounded to the nearest pixel,
 	and they're insensitive to font size (`px` not `rem`) */
-export const icon_size_xs: Style_Variable = {name: 'icon_size_xs', light: '18px'};
-export const icon_size_sm: Style_Variable = {name: 'icon_size_sm', light: '32px'};
-export const icon_size_md: Style_Variable = {name: 'icon_size_md', light: '48px'};
-export const icon_size_lg: Style_Variable = {name: 'icon_size_lg', light: '80px'};
-export const icon_size_xl: Style_Variable = {name: 'icon_size_xl', light: '128px'};
-export const icon_size_xl2: Style_Variable = {name: 'icon_size_xl2', light: '192px'};
-export const icon_size_xl3: Style_Variable = {name: 'icon_size_xl3', light: '256px'};
+export const icon_size_xs: Style_Variable = {name: 'icon_size_xs', light: icon_sizes.icon_size_xs};
+export const icon_size_sm: Style_Variable = {name: 'icon_size_sm', light: icon_sizes.icon_size_sm};
+export const icon_size_md: Style_Variable = {name: 'icon_size_md', light: icon_sizes.icon_size_md};
+export const icon_size_lg: Style_Variable = {name: 'icon_size_lg', light: icon_sizes.icon_size_lg};
+export const icon_size_xl: Style_Variable = {name: 'icon_size_xl', light: icon_sizes.icon_size_xl};
+export const icon_size_xl2: Style_Variable = {
+	name: 'icon_size_xl2',
+	light: icon_sizes.icon_size_xl2,
+};
+export const icon_size_xl3: Style_Variable = {
+	name: 'icon_size_xl3',
+	light: icon_sizes.icon_size_xl3,
+};
 
 /* durations */
 // TODO maybe change the scale from xs-xl, and add an xs here around 0.04s or 0.03s
