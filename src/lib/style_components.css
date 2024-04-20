@@ -42,7 +42,7 @@
 	max-width: var(--width_sm);
 }
 
-/* TODO maybe remove? */
+/* hmm, so if `:where` was added to this, it would make user styles override the specialized states - maybe that's worse? */
 .selectable {
 	cursor: pointer;
 	background-color: var(--button_bg);
@@ -83,7 +83,8 @@ By default it's opaque, resetting the background to the initial depth. */
 
 /* TODO other button variants? */
 /* TODO this is slightly strange that it doesn't use --icon_size */
-.icon_button {
+/* These are used as modifiers to buttons, and so they use `:where` so they cascade.  */
+:where(.icon_button) {
 	width: var(--input_height);
 	height: var(--input_height);
 	min-width: var(--input_height);
@@ -92,13 +93,14 @@ By default it's opaque, resetting the background to the initial depth. */
 	font-weight: 900;
 	padding: 0;
 }
-.plain {
+/* TODO maybe this belongs with the reset, like `selected`? or does `selected` belong here? */
+:where(.plain:not(:hover)) {
 	border: none;
 	box-shadow: none;
 	--button_bg: transparent;
 }
 
-.menu_item {
+:where(.menu_item) {
 	--border_radius: 0;
 	--border_color: var(--border_color_3);
 	position: relative;
@@ -110,30 +112,30 @@ By default it's opaque, resetting the background to the initial depth. */
 	align-items: center;
 	padding: var(--menu_item_padding, var(--space_xs3) var(--space_xs));
 }
-.menu_item.selected {
+:where(.menu_item.selected) {
 	/* TODO different patterns for border and bg? */
 	--border_color: var(--color_a_5);
 	background-color: var(--fg_1);
 	z-index: 1;
 }
-.menu_item.plain {
+:where(.menu_item.plain) {
 	border: none;
 }
-.menu_item .content {
+:where(.menu_item .content) {
 	display: flex;
 	align-items: center;
 	flex: 1;
 	/* allows the flex children to shrink */
 	min-width: 0;
 }
-.menu_item .icon {
+:where(.menu_item .icon) {
 	width: var(--icon_size, var(--icon_size_md));
 	margin-right: var(--space_sm);
 	flex-shrink: 0;
 	text-align: center;
 	font-weight: 900;
 }
-.menu_item .title {
+:where(.menu_item .title) {
 	margin-right: var(--space_lg);
 	flex-shrink: 1;
 	overflow: hidden;

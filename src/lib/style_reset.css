@@ -175,22 +175,24 @@ The `!important` makes this `hidden` behavior much higher specificity.
 /* TODO other elements */
 /* checkboxes and radios are expected to be nested inside a `label`, thus no bottom margin */
 :where(
-		p,
-		ul,
-		ol,
-		menu,
-		form,
-		fieldset,
-		table,
-		details,
-		textarea,
-		select,
-		label,
-		pre,
-		blockquote,
-		aside,
-		nav
-	):not(:last-child) {
+		:where(
+				p,
+				ul,
+				ol,
+				menu,
+				form,
+				fieldset,
+				table,
+				details,
+				textarea,
+				select,
+				label,
+				pre,
+				blockquote,
+				aside,
+				nav
+			):not(:last-child)
+	) {
 	margin-bottom: var(--space_lg);
 }
 :where(section:not(:last-child)) {
@@ -302,7 +304,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	background-color: var(--bg);
 }
 
-:where(input, textarea, select):hover {
+:where(:where(input, textarea, select):hover) {
 	--border_color: var(--border_color_2);
 }
 
@@ -321,11 +323,11 @@ so for consistent visuals we opt to include no active state */
 	--content_default: '✓';
 	---content: var(--content_empty, '');
 }
-:where(input[type='checkbox']):checked {
+:where(input[type='checkbox']:checked) {
 	/* ✓ ✗ ✘ */
 	---content: var(--content, var(--content_default));
 }
-:where(input[type='checkbox'])::before {
+:where(input[type='checkbox']::before) {
 	content: var(---content);
 	position: relative;
 	left: var(--left);
@@ -351,7 +353,7 @@ so for consistent visuals we opt to include no active state */
 	--input_padding_x: 0;
 }
 /* TODO where to wrap the :where here and similar elsewhere ? */
-:where(input[type='radio']:checked)::before {
+:where(input[type='radio']:checked::before) {
 	content: '';
 	display: block;
 	position: relative;
@@ -424,18 +426,18 @@ so for consistent visuals we opt to include no active state */
 	width: var(--input_width_min);
 }
 
-:where(button, input, textarea, select):focus {
+:where(:where(button, input, textarea, select):focus) {
 	--border_color: var(--color_a_5);
 	--outline_width: var(--outline_width_2);
 }
-:where([contenteditable]):focus-visible {
+:where([contenteditable]:focus-visible) {
 	--outline_width: var(--outline_width_2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 	/* TODO @multiple outline-offset */
 	/* outline-offset: 2px; */
 }
 
-:where(input, textarea, select, [contenteditable]):active {
+:where(:where(input, textarea, select, [contenteditable]):active) {
 	--outline_width: var(--outline_width_3);
 }
 
@@ -502,18 +504,17 @@ currently `:disabled` overrides this */
 :where(input[type='radio']:checked) {
 	cursor: default;
 }
-:where(input, textarea, select, button):disabled {
+:where(:where(input, textarea, select, button):disabled) {
 	--text_color: var(--text_disabled);
 	--border_color: var(--border_disabled);
 	--border_style: solid dashed;
 	cursor: default;
 	box-shadow: none;
 	opacity: var(--disabled_opacity);
-	background: var(--button_bg_disabled);
+	background-color: var(--button_bg_disabled);
 	outline: none;
 }
-:where(input, textarea, select, button):disabled:active,
-label.disabled:active {
+:where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
 	--border_color: var(--color_c_5);
 	--text_color: var(--color_c_5);
 }
