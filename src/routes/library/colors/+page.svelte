@@ -107,7 +107,7 @@
 		</ul>
 	</section>
 	<section>
-		<Tome_Subheading text="Color variables" slug="hue-variables" />
+		<Tome_Subheading text="Color variables" slug="color-variables" />
 		<p>
 			There are 9 variables per color, numbered 1 to 9, lightest to darkest. The 5th variable of
 			each color is used as the base for things like <Tome_Link name="buttons" />.

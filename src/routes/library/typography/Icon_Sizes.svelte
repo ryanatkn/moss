@@ -2,18 +2,10 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import {icon_sizes} from '$lib/variable_data';
 
 	// TODO BLOCK fix this to be data driven
 	// TODO move to a single source of truth (JSON or ts), generate CSS and use to render here
-	const sizes = {
-		icon_size_xl3: '256px',
-		icon_size_xl2: '192px',
-		icon_size_xl: '128px',
-		icon_size_lg: '80px',
-		icon_size_md: '48px',
-		icon_size_sm: '32px',
-		icon_size_xs: '18px',
-	};
 </script>
 
 <section>
@@ -27,78 +19,17 @@
 <div class="icon_sizes">
 	<!-- TODO make this data driven -->
 	<!-- TODO read these vars from the typescript and display their runtime values -->
-	<figure>
-		<figcaption>
-			<Style_Variable_Button name="icon_size_xs" /> =
-			<code>{sizes.icon_size_xs}</code>
-		</figcaption>
-		<div
-			style="font-size: var(--icon_size_xs); --size: var(--icon_size_xs);"
-			title="--icon_size_xs is {sizes.icon_size_xs}"
-		>
-			🐢
-		</div>
-	</figure>
-	<figure>
-		<figcaption>
-			<Style_Variable_Button name="icon_size_sm" /> =
-			<code>{sizes.icon_size_sm}</code>
-		</figcaption>
-		<div
-			style="font-size: var(--icon_size_sm); --size: var(--icon_size_sm);"
-			title="--icon_size_sm is {sizes.icon_size_sm}"
-		>
-			🐢
-		</div>
-	</figure>
-	<figure>
-		<figcaption>
-			<Style_Variable_Button name="icon_size_md" /> =
-			<code>{sizes.icon_size_md}</code>
-		</figcaption>
-		<div
-			style="font-size: var(--icon_size_md); --size: var(--icon_size_md);"
-			title="--icon_size_md is {sizes.icon_size_md}"
-		>
-			🐢
-		</div>
-	</figure>
-	<figure>
-		<figcaption>
-			<Style_Variable_Button name="icon_size_lg" /> =
-			<code>{sizes.icon_size_lg}</code>
-		</figcaption>
-		<div
-			style="font-size: var(--icon_size_lg); --size: var(--icon_size_lg);"
-			title="--icon_size_lg is {sizes.icon_size_lg}"
-		>
-			🐢
-		</div>
-	</figure>
-	<figure>
-		<figcaption>
-			<Style_Variable_Button name="icon_size_xl" /> =
-			<code>{sizes.icon_size_xl}</code>
-		</figcaption>
-		<div
-			style="font-size: var(--icon_size_xl); --size: var(--icon_size_xl);"
-			title="--icon_size_xl is {sizes.icon_size_xl}"
-		>
-			🐢
-		</div>
-	</figure>
-	<figure>
-		<figcaption>
-			<Style_Variable_Button name="icon_size_xl2" /> =
-			<code>{sizes.icon_size_xl2}</code>
-		</figcaption>
-		<div
-			style="font-size: var(--icon_size_xl2); --size: var(--icon_size_xl2);"
-			title="--icon_size_xl2 is {sizes.icon_size_xl2}"
-		>
-			🐢
-		</div>
-	</figure>
+	{#each Object.entries(icon_sizes) as [name, value]}
+		<figure>
+			<figcaption>
+				<Style_Variable_Button {name} /> =
+				<code>{value}</code>
+			</figcaption>
+			<div style="font-size: var(--{name}); --size: var(--{name});" title="--{name} is {value}">
+				🐢
+			</div>
+		</figure>
+	{/each}
 </div>
 
 <style>

@@ -23,4 +23,6 @@ test('variable identifiers are all included in `default_variables`', () => {
 	}
 });
 
+// TODO test color_variants
+
 test.run();

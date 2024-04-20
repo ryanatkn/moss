@@ -67,20 +67,20 @@ export const tomes: Tome[] = [
 		related: ['colors', 'elements', 'forms', 'borders'],
 	},
 	{
-		name: 'forms',
-		slug: 'forms',
-		pathname: '',
-		category: 'styles',
-		component: forms,
-		related: ['buttons', 'elements', 'borders'],
-	},
-	{
 		name: 'elements',
 		slug: 'elements',
 		pathname: '',
 		category: 'styles',
 		component: elements,
 		related: ['buttons', 'forms', 'classes', 'typography', 'borders', 'layout'],
+	},
+	{
+		name: 'forms',
+		slug: 'forms',
+		pathname: '',
+		category: 'styles',
+		component: forms,
+		related: ['buttons', 'elements', 'borders'],
 	},
 	{
 		name: 'classes',
@@ -104,7 +104,7 @@ export const tomes: Tome[] = [
 		pathname: '',
 		category: 'styles',
 		component: borders,
-		related: ['buttons', 'forms', 'elements'],
+		related: ['buttons', 'elements', 'forms'],
 	},
 	{
 		name: 'layout',

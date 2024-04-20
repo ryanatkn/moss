@@ -79,7 +79,8 @@
 					</p>
 					<label>
 						<div class="title">lifestory</div>
-						<textarea bind:value={lifestory} disabled={created_account} placeholder="👀" /></label
+						<textarea bind:value={lifestory} disabled={created_account} placeholder="👀"
+						></textarea></label
 					>
 					<label>
 						<div class="title">select</div>
@@ -130,6 +131,7 @@
 		<Tome_Subheading text="form with checkboxes" slug="form-with-checkboxes">
 			<code>form</code> with checkboxes
 		</Tome_Subheading>
+		<aside>⚠️ This will change, probably to toggles.</aside>
 		<!-- TODO make this a form, but figure out the checkbox problem -- maybe a last-child exception? -->
 		<form>
 			<fieldset>
