@@ -214,13 +214,13 @@
 		var(--input_height) - 2 * var(--border_width) - 2 * var(--input_padding_y)
 	);
 	--shadow_color: var(--tint_hue), var(--tint_saturation), 6%;
-	--shadow_a_color: var(--hue_a), 50%, 18%;
-	--shadow_b_color: var(--hue_b), 50%, 18%;
-	--shadow_c_color: var(--hue_c), 50%, 18%;
-	--shadow_d_color: var(--hue_d), 50%, 18%;
-	--shadow_e_color: var(--hue_e), 50%, 18%;
-	--shadow_f_color: var(--hue_f), 50%, 18%;
-	--shadow_g_color: var(--hue_g), 50%, 18%;
+	--shadow_a_color: var(--hue_a), 50%, 28%;
+	--shadow_b_color: var(--hue_b), 50%, 28%;
+	--shadow_c_color: var(--hue_c), 50%, 28%;
+	--shadow_d_color: var(--hue_d), 50%, 28%;
+	--shadow_e_color: var(--hue_e), 50%, 28%;
+	--shadow_f_color: var(--hue_f), 50%, 28%;
+	--shadow_g_color: var(--hue_g), 50%, 28%;
 	--shadow_xs: 0.5px 1px 3px 0px hsla(var(--shadow_color), 0.1),
 		0.5px 1.5px 4px 0px hsla(var(--shadow_color), 0.1);
 	--shadow_sm: 1px 2px 5px 0px hsla(var(--shadow_color), 0.15),
