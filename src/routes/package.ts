@@ -34,7 +34,7 @@ export const package_json = {
 		'@ryanatkn/fuz_code': '^0.11.0',
 		'@ryanatkn/gro': '^0.115.2',
 		'@sveltejs/adapter-static': '^3.0.1',
-		'@sveltejs/kit': '^2.5.7',
+		'@sveltejs/kit': '^2.5.6',
 		'@sveltejs/package': '^2.3.1',
 		'@sveltejs/vite-plugin-svelte': '^3.1.0',
 		'@types/node': '^20.12.7',
