@@ -231,32 +231,6 @@
 			<Color_Scheme_Input />
 		</section>
 		<section>
-			<Tome_Subheading text="Glow variants" slug="glow-variants" tag="h4" />
-			<aside>
-				⚠️ This will change. Maybe instead of glow, composable variables including offset?
-			</aside>
-			<div class="p_lg panel fg_3">
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
-						<Style_Variable_Button name="glow_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--glow_inset_{variant})">
-						<Style_Variable_Button name="glow_inset_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
-						<Style_Variable_Button name="glow_outset_{variant}" />
-					</div>
-				{/each}
-			</div>
-		</section>
-		<section>
-			<Color_Scheme_Input />
-		</section>
-		<section>
 			<Tome_Subheading text="Color variants" slug="shade-variants" tag="h4" />
 			<p>⚠️ TODO this isn't working with the nested variable like I was hoping</p>
 			<div class="p_lg panel fg_3" style:--shadow_color="50, 50%, 50%">
@@ -273,38 +247,6 @@
 				{#each shadow_variants as variant}
 					<div class="shadow_example shadow_outset_{variant}">
 						<Style_Variable_Button name="shadow_outset_{variant}" />
-					</div>
-				{/each}
-			</div>
-		</section>
-		<section>
-			<Color_Scheme_Input />
-		</section>
-		<section>
-			<Tome_Subheading text="Down variants" slug="down-variants" tag="h4" />
-			<aside>⚠️ The highlights here are too subtle. Parameterize alpha?</aside>
-			<p>
-				Down is color-scheme-agnostic and the inverse of up. Composes two shadows, an inset dark
-				shadow and outset highlight.
-			</p>
-			<div class="p_lg panel fg_3">
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--down_{variant})">
-						<Style_Variable_Button name="down_{variant}" />
-					</div>
-				{/each}
-			</div>
-		</section>
-		<section>
-			<Tome_Subheading text="Up variants" slug="up-variants" tag="h4" />
-			<p>
-				Up is color-scheme-agnostic and the inverse of down. Composes two shadows, an inset dark
-				shadow and outset highlight.
-			</p>
-			<div class="p_lg panel fg_3">
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--up_{variant})">
-						<Style_Variable_Button name="up_{variant}" />
 					</div>
 				{/each}
 			</div>
