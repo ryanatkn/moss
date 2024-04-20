@@ -702,8 +702,8 @@ export const create_shadow_xl = (color: string, options?: Create_Shadow_Options)
 // TODO better name than `shadow_color`? it's more like "glow" in dark mode
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
-	light: 'var(--hue, var(--tint_hue)), var(--saturation, var(--tint_saturation)), 6%', // TODO BLOCK maybe no tint, and design around blend modes?
-	dark: 'var(--hue, var(--tint_hue)), var(--saturation, var(--tint_saturation)), 82%', // TODO BLOCK  94% ?
+	light: 'var(--tint_hue), var(--tint_saturation), 6%', // TODO BLOCK maybe no tint, and design around blend modes?
+	dark: 'var(--tint_hue), var(--tint_saturation), 82%', // TODO BLOCK  94% ?
 };
 
 export const shadow_xs: Style_Variable = {
@@ -726,7 +726,6 @@ export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
 	light: create_shadow_xl('shadow_color'),
 };
-
 export const shadow_inset_xs: Style_Variable = {
 	name: 'shadow_inset_xs',
 	light: create_shadow_xs('shadow_color', {inset: true}),
@@ -747,7 +746,6 @@ export const shadow_inset_xl: Style_Variable = {
 	name: 'shadow_inset_xl',
 	light: create_shadow_xl('shadow_color', {inset: true}),
 };
-
 export const shadow_outset_xs: Style_Variable = {
 	name: 'shadow_outset_xs',
 	light: create_shadow_xs('shadow_color', {inset: true, scale: -1}),
