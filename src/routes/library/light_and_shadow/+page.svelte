@@ -185,28 +185,10 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Box shadows" slug="box-shadows" />
-		<section>
-			<aside>
-				<p>⚠️ This section is incomplete and has many open questions:</p>
-				<ul>
-					<li>
-						Colored shadows/glows? Maybe the variants are done through the colors, so it becomes
-						shadow|depth|lift or keep as shadow|shadow_inset|shadow_outset or something else? By
-						composing variables? <code>--shadow|glow_color</code>
-						or
-						<code>--shadow|glow</code> or something else? Abstracting alpha too?
-					</li>
-					<li>
-						For buttons and similar cases, add variants that combine a shadow and glow? Maybe <code
-							>shaded_</code
-						>? Currently doing
-						<code>box-shadow: var(--shadow_outset_xs), var(--glow_inset_xs);</code>
-						- maybe also add semantic vars like base/hover/active?
-					</li>
-					<li>Tweak values? Seems we need another variant at the low end - keep 5 total?</li>
-				</ul>
-			</aside>
-		</section>
+		<aside class="mb_lg">
+			⚠️ Shadows currently glow in dark mode. The API does not yet support changing the color at
+			runtime. The concepts and names need further development.
+		</aside>
 		<section>
 			<Tome_Subheading text="Shadow variants" slug="shadow-variants" tag="h4" />
 			<div class="p_lg panel fg_3">
@@ -229,27 +211,6 @@
 		</section>
 		<section>
 			<Color_Scheme_Input />
-		</section>
-		<section>
-			<Tome_Subheading text="Color variants" slug="shade-variants" tag="h4" />
-			<p>⚠️ TODO this isn't working with the nested variable like I was hoping</p>
-			<div class="p_lg panel fg_3" style:--shadow_color="50, 50%, 50%">
-				{#each shadow_variants as variant}
-					<div class="shadow_example shadow_{variant}">
-						<Style_Variable_Button name="shadow_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example shadow_inset_{variant}">
-						<Style_Variable_Button name="shadow_inset_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example shadow_outset_{variant}">
-						<Style_Variable_Button name="shadow_outset_{variant}" />
-					</div>
-				{/each}
-			</div>
 		</section>
 	</section>
 </Tome_Detail>
