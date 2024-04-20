@@ -191,7 +191,7 @@
 		</aside>
 		<section>
 			<Tome_Subheading text="Shadow variants" slug="shadow-variants" tag="h4" />
-			<div class="p_lg panel fg_3">
+			<div class="p_lg panel fg_3 shadow_inset_xs">
 				{#each shadow_variants as variant}
 					<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
 						<Style_Variable_Button name="shadow_{variant}" />
@@ -215,7 +215,7 @@
 		<section>
 			<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" tag="h4" />
 			{#each color_variants as color_variant}
-				<section class="p_lg panel fg_3">
+				<section class="p_lg panel fg_3 shadow_{color_variant}_inset_xs">
 					{#each shadow_variants as variant}
 						<div class="shadow_example" style:box-shadow="var(--shadow_{color_variant}_{variant})">
 							<Style_Variable_Button name="shadow_{color_variant}_{variant}" />
