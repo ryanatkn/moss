@@ -60,3 +60,5 @@ export const icon_sizes = {
 	icon_size_xl2: '192px',
 	icon_size_xl3: '256px',
 };
+
+export const color_variants = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];

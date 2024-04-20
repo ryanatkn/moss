@@ -8,7 +8,7 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import {shadow_variants} from '$lib/variable_data.js';
+	import {color_variants, shadow_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'light and shadow';
 
@@ -208,6 +208,37 @@
 					</div>
 				{/each}
 			</div>
+		</section>
+		<section>
+			<Color_Scheme_Input />
+		</section>
+		<section>
+			<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" tag="h4" />
+			{#each color_variants as color_variant}
+				<section class="p_lg panel fg_3">
+					{#each shadow_variants as variant}
+						<div class="shadow_example" style:box-shadow="var(--shadow_{color_variant}_{variant})">
+							<Style_Variable_Button name="shadow_{color_variant}_{variant}" />
+						</div>
+					{/each}
+					{#each shadow_variants as variant}
+						<div
+							class="shadow_example"
+							style:box-shadow="var(--shadow_{color_variant}_inset_{variant})"
+						>
+							<Style_Variable_Button name="shadow_{color_variant}_inset_{variant}" />
+						</div>
+					{/each}
+					{#each shadow_variants as variant}
+						<div
+							class="shadow_example"
+							style:box-shadow="var(--shadow_{color_variant}_outset_{variant})"
+						>
+							<Style_Variable_Button name="shadow_{color_variant}_outset_{variant}" />
+						</div>
+					{/each}
+				</section>
+			{/each}
 		</section>
 		<section>
 			<Color_Scheme_Input />
