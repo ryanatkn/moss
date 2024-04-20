@@ -1,5 +1,5 @@
 ---
-"@ryanatkn/moss": patch
+'@ryanatkn/moss': minor
 ---
 
-add glow variables and utility classes
+use `:where` everywhere in the reset to fix specificity issues
