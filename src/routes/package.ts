@@ -134,6 +134,7 @@ export const src_json = {
 				{name: 'line_height_variants', kind: 'variable'},
 				{name: 'line_height_names', kind: 'variable'},
 				{name: 'shadow_variants', kind: 'variable'},
+				{name: 'icon_sizes', kind: 'variable'},
 			],
 		},
 		'./variables.js': {

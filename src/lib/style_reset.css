@@ -428,7 +428,7 @@ so for consistent visuals we opt to include no active state */
 	--border_color: var(--color_a_5);
 	--outline_width: var(--outline_width_2);
 }
-[contenteditable]:focus-visible {
+:where([contenteditable]):focus-visible {
 	--outline_width: var(--outline_width_2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 	/* TODO @multiple outline-offset */
@@ -519,123 +519,121 @@ label.disabled:active {
 }
 
 /* TODO these need design work for visuals/consistency/customizability */
-button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g) {
+:where(button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g)) {
 	color: var(--bg_7);
 }
-button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g):where(
-		:hover,
-		:focus,
-		:active
+:where(
+		button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g):where(
+				:hover,
+				:focus,
+				:active
+			)
 	) {
 	color: var(--bg_10);
 }
-button.color_a:not(.selected) {
+:where(button.color_a:not(.selected)) {
 	background-color: var(--color_a_5);
 }
-button.color_b:not(.selected) {
+:where(button.color_b:not(.selected)) {
 	background-color: var(--color_b_5);
 }
-button.color_c:not(.selected) {
+:where(button.color_c:not(.selected)) {
 	background-color: var(--color_c_5);
 }
-button.color_d:not(.selected) {
+:where(button.color_d:not(.selected)) {
 	background-color: var(--color_d_5);
 }
-button.color_e:not(.selected) {
+:where(button.color_e:not(.selected)) {
 	background-color: var(--color_e_5);
 }
-button.color_f:not(.selected) {
+:where(button.color_f:not(.selected)) {
 	background-color: var(--color_f_5);
 }
-button.color_g:not(.selected) {
+:where(button.color_g:not(.selected)) {
 	background-color: var(--color_g_5);
 }
-button.selected.color_a {
+:where(button.selected.color_a) {
 	color: var(--color_a_5);
 	border-color: var(--color_a_5);
 }
-button.selected.color_b {
+:where(button.selected.color_b) {
 	color: var(--color_b_5);
 	border-color: var(--color_b_5);
 }
-button.selected.color_d {
+:where(button.selected.color_d) {
 	color: var(--color_d_5);
 	border-color: var(--color_d_5);
 }
-button.selected.color_e {
+:where(button.selected.color_e) {
 	color: var(--color_e_5);
 	border-color: var(--color_e_5);
 }
-button.selected.color_c {
+:where(button.selected.color_c) {
 	color: var(--color_c_5);
 	border-color: var(--color_c_5);
 }
-button.selected.color_f {
+:where(button.selected.color_f) {
 	color: var(--color_f_5);
 	border-color: var(--color_f_5);
 }
-button.selected.color_g {
+:where(button.selected.color_g) {
 	color: var(--color_g_5);
 	border-color: var(--color_g_5);
 }
 
 /* TODO could improve this with the coming `:has` selector
 for disabled colors without needing a wrapper .disabled class */
-label {
+:where(label) {
 	color: var(--text_color);
 	cursor: pointer;
 }
-:where(label .title) {
+:where(:where(label .title)) {
 	font-weight: 600;
 	margin-bottom: var(--space_xs2);
 }
-label.selected {
+:where(label.selected) {
 	cursor: default;
 	--text_color: var(--text_active);
 }
-label.disabled {
+:where(label.disabled) {
 	cursor: default;
 	--text_color: var(--text_disabled);
 }
-label.row {
+:where(label.row) {
 	justify-content: flex-start;
 	align-items: center;
 }
-label.row :where(input[type='checkbox'], input[type='radio']) {
+:where(label.row :where(input[type='checkbox'], input[type='radio'])) {
 	margin-right: var(--space_md);
 }
 
-small {
+:where(small) {
 	font-size: var(--size_sm);
 }
 
-img,
-picture,
-canvas,
-svg,
-video {
+:where(img, picture, canvas, svg, video) {
 	display: block;
 	max-width: 100%; /* shrink to fit */
 	height: auto; /* preserve aspect ratio */
 }
 
-audio {
+:where(audio) {
 	width: 100%;
 }
 
-summary {
+:where(summary) {
 	cursor: pointer;
 	padding: var(--space_md);
 	border-radius: var(--radius_xs);
 }
-summary:hover {
+:where(summary:hover) {
 	background-color: var(--fg_1);
 }
-summary:active {
+:where(summary:active) {
 	background-color: var(--fg_2);
 }
 
 /* TODO more  table styles */
-thead {
+:where(thead) {
 	text-align: left;
 }
