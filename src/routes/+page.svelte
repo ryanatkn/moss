@@ -45,7 +45,7 @@
 		</div>
 	</section>
 	<section>
-		<Card href="{base}/library">library{#snippet icon()}🧶{/snippet}</Card>
+		<Card href="{base}/library">library{#snippet icon()}🌿{/snippet}</Card>
 	</section>
 	<section class="p_xl radius_lg shadow_outset_xs">
 		<Library_Footer {pkg}>

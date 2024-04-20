@@ -701,8 +701,8 @@ export const create_shadow_xl = (color: string, options?: Create_Shadow_Options)
 // TODO better name than `shadow_color`? it's more like "glow" in dark mode
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
-	light: 'var(--tint_hue), var(--tint_saturation), 6%', // TODO BLOCK maybe no tint, and design around blend modes?
-	dark: 'var(--tint_hue), var(--tint_saturation), 82%', // TODO BLOCK  94% ?
+	light: 'var(--hue, var(--tint_hue)), var(--saturation, var(--tint_saturation)), 6%', // TODO BLOCK maybe no tint, and design around blend modes?
+	dark: 'var(--hue, var(--tint_hue)), var(--saturation, var(--tint_saturation)), 82%', // TODO BLOCK  94% ?
 };
 
 export const shadow_xs: Style_Variable = {
