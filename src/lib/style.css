@@ -744,7 +744,7 @@ By default it's opaque, resetting the background to the initial depth. */
 }
 /* TODO maybe this belongs with the reset, like `selected`? or does `selected` belong here? */
 :where(.plain:not(:hover)) {
-	border: none;
+	border-color: transparent;
 	box-shadow: none;
 	--button_bg: transparent;
 }
