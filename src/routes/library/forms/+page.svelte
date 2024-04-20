@@ -79,7 +79,8 @@
 					</p>
 					<label>
 						<div class="title">lifestory</div>
-						<textarea bind:value={lifestory} disabled={created_account} placeholder="👀" /></label
+						<textarea bind:value={lifestory} disabled={created_account} placeholder="👀"
+						></textarea></label
 					>
 					<label>
 						<div class="title">select</div>

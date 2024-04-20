@@ -21,7 +21,7 @@
 			{#each space_variants as space_size}
 				{@const name = 'space_' + space_size}
 				<div class="layout_example">
-					<div class="fill" style:width="var(--{name})" />
+					<div class="fill" style:width="var(--{name})"></div>
 					<div class="variable_wrapper"><Style_Variable_Button {name} /></div>
 					<span class="pr_sm">=</span>
 					<div class="computed_value">{computed_styles?.getPropertyValue('--' + name)}</div>
@@ -35,7 +35,7 @@
 			{#each ['xs', 'sm', 'md'] as radius}
 				{@const name = 'width_' + radius}
 				<div class="layout_example">
-					<div class="fill" style:width="var(--{name})" />
+					<div class="fill" style:width="var(--{name})"></div>
 					<div class="variable_wrapper"><Style_Variable_Button {name} /></div>
 					<span class="pr_sm">=</span>
 					<div class="computed_value">{computed_styles?.getPropertyValue('--' + name)}</div>
