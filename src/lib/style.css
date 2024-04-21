@@ -1943,98 +1943,100 @@ light and shadow
 }
 
 .shadow_xs {
-	--shadow: var(--shadow_xs);
+	--shadow: var(--shadow_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%),
+		var(--shadow_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%);
 	box-shadow: var(--shadow);
 }
 .shadow_sm {
-	--shadow: var(--shadow_sm);
+	--shadow: var(--shadow_sm_1) color-mix(in srgb, var(--shadow_color), transparent 85%),
+		var(--shadow_sm_2) color-mix(in srgb, var(--shadow_color), transparent 85%);
 	box-shadow: var(--shadow);
 }
 .shadow_md {
-	--shadow: var(--shadow_md);
+	--shadow: var(--shadow_md_1) color-mix(in srgb, var(--shadow_color), transparent 80%),
+		var(--shadow_md_2) color-mix(in srgb, var(--shadow_color), transparent 80%);
 	box-shadow: var(--shadow);
 }
 .shadow_lg {
-	--shadow: var(--shadow_lg);
+	--shadow: var(--shadow_lg_1) color-mix(in srgb, var(--shadow_color), transparent 60%),
+		var(--shadow_lg_2) color-mix(in srgb, var(--shadow_color), transparent 60%);
 	box-shadow: var(--shadow);
 }
-/* TODO think this through - the problem is we don't want to hardcode values in the utility CSS, just the themes */
 .shadow_xl {
 	--shadow: var(--shadow_xl_1) color-mix(in srgb, var(--shadow_color), transparent 40%),
 		var(--shadow_xl_2) color-mix(in srgb, var(--shadow_color), transparent 40%);
 	box-shadow: var(--shadow);
-	/* --shadow: var(--shadow_xl);
-	box-shadow:
-		3px 6px 16px 0px color-mix(in srgb, var(--shadow_color), transparent 40%),
-		3px 8px 48px 0px color-mix(in srgb, var(--shadow_color), transparent 40%); */
-}
-.shadow_outset_xs {
-	--shadow: var(--shadow_outset_xs);
-	box-shadow: var(--shadow);
-}
-.shadow_outset_sm {
-	--shadow: var(--shadow_outset_sm);
-	box-shadow: var(--shadow);
-}
-.shadow_outset_md {
-	--shadow: var(--shadow_outset_md);
-	box-shadow: var(--shadow);
-}
-.shadow_outset_lg {
-	--shadow: var(--shadow_outset_lg);
-	box-shadow: var(--shadow);
-}
-.shadow_outset_xl {
-	--shadow: var(--shadow_outset_xl);
-	box-shadow: var(--shadow);
 }
 .shadow_inset_xs {
-	--shadow: var(--shadow_inset_xs);
+	--shadow: var(--shadow_inset_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%) inset,
+		var(--shadow_inset_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%) inset;
 	box-shadow: var(--shadow);
 }
 .shadow_inset_sm {
-	--shadow: var(--shadow_inset_sm);
+	--shadow: var(--shadow_inset_sm_1) color-mix(in srgb, var(--shadow_color), transparent 85%) inset,
+		var(--shadow_inset_sm_2) color-mix(in srgb, var(--shadow_color), transparent 85%) inset;
 	box-shadow: var(--shadow);
 }
 .shadow_inset_md {
-	--shadow: var(--shadow_inset_md);
+	--shadow: var(--shadow_inset_md_1) color-mix(in srgb, var(--shadow_color), transparent 80%) inset,
+		var(--shadow_inset_md_2) color-mix(in srgb, var(--shadow_color), transparent 80%) inset;
 	box-shadow: var(--shadow);
 }
 .shadow_inset_lg {
-	--shadow: var(--shadow_inset_lg);
+	--shadow: var(--shadow_inset_lg_1) color-mix(in srgb, var(--shadow_color), transparent 60%) inset,
+		var(--shadow_inset_lg_2) color-mix(in srgb, var(--shadow_color), transparent 60%) inset;
 	box-shadow: var(--shadow);
 }
 .shadow_inset_xl {
-	--shadow: var(--shadow_inset_xl);
+	--shadow: var(--shadow_inset_xl_1) color-mix(in srgb, var(--shadow_color), transparent 40%) inset,
+		var(--shadow_inset_xl_2) color-mix(in srgb, var(--shadow_color), transparent 40%) inset;
+	box-shadow: var(--shadow);
+}
+.shadow_outset_xs {
+	--shadow: var(--shadow_outset_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%) inset,
+		var(--shadow_outset_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%) inset;
+	box-shadow: var(--shadow);
+}
+.shadow_outset_sm {
+	--shadow: var(--shadow_outset_sm_1) color-mix(in srgb, var(--shadow_color), transparent 85%) inset,
+		var(--shadow_outset_sm_2) color-mix(in srgb, var(--shadow_color), transparent 85%) inset;
+	box-shadow: var(--shadow);
+}
+.shadow_outset_md {
+	--shadow: var(--shadow_outset_md_1) color-mix(in srgb, var(--shadow_color), transparent 80%) inset,
+		var(--shadow_outset_md_2) color-mix(in srgb, var(--shadow_color), transparent 80%) inset;
+	box-shadow: var(--shadow);
+}
+.shadow_outset_lg {
+	--shadow: var(--shadow_outset_lg_1) color-mix(in srgb, var(--shadow_color), transparent 60%) inset,
+		var(--shadow_outset_lg_2) color-mix(in srgb, var(--shadow_color), transparent 60%) inset;
+	box-shadow: var(--shadow);
+}
+.shadow_outset_xl {
+	--shadow: var(--shadow_outset_xl_1) color-mix(in srgb, var(--shadow_color), transparent 40%) inset,
+		var(--shadow_outset_xl_2) color-mix(in srgb, var(--shadow_color), transparent 40%) inset;
 	box-shadow: var(--shadow);
 }
 .shadow_color_a {
 	--shadow_color: var(--color_a_5);
-	/* box-shadow: var(--shadow); */
 }
 .shadow_color_b {
 	--shadow_color: var(--color_b_5);
-	/* box-shadow: var(--shadow); */
 }
 .shadow_color_c {
 	--shadow_color: var(--color_c_5);
-	/* box-shadow: var(--shadow); */
 }
 .shadow_color_d {
 	--shadow_color: var(--color_d_5);
-	/* box-shadow: var(--shadow); */
 }
 .shadow_color_e {
 	--shadow_color: var(--color_e_5);
-	/* box-shadow: var(--shadow); */
 }
 .shadow_color_f {
 	--shadow_color: var(--color_f_5);
-	/* box-shadow: var(--shadow); */
 }
 .shadow_color_g {
 	--shadow_color: var(--color_g_5);
-	/* box-shadow: var(--shadow); */
 }
 /* higher specificity */
 /* TODO which order should these be in? */

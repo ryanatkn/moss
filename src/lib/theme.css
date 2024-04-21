@@ -214,47 +214,43 @@
 		var(--input_height) - 2 * var(--border_width) - 2 * var(--input_padding_y)
 	);
 	--shadow_color: hsl(var(--tint_hue), var(--tint_saturation), 6%);
-	--shadow_color_a: var(--color_a_7);
-	--shadow_color_b: var(--color_b_7);
-	--shadow_color_c: var(--color_c_7);
-	--shadow_color_d: var(--color_d_7);
-	--shadow_color_e: var(--color_e_7);
-	--shadow_color_f: var(--color_f_7);
-	--shadow_color_g: var(--color_g_7);
+	--shadow_color_a: var(--color_a_3);
+	--shadow_color_b: var(--color_b_3);
+	--shadow_color_c: var(--color_c_3);
+	--shadow_color_d: var(--color_d_3);
+	--shadow_color_e: var(--color_e_3);
+	--shadow_color_f: var(--color_f_3);
+	--shadow_color_g: var(--color_g_3);
+	--shadow_xs_1: 0.5px 1px 3px 0px;
+	--shadow_xs_2: 0.5px 1.5px 4px 0px;
+	--shadow_sm_1: 1px 2px 5px 0px;
+	--shadow_sm_2: 1px 4px 10px 0px;
+	--shadow_md_1: 1.5px 3px 8px 0px;
+	--shadow_md_2: 1.5px 6px 18px 0px;
+	--shadow_lg_1: 2px 4px 12px 0px;
+	--shadow_lg_2: 2px 8px 30px 0px;
 	--shadow_xl_1: 3px 6px 16px 0px;
 	--shadow_xl_2: 3px 8px 48px 0px;
-	--shadow_xs: 0.5px 1px 3px 0px color-mix(in srgb, var(--shadow_color), transparent 90%),
-		0.5px 1.5px 4px 0px color-mix(in srgb, var(--shadow_color), transparent 90%);
-	--shadow_sm: 1px 2px 5px 0px color-mix(in srgb, var(--shadow_color), transparent 85%),
-		1px 4px 10px 0px color-mix(in srgb, var(--shadow_color), transparent 85%);
-	--shadow_md: 1.5px 3px 8px 0px color-mix(in srgb, var(--shadow_color), transparent 80%),
-		1.5px 6px 18px 0px color-mix(in srgb, var(--shadow_color), transparent 80%);
-	--shadow_lg: 2px 4px 12px 0px color-mix(in srgb, var(--shadow_color), transparent 60%),
-		2px 8px 30px 0px color-mix(in srgb, var(--shadow_color), transparent 60%);
-	--shadow_xl: 3px 6px 16px 0px color-mix(in srgb, var(--shadow_color), transparent 40%),
-		3px 8px 48px 0px color-mix(in srgb, var(--shadow_color), transparent 40%);
-	--shadow_inset_xs: 0.5px 1px 3px 0px color-mix(in srgb, var(--shadow_color), transparent 90%)
-			inset,
-		0.5px 1.5px 4px 0px color-mix(in srgb, var(--shadow_color), transparent 90%) inset;
-	--shadow_inset_sm: 1px 2px 5px 0px color-mix(in srgb, var(--shadow_color), transparent 85%) inset,
-		1px 4px 10px 0px color-mix(in srgb, var(--shadow_color), transparent 85%) inset;
-	--shadow_inset_md: 1.5px 3px 8px 0px color-mix(in srgb, var(--shadow_color), transparent 80%)
-			inset,
-		1.5px 6px 18px 0px color-mix(in srgb, var(--shadow_color), transparent 80%) inset;
-	--shadow_inset_lg: 2px 4px 12px 0px color-mix(in srgb, var(--shadow_color), transparent 60%) inset,
-		2px 8px 30px 0px color-mix(in srgb, var(--shadow_color), transparent 60%) inset;
-	--shadow_inset_xl: 3px 6px 16px 0px color-mix(in srgb, var(--shadow_color), transparent 40%) inset,
-		3px 8px 48px 0px color-mix(in srgb, var(--shadow_color), transparent 40%) inset;
-	--shadow_outset_xs: -0.5px -1px 3px 0px color-mix(in srgb, var(--shadow_color), transparent 90%) inset,
-		-0.5px -1.5px 4px 0px color-mix(in srgb, var(--shadow_color), transparent 90%) inset;
-	--shadow_outset_sm: -1px -2px 5px 0px color-mix(in srgb, var(--shadow_color), transparent 85%) inset,
-		-1px -4px 10px 0px color-mix(in srgb, var(--shadow_color), transparent 85%) inset;
-	--shadow_outset_md: -1.5px -3px 8px 0px color-mix(in srgb, var(--shadow_color), transparent 80%) inset,
-		-1.5px -6px 18px 0px color-mix(in srgb, var(--shadow_color), transparent 80%) inset;
-	--shadow_outset_lg: -2px -4px 12px 0px color-mix(in srgb, var(--shadow_color), transparent 60%) inset,
-		-2px -8px 30px 0px color-mix(in srgb, var(--shadow_color), transparent 60%) inset;
-	--shadow_outset_xl: -3px -6px 16px 0px color-mix(in srgb, var(--shadow_color), transparent 40%) inset,
-		-3px -8px 48px 0px color-mix(in srgb, var(--shadow_color), transparent 40%) inset;
+	--shadow_inset_xs_1: 0.5px 1px 3px 0px;
+	--shadow_inset_xs_2: 0.5px 1.5px 4px 0px;
+	--shadow_inset_sm_1: 1px 2px 5px 0px;
+	--shadow_inset_sm_2: 1px 4px 10px 0px;
+	--shadow_inset_md_1: 1.5px 3px 8px 0px;
+	--shadow_inset_md_2: 1.5px 6px 18px 0px;
+	--shadow_inset_lg_1: 2px 4px 12px 0px;
+	--shadow_inset_lg_2: 2px 8px 30px 0px;
+	--shadow_inset_xl_1: 3px 6px 16px 0px;
+	--shadow_inset_xl_2: 3px 8px 48px 0px;
+	--shadow_outset_xs_1: -0.5px -1px 3px 0px;
+	--shadow_outset_xs_2: -0.5px -1.5px 4px 0px;
+	--shadow_outset_sm_1: -1px -2px 5px 0px;
+	--shadow_outset_sm_2: -1px -4px 10px 0px;
+	--shadow_outset_md_1: -1.5px -3px 8px 0px;
+	--shadow_outset_md_2: -1.5px -6px 18px 0px;
+	--shadow_outset_lg_1: -2px -4px 12px 0px;
+	--shadow_outset_lg_2: -2px -8px 30px 0px;
+	--shadow_outset_xl_1: -3px -6px 16px 0px;
+	--shadow_outset_xl_2: -3px -8px 48px 0px;
 	--icon_size_xs: 18px;
 	--icon_size_sm: 32px;
 	--icon_size_md: 48px;
@@ -359,13 +355,13 @@
 	--border_color_4: hsl(var(--tint_hue), 60%, 80%, 40%);
 	--border_color_5: hsl(var(--tint_hue), 60%, 80%, 25%);
 	--shadow_color: hsl(var(--tint_hue), var(--tint_saturation), 82%);
-	--shadow_color_a: var(--color_a_3);
-	--shadow_color_b: var(--color_b_3);
-	--shadow_color_c: var(--color_c_3);
-	--shadow_color_d: var(--color_d_3);
-	--shadow_color_e: var(--color_e_3);
-	--shadow_color_f: var(--color_f_3);
-	--shadow_color_g: var(--color_g_3);
+	--shadow_color_a: var(--color_a_7);
+	--shadow_color_b: var(--color_b_7);
+	--shadow_color_c: var(--color_c_7);
+	--shadow_color_d: var(--color_d_7);
+	--shadow_color_e: var(--color_e_7);
+	--shadow_color_f: var(--color_f_7);
+	--shadow_color_g: var(--color_g_7);
 }
 
 /* generated by src/lib/theme.gen.css.ts */
