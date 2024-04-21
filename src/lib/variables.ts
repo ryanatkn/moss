@@ -785,6 +785,48 @@ export const shadow_color_g: Style_Variable = {
 	dark: 'var(--color_g_3)',
 };
 
+// --shadow_xs: 0.5px 1px 3px 0px ${color}
+// 		0.5px 1.5px 4px 0px ${color}
+// 	--shadow_sm: 1px 2px 5px 0px ${color}
+// 		1px 4px 10px 0px ${color}
+// 	--shadow_md: 1.5px 3px 8px 0px ${color}
+// 		1.5px 6px 18px 0px ${color}
+// 	--shadow_lg: 2px 4px 12px 0px ${color}
+// 		2px 8px 30px 0px ${color}
+// 	--shadow_xl: 3px 6px 16px 0px ${color}
+// 		3px 8px 48px 0px ${color}
+// 	--shadow_inset_xs: 0.5px 1px 3px 0px ${color}
+// 			inset,
+// 		0.5px 1.5px 4px 0px ${color} inset;
+// 	--shadow_inset_sm: 1px 2px 5px 0px ${color} inset,
+// 		1px 4px 10px 0px ${color} inset;
+// 	--shadow_inset_md: 1.5px 3px 8px 0px ${color}
+// 			inset,
+// 		1.5px 6px 18px 0px ${color} inset;
+// 	--shadow_inset_lg: 2px 4px 12px 0px ${color} inset,
+// 		2px 8px 30px 0px ${color} inset;
+// 	--shadow_inset_xl: 3px 6px 16px 0px ${color} inset,
+// 		3px 8px 48px 0px ${color} inset;
+// 	--shadow_outset_xs: -0.5px -1px 3px 0px ${color} inset,
+// 		-0.5px -1.5px 4px 0px ${color} inset;
+// 	--shadow_outset_sm: -1px -2px 5px 0px ${color} inset,
+// 		-1px -4px 10px 0px ${color} inset;
+// 	--shadow_outset_md: -1.5px -3px 8px 0px ${color} inset,
+// 		-1.5px -6px 18px 0px ${color} inset;
+// 	--shadow_outset_lg: -2px -4px 12px 0px ${color} inset,
+// 		-2px -8px 30px 0px ${color} inset;
+// 	--shadow_outset_xl: -3px -6px 16px 0px ${color} inset,
+// 		-3px -8px 48px 0px ${color} inset;
+
+export const shadow_xl_1: Style_Variable = {
+	name: 'shadow_xl_1',
+	light: '3px 6px 16px 0px',
+};
+export const shadow_xl_2: Style_Variable = {
+	name: 'shadow_xl_2',
+	light: '3px 8px 48px 0px',
+};
+
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
 	light: create_shadow_xs('shadow_color'),
@@ -1141,6 +1183,8 @@ export const default_variables: Style_Variable[] = [
 	shadow_color_e,
 	shadow_color_f,
 	shadow_color_g,
+	shadow_xl_1,
+	shadow_xl_2,
 	shadow_xs,
 	shadow_sm,
 	shadow_md,

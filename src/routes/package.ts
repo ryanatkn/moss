@@ -363,6 +363,8 @@ export const src_json = {
 				{name: 'shadow_color_e', kind: 'variable'},
 				{name: 'shadow_color_f', kind: 'variable'},
 				{name: 'shadow_color_g', kind: 'variable'},
+				{name: 'shadow_xl_1', kind: 'variable'},
+				{name: 'shadow_xl_2', kind: 'variable'},
 				{name: 'shadow_xs', kind: 'variable'},
 				{name: 'shadow_sm', kind: 'variable'},
 				{name: 'shadow_md', kind: 'variable'},

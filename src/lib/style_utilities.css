@@ -1111,9 +1111,8 @@ light and shadow
 }
 /* TODO think this through - the problem is we don't want to hardcode values in the utility CSS, just the themes */
 .shadow_xl {
-	--shadow_xl: 3px 6px 16px 0px color-mix(in srgb, var(--shadow_color), transparent 40%),
-		3px 8px 48px 0px color-mix(in srgb, var(--shadow_color), transparent 40%);
-	--shadow: var(--shadow_xl);
+	--shadow: var(--shadow_xl_1) color-mix(in srgb, var(--shadow_color), transparent 40%),
+		var(--shadow_xl_2) color-mix(in srgb, var(--shadow_color), transparent 40%);
 	box-shadow: var(--shadow);
 	/* --shadow: var(--shadow_xl);
 	box-shadow:

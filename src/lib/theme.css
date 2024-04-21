@@ -221,6 +221,8 @@
 	--shadow_color_e: var(--color_e_7);
 	--shadow_color_f: var(--color_f_7);
 	--shadow_color_g: var(--color_g_7);
+	--shadow_xl_1: 3px 6px 16px 0px;
+	--shadow_xl_2: 3px 8px 48px 0px;
 	--shadow_xs: 0.5px 1px 3px 0px color-mix(in srgb, var(--shadow_color), transparent 90%),
 		0.5px 1.5px 4px 0px color-mix(in srgb, var(--shadow_color), transparent 90%);
 	--shadow_sm: 1px 2px 5px 0px color-mix(in srgb, var(--shadow_color), transparent 85%),

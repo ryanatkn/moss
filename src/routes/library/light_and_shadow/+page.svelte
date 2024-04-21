@@ -217,19 +217,19 @@
 			{#each color_variants as color_variant}
 				<section class="p_lg panel fg_3 shadow_inset_xs shadow_color_{color_variant}">
 					{#each shadow_variants as variant}
-						<div class="row shadow_example shadow_{variant} shadow_color_{color_variant}">
+						<div class="row shadow_example shadow_{variant}">
 							<Style_Variable_Button name="shadow_inset_{variant}" />
 							<Style_Variable_Button name="shadow_color_{color_variant}" />
 						</div>
 					{/each}
 					{#each shadow_variants as variant}
-						<div class="row shadow_example shadow_inset_{variant} shadow_color_{color_variant}">
+						<div class="row shadow_example shadow_inset_{variant}">
 							<Style_Variable_Button name="shadow_inset_{variant}" />
 							<Style_Variable_Button name="shadow_color_{color_variant}" />
 						</div>
 					{/each}
 					{#each shadow_variants as variant}
-						<div class="row shadow_example shadow_outset_{variant} shadow_color_{color_variant}">
+						<div class="row shadow_example shadow_outset_{variant}">
 							<Style_Variable_Button name="shadow_inset_{variant}" />
 							<Style_Variable_Button name="shadow_color_{color_variant}" />
 						</div>
