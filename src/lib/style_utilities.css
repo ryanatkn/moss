@@ -1093,6 +1093,10 @@ light and shadow
 	opacity: var(--fade_6);
 }
 
+/* These look complicated because they support dynamic colors with `--shadow_color`.
+This works around the design of CSS custom properties with the cascade.
+You can't set `--shadow_color` and have it work correctly unless
+the `var(--shadow_color)` happens locally where you want it resolved. */
 .shadow_xs {
 	--shadow: var(--shadow_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%),
 		var(--shadow_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%);

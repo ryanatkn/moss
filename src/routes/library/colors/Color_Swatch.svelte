@@ -18,7 +18,7 @@
 	{#each {length: 9} as _, i}
 		{@const num = i + 1}
 		{@const variable_name = `color_${color_name}_${num}`}
-		{@const hsl_string = 'hsl(' + get_color_hsl_string(variable_name) + ')'}
+		{@const hsl_string = get_color_hsl_string(variable_name)}
 		{@const hsl = hsl_string && parse_hsl_string(hsl_string)}
 		<li style:--bg_color="var(--{variable_name})">
 			<div class="color"></div>
