@@ -191,23 +191,21 @@
 		</aside>
 		<section>
 			<Tome_Subheading text="Shadow variants" slug="shadow-variants" tag="h4" />
-			<div class="p_lg panel fg_1 shadow_inset_xs">
-				{#each shadow_variants as variant}
-					<div class="shadow_example shadow_{variant}">
-						<Style_Variable_Button name="shadow_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example shadow_inset_{variant}">
-						<Style_Variable_Button name="shadow_inset_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example shadow_outset_{variant}">
-						<Style_Variable_Button name="shadow_outset_{variant}" />
-					</div>
-				{/each}
-			</div>
+			{#each shadow_variants as variant}
+				<div class="shadow_example shadow_{variant}">
+					<Style_Variable_Button name="shadow_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div class="shadow_example shadow_inset_{variant}">
+					<Style_Variable_Button name="shadow_inset_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div class="shadow_example shadow_outset_{variant}">
+					<Style_Variable_Button name="shadow_outset_{variant}" />
+				</div>
+			{/each}
 		</section>
 		<section>
 			<Color_Scheme_Input />
@@ -215,7 +213,7 @@
 		<section>
 			<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" tag="h4" />
 			{#each color_variants as color_variant}
-				<section class="p_lg panel fg_1 shadow_inset_xs shadow_color_{color_variant}">
+				<section class="shadow_color_{color_variant}">
 					{#each shadow_variants as variant}
 						<div class="row shadow_example shadow_{variant}">
 							<Style_Variable_Button name="shadow_{variant}" />
