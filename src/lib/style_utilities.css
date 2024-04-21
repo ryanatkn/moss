@@ -1093,6 +1093,7 @@ light and shadow
 	opacity: var(--fade_6);
 }
 
+/* TODO hardcoded transpancies */
 /* These look complicated because they support dynamic colors with `--shadow_color`.
 This works around the design of CSS custom properties with the cascade.
 You can't set `--shadow_color` and have it work correctly unless
