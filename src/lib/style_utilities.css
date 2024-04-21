@@ -1093,7 +1093,6 @@ light and shadow
 	opacity: var(--fade_6);
 }
 
-/* TODO maybe add shadow_xs-xl_alpha? */
 .shadow_xs {
 	--shadow: var(--shadow_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%),
 		var(--shadow_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%);
