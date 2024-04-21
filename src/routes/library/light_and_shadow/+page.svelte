@@ -215,26 +215,23 @@
 		<section>
 			<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" tag="h4" />
 			{#each color_variants as color_variant}
-				<section class="p_lg panel fg_3 shadow_{color_variant}_inset_xs">
+				<section class="p_lg panel fg_3 shadow_inset_xs shadow_color_{color_variant}">
 					{#each shadow_variants as variant}
-						<div class="shadow_example" style:box-shadow="var(--shadow_{color_variant}_{variant})">
-							<Style_Variable_Button name="shadow_{color_variant}_{variant}" />
+						<div class="row shadow_example shadow_{variant} shadow_color_{color_variant}">
+							<Style_Variable_Button name="shadow_inset_{variant}" />
+							<Style_Variable_Button name="shadow_color_{color_variant}" />
 						</div>
 					{/each}
 					{#each shadow_variants as variant}
-						<div
-							class="shadow_example"
-							style:box-shadow="var(--shadow_{color_variant}_inset_{variant})"
-						>
-							<Style_Variable_Button name="shadow_{color_variant}_inset_{variant}" />
+						<div class="row shadow_example shadow_inset_{variant} shadow_color_{color_variant}">
+							<Style_Variable_Button name="shadow_inset_{variant}" />
+							<Style_Variable_Button name="shadow_color_{color_variant}" />
 						</div>
 					{/each}
 					{#each shadow_variants as variant}
-						<div
-							class="shadow_example"
-							style:box-shadow="var(--shadow_{color_variant}_outset_{variant})"
-						>
-							<Style_Variable_Button name="shadow_{color_variant}_outset_{variant}" />
+						<div class="row shadow_example shadow_outset_{variant} shadow_color_{color_variant}">
+							<Style_Variable_Button name="shadow_inset_{variant}" />
+							<Style_Variable_Button name="shadow_color_{color_variant}" />
 						</div>
 					{/each}
 				</section>

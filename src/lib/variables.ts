@@ -27,265 +27,307 @@ export const hue_d: Style_Variable = {name: 'hue_d', light: '260', summary: 'pur
 export const hue_e: Style_Variable = {name: 'hue_e', light: '50', summary: 'yellow'};
 export const hue_f: Style_Variable = {name: 'hue_f', light: '27', summary: 'brown'};
 export const hue_g: Style_Variable = {name: 'hue_g', light: '335', summary: 'pink'};
-export const color_a_1: Style_Variable = {name: 'color_a_1', light: 'var(--hue_a), 65%, 91%'};
+export const color_a_1: Style_Variable = {
+	name: 'color_a_1',
+	light: 'hsl(var(--hue_a), 65%, 91%)',
+};
 export const color_a_2: Style_Variable = {
 	name: 'color_a_2',
-	light: 'var(--hue_a), 62%, 84%',
-	dark: 'var(--hue_a), 62%, 87%',
+	light: 'hsl(var(--hue_a), 62%, 84%)',
+	dark: 'hsl(var(--hue_a), 62%, 87%)',
 };
 export const color_a_3: Style_Variable = {
 	name: 'color_a_3',
-	light: 'var(--hue_a), 60%, 73%',
-	dark: 'var(--hue_a), 60%, 82%',
+	light: 'hsl(var(--hue_a), 60%, 73%)',
+	dark: 'hsl(var(--hue_a), 60%, 82%)',
 };
 export const color_a_4: Style_Variable = {
 	name: 'color_a_4',
-	light: 'var(--hue_a), 60%, 62%',
-	dark: 'var(--hue_a), 60%, 76%',
+	light: 'hsl(var(--hue_a), 60%, 62%)',
+	dark: 'hsl(var(--hue_a), 60%, 76%)',
 };
 export const color_a_5: Style_Variable = {
 	name: 'color_a_5',
-	light: 'var(--hue_a), 55%, 50%',
-	dark: 'var(--hue_a), 55%, 70%',
+	light: 'hsl(var(--hue_a), 55%, 50%)',
+	dark: 'hsl(var(--hue_a), 55%, 70%)',
 };
 export const color_a_6: Style_Variable = {
 	name: 'color_a_6',
-	light: 'var(--hue_a), 55%, 40%',
-	dark: 'var(--hue_a), 55%, 55%',
+	light: 'hsl(var(--hue_a), 55%, 40%)',
+	dark: 'hsl(var(--hue_a), 55%, 55%)',
 };
 export const color_a_7: Style_Variable = {
 	name: 'color_a_7',
-	light: 'var(--hue_a), 55%, 30%',
-	dark: 'var(--hue_a), 55%, 40%',
+	light: 'hsl(var(--hue_a), 55%, 30%)',
+	dark: 'hsl(var(--hue_a), 55%, 40%)',
 };
 export const color_a_8: Style_Variable = {
 	name: 'color_a_8',
-	light: 'var(--hue_a), 55%, 20%',
-	dark: 'var(--hue_a), 55%, 25%',
+	light: 'hsl(var(--hue_a), 55%, 20%)',
+	dark: 'hsl(var(--hue_a), 55%, 25%)',
 };
-export const color_a_9: Style_Variable = {name: 'color_a_9', light: 'var(--hue_a), 55%, 10%'};
-export const color_b_1: Style_Variable = {name: 'color_b_1', light: 'var(--hue_b), 55%, 90%'};
+export const color_a_9: Style_Variable = {
+	name: 'color_a_9',
+	light: 'hsl(var(--hue_a), 55%, 10%)',
+};
+export const color_b_1: Style_Variable = {
+	name: 'color_b_1',
+	light: 'hsl(var(--hue_b), 55%, 90%)',
+};
 export const color_b_2: Style_Variable = {
 	name: 'color_b_2',
-	light: 'var(--hue_b), 50%, 77%',
-	dark: 'var(--hue_b), 50%, 82%',
+	light: 'hsl(var(--hue_b), 50%, 77%)',
+	dark: 'hsl(var(--hue_b), 50%, 82%)',
 };
 export const color_b_3: Style_Variable = {
 	name: 'color_b_3',
-	light: 'var(--hue_b), 50%, 63%',
-	dark: 'var(--hue_b), 50%, 74%',
+	light: 'hsl(var(--hue_b), 50%, 63%)',
+	dark: 'hsl(var(--hue_b), 50%, 74%)',
 };
 export const color_b_4: Style_Variable = {
 	name: 'color_b_4',
-	light: 'var(--hue_b), 50%, 49%',
-	dark: 'var(--hue_b), 50%, 66%',
+	light: 'hsl(var(--hue_b), 50%, 49%)',
+	dark: 'hsl(var(--hue_b), 50%, 66%)',
 };
 export const color_b_5: Style_Variable = {
 	name: 'color_b_5',
-	light: 'var(--hue_b), 55%, 36%',
-	dark: 'var(--hue_b), 43%, 58%',
+	light: 'hsl(var(--hue_b), 55%, 36%)',
+	dark: 'hsl(var(--hue_b), 43%, 58%)',
 };
 export const color_b_6: Style_Variable = {
 	name: 'color_b_6',
-	light: 'var(--hue_b), 60%, 25%',
-	dark: 'var(--hue_b), 51%, 45%',
+	light: 'hsl(var(--hue_b), 60%, 25%)',
+	dark: 'hsl(var(--hue_b), 51%, 45%)',
 };
 export const color_b_7: Style_Variable = {
 	name: 'color_b_7',
-	light: 'var(--hue_b), 65%, 18%',
-	dark: 'var(--hue_b), 59%, 33%',
+	light: 'hsl(var(--hue_b), 65%, 18%)',
+	dark: 'hsl(var(--hue_b), 59%, 33%)',
 };
 export const color_b_8: Style_Variable = {
 	name: 'color_b_8',
-	light: 'var(--hue_b), 70%, 12%',
-	dark: 'var(--hue_b), 67%, 20%',
+	light: 'hsl(var(--hue_b), 70%, 12%)',
+	dark: 'hsl(var(--hue_b), 67%, 20%)',
 };
-export const color_b_9: Style_Variable = {name: 'color_b_9', light: 'var(--hue_b), 75%, 7%'};
-export const color_c_1: Style_Variable = {name: 'color_c_1', light: 'var(--hue_c), 85%, 92%'};
+export const color_b_9: Style_Variable = {
+	name: 'color_b_9',
+	light: 'hsl(var(--hue_b), 75%, 7%)',
+};
+export const color_c_1: Style_Variable = {
+	name: 'color_c_1',
+	light: 'hsl(var(--hue_c), 85%, 92%)',
+};
 export const color_c_2: Style_Variable = {
 	name: 'color_c_2',
-	light: 'var(--hue_c), 80%, 83%',
-	dark: 'var(--hue_c), 81%, 83%',
+	light: 'hsl(var(--hue_c), 80%, 83%)',
+	dark: 'hsl(var(--hue_c), 81%, 83%)',
 };
 export const color_c_3: Style_Variable = {
 	name: 'color_c_3',
-	light: 'var(--hue_c), 75%, 73%',
-	dark: 'var(--hue_c), 78%, 74%',
+	light: 'hsl(var(--hue_c), 75%, 73%)',
+	dark: 'hsl(var(--hue_c), 78%, 74%)',
 };
 export const color_c_4: Style_Variable = {
 	name: 'color_c_4',
-	light: 'var(--hue_c), 70%, 63%',
-	dark: 'var(--hue_c), 74%, 65%',
+	light: 'hsl(var(--hue_c), 70%, 63%)',
+	dark: 'hsl(var(--hue_c), 74%, 65%)',
 };
 export const color_c_5: Style_Variable = {
 	name: 'color_c_5',
-	light: 'var(--hue_c), 65%, 50%',
-	dark: 'var(--hue_c), 70%, 56%',
+	light: 'hsl(var(--hue_c), 65%, 50%)',
+	dark: 'hsl(var(--hue_c), 70%, 56%)',
 };
 export const color_c_6: Style_Variable = {
 	name: 'color_c_6',
-	light: 'var(--hue_c), 65%, 40%',
-	dark: 'var(--hue_c), 65%, 45%',
+	light: 'hsl(var(--hue_c), 65%, 40%)',
+	dark: 'hsl(var(--hue_c), 65%, 45%)',
 };
 export const color_c_7: Style_Variable = {
 	name: 'color_c_7',
-	light: 'var(--hue_c), 65%, 30%',
-	dark: 'var(--hue_c), 65%, 33%',
+	light: 'hsl(var(--hue_c), 65%, 30%)',
+	dark: 'hsl(var(--hue_c), 65%, 33%)',
 };
 export const color_c_8: Style_Variable = {
 	name: 'color_c_8',
-	light: 'var(--hue_c), 65%, 20%',
-	dark: 'var(--hue_c), 65%, 22%',
+	light: 'hsl(var(--hue_c), 65%, 20%)',
+	dark: 'hsl(var(--hue_c), 65%, 22%)',
 };
-export const color_c_9: Style_Variable = {name: 'color_c_9', light: 'var(--hue_c), 65%, 10%'};
-export const color_d_1: Style_Variable = {name: 'color_d_1', light: 'var(--hue_d), 50%, 91%'};
+export const color_c_9: Style_Variable = {
+	name: 'color_c_9',
+	light: 'hsl(var(--hue_c), 65%, 10%)',
+};
+export const color_d_1: Style_Variable = {
+	name: 'color_d_1',
+	light: 'hsl(var(--hue_d), 50%, 91%)',
+};
 export const color_d_2: Style_Variable = {
 	name: 'color_d_2',
-	light: 'var(--hue_d), 50%, 82%',
-	dark: 'var(--hue_d), 50%, 86%',
+	light: 'hsl(var(--hue_d), 50%, 82%)',
+	dark: 'hsl(var(--hue_d), 50%, 86%)',
 };
 export const color_d_3: Style_Variable = {
 	name: 'color_d_3',
-	light: 'var(--hue_d), 50%, 72%',
-	dark: 'var(--hue_d), 50%, 81%',
+	light: 'hsl(var(--hue_d), 50%, 72%)',
+	dark: 'hsl(var(--hue_d), 50%, 81%)',
 };
 export const color_d_4: Style_Variable = {
 	name: 'color_d_4',
-	light: 'var(--hue_d), 50%, 62%',
-	dark: 'var(--hue_d), 50%, 76%',
+	light: 'hsl(var(--hue_d), 50%, 62%)',
+	dark: 'hsl(var(--hue_d), 50%, 76%)',
 };
 export const color_d_5: Style_Variable = {
 	name: 'color_d_5',
-	light: 'var(--hue_d), 50%, 50%',
-	dark: 'var(--hue_d), 50%, 70%',
+	light: 'hsl(var(--hue_d), 50%, 50%)',
+	dark: 'hsl(var(--hue_d), 50%, 70%)',
 };
 export const color_d_6: Style_Variable = {
 	name: 'color_d_6',
-	light: 'var(--hue_d), 50%, 40%',
-	dark: 'var(--hue_d), 50%, 55%',
+	light: 'hsl(var(--hue_d), 50%, 40%)',
+	dark: 'hsl(var(--hue_d), 50%, 55%)',
 };
 export const color_d_7: Style_Variable = {
 	name: 'color_d_7',
-	light: 'var(--hue_d), 50%, 30%',
-	dark: 'var(--hue_d), 50%, 40%',
+	light: 'hsl(var(--hue_d), 50%, 30%)',
+	dark: 'hsl(var(--hue_d), 50%, 40%)',
 };
 export const color_d_8: Style_Variable = {
 	name: 'color_d_8',
-	light: 'var(--hue_d), 50%, 20%',
-	dark: 'var(--hue_d), 50%, 25%',
+	light: 'hsl(var(--hue_d), 50%, 20%)',
+	dark: 'hsl(var(--hue_d), 50%, 25%)',
 };
-export const color_d_9: Style_Variable = {name: 'color_d_9', light: 'var(--hue_d), 50%, 10%'};
-export const color_e_1: Style_Variable = {name: 'color_e_1', light: 'var(--hue_e), 85%, 91%'};
+export const color_d_9: Style_Variable = {
+	name: 'color_d_9',
+	light: 'hsl(var(--hue_d), 50%, 10%)',
+};
+export const color_e_1: Style_Variable = {
+	name: 'color_e_1',
+	light: 'hsl(var(--hue_e), 85%, 91%)',
+};
 export const color_e_2: Style_Variable = {
 	name: 'color_e_2',
-	light: 'var(--hue_e), 80%, 79%',
-	dark: 'var(--hue_e), 80%, 83%',
+	light: 'hsl(var(--hue_e), 80%, 79%)',
+	dark: 'hsl(var(--hue_e), 80%, 83%)',
 };
 export const color_e_3: Style_Variable = {
 	name: 'color_e_3',
-	light: 'var(--hue_e), 75%, 68%',
-	dark: 'var(--hue_e), 75%, 76%',
+	light: 'hsl(var(--hue_e), 75%, 68%)',
+	dark: 'hsl(var(--hue_e), 75%, 76%)',
 };
 export const color_e_4: Style_Variable = {
 	name: 'color_e_4',
-	light: 'var(--hue_e), 70%, 56%',
-	dark: 'var(--hue_e), 70%, 69%',
+	light: 'hsl(var(--hue_e), 70%, 56%)',
+	dark: 'hsl(var(--hue_e), 70%, 69%)',
 };
 export const color_e_5: Style_Variable = {
 	name: 'color_e_5',
-	light: 'var(--hue_e), 65%, 42%',
-	dark: 'var(--hue_e), 70%, 62%',
+	light: 'hsl(var(--hue_e), 65%, 42%)',
+	dark: 'hsl(var(--hue_e), 70%, 62%)',
 };
 export const color_e_6: Style_Variable = {
 	name: 'color_e_6',
-	light: 'var(--hue_e), 70%, 34%',
-	dark: 'var(--hue_e), 70%, 49%',
+	light: 'hsl(var(--hue_e), 70%, 34%)',
+	dark: 'hsl(var(--hue_e), 70%, 49%)',
 };
 export const color_e_7: Style_Variable = {
 	name: 'color_e_7',
-	light: 'var(--hue_e), 75%, 26%',
-	dark: 'var(--hue_e), 75%, 36%',
+	light: 'hsl(var(--hue_e), 75%, 26%)',
+	dark: 'hsl(var(--hue_e), 75%, 36%)',
 };
 export const color_e_8: Style_Variable = {
 	name: 'color_e_8',
-	light: 'var(--hue_e), 80%, 18%',
-	dark: 'var(--hue_e), 80%, 23%',
+	light: 'hsl(var(--hue_e), 80%, 18%)',
+	dark: 'hsl(var(--hue_e), 80%, 23%)',
 };
-export const color_e_9: Style_Variable = {name: 'color_e_9', light: 'var(--hue_e), 85%, 10%'};
-export const color_f_1: Style_Variable = {name: 'color_f_1', light: 'var(--hue_f), 32%, 87%'};
+export const color_e_9: Style_Variable = {
+	name: 'color_e_9',
+	light: 'hsl(var(--hue_e), 85%, 10%)',
+};
+export const color_f_1: Style_Variable = {
+	name: 'color_f_1',
+	light: 'hsl(var(--hue_f), 32%, 87%)',
+};
 export const color_f_2: Style_Variable = {
 	name: 'color_f_2',
-	light: 'var(--hue_f), 32%, 72%',
-	dark: 'var(--hue_f), 32%, 79%',
+	light: 'hsl(var(--hue_f), 32%, 72%)',
+	dark: 'hsl(var(--hue_f), 32%, 79%)',
 };
 export const color_f_3: Style_Variable = {
 	name: 'color_f_3',
-	light: 'var(--hue_f), 32%, 57%',
-	dark: 'var(--hue_f), 32%, 72%',
+	light: 'hsl(var(--hue_f), 32%, 57%)',
+	dark: 'hsl(var(--hue_f), 32%, 72%)',
 };
 export const color_f_4: Style_Variable = {
 	name: 'color_f_4',
-	light: 'var(--hue_f), 42%, 41%',
-	dark: 'var(--hue_f), 32%, 64%',
+	light: 'hsl(var(--hue_f), 42%, 41%)',
+	dark: 'hsl(var(--hue_f), 32%, 64%)',
 };
 export const color_f_5: Style_Variable = {
 	name: 'color_f_5',
-	light: 'var(--hue_f), 60%, 26%',
-	dark: 'var(--hue_f), 30%, 56%',
+	light: 'hsl(var(--hue_f), 60%, 26%)',
+	dark: 'hsl(var(--hue_f), 30%, 56%)',
 };
 export const color_f_6: Style_Variable = {
 	name: 'color_f_6',
-	light: 'var(--hue_f), 65%, 18%',
-	dark: 'var(--hue_f), 40%, 44%',
+	light: 'hsl(var(--hue_f), 65%, 18%)',
+	dark: 'hsl(var(--hue_f), 40%, 44%)',
 };
 export const color_f_7: Style_Variable = {
 	name: 'color_f_7',
-	light: 'var(--hue_f), 70%, 14%',
-	dark: 'var(--hue_f), 50%, 31%',
+	light: 'hsl(var(--hue_f), 70%, 14%)',
+	dark: 'hsl(var(--hue_f), 50%, 31%)',
 };
 export const color_f_8: Style_Variable = {
 	name: 'color_f_8',
-	light: 'var(--hue_f), 75%, 10%',
-	dark: 'var(--hue_f), 70%, 19%',
+	light: 'hsl(var(--hue_f), 75%, 10%)',
+	dark: 'hsl(var(--hue_f), 70%, 19%)',
 };
-export const color_f_9: Style_Variable = {name: 'color_f_9', light: 'var(--hue_f), 80%, 6%'};
-export const color_g_1: Style_Variable = {name: 'color_g_1', light: 'var(--hue_g), 72%, 91%'};
+export const color_f_9: Style_Variable = {
+	name: 'color_f_9',
+	light: 'hsl(var(--hue_f), 80%, 6%)',
+};
+export const color_g_1: Style_Variable = {
+	name: 'color_g_1',
+	light: 'hsl(var(--hue_g), 72%, 91%)',
+};
 export const color_g_2: Style_Variable = {
 	name: 'color_g_2',
-	light: 'var(--hue_g), 72%, 83%',
-	dark: 'var(--hue_g), 72%, 86%',
+	light: 'hsl(var(--hue_g), 72%, 83%)',
+	dark: 'hsl(var(--hue_g), 72%, 86%)',
 };
 export const color_g_3: Style_Variable = {
 	name: 'color_g_3',
-	light: 'var(--hue_g), 72%, 74%',
-	dark: 'var(--hue_g), 72%, 81%',
+	light: 'hsl(var(--hue_g), 72%, 74%)',
+	dark: 'hsl(var(--hue_g), 72%, 81%)',
 };
 export const color_g_4: Style_Variable = {
 	name: 'color_g_4',
-	light: 'var(--hue_g), 72%, 65%',
-	dark: 'var(--hue_g), 72%, 76%',
+	light: 'hsl(var(--hue_g), 72%, 65%)',
+	dark: 'hsl(var(--hue_g), 72%, 76%)',
 };
 export const color_g_5: Style_Variable = {
 	name: 'color_g_5',
-	light: 'var(--hue_g), 72%, 56%',
-	dark: 'var(--hue_g), 72%, 70%',
+	light: 'hsl(var(--hue_g), 72%, 56%)',
+	dark: 'hsl(var(--hue_g), 72%, 70%)',
 };
 export const color_g_6: Style_Variable = {
 	name: 'color_g_6',
-	light: 'var(--hue_g), 72%, 44%',
-	dark: 'var(--hue_g), 72%, 55%',
+	light: 'hsl(var(--hue_g), 72%, 44%)',
+	dark: 'hsl(var(--hue_g), 72%, 55%)',
 };
 export const color_g_7: Style_Variable = {
 	name: 'color_g_7',
-	light: 'var(--hue_g), 72%, 32%',
-	dark: 'var(--hue_g), 72%, 40%',
+	light: 'hsl(var(--hue_g), 72%, 32%)',
+	dark: 'hsl(var(--hue_g), 72%, 40%)',
 };
 export const color_g_8: Style_Variable = {
 	name: 'color_g_8',
-	light: 'var(--hue_g), 72%, 20%',
-	dark: 'var(--hue_g), 72%, 25%',
+	light: 'hsl(var(--hue_g), 72%, 20%)',
+	dark: 'hsl(var(--hue_g), 72%, 25%)',
 };
-export const color_g_9: Style_Variable = {name: 'color_g_9', light: 'var(--hue_g), 72%, 10%'};
+export const color_g_9: Style_Variable = {
+	name: 'color_g_9',
+	light: 'hsl(var(--hue_g), 72%, 10%)',
+};
 
 /*
 		color variants - using these usually means handling both light and dark modes separately -
@@ -652,7 +694,7 @@ export const create_shadow_xs = (color: string, options?: Create_Shadow_Options)
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 0.5 + spread_x}px ${scale_y * 1 + spread_y}px 3px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 0.5 + spread_x}px ${scale_y * 1.5 + spread_y}px 4px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 0.5 + spread_x}px ${scale_y * 1 + spread_y}px 3px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}, ${scale_x * 0.5 + spread_x}px ${scale_y * 1.5 + spread_y}px 4px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}`;
 };
 export const create_shadow_sm = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
@@ -663,7 +705,7 @@ export const create_shadow_sm = (color: string, options?: Create_Shadow_Options)
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 1 + spread_x}px ${scale_y * 2 + spread_y}px 5px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 1 + spread_x}px ${scale_y * 4 + spread_y}px 10px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 1 + spread_x}px ${scale_y * 2 + spread_y}px 5px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}, ${scale_x * 1 + spread_x}px ${scale_y * 4 + spread_y}px 10px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}`;
 };
 export const create_shadow_md = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
@@ -674,7 +716,7 @@ export const create_shadow_md = (color: string, options?: Create_Shadow_Options)
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 1.5 + spread_x}px ${scale_y * 3 + spread_y}px 8px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 1.5 + spread_x}px ${scale_y * 6 + spread_y}px 18px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 1.5 + spread_x}px ${scale_y * 3 + spread_y}px 8px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}, ${scale_x * 1.5 + spread_x}px ${scale_y * 6 + spread_y}px 18px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}`;
 };
 export const create_shadow_lg = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
@@ -685,7 +727,7 @@ export const create_shadow_lg = (color: string, options?: Create_Shadow_Options)
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 2 + spread_x}px ${scale_y * 4 + spread_y}px 12px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 2 + spread_x}px ${scale_y * 8 + spread_y}px 30px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 2 + spread_x}px ${scale_y * 4 + spread_y}px 12px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}, ${scale_x * 2 + spread_x}px ${scale_y * 8 + spread_y}px 30px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}`;
 };
 export const create_shadow_xl = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
@@ -696,47 +738,49 @@ export const create_shadow_xl = (color: string, options?: Create_Shadow_Options)
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 3 + spread_x}px ${scale_y * 6 + spread_y}px 16px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 3 + spread_x}px ${scale_y * 8 + spread_y}px 48px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 3 + spread_x}px ${scale_y * 6 + spread_y}px 16px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}, ${scale_x * 3 + spread_x}px ${scale_y * 8 + spread_y}px 48px ${spread}px color-mix(in srgb, var(--${color}), transparent ${(1 - alpha) * 100}%)${suffix}`;
 };
+
+// 3px 6px 16px 0px hsla( var(--shadow_color), 0.6), 3px 8px 48px 0px hsla( var(--shadow_color), 0.6)
 
 // TODO better name than `shadow_color`? it's more like "glow" in dark mode
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
-	light: 'var(--tint_hue), var(--tint_saturation), 6%',
-	dark: 'var(--tint_hue), var(--tint_saturation), 82%',
+	light: 'hsl(var(--tint_hue), var(--tint_saturation), 6%)',
+	dark: 'hsl(var(--tint_hue), var(--tint_saturation), 82%)',
 };
-export const shadow_a_color: Style_Variable = {
-	name: 'shadow_a_color',
+export const shadow_color_a: Style_Variable = {
+	name: 'shadow_color_a',
 	light: 'var(--color_a_7)',
 	dark: 'var(--color_a_3)',
 };
-export const shadow_b_color: Style_Variable = {
-	name: 'shadow_b_color',
+export const shadow_color_b: Style_Variable = {
+	name: 'shadow_color_b',
 	light: 'var(--color_b_7)',
 	dark: 'var(--color_b_3)',
 };
-export const shadow_c_color: Style_Variable = {
-	name: 'shadow_c_color',
+export const shadow_color_c: Style_Variable = {
+	name: 'shadow_color_c',
 	light: 'var(--color_c_7)',
 	dark: 'var(--color_c_3)',
 };
-export const shadow_d_color: Style_Variable = {
-	name: 'shadow_d_color',
+export const shadow_color_d: Style_Variable = {
+	name: 'shadow_color_d',
 	light: 'var(--color_d_7)',
 	dark: 'var(--color_d_3)',
 };
-export const shadow_e_color: Style_Variable = {
-	name: 'shadow_e_color',
+export const shadow_color_e: Style_Variable = {
+	name: 'shadow_color_e',
 	light: 'var(--color_e_7)',
 	dark: 'var(--color_e_3)',
 };
-export const shadow_f_color: Style_Variable = {
-	name: 'shadow_f_color',
+export const shadow_color_f: Style_Variable = {
+	name: 'shadow_color_f',
 	light: 'var(--color_f_7)',
 	dark: 'var(--color_f_3)',
 };
-export const shadow_g_color: Style_Variable = {
-	name: 'shadow_g_color',
+export const shadow_color_g: Style_Variable = {
+	name: 'shadow_color_g',
 	light: 'var(--color_g_7)',
 	dark: 'var(--color_g_3)',
 };
@@ -800,433 +844,6 @@ export const shadow_outset_lg: Style_Variable = {
 export const shadow_outset_xl: Style_Variable = {
 	name: 'shadow_outset_xl',
 	light: create_shadow_xl('shadow_color', {inset: true, scale: -1}),
-};
-
-export const shadow_a_xs: Style_Variable = {
-	name: 'shadow_a_xs',
-	light: create_shadow_xs('shadow_a_color'),
-};
-export const shadow_a_sm: Style_Variable = {
-	name: 'shadow_a_sm',
-	light: create_shadow_sm('shadow_a_color'),
-};
-export const shadow_a_md: Style_Variable = {
-	name: 'shadow_a_md',
-	light: create_shadow_md('shadow_a_color'),
-};
-export const shadow_a_lg: Style_Variable = {
-	name: 'shadow_a_lg',
-	light: create_shadow_lg('shadow_a_color'),
-};
-export const shadow_a_xl: Style_Variable = {
-	name: 'shadow_a_xl',
-	light: create_shadow_xl('shadow_a_color'),
-};
-export const shadow_a_inset_xs: Style_Variable = {
-	name: 'shadow_a_inset_xs',
-	light: create_shadow_xs('shadow_a_color', {inset: true}),
-};
-export const shadow_a_inset_sm: Style_Variable = {
-	name: 'shadow_a_inset_sm',
-	light: create_shadow_sm('shadow_a_color', {inset: true}),
-};
-export const shadow_a_inset_md: Style_Variable = {
-	name: 'shadow_a_inset_md',
-	light: create_shadow_md('shadow_a_color', {inset: true}),
-};
-export const shadow_a_inset_lg: Style_Variable = {
-	name: 'shadow_a_inset_lg',
-	light: create_shadow_lg('shadow_a_color', {inset: true}),
-};
-export const shadow_a_inset_xl: Style_Variable = {
-	name: 'shadow_a_inset_xl',
-	light: create_shadow_xl('shadow_a_color', {inset: true}),
-};
-export const shadow_a_outset_xs: Style_Variable = {
-	name: 'shadow_a_outset_xs',
-	light: create_shadow_xs('shadow_a_color', {inset: true, scale: -1}),
-};
-export const shadow_a_outset_sm: Style_Variable = {
-	name: 'shadow_a_outset_sm',
-	light: create_shadow_sm('shadow_a_color', {inset: true, scale: -1}),
-};
-export const shadow_a_outset_md: Style_Variable = {
-	name: 'shadow_a_outset_md',
-	light: create_shadow_md('shadow_a_color', {inset: true, scale: -1}),
-};
-export const shadow_a_outset_lg: Style_Variable = {
-	name: 'shadow_a_outset_lg',
-	light: create_shadow_lg('shadow_a_color', {inset: true, scale: -1}),
-};
-export const shadow_a_outset_xl: Style_Variable = {
-	name: 'shadow_a_outset_xl',
-	light: create_shadow_xl('shadow_a_color', {inset: true, scale: -1}),
-};
-
-export const shadow_b_xs: Style_Variable = {
-	name: 'shadow_b_xs',
-	light: create_shadow_xs('shadow_b_color'),
-};
-export const shadow_b_sm: Style_Variable = {
-	name: 'shadow_b_sm',
-	light: create_shadow_sm('shadow_b_color'),
-};
-export const shadow_b_md: Style_Variable = {
-	name: 'shadow_b_md',
-	light: create_shadow_md('shadow_b_color'),
-};
-export const shadow_b_lg: Style_Variable = {
-	name: 'shadow_b_lg',
-	light: create_shadow_lg('shadow_b_color'),
-};
-export const shadow_b_xl: Style_Variable = {
-	name: 'shadow_b_xl',
-	light: create_shadow_xl('shadow_b_color'),
-};
-export const shadow_b_inset_xs: Style_Variable = {
-	name: 'shadow_b_inset_xs',
-	light: create_shadow_xs('shadow_b_color', {inset: true}),
-};
-export const shadow_b_inset_sm: Style_Variable = {
-	name: 'shadow_b_inset_sm',
-	light: create_shadow_sm('shadow_b_color', {inset: true}),
-};
-export const shadow_b_inset_md: Style_Variable = {
-	name: 'shadow_b_inset_md',
-	light: create_shadow_md('shadow_b_color', {inset: true}),
-};
-export const shadow_b_inset_lg: Style_Variable = {
-	name: 'shadow_b_inset_lg',
-	light: create_shadow_lg('shadow_b_color', {inset: true}),
-};
-export const shadow_b_inset_xl: Style_Variable = {
-	name: 'shadow_b_inset_xl',
-	light: create_shadow_xl('shadow_b_color', {inset: true}),
-};
-export const shadow_b_outset_xs: Style_Variable = {
-	name: 'shadow_b_outset_xs',
-	light: create_shadow_xs('shadow_b_color', {inset: true, scale: -1}),
-};
-export const shadow_b_outset_sm: Style_Variable = {
-	name: 'shadow_b_outset_sm',
-	light: create_shadow_sm('shadow_b_color', {inset: true, scale: -1}),
-};
-export const shadow_b_outset_md: Style_Variable = {
-	name: 'shadow_b_outset_md',
-	light: create_shadow_md('shadow_b_color', {inset: true, scale: -1}),
-};
-export const shadow_b_outset_lg: Style_Variable = {
-	name: 'shadow_b_outset_lg',
-	light: create_shadow_lg('shadow_b_color', {inset: true, scale: -1}),
-};
-export const shadow_b_outset_xl: Style_Variable = {
-	name: 'shadow_b_outset_xl',
-	light: create_shadow_xl('shadow_b_color', {inset: true, scale: -1}),
-};
-
-export const shadow_c_xs: Style_Variable = {
-	name: 'shadow_c_xs',
-	light: create_shadow_xs('shadow_c_color'),
-};
-export const shadow_c_sm: Style_Variable = {
-	name: 'shadow_c_sm',
-	light: create_shadow_sm('shadow_c_color'),
-};
-export const shadow_c_md: Style_Variable = {
-	name: 'shadow_c_md',
-	light: create_shadow_md('shadow_c_color'),
-};
-export const shadow_c_lg: Style_Variable = {
-	name: 'shadow_c_lg',
-	light: create_shadow_lg('shadow_c_color'),
-};
-export const shadow_c_xl: Style_Variable = {
-	name: 'shadow_c_xl',
-	light: create_shadow_xl('shadow_c_color'),
-};
-export const shadow_c_inset_xs: Style_Variable = {
-	name: 'shadow_c_inset_xs',
-	light: create_shadow_xs('shadow_c_color', {inset: true}),
-};
-export const shadow_c_inset_sm: Style_Variable = {
-	name: 'shadow_c_inset_sm',
-	light: create_shadow_sm('shadow_c_color', {inset: true}),
-};
-export const shadow_c_inset_md: Style_Variable = {
-	name: 'shadow_c_inset_md',
-	light: create_shadow_md('shadow_c_color', {inset: true}),
-};
-export const shadow_c_inset_lg: Style_Variable = {
-	name: 'shadow_c_inset_lg',
-	light: create_shadow_lg('shadow_c_color', {inset: true}),
-};
-export const shadow_c_inset_xl: Style_Variable = {
-	name: 'shadow_c_inset_xl',
-	light: create_shadow_xl('shadow_c_color', {inset: true}),
-};
-export const shadow_c_outset_xs: Style_Variable = {
-	name: 'shadow_c_outset_xs',
-	light: create_shadow_xs('shadow_c_color', {inset: true, scale: -1}),
-};
-export const shadow_c_outset_sm: Style_Variable = {
-	name: 'shadow_c_outset_sm',
-	light: create_shadow_sm('shadow_c_color', {inset: true, scale: -1}),
-};
-export const shadow_c_outset_md: Style_Variable = {
-	name: 'shadow_c_outset_md',
-	light: create_shadow_md('shadow_c_color', {inset: true, scale: -1}),
-};
-export const shadow_c_outset_lg: Style_Variable = {
-	name: 'shadow_c_outset_lg',
-	light: create_shadow_lg('shadow_c_color', {inset: true, scale: -1}),
-};
-export const shadow_c_outset_xl: Style_Variable = {
-	name: 'shadow_c_outset_xl',
-	light: create_shadow_xl('shadow_c_color', {inset: true, scale: -1}),
-};
-
-export const shadow_d_xs: Style_Variable = {
-	name: 'shadow_d_xs',
-	light: create_shadow_xs('shadow_d_color'),
-};
-export const shadow_d_sm: Style_Variable = {
-	name: 'shadow_d_sm',
-	light: create_shadow_sm('shadow_d_color'),
-};
-export const shadow_d_md: Style_Variable = {
-	name: 'shadow_d_md',
-	light: create_shadow_md('shadow_d_color'),
-};
-export const shadow_d_lg: Style_Variable = {
-	name: 'shadow_d_lg',
-	light: create_shadow_lg('shadow_d_color'),
-};
-export const shadow_d_xl: Style_Variable = {
-	name: 'shadow_d_xl',
-	light: create_shadow_xl('shadow_d_color'),
-};
-export const shadow_d_inset_xs: Style_Variable = {
-	name: 'shadow_d_inset_xs',
-	light: create_shadow_xs('shadow_d_color', {inset: true}),
-};
-export const shadow_d_inset_sm: Style_Variable = {
-	name: 'shadow_d_inset_sm',
-	light: create_shadow_sm('shadow_d_color', {inset: true}),
-};
-export const shadow_d_inset_md: Style_Variable = {
-	name: 'shadow_d_inset_md',
-	light: create_shadow_md('shadow_d_color', {inset: true}),
-};
-export const shadow_d_inset_lg: Style_Variable = {
-	name: 'shadow_d_inset_lg',
-	light: create_shadow_lg('shadow_d_color', {inset: true}),
-};
-export const shadow_d_inset_xl: Style_Variable = {
-	name: 'shadow_d_inset_xl',
-	light: create_shadow_xl('shadow_d_color', {inset: true}),
-};
-export const shadow_d_outset_xs: Style_Variable = {
-	name: 'shadow_d_outset_xs',
-	light: create_shadow_xs('shadow_d_color', {inset: true, scale: -1}),
-};
-export const shadow_d_outset_sm: Style_Variable = {
-	name: 'shadow_d_outset_sm',
-	light: create_shadow_sm('shadow_d_color', {inset: true, scale: -1}),
-};
-export const shadow_d_outset_md: Style_Variable = {
-	name: 'shadow_d_outset_md',
-	light: create_shadow_md('shadow_d_color', {inset: true, scale: -1}),
-};
-export const shadow_d_outset_lg: Style_Variable = {
-	name: 'shadow_d_outset_lg',
-	light: create_shadow_lg('shadow_d_color', {inset: true, scale: -1}),
-};
-export const shadow_d_outset_xl: Style_Variable = {
-	name: 'shadow_d_outset_xl',
-	light: create_shadow_xl('shadow_d_color', {inset: true, scale: -1}),
-};
-
-export const shadow_e_xs: Style_Variable = {
-	name: 'shadow_e_xs',
-	light: create_shadow_xs('shadow_e_color'),
-};
-export const shadow_e_sm: Style_Variable = {
-	name: 'shadow_e_sm',
-	light: create_shadow_sm('shadow_e_color'),
-};
-export const shadow_e_md: Style_Variable = {
-	name: 'shadow_e_md',
-	light: create_shadow_md('shadow_e_color'),
-};
-export const shadow_e_lg: Style_Variable = {
-	name: 'shadow_e_lg',
-	light: create_shadow_lg('shadow_e_color'),
-};
-export const shadow_e_xl: Style_Variable = {
-	name: 'shadow_e_xl',
-	light: create_shadow_xl('shadow_e_color'),
-};
-export const shadow_e_inset_xs: Style_Variable = {
-	name: 'shadow_e_inset_xs',
-	light: create_shadow_xs('shadow_e_color', {inset: true}),
-};
-export const shadow_e_inset_sm: Style_Variable = {
-	name: 'shadow_e_inset_sm',
-	light: create_shadow_sm('shadow_e_color', {inset: true}),
-};
-export const shadow_e_inset_md: Style_Variable = {
-	name: 'shadow_e_inset_md',
-	light: create_shadow_md('shadow_e_color', {inset: true}),
-};
-export const shadow_e_inset_lg: Style_Variable = {
-	name: 'shadow_e_inset_lg',
-	light: create_shadow_lg('shadow_e_color', {inset: true}),
-};
-export const shadow_e_inset_xl: Style_Variable = {
-	name: 'shadow_e_inset_xl',
-	light: create_shadow_xl('shadow_e_color', {inset: true}),
-};
-export const shadow_e_outset_xs: Style_Variable = {
-	name: 'shadow_e_outset_xs',
-	light: create_shadow_xs('shadow_e_color', {inset: true, scale: -1}),
-};
-export const shadow_e_outset_sm: Style_Variable = {
-	name: 'shadow_e_outset_sm',
-	light: create_shadow_sm('shadow_e_color', {inset: true, scale: -1}),
-};
-export const shadow_e_outset_md: Style_Variable = {
-	name: 'shadow_e_outset_md',
-	light: create_shadow_md('shadow_e_color', {inset: true, scale: -1}),
-};
-export const shadow_e_outset_lg: Style_Variable = {
-	name: 'shadow_e_outset_lg',
-	light: create_shadow_lg('shadow_e_color', {inset: true, scale: -1}),
-};
-export const shadow_e_outset_xl: Style_Variable = {
-	name: 'shadow_e_outset_xl',
-	light: create_shadow_xl('shadow_e_color', {inset: true, scale: -1}),
-};
-
-export const shadow_f_xs: Style_Variable = {
-	name: 'shadow_f_xs',
-	light: create_shadow_xs('shadow_f_color'),
-};
-export const shadow_f_sm: Style_Variable = {
-	name: 'shadow_f_sm',
-	light: create_shadow_sm('shadow_f_color'),
-};
-export const shadow_f_md: Style_Variable = {
-	name: 'shadow_f_md',
-	light: create_shadow_md('shadow_f_color'),
-};
-export const shadow_f_lg: Style_Variable = {
-	name: 'shadow_f_lg',
-	light: create_shadow_lg('shadow_f_color'),
-};
-export const shadow_f_xl: Style_Variable = {
-	name: 'shadow_f_xl',
-	light: create_shadow_xl('shadow_f_color'),
-};
-export const shadow_f_inset_xs: Style_Variable = {
-	name: 'shadow_f_inset_xs',
-	light: create_shadow_xs('shadow_f_color', {inset: true}),
-};
-export const shadow_f_inset_sm: Style_Variable = {
-	name: 'shadow_f_inset_sm',
-	light: create_shadow_sm('shadow_f_color', {inset: true}),
-};
-export const shadow_f_inset_md: Style_Variable = {
-	name: 'shadow_f_inset_md',
-	light: create_shadow_md('shadow_f_color', {inset: true}),
-};
-export const shadow_f_inset_lg: Style_Variable = {
-	name: 'shadow_f_inset_lg',
-	light: create_shadow_lg('shadow_f_color', {inset: true}),
-};
-export const shadow_f_inset_xl: Style_Variable = {
-	name: 'shadow_f_inset_xl',
-	light: create_shadow_xl('shadow_f_color', {inset: true}),
-};
-export const shadow_f_outset_xs: Style_Variable = {
-	name: 'shadow_f_outset_xs',
-	light: create_shadow_xs('shadow_f_color', {inset: true, scale: -1}),
-};
-export const shadow_f_outset_sm: Style_Variable = {
-	name: 'shadow_f_outset_sm',
-	light: create_shadow_sm('shadow_f_color', {inset: true, scale: -1}),
-};
-export const shadow_f_outset_md: Style_Variable = {
-	name: 'shadow_f_outset_md',
-	light: create_shadow_md('shadow_f_color', {inset: true, scale: -1}),
-};
-export const shadow_f_outset_lg: Style_Variable = {
-	name: 'shadow_f_outset_lg',
-	light: create_shadow_lg('shadow_f_color', {inset: true, scale: -1}),
-};
-export const shadow_f_outset_xl: Style_Variable = {
-	name: 'shadow_f_outset_xl',
-	light: create_shadow_xl('shadow_f_color', {inset: true, scale: -1}),
-};
-
-export const shadow_g_xs: Style_Variable = {
-	name: 'shadow_g_xs',
-	light: create_shadow_xs('shadow_g_color'),
-};
-export const shadow_g_sm: Style_Variable = {
-	name: 'shadow_g_sm',
-	light: create_shadow_sm('shadow_g_color'),
-};
-export const shadow_g_md: Style_Variable = {
-	name: 'shadow_g_md',
-	light: create_shadow_md('shadow_g_color'),
-};
-export const shadow_g_lg: Style_Variable = {
-	name: 'shadow_g_lg',
-	light: create_shadow_lg('shadow_g_color'),
-};
-export const shadow_g_xl: Style_Variable = {
-	name: 'shadow_g_xl',
-	light: create_shadow_xl('shadow_g_color'),
-};
-export const shadow_g_inset_xs: Style_Variable = {
-	name: 'shadow_g_inset_xs',
-	light: create_shadow_xs('shadow_g_color', {inset: true}),
-};
-export const shadow_g_inset_sm: Style_Variable = {
-	name: 'shadow_g_inset_sm',
-	light: create_shadow_sm('shadow_g_color', {inset: true}),
-};
-export const shadow_g_inset_md: Style_Variable = {
-	name: 'shadow_g_inset_md',
-	light: create_shadow_md('shadow_g_color', {inset: true}),
-};
-export const shadow_g_inset_lg: Style_Variable = {
-	name: 'shadow_g_inset_lg',
-	light: create_shadow_lg('shadow_g_color', {inset: true}),
-};
-export const shadow_g_inset_xl: Style_Variable = {
-	name: 'shadow_g_inset_xl',
-	light: create_shadow_xl('shadow_g_color', {inset: true}),
-};
-export const shadow_g_outset_xs: Style_Variable = {
-	name: 'shadow_g_outset_xs',
-	light: create_shadow_xs('shadow_g_color', {inset: true, scale: -1}),
-};
-export const shadow_g_outset_sm: Style_Variable = {
-	name: 'shadow_g_outset_sm',
-	light: create_shadow_sm('shadow_g_color', {inset: true, scale: -1}),
-};
-export const shadow_g_outset_md: Style_Variable = {
-	name: 'shadow_g_outset_md',
-	light: create_shadow_md('shadow_g_color', {inset: true, scale: -1}),
-};
-export const shadow_g_outset_lg: Style_Variable = {
-	name: 'shadow_g_outset_lg',
-	light: create_shadow_lg('shadow_g_color', {inset: true, scale: -1}),
-};
-export const shadow_g_outset_xl: Style_Variable = {
-	name: 'shadow_g_outset_xl',
-	light: create_shadow_xl('shadow_g_color', {inset: true, scale: -1}),
 };
 
 /* icons */
@@ -1517,13 +1134,13 @@ export const default_variables: Style_Variable[] = [
 
 	/* shadows */
 	shadow_color,
-	shadow_a_color,
-	shadow_b_color,
-	shadow_c_color,
-	shadow_d_color,
-	shadow_e_color,
-	shadow_f_color,
-	shadow_g_color,
+	shadow_color_a,
+	shadow_color_b,
+	shadow_color_c,
+	shadow_color_d,
+	shadow_color_e,
+	shadow_color_f,
+	shadow_color_g,
 	shadow_xs,
 	shadow_sm,
 	shadow_md,
@@ -1539,111 +1156,6 @@ export const default_variables: Style_Variable[] = [
 	shadow_outset_md,
 	shadow_outset_lg,
 	shadow_outset_xl,
-	shadow_a_xs,
-	shadow_a_sm,
-	shadow_a_md,
-	shadow_a_lg,
-	shadow_a_xl,
-	shadow_a_inset_xs,
-	shadow_a_inset_sm,
-	shadow_a_inset_md,
-	shadow_a_inset_lg,
-	shadow_a_inset_xl,
-	shadow_a_outset_xs,
-	shadow_a_outset_sm,
-	shadow_a_outset_md,
-	shadow_a_outset_lg,
-	shadow_a_outset_xl,
-	shadow_b_xs,
-	shadow_b_sm,
-	shadow_b_md,
-	shadow_b_lg,
-	shadow_b_xl,
-	shadow_b_inset_xs,
-	shadow_b_inset_sm,
-	shadow_b_inset_md,
-	shadow_b_inset_lg,
-	shadow_b_inset_xl,
-	shadow_b_outset_xs,
-	shadow_b_outset_sm,
-	shadow_b_outset_md,
-	shadow_b_outset_lg,
-	shadow_b_outset_xl,
-	shadow_c_xs,
-	shadow_c_sm,
-	shadow_c_md,
-	shadow_c_lg,
-	shadow_c_xl,
-	shadow_c_inset_xs,
-	shadow_c_inset_sm,
-	shadow_c_inset_md,
-	shadow_c_inset_lg,
-	shadow_c_inset_xl,
-	shadow_c_outset_xs,
-	shadow_c_outset_sm,
-	shadow_c_outset_md,
-	shadow_c_outset_lg,
-	shadow_c_outset_xl,
-	shadow_d_xs,
-	shadow_d_sm,
-	shadow_d_md,
-	shadow_d_lg,
-	shadow_d_xl,
-	shadow_d_inset_xs,
-	shadow_d_inset_sm,
-	shadow_d_inset_md,
-	shadow_d_inset_lg,
-	shadow_d_inset_xl,
-	shadow_d_outset_xs,
-	shadow_d_outset_sm,
-	shadow_d_outset_md,
-	shadow_d_outset_lg,
-	shadow_d_outset_xl,
-	shadow_e_xs,
-	shadow_e_sm,
-	shadow_e_md,
-	shadow_e_lg,
-	shadow_e_xl,
-	shadow_e_inset_xs,
-	shadow_e_inset_sm,
-	shadow_e_inset_md,
-	shadow_e_inset_lg,
-	shadow_e_inset_xl,
-	shadow_e_outset_xs,
-	shadow_e_outset_sm,
-	shadow_e_outset_md,
-	shadow_e_outset_lg,
-	shadow_e_outset_xl,
-	shadow_f_xs,
-	shadow_f_sm,
-	shadow_f_md,
-	shadow_f_lg,
-	shadow_f_xl,
-	shadow_f_inset_xs,
-	shadow_f_inset_sm,
-	shadow_f_inset_md,
-	shadow_f_inset_lg,
-	shadow_f_inset_xl,
-	shadow_f_outset_xs,
-	shadow_f_outset_sm,
-	shadow_f_outset_md,
-	shadow_f_outset_lg,
-	shadow_f_outset_xl,
-	shadow_g_xs,
-	shadow_g_sm,
-	shadow_g_md,
-	shadow_g_lg,
-	shadow_g_xl,
-	shadow_g_inset_xs,
-	shadow_g_inset_sm,
-	shadow_g_inset_md,
-	shadow_g_inset_lg,
-	shadow_g_inset_xl,
-	shadow_g_outset_xs,
-	shadow_g_outset_sm,
-	shadow_g_outset_md,
-	shadow_g_outset_lg,
-	shadow_g_outset_xl,
 
 	/* icons */
 	icon_size_xs,

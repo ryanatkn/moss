@@ -1105,8 +1105,14 @@ light and shadow
 .shadow_lg {
 	box-shadow: var(--shadow_lg);
 }
+/* TODO think this through */
 .shadow_xl {
-	box-shadow: var(--shadow_xl);
+	/* --shadow_xl: 3px 6px 16px 0px color-mix(in srgb, var(--shadow_color), transparent 40%),
+		3px 8px 48px 0px color-mix(in srgb, var(--shadow_color), transparent 40%);
+	box-shadow: var(--shadow_xl); */
+	box-shadow:
+		3px 6px 16px 0px color-mix(in srgb, var(--shadow_color), transparent 40%),
+		3px 8px 48px 0px color-mix(in srgb, var(--shadow_color), transparent 40%);
 }
 .shadow_outset_xs {
 	box-shadow: var(--shadow_outset_xs);
@@ -1138,320 +1144,26 @@ light and shadow
 .shadow_inset_xl {
 	box-shadow: var(--shadow_inset_xl);
 }
-.shadow_a_xs {
-	box-shadow: var(--shadow_a_xs);
+.shadow_color_a {
+	--shadow_color: var(--color_a_5);
 }
-.shadow_a_sm {
-	box-shadow: var(--shadow_a_sm);
+.shadow_color_b {
+	--shadow_color: var(--color_b_5);
 }
-.shadow_a_md {
-	box-shadow: var(--shadow_a_md);
+.shadow_color_c {
+	--shadow_color: var(--color_c_5);
 }
-.shadow_a_lg {
-	box-shadow: var(--shadow_a_lg);
+.shadow_color_d {
+	--shadow_color: var(--color_d_5);
 }
-.shadow_a_xl {
-	box-shadow: var(--shadow_a_xl);
+.shadow_color_e {
+	--shadow_color: var(--color_e_5);
 }
-.shadow_a_outset_xs {
-	box-shadow: var(--shadow_a_outset_xs);
+.shadow_color_f {
+	--shadow_color: var(--color_f_5);
 }
-.shadow_a_outset_sm {
-	box-shadow: var(--shadow_a_outset_sm);
-}
-.shadow_a_outset_md {
-	box-shadow: var(--shadow_a_outset_md);
-}
-.shadow_a_outset_lg {
-	box-shadow: var(--shadow_a_outset_lg);
-}
-.shadow_a_outset_xl {
-	box-shadow: var(--shadow_a_outset_xl);
-}
-.shadow_a_inset_xs {
-	box-shadow: var(--shadow_a_inset_xs);
-}
-.shadow_a_inset_sm {
-	box-shadow: var(--shadow_a_inset_sm);
-}
-.shadow_a_inset_md {
-	box-shadow: var(--shadow_a_inset_md);
-}
-.shadow_a_inset_lg {
-	box-shadow: var(--shadow_a_inset_lg);
-}
-.shadow_a_inset_xl {
-	box-shadow: var(--shadow_a_inset_xl);
-}
-.shadow_b_xs {
-	box-shadow: var(--shadow_b_xs);
-}
-.shadow_b_sm {
-	box-shadow: var(--shadow_b_sm);
-}
-.shadow_b_md {
-	box-shadow: var(--shadow_b_md);
-}
-.shadow_b_lg {
-	box-shadow: var(--shadow_b_lg);
-}
-.shadow_b_xl {
-	box-shadow: var(--shadow_b_xl);
-}
-.shadow_b_outset_xs {
-	box-shadow: var(--shadow_b_outset_xs);
-}
-.shadow_b_outset_sm {
-	box-shadow: var(--shadow_b_outset_sm);
-}
-.shadow_b_outset_md {
-	box-shadow: var(--shadow_b_outset_md);
-}
-.shadow_b_outset_lg {
-	box-shadow: var(--shadow_b_outset_lg);
-}
-.shadow_b_outset_xl {
-	box-shadow: var(--shadow_b_outset_xl);
-}
-.shadow_b_inset_xs {
-	box-shadow: var(--shadow_b_inset_xs);
-}
-.shadow_b_inset_sm {
-	box-shadow: var(--shadow_b_inset_sm);
-}
-.shadow_b_inset_md {
-	box-shadow: var(--shadow_b_inset_md);
-}
-.shadow_b_inset_lg {
-	box-shadow: var(--shadow_b_inset_lg);
-}
-.shadow_b_inset_xl {
-	box-shadow: var(--shadow_b_inset_xl);
-}
-.shadow_c_xs {
-	box-shadow: var(--shadow_c_xs);
-}
-.shadow_c_sm {
-	box-shadow: var(--shadow_c_sm);
-}
-.shadow_c_md {
-	box-shadow: var(--shadow_c_md);
-}
-.shadow_c_lg {
-	box-shadow: var(--shadow_c_lg);
-}
-.shadow_c_xl {
-	box-shadow: var(--shadow_c_xl);
-}
-.shadow_c_outset_xs {
-	box-shadow: var(--shadow_c_outset_xs);
-}
-.shadow_c_outset_sm {
-	box-shadow: var(--shadow_c_outset_sm);
-}
-.shadow_c_outset_md {
-	box-shadow: var(--shadow_c_outset_md);
-}
-.shadow_c_outset_lg {
-	box-shadow: var(--shadow_c_outset_lg);
-}
-.shadow_c_outset_xl {
-	box-shadow: var(--shadow_c_outset_xl);
-}
-.shadow_c_inset_xs {
-	box-shadow: var(--shadow_c_inset_xs);
-}
-.shadow_c_inset_sm {
-	box-shadow: var(--shadow_c_inset_sm);
-}
-.shadow_c_inset_md {
-	box-shadow: var(--shadow_c_inset_md);
-}
-.shadow_c_inset_lg {
-	box-shadow: var(--shadow_c_inset_lg);
-}
-.shadow_c_inset_xl {
-	box-shadow: var(--shadow_c_inset_xl);
-}
-.shadow_d_xs {
-	box-shadow: var(--shadow_d_xs);
-}
-.shadow_d_sm {
-	box-shadow: var(--shadow_d_sm);
-}
-.shadow_d_md {
-	box-shadow: var(--shadow_d_md);
-}
-.shadow_d_lg {
-	box-shadow: var(--shadow_d_lg);
-}
-.shadow_d_xl {
-	box-shadow: var(--shadow_d_xl);
-}
-.shadow_d_outset_xs {
-	box-shadow: var(--shadow_d_outset_xs);
-}
-.shadow_d_outset_sm {
-	box-shadow: var(--shadow_d_outset_sm);
-}
-.shadow_d_outset_md {
-	box-shadow: var(--shadow_d_outset_md);
-}
-.shadow_d_outset_lg {
-	box-shadow: var(--shadow_d_outset_lg);
-}
-.shadow_d_outset_xl {
-	box-shadow: var(--shadow_d_outset_xl);
-}
-.shadow_d_inset_xs {
-	box-shadow: var(--shadow_d_inset_xs);
-}
-.shadow_d_inset_sm {
-	box-shadow: var(--shadow_d_inset_sm);
-}
-.shadow_d_inset_md {
-	box-shadow: var(--shadow_d_inset_md);
-}
-.shadow_d_inset_lg {
-	box-shadow: var(--shadow_d_inset_lg);
-}
-.shadow_d_inset_xl {
-	box-shadow: var(--shadow_d_inset_xl);
-}
-.shadow_e_xs {
-	box-shadow: var(--shadow_e_xs);
-}
-.shadow_e_sm {
-	box-shadow: var(--shadow_e_sm);
-}
-.shadow_e_md {
-	box-shadow: var(--shadow_e_md);
-}
-.shadow_e_lg {
-	box-shadow: var(--shadow_e_lg);
-}
-.shadow_e_xl {
-	box-shadow: var(--shadow_e_xl);
-}
-.shadow_e_outset_xs {
-	box-shadow: var(--shadow_e_outset_xs);
-}
-.shadow_e_outset_sm {
-	box-shadow: var(--shadow_e_outset_sm);
-}
-.shadow_e_outset_md {
-	box-shadow: var(--shadow_e_outset_md);
-}
-.shadow_e_outset_lg {
-	box-shadow: var(--shadow_e_outset_lg);
-}
-.shadow_e_outset_xl {
-	box-shadow: var(--shadow_e_outset_xl);
-}
-.shadow_e_inset_xs {
-	box-shadow: var(--shadow_e_inset_xs);
-}
-.shadow_e_inset_sm {
-	box-shadow: var(--shadow_e_inset_sm);
-}
-.shadow_e_inset_md {
-	box-shadow: var(--shadow_e_inset_md);
-}
-.shadow_e_inset_lg {
-	box-shadow: var(--shadow_e_inset_lg);
-}
-.shadow_e_inset_xl {
-	box-shadow: var(--shadow_e_inset_xl);
-}
-.shadow_f_xs {
-	box-shadow: var(--shadow_f_xs);
-}
-.shadow_f_sm {
-	box-shadow: var(--shadow_f_sm);
-}
-.shadow_f_md {
-	box-shadow: var(--shadow_f_md);
-}
-.shadow_f_lg {
-	box-shadow: var(--shadow_f_lg);
-}
-.shadow_f_xl {
-	box-shadow: var(--shadow_f_xl);
-}
-.shadow_f_outset_xs {
-	box-shadow: var(--shadow_f_outset_xs);
-}
-.shadow_f_outset_sm {
-	box-shadow: var(--shadow_f_outset_sm);
-}
-.shadow_f_outset_md {
-	box-shadow: var(--shadow_f_outset_md);
-}
-.shadow_f_outset_lg {
-	box-shadow: var(--shadow_f_outset_lg);
-}
-.shadow_f_outset_xl {
-	box-shadow: var(--shadow_f_outset_xl);
-}
-.shadow_f_inset_xs {
-	box-shadow: var(--shadow_f_inset_xs);
-}
-.shadow_f_inset_sm {
-	box-shadow: var(--shadow_f_inset_sm);
-}
-.shadow_f_inset_md {
-	box-shadow: var(--shadow_f_inset_md);
-}
-.shadow_f_inset_lg {
-	box-shadow: var(--shadow_f_inset_lg);
-}
-.shadow_f_inset_xl {
-	box-shadow: var(--shadow_f_inset_xl);
-}
-.shadow_g_xs {
-	box-shadow: var(--shadow_g_xs);
-}
-.shadow_g_sm {
-	box-shadow: var(--shadow_g_sm);
-}
-.shadow_g_md {
-	box-shadow: var(--shadow_g_md);
-}
-.shadow_g_lg {
-	box-shadow: var(--shadow_g_lg);
-}
-.shadow_g_xl {
-	box-shadow: var(--shadow_g_xl);
-}
-.shadow_g_outset_xs {
-	box-shadow: var(--shadow_g_outset_xs);
-}
-.shadow_g_outset_sm {
-	box-shadow: var(--shadow_g_outset_sm);
-}
-.shadow_g_outset_md {
-	box-shadow: var(--shadow_g_outset_md);
-}
-.shadow_g_outset_lg {
-	box-shadow: var(--shadow_g_outset_lg);
-}
-.shadow_g_outset_xl {
-	box-shadow: var(--shadow_g_outset_xl);
-}
-.shadow_g_inset_xs {
-	box-shadow: var(--shadow_g_inset_xs);
-}
-.shadow_g_inset_sm {
-	box-shadow: var(--shadow_g_inset_sm);
-}
-.shadow_g_inset_md {
-	box-shadow: var(--shadow_g_inset_md);
-}
-.shadow_g_inset_lg {
-	box-shadow: var(--shadow_g_inset_lg);
-}
-.shadow_g_inset_xl {
-	box-shadow: var(--shadow_g_inset_xl);
+.shadow_color_g {
+	--shadow_color: var(--color_g_5);
 }
 /* higher specificity */
 /* TODO which order should these be in? */
