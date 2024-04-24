@@ -26,7 +26,7 @@
 
 	<section>
 		<Tome_Subheading text="Border colors" slug="border-colors" />
-		<aside>TODO needs work</aside>
+		<aside>⚠️ These will change.</aside>
 		<div class="border_examples border_colors">
 			{#each {length: 5} as _, i}
 				{@const name = 'border_color_' + (i + 1)}
@@ -55,6 +55,7 @@
 
 	<section>
 		<Tome_Subheading text="Border widths" slug="border-widths" />
+		<aside>⚠️ These will change.</aside>
 		<div class="border_examples border_widths">
 			{#each {length: 6} as _, i}
 				{@const name = 'border_width_' + (i + 1)}
