@@ -720,6 +720,7 @@ export const shadow_color_g: Style_Variable = {
 	dark: 'var(--color_g_7)',
 };
 
+// TODO BLOCK maybe change these to be the full shadows and use `var(--shadow_color)`? that way we wouldn't hardcode 2 shadows
 export const shadow_xs_1: Style_Variable = {
 	name: 'shadow_xs_1',
 	light: '0.5px 1px 3px 0px',
