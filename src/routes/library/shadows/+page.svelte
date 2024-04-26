@@ -14,6 +14,7 @@
 
 <Tome_Detail {tome}>
 	<section>
+		<aside><p>⚠️ This is unfinished and will change.</p></aside>
 		{#each shadow_variants as variant}
 			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
 				<Style_Variable_Button name="shadow_{variant}" />
@@ -35,6 +36,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" />
+		<aside><p>⚠️ This is unfinished and will change.</p></aside>
 		{#each color_variants as color_variant}
 			<section class="shadow_{color_variant}_inset_xs">
 				{#each shadow_variants as variant}

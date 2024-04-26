@@ -70,7 +70,7 @@
 		<Tome_Subheading text="darken and lighten" slug="darken-and-lighten" tag="h4"
 			><code>darken</code> and <code>lighten</code></Tome_Subheading
 		>
-		<aside><p>⚠️ This will change.</p></aside>
+		<aside><p>⚠️ This is unfinished and will change.</p></aside>
 		<div class="swatch">
 			{#each {length: 9} as _, i}
 				{@const name = 'darken_' + (i + 1)}
@@ -132,7 +132,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Fading opacity" slug="fading-opacity" />
-		<aside><p>⚠️ This will change.</p></aside>
+		<aside><p>⚠️ This is unfinished and will change.</p></aside>
 		<div class="swatch">
 			<div>
 				<div class="color" style:background-color="var(--color_a_5)"></div>
