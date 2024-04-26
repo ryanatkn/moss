@@ -1095,15 +1095,6 @@ shading
 
 /* shadows */
 
-/* TODO should there be the `--shadow` declarations or should they be inline? if inline, have a different class variant with declarations? */
-/* TODO hardcoded transpancies */
-/* TODO could potentially support multiple shadows via `.shadow_xl.shadow_inset_md` but combinatorial explosion, would want the interpreter architecture  */
-/* TODO The biggest problem here is we don't have variables like `--shadow_lg` that can be used in the plain CSS.
-There seems to be a mismatch between CSS variables and custom properties - maybe worth a blog post?
-*/
-/* These look complicated because they support dynamic colors with `--shadow_color`.
-This works around how CSS custom properties get resolved with inheritance.
-For example you can't set `--shadow_color` on some class and affect `--shadow_lg` on the :root` */
 .shadow_xs {
 	box-shadow: var(--shadow_xs);
 }
