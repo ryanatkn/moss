@@ -42,11 +42,7 @@
 		{#each color_variants as color_variant}
 			<section class="shadow_color_{color_variant}">
 				{#each shadow_variants as variant}
-					<div
-						class="row shadow_example shadow_{variant} {variant === 'lg'
-							? 'shadow_example_lg'
-							: ''}"
-					>
+					<div class="row shadow_example shadow_{variant}">
 						<Style_Variable_Button name="shadow_{variant}" />
 						<Style_Variable_Button name="shadow_color_{color_variant}" />
 					</div>
