@@ -17,8 +17,6 @@
 		<div class="usage">
 			<div class="title">variable</div>
 			<code>--{variable.name}</code>
-			<!-- TODO think through the correspondence between variables and clases -->
-			<div class="title">CSS class</div>
 			<code>.{variable.name}</code>
 		</div>
 		{#if variable.summary}<blockquote>{variable.summary}</blockquote>{/if}
