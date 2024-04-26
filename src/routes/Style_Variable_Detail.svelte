@@ -15,9 +15,9 @@
 {#if variable}
 	<div class="variable">
 		<div class="usage">
-			<!-- TODO semantic? -->
 			<div class="title">variable</div>
 			<code>--{variable.name}</code>
+			<!-- TODO think through the correspondence between variables and clases -->
 			<div class="title">CSS class</div>
 			<code>.{variable.name}</code>
 		</div>
