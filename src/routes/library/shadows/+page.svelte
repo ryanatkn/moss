@@ -18,7 +18,6 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<Tome_Subheading text="Shadow variants" slug="shadow-variants" />
 		{#each shadow_variants as variant}
 			<div class="shadow_example shadow_{variant}">
 				<Style_Variable_Button name="shadow_{variant}" />
