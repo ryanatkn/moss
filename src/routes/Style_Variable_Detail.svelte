@@ -17,7 +17,6 @@
 		<div class="usage">
 			<div class="title">variable</div>
 			<code>--{variable.name}</code>
-			<code>.{variable.name}</code>
 		</div>
 		{#if variable.summary}<blockquote>{variable.summary}</blockquote>{/if}
 		<label>
