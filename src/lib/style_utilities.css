@@ -1064,7 +1064,7 @@ borders
 
 /*
 
-light and shadow
+shading
 
 */
 
@@ -1093,365 +1093,112 @@ light and shadow
 	opacity: var(--fade_6);
 }
 
+/* shadows */
+
+/* TODO should there be the `--shadow` declarations or should they be inline? if inline, have a different class variant with declarations? */
+/* TODO hardcoded transpancies */
+/* TODO could potentially support multiple shadows via `.shadow_xl.shadow_inset_md` but combinatorial explosion, would want the interpreter architecture  */
+/* TODO The biggest problem here is we don't have variables like `--shadow_lg` that can be used in the plain CSS.
+There seems to be a mismatch between CSS variables and custom properties - maybe worth a blog post?
+*/
+/* These look complicated because they support dynamic colors with `--shadow_color`.
+This works around how CSS custom properties get resolved with inheritance.
+For example you can't set `--shadow_color` on some class and affect `--shadow_lg` on the :root` */
 .shadow_xs {
-	box-shadow: var(--shadow_xs);
+	box-shadow:
+		var(--shadow_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%),
+		var(--shadow_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%);
 }
 .shadow_sm {
-	box-shadow: var(--shadow_sm);
+	box-shadow:
+		var(--shadow_sm_1) color-mix(in srgb, var(--shadow_color), transparent 85%),
+		var(--shadow_sm_2) color-mix(in srgb, var(--shadow_color), transparent 85%);
 }
 .shadow_md {
-	box-shadow: var(--shadow_md);
+	box-shadow:
+		var(--shadow_md_1) color-mix(in srgb, var(--shadow_color), transparent 80%),
+		var(--shadow_md_2) color-mix(in srgb, var(--shadow_color), transparent 80%);
 }
 .shadow_lg {
-	box-shadow: var(--shadow_lg);
+	box-shadow:
+		var(--shadow_lg_1) color-mix(in srgb, var(--shadow_color), transparent 60%),
+		var(--shadow_lg_2) color-mix(in srgb, var(--shadow_color), transparent 60%);
 }
 .shadow_xl {
-	box-shadow: var(--shadow_xl);
-}
-.shadow_outset_xs {
-	box-shadow: var(--shadow_outset_xs);
-}
-.shadow_outset_sm {
-	box-shadow: var(--shadow_outset_sm);
-}
-.shadow_outset_md {
-	box-shadow: var(--shadow_outset_md);
-}
-.shadow_outset_lg {
-	box-shadow: var(--shadow_outset_lg);
-}
-.shadow_outset_xl {
-	box-shadow: var(--shadow_outset_xl);
+	box-shadow:
+		var(--shadow_xl_1) color-mix(in srgb, var(--shadow_color), transparent 40%),
+		var(--shadow_xl_2) color-mix(in srgb, var(--shadow_color), transparent 40%);
 }
 .shadow_inset_xs {
-	box-shadow: var(--shadow_inset_xs);
+	box-shadow:
+		var(--shadow_inset_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%) inset,
+		var(--shadow_inset_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%) inset;
 }
 .shadow_inset_sm {
-	box-shadow: var(--shadow_inset_sm);
+	box-shadow:
+		var(--shadow_inset_sm_1) color-mix(in srgb, var(--shadow_color), transparent 85%) inset,
+		var(--shadow_inset_sm_2) color-mix(in srgb, var(--shadow_color), transparent 85%) inset;
 }
 .shadow_inset_md {
-	box-shadow: var(--shadow_inset_md);
+	box-shadow:
+		var(--shadow_inset_md_1) color-mix(in srgb, var(--shadow_color), transparent 80%) inset,
+		var(--shadow_inset_md_2) color-mix(in srgb, var(--shadow_color), transparent 80%) inset;
 }
 .shadow_inset_lg {
-	box-shadow: var(--shadow_inset_lg);
+	box-shadow:
+		var(--shadow_inset_lg_1) color-mix(in srgb, var(--shadow_color), transparent 60%) inset,
+		var(--shadow_inset_lg_2) color-mix(in srgb, var(--shadow_color), transparent 60%) inset;
 }
 .shadow_inset_xl {
-	box-shadow: var(--shadow_inset_xl);
-}
-.shadow_a_xs {
-	box-shadow: var(--shadow_a_xs);
-}
-.shadow_a_sm {
-	box-shadow: var(--shadow_a_sm);
-}
-.shadow_a_md {
-	box-shadow: var(--shadow_a_md);
-}
-.shadow_a_lg {
-	box-shadow: var(--shadow_a_lg);
-}
-.shadow_a_xl {
-	box-shadow: var(--shadow_a_xl);
-}
-.shadow_a_outset_xs {
-	box-shadow: var(--shadow_a_outset_xs);
-}
-.shadow_a_outset_sm {
-	box-shadow: var(--shadow_a_outset_sm);
-}
-.shadow_a_outset_md {
-	box-shadow: var(--shadow_a_outset_md);
-}
-.shadow_a_outset_lg {
-	box-shadow: var(--shadow_a_outset_lg);
-}
-.shadow_a_outset_xl {
-	box-shadow: var(--shadow_a_outset_xl);
-}
-.shadow_a_inset_xs {
-	box-shadow: var(--shadow_a_inset_xs);
-}
-.shadow_a_inset_sm {
-	box-shadow: var(--shadow_a_inset_sm);
-}
-.shadow_a_inset_md {
-	box-shadow: var(--shadow_a_inset_md);
-}
-.shadow_a_inset_lg {
-	box-shadow: var(--shadow_a_inset_lg);
-}
-.shadow_a_inset_xl {
-	box-shadow: var(--shadow_a_inset_xl);
-}
-.shadow_b_xs {
-	box-shadow: var(--shadow_b_xs);
-}
-.shadow_b_sm {
-	box-shadow: var(--shadow_b_sm);
-}
-.shadow_b_md {
-	box-shadow: var(--shadow_b_md);
-}
-.shadow_b_lg {
-	box-shadow: var(--shadow_b_lg);
-}
-.shadow_b_xl {
-	box-shadow: var(--shadow_b_xl);
-}
-.shadow_b_outset_xs {
-	box-shadow: var(--shadow_b_outset_xs);
-}
-.shadow_b_outset_sm {
-	box-shadow: var(--shadow_b_outset_sm);
-}
-.shadow_b_outset_md {
-	box-shadow: var(--shadow_b_outset_md);
-}
-.shadow_b_outset_lg {
-	box-shadow: var(--shadow_b_outset_lg);
-}
-.shadow_b_outset_xl {
-	box-shadow: var(--shadow_b_outset_xl);
-}
-.shadow_b_inset_xs {
-	box-shadow: var(--shadow_b_inset_xs);
-}
-.shadow_b_inset_sm {
-	box-shadow: var(--shadow_b_inset_sm);
-}
-.shadow_b_inset_md {
-	box-shadow: var(--shadow_b_inset_md);
-}
-.shadow_b_inset_lg {
-	box-shadow: var(--shadow_b_inset_lg);
-}
-.shadow_b_inset_xl {
-	box-shadow: var(--shadow_b_inset_xl);
-}
-.shadow_c_xs {
-	box-shadow: var(--shadow_c_xs);
-}
-.shadow_c_sm {
-	box-shadow: var(--shadow_c_sm);
-}
-.shadow_c_md {
-	box-shadow: var(--shadow_c_md);
-}
-.shadow_c_lg {
-	box-shadow: var(--shadow_c_lg);
-}
-.shadow_c_xl {
-	box-shadow: var(--shadow_c_xl);
-}
-.shadow_c_outset_xs {
-	box-shadow: var(--shadow_c_outset_xs);
-}
-.shadow_c_outset_sm {
-	box-shadow: var(--shadow_c_outset_sm);
-}
-.shadow_c_outset_md {
-	box-shadow: var(--shadow_c_outset_md);
-}
-.shadow_c_outset_lg {
-	box-shadow: var(--shadow_c_outset_lg);
-}
-.shadow_c_outset_xl {
-	box-shadow: var(--shadow_c_outset_xl);
-}
-.shadow_c_inset_xs {
-	box-shadow: var(--shadow_c_inset_xs);
-}
-.shadow_c_inset_sm {
-	box-shadow: var(--shadow_c_inset_sm);
-}
-.shadow_c_inset_md {
-	box-shadow: var(--shadow_c_inset_md);
-}
-.shadow_c_inset_lg {
-	box-shadow: var(--shadow_c_inset_lg);
-}
-.shadow_c_inset_xl {
-	box-shadow: var(--shadow_c_inset_xl);
-}
-.shadow_d_xs {
-	box-shadow: var(--shadow_d_xs);
-}
-.shadow_d_sm {
-	box-shadow: var(--shadow_d_sm);
-}
-.shadow_d_md {
-	box-shadow: var(--shadow_d_md);
-}
-.shadow_d_lg {
-	box-shadow: var(--shadow_d_lg);
-}
-.shadow_d_xl {
-	box-shadow: var(--shadow_d_xl);
-}
-.shadow_d_outset_xs {
-	box-shadow: var(--shadow_d_outset_xs);
-}
-.shadow_d_outset_sm {
-	box-shadow: var(--shadow_d_outset_sm);
-}
-.shadow_d_outset_md {
-	box-shadow: var(--shadow_d_outset_md);
-}
-.shadow_d_outset_lg {
-	box-shadow: var(--shadow_d_outset_lg);
-}
-.shadow_d_outset_xl {
-	box-shadow: var(--shadow_d_outset_xl);
-}
-.shadow_d_inset_xs {
-	box-shadow: var(--shadow_d_inset_xs);
-}
-.shadow_d_inset_sm {
-	box-shadow: var(--shadow_d_inset_sm);
-}
-.shadow_d_inset_md {
-	box-shadow: var(--shadow_d_inset_md);
-}
-.shadow_d_inset_lg {
-	box-shadow: var(--shadow_d_inset_lg);
-}
-.shadow_d_inset_xl {
-	box-shadow: var(--shadow_d_inset_xl);
-}
-.shadow_e_xs {
-	box-shadow: var(--shadow_e_xs);
-}
-.shadow_e_sm {
-	box-shadow: var(--shadow_e_sm);
-}
-.shadow_e_md {
-	box-shadow: var(--shadow_e_md);
-}
-.shadow_e_lg {
-	box-shadow: var(--shadow_e_lg);
-}
-.shadow_e_xl {
-	box-shadow: var(--shadow_e_xl);
-}
-.shadow_e_outset_xs {
-	box-shadow: var(--shadow_e_outset_xs);
-}
-.shadow_e_outset_sm {
-	box-shadow: var(--shadow_e_outset_sm);
-}
-.shadow_e_outset_md {
-	box-shadow: var(--shadow_e_outset_md);
-}
-.shadow_e_outset_lg {
-	box-shadow: var(--shadow_e_outset_lg);
-}
-.shadow_e_outset_xl {
-	box-shadow: var(--shadow_e_outset_xl);
-}
-.shadow_e_inset_xs {
-	box-shadow: var(--shadow_e_inset_xs);
-}
-.shadow_e_inset_sm {
-	box-shadow: var(--shadow_e_inset_sm);
-}
-.shadow_e_inset_md {
-	box-shadow: var(--shadow_e_inset_md);
-}
-.shadow_e_inset_lg {
-	box-shadow: var(--shadow_e_inset_lg);
-}
-.shadow_e_inset_xl {
-	box-shadow: var(--shadow_e_inset_xl);
-}
-.shadow_f_xs {
-	box-shadow: var(--shadow_f_xs);
-}
-.shadow_f_sm {
-	box-shadow: var(--shadow_f_sm);
-}
-.shadow_f_md {
-	box-shadow: var(--shadow_f_md);
-}
-.shadow_f_lg {
-	box-shadow: var(--shadow_f_lg);
-}
-.shadow_f_xl {
-	box-shadow: var(--shadow_f_xl);
-}
-.shadow_f_outset_xs {
-	box-shadow: var(--shadow_f_outset_xs);
-}
-.shadow_f_outset_sm {
-	box-shadow: var(--shadow_f_outset_sm);
-}
-.shadow_f_outset_md {
-	box-shadow: var(--shadow_f_outset_md);
-}
-.shadow_f_outset_lg {
-	box-shadow: var(--shadow_f_outset_lg);
-}
-.shadow_f_outset_xl {
-	box-shadow: var(--shadow_f_outset_xl);
-}
-.shadow_f_inset_xs {
-	box-shadow: var(--shadow_f_inset_xs);
-}
-.shadow_f_inset_sm {
-	box-shadow: var(--shadow_f_inset_sm);
-}
-.shadow_f_inset_md {
-	box-shadow: var(--shadow_f_inset_md);
-}
-.shadow_f_inset_lg {
-	box-shadow: var(--shadow_f_inset_lg);
-}
-.shadow_f_inset_xl {
-	box-shadow: var(--shadow_f_inset_xl);
-}
-.shadow_g_xs {
-	box-shadow: var(--shadow_g_xs);
-}
-.shadow_g_sm {
-	box-shadow: var(--shadow_g_sm);
-}
-.shadow_g_md {
-	box-shadow: var(--shadow_g_md);
-}
-.shadow_g_lg {
-	box-shadow: var(--shadow_g_lg);
-}
-.shadow_g_xl {
-	box-shadow: var(--shadow_g_xl);
-}
-.shadow_g_outset_xs {
-	box-shadow: var(--shadow_g_outset_xs);
-}
-.shadow_g_outset_sm {
-	box-shadow: var(--shadow_g_outset_sm);
-}
-.shadow_g_outset_md {
-	box-shadow: var(--shadow_g_outset_md);
-}
-.shadow_g_outset_lg {
-	box-shadow: var(--shadow_g_outset_lg);
-}
-.shadow_g_outset_xl {
-	box-shadow: var(--shadow_g_outset_xl);
-}
-.shadow_g_inset_xs {
-	box-shadow: var(--shadow_g_inset_xs);
-}
-.shadow_g_inset_sm {
-	box-shadow: var(--shadow_g_inset_sm);
-}
-.shadow_g_inset_md {
-	box-shadow: var(--shadow_g_inset_md);
-}
-.shadow_g_inset_lg {
-	box-shadow: var(--shadow_g_inset_lg);
-}
-.shadow_g_inset_xl {
-	box-shadow: var(--shadow_g_inset_xl);
+	box-shadow:
+		var(--shadow_inset_xl_1) color-mix(in srgb, var(--shadow_color), transparent 40%) inset,
+		var(--shadow_inset_xl_2) color-mix(in srgb, var(--shadow_color), transparent 40%) inset;
+}
+.shadow_outset_xs {
+	box-shadow:
+		var(--shadow_outset_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%) inset,
+		var(--shadow_outset_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%) inset;
+}
+.shadow_outset_sm {
+	box-shadow:
+		var(--shadow_outset_sm_1) color-mix(in srgb, var(--shadow_color), transparent 85%) inset,
+		var(--shadow_outset_sm_2) color-mix(in srgb, var(--shadow_color), transparent 85%) inset;
+}
+.shadow_outset_md {
+	box-shadow:
+		var(--shadow_outset_md_1) color-mix(in srgb, var(--shadow_color), transparent 80%) inset,
+		var(--shadow_outset_md_2) color-mix(in srgb, var(--shadow_color), transparent 80%) inset;
+}
+.shadow_outset_lg {
+	box-shadow:
+		var(--shadow_outset_lg_1) color-mix(in srgb, var(--shadow_color), transparent 60%) inset,
+		var(--shadow_outset_lg_2) color-mix(in srgb, var(--shadow_color), transparent 60%) inset;
+}
+.shadow_outset_xl {
+	box-shadow:
+		var(--shadow_outset_xl_1) color-mix(in srgb, var(--shadow_color), transparent 40%) inset,
+		var(--shadow_outset_xl_2) color-mix(in srgb, var(--shadow_color), transparent 40%) inset;
+}
+.shadow_color_a {
+	--shadow_color: var(--color_a_5);
+}
+.shadow_color_b {
+	--shadow_color: var(--color_b_5);
+}
+.shadow_color_c {
+	--shadow_color: var(--color_c_5);
+}
+.shadow_color_d {
+	--shadow_color: var(--color_d_5);
+}
+.shadow_color_e {
+	--shadow_color: var(--color_e_5);
+}
+.shadow_color_f {
+	--shadow_color: var(--color_f_5);
+}
+.shadow_color_g {
+	--shadow_color: var(--color_g_5);
 }
 /* higher specificity */
 /* TODO which order should these be in? */

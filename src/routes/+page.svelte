@@ -34,13 +34,15 @@
 			</p>
 			<p>
 				Moss is being made to support <a href="https://www.ryanatkn.com/">my other projects</a>
-				that focus on end-users. It's grown slowly over 5 years to fit those needs, and my goal for 2024
-				is to fill out its APIs so it's more complete, coherent, and widely useful.
+				that focus on end-users. It's grown slowly over 5 years, adding new features when I feel they're
+				sufficiently generalizable or merit experimentation, and my goal for 2024 is to fill out its
+				APIs so it's more complete, coherent, and widely useful.
 			</p>
 			<p>
 				To learn more see <a href="{base}/library">the docs</a>
-				and <a href="https://github.com/ryanatkn/moss#readme">readme</a>. Feel free to take the
-				ideas and <a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.
+				and <a href="https://github.com/ryanatkn/moss#readme">the readme</a> and
+				<a href="https://discord.gg/YU5tyeK72X">the Discord</a>. Feel free to take the ideas and
+				<a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.
 			</p>
 		</div>
 	</section>

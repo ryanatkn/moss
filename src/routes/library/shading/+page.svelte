@@ -8,9 +8,8 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import {color_variants, shadow_variants} from '$lib/variable_data.js';
 
-	const LIBRARY_ITEM_NAME = 'light and shadow';
+	const LIBRARY_ITEM_NAME = 'shading';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
@@ -28,7 +27,8 @@
 	<section>
 		<aside class="mb_lg">
 			⚠️ These concepts are still developing - some things are incomplete or inconsistent, and there
-			will be a lot of breaking changes.
+			will be a lot of breaking changes. I'm thinking of splitting this "light and shadow" section
+			into "shadows" and "shading" something.
 		</aside>
 		<p>
 			Moss is designed around two simplistic models of light, one for dark mode and one for light
@@ -183,67 +183,6 @@
 			</div>
 		</div>
 	</section>
-	<section>
-		<Tome_Subheading text="Box shadows" slug="box-shadows" />
-		<aside class="mb_lg">
-			⚠️ Shadows currently glow in dark mode. The API does not yet support changing the color at
-			runtime. The concepts and names need further development.
-		</aside>
-		<section>
-			<Tome_Subheading text="Shadow variants" slug="shadow-variants" tag="h4" />
-			<div class="p_lg panel fg_3 shadow_inset_xs">
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
-						<Style_Variable_Button name="shadow_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--shadow_inset_{variant})">
-						<Style_Variable_Button name="shadow_inset_{variant}" />
-					</div>
-				{/each}
-				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--shadow_outset_{variant})">
-						<Style_Variable_Button name="shadow_outset_{variant}" />
-					</div>
-				{/each}
-			</div>
-		</section>
-		<section>
-			<Color_Scheme_Input />
-		</section>
-		<section>
-			<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" tag="h4" />
-			{#each color_variants as color_variant}
-				<section class="p_lg panel fg_3 shadow_{color_variant}_inset_xs">
-					{#each shadow_variants as variant}
-						<div class="shadow_example" style:box-shadow="var(--shadow_{color_variant}_{variant})">
-							<Style_Variable_Button name="shadow_{color_variant}_{variant}" />
-						</div>
-					{/each}
-					{#each shadow_variants as variant}
-						<div
-							class="shadow_example"
-							style:box-shadow="var(--shadow_{color_variant}_inset_{variant})"
-						>
-							<Style_Variable_Button name="shadow_{color_variant}_inset_{variant}" />
-						</div>
-					{/each}
-					{#each shadow_variants as variant}
-						<div
-							class="shadow_example"
-							style:box-shadow="var(--shadow_{color_variant}_outset_{variant})"
-						>
-							<Style_Variable_Button name="shadow_{color_variant}_outset_{variant}" />
-						</div>
-					{/each}
-				</section>
-			{/each}
-		</section>
-		<section>
-			<Color_Scheme_Input />
-		</section>
-	</section>
 </Tome_Detail>
 
 <style>
@@ -256,15 +195,6 @@
 	}
 	.color {
 		height: var(--input_height_sm);
-	}
-	.shadow_example {
-		position: relative;
-		padding: var(--space_md);
-		font-family: var(--font_mono);
-		border-radius: var(--radius_xs3);
-	}
-	.shadow_example:not(:last-child) {
-		margin-bottom: var(--space_lg);
 	}
 	small {
 		height: var(--input_height_sm);
