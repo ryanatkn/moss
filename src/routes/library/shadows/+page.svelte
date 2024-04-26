@@ -87,10 +87,4 @@
 	.shadow_example:not(:last-child) {
 		margin-bottom: var(--space_lg);
 	}
-	small {
-		height: var(--input_height_sm);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
 </style>
