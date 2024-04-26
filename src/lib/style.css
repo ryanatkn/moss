@@ -1913,7 +1913,7 @@ borders
 
 /*
 
-light and shadow
+shading
 
 */
 
@@ -1942,6 +1942,14 @@ light and shadow
 	opacity: var(--fade_6);
 }
 
+/* shadows */
+
+/* TODO should there be the `--shadow` declarations or should they be inline? if inline, have a different class variant with declarations? */
+/* TODO hardcoded transpancies */
+/* TODO could potentially support multiple shadows via `.shadow_xl.shadow_inset_md` but combinatorial explosion, would want the interpreter architecture  */
+/* These look complicated because they support dynamic colors with `--shadow_color`.
+This works around how CSS custom properties get resolved with inheritance.
+For example you can't set `--shadow_color` on some class and affect `--shadow_lg` on the :root` */
 .shadow_xs {
 	--shadow: var(--shadow_xs_1) color-mix(in srgb, var(--shadow_color), transparent 90%),
 		var(--shadow_xs_2) color-mix(in srgb, var(--shadow_color), transparent 90%);
@@ -1957,10 +1965,16 @@ light and shadow
 		var(--shadow_md_2) color-mix(in srgb, var(--shadow_color), transparent 80%);
 	box-shadow: var(--shadow);
 }
-.shadow_lg {
-	--shadow: var(--shadow_lg_1) color-mix(in srgb, var(--shadow_color), transparent 60%),
+:root {
+	/* --shadow_color: var(--color_c_5) !important; */
+	--shadow_lg_test: var(--shadow_lg_1) color-mix(in srgb, var(--shadow_color), transparent 60%),
 		var(--shadow_lg_2) color-mix(in srgb, var(--shadow_color), transparent 60%);
-	box-shadow: var(--shadow);
+}
+.shadow_lg {
+	box-shadow: var(--shadow_lg_test);
+}
+.shadow_example_lg {
+	--shadow_color: var(--color_b_5) !important;
 }
 .shadow_xl {
 	--shadow: var(--shadow_xl_1) color-mix(in srgb, var(--shadow_color), transparent 40%),
