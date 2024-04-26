@@ -17,10 +17,6 @@
 	const toggle_color_scheme = () => {
 		color_scheme.update((c) => (c === 'light' ? 'dark' : 'light'));
 	};
-
-	// TODO this is a good usecase for h4 subheadings
-
-	// <!-- TODO BLOCK -->
 </script>
 
 <Tome_Detail {tome}>

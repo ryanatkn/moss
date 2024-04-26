@@ -10,10 +10,6 @@
 	const LIBRARY_ITEM_NAME = 'shadows';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
-
-	// TODO this is a good usecase for h4 subheadings
-
-	// <!-- TODO BLOCK -->
 </script>
 
 <Tome_Detail {tome}>
