@@ -10,7 +10,8 @@ import classes from '$routes/library/classes/+page.svelte';
 import typography from '$routes/library/typography/+page.svelte';
 import variables from '$routes/library/variables/+page.svelte';
 import layout from '$routes/library/layout/+page.svelte';
-import light_and_shadow from '$routes/library/light_and_shadow/+page.svelte';
+import shading from '$routes/library/shading/+page.svelte';
+import shadows from '$routes/library/shadows/+page.svelte';
 import borders from '$routes/library/borders/+page.svelte';
 // import menu_item from '$routes/library/menu_item/+page.svelte';
 
@@ -47,16 +48,7 @@ export const tomes: Tome[] = [
 		pathname: '',
 		category: 'styles',
 		component: colors,
-		related: ['themes', 'light and shadow', 'buttons'],
-	},
-	// TODO maybe a `tint` section here or added to `colors`
-	{
-		name: 'light and shadow',
-		slug: 'light_and_shadow',
-		pathname: '',
-		category: 'styles',
-		component: light_and_shadow,
-		related: ['colors'],
+		related: ['themes', 'buttons', 'borders', 'shading', 'shadows'],
 	},
 	{
 		name: 'buttons',
@@ -104,7 +96,23 @@ export const tomes: Tome[] = [
 		pathname: '',
 		category: 'styles',
 		component: borders,
-		related: ['buttons', 'elements', 'forms'],
+		related: ['colors', 'buttons', 'elements', 'forms', 'shading', 'shadows'],
+	},
+	{
+		name: 'shading',
+		slug: 'shading',
+		pathname: '',
+		category: 'styles',
+		component: shading,
+		related: ['colors', 'borders', 'shadows'],
+	},
+	{
+		name: 'shadows',
+		slug: 'shadows',
+		pathname: '',
+		category: 'styles',
+		component: shadows,
+		related: ['colors', 'borders', 'shading'],
 	},
 	{
 		name: 'layout',
@@ -120,7 +128,7 @@ export const tomes: Tome[] = [
 	// 	slug: 'menu_item',
 	// 	pathname: '',
 	// 	category: 'styles',
-	// 	component: menu_item,
+	// component: menu_item,
 	// 	related: [],
 	// },
 ];

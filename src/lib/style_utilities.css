@@ -1064,7 +1064,7 @@ borders
 
 /*
 
-light and shadow
+shading
 
 */
 
@@ -1092,6 +1092,8 @@ light and shadow
 .fade_6 {
 	opacity: var(--fade_6);
 }
+
+/* shadows */
 
 .shadow_xs {
 	box-shadow: var(--shadow_xs);

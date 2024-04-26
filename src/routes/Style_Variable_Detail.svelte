@@ -14,7 +14,13 @@
 
 {#if variable}
 	<div class="variable">
-		<div class="name"><code>--{variable.name}</code></div>
+		<div class="usage">
+			<div class="title">variable</div>
+			<code>--{variable.name}</code>
+			<!-- TODO think through the correspondence between variables and clases -->
+			<div class="title">CSS class</div>
+			<code>.{variable.name}</code>
+		</div>
 		{#if variable.summary}<blockquote>{variable.summary}</blockquote>{/if}
 		<label>
 			<div class="title">light</div>
@@ -29,12 +35,21 @@
 
 <style>
 	.variable {
-		align-items: flex-start;
 		/* ... */
 		padding: var(--space_xs) 0;
 	}
-	.name {
+	.usage {
 		font-size: var(--size_xl);
+		display: grid;
+		/* 2 columns of width 1:2 */
+		grid-template-columns: 1fr 2fr;
+		gap: var(--space_md);
+	}
+	.usage .title {
+		display: flex;
+		justify-content: flex-end;
+	}
+	.usage code {
 		text-align: center;
 		margin-bottom: var(--space_xl);
 	}

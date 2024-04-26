@@ -10,6 +10,7 @@
 
 	const {color_name, computed_styles}: Props = $props();
 
+	// TODO this is really messy now with the `'hsl(' +` below
 	const get_color_hsl_string = (name: string) => computed_styles?.getPropertyValue('--' + name);
 </script>
 
