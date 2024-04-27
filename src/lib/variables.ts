@@ -607,6 +607,30 @@ export const border_color_a: Style_Variable = {
 	name: 'border_color_a',
 	light: 'var(--color_a_5)',
 };
+export const border_color_b: Style_Variable = {
+	name: 'border_color_b',
+	light: 'var(--color_b_5)',
+};
+export const border_color_c: Style_Variable = {
+	name: 'border_color_c',
+	light: 'var(--color_c_5)',
+};
+export const border_color_d: Style_Variable = {
+	name: 'border_color_d',
+	light: 'var(--color_d_5)',
+};
+export const border_color_e: Style_Variable = {
+	name: 'border_color_e',
+	light: 'var(--color_e_5)',
+};
+export const border_color_f: Style_Variable = {
+	name: 'border_color_f',
+	light: 'var(--color_f_5)',
+};
+export const border_color_g: Style_Variable = {
+	name: 'border_color_g',
+	light: 'var(--color_g_5)',
+};
 // TODO BLOCK disabled doesn't work with colors
 export const border_disabled: Style_Variable = {
 	name: 'border_disabled',
@@ -1530,6 +1554,13 @@ export const default_variables: Style_Variable[] = [
 	border_color_3,
 	border_color_4,
 	border_color_5,
+	border_color_a,
+	border_color_b,
+	border_color_c,
+	border_color_d,
+	border_color_e,
+	border_color_f,
+	border_color_g,
 	border_disabled,
 	border_width,
 	border_width_1,

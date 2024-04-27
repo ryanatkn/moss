@@ -179,6 +179,13 @@
 	--border_color_3: hsl(var(--tint_hue), 60%, 20%, 35%);
 	--border_color_4: hsl(var(--tint_hue), 60%, 20%, 50%);
 	--border_color_5: hsl(var(--tint_hue), 60%, 20%, 70%);
+	--border_color_a: var(--color_a_5);
+	--border_color_b: var(--color_b_5);
+	--border_color_c: var(--color_c_5);
+	--border_color_d: var(--color_d_5);
+	--border_color_e: var(--color_e_5);
+	--border_color_f: var(--color_f_5);
+	--border_color_g: var(--color_g_5);
 	--border_disabled: var(--border_color_3);
 	--border_width: var(--border_width_1);
 	--border_width_1: 1px;
