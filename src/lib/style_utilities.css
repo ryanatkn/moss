@@ -969,6 +969,9 @@ borders
 	border-color: var(--border_color_5);
 }
 
+.border_width_0 {
+	border-width: 0;
+}
 .border_width_1 {
 	border-width: var(--border_width_1);
 }
@@ -988,6 +991,9 @@ borders
 	border-width: var(--border_width_6);
 }
 
+.outline_width_0 {
+	outline-width: 0;
+}
 .outline_width_1 {
 	outline-width: var(--outline_width_1);
 }
