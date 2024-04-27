@@ -568,8 +568,15 @@ export const width_sm: Style_Variable = {name: 'width_sm', light: '320px'};
 export const width_xs: Style_Variable = {name: 'width_xs', light: '200px'};
 
 /* borders and outlines */
-export const border_color: Style_Variable = {name: 'border_color', light: 'var(--border_color_3)'};
-export const border_style: Style_Variable = {name: 'border_style', light: 'solid'};
+// TODO remove these two generics? composability doesn't work like I wanted
+export const border_color: Style_Variable = {
+	name: 'border_color',
+	light: 'var(--border_color_3)',
+};
+export const border_style: Style_Variable = {
+	name: 'border_style',
+	light: 'solid',
+};
 // TODO add tint vars for these?
 export const border_color_1: Style_Variable = {
 	name: 'border_color_1',
@@ -596,6 +603,11 @@ export const border_color_5: Style_Variable = {
 	light: 'hsl(var(--tint_hue), 60%, 20%, 70%)',
 	dark: 'hsl(var(--tint_hue), 60%, 80%, 25%)',
 };
+export const border_color_a: Style_Variable = {
+	name: 'border_color_a',
+	light: 'var(--color_a_5)',
+};
+// TODO BLOCK disabled doesn't work with colors
 export const border_disabled: Style_Variable = {
 	name: 'border_disabled',
 	light: 'var(--border_color_3)',
