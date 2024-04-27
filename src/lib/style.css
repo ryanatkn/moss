@@ -480,7 +480,7 @@ so for consistent visuals we opt to include no active state */
 	--border_color: var(--border_color_5);
 	--outline_width: var(--outline_width_3);
 	/* TODO use of `background` vs `background-color` in this file is not intentional */
-	background: var(--button_bg_active);
+	background: var(--button_bg_selected);
 	box-shadow: var(--shadow_inset_sm);
 }
 :where(button.inline, p button) {
@@ -495,7 +495,7 @@ currently `:disabled` overrides this */
 :where(button.selected) {
 	--text_color: var(--text_active);
 	--border_color: var(--color_a_5);
-	background: var(--button_bg_active);
+	background: var(--button_bg_selected);
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
@@ -515,7 +515,7 @@ currently `:disabled` overrides this */
 	cursor: default;
 	box-shadow: none;
 	opacity: var(--disabled_opacity);
-	background-color: var(--button_bg_disabled);
+	background-color: var(--button_bg_disabled); /* TODO maybe set button_bg? */
 	outline: none;
 }
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
@@ -536,54 +536,75 @@ currently `:disabled` overrides this */
 	) {
 	color: var(--bg_10);
 }
-:where(button.color_a:not(.selected)) {
+:where(button.color_a) {
 	background-color: var(--color_a_5);
+	--border_color: var(--border_color_a);
+	--outline_color: var(--outline_color_a);
 }
-:where(button.color_b:not(.selected)) {
+:where(button.color_b) {
 	background-color: var(--color_b_5);
+	--border_color: var(--border_color_b);
+	--outline_color: var(--outline_color_b);
 }
-:where(button.color_c:not(.selected)) {
+:where(button.color_c) {
 	background-color: var(--color_c_5);
+	--border_color: var(--border_color_c);
+	--outline_color: var(--outline_color_c);
 }
-:where(button.color_d:not(.selected)) {
+:where(button.color_d) {
 	background-color: var(--color_d_5);
+	--border_color: var(--border_color_d);
+	--outline_color: var(--outline_color_d);
 }
-:where(button.color_e:not(.selected)) {
+:where(button.color_e) {
 	background-color: var(--color_e_5);
+	--border_color: var(--border_color_e);
+	--outline_color: var(--outline_color_e);
 }
-:where(button.color_f:not(.selected)) {
+:where(button.color_f) {
 	background-color: var(--color_f_5);
+	--border_color: var(--border_color_f);
+	--outline_color: var(--outline_color_f);
 }
-:where(button.color_g:not(.selected)) {
+:where(button.color_g) {
 	background-color: var(--color_g_5);
+	--border_color: var(--border_color_g);
+	--outline_color: var(--outline_color_g);
 }
 :where(button.selected.color_a) {
+	background: var(--button_bg_selected);
 	color: var(--color_a_5);
-	border-color: var(--color_a_5);
+	--border_color: var(--color_a_5);
 }
 :where(button.selected.color_b) {
+	background: var(--button_bg_selected);
 	color: var(--color_b_5);
-	border-color: var(--color_b_5);
-}
-:where(button.selected.color_d) {
-	color: var(--color_d_5);
-	border-color: var(--color_d_5);
-}
-:where(button.selected.color_e) {
-	color: var(--color_e_5);
-	border-color: var(--color_e_5);
+	--border_color: var(--color_b_5);
 }
 :where(button.selected.color_c) {
+	background: var(--button_bg_selected);
 	color: var(--color_c_5);
-	border-color: var(--color_c_5);
+	--border_color: var(--color_c_5);
+}
+:where(button.selected.color_d) {
+	background: var(--button_bg_selected);
+	color: var(--color_d_5);
+	--border_color: var(--color_d_5);
+}
+:where(button.selected.color_e) {
+	background: var(--button_bg_selected);
+	color: var(--color_e_5);
+	--border_color: var(--color_e_5);
 }
 :where(button.selected.color_f) {
+	background: var(--button_bg_selected);
 	color: var(--color_f_5);
-	border-color: var(--color_f_5);
+	--border_color: var(--color_f_5);
 }
 :where(button.selected.color_g) {
+	background: var(--button_bg_selected);
 	color: var(--color_g_5);
-	border-color: var(--color_g_5);
+	--border_color: var(--color_g_5);
 }
 
 /* TODO could improve this with the coming `:has` selector
@@ -705,7 +726,7 @@ for disabled colors without needing a wrapper .disabled class */
 }
 .selectable.selected,
 .selectable:active {
-	background-color: var(--button_bg_active);
+	background-color: var(--button_bg_selected);
 	border-color: var(--color_a_5);
 }
 .selectable.selected {
