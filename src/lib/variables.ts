@@ -709,35 +709,7 @@ export const outline_width_3: Style_Variable = {
 export const outline_style: Style_Variable = {name: 'outline_style', light: 'solid'};
 export const outline_color: Style_Variable = {
 	name: 'outline_color',
-	light: 'var(--outline_color_a)',
-};
-export const outline_color_a: Style_Variable = {
-	name: 'outline_color_a',
-	light: 'var(--color_a_5)',
-};
-export const outline_color_b: Style_Variable = {
-	name: 'outline_color_b',
-	light: 'var(--color_b_5)',
-};
-export const outline_color_c: Style_Variable = {
-	name: 'outline_color_c',
-	light: 'var(--color_c_5)',
-};
-export const outline_color_d: Style_Variable = {
-	name: 'outline_color_d',
-	light: 'var(--color_d_5)',
-};
-export const outline_color_e: Style_Variable = {
-	name: 'outline_color_e',
-	light: 'var(--color_e_5)',
-};
-export const outline_color_f: Style_Variable = {
-	name: 'outline_color_f',
-	light: 'var(--color_f_5)',
-};
-export const outline_color_g: Style_Variable = {
-	name: 'outline_color_g',
-	light: 'var(--color_g_5)',
+	light: 'var(--border_color_a)',
 };
 
 /* border radii */
@@ -1666,13 +1638,6 @@ export const default_variables: Style_Variable[] = [
 	outline_width_3,
 	outline_style,
 	outline_color,
-	outline_color_a,
-	outline_color_b,
-	outline_color_c,
-	outline_color_d,
-	outline_color_e,
-	outline_color_f,
-	outline_color_g,
 
 	/* border radii */
 	radius_xl,

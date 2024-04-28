@@ -541,37 +541,36 @@ currently `:disabled` overrides this */
 	/* TODO change to setting a variable, probably */
 	background-color: var(--fill_color_a);
 	--border_color: var(--border_color_a);
-	--outline_color: var(--outline_color_a);
 }
 :where(button.color_b) {
 	background-color: var(--fill_color_b);
 	--border_color: var(--border_color_b);
-	--outline_color: var(--outline_color_b);
+	--outline_color: var(--border_color_b);
 }
 :where(button.color_c) {
 	background-color: var(--fill_color_c);
 	--border_color: var(--border_color_c);
-	--outline_color: var(--outline_color_c);
+	--outline_color: var(--border_color_c);
 }
 :where(button.color_d) {
 	background-color: var(--fill_color_d);
 	--border_color: var(--border_color_d);
-	--outline_color: var(--outline_color_d);
+	--outline_color: var(--border_color_d);
 }
 :where(button.color_e) {
 	background-color: var(--fill_color_e);
 	--border_color: var(--border_color_e);
-	--outline_color: var(--outline_color_e);
+	--outline_color: var(--border_color_e);
 }
 :where(button.color_f) {
 	background-color: var(--fill_color_f);
 	--border_color: var(--border_color_f);
-	--outline_color: var(--outline_color_f);
+	--outline_color: var(--border_color_f);
 }
 :where(button.color_g) {
 	background-color: var(--fill_color_g);
 	--border_color: var(--border_color_g);
-	--outline_color: var(--outline_color_g);
+	--outline_color: var(--border_color_g);
 }
 :where(button.selected.color_a) {
 	color: var(--color_a_5);
