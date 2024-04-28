@@ -457,7 +457,8 @@ so for consistent visuals we opt to include no active state */
 	color: var(--text_color);
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
-	background: var(--button_bg);
+	/* TODO should these be `background-color` instead? */
+	background: var(--button_bg); /* TODO maybe "fill" is the better name? */
 	box-shadow: var(--shadow_outset_xs);
 	border-width: var(--border_width);
 	border-style: var(--border_style);
