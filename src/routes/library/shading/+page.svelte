@@ -8,6 +8,7 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'shading';
 
@@ -21,11 +22,11 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<aside class="mb_lg">
-			⚠️ These concepts are still developing - some things are incomplete or inconsistent, and there
+		<Unfinished_Implementation_Warning>
+			These concepts are still developing - some things are incomplete or inconsistent, and there
 			will be a lot of breaking changes. I'm thinking of splitting this "light and shadow" section
 			into "shadows" and "shading" something.
-		</aside>
+		</Unfinished_Implementation_Warning>
 		<p>
 			Moss is designed around two simplistic models of light, one for dark mode and one for light
 			mode. The goal is easy authoring with simple and consistent rules for arbitrary compositions
@@ -70,7 +71,7 @@
 		<Tome_Subheading text="darken and lighten" slug="darken-and-lighten" tag="h4"
 			><code>darken</code> and <code>lighten</code></Tome_Subheading
 		>
-		<aside><p>⚠️ This is unfinished and will change.</p></aside>
+		<Unfinished_Implementation_Warning />
 		<div class="swatch">
 			{#each {length: 9} as _, i}
 				{@const name = 'darken_' + (i + 1)}
@@ -132,7 +133,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Fading opacity" slug="fading-opacity" />
-		<aside><p>⚠️ This is unfinished and will change.</p></aside>
+		<Unfinished_Implementation_Warning />
 		<div class="swatch">
 			<div>
 				<div class="color" style:background-color="var(--color_a_5)"></div>

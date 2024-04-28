@@ -9,6 +9,7 @@
 	import {default_variables} from '$lib/variables.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import Module_Link from '$routes/Module_Link.svelte';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'variables';
 
@@ -74,7 +75,8 @@ export interface Style_Variable {
 	</section>
 	<section>
 		<Tome_Subheading text={`All ${variables.length} style variables`} slug="all-style-variables" />
-		<aside class="mb_lg">⚠️ Many of these will change.</aside>
+		<Unfinished_Implementation_Warning>Many of these will change.</Unfinished_Implementation_Warning
+		>
 		<!-- TODO add info through the contextmenu or dialog -->
 		<div class="variables">
 			{#each variables as variable (variable.name)}

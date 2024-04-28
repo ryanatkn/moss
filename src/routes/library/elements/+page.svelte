@@ -7,6 +7,8 @@
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+
 	const LIBRARY_ITEM_NAME = 'elements';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -171,7 +173,7 @@
 		<Tome_Subheading text="table" slug="table-element">
 			<Mdn_Link href="Web/HTML/Element/table" />
 		</Tome_Subheading>
-		<blockquote>⚠️ This is unfinished and will change.</blockquote>
+		<Unfinished_Implementation_Warning />
 		<Code
 			content={`<table>
 	<thead>

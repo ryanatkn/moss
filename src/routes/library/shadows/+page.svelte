@@ -6,6 +6,7 @@
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import {color_variants, shadow_variants} from '$lib/variable_data.js';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'shadows';
 
@@ -14,7 +15,7 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<aside><p>⚠️ This is unfinished and will change.</p></aside>
+		<Unfinished_Implementation_Warning />
 		{#each shadow_variants as variant}
 			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
 				<Style_Variable_Button name="shadow_{variant}" />
@@ -36,7 +37,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" />
-		<aside><p>⚠️ This is unfinished and will change.</p></aside>
+		<Unfinished_Implementation_Warning />
 		{#each color_variants as color_variant}
 			<section class="shadow_{color_variant}_inset_xs">
 				{#each shadow_variants as variant}

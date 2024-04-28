@@ -4,6 +4,7 @@
 	import {get_tome} from '@ryanatkn/fuz/tome.js';
 
 	import Module_Link from '$routes/Module_Link.svelte';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'introduction';
 
@@ -12,12 +13,12 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<blockquote>
-			⚠️ Docs are a work in progress. Moss was recently extracted from
+		<Unfinished_Implementation_Warning>
+			Docs are a work in progress. Moss was recently extracted from
 			<a href="https://www.fuz.dev/">Fuz</a>, and these docs are incomplete and misleading in some
 			cases, because they now need to be agnostic to Svelte and deal with more inner workings of the
 			CSS.
-		</blockquote>
+		</Unfinished_Implementation_Warning>
 		<p>
 			Moss is a CSS framework that can be used with any website and JS framework. Its design system
 			centers on <em>style variables</em>, which are
@@ -107,13 +108,13 @@
 			<a href="https://github.com/ryanatkn/moss/issues">GitHub issues</a>, or
 			<a href="https://www.webdevladder.net/">other social media</a>, on these and other topics 🌿
 		</p>
-		<aside>
-			<p>⚠️ TODO:</p>
-			<ul>
+		<Unfinished_Implementation_Warning>
+			TODO:
+			<ul class="mt_lg">
 				<li>do a pass on all of the existing docs</li>
 				<li>describe in depth the mechanics of the CSS, starting with dark mode</li>
 				<li>write docs about build tooling</li>
 			</ul>
-		</aside>
+		</Unfinished_Implementation_Warning>
 	</section>
 </Tome_Detail>

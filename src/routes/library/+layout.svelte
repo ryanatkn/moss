@@ -8,6 +8,7 @@
 	import {set_selected_variable} from '$routes/style_variable_helpers.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
 	import {get_pkg} from '$routes/pkg.js';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	interface Props {
 		children: Snippet;
@@ -39,7 +40,7 @@
 			<div class="pane">
 				<div class="panel p_lg box">
 					<Style_Variable_Detail variable={$selected_variable} />
-					<aside>⚠️ This is unfinished and will change.</aside>
+					<Unfinished_Implementation_Warning />
 					<button onclick={close}>ok</button>
 				</div>
 			</div>

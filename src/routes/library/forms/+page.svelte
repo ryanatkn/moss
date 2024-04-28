@@ -7,6 +7,8 @@
 	import {get_tome} from '@ryanatkn/fuz/tome.js';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+
 	const LIBRARY_ITEM_NAME = 'forms';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -131,7 +133,9 @@
 		<Tome_Subheading text="form with checkboxes" slug="form-with-checkboxes">
 			<code>form</code> with checkboxes
 		</Tome_Subheading>
-		<aside>⚠️ This will change, probably to toggles.</aside>
+		<Unfinished_Implementation_Warning
+			>This will change, probably to toggles.</Unfinished_Implementation_Warning
+		>
 		<!-- TODO make this a form, but figure out the checkbox problem -- maybe a last-child exception? -->
 		<form>
 			<fieldset>

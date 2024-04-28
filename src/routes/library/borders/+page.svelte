@@ -6,6 +6,7 @@
 
 	import {color_variants, radius_variants} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'borders';
 
@@ -27,7 +28,7 @@
 
 	<section>
 		<Tome_Subheading text="Border colors" slug="border-colors" />
-		<aside>⚠️ These will change.</aside>
+		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_colors">
 			{#each {length: 5} as _, i}
 				{@const name = 'border_color_' + (i + 1)}
@@ -58,7 +59,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" />
-		<aside><p>⚠️ This is unfinished and will change.</p></aside>
+		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_colors">
 			{#each color_variants as color_variant}
 				{@const name = 'border_color_' + color_variant}
@@ -86,7 +87,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Border widths" slug="border-widths" />
-		<aside>⚠️ These will change.</aside>
+		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_widths">
 			{#each {length: 6} as _, i}
 				{@const name = 'border_width_' + (i + 1)}
