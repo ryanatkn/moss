@@ -94,6 +94,7 @@
 	--tint_saturation: 11%;
 	--bg: hsl(var(--tint_hue), var(--tint_saturation), 96%);
 	--fg: hsl(var(--tint_hue), var(--tint_saturation), 6%);
+	--bg_0: #000;
 	--bg_1: var(--lighten_1);
 	--bg_2: var(--lighten_2);
 	--bg_3: var(--lighten_3);
@@ -104,6 +105,7 @@
 	--bg_8: var(--lighten_8);
 	--bg_9: var(--lighten_9);
 	--bg_10: #fff;
+	--fg_0: #fff;
 	--fg_1: var(--darken_1);
 	--fg_2: var(--darken_2);
 	--fg_3: var(--darken_3);
@@ -548,6 +550,7 @@
 	--color_g_8: hsl(var(--hue_g), 72%, 25%);
 	--bg: hsl(var(--tint_hue), var(--tint_saturation), 6%);
 	--fg: hsl(var(--tint_hue), var(--tint_saturation), 96%);
+	--bg_0: #fff;
 	--bg_1: var(--darken_1);
 	--bg_2: var(--darken_2);
 	--bg_3: var(--darken_3);
@@ -558,6 +561,7 @@
 	--bg_8: var(--darken_8);
 	--bg_9: var(--darken_9);
 	--bg_10: #000;
+	--fg_0: #000;
 	--fg_1: var(--lighten_1);
 	--fg_2: var(--lighten_2);
 	--fg_3: var(--lighten_3);

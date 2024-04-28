@@ -380,6 +380,11 @@ export const fg: Style_Variable = {
 };
 /* these are light or dark with a low alpha, so they nest/stack arbitrarily */
 // TODO these inconsistently don't use tint, unlike bg/fg
+export const bg_0: Style_Variable = {
+	name: 'bg_0',
+	light: '#000',
+	dark: '#fff',
+};
 export const bg_1: Style_Variable = {
 	name: 'bg_1',
 	light: 'var(--lighten_1)',
@@ -425,7 +430,16 @@ export const bg_9: Style_Variable = {
 	light: 'var(--lighten_9)',
 	dark: 'var(--darken_9)',
 };
-export const bg_10: Style_Variable = {name: 'bg_10', light: '#fff', dark: '#000'}; // TODO 0 variant? or remove 10? add to lighten/darken;
+export const bg_10: Style_Variable = {
+	name: 'bg_10',
+	light: '#fff',
+	dark: '#000',
+};
+export const fg_0: Style_Variable = {
+	name: 'fg_0',
+	light: '#fff',
+	dark: '#000',
+};
 export const fg_1: Style_Variable = {
 	name: 'fg_1',
 	light: 'var(--darken_1)',
@@ -471,7 +485,11 @@ export const fg_9: Style_Variable = {
 	light: 'var(--darken_9)',
 	dark: 'var(--lighten_9)',
 };
-export const fg_10: Style_Variable = {name: 'fg_10', light: '#000', dark: '#fff'}; // TODO 0 variant? or remove 10? add to lighten/darken;
+export const fg_10: Style_Variable = {
+	name: 'fg_10',
+	light: '#000',
+	dark: '#fff',
+};
 export const fill_color_a: Style_Variable = {
 	name: 'fill_color_a',
 	light: 'var(--color_a_4)',
@@ -1515,6 +1533,7 @@ export const default_variables: Style_Variable[] = [
 	fg,
 	/* these are light or dark with a low alpha, so they nest/stack arbitrarily */
 	// TODO these inconsistently don't use tint, unlike bg/fg
+	bg_0,
 	bg_1,
 	bg_2,
 	bg_3,
@@ -1525,6 +1544,7 @@ export const default_variables: Style_Variable[] = [
 	bg_8,
 	bg_9,
 	bg_10,
+	fg_0,
 	fg_1,
 	fg_2,
 	fg_3,

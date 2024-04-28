@@ -534,7 +534,7 @@ currently `:disabled` overrides this */
 	--text_color: var(--bg_10);
 }
 :where(button.color_a) {
-	/* TODO change to setting a variable, probably */
+	/* TODO change to setting a variable */
 	background-color: var(--fill_color_a);
 	--border_color: var(--border_color_a);
 }
