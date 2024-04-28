@@ -699,7 +699,7 @@ export const outline_color_f: Style_Variable = {
 	dark: 'var(--color_f_6)',
 };
 export const outline_color_g: Style_Variable = {
-	name: 'border_color_g',
+	name: 'outline_color_g',
 	light: 'var(--color_g_4)',
 	dark: 'var(--color_g_6)',
 };
