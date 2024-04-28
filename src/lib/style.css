@@ -572,39 +572,32 @@ currently `:disabled` overrides this */
 	--outline_color: var(--outline_color_g);
 }
 :where(button.selected.color_a) {
-	background: var(--button_bg_selected);
+	background-color: var(--button_bg_selected);
 	color: var(--color_a_5);
-	--border_color: var(--color_a_5);
 }
 :where(button.selected.color_b) {
-	background: var(--button_bg_selected);
+	background-color: var(--button_bg_selected);
 	color: var(--color_b_5);
-	--border_color: var(--color_b_5);
 }
 :where(button.selected.color_c) {
-	background: var(--button_bg_selected);
+	background-color: var(--button_bg_selected);
 	color: var(--color_c_5);
-	--border_color: var(--color_c_5);
 }
 :where(button.selected.color_d) {
-	background: var(--button_bg_selected);
+	background-color: var(--button_bg_selected);
 	color: var(--color_d_5);
-	--border_color: var(--color_d_5);
 }
 :where(button.selected.color_e) {
-	background: var(--button_bg_selected);
+	background-color: var(--button_bg_selected);
 	color: var(--color_e_5);
-	--border_color: var(--color_e_5);
 }
 :where(button.selected.color_f) {
-	background: var(--button_bg_selected);
+	background-color: var(--button_bg_selected);
 	color: var(--color_f_5);
-	--border_color: var(--color_f_5);
 }
 :where(button.selected.color_g) {
-	background: var(--button_bg_selected);
+	background-color: var(--button_bg_selected);
 	color: var(--color_g_5);
-	--border_color: var(--color_g_5);
 }
 
 /* TODO could improve this with the coming `:has` selector

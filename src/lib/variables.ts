@@ -605,38 +605,31 @@ export const border_color_5: Style_Variable = {
 };
 export const border_color_a: Style_Variable = {
 	name: 'border_color_a',
-	light: 'var(--color_a_6)',
-	dark: 'var(--color_a_4)',
+	light: 'var(--color_a_5)',
 };
 export const border_color_b: Style_Variable = {
 	name: 'border_color_b',
-	light: 'var(--color_b_6)',
-	dark: 'var(--color_b_4)',
+	light: 'var(--color_b_5)',
 };
 export const border_color_c: Style_Variable = {
 	name: 'border_color_c',
-	light: 'var(--color_c_6)',
-	dark: 'var(--color_c_4)',
+	light: 'var(--color_c_5)',
 };
 export const border_color_d: Style_Variable = {
 	name: 'border_color_d',
-	light: 'var(--color_d_6)',
-	dark: 'var(--color_d_4)',
+	light: 'var(--color_d_5)',
 };
 export const border_color_e: Style_Variable = {
 	name: 'border_color_e',
-	light: 'var(--color_e_6)',
-	dark: 'var(--color_e_4)',
+	light: 'var(--color_e_5)',
 };
 export const border_color_f: Style_Variable = {
 	name: 'border_color_f',
-	light: 'var(--color_f_6)',
-	dark: 'var(--color_f_4)',
+	light: 'var(--color_f_5)',
 };
 export const border_color_g: Style_Variable = {
 	name: 'border_color_g',
-	light: 'var(--color_g_6)',
-	dark: 'var(--color_g_4)',
+	light: 'var(--color_g_5)',
 };
 // TODO BLOCK disabled doesn't work with colors
 export const border_disabled: Style_Variable = {
@@ -670,38 +663,31 @@ export const outline_color: Style_Variable = {
 };
 export const outline_color_a: Style_Variable = {
 	name: 'outline_color_a',
-	light: 'var(--color_a_4)',
-	dark: 'var(--color_a_6)',
+	light: 'var(--color_a_5)',
 };
 export const outline_color_b: Style_Variable = {
 	name: 'outline_color_b',
-	light: 'var(--color_b_4)',
-	dark: 'var(--color_b_6)',
+	light: 'var(--color_b_5)',
 };
 export const outline_color_c: Style_Variable = {
 	name: 'outline_color_c',
-	light: 'var(--color_c_4)',
-	dark: 'var(--color_c_6)',
+	light: 'var(--color_c_5)',
 };
 export const outline_color_d: Style_Variable = {
 	name: 'outline_color_d',
-	light: 'var(--color_d_4)',
-	dark: 'var(--color_d_6)',
+	light: 'var(--color_d_5)',
 };
 export const outline_color_e: Style_Variable = {
 	name: 'outline_color_e',
-	light: 'var(--color_e_4)',
-	dark: 'var(--color_e_6)',
+	light: 'var(--color_e_5)',
 };
 export const outline_color_f: Style_Variable = {
 	name: 'outline_color_f',
-	light: 'var(--color_f_4)',
-	dark: 'var(--color_f_6)',
+	light: 'var(--color_f_5)',
 };
 export const outline_color_g: Style_Variable = {
 	name: 'outline_color_g',
-	light: 'var(--color_g_4)',
-	dark: 'var(--color_g_6)',
+	light: 'var(--color_g_5)',
 };
 
 /* border radii */
