@@ -587,8 +587,6 @@ currently `:disabled` overrides this */
 	color: var(--color_f_5);
 }
 :where(button.selected.color_g) {
-	/* TODO @multiple repeated per color, fix with specificity? */
-	background-color: var(--button_bg_selected);
 	color: var(--color_g_5);
 }
 :where(button.selected) {
