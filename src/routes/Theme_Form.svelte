@@ -6,6 +6,7 @@
 
 	import {render_theme_style, type Style_Variable, type Theme} from '$lib/theme.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	// TODO @multiple add to $lib?
 
@@ -108,7 +109,7 @@
 			<div class="pane">
 				<div class="panel p_lg box">
 					<Style_Variable_Detail variable={selected_variable} />
-					<aside>⚠️ This is unfinished and will change.</aside>
+					<Unfinished_Implementation_Warning />
 					<button onclick={close}>ok</button>
 				</div>
 			</div>

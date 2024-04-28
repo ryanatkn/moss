@@ -3,9 +3,6 @@
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import {icon_sizes} from '$lib/variable_data';
-
-	// TODO BLOCK fix this to be data driven
-	// TODO move to a single source of truth (JSON or ts), generate CSS and use to render here
 </script>
 
 <section>
@@ -17,8 +14,6 @@
 	</aside>
 </section>
 <div class="icon_sizes">
-	<!-- TODO make this data driven -->
-	<!-- TODO read these vars from the typescript and display their runtime values -->
 	{#each Object.entries(icon_sizes) as [name, value]}
 		<figure>
 			<figcaption>

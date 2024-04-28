@@ -950,9 +950,6 @@ colors
 borders
 
 */
-
-/* TODO set inheritable variables instead maybe? */
-
 .border_color_1 {
 	border-color: var(--border_color_1);
 }
@@ -968,7 +965,34 @@ borders
 .border_color_5 {
 	border-color: var(--border_color_5);
 }
+.border_color_a {
+	border-color: var(--border_color_a);
+}
+.border_color_b {
+	border-color: var(--border_color_b);
+}
+.border_color_c {
+	border-color: var(--border_color_c);
+}
+.border_color_d {
+	border-color: var(--border_color_d);
+}
+.border_color_e {
+	border-color: var(--border_color_e);
+}
+.border_color_f {
+	border-color: var(--border_color_f);
+}
+.border_color_g {
+	border-color: var(--border_color_g);
+}
+.border_color_disabled {
+	border-color: var(--border_color_disabled);
+}
 
+.border_width_0 {
+	border-width: 0;
+}
 .border_width_1 {
 	border-width: var(--border_width_1);
 }
@@ -988,6 +1012,9 @@ borders
 	border-width: var(--border_width_6);
 }
 
+.outline_width_0 {
+	outline-width: 0;
+}
 .outline_width_1 {
 	outline-width: var(--outline_width_1);
 }

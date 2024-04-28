@@ -2,9 +2,11 @@
 	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
 	import {get_tome} from '@ryanatkn/fuz/tome.js';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 
-	import {radius_variants} from '$lib/variable_data.js';
+	import {color_variants, radius_variants} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'borders';
 
@@ -26,7 +28,7 @@
 
 	<section>
 		<Tome_Subheading text="Border colors" slug="border-colors" />
-		<aside>⚠️ These will change.</aside>
+		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_colors">
 			{#each {length: 5} as _, i}
 				{@const name = 'border_color_' + (i + 1)}
@@ -52,10 +54,40 @@
 			{/each}
 		</div>
 	</section>
-
+	<section>
+		<Color_Scheme_Input />
+	</section>
+	<section>
+		<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" />
+		<Unfinished_Implementation_Warning />
+		<div class="border_examples border_colors">
+			{#each color_variants as color_variant}
+				{@const name = 'border_color_' + color_variant}
+				<div class="border_color_outer">
+					<div class="border_color_inner">
+						<div class="border_example border_color" style:border-color="var(--{name})">
+							<Style_Variable_Button {name} />
+						</div>
+						{#each {length: 5} as _, i}
+							<div
+								class="border_color_width"
+								style:border-color="var(--{name})"
+								style:border-width="var(--{'border_width_' + (i + 2)})"
+							></div>
+						{/each}
+					</div>
+					<div>
+						<span class="pl_sm pr_sm">=</span><code
+							>{computed_styles?.getPropertyValue('--' + name)}</code
+						>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</section>
 	<section>
 		<Tome_Subheading text="Border widths" slug="border-widths" />
-		<aside>⚠️ These will change.</aside>
+		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_widths">
 			{#each {length: 6} as _, i}
 				{@const name = 'border_width_' + (i + 1)}
@@ -70,7 +102,6 @@
 			{/each}
 		</div>
 	</section>
-
 	<section>
 		<Tome_Subheading text="Outline widths" slug="outline-widths" />
 		<div class="border_examples outline_widths">
@@ -87,7 +118,6 @@
 			{/each}
 		</div>
 	</section>
-
 	<section>
 		<Tome_Subheading text="Border radius" slug="border-radius" />
 		<div class="border_examples border_radii">

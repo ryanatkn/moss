@@ -1,25 +1,31 @@
 # Contributing to Moss
 
-Hey, thanks for your interest in contributing to [Moss](https://github.com/ryanatkn/moss)
+Hey, thanks for your interest in contributing to
+[Moss](https://github.com/ryanatkn/moss)
 ([moss.ryanatkn.com](https://moss.ryanatkn.com/)).
-The project is currently in early alpha.
-There will be many breaking changes ahead,
-and I'm welcoming help from people who would like to see it succeed.
+The project is currently in early alpha and
+there will be many breaking changes ahead.
 
-I'm looking for collaborators to help Moss get to 1.0 and beyond:
-programmers, designers, beginner or otherwise, all friends of the web are welcome -
-let's chat publicly on [Discord](https://discord.gg/YU5tyeK72X)
+The guiding principles of Moss:
+
+- build around CSS custom properties, primarily for runtime theming
+- expose APIs to end-users for last-mile theming, customization, and content creation
+- make the DX powerful, flexible, and ergonomic
+
+If this sounds interesting to you,
+I'm welcoming help to iterate on APIs to get Moss to 1.0 and beyond.
+Let's chat publicly on [Discord](https://discord.gg/YU5tyeK72X)
 or here in the [Github issues](https://github.com/ryanatkn/moss).
 
-I'm trying to make Moss the best CSS framework it can be
-to enable advanced joy and utility for end-users.
-Towards this goal, I've been growing Moss slowly and methodically over 5+ years
-to support [my other projects](http://www.ryanatkn.com/),
-with regular breaking changes and experimental patterns.
+I've been growing Moss slowly over 5+ years
+to support [Zzz](https://zzz.ryanatkn.com/) and [my other projects](http://www.ryanatkn.com/),with regular breaking changes and experimental patterns.
 
-> Though I'm focused on end-users, I also care a lot about DX,
-> and have built tools like [Gro](https://github.com/ryanatkn/gro)
-> to support a productive envionrment.
+If I were to start fresh today, it's possible Tailwind would be a good foundation
+because of the changes made in v3 and v4, which arrived years after I started Moss.
+I don't want to reinvent Tailwind but badly,
+so when v4 is out (it's close as of April 2024)
+I'll start evaluating it to see if Moss should transform
+from a standalone framework to an opinionated Tailwind config.
 
 ## Community
 

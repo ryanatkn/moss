@@ -568,8 +568,15 @@ export const width_sm: Style_Variable = {name: 'width_sm', light: '320px'};
 export const width_xs: Style_Variable = {name: 'width_xs', light: '200px'};
 
 /* borders and outlines */
-export const border_color: Style_Variable = {name: 'border_color', light: 'var(--border_color_3)'};
-export const border_style: Style_Variable = {name: 'border_style', light: 'solid'};
+// TODO remove these two generics? composability doesn't work like I wanted
+export const border_color: Style_Variable = {
+	name: 'border_color',
+	light: 'var(--border_color_3)',
+};
+export const border_style: Style_Variable = {
+	name: 'border_style',
+	light: 'solid',
+};
 // TODO add tint vars for these?
 export const border_color_1: Style_Variable = {
 	name: 'border_color_1',
@@ -596,6 +603,42 @@ export const border_color_5: Style_Variable = {
 	light: 'hsl(var(--tint_hue), 60%, 20%, 70%)',
 	dark: 'hsl(var(--tint_hue), 60%, 80%, 25%)',
 };
+export const border_color_a: Style_Variable = {
+	name: 'border_color_a',
+	light: 'var(--color_a_6)',
+	dark: 'var(--color_a_4)',
+};
+export const border_color_b: Style_Variable = {
+	name: 'border_color_b',
+	light: 'var(--color_b_6)',
+	dark: 'var(--color_b_4)',
+};
+export const border_color_c: Style_Variable = {
+	name: 'border_color_c',
+	light: 'var(--color_c_6)',
+	dark: 'var(--color_c_4)',
+};
+export const border_color_d: Style_Variable = {
+	name: 'border_color_d',
+	light: 'var(--color_d_6)',
+	dark: 'var(--color_d_4)',
+};
+export const border_color_e: Style_Variable = {
+	name: 'border_color_e',
+	light: 'var(--color_e_6)',
+	dark: 'var(--color_e_4)',
+};
+export const border_color_f: Style_Variable = {
+	name: 'border_color_f',
+	light: 'var(--color_f_6)',
+	dark: 'var(--color_f_4)',
+};
+export const border_color_g: Style_Variable = {
+	name: 'border_color_g',
+	light: 'var(--color_g_6)',
+	dark: 'var(--color_g_4)',
+};
+// TODO BLOCK disabled doesn't work with colors
 export const border_disabled: Style_Variable = {
 	name: 'border_disabled',
 	light: 'var(--border_color_3)',
@@ -621,7 +664,45 @@ export const outline_width_3: Style_Variable = {
 	light: 'var(--border_width_1)',
 };
 export const outline_style: Style_Variable = {name: 'outline_style', light: 'solid'};
-export const outline_color: Style_Variable = {name: 'outline_color', light: 'var(--color_a_5)'};
+export const outline_color: Style_Variable = {
+	name: 'outline_color',
+	light: 'var(--outline_color_a)',
+};
+export const outline_color_a: Style_Variable = {
+	name: 'outline_color_a',
+	light: 'var(--color_a_4)',
+	dark: 'var(--color_a_6)',
+};
+export const outline_color_b: Style_Variable = {
+	name: 'outline_color_b',
+	light: 'var(--color_b_4)',
+	dark: 'var(--color_b_6)',
+};
+export const outline_color_c: Style_Variable = {
+	name: 'outline_color_c',
+	light: 'var(--color_c_4)',
+	dark: 'var(--color_c_6)',
+};
+export const outline_color_d: Style_Variable = {
+	name: 'outline_color_d',
+	light: 'var(--color_d_4)',
+	dark: 'var(--color_d_6)',
+};
+export const outline_color_e: Style_Variable = {
+	name: 'outline_color_e',
+	light: 'var(--color_e_4)',
+	dark: 'var(--color_e_6)',
+};
+export const outline_color_f: Style_Variable = {
+	name: 'outline_color_f',
+	light: 'var(--color_f_4)',
+	dark: 'var(--color_f_6)',
+};
+export const outline_color_g: Style_Variable = {
+	name: 'outline_color_g',
+	light: 'var(--color_g_4)',
+	dark: 'var(--color_g_6)',
+};
 
 /* border radii */
 export const radius_xl: Style_Variable = {name: 'radius_xl', light: '5.5rem'};
@@ -635,7 +716,10 @@ export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 /* button colors */
 export const button_bg: Style_Variable = {name: 'button_bg', light: 'var(--fg_1)'};
 export const button_bg_hover: Style_Variable = {name: 'button_bg_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
-export const button_bg_active: Style_Variable = {name: 'button_bg_active', light: 'var(--bg_3)'};
+export const button_bg_selected: Style_Variable = {
+	name: 'button_bg_selected',
+	light: 'var(--bg_3)',
+};
 export const button_bg_disabled: Style_Variable = {
 	name: 'button_bg_disabled',
 	light: 'transparent',
@@ -1518,6 +1602,13 @@ export const default_variables: Style_Variable[] = [
 	border_color_3,
 	border_color_4,
 	border_color_5,
+	border_color_a,
+	border_color_b,
+	border_color_c,
+	border_color_d,
+	border_color_e,
+	border_color_f,
+	border_color_g,
 	border_disabled,
 	border_width,
 	border_width_1,
@@ -1532,6 +1623,13 @@ export const default_variables: Style_Variable[] = [
 	outline_width_3,
 	outline_style,
 	outline_color,
+	outline_color_a,
+	outline_color_b,
+	outline_color_c,
+	outline_color_d,
+	outline_color_e,
+	outline_color_f,
+	outline_color_g,
 
 	/* border radii */
 	radius_xl,
@@ -1545,7 +1643,7 @@ export const default_variables: Style_Variable[] = [
 	/* button colors */
 	button_bg,
 	button_bg_hover,
-	button_bg_active,
+	button_bg_selected,
 	button_bg_disabled,
 
 	/* inputs */
