@@ -17,9 +17,11 @@ TODO lots of things here to address:
 */
 
 /*
-		colors - eyeballed and intepolated with a spreadsheet,
-		a professional designer will have opinions
-	*/
+
+colors
+
+*/
+// TODO these were eyeballed and intepolated with a spreadsheet, a professional designer will have opinions
 export const hue_a: Style_Variable = {name: 'hue_a', light: '210', summary: 'blue'};
 export const hue_b: Style_Variable = {name: 'hue_b', light: '120', summary: 'green'};
 export const hue_c: Style_Variable = {name: 'hue_c', light: '0', summary: 'red'};
@@ -353,11 +355,19 @@ export const lighten_7: Style_Variable = {name: 'lighten_7', light: '#ffffffcc',
 export const lighten_8: Style_Variable = {name: 'lighten_8', light: '#ffffffe3', summary: '89%'};
 export const lighten_9: Style_Variable = {name: 'lighten_9', light: '#fffffff5', summary: '96%'};
 
-/* tint colors */
+/*
+
+tint colors
+
+*/
 export const tint_hue: Style_Variable = {name: 'tint_hue', light: 'var(--hue_e)'};
 export const tint_saturation: Style_Variable = {name: 'tint_saturation', light: '11%'};
 
-/* bg colors */
+/*
+
+background colors
+
+*/
 export const bg: Style_Variable = {
 	name: 'bg',
 	light: 'hsl(var(--tint_hue), var(--tint_saturation), 96%)',
@@ -462,6 +472,48 @@ export const fg_9: Style_Variable = {
 	dark: 'var(--lighten_9)',
 };
 export const fg_10: Style_Variable = {name: 'fg_10', light: '#000', dark: '#fff'}; // TODO 0 variant? or remove 10? add to lighten/darken;
+export const fill_color_a: Style_Variable = {
+	name: 'fill_color_a',
+	light: 'var(--color_a_4)',
+	dark: 'var(--color_a_6)',
+};
+export const fill_color_b: Style_Variable = {
+	name: 'fill_color_b',
+	light: 'var(--color_b_4)',
+	dark: 'var(--color_b_6)',
+};
+export const fill_color_c: Style_Variable = {
+	name: 'fill_color_c',
+	light: 'var(--color_c_4)',
+	dark: 'var(--color_c_6)',
+};
+export const fill_color_d: Style_Variable = {
+	name: 'fill_color_d',
+	light: 'var(--color_d_4)',
+	dark: 'var(--color_d_6)',
+};
+export const fill_color_e: Style_Variable = {
+	name: 'fill_color_e',
+	light: 'var(--color_e_4)',
+	dark: 'var(--color_e_6)',
+};
+export const fill_color_f: Style_Variable = {
+	name: 'fill_color_f',
+	light: 'var(--color_f_4)',
+	dark: 'var(--color_f_6)',
+};
+export const fill_color_g: Style_Variable = {
+	name: 'fill_color_g',
+	light: 'var(--color_g_4)',
+	dark: 'var(--color_g_6)',
+};
+
+/*
+
+text colors
+
+*/
+
 // TODO probably need more variants, 5 total?
 /* text colors don't use alpha because it affects performance too much */
 export const text_color: Style_Variable = {name: 'text_color', light: 'var(--text_1)'};
@@ -605,38 +657,31 @@ export const border_color_5: Style_Variable = {
 };
 export const border_color_a: Style_Variable = {
 	name: 'border_color_a',
-	light: 'var(--color_a_6)',
-	dark: 'var(--color_a_4)',
+	light: 'var(--color_a_5)',
 };
 export const border_color_b: Style_Variable = {
 	name: 'border_color_b',
-	light: 'var(--color_b_6)',
-	dark: 'var(--color_b_4)',
+	light: 'var(--color_b_5)',
 };
 export const border_color_c: Style_Variable = {
 	name: 'border_color_c',
-	light: 'var(--color_c_6)',
-	dark: 'var(--color_c_4)',
+	light: 'var(--color_c_5)',
 };
 export const border_color_d: Style_Variable = {
 	name: 'border_color_d',
-	light: 'var(--color_d_6)',
-	dark: 'var(--color_d_4)',
+	light: 'var(--color_d_5)',
 };
 export const border_color_e: Style_Variable = {
 	name: 'border_color_e',
-	light: 'var(--color_e_6)',
-	dark: 'var(--color_e_4)',
+	light: 'var(--color_e_5)',
 };
 export const border_color_f: Style_Variable = {
 	name: 'border_color_f',
-	light: 'var(--color_f_6)',
-	dark: 'var(--color_f_4)',
+	light: 'var(--color_f_5)',
 };
 export const border_color_g: Style_Variable = {
 	name: 'border_color_g',
-	light: 'var(--color_g_6)',
-	dark: 'var(--color_g_4)',
+	light: 'var(--color_g_5)',
 };
 // TODO BLOCK disabled doesn't work with colors
 export const border_disabled: Style_Variable = {
@@ -666,42 +711,7 @@ export const outline_width_3: Style_Variable = {
 export const outline_style: Style_Variable = {name: 'outline_style', light: 'solid'};
 export const outline_color: Style_Variable = {
 	name: 'outline_color',
-	light: 'var(--outline_color_a)',
-};
-export const outline_color_a: Style_Variable = {
-	name: 'outline_color_a',
-	light: 'var(--color_a_4)',
-	dark: 'var(--color_a_6)',
-};
-export const outline_color_b: Style_Variable = {
-	name: 'outline_color_b',
-	light: 'var(--color_b_4)',
-	dark: 'var(--color_b_6)',
-};
-export const outline_color_c: Style_Variable = {
-	name: 'outline_color_c',
-	light: 'var(--color_c_4)',
-	dark: 'var(--color_c_6)',
-};
-export const outline_color_d: Style_Variable = {
-	name: 'outline_color_d',
-	light: 'var(--color_d_4)',
-	dark: 'var(--color_d_6)',
-};
-export const outline_color_e: Style_Variable = {
-	name: 'outline_color_e',
-	light: 'var(--color_e_4)',
-	dark: 'var(--color_e_6)',
-};
-export const outline_color_f: Style_Variable = {
-	name: 'outline_color_f',
-	light: 'var(--color_f_4)',
-	dark: 'var(--color_f_6)',
-};
-export const outline_color_g: Style_Variable = {
-	name: 'outline_color_g',
-	light: 'var(--color_g_4)',
-	dark: 'var(--color_g_6)',
+	light: 'var(--border_color_a)',
 };
 
 /* border radii */
@@ -1525,6 +1535,13 @@ export const default_variables: Style_Variable[] = [
 	fg_8,
 	fg_9,
 	fg_10,
+	fill_color_a,
+	fill_color_b,
+	fill_color_c,
+	fill_color_d,
+	fill_color_e,
+	fill_color_f,
+	fill_color_g,
 	// TODO probably need more variants, 5 total?
 	/* text colors don't use alpha because it affects performance too much */
 	text_color,
@@ -1623,13 +1640,6 @@ export const default_variables: Style_Variable[] = [
 	outline_width_3,
 	outline_style,
 	outline_color,
-	outline_color_a,
-	outline_color_b,
-	outline_color_c,
-	outline_color_d,
-	outline_color_e,
-	outline_color_f,
-	outline_color_g,
 
 	/* border radii */
 	radius_xl,

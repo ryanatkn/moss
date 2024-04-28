@@ -53,7 +53,7 @@ body {
 }
 
 ::selection {
-	background: hsla(var(--hue_a), 90%, 80%, var(--fade_3));
+	background-color: hsla(var(--hue_a), 90%, 80%, var(--fade_3));
 }
 
 /*
@@ -280,7 +280,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	font: inherit;
 	line-height: normal;
 	color: var(--text_color);
-	background: var(--input_bg);
+	background-color: var(--input_bg);
 	border-color: var(--border_color);
 	border-style: var(--border_style);
 	border-width: var(--border_width);
@@ -461,7 +461,7 @@ so for consistent visuals we opt to include no active state */
 	color: var(--text_color);
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
-	background: var(--button_bg);
+	background-color: var(--button_bg); /* TODO maybe "fill_color_X" is the better name? */
 	box-shadow: var(--shadow_outset_xs);
 	border-width: var(--border_width);
 	border-style: var(--border_style);
@@ -471,16 +471,16 @@ so for consistent visuals we opt to include no active state */
 	/* TODO @multiple outline-offset */
 	/* outline-offset: 2px; */
 }
+/* TODO this is weird because we're overriding for colored variants */
 :where(button:hover, button:focus) {
 	--border_color: var(--border_color_2);
-	background: var(--button_bg_hover);
+	background-color: var(--button_bg_hover);
 	box-shadow: var(--shadow_outset_sm);
 }
 :where(button:active) {
 	--border_color: var(--border_color_5);
 	--outline_width: var(--outline_width_3);
-	/* TODO use of `background` vs `background-color` in this file is not intentional */
-	background: var(--button_bg_selected);
+	background-color: var(--button_bg_selected);
 	box-shadow: var(--shadow_inset_sm);
 }
 :where(button.inline, p button) {
@@ -495,7 +495,6 @@ currently `:disabled` overrides this */
 :where(button.selected) {
 	--text_color: var(--text_active);
 	--border_color: var(--color_a_5);
-	background: var(--button_bg_selected);
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
@@ -515,7 +514,7 @@ currently `:disabled` overrides this */
 	cursor: default;
 	box-shadow: none;
 	opacity: var(--disabled_opacity);
-	background-color: var(--button_bg_disabled); /* TODO maybe set button_bg? */
+	background-color: var(--button_bg_disabled); /* TODO using `button_` here looks wrong */
 	outline: none;
 }
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
@@ -523,9 +522,11 @@ currently `:disabled` overrides this */
 	--text_color: var(--color_c_5);
 }
 
-/* TODO these need design work for visuals/consistency/customizability */
+/* TODO these need design work for visuals/consistency/customizability  */
 :where(button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g)) {
-	color: var(--bg_7);
+	--text_color: var(
+		--bg_8
+	); /* TODO rethink this, maybe gradients instead? or at least use a text_color */
 }
 :where(
 		button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g):where(
@@ -534,77 +535,66 @@ currently `:disabled` overrides this */
 				:active
 			)
 	) {
-	color: var(--bg_10);
+	--text_color: var(--bg_10);
 }
 :where(button.color_a) {
-	background-color: var(--color_a_5);
+	/* TODO change to setting a variable, probably */
+	background-color: var(--fill_color_a);
 	--border_color: var(--border_color_a);
-	--outline_color: var(--outline_color_a);
 }
 :where(button.color_b) {
-	background-color: var(--color_b_5);
+	background-color: var(--fill_color_b);
 	--border_color: var(--border_color_b);
-	--outline_color: var(--outline_color_b);
+	--outline_color: var(--border_color_b);
 }
 :where(button.color_c) {
-	background-color: var(--color_c_5);
+	background-color: var(--fill_color_c);
 	--border_color: var(--border_color_c);
-	--outline_color: var(--outline_color_c);
+	--outline_color: var(--border_color_c);
 }
 :where(button.color_d) {
-	background-color: var(--color_d_5);
+	background-color: var(--fill_color_d);
 	--border_color: var(--border_color_d);
-	--outline_color: var(--outline_color_d);
+	--outline_color: var(--border_color_d);
 }
 :where(button.color_e) {
-	background-color: var(--color_e_5);
+	background-color: var(--fill_color_e);
 	--border_color: var(--border_color_e);
-	--outline_color: var(--outline_color_e);
+	--outline_color: var(--border_color_e);
 }
 :where(button.color_f) {
-	background-color: var(--color_f_5);
+	background-color: var(--fill_color_f);
 	--border_color: var(--border_color_f);
-	--outline_color: var(--outline_color_f);
+	--outline_color: var(--border_color_f);
 }
 :where(button.color_g) {
-	background-color: var(--color_g_5);
+	background-color: var(--fill_color_g);
 	--border_color: var(--border_color_g);
-	--outline_color: var(--outline_color_g);
+	--outline_color: var(--border_color_g);
 }
 :where(button.selected.color_a) {
-	background: var(--button_bg_selected);
 	color: var(--color_a_5);
-	--border_color: var(--color_a_5);
 }
 :where(button.selected.color_b) {
-	background: var(--button_bg_selected);
 	color: var(--color_b_5);
-	--border_color: var(--color_b_5);
 }
 :where(button.selected.color_c) {
-	background: var(--button_bg_selected);
 	color: var(--color_c_5);
-	--border_color: var(--color_c_5);
 }
 :where(button.selected.color_d) {
-	background: var(--button_bg_selected);
 	color: var(--color_d_5);
-	--border_color: var(--color_d_5);
 }
 :where(button.selected.color_e) {
-	background: var(--button_bg_selected);
 	color: var(--color_e_5);
-	--border_color: var(--color_e_5);
 }
 :where(button.selected.color_f) {
-	background: var(--button_bg_selected);
 	color: var(--color_f_5);
-	--border_color: var(--color_f_5);
 }
 :where(button.selected.color_g) {
-	background: var(--button_bg_selected);
 	color: var(--color_g_5);
-	--border_color: var(--color_g_5);
+}
+:where(button.selected) {
+	background-color: var(--button_bg_selected);
 }
 
 /* TODO could improve this with the coming `:has` selector
