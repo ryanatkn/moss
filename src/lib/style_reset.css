@@ -491,7 +491,6 @@ currently `:disabled` overrides this */
 :where(button.selected) {
 	--text_color: var(--text_active);
 	--border_color: var(--color_a_5);
-	background-color: var(--button_bg_selected);
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
@@ -519,9 +518,11 @@ currently `:disabled` overrides this */
 	--text_color: var(--color_c_5);
 }
 
-/* TODO these need design work for visuals/consistency/customizability */
+/* TODO these need design work for visuals/consistency/customizability  */
 :where(button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g)) {
-	--text_color: var(--bg_7);
+	--text_color: var(
+		--bg_8
+	); /* TODO rethink this, maybe gradients instead? or at least use a text_color */
 }
 :where(
 		button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g):where(
@@ -569,39 +570,30 @@ currently `:disabled` overrides this */
 	--outline_color: var(--outline_color_g);
 }
 :where(button.selected.color_a) {
-	/* TODO @multiple repeated per color, fix with specificity? */
-	background-color: var(--button_bg_selected);
 	color: var(--color_a_5);
 }
 :where(button.selected.color_b) {
-	/* TODO @multiple repeated per color, fix with specificity? */
-	background-color: var(--button_bg_selected);
 	color: var(--color_b_5);
 }
 :where(button.selected.color_c) {
-	/* TODO @multiple repeated per color, fix with specificity? */
-	background-color: var(--button_bg_selected);
 	color: var(--color_c_5);
 }
 :where(button.selected.color_d) {
-	/* TODO @multiple repeated per color, fix with specificity? */
-	background-color: var(--button_bg_selected);
 	color: var(--color_d_5);
 }
 :where(button.selected.color_e) {
-	/* TODO @multiple repeated per color, fix with specificity? */
-	background-color: var(--button_bg_selected);
 	color: var(--color_e_5);
 }
 :where(button.selected.color_f) {
-	/* TODO @multiple repeated per color, fix with specificity? */
-	background-color: var(--button_bg_selected);
 	color: var(--color_f_5);
 }
 :where(button.selected.color_g) {
 	/* TODO @multiple repeated per color, fix with specificity? */
 	background-color: var(--button_bg_selected);
 	color: var(--color_g_5);
+}
+:where(button.selected) {
+	background-color: var(--button_bg_selected);
 }
 
 /* TODO could improve this with the coming `:has` selector
