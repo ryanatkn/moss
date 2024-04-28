@@ -521,7 +521,7 @@ currently `:disabled` overrides this */
 
 /* TODO these need design work for visuals/consistency/customizability */
 :where(button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g)) {
-	color: var(--bg_7);
+	--text_color: var(--bg_7);
 }
 :where(
 		button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g):where(
@@ -530,69 +530,76 @@ currently `:disabled` overrides this */
 				:active
 			)
 	) {
-	color: var(--bg_10);
+	--text_color: var(--bg_10);
 }
 :where(button.color_a) {
-	/* TODO `button_bg_a` or `button_fill_a`? or maybe `bg_a`? could use `bg_a` from the button variants to add customizable hooks but increasing the API surface area */
-	background-color: var(--button_bg_a);
+	/* TODO change to setting a variable, probably */
+	background-color: var(--fill_color_a);
 	--border_color: var(--border_color_a);
 	--outline_color: var(--outline_color_a);
 }
 :where(button.color_b) {
-	background-color: var(--color_b_5);
+	background-color: var(--fill_color_b);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--outline_color_b);
 }
 :where(button.color_c) {
-	background-color: var(--color_c_5);
+	background-color: var(--fill_color_c);
 	--border_color: var(--border_color_c);
 	--outline_color: var(--outline_color_c);
 }
 :where(button.color_d) {
-	background-color: var(--color_d_5);
+	background-color: var(--fill_color_d);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--outline_color_d);
 }
 :where(button.color_e) {
-	background-color: var(--color_e_5);
+	background-color: var(--fill_color_e);
 	--border_color: var(--border_color_e);
 	--outline_color: var(--outline_color_e);
 }
 :where(button.color_f) {
-	background-color: var(--color_f_5);
+	background-color: var(--fill_color_f);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--outline_color_f);
 }
 :where(button.color_g) {
-	background-color: var(--color_g_5);
+	background-color: var(--fill_color_g);
 	--border_color: var(--border_color_g);
 	--outline_color: var(--outline_color_g);
 }
 :where(button.selected.color_a) {
+	/* TODO @multiple repeated per color, fix with specificity? */
 	background-color: var(--button_bg_selected);
 	color: var(--color_a_5);
 }
 :where(button.selected.color_b) {
+	/* TODO @multiple repeated per color, fix with specificity? */
 	background-color: var(--button_bg_selected);
 	color: var(--color_b_5);
 }
 :where(button.selected.color_c) {
+	/* TODO @multiple repeated per color, fix with specificity? */
 	background-color: var(--button_bg_selected);
 	color: var(--color_c_5);
 }
 :where(button.selected.color_d) {
+	/* TODO @multiple repeated per color, fix with specificity? */
 	background-color: var(--button_bg_selected);
 	color: var(--color_d_5);
 }
 :where(button.selected.color_e) {
+	/* TODO @multiple repeated per color, fix with specificity? */
 	background-color: var(--button_bg_selected);
 	color: var(--color_e_5);
 }
 :where(button.selected.color_f) {
+	/* TODO @multiple repeated per color, fix with specificity? */
 	background-color: var(--button_bg_selected);
 	color: var(--color_f_5);
 }
 :where(button.selected.color_g) {
+	/* TODO @multiple repeated per color, fix with specificity? */
 	background-color: var(--button_bg_selected);
 	color: var(--color_g_5);
 }

@@ -353,11 +353,19 @@ export const lighten_7: Style_Variable = {name: 'lighten_7', light: '#ffffffcc',
 export const lighten_8: Style_Variable = {name: 'lighten_8', light: '#ffffffe3', summary: '89%'};
 export const lighten_9: Style_Variable = {name: 'lighten_9', light: '#fffffff5', summary: '96%'};
 
-/* tint colors */
+/*
+
+tint colors
+
+*/
 export const tint_hue: Style_Variable = {name: 'tint_hue', light: 'var(--hue_e)'};
 export const tint_saturation: Style_Variable = {name: 'tint_saturation', light: '11%'};
 
-/* bg colors */
+/*
+
+background colors
+
+*/
 export const bg: Style_Variable = {
 	name: 'bg',
 	light: 'hsl(var(--tint_hue), var(--tint_saturation), 96%)',
@@ -462,6 +470,48 @@ export const fg_9: Style_Variable = {
 	dark: 'var(--lighten_9)',
 };
 export const fg_10: Style_Variable = {name: 'fg_10', light: '#000', dark: '#fff'}; // TODO 0 variant? or remove 10? add to lighten/darken;
+export const fill_color_a: Style_Variable = {
+	name: 'fill_color_a',
+	light: 'var(--color_a_4)',
+	dark: 'var(--color_a_6)',
+};
+export const fill_color_b: Style_Variable = {
+	name: 'fill_color_b',
+	light: 'var(--color_b_4)',
+	dark: 'var(--color_b_6)',
+};
+export const fill_color_c: Style_Variable = {
+	name: 'fill_color_c',
+	light: 'var(--color_c_4)',
+	dark: 'var(--color_c_6)',
+};
+export const fill_color_d: Style_Variable = {
+	name: 'fill_color_d',
+	light: 'var(--color_d_4)',
+	dark: 'var(--color_d_6)',
+};
+export const fill_color_e: Style_Variable = {
+	name: 'fill_color_e',
+	light: 'var(--color_e_4)',
+	dark: 'var(--color_e_6)',
+};
+export const fill_color_f: Style_Variable = {
+	name: 'fill_color_f',
+	light: 'var(--color_f_4)',
+	dark: 'var(--color_f_6)',
+};
+export const fill_color_g: Style_Variable = {
+	name: 'fill_color_g',
+	light: 'var(--color_g_4)',
+	dark: 'var(--color_g_6)',
+};
+
+/*
+
+text colors
+
+*/
+
 // TODO probably need more variants, 5 total?
 /* text colors don't use alpha because it affects performance too much */
 export const text_color: Style_Variable = {name: 'text_color', light: 'var(--text_1)'};
@@ -1511,6 +1561,13 @@ export const default_variables: Style_Variable[] = [
 	fg_8,
 	fg_9,
 	fg_10,
+	fill_color_a,
+	fill_color_b,
+	fill_color_c,
+	fill_color_d,
+	fill_color_e,
+	fill_color_f,
+	fill_color_g,
 	// TODO probably need more variants, 5 total?
 	/* text colors don't use alpha because it affects performance too much */
 	text_color,
