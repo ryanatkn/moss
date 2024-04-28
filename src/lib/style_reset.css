@@ -534,7 +534,8 @@ currently `:disabled` overrides this */
 	color: var(--bg_10);
 }
 :where(button.color_a) {
-	background-color: var(--color_a_5);
+	/* TODO `button_bg_a` or `button_fill_a`? or maybe `bg_a`? could use `bg_a` from the button variants to add customizable hooks but increasing the API surface area */
+	background-color: var(--button_bg_a);
 	--border_color: var(--border_color_a);
 	--outline_color: var(--outline_color_a);
 }
