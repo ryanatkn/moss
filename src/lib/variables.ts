@@ -18,10 +18,10 @@ TODO lots of things here to address:
 
 /*
 
-colors - eyeballed and intepolated with a spreadsheet,
-a professional designer will have opinions
+colors
 
 */
+// TODO these were eyeballed and intepolated with a spreadsheet, a professional designer will have opinions
 export const hue_a: Style_Variable = {name: 'hue_a', light: '210', summary: 'blue'};
 export const hue_b: Style_Variable = {name: 'hue_b', light: '120', summary: 'green'};
 export const hue_c: Style_Variable = {name: 'hue_c', light: '0', summary: 'red'};
