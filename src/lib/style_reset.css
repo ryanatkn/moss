@@ -573,25 +573,25 @@ currently `:disabled` overrides this */
 }
 /* TODO set text_color */
 :where(button.selected.color_a) {
-	color: var(--color_a_5);
+	--text_color: var(--color_a_5);
 }
 :where(button.selected.color_b) {
-	color: var(--color_b_5);
+	--text_color: var(--color_b_5);
 }
 :where(button.selected.color_c) {
-	color: var(--color_c_5);
+	--text_color: var(--color_c_5);
 }
 :where(button.selected.color_d) {
-	color: var(--color_d_5);
+	--text_color: var(--color_d_5);
 }
 :where(button.selected.color_e) {
-	color: var(--color_e_5);
+	--text_color: var(--color_e_5);
 }
 :where(button.selected.color_f) {
-	color: var(--color_f_5);
+	--text_color: var(--color_f_5);
 }
 :where(button.selected.color_g) {
-	color: var(--color_g_5);
+	--text_color: var(--color_g_5);
 }
 :where(button.selected) {
 	--fill_color: var(--button_fill_selected);
