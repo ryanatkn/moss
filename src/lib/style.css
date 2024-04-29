@@ -84,8 +84,8 @@ The `!important` makes this `hidden` behavior much higher specificity.
 :where(a) {
 	cursor: pointer;
 	/* TODO should the generic be --link_color or --color? */
-	--color: var(--link_color);
-	color: var(--color);
+	--text_color: var(--link_color);
+	color: var(--text_color);
 	font-weight: 700;
 	text-decoration: var(--text_decoration);
 	border-radius: var(--radius_xs2);
@@ -104,7 +104,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	--outline_width: var(--outline_width_3);
 }
 :where(a.selected) {
-	--color: var(--link_color_selected);
+	--text_color: var(--link_color_selected);
 	--outline_color: var(--border_color);
 	text-decoration: var(--text_decoration_selected);
 }
