@@ -598,7 +598,7 @@ currently `:disabled` overrides this */
 	color: var(--color_g_5);
 }
 :where(button.selected) {
-	background-color: var(--button_fill_selected);
+	--fill_color: var(--button_fill_selected);
 }
 
 /* TODO could improve this with the coming `:has` selector
