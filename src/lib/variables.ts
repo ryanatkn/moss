@@ -742,19 +742,23 @@ export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
 /* button colors */
-export const button_bg: Style_Variable = {name: 'button_bg', light: 'var(--fg_1)'};
-export const button_bg_hover: Style_Variable = {name: 'button_bg_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
-export const button_bg_selected: Style_Variable = {
-	name: 'button_bg_selected',
+export const button_fill: Style_Variable = {name: 'button_fill', light: 'var(--fg_1)'};
+export const button_fill_hover: Style_Variable = {name: 'button_fill_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
+export const button_fill_active: Style_Variable = {
+	name: 'button_fill_active',
 	light: 'var(--bg_3)',
 };
-export const button_bg_disabled: Style_Variable = {
-	name: 'button_bg_disabled',
+export const button_fill_selected: Style_Variable = {
+	name: 'button_fill_selected',
+	light: 'var(--bg_3)',
+};
+export const button_fill_disabled: Style_Variable = {
+	name: 'button_fill_disabled',
 	light: 'transparent',
 };
 
 /* inputs */
-export const input_bg: Style_Variable = {name: 'input_bg', light: 'var(--bg_5)'};
+export const input_fill: Style_Variable = {name: 'input_fill', light: 'var(--bg_5)'};
 export const input_padding_y: Style_Variable = {name: 'input_padding_y', light: '0'};
 export const input_padding_x: Style_Variable = {name: 'input_padding_x', light: 'var(--space_lg)'};
 export const input_width_min: Style_Variable = {name: 'input_width_min', light: '100px'};
@@ -1671,13 +1675,14 @@ export const default_variables: Style_Variable[] = [
 	radius_xs3,
 
 	/* button colors */
-	button_bg,
-	button_bg_hover,
-	button_bg_selected,
-	button_bg_disabled,
+	button_fill,
+	button_fill_hover,
+	button_fill_active,
+	button_fill_selected,
+	button_fill_disabled,
 
 	/* inputs */
-	input_bg,
+	input_fill,
 	input_padding_y,
 	input_padding_x,
 	input_width_min,

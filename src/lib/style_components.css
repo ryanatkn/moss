@@ -45,18 +45,18 @@
 /* hmm, so if `:where` was added to this, it would make user styles override the specialized states - maybe that's worse? */
 .selectable {
 	cursor: pointer;
-	background-color: var(--button_bg);
+	background-color: var(--button_fill);
 	border-color: var(--border_color_3);
 	border-style: var(--border_style);
 	border-width: var(--border_width);
 }
 .selectable:hover {
-	background-color: var(--button_bg_hover);
+	background-color: var(--button_fill_hover);
 	border-color: var(--border_color_2);
 }
 .selectable.selected,
 .selectable:active {
-	background-color: var(--button_bg_selected);
+	background-color: var(--button_fill_active);
 	border-color: var(--color_a_5);
 }
 .selectable.selected {
@@ -97,7 +97,7 @@ By default it's opaque, resetting the background to the initial depth. */
 :where(.plain:not(:hover)) {
 	border-color: transparent;
 	box-shadow: none;
-	--button_bg: transparent;
+	--button_fill: transparent;
 }
 
 :where(.menu_item) {

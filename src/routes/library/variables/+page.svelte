@@ -36,7 +36,7 @@
 			<li>by CSS classes, both utility and component</li>
 			<li>
 				by other variables, both in calculations and to add useful semantics (e.g. <code
-					>button_bg_hover</code
+					>button_fill_hover</code
 				>
 				defaults to <code>fg_2</code> but can be themed independently)
 			</li>

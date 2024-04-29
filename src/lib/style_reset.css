@@ -276,7 +276,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	font: inherit;
 	line-height: normal;
 	color: var(--text_color);
-	background-color: var(--input_bg);
+	background-color: var(--input_fill);
 	border-color: var(--border_color);
 	border-style: var(--border_style);
 	border-width: var(--border_width);
@@ -457,7 +457,7 @@ so for consistent visuals we opt to include no active state */
 	color: var(--text_color);
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
-	background-color: var(--button_bg); /* TODO maybe "fill_color_X" is the better name? */
+	background-color: var(--fill_color, var(--button_fill));
 	box-shadow: var(--shadow_outset_xs);
 	border-width: var(--border_width);
 	border-style: var(--border_style);
@@ -469,14 +469,14 @@ so for consistent visuals we opt to include no active state */
 }
 /* TODO this is weird because we're overriding for colored variants */
 :where(button:hover, button:focus) {
+	--fill_color: var(--button_fill_hover);
 	--border_color: var(--border_color_2);
-	background-color: var(--button_bg_hover);
 	box-shadow: var(--shadow_outset_sm);
 }
 :where(button:active) {
+	--fill_color: var(--button_fill_active);
 	--border_color: var(--border_color_5);
 	--outline_width: var(--outline_width_3);
-	background-color: var(--button_bg_selected);
 	box-shadow: var(--shadow_inset_sm);
 }
 :where(button.inline, p button) {
@@ -503,14 +503,17 @@ currently `:disabled` overrides this */
 :where(input[type='radio']:checked) {
 	cursor: default;
 }
+/* TODO maybe shouldn't mix button in with these */
 :where(:where(input, textarea, select, button):disabled) {
 	--text_color: var(--text_disabled);
+	--fill_color: var(
+		--button_fill_disabled
+	); /* TODO using `button_` here looks wrong, conflating button with others */
 	--border_color: var(--border_disabled);
 	--border_style: solid dashed;
 	cursor: default;
 	box-shadow: none;
 	opacity: var(--disabled_opacity);
-	background-color: var(--button_bg_disabled); /* TODO using `button_` here looks wrong */
 	outline: none;
 }
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
@@ -535,39 +538,40 @@ currently `:disabled` overrides this */
 }
 :where(button.color_a) {
 	/* TODO change to setting a variable */
-	background-color: var(--fill_color_a);
+	--fill_color: var(--fill_color_a);
 	--border_color: var(--border_color_a);
 }
 :where(button.color_b) {
-	background-color: var(--fill_color_b);
+	--fill_color: var(--fill_color_b);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
 }
 :where(button.color_c) {
-	background-color: var(--fill_color_c);
+	--fill_color: var(--fill_color_c);
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
 }
 :where(button.color_d) {
-	background-color: var(--fill_color_d);
+	--fill_color: var(--fill_color_d);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
 }
 :where(button.color_e) {
-	background-color: var(--fill_color_e);
+	--fill_color: var(--fill_color_e);
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
 }
 :where(button.color_f) {
-	background-color: var(--fill_color_f);
+	--fill_color: var(--fill_color_f);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
 }
 :where(button.color_g) {
-	background-color: var(--fill_color_g);
+	--fill_color: var(--fill_color_g);
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
 }
+/* TODO set text_color */
 :where(button.selected.color_a) {
 	color: var(--color_a_5);
 }
@@ -590,7 +594,7 @@ currently `:disabled` overrides this */
 	color: var(--color_g_5);
 }
 :where(button.selected) {
-	background-color: var(--button_bg_selected);
+	background-color: var(--button_fill_selected);
 }
 
 /* TODO could improve this with the coming `:has` selector

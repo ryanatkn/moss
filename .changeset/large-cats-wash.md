@@ -1,5 +1,5 @@
 ---
-"@ryanatkn/moss": minor
+'@ryanatkn/moss': patch
 ---
 
-rename `button_bg_selected` from `button_bg_active`
+add `button_fill_selected`

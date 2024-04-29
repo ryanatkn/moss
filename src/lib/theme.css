@@ -216,11 +216,12 @@
 	--radius_xs: 0.8rem;
 	--radius_xs2: 0.5rem;
 	--radius_xs3: 0.3rem;
-	--button_bg: var(--fg_1);
-	--button_bg_hover: var(--fg_2);
-	--button_bg_selected: var(--bg_3);
-	--button_bg_disabled: transparent;
-	--input_bg: var(--bg_5);
+	--button_fill: var(--fg_1);
+	--button_fill_hover: var(--fg_2);
+	--button_fill_active: var(--bg_3);
+	--button_fill_selected: var(--bg_3);
+	--button_fill_disabled: transparent;
+	--input_fill: var(--bg_5);
 	--input_padding_y: 0;
 	--input_padding_x: var(--space_lg);
 	--input_width_min: 100px;
