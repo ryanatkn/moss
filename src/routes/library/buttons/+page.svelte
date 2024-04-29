@@ -33,9 +33,11 @@
 		</div>
 		<p>
 			Buttons have a <code>.selected</code> state that can be used for various UI purposes, like
-			showing a selected item in a menu or a styling button's <code>aria-pressed</code> state. Instead
-			of having two distinct styles of buttons with outlined and filled variants, Moss makes filled buttons
-			the default, and selected buttons are outlined.
+			showing a selected item in a menu or a styling button's <code>aria-pressed</code> state.
+			Instead of having two distinct styles of buttons with outlined and filled variants, Moss makes
+			filled buttons the default, and selected buttons are outlined. There's also the
+			<code>.deselectable</code> modifier class for buttons that can be clicked when selected. Themes
+			can customize this behavior.
 		</p>
 		<button disabled class:mb_xs>disabled button</button>
 		<button class="selected" class:mb_xs>button.selected</button>

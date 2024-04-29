@@ -380,6 +380,11 @@ export const fg: Style_Variable = {
 };
 /* these are light or dark with a low alpha, so they nest/stack arbitrarily */
 // TODO these inconsistently don't use tint, unlike bg/fg
+export const bg_0: Style_Variable = {
+	name: 'bg_0',
+	light: '#000',
+	dark: '#fff',
+};
 export const bg_1: Style_Variable = {
 	name: 'bg_1',
 	light: 'var(--lighten_1)',
@@ -425,7 +430,16 @@ export const bg_9: Style_Variable = {
 	light: 'var(--lighten_9)',
 	dark: 'var(--darken_9)',
 };
-export const bg_10: Style_Variable = {name: 'bg_10', light: '#fff', dark: '#000'}; // TODO 0 variant? or remove 10? add to lighten/darken;
+export const bg_10: Style_Variable = {
+	name: 'bg_10',
+	light: '#fff',
+	dark: '#000',
+};
+export const fg_0: Style_Variable = {
+	name: 'fg_0',
+	light: '#fff',
+	dark: '#000',
+};
 export const fg_1: Style_Variable = {
 	name: 'fg_1',
 	light: 'var(--darken_1)',
@@ -471,39 +485,43 @@ export const fg_9: Style_Variable = {
 	light: 'var(--darken_9)',
 	dark: 'var(--lighten_9)',
 };
-export const fg_10: Style_Variable = {name: 'fg_10', light: '#000', dark: '#fff'}; // TODO 0 variant? or remove 10? add to lighten/darken;
-export const fill_color_a: Style_Variable = {
-	name: 'fill_color_a',
+export const fg_10: Style_Variable = {
+	name: 'fg_10',
+	light: '#000',
+	dark: '#fff',
+};
+export const fill_a: Style_Variable = {
+	name: 'fill_a',
 	light: 'var(--color_a_4)',
 	dark: 'var(--color_a_6)',
 };
-export const fill_color_b: Style_Variable = {
-	name: 'fill_color_b',
+export const fill_b: Style_Variable = {
+	name: 'fill_b',
 	light: 'var(--color_b_4)',
 	dark: 'var(--color_b_6)',
 };
-export const fill_color_c: Style_Variable = {
-	name: 'fill_color_c',
+export const fill_c: Style_Variable = {
+	name: 'fill_c',
 	light: 'var(--color_c_4)',
 	dark: 'var(--color_c_6)',
 };
-export const fill_color_d: Style_Variable = {
-	name: 'fill_color_d',
+export const fill_d: Style_Variable = {
+	name: 'fill_d',
 	light: 'var(--color_d_4)',
 	dark: 'var(--color_d_6)',
 };
-export const fill_color_e: Style_Variable = {
-	name: 'fill_color_e',
+export const fill_e: Style_Variable = {
+	name: 'fill_e',
 	light: 'var(--color_e_4)',
 	dark: 'var(--color_e_6)',
 };
-export const fill_color_f: Style_Variable = {
-	name: 'fill_color_f',
+export const fill_f: Style_Variable = {
+	name: 'fill_f',
 	light: 'var(--color_f_4)',
 	dark: 'var(--color_f_6)',
 };
-export const fill_color_g: Style_Variable = {
-	name: 'fill_color_g',
+export const fill_g: Style_Variable = {
+	name: 'fill_g',
 	light: 'var(--color_g_4)',
 	dark: 'var(--color_g_6)',
 };
@@ -724,19 +742,23 @@ export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
 /* button colors */
-export const button_bg: Style_Variable = {name: 'button_bg', light: 'var(--fg_1)'};
-export const button_bg_hover: Style_Variable = {name: 'button_bg_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
-export const button_bg_selected: Style_Variable = {
-	name: 'button_bg_selected',
+export const button_fill: Style_Variable = {name: 'button_fill', light: 'var(--fg_1)'};
+export const button_fill_hover: Style_Variable = {name: 'button_fill_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
+export const button_fill_active: Style_Variable = {
+	name: 'button_fill_active',
 	light: 'var(--bg_3)',
 };
-export const button_bg_disabled: Style_Variable = {
-	name: 'button_bg_disabled',
+export const button_fill_selected: Style_Variable = {
+	name: 'button_fill_selected',
+	light: 'var(--bg_3)',
+};
+export const button_fill_disabled: Style_Variable = {
+	name: 'button_fill_disabled',
 	light: 'transparent',
 };
 
 /* inputs */
-export const input_bg: Style_Variable = {name: 'input_bg', light: 'var(--bg_5)'};
+export const input_fill: Style_Variable = {name: 'input_fill', light: 'var(--bg_5)'};
 export const input_padding_y: Style_Variable = {name: 'input_padding_y', light: '0'};
 export const input_padding_x: Style_Variable = {name: 'input_padding_x', light: 'var(--space_lg)'};
 export const input_width_min: Style_Variable = {name: 'input_width_min', light: '100px'};
@@ -1515,6 +1537,7 @@ export const default_variables: Style_Variable[] = [
 	fg,
 	/* these are light or dark with a low alpha, so they nest/stack arbitrarily */
 	// TODO these inconsistently don't use tint, unlike bg/fg
+	bg_0,
 	bg_1,
 	bg_2,
 	bg_3,
@@ -1525,6 +1548,7 @@ export const default_variables: Style_Variable[] = [
 	bg_8,
 	bg_9,
 	bg_10,
+	fg_0,
 	fg_1,
 	fg_2,
 	fg_3,
@@ -1535,13 +1559,13 @@ export const default_variables: Style_Variable[] = [
 	fg_8,
 	fg_9,
 	fg_10,
-	fill_color_a,
-	fill_color_b,
-	fill_color_c,
-	fill_color_d,
-	fill_color_e,
-	fill_color_f,
-	fill_color_g,
+	fill_a,
+	fill_b,
+	fill_c,
+	fill_d,
+	fill_e,
+	fill_f,
+	fill_g,
 	// TODO probably need more variants, 5 total?
 	/* text colors don't use alpha because it affects performance too much */
 	text_color,
@@ -1651,13 +1675,14 @@ export const default_variables: Style_Variable[] = [
 	radius_xs3,
 
 	/* button colors */
-	button_bg,
-	button_bg_hover,
-	button_bg_selected,
-	button_bg_disabled,
+	button_fill,
+	button_fill_hover,
+	button_fill_active,
+	button_fill_selected,
+	button_fill_disabled,
 
 	/* inputs */
-	input_bg,
+	input_fill,
 	input_padding_y,
 	input_padding_x,
 	input_width_min,
