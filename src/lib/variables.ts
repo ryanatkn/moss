@@ -490,38 +490,38 @@ export const fg_10: Style_Variable = {
 	light: '#000',
 	dark: '#fff',
 };
-export const fill_color_a: Style_Variable = {
-	name: 'fill_color_a',
+export const fill_a: Style_Variable = {
+	name: 'fill_a',
 	light: 'var(--color_a_4)',
 	dark: 'var(--color_a_6)',
 };
-export const fill_color_b: Style_Variable = {
-	name: 'fill_color_b',
+export const fill_b: Style_Variable = {
+	name: 'fill_b',
 	light: 'var(--color_b_4)',
 	dark: 'var(--color_b_6)',
 };
-export const fill_color_c: Style_Variable = {
-	name: 'fill_color_c',
+export const fill_c: Style_Variable = {
+	name: 'fill_c',
 	light: 'var(--color_c_4)',
 	dark: 'var(--color_c_6)',
 };
-export const fill_color_d: Style_Variable = {
-	name: 'fill_color_d',
+export const fill_d: Style_Variable = {
+	name: 'fill_d',
 	light: 'var(--color_d_4)',
 	dark: 'var(--color_d_6)',
 };
-export const fill_color_e: Style_Variable = {
-	name: 'fill_color_e',
+export const fill_e: Style_Variable = {
+	name: 'fill_e',
 	light: 'var(--color_e_4)',
 	dark: 'var(--color_e_6)',
 };
-export const fill_color_f: Style_Variable = {
-	name: 'fill_color_f',
+export const fill_f: Style_Variable = {
+	name: 'fill_f',
 	light: 'var(--color_f_4)',
 	dark: 'var(--color_f_6)',
 };
-export const fill_color_g: Style_Variable = {
-	name: 'fill_color_g',
+export const fill_g: Style_Variable = {
+	name: 'fill_g',
 	light: 'var(--color_g_4)',
 	dark: 'var(--color_g_6)',
 };
@@ -1559,13 +1559,13 @@ export const default_variables: Style_Variable[] = [
 	fg_8,
 	fg_9,
 	fg_10,
-	fill_color_a,
-	fill_color_b,
-	fill_color_c,
-	fill_color_d,
-	fill_color_e,
-	fill_color_f,
-	fill_color_g,
+	fill_a,
+	fill_b,
+	fill_c,
+	fill_d,
+	fill_e,
+	fill_f,
+	fill_g,
 	// TODO probably need more variants, 5 total?
 	/* text colors don't use alpha because it affects performance too much */
 	text_color,
