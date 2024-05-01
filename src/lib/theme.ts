@@ -1,7 +1,9 @@
 import {default_variables} from '$lib/variables.js';
 import {default_themes} from '$lib/themes.js'; // TODO shoudln't be a dep, see usage below
 
-// TODO this is more like `Color_Scheme_Setting`, because `Color_Scheme` is an arbitrary string if it means `color-scheme` - https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+ */
 export type Color_Scheme = 'dark' | 'light' | 'auto';
 
 export const color_schemes: Color_Scheme[] = ['light', 'auto', 'dark'];
