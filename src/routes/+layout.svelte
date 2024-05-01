@@ -15,7 +15,7 @@
 	// import Contextmenu_Root from '$lib/Contextmenu_Root.svelte';
 	// import Dialog from '$lib/Dialog.svelte';
 	// import Settings from '$routes/Settings.svelte';
-	// import {contextmenu_action} from '$lib/contextmenu.svelte.js';
+	// import {contextmenu_action} from '$lib/contextmenu_helpers.svelte.js';
 
 	interface Props {
 		children: Snippet;
