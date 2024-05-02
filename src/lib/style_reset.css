@@ -209,7 +209,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-left-width: var(--border_width_3);
 	border-radius: var(--radius_xs);
 	padding: var(--space_md);
-	color: var(--color, var(--text_2));
+	color: var(--text_color, var(--text_2));
 	background-color: var(--fg_1);
 }
 :where(aside:not(.unstyled):hover) {
@@ -219,7 +219,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 :where(blockquote:not(.unstyled)) {
 	border-radius: var(--radius_xs);
 	padding: var(--space_md);
-	color: var(--color, var(--text_2));
+	color: var(--text_color, var(--text_2));
 	background-color: var(--fg_1);
 }
 
@@ -228,7 +228,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	font-weight: 600;
 	-webkit-hyphens: none;
 	hyphens: none;
-	color: var(--color, var(--text_2));
+	color: var(--text_color, var(--text_2));
 	background-color: var(--fg_1);
 	padding: 0 var(--space_xs2);
 	border-radius: var(--radius_xs);
@@ -238,7 +238,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
 	/* TODO check for `Code` before adding this - white-space: break-spaces; */
 	font-family: var(--font_mono);
-	color: var(--color, var(--text_2));
+	color: var(--text_color, var(--text_2));
 	overflow: auto;
 	max-width: 100%;
 }
