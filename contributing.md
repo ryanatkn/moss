@@ -18,10 +18,11 @@ Let's chat publicly on [Discord](https://discord.gg/YU5tyeK72X)
 or here in the [Github issues](https://github.com/ryanatkn/moss).
 
 I've been growing Moss slowly over 5+ years
-to support [Zzz](https://zzz.ryanatkn.com/) and [my other projects](http://www.ryanatkn.com/),with regular breaking changes and experimental patterns.
+to support [Zzz](https://zzz.ryanatkn.com/) and [my other projects](http://www.ryanatkn.com/),
+with regular breaking changes and experimental patterns.
 
 If I were to start fresh today, it's possible Tailwind would be a good foundation
-because of the changes made in v3 and v4, which arrived years after I started Moss.
+because of the changes made in versions 3 and 4, which arrived years after I started Moss.
 I don't want to reinvent Tailwind but badly,
 so when v4 is out (it's close as of April 2024)
 I'll start evaluating it to see if Moss should transform
@@ -31,7 +32,7 @@ from a standalone framework to an opinionated Tailwind config.
 
 I run community spaces for my projects, including Moss,
 on [Discord](https://discord.gg/YU5tyeK72X)
-and [Spiderspace](https://www.spiderspace.org/).
+and [spiderspace.org](https://www.spiderspace.org/).
 
 Please [open issues](https://github.com/ryanatkn/Moss/issues) with any bugs
 or other things you would like to discuss.
