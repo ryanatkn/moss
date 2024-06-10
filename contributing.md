@@ -10,7 +10,11 @@ The guiding principles of Moss:
 
 - build around CSS custom properties, primarily for runtime theming
 - expose APIs to end-users for last-mile theming, customization, and content creation
-- make the DX powerful, flexible, and ergonomic
+- make the DX flexible and ergonomic
+
+Moss differs from Tailwind in that it starts from CSS custom properties and uses them everywhere.
+It also has more opinions than most frameworks,
+but a goal is to let both developers and end-users shape it for their needs.
 
 If this sounds interesting to you,
 I'm welcoming help to iterate on APIs to get Moss to 1.0 and beyond.
@@ -20,13 +24,6 @@ or here in the [Github issues](https://github.com/ryanatkn/moss).
 I've been growing Moss slowly over 5+ years
 to support [Zzz](https://zzz.ryanatkn.com/) and [my other projects](http://www.ryanatkn.com/),
 with regular breaking changes and experimental patterns.
-
-If I were to start fresh today, it's possible Tailwind would be a good foundation
-because of the changes made in versions 3 and 4, which arrived years after I started Moss.
-I don't want to reinvent Tailwind but badly,
-so when v4 is out (it's close as of April 2024)
-I'll start evaluating it to see if Moss should transform
-from a standalone framework to an opinionated Tailwind config.
 
 ## Community
 
