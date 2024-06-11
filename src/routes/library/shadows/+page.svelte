@@ -70,16 +70,6 @@
 </Tome_Detail>
 
 <style>
-	.swatch {
-		font-family: var(--font_mono);
-		margin-bottom: var(--space_md);
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
-		grid-auto-flow: row;
-	}
-	.color {
-		height: var(--input_height_sm);
-	}
 	.shadow_example {
 		position: relative;
 		padding: var(--space_md);

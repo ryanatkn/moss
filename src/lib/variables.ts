@@ -780,78 +780,66 @@ export const input_height_inner: Style_Variable = {
 // which would require a pseduo-element,
 // but that's heavier and requires the element to be positioned (I think?)
 
-// TODO maybe extract  `0.1` etc as `shadow_opacity_xs`, but what about using colors? do we need composable versions of the color declarations?
-
-// TODO maybe even scale these out programmatically? at runtime for the TS? data could always be baked as ts/json
-
-// TODO extract color vars - abstracting opacity too?
-
-// TODO should glow/shadow be the same thing, just a different color? maybe that concept is higher level?
-
-// maybe:
+// TODO maybe:
 // - shadow and glow - color-scheme-agnostic
 // - lift and depth that have both shadow and glow, color-scheme-aware
 
 export interface Create_Shadow_Options {
 	inset?: boolean;
 	scale?: number;
-	scale_x?: number;
-	scale_y?: number;
-	alpha?: number; // TODO BLOCK multiple instead of add? different property?
-	spread?: number;
 }
 
 export const create_shadow_xs = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
-	const scale_x = options?.scale_x ?? options?.scale ?? 1;
-	const scale_y = options?.scale_y ?? options?.scale ?? 1;
+	const scale_x = options?.scale ?? 1;
+	const scale_y = options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	const alpha = options?.alpha ?? 0.2;
-	const spread = options?.spread ?? 0;
+	const alpha = 0.2;
+	const spread = 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
 	return `${scale_x * 0.5 + spread_x}px ${scale_y * 1 + spread_y}px 3px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
 export const create_shadow_sm = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
-	const scale_x = options?.scale_x ?? options?.scale ?? 1;
-	const scale_y = options?.scale_y ?? options?.scale ?? 1;
+	const scale_x = options?.scale ?? 1;
+	const scale_y = options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	const alpha = options?.alpha ?? 0.3;
-	const spread = options?.spread ?? 0;
+	const alpha = 0.3;
+	const spread = 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
 	return `${scale_x * 1 + spread_x}px ${scale_y * 2 + spread_y}px 4px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
 export const create_shadow_md = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
-	const scale_x = options?.scale_x ?? options?.scale ?? 1;
-	const scale_y = options?.scale_y ?? options?.scale ?? 1;
+	const scale_x = options?.scale ?? 1;
+	const scale_y = options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	const alpha = options?.alpha ?? 0.4;
-	const spread = options?.spread ?? 0;
+	const alpha = 0.4;
+	const spread = 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
 	return `${scale_x * 1.5 + spread_x}px ${scale_y * 3 + spread_y}px 6px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
 export const create_shadow_lg = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
-	const scale_x = options?.scale_x ?? options?.scale ?? 1;
-	const scale_y = options?.scale_y ?? options?.scale ?? 1;
+	const scale_x = options?.scale ?? 1;
+	const scale_y = options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	const alpha = options?.alpha ?? 0.6;
-	const spread = options?.spread ?? 0;
+	const alpha = 0.6;
+	const spread = 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
 	return `${scale_x * 2 + spread_x}px ${scale_y * 4 + spread_y}px 10px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
 export const create_shadow_xl = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
-	const scale_x = options?.scale_x ?? options?.scale ?? 1;
-	const scale_y = options?.scale_y ?? options?.scale ?? 1;
+	const scale_x = options?.scale ?? 1;
+	const scale_y = options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	const alpha = options?.alpha ?? 0.8;
-	const spread = options?.spread ?? 0;
+	const alpha = 0.8;
+	const spread = 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
 	return `${scale_x * 3 + spread_x}px ${scale_y * 5 + spread_y}px 20px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
