@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.3.1
+
+### Patch Changes
+
+- tweak shadows ([#13](https://github.com/ryanatkn/moss/pull/13))
+
 ## 0.3.0
 
 ### Minor Changes

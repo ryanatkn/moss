@@ -5,7 +5,7 @@ import type {Src_Json} from '@ryanatkn/gro/src_json.js';
 
 export const package_json = {
 	name: '@ryanatkn/moss',
-	version: '0.3.0',
+	version: '0.3.1',
 	description: 'CSS framework',
 	motto: 'magical organic stylesheets',
 	icon: '🌿',
@@ -80,7 +80,7 @@ export const package_json = {
 
 export const src_json = {
 	name: '@ryanatkn/moss',
-	version: '0.3.0',
+	version: '0.3.1',
 	modules: {
 		'./package.json': {path: 'package.json', declarations: []},
 		'./style_animations.css': {path: 'style_animations.css', declarations: []},
