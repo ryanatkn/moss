@@ -806,35 +806,25 @@ export const create_shadow_xs = (color: string, options?: Create_Shadow_Options)
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	const alpha = options?.alpha ?? 0.1;
+	const alpha = options?.alpha ?? 0.3;
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 0.25 + spread_x}px ${scale_y * 0.5 + spread_y}px 2px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 0.5 + spread_x}px ${scale_y * 1 + spread_y}px 3px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	// return `${scale_x * 0.25 + spread_x}px ${scale_y * 0.5 + spread_y}px 2px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 0.5 + spread_x}px ${scale_y * 1 + spread_y}px 3px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 0.5 + spread_x}px ${scale_y * 0.75 + spread_y}px 3px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
 export const create_shadow_sm = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
 	const suffix = inset ? ' inset' : '';
-	const alpha = options?.alpha ?? 0.15;
+	const alpha = options?.alpha ?? 0.35;
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 0.5 + spread_x}px ${scale_y * 2 + spread_y}px 4px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 1 + spread_x}px ${scale_y * 4 + spread_y}px 6px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 1 + spread_x}px ${scale_y * 4 + spread_y}px 6px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
 export const create_shadow_md = (color: string, options?: Create_Shadow_Options): string => {
-	const inset = options?.inset;
-	const scale_x = options?.scale_x ?? options?.scale ?? 1;
-	const scale_y = options?.scale_y ?? options?.scale ?? 1;
-	const suffix = inset ? ' inset' : '';
-	const alpha = options?.alpha ?? 0.2;
-	const spread = options?.spread ?? 0;
-	const spread_x = spread * (scale_x > 0 ? 1 : -1);
-	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 1 + spread_x}px ${scale_y * 3 + spread_y}px 8px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 1.5 + spread_x}px ${scale_y * 6 + spread_y}px 12px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
-};
-export const create_shadow_lg = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
@@ -843,9 +833,9 @@ export const create_shadow_lg = (color: string, options?: Create_Shadow_Options)
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 2 + spread_x}px ${scale_y * 4 + spread_y}px 12px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 3 + spread_x}px ${scale_y * 8 + spread_y}px 16px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 1.5 + spread_x}px ${scale_y * 6 + spread_y}px 12px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
-export const create_shadow_xl = (color: string, options?: Create_Shadow_Options): string => {
+export const create_shadow_lg = (color: string, options?: Create_Shadow_Options): string => {
 	const inset = options?.inset;
 	const scale_x = options?.scale_x ?? options?.scale ?? 1;
 	const scale_y = options?.scale_y ?? options?.scale ?? 1;
@@ -854,7 +844,18 @@ export const create_shadow_xl = (color: string, options?: Create_Shadow_Options)
 	const spread = options?.spread ?? 0;
 	const spread_x = spread * (scale_x > 0 ? 1 : -1);
 	const spread_y = spread * (scale_y > 0 ? 1 : -1);
-	return `${scale_x * 3 + spread_x}px ${scale_y * 6 + spread_y}px 16px ${spread}px hsla(var(--${color}), ${alpha})${suffix}, ${scale_x * 4 + spread_x}px ${scale_y * 8 + spread_y}px 24px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+	return `${scale_x * 3 + spread_x}px ${scale_y * 8 + spread_y}px 18px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
+};
+export const create_shadow_xl = (color: string, options?: Create_Shadow_Options): string => {
+	const inset = options?.inset;
+	const scale_x = options?.scale_x ?? options?.scale ?? 1;
+	const scale_y = options?.scale_y ?? options?.scale ?? 1;
+	const suffix = inset ? ' inset' : '';
+	const alpha = options?.alpha ?? 0.8;
+	const spread = options?.spread ?? 0;
+	const spread_x = spread * (scale_x > 0 ? 1 : -1);
+	const spread_y = spread * (scale_y > 0 ? 1 : -1);
+	return `${scale_x * 4 + spread_x}px ${scale_y * 8 + spread_y}px 30px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
 
 // TODO better name than `shadow_color`? it's more like "glow" in dark mode
