@@ -39,7 +39,7 @@
 		<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" />
 		<Unfinished_Implementation_Warning />
 		{#each color_variants as color_variant}
-			<section class="shadow_{color_variant}_inset_xs">
+			<section>
 				{#each shadow_variants as variant}
 					<div class="shadow_example" style:box-shadow="var(--shadow_{color_variant}_{variant})">
 						<Style_Variable_Button name="shadow_{color_variant}_{variant}" />
