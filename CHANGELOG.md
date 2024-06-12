@@ -1,5 +1,15 @@
 # @ryanatkn/moss
 
+## 0.4.0
+
+### Minor Changes
+
+- extract composable shadow variables and remove the create shadow helpers ([#14](https://github.com/ryanatkn/moss/pull/14))
+
+### Patch Changes
+
+- extract hsl color variables ([#15](https://github.com/ryanatkn/moss/pull/15))
+
 ## 0.3.2
 
 ### Patch Changes
