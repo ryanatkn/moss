@@ -2,4 +2,4 @@
 '@ryanatkn/moss': minor
 ---
 
-refactor shadows and remove the create shadow helpers
+extract composable shadow variables and remove the create shadow helpers
