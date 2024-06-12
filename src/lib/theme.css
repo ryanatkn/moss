@@ -293,7 +293,7 @@
 	--input_height_inner: calc(
 		var(--input_height) - 2 * var(--border_width) - 2 * var(--input_padding_y)
 	);
-	--shadow_color: var(--tint_hue), var(--tint_saturation), 6%;
+	--shadow_color: var(--tint_hue) var(--tint_saturation) 6%;
 	--shadow_a_color: var(--hsl_a_7);
 	--shadow_b_color: var(--hsl_b_7);
 	--shadow_c_color: var(--hsl_c_7);
@@ -633,7 +633,7 @@
 	--border_color_3: hsl(var(--tint_hue), 60%, 80%, 50%);
 	--border_color_4: hsl(var(--tint_hue), 60%, 80%, 40%);
 	--border_color_5: hsl(var(--tint_hue), 60%, 80%, 25%);
-	--shadow_color: var(--tint_hue), var(--tint_saturation), 82%;
+	--shadow_color: var(--tint_hue) var(--tint_saturation) 82%;
 	--shadow_a_color: var(--hsl_a_3);
 	--shadow_b_color: var(--hsl_b_3);
 	--shadow_c_color: var(--hsl_c_3);

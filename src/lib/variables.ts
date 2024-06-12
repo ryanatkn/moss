@@ -1047,8 +1047,8 @@ export interface Create_Shadow_Options {
 // but duplicating all of those variables feels bad, but the alternative makes the basic colors much less ergnomic
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
-	light: 'var(--tint_hue), var(--tint_saturation), 6%',
-	dark: 'var(--tint_hue), var(--tint_saturation), 82%',
+	light: 'var(--tint_hue) var(--tint_saturation) 6%',
+	dark: 'var(--tint_hue) var(--tint_saturation) 82%',
 };
 export const shadow_a_color: Style_Variable = {
 	name: 'shadow_a_color',
