@@ -1041,10 +1041,6 @@ export interface Create_Shadow_Options {
 	scale?: number;
 }
 
-// TODO BLOCK these are placeholders - we want to modify the alpha but not using `color-mix` for performance,
-// so these answer may be to duplicate all color variables with the `hsl` parts pulled out,
-// and then the color variables use the hsl variants with `hsl()` baked in,
-// but duplicating all of those variables feels bad, but the alternative makes the basic colors much less ergnomic
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
 	light: 'var(--tint_hue) var(--tint_saturation) 6%',
