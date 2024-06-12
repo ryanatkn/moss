@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.3.2
+
+### Patch Changes
+
+- remove `:where` from style components ([a9199e0](https://github.com/ryanatkn/moss/commit/a9199e0))
+
 ## 0.3.1
 
 ### Patch Changes
