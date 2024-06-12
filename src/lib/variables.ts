@@ -889,63 +889,63 @@ export const shadow_g_color: Style_Variable = {
 };
 
 export const shadow_values_xs: Style_Variable = {
-	name: 'shadow_xs',
+	name: 'shadow_values_xs',
 	light: '0.5px 1px 3px 0px',
 };
 export const shadow_values_sm: Style_Variable = {
-	name: 'shadow_sm',
+	name: 'shadow_values_sm',
 	light: '1px 2px 4px 0px',
 };
 export const shadow_values_md: Style_Variable = {
-	name: 'shadow_md',
+	name: 'shadow_values_md',
 	light: '1.5px 3px 6px 0px',
 };
 export const shadow_values_lg: Style_Variable = {
-	name: 'shadow_lg',
+	name: 'shadow_values_lg',
 	light: '2px 4px 10px 0px',
 };
 export const shadow_values_xl: Style_Variable = {
-	name: 'shadow_xl',
+	name: 'shadow_values_xl',
 	light: '3px 5px 20px 0px',
 };
 export const shadow_values_outset_xs: Style_Variable = {
-	name: 'shadow_xs',
+	name: 'shadow_values_outset_xs',
 	light: '-0.5px -1px 3px 0px',
 };
 export const shadow_values_outset_sm: Style_Variable = {
-	name: 'shadow_sm',
+	name: 'shadow_values_outset_sm',
 	light: '-1px -2px 4px 0px',
 };
 export const shadow_values_outset_md: Style_Variable = {
-	name: 'shadow_md',
+	name: 'shadow_values_outset_md',
 	light: '-1.5px -3px 6px 0px',
 };
 export const shadow_values_outset_lg: Style_Variable = {
-	name: 'shadow_lg',
+	name: 'shadow_values_outset_lg',
 	light: '-2px -4px 10px 0px',
 };
 export const shadow_values_outset_xl: Style_Variable = {
-	name: 'shadow_xl',
+	name: 'shadow_values_outset_xl',
 	light: '-3px -5px 20px 0px',
 };
 export const shadow_alpha_xs: Style_Variable = {
-	name: 'shadow_xs',
+	name: 'shadow_alpha_xs',
 	light: '0.2',
 };
 export const shadow_alpha_sm: Style_Variable = {
-	name: 'shadow_sm',
+	name: 'shadow_alpha_sm',
 	light: '0.3',
 };
 export const shadow_alpha_md: Style_Variable = {
-	name: 'shadow_md',
+	name: 'shadow_alpha_md',
 	light: '0.4',
 };
 export const shadow_alpha_lg: Style_Variable = {
-	name: 'shadow_lg',
+	name: 'shadow_alpha_lg',
 	light: '0.6',
 };
 export const shadow_alpha_xl: Style_Variable = {
-	name: 'shadow_xl',
+	name: 'shadow_alpha_xl',
 	light: '0.8',
 };
 
