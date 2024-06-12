@@ -837,6 +837,7 @@ export const shadow_g_color: Style_Variable = {
 // These are grouped differently than the normal convention (xs-xl)
 // because the `outset` variants have negative positions, but otherwise match.
 // TODO is this the best granularity? combines x/y offsets with blur and spread
+// TODO is there a significant performance implication to using these variables instead of inlining in the shadow variables?
 export const shadow_values_xs: Style_Variable = {
 	name: 'shadow_values_xs',
 	light: '0.5px 1px 3px 0px',
