@@ -845,6 +845,7 @@ export const create_shadow_xl = (color: string, options?: Create_Shadow_Options)
 	return `${scale_x * 3 + spread_x}px ${scale_y * 5 + spread_y}px 20px ${spread}px hsla(var(--${color}), ${alpha})${suffix}`;
 };
 
+// TODO tweak these colors
 // TODO better name than `shadow_color`? it's more like "glow" in dark mode
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
@@ -853,59 +854,120 @@ export const shadow_color: Style_Variable = {
 };
 export const shadow_a_color: Style_Variable = {
 	name: 'shadow_a_color',
-	light: 'var(--hue_a), 50%, 28%', // TODO @hsl_variables color_a_7
-	dark: 'var(--hue_a), 50%, 82%', // TODO @hsl_variables color_a_3
+	light: 'var(--hue_a), 50%, 28%', // TODO @multiple hsl_variables color_a_7
+	dark: 'var(--hue_a), 50%, 82%', // TODO @multiple hsl_variables color_a_3
 };
 export const shadow_b_color: Style_Variable = {
 	name: 'shadow_b_color',
-	light: 'var(--hue_b), 50%, 28%', // TODO @hsl_variables color_b_7
-	dark: 'var(--hue_b), 50%, 82%', // TODO @hsl_variables color_b_3
+	light: 'var(--hue_b), 50%, 28%', // TODO @multiple hsl_variables color_b_7
+	dark: 'var(--hue_b), 50%, 82%', // TODO @multiple hsl_variables color_b_3
 };
 export const shadow_c_color: Style_Variable = {
 	name: 'shadow_c_color',
-	light: 'var(--hue_c), 50%, 28%', // TODO @hsl_variables color_c_7
-	dark: 'var(--hue_c), 50%, 82%', // TODO @hsl_variables color_c_3
+	light: 'var(--hue_c), 50%, 28%', // TODO @multiple hsl_variables color_c_7
+	dark: 'var(--hue_c), 50%, 82%', // TODO @multiple hsl_variables color_c_3
 };
 export const shadow_d_color: Style_Variable = {
 	name: 'shadow_d_color',
-	light: 'var(--hue_d), 50%, 28%', // TODO @hsl_variables color_d_7
-	dark: 'var(--hue_d), 50%, 82%', // TODO @hsl_variables color_d_3
+	light: 'var(--hue_d), 50%, 28%', // TODO @multiple hsl_variables color_d_7
+	dark: 'var(--hue_d), 50%, 82%', // TODO @multiple hsl_variables color_d_3
 };
 export const shadow_e_color: Style_Variable = {
 	name: 'shadow_e_color',
-	light: 'var(--hue_e), 50%, 28%', // TODO @hsl_variables color_e_7
-	dark: 'var(--hue_e), 50%, 82%', // TODO @hsl_variables color_e_3
+	light: 'var(--hue_e), 50%, 28%', // TODO @multiple hsl_variables color_e_7
+	dark: 'var(--hue_e), 50%, 82%', // TODO @multiple hsl_variables color_e_3
 };
 export const shadow_f_color: Style_Variable = {
 	name: 'shadow_f_color',
-	light: 'var(--hue_f), 50%, 28%', // TODO @hsl_variables color_f_7
-	dark: 'var(--hue_f), 50%, 82%', // TODO @hsl_variables color_f_3
+	light: 'var(--hue_f), 50%, 28%', // TODO @multiple hsl_variables color_f_7
+	dark: 'var(--hue_f), 50%, 82%', // TODO @multiple hsl_variables color_f_3
 };
 export const shadow_g_color: Style_Variable = {
 	name: 'shadow_g_color',
-	light: 'var(--hue_g), 50%, 28%', // TODO @hsl_variables color_g_7
-	dark: 'var(--hue_g), 50%, 82%', // TODO @hsl_variables color_g_3
+	light: 'var(--hue_g), 50%, 28%', // TODO @multiple hsl_variables color_g_7
+	dark: 'var(--hue_g), 50%, 82%', // TODO @multiple hsl_variables color_g_3
+};
+
+export const shadow_values_xs: Style_Variable = {
+	name: 'shadow_xs',
+	light: '0.5px 1px 3px 0px',
+};
+export const shadow_values_sm: Style_Variable = {
+	name: 'shadow_sm',
+	light: '1px 2px 4px 0px',
+};
+export const shadow_values_md: Style_Variable = {
+	name: 'shadow_md',
+	light: '1.5px 3px 6px 0px',
+};
+export const shadow_values_lg: Style_Variable = {
+	name: 'shadow_lg',
+	light: '2px 4px 10px 0px',
+};
+export const shadow_values_xl: Style_Variable = {
+	name: 'shadow_xl',
+	light: '3px 5px 20px 0px',
+};
+export const shadow_values_outset_xs: Style_Variable = {
+	name: 'shadow_xs',
+	light: '-0.5px -1px 3px 0px',
+};
+export const shadow_values_outset_sm: Style_Variable = {
+	name: 'shadow_sm',
+	light: '-1px -2px 4px 0px',
+};
+export const shadow_values_outset_md: Style_Variable = {
+	name: 'shadow_md',
+	light: '-1.5px -3px 6px 0px',
+};
+export const shadow_values_outset_lg: Style_Variable = {
+	name: 'shadow_lg',
+	light: '-2px -4px 10px 0px',
+};
+export const shadow_values_outset_xl: Style_Variable = {
+	name: 'shadow_xl',
+	light: '-3px -5px 20px 0px',
+};
+export const shadow_alpha_xs: Style_Variable = {
+	name: 'shadow_xs',
+	light: '0.2',
+};
+export const shadow_alpha_sm: Style_Variable = {
+	name: 'shadow_sm',
+	light: '0.3',
+};
+export const shadow_alpha_md: Style_Variable = {
+	name: 'shadow_md',
+	light: '0.4',
+};
+export const shadow_alpha_lg: Style_Variable = {
+	name: 'shadow_lg',
+	light: '0.6',
+};
+export const shadow_alpha_xl: Style_Variable = {
+	name: 'shadow_xl',
+	light: '0.8',
 };
 
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
-	light: create_shadow_xs('shadow_color'),
+	light: 'var(--shadow_values_xs) hsla(var(--shadow_color), var(--shadow_alpha_xs))',
 };
 export const shadow_sm: Style_Variable = {
 	name: 'shadow_sm',
-	light: create_shadow_sm('shadow_color'),
+	light: 'var(--shadow_values_sm) hsla(var(--shadow_color), var(--shadow_alpha_sm))',
 };
 export const shadow_md: Style_Variable = {
 	name: 'shadow_md',
-	light: create_shadow_md('shadow_color'),
+	light: 'var(--shadow_values_md) hsla(var(--shadow_color), var(--shadow_alpha_md))',
 };
 export const shadow_lg: Style_Variable = {
 	name: 'shadow_lg',
-	light: create_shadow_lg('shadow_color'),
+	light: 'var(--shadow_values_lg) hsla(var(--shadow_color), var(--shadow_alpha_lg))',
 };
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
-	light: create_shadow_xl('shadow_color'),
+	light: 'var(--shadow_values_xl) hsla(var(--shadow_color), var(--shadow_alpha_xl))',
 };
 export const shadow_inset_xs: Style_Variable = {
 	name: 'shadow_inset_xs',
@@ -1687,6 +1749,21 @@ export const default_variables: Style_Variable[] = [
 	shadow_e_color,
 	shadow_f_color,
 	shadow_g_color,
+	shadow_values_xs,
+	shadow_values_sm,
+	shadow_values_md,
+	shadow_values_lg,
+	shadow_values_xl,
+	shadow_values_outset_xs,
+	shadow_values_outset_sm,
+	shadow_values_outset_md,
+	shadow_values_outset_lg,
+	shadow_values_outset_xl,
+	shadow_alpha_xs,
+	shadow_alpha_sm,
+	shadow_alpha_md,
+	shadow_alpha_lg,
+	shadow_alpha_xl,
 	shadow_xs,
 	shadow_sm,
 	shadow_md,
