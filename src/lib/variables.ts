@@ -888,41 +888,44 @@ export const shadow_g_color: Style_Variable = {
 	dark: 'var(--hue_g), 50%, 82%', // TODO @multiple hsl_variables color_g_3
 };
 
+// These are grouped differently than the normal convention (xs-xl)
+// because the `outset` variants have negative positions, but otherwise match.
+// TODO is this the best granularity? combines x/y offsets with blur and spread
 export const shadow_values_xs: Style_Variable = {
 	name: 'shadow_values_xs',
 	light: '0.5px 1px 3px 0px',
-};
-export const shadow_values_sm: Style_Variable = {
-	name: 'shadow_values_sm',
-	light: '1px 2px 4px 0px',
-};
-export const shadow_values_md: Style_Variable = {
-	name: 'shadow_values_md',
-	light: '1.5px 3px 6px 0px',
-};
-export const shadow_values_lg: Style_Variable = {
-	name: 'shadow_values_lg',
-	light: '2px 4px 10px 0px',
-};
-export const shadow_values_xl: Style_Variable = {
-	name: 'shadow_values_xl',
-	light: '3px 5px 20px 0px',
 };
 export const shadow_values_outset_xs: Style_Variable = {
 	name: 'shadow_values_outset_xs',
 	light: '-0.5px -1px 3px 0px',
 };
+export const shadow_values_sm: Style_Variable = {
+	name: 'shadow_values_sm',
+	light: '1px 2px 4px 0px',
+};
 export const shadow_values_outset_sm: Style_Variable = {
 	name: 'shadow_values_outset_sm',
 	light: '-1px -2px 4px 0px',
+};
+export const shadow_values_md: Style_Variable = {
+	name: 'shadow_values_md',
+	light: '1.5px 3px 6px 0px',
 };
 export const shadow_values_outset_md: Style_Variable = {
 	name: 'shadow_values_outset_md',
 	light: '-1.5px -3px 6px 0px',
 };
+export const shadow_values_lg: Style_Variable = {
+	name: 'shadow_values_lg',
+	light: '2px 4px 10px 0px',
+};
 export const shadow_values_outset_lg: Style_Variable = {
 	name: 'shadow_values_outset_lg',
 	light: '-2px -4px 10px 0px',
+};
+export const shadow_values_xl: Style_Variable = {
+	name: 'shadow_values_xl',
+	light: '3px 5px 20px 0px',
 };
 export const shadow_values_outset_xl: Style_Variable = {
 	name: 'shadow_values_outset_xl',
@@ -971,43 +974,43 @@ export const shadow_xl: Style_Variable = {
 };
 export const shadow_inset_xs: Style_Variable = {
 	name: 'shadow_inset_xs',
-	light: create_shadow_xs('shadow_color', {inset: true}),
+	light: 'var(--shadow_values_xs) hsla(var(--shadow_color), var(--shadow_alpha_xs)) inset',
 };
 export const shadow_inset_sm: Style_Variable = {
 	name: 'shadow_inset_sm',
-	light: create_shadow_sm('shadow_color', {inset: true}),
+	light: 'var(--shadow_values_sm) hsla(var(--shadow_color), var(--shadow_alpha_sm)) inset',
 };
 export const shadow_inset_md: Style_Variable = {
 	name: 'shadow_inset_md',
-	light: create_shadow_md('shadow_color', {inset: true}),
+	light: 'var(--shadow_values_md) hsla(var(--shadow_color), var(--shadow_alpha_md)) inset',
 };
 export const shadow_inset_lg: Style_Variable = {
 	name: 'shadow_inset_lg',
-	light: create_shadow_lg('shadow_color', {inset: true}),
+	light: 'var(--shadow_values_lg) hsla(var(--shadow_color), var(--shadow_alpha_lg)) inset',
 };
 export const shadow_inset_xl: Style_Variable = {
 	name: 'shadow_inset_xl',
-	light: create_shadow_xl('shadow_color', {inset: true}),
+	light: 'var(--shadow_values_xl) hsla(var(--shadow_color), var(--shadow_alpha_xl)) inset',
 };
 export const shadow_outset_xs: Style_Variable = {
 	name: 'shadow_outset_xs',
-	light: create_shadow_xs('shadow_color', {inset: true, scale: -1}),
+	light: 'var(--shadow_values_outset_xs) hsla(var(--shadow_color), var(--shadow_alpha_xs)) inset',
 };
 export const shadow_outset_sm: Style_Variable = {
 	name: 'shadow_outset_sm',
-	light: create_shadow_sm('shadow_color', {inset: true, scale: -1}),
+	light: 'var(--shadow_values_outset_sm) hsla(var(--shadow_color), var(--shadow_alpha_sm)) inset',
 };
 export const shadow_outset_md: Style_Variable = {
 	name: 'shadow_outset_md',
-	light: create_shadow_md('shadow_color', {inset: true, scale: -1}),
+	light: 'var(--shadow_values_outset_md) hsla(var(--shadow_color), var(--shadow_alpha_md)) inset',
 };
 export const shadow_outset_lg: Style_Variable = {
 	name: 'shadow_outset_lg',
-	light: create_shadow_lg('shadow_color', {inset: true, scale: -1}),
+	light: 'var(--shadow_values_outset_lg) hsla(var(--shadow_color), var(--shadow_alpha_lg)) inset',
 };
 export const shadow_outset_xl: Style_Variable = {
 	name: 'shadow_outset_xl',
-	light: create_shadow_xl('shadow_color', {inset: true, scale: -1}),
+	light: 'var(--shadow_values_outset_xl) hsla(var(--shadow_color), var(--shadow_alpha_xl)) inset',
 };
 
 export const shadow_a_xs: Style_Variable = {
