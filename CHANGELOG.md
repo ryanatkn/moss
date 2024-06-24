@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.5.0
+
+### Minor Changes
+
+- upgrade `node@22.3` ([#16](https://github.com/ryanatkn/moss/pull/16))
+
 ## 0.4.0
 
 ### Minor Changes
