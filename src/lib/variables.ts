@@ -953,7 +953,7 @@ export const border_color_g: Style_Variable = {
 	name: 'border_color_g',
 	light: 'var(--color_g_5)',
 };
-// TODO BLOCK disabled doesn't work with colors
+// TODO disabled doesn't work with colors
 export const border_disabled: Style_Variable = {
 	name: 'border_disabled',
 	light: 'var(--border_color_3)',

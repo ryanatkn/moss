@@ -12,8 +12,7 @@
 	import type {Theme} from '$lib/theme.js';
 	import Theme_Form from '$routes/Theme_Form.svelte';
 
-	// TODO BLOCK separate correctly from the Themed docs
-	// - show stylesheets
+	// TODO separate correctly from the Themed docs
 
 	const LIBRARY_ITEM_NAME = 'themes';
 
