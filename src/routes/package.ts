@@ -17,7 +17,7 @@ export const package_json = {
 	bugs: 'https://github.com/ryanatkn/moss/issues',
 	funding: 'https://www.ryanatkn.com/funding',
 	type: 'module',
-	engines: {node: '>=20.10'},
+	engines: {node: '>=22.3'},
 	scripts: {
 		start: 'gro dev',
 		dev: 'gro dev',
