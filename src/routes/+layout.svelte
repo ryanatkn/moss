@@ -7,7 +7,7 @@
 	import type {Snippet} from 'svelte';
 	import Themed from '@ryanatkn/fuz/Themed.svelte';
 	import Spiders from '@ryanatkn/fuz/Spiders.svelte';
-	import 'prismjs'; // TODO BLOCK why needed? shouldn't fuz_code handle this?
+	import 'prismjs'; // TODO why needed? shouldn't fuz_code handle this? Vite config problem?
 
 	import {set_pkg} from '$routes/pkg.js';
 	import {package_json, src_json} from '$routes/package.js';
