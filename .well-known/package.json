@@ -1,0 +1,128 @@
+{
+  "name": "@ryanatkn/moss",
+  "version": "0.5.0",
+  "description": "CSS framework",
+  "motto": "magical organic stylesheets",
+  "icon": "🌿",
+  "public": true,
+  "license": "MIT",
+  "homepage": "https://moss.ryanatkn.com/",
+  "repository": "https://github.com/ryanatkn/moss",
+  "author": {
+    "name": "Ryan Atkinson",
+    "email": "mail@ryanatkn.com",
+    "url": "https://www.ryanatkn.com/"
+  },
+  "bugs": "https://github.com/ryanatkn/moss/issues",
+  "funding": "https://www.ryanatkn.com/funding",
+  "type": "module",
+  "engines": {
+    "node": ">=22.3"
+  },
+  "scripts": {
+    "start": "gro dev",
+    "dev": "gro dev",
+    "build": "gro build",
+    "test": "gro test",
+    "deploy": "gro deploy"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "devDependencies": {
+    "@changesets/changelog-git": "^0.2.0",
+    "@ryanatkn/belt": "^0.21.0",
+    "@ryanatkn/eslint-config": "^0.1.3",
+    "@ryanatkn/fuz": "^0.104.1",
+    "@ryanatkn/fuz_code": "^0.14.1",
+    "@ryanatkn/gro": "^0.123.0",
+    "@sveltejs/adapter-static": "^3.0.2",
+    "@sveltejs/kit": "^2.5.17",
+    "@sveltejs/package": "^2.3.2",
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@types/node": "^20.14.8",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-svelte": "^2.41.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-svelte": "^3.2.5",
+    "prism-svelte": "^0.5.0",
+    "prismjs": "^1.29.0",
+    "svelte": "^5.0.0-next.165",
+    "svelte-check": "^3.8.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.2",
+    "uvu": "^0.5.6"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "@ryanatkn",
+    "rules": {
+      "no-console": 1
+    }
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-svelte"
+    ],
+    "useTabs": true,
+    "printWidth": 100,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "overrides": [
+      {
+        "files": "package.json",
+        "options": {
+          "useTabs": false
+        }
+      }
+    ]
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./style_animations.css": {
+      "default": "./dist/style_animations.css"
+    },
+    "./style_components.css": {
+      "default": "./dist/style_components.css"
+    },
+    "./style_reset.css": {
+      "default": "./dist/style_reset.css"
+    },
+    "./style_utilities.css": {
+      "default": "./dist/style_utilities.css"
+    },
+    "./style.css": {
+      "default": "./dist/style.css"
+    },
+    "./style.gen.css.js": {
+      "default": "./dist/style.gen.css.js",
+      "types": "./dist/style.gen.css.d.ts"
+    },
+    "./theme.css": {
+      "default": "./dist/theme.css"
+    },
+    "./theme.gen.css.js": {
+      "default": "./dist/theme.gen.css.js",
+      "types": "./dist/theme.gen.css.d.ts"
+    },
+    "./theme.js": {
+      "default": "./dist/theme.js",
+      "types": "./dist/theme.d.ts"
+    },
+    "./themes.js": {
+      "default": "./dist/themes.js",
+      "types": "./dist/themes.d.ts"
+    },
+    "./variable_data.js": {
+      "default": "./dist/variable_data.js",
+      "types": "./dist/variable_data.d.ts"
+    },
+    "./variables.js": {
+      "default": "./dist/variables.js",
+      "types": "./dist/variables.d.ts"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+import{d as $,a as r,t as i,f as l,b as e,c as s}from"../chunks/disclose-version.CV3ElF3D.js";import{p as V,a as R,h as U,X as y,l as z}from"../chunks/runtime.C9BLlFkQ.js";import{g as B}from"../chunks/attributes.CCxnytQ2.js";import{C as X}from"../chunks/Code.BWxoXet5.js";import{T as j}from"../chunks/Tome_Detail.CMRDjAzR.js";import{T as D}from"../chunks/Tome_Link.CaTr1RYJ.js";import{M as N}from"../chunks/Mdn_Link.CL_xDjjE.js";import{a as W}from"../chunks/tome.D1Gikq0z.js";import{T as Y}from"../chunks/Tome_Subheading.lL3acggC.js";import{d as F}from"../chunks/variables.DHXR6JaE.js";import{S as J}from"../chunks/Style_Variable_Button.BgDdj1lX.js";import{M as q}from"../chunks/Module_Link.9-CGTAhT.js";import{U as G}from"../chunks/Unfinished_Implementation_Warning.zwYCKLV1.js";var H=i("CSS custom properties",1),K=i("theme",1),O=i("Many of these will change.",1),Q=i(`<section><p>Style variables, or just "variables" in Moss, are <!> that can be grouped into a <!>. Each variable can
+			have values for light and/or dark color schemes. They're design tokens with an API.</p> <p>The goal of the variables system is to provide runtime theming that's efficient and ergnomic
+			for both developers and end-users. Variables can be composed in multiple ways:</p> <ul><li>by CSS classes, both utility and component</li> <li>by other variables, both in calculations and to add useful semantics (e.g. <code>button_fill_hover</code> defaults to <code>fg_2</code> but can be themed independently)</li> <li>in JS like the <a href="https://svelte.dev/">Svelte</a> components in <a href="https://www.fuz.dev/">Fuz</a></li></ul> <p>Variables also provide an interface that's generally secure for user-generated content, if
+			you're into that kind of thing.</p> <p>The result is a flexible system that aligns with modern CSS to deliver high-capability UX and
+			DX with minimal overhead.</p></section> <section><div class="mb_md"><!></div> <!></section> <section><!> <!> <div class="variables svelte-tubmna"></div></section>`,1);function ve(S,T){V(T,!0);const M=W("variables"),m=F.slice().sort((n,c)=>n.name.localeCompare(c.name));var d=$(),w=l(d);j(w,{tome:M,children:(n,c)=>{var p=Q(),v=l(p),k=s(v),h=e(s(k));N(h,{href:"https://developer.mozilla.org/en-US/docs/Web/CSS/--*",children:(t,o)=>{var a=H();r(t,a)},$$slots:{default:!0}});var x=e(e(h,!0));D(x,{name:"themes",children:(t,o)=>{var a=K();r(t,a)},$$slots:{default:!0}});var u=e(e(v,!0)),f=s(u),C=s(f);q(C,{path:"theme.js"});var A=e(e(f,!0));X(A,{lang:"ts",content:`export interface Theme {
+	name: string;
+	variables: Style_Variable[];
+}
+
+export interface Style_Variable {
+	name: string;
+	light?: string;
+	dark?: string;
+	summary?: string;
+}`});var I=e(e(u,!0)),_=s(I),E=z(()=>`All ${m.length} style variables`);Y(_,{get text(){return U(E)},slug:"all-style-variables"});var g=e(e(_,!0));G(g,{children:(t,o)=>{var a=O();r(t,a)},$$slots:{default:!0}});var L=e(e(g,!0));B(L,77,()=>m,(t,o)=>y(t).name,(t,o,a)=>{var b=$(),P=l(b);J(P,{get name(){return y(o).name},classes:"menu_item"}),r(t,b)}),r(n,p)},$$slots:{default:!0}}),r(S,d),R()}export{ve as component};
