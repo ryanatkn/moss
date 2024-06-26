@@ -28,7 +28,7 @@ export const package_json = {
 	files: ['dist', 'CHANGELOG.md'],
 	devDependencies: {
 		'@changesets/changelog-git': '^0.2.0',
-		'@ryanatkn/belt': '^0.21.0',
+		'@ryanatkn/belt': '^0.21.1',
 		'@ryanatkn/eslint-config': '^0.1.3',
 		'@ryanatkn/fuz': '^0.104.1',
 		'@ryanatkn/fuz_code': '^0.14.1',

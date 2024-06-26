@@ -70,8 +70,10 @@
 		<Tome_Subheading text="Caveats" slug="caveats" />
 		<p>
 			For performance reasons, Moss does not currently have an extensive set of variants, like
-			specialized states for elements or color values like "blue". Each of the 7 hues has 9 color
-			values, handling most cases, and the base colors can be customized with the <Mdn_Link
+			specialized states for elements or color values like "blue". Each of the 7 hues has 9 HSL
+			color values (e.g. <code>hsl(120 55% 36%)</code>) and 9 HSL values (e.g.
+			<code>120 55% 36%</code>, useful to apply custom alpha), handling most cases, and the base
+			colors can be customized with platform APIs like the <Mdn_Link
 				href="Web/CSS/color_value/color-mix"
 			/> CSS function.
 		</p>
