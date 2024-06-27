@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.6.1
+
+### Patch Changes
+
+- upgrade gro with correctly formatted exports ([3b4f1cf](https://github.com/ryanatkn/moss/commit/3b4f1cf))
+
 ## 0.6.0
 
 ### Minor Changes
