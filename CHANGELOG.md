@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.6.0
+
+### Minor Changes
+
+- support `node@20.12` and later ([108a2a7](https://github.com/ryanatkn/moss/commit/108a2a7))
+
 ## 0.5.0
 
 ### Minor Changes

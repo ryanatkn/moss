@@ -5,7 +5,7 @@ import type {Src_Json} from '@ryanatkn/gro/src_json.js';
 
 export const package_json = {
 	name: '@ryanatkn/moss',
-	version: '0.5.0',
+	version: '0.6.0',
 	description: 'CSS framework',
 	motto: 'magical organic stylesheets',
 	icon: '🌿',
@@ -17,7 +17,7 @@ export const package_json = {
 	bugs: 'https://github.com/ryanatkn/moss/issues',
 	funding: 'https://www.ryanatkn.com/funding',
 	type: 'module',
-	engines: {node: '>=22.3'},
+	engines: {node: '>=20.12'},
 	scripts: {
 		start: 'gro dev',
 		dev: 'gro dev',
@@ -28,11 +28,11 @@ export const package_json = {
 	files: ['dist', 'CHANGELOG.md'],
 	devDependencies: {
 		'@changesets/changelog-git': '^0.2.0',
-		'@ryanatkn/belt': '^0.21.1',
+		'@ryanatkn/belt': '^0.22.0',
 		'@ryanatkn/eslint-config': '^0.1.3',
-		'@ryanatkn/fuz': '^0.104.1',
-		'@ryanatkn/fuz_code': '^0.14.1',
-		'@ryanatkn/gro': '^0.123.0',
+		'@ryanatkn/fuz': '^0.105.1',
+		'@ryanatkn/fuz_code': '^0.15.0',
+		'@ryanatkn/gro': '^0.124.0',
 		'@sveltejs/adapter-static': '^3.0.2',
 		'@sveltejs/kit': '^2.5.17',
 		'@sveltejs/package': '^2.3.2',
@@ -80,7 +80,7 @@ export const package_json = {
 
 export const src_json = {
 	name: '@ryanatkn/moss',
-	version: '0.5.0',
+	version: '0.6.0',
 	modules: {
 		'./package.json': {path: 'package.json', declarations: []},
 		'./style_animations.css': {path: 'style_animations.css', declarations: []},
