@@ -37,7 +37,7 @@ Some notes:
 .themed {
 	background-color: var(--bg);
 	color: var(--text_color);
-	accent-color: var(--color_b_5);
+	accent-color: var(--color_a_5);
 	line-height: var(--line_height_md);
 }
 
@@ -275,7 +275,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 }
 
 :where(input, textarea, select) {
-	-webkit-appearance: none;
 	appearance: none;
 	font: inherit;
 	line-height: normal;
@@ -324,15 +323,13 @@ so for consistent visuals we opt to include no active state */
 	min-height: var(--input_height_sm);
 	--border_radius: var(--radius_xs);
 	--input_padding_x: 0;
-	--content_default: '✓';
-	---content: var(--content_empty, '');
+	--checkbox_content: var(--checkbox_content_empty, '');
 }
 :where(input[type='checkbox']:checked) {
-	/* ✓ ✗ ✘ */
-	---content: var(--content, var(--content_default));
+	--checkbox_content: var(--checkbox_content_checked, '✓'); /* ✔✓ ✗ ✘ */
 }
-:where(input[type='checkbox']::before) {
-	content: var(---content);
+:where(input[type='checkbox'])::before {
+	content: var(--checkbox_content);
 	position: relative;
 	left: var(--left);
 	top: var(--top);
@@ -357,7 +354,7 @@ so for consistent visuals we opt to include no active state */
 	--input_padding_x: 0;
 }
 /* TODO where to wrap the :where here and similar elsewhere ? */
-:where(input[type='radio']:checked::before) {
+:where(input[type='radio']:checked)::before {
 	content: '';
 	display: block;
 	position: relative;
@@ -384,8 +381,7 @@ so for consistent visuals we opt to include no active state */
 :where(input[type='range']:disabled:active) {
 	--thumb_background_color: var(--color_c_5);
 }
-:where(input[type='range']::-webkit-slider-thumb) {
-	-webkit-appearance: none;
+:where(input[type='range'])::-webkit-slider-thumb {
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
@@ -402,7 +398,7 @@ so for consistent visuals we opt to include no active state */
 	*/
 	margin-top: calc(var(--thumb_size) / -2);
 }
-:where(input[type='range']::-moz-range-thumb) {
+:where(input[type='range'])::-moz-range-thumb {
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
@@ -410,12 +406,12 @@ so for consistent visuals we opt to include no active state */
 	background-color: var(--thumb_background_color);
 	border: 0;
 }
-:where(input[type='range']::-webkit-slider-runnable-track) {
+:where(input[type='range'])::-webkit-slider-runnable-track {
 	width: 100%;
 	height: var(--border_width);
 	background-color: var(--thumb_background_color);
 }
-:where(input[type='range']::-moz-range-track) {
+:where(input[type='range'])::-moz-range-track {
 	width: 100%;
 	height: var(--border_width);
 	background-color: var(--thumb_background_color);
@@ -449,7 +445,6 @@ so for consistent visuals we opt to include no active state */
 	--text_color: var(--text_2);
 	--min_height: var(--input_height);
 	cursor: pointer;
-	-webkit-appearance: none;
 	appearance: none;
 	display: flex;
 	flex-wrap: wrap;
@@ -829,6 +824,7 @@ a.chip {
 }
 
 .clickable {
+	cursor: pointer;
 	transform: var(--clickable_transform, scale3d(1, 1, 1));
 	transform-origin: var(--clickable_transform_origin);
 	transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
@@ -839,7 +835,8 @@ a.chip {
 .clickable:hover {
 	transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
 }
-.clickable:active {
+.clickable:active,
+.clickable.active {
 	transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
 }
 

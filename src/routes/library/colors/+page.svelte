@@ -24,7 +24,7 @@
 		'primary',
 		'success/help',
 		'error/danger',
-		'secondary/accent',
+		'secondary',
 		'tertiary',
 		'quaternary',
 		'quinary',
