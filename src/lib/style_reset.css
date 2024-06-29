@@ -33,7 +33,7 @@ Some notes:
 .themed {
 	background-color: var(--bg);
 	color: var(--text_color);
-	accent-color: var(--color_b_5);
+	accent-color: var(--color_a_5);
 	line-height: var(--line_height_md);
 }
 
@@ -271,7 +271,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 }
 
 :where(input, textarea, select) {
-	-webkit-appearance: none;
 	appearance: none;
 	font: inherit;
 	line-height: normal;
@@ -321,14 +320,14 @@ so for consistent visuals we opt to include no active state */
 	--border_radius: var(--radius_xs);
 	--input_padding_x: 0;
 	--content_default: '✓';
-	---content: var(--content_empty, '');
+	--content: var(--content_empty, '');
 }
 :where(input[type='checkbox']:checked) {
 	/* ✓ ✗ ✘ */
-	---content: var(--content, var(--content_default));
+	--content: var(--content, var(--content_default));
 }
 :where(input[type='checkbox']::before) {
-	content: var(---content);
+	content: var(--content);
 	position: relative;
 	left: var(--left);
 	top: var(--top);
@@ -381,7 +380,6 @@ so for consistent visuals we opt to include no active state */
 	--thumb_background_color: var(--color_c_5);
 }
 :where(input[type='range']::-webkit-slider-thumb) {
-	-webkit-appearance: none;
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
@@ -445,7 +443,6 @@ so for consistent visuals we opt to include no active state */
 	--text_color: var(--text_2);
 	--min_height: var(--input_height);
 	cursor: pointer;
-	-webkit-appearance: none;
 	appearance: none;
 	display: flex;
 	flex-wrap: wrap;
