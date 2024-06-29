@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.6.2
+
+### Patch Changes
+
+- fix input styles to not use `:where` for pseudo-elements ([#18](https://github.com/ryanatkn/moss/pull/18))
+
 ## 0.6.1
 
 ### Patch Changes
