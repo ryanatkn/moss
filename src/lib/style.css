@@ -824,7 +824,7 @@ a.chip {
 }
 
 .clickable {
-	/* TODO `cursor: pointer`? */
+	cursor: pointer;
 	transform: var(--clickable_transform, scale3d(1, 1, 1));
 	transform-origin: var(--clickable_transform_origin);
 	transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
@@ -835,8 +835,8 @@ a.chip {
 .clickable:hover {
 	transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
 }
-/* TODO `.clickable.active` as well? */
-.clickable:active {
+.clickable:active,
+.clickable.active {
 	transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
 }
 
