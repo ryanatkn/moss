@@ -1,4 +1,4 @@
-import{d as J,a as r,t as e,f as d,c as _,b as n,s as T}from"../chunks/disclose-version.CV3ElF3D.js";import{p as K,a as Q,t as $,X as D}from"../chunks/runtime.C9BLlFkQ.js";import{g as S,i as C}from"../chunks/attributes.CCxnytQ2.js";import{C as x}from"../chunks/Code.BWxoXet5.js";import{T as Z}from"../chunks/Tome_Detail.CtXXC4Aj.js";import{T as nn}from"../chunks/Tome_Link.xOLxdgGx.js";import{G as M}from"../chunks/Github_Logo.C7xkyicJ.js";import{a as an}from"../chunks/tome.D1Gikq0z.js";import{D as A}from"../chunks/Details.DYeuQVCA.js";import{T as c}from"../chunks/Tome_Subheading.BE6d3v2G.js";const _n=`/* @ryanatkn/moss/style_utilities.css */
+import{d as J,a as r,t as e,f as d,c as _,b as n,s as T}from"../chunks/disclose-version.CV3ElF3D.js";import{p as K,a as Q,t as $,X as D}from"../chunks/runtime.C9BLlFkQ.js";import{g as S,i as C}from"../chunks/attributes.CCxnytQ2.js";import{C as x}from"../chunks/Code.BWxoXet5.js";import{T as Z}from"../chunks/Tome_Detail.CmSWl0Fz.js";import{T as nn}from"../chunks/Tome_Link.DL7VC_4R.js";import{G as M}from"../chunks/Github_Logo.C7xkyicJ.js";import{a as an}from"../chunks/tome.D1Gikq0z.js";import{D as A}from"../chunks/Details.DYeuQVCA.js";import{T as c}from"../chunks/Tome_Subheading.DBTNdUlk.js";const _n=`/* @ryanatkn/moss/style_utilities.css */
 
 /* TODO @multiple docs in library */
 
@@ -3134,6 +3134,7 @@ a.chip {
 }
 
 .clickable {
+	cursor: pointer;
 	transform: var(--clickable_transform, scale3d(1, 1, 1));
 	transform-origin: var(--clickable_transform_origin);
 	transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
@@ -3144,7 +3145,8 @@ a.chip {
 .clickable:hover {
 	transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
 }
-.clickable:active {
+.clickable:active,
+.clickable.active {
 	transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
 }
 `;var tn=e('<li class="svelte-1gekuvc"> </li>'),rn=e('<li class="svelte-1gekuvc"> </li>'),sn=e('<span class="font_mono">@ryanatkn/moss/style_utilities.css</span>'),ln=e('<p class="source_link svelte-1gekuvc"><a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_utilities.css" class="svelte-1gekuvc"><!> <span class="ml_xs">source</span></a></p> <!>',1),en=e('<span class="font_mono">@ryanatkn/moss/style_components.css</span>'),dn=e('<p class="source_link svelte-1gekuvc"><a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_components.css" class="svelte-1gekuvc"><!> <span class="ml_xs">source</span></a></p> <!>',1),cn=e(`<aside>both the docs and implementation of these need more work</aside> <section><!> <p>Moss has three optional CSS files with different kinds of classes:</p> <!> <p>Utility classes use plain CSS for convenient HTML authoring. Many are based on Moss style <!>.</p> <p>Component classes are semantic groupings of styles.</p> <aside>With more sophisticated build tooling, these classes could be generated on demand instead of
