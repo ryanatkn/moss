@@ -26,10 +26,6 @@
     "test": "gro test",
     "deploy": "gro deploy"
   },
-  "files": [
-    "dist",
-    "CHANGELOG.md"
-  ],
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
     "@ryanatkn/belt": "^0.23.0",
@@ -80,6 +76,12 @@
       }
     ]
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "exports": {
     "./package.json": "./package.json",
     "./style_animations.css": {

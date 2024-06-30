@@ -25,7 +25,6 @@ export const package_json = {
 		test: 'gro test',
 		deploy: 'gro deploy',
 	},
-	files: ['dist', 'CHANGELOG.md'],
 	devDependencies: {
 		'@changesets/changelog-git': '^0.2.0',
 		'@ryanatkn/belt': '^0.23.0',
@@ -61,6 +60,8 @@ export const package_json = {
 		bracketSpacing: false,
 		overrides: [{files: 'package.json', options: {useTabs: false}}],
 	},
+	sideEffects: ['**/*.css'],
+	files: ['dist'],
 	exports: {
 		'./package.json': './package.json',
 		'./style_animations.css': {default: './dist/style_animations.css'},
