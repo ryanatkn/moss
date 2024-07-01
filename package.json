@@ -4,6 +4,7 @@
   "description": "CSS framework",
   "motto": "magical organic stylesheets",
   "glyph": "🌿",
+  "logo": "logo.svg",
   "public": true,
   "license": "MIT",
   "homepage": "https://moss.ryanatkn.com/",
@@ -15,16 +16,16 @@
   },
   "bugs": "https://github.com/ryanatkn/moss/issues",
   "funding": "https://www.ryanatkn.com/funding",
-  "type": "module",
-  "engines": {
-    "node": ">=20.12"
-  },
   "scripts": {
     "start": "gro dev",
     "dev": "gro dev",
     "build": "gro build",
     "test": "gro test",
     "deploy": "gro deploy"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
