@@ -4,6 +4,8 @@
   "description": "CSS framework",
   "motto": "magical organic stylesheets",
   "glyph": "🌿",
+  "logo": "logo.svg",
+  "logo_alt": "a fuzzy tuft of green moss",
   "public": true,
   "license": "MIT",
   "homepage": "https://moss.ryanatkn.com/",
@@ -15,10 +17,6 @@
   },
   "bugs": "https://github.com/ryanatkn/moss/issues",
   "funding": "https://www.ryanatkn.com/funding",
-  "type": "module",
-  "engines": {
-    "node": ">=20.12"
-  },
   "scripts": {
     "start": "gro dev",
     "dev": "gro dev",
@@ -26,13 +24,17 @@
     "test": "gro test",
     "deploy": "gro deploy"
   },
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
     "@ryanatkn/belt": "^0.23.0",
     "@ryanatkn/eslint-config": "^0.1.3",
     "@ryanatkn/fuz": "^0.105.2",
     "@ryanatkn/fuz_code": "^0.15.1",
-    "@ryanatkn/gro": "^0.126.0",
+    "@ryanatkn/gro": "^0.127.1",
     "@sveltejs/adapter-static": "^3.0.2",
     "@sveltejs/kit": "^2.5.17",
     "@sveltejs/package": "^2.3.2",
