@@ -1106,17 +1106,54 @@ text
 	font-size: var(--icon_size_xl3);
 }
 
-.text_align_center {
-	text-align: center;
+.text_align_start {
+	text-align: start;
 }
-.text_align_right {
-	text-align: right;
+.text_align_end {
+	text-align: end;
 }
 .text_align_left {
 	text-align: left;
 }
+.text_align_right {
+	text-align: right;
+}
+.text_align_center {
+	text-align: center;
+}
 .text_align_justify {
 	text-align: justify;
+}
+.text_align_justify_all {
+	text-align: justify-all;
+}
+.text_align_match_parent {
+	text-align: match-parent;
+}
+
+.vertical_align_baseline {
+	vertical-align: baseline;
+}
+.vertical_align_sub {
+	vertical-align: sub;
+}
+.vertical_align_super {
+	vertical-align: super;
+}
+.vertical_align_text_top {
+	vertical-align: text-top;
+}
+.vertical_align_text_bottom {
+	vertical-align: text-bottom;
+}
+.vertical_align_middle {
+	vertical-align: middle;
+}
+.vertical_align_top {
+	vertical-align: top;
+}
+.vertical_align_bottom {
+	vertical-align: bottom;
 }
 
 .font_weight_100 {
