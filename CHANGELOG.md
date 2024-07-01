@@ -1,5 +1,12 @@
 # @ryanatkn/moss
 
+## 0.6.3
+
+### Patch Changes
+
+- add `sideEffects` to `package.json` ([9285817](https://github.com/ryanatkn/moss/commit/9285817))
+- add vertical_align and missing text_align utility classes ([d5891ea](https://github.com/ryanatkn/moss/commit/d5891ea))
+
 ## 0.6.2
 
 ### Patch Changes
