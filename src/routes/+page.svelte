@@ -20,11 +20,15 @@
 	<section class="width_sm p_xs radius_md shadow_sm">
 		<div class="panel p_lg bg shadow_md">
 			<p>
-				Moss is a CSS framework that can be used with any website or JS framework. Moss has <a
-					href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-					>a single static stylesheet</a
-				>, and it also <a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS partials,
-				data, and TypeScript helpers for more complex usage.
+				Moss is a CSS framework that can be used with any website or JS framework. It exports
+				<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
+					>one main stylesheet</a
+				>
+				and
+				<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css">a theme stylesheet</a
+				>, and it also
+				<a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS partials, types, helpers,
+				and data for more complex usage.
 			</p>
 			<p>
 				Moss is in early alpha and will have many breaking changes to get to 1.0. To follow along or
@@ -41,8 +45,9 @@
 			</p>
 			<p>
 				To learn more see <a href="{base}/library">the docs</a>
-				and <a href="https://github.com/ryanatkn/moss#readme">the readme</a> and
-				<a href="https://discord.gg/YU5tyeK72X">the Discord</a>. Feel free to take the ideas and
+				and <a href="https://github.com/ryanatkn/moss#readme">the readme</a>. See also my Svelte UI
+				library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss. Feel free to take the
+				ideas and
 				<a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.
 			</p>
 		</div>

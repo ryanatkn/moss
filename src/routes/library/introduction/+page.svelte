@@ -22,7 +22,7 @@
 		<Unfinished_Implementation_Warning>
 			Moss is in early alpha and there will be many breaking changes.
 		</Unfinished_Implementation_Warning>
-		<p>Characteristics:</p>
+		<p>About Moss:</p>
 		<ul>
 			<li>plain CSS</li>
 			<li>zero dependencies</li>
