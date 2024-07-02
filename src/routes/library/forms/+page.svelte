@@ -32,7 +32,7 @@
 </script>
 
 <Tome_Detail {tome}>
-	<aside>forms need more work</aside>
+	<Unfinished_Implementation_Warning>Forms need more work.</Unfinished_Implementation_Warning>
 
 	<section>
 		<Tome_Subheading text="form with a fieldset" slug="form-with-a-fieldset">
