@@ -40,7 +40,7 @@
 			<li>themes are groups of variables</li>
 			<li>
 				dark mode is a first-class concept in the system, not a theme, instead each theme can
-				support light and/or dark mode
+				support light and/or dark <Mdn_Link href="Web/CSS/color-scheme">color-schemes</Mdn_Link>
 			</li>
 			<li>includes a CSS reset that styles HTML tags directly with the variables</li>
 			<li>

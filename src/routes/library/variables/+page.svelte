@@ -26,7 +26,9 @@
 			Style variables, or just "variables" in Moss, are <Mdn_Link
 				href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</Mdn_Link
 			> that can be grouped into a <Tome_Link name="themes">theme</Tome_Link>. Each variable can
-			have values for light and/or dark color schemes. They're design tokens with an API.
+			have values for light and/or dark <Mdn_Link href="Web/CSS/color-scheme"
+				>color-schemes</Mdn_Link
+			>. They're design tokens with an API.
 		</p>
 		<p>
 			The goal of the variables system is to provide runtime theming that's efficient and ergnomic
