@@ -26,13 +26,8 @@
 		<ul>
 			<li>plain CSS</li>
 			<li>zero dependencies</li>
-			<li>
-				exports a single stylesheet that can be optimized by other tools
-				<ul>
-					<li>also exports the underlying CSS partials, helpers, types, and data</li>
-					<li>I'm planning to add a Vite plugin for optimization</li>
-				</ul>
-			</li>
+			<li>exports one main stylesheet that can be optimized by other tools</li>
+			<li>also exports the underlying CSS partials, helpers, types, and data</li>
 			<li>
 				uses its own concept of style variables, a specialization of CSS custom properties and
 				design tokens
@@ -49,17 +44,6 @@
 			</li>
 			<li>includes a CSS reset that styles HTML tags directly with the variables</li>
 		</ul>
-		<p>
-			Using Moss unoptimized is as simple as importing <a
-				href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-				>its one static stylesheet</a
-			>.
-		</p>
-		<p>
-			To learn more see <a href="https://moss.ryanatkn.com/library">the docs</a> and
-			<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>. Feel
-			free to take the ideas and code for your own purposes.
-		</p>
 		<p>The stylesheets:</p>
 		<ul>
 			<li>
@@ -93,19 +77,37 @@
 				your own
 			</li>
 			<li>
-				optimizing the stylesheet is currently out of Moss's scope, see tools like <a
-					href="https://github.com/FullHuman/purgecss">PurgeCSS</a
-				> - I'll probably include a Vite plugin to remove unused styles through a separate project like
-				Fuz, and I encourage publishing your own integrations individually
+				optimizing the stylesheet is out of Moss's scope, but it's just CSS so it works with
+				existing tools
+				<ul>
+					<li>
+						I'm planning to include a Vite plugin to remove unused styles in my Svelte UI library <a
+							href="https://www.fuz.dev/">Fuz</a
+						>
+					</li>
+					<li>
+						optimizing the stylesheet will become increasingly important as the utility classes fill
+						out - the plan is to include the commonly useful things, but not everything like
+						Tailwind
+					</li>
+				</ul>
 			</li>
 		</ul>
+		<p>
+			Moss is being made to support <a href="https://www.ryanatkn.com/">my other projects</a>, so
+			it'll be growing relatively slowly over time as I encounter more usecases. It's hobby-ready
+			but expect a lot of breaking changes. Feel free to take the code and ideas for your own
+			purposes.
+		</p>
 		<p>
 			In the docs, you'll see I'm writing asides using "⚠️" with open questions and other discussion
 			of uncertainties. Your input is appreciated in the <a href="https://discord.gg/YU5tyeK72X"
 				>Discord</a
 			>, the
 			<a href="https://github.com/ryanatkn/moss/issues">GitHub issues</a>, or
-			<a href="https://www.webdevladder.net/">other social media</a>, on these and other topics 🌿
+			<a href="https://www.webdevladder.net/">other social media</a>, on these and other topics, see
+			<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a> for more
+			🌿
 		</p>
 	</section>
 </Tome_Detail>

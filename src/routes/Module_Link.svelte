@@ -18,7 +18,7 @@
 		path,
 		base_path = 'https://github.com/ryanatkn/moss/blob/main/src/lib/',
 		attrs,
-		icon = '📄',
+		icon = '🗎',
 		children = fallback_children,
 	}: Props = $props();
 </script>
