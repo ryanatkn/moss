@@ -14,47 +14,52 @@
 <Tome_Detail {tome}>
 	<section>
 		<p>
-			Moss is a CSS framework that can be used with any website and JS framework. Its design system
-			centers on <em>style variables</em>, which are
-			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with more capabilities.
+			Moss is a CSS framework and design system that can be used with any website and JS framework.
+			It's built around <em>style variables</em>, which are
+			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with additional
+			capabilities and conventions.
 		</p>
+		<p>Characteristics:</p>
+		<ul>
+			<li>plain CSS</li>
+			<li>zero dependencies</li>
+			<li>
+				exports a single stylesheet that can be optimized by other tools
+				<ul>
+					<li>also exports CSS partials with helpers and data</li>
+					<li>I'm planning to add a Vite plugin for optimization</li>
+				</ul>
+			</li>
+			<li>
+				uses its own concept of style variables, a specialization of CSS custom properties and
+				design tokens
+				<ul>
+					<li>variables are the main source of truth</li>
+					<li>each variable provides values to light and/or dark mode</li>
+					<li>includes optional utility and component classes that use the variables</li>
+				</ul>
+			</li>
+			<li>themes are groups of variables</li>
+			<li>
+				dark mode is a first-class concept in the system, not a theme, instead each theme can
+				support light and/or dark mode
+			</li>
+			<li>includes a CSS reset that styles HTML tags directly with the variables</li>
+		</ul>
 		<p>
 			Using Moss unoptimized is as simple as importing <a
 				href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
 				>its one static stylesheet</a
-			>, and it's built with a data-driven approach that makes its insides available in many forms,
-			like deconstructed CSS files and TypeScript modules that provide data, types, and helpers
-			around the variable and build systems. It's in early alpha and there will be many breaking
-			changes.
+			>. The stylesheet is built with a data-driven approach that makes its insides available in
+			many forms, including CSS partials and TypeScript modules that provide data, types, and
+			helpers around the variable and build systems. It's in early alpha and there will be many
+			breaking changes.
 		</p>
 		<p>
 			To learn more see <a href="https://moss.ryanatkn.com/library">the docs</a> and
 			<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>. Feel
 			free to take the ideas and code for your own purposes.
 		</p>
-		<p>Some features:</p>
-		<ul>
-			<li>plain CSS, most users import a single stylesheet</li>
-			<li>zero dependencies</li>
-			<li>
-				designed around <em>style variables</em>, a specialization of
-				<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link>
-				and design tokens
-				<ul>
-					<li>variables are a more primitive building block than classes</li>
-					<li>includes optional utility and component classes that use the variables</li>
-				</ul>
-			</li>
-			<li>
-				<!-- TODO inner link -->
-				supports
-				<a href="https://moss.ryanatkn.com/library/theme"
-					><code>color-scheme</code> and custom themes</a
-				>
-				(including dark mode)
-			</li>
-			<li>styles HTML tags directly, so you don't need to add `.btn` to buttons</li>
-		</ul>
 		<p>The stylesheets:</p>
 		<ul>
 			<li>
@@ -102,13 +107,5 @@
 			<a href="https://github.com/ryanatkn/moss/issues">GitHub issues</a>, or
 			<a href="https://www.webdevladder.net/">other social media</a>, on these and other topics 🌿
 		</p>
-		<Unfinished_Implementation_Warning>
-			TODO:
-			<ul class="mt_lg">
-				<li>do a pass on all of the existing docs</li>
-				<li>describe in depth the mechanics of the CSS, starting with dark mode</li>
-				<li>write docs about build tooling</li>
-			</ul>
-		</Unfinished_Implementation_Warning>
 	</section>
 </Tome_Detail>
