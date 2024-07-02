@@ -19,6 +19,9 @@
 			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with additional
 			capabilities and conventions.
 		</p>
+		<Unfinished_Implementation_Warning>
+			Moss is in early alpha and there will be many breaking changes.
+		</Unfinished_Implementation_Warning>
 		<p>Characteristics:</p>
 		<ul>
 			<li>plain CSS</li>
@@ -26,7 +29,7 @@
 			<li>
 				exports a single stylesheet that can be optimized by other tools
 				<ul>
-					<li>also exports CSS partials with helpers and data</li>
+					<li>also exports the underlying CSS partials, helpers, types, and data</li>
 					<li>I'm planning to add a Vite plugin for optimization</li>
 				</ul>
 			</li>
@@ -50,10 +53,7 @@
 			Using Moss unoptimized is as simple as importing <a
 				href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
 				>its one static stylesheet</a
-			>. The stylesheet is built with a data-driven approach that makes its insides available in
-			many forms, including CSS partials and TypeScript modules that provide data, types, and
-			helpers around the variable and build systems. It's in early alpha and there will be many
-			breaking changes.
+			>.
 		</p>
 		<p>
 			To learn more see <a href="https://moss.ryanatkn.com/library">the docs</a> and
