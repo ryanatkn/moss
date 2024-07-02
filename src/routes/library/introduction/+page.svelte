@@ -43,6 +43,12 @@
 				support light and/or dark mode
 			</li>
 			<li>includes a CSS reset that styles HTML tags directly with the variables</li>
+			<li>
+				is agnostic to JS frameworks, for example usage see <a
+					href="https://www.fuz.dev/library/Themed"><code>Themed</code></a
+				>
+				in my Svelte UI library <a href="https://www.fuz.dev/">Fuz</a>
+			</li>
 		</ul>
 		<p>The stylesheets:</p>
 		<ul>
@@ -94,10 +100,10 @@
 			</li>
 		</ul>
 		<p>
-			Moss is being made to support <a href="https://www.ryanatkn.com/">my other projects</a>, so
-			it'll be growing relatively slowly over time as I encounter more usecases. It's hobby-ready
-			but expect a lot of breaking changes. Feel free to take the code and ideas for your own
-			purposes.
+			Moss is being made to support <a href="https://www.ryanatkn.com/">my other projects</a>, which
+			are higher priority, so it'll grow relatively slowly as I encounter more usecases. It's
+			hobby-ready but expect a lot of breaking changes. Feel free to take the code and ideas for
+			your own purposes.
 		</p>
 		<p>
 			In the docs, you'll see I'm writing asides using "⚠️" with open questions and other discussion
