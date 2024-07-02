@@ -8,9 +8,7 @@
 
 [**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
 
-## Contributing
-
-See [contributing.md](contributing.md).
+Interested? See [contributing.md](contributing.md).
 
 ## License [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)
 
