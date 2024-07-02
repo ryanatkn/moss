@@ -1,5 +1,7 @@
 /* @ryanatkn/moss/style_components.css */
 
+/* TODO rename to not conflict with JS components */
+
 .box {
 	display: flex;
 	flex-direction: column;

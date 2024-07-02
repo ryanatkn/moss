@@ -9,6 +9,7 @@
 
 	import style_utilities_text from '$lib/style_utilities.css?raw';
 	import style_components_text from '$lib/style_components.css?raw';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'classes';
 
@@ -84,7 +85,9 @@
 </script>
 
 <Tome_Detail {tome}>
-	<aside>both the docs and implementation of these need more work</aside>
+	<Unfinished_Implementation_Warning
+		>Both the docs and implementation of these need more work.</Unfinished_Implementation_Warning
+	>
 	<section>
 		<Tome_Subheading text="Optional CSS classes" slug="css-classes" />
 		<p>Moss has three optional CSS files with different kinds of classes:</p>
@@ -107,8 +110,9 @@
 		</p>
 		<p>Component classes are semantic groupings of styles.</p>
 		<aside>
-			With more sophisticated build tooling, these classes could be generated on demand instead of
-			distributed as static files, or unused classes could be removed with a Vite plugin.
+			Unused clases can be removed with build tooling, which is out of scope for Moss, and with a
+			more sophisticated architecture these classes could potentially be generated on demand instead
+			of distributed as static files.
 		</aside>
 	</section>
 	<section>

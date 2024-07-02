@@ -13,53 +13,42 @@
 
 <Tome_Detail {tome}>
 	<section>
+		<p>
+			Moss is a CSS framework and design system that can be used with any website and JS framework.
+			It's built around <em>style variables</em>, which are
+			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with additional
+			capabilities and conventions.
+		</p>
 		<Unfinished_Implementation_Warning>
-			Docs are a work in progress. Moss was recently extracted from
-			<a href="https://www.fuz.dev/">Fuz</a>, and these docs are incomplete and misleading in some
-			cases, because they now need to be agnostic to Svelte and deal with more inner workings of the
-			CSS.
+			Moss is in early alpha and there will be many breaking changes.
 		</Unfinished_Implementation_Warning>
-		<p>
-			Moss is a CSS framework that can be used with any website and JS framework. Its design system
-			centers on <em>style variables</em>, which are
-			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with more capabilities.
-		</p>
-		<p>
-			Using Moss unoptimized is as simple as importing <a
-				href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-				>its one static stylesheet</a
-			>, and it's built with a data-driven approach that makes its insides available in many forms,
-			like deconstructed CSS files and TypeScript modules that provide data, types, and helpers
-			around the variable and build systems. It's in early alpha and there will be many breaking
-			changes.
-		</p>
-		<p>
-			To learn more see <a href="https://moss.ryanatkn.com/library">the docs</a> and
-			<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>. Feel
-			free to take the ideas and code for your own purposes.
-		</p>
-		<p>Some features:</p>
+		<p>Characteristics:</p>
 		<ul>
-			<li>plain CSS, most users import a single stylesheet</li>
+			<li>plain CSS</li>
 			<li>zero dependencies</li>
+			<li>exports one main stylesheet that can be optimized by other tools</li>
+			<li>also exports the underlying CSS partials, helpers, types, and data</li>
 			<li>
-				designed around <em>style variables</em>, a specialization of
-				<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link>
-				and design tokens
+				uses its own concept of style variables, a specialization of CSS custom properties and
+				design tokens
 				<ul>
-					<li>variables are a more primitive building block than classes</li>
+					<li>variables are the main source of truth</li>
+					<li>each variable provides values to light and/or dark mode</li>
 					<li>includes optional utility and component classes that use the variables</li>
 				</ul>
 			</li>
+			<li>themes are groups of variables</li>
 			<li>
-				<!-- TODO inner link -->
-				supports
-				<a href="https://moss.ryanatkn.com/library/theme"
-					><code>color-scheme</code> and custom themes</a
-				>
-				(including dark mode)
+				dark mode is a first-class concept in the system, not a theme, instead each theme can
+				support light and/or dark <Mdn_Link href="Web/CSS/color-scheme">color-schemes</Mdn_Link>
 			</li>
-			<li>styles HTML tags directly, so you don't need to add `.btn` to buttons</li>
+			<li>includes a CSS reset that styles HTML tags directly with the variables</li>
+			<li>
+				is agnostic to JS frameworks, for example usage see <a
+					href="https://www.fuz.dev/library/Themed"><code>Themed</code></a
+				>
+				in my Svelte UI library <a href="https://www.fuz.dev/">Fuz</a>
+			</li>
 		</ul>
 		<p>The stylesheets:</p>
 		<ul>
@@ -94,27 +83,36 @@
 				your own
 			</li>
 			<li>
-				optimizing the stylesheet is currently out of Moss's scope, see tools like <a
-					href="https://github.com/FullHuman/purgecss">PurgeCSS</a
-				> - I'll probably include a Vite plugin to remove unused styles through a separate project like
-				Fuz, and I encourage publishing your own integrations individually
+				optimizing the stylesheet is out of Moss's scope, but it's just CSS so it works with
+				existing tools
+				<ul>
+					<li>
+						I'm planning to include a Vite plugin to remove unused styles in my Svelte UI library <a
+							href="https://www.fuz.dev/">Fuz</a
+						>
+					</li>
+					<li>
+						optimizing the stylesheet will become increasingly important as the utility classes fill
+						out - the plan is to include the commonly useful things but not everything
+					</li>
+				</ul>
 			</li>
 		</ul>
+		<p>
+			Moss is being made to support <a href="https://www.ryanatkn.com/">my other projects</a>, which
+			are higher priority, so it'll grow relatively slowly as I encounter more usecases. It's
+			hobby-ready but expect a lot of breaking changes. Feel free to take the code and ideas for
+			your own purposes.
+		</p>
 		<p>
 			In the docs, you'll see I'm writing asides using "⚠️" with open questions and other discussion
 			of uncertainties. Your input is appreciated in the <a href="https://discord.gg/YU5tyeK72X"
 				>Discord</a
 			>, the
 			<a href="https://github.com/ryanatkn/moss/issues">GitHub issues</a>, or
-			<a href="https://www.webdevladder.net/">other social media</a>, on these and other topics 🌿
+			<a href="https://www.webdevladder.net/">other social media</a>, on these and other topics, see
+			<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a> for more
+			🌿
 		</p>
-		<Unfinished_Implementation_Warning>
-			TODO:
-			<ul class="mt_lg">
-				<li>do a pass on all of the existing docs</li>
-				<li>describe in depth the mechanics of the CSS, starting with dark mode</li>
-				<li>write docs about build tooling</li>
-			</ul>
-		</Unfinished_Implementation_Warning>
 	</section>
 </Tome_Detail>

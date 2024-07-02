@@ -19,6 +19,9 @@
 </script>
 
 <Tome_Detail {tome}>
+	<Unfinished_Implementation_Warning
+		>Element styles are incomplete. Any requests?</Unfinished_Implementation_Warning
+	>
 	<blockquote>
 		Styles for plain <Mdn_Link href="Web/HTML/Element">HTML elements</Mdn_Link>. See also <Tome_Link
 			name="typography"

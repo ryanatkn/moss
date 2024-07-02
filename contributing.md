@@ -46,10 +46,11 @@ but don't let that stop you from making your own.
 ## Developers
 
 If you feel comfortable looking at the source code,
-Moss is ready to use in your own projects,
+Moss is ready to use in non-criticial and hobby projects,
 with the major caveat that there will be a lot of breaking changes ahead.
 The code is significantly incomplete but I think it's stable enough to use
 if you're willing to keep up with the relatively fast-moving changelog.
+Your feedback is welcome to help it improve.
 See the dev channels in [Discord](https://discord.gg/YU5tyeK72X)
 and [Github issues](https://github.com/ryanatkn/Moss/issues).
 

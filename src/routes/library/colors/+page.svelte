@@ -8,6 +8,7 @@
 
 	import Hue_Swatch from '$routes/library/colors/Hue_Swatch.svelte';
 	import Color_Swatch from '$routes/library/colors/Color_Swatch.svelte';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'colors';
 
@@ -86,6 +87,12 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Hue variables" slug="hue-variables" />
+		<Unfinished_Implementation_Warning>
+			Colors are unfinished. I'm thinking of adding orange and cyan for a total of 9 hues. Moss may
+			also change from HSL to <Mdn_Link
+				href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch"
+			/>.
+		</Unfinished_Implementation_Warning>
 		<p>
 			Hue variables contain a single <Mdn_Link href="Web/CSS/hue" /> number. Each color variable combines
 			a hue variable with hardcoded saturation and lightness values for light and dark modes.
