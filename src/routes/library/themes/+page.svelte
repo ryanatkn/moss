@@ -8,9 +8,11 @@
 	import Theme_Input from '@ryanatkn/fuz/Theme_Input.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 
+	import Module_Link from '$routes/Module_Link.svelte';
 	import {default_themes} from '$lib/themes.js';
 	import type {Theme} from '$lib/theme.js';
 	import Theme_Form from '$routes/Theme_Form.svelte';
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	// TODO separate correctly from the Themed docs
 
@@ -32,13 +34,27 @@
 			and custom themes based on <Tome_Link name="variables" />, which use
 			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link>.
 		</p>
+		<p>
+			Moss works with any JS framework, but it provides only stylesheets, not integrations. This
+			website uses my Svelte UI library <a href="https://www.fuz.dev/">Fuz</a>
+			to provide the UI below to control the Moss color scheme and themes.
+		</p>
 	</section>
 	<section class="theme">
 		<Tome_Subheading text="Color scheme" slug="color-scheme" />
 		<p>
 			Moss supports
-			<Mdn_Link href="Web/CSS/color-scheme" /> with dark and light modes. It detects the default with
-			<Mdn_Link href="Web/CSS/@media/prefers-color-scheme" />, and users can also set it directly:
+			<Mdn_Link href="Web/CSS/color-scheme" /> with dark and light modes. To apply dark mode manually,
+			add the <code>dark</code> class to the root <code>html</code>
+			element.
+		</p>
+		<p>
+			The Fuz integration detects the default with
+			<Mdn_Link href="Web/CSS/@media/prefers-color-scheme" />, and users can also set it directly
+			with a component like
+			<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/Color_Scheme_Input.svelte"
+				>this one</a
+			>:
 		</p>
 		<div class="flex mb_lg">
 			<Color_Scheme_Input />
@@ -55,6 +71,11 @@
 			CSS that set custom properties. Each variable can have values for light and/or dark color schemes.
 			In other words, "dark" isn't a theme, it's a mode that any theme can implement.
 		</p>
+		<p>
+			These docs are a work in progress, for now see <Module_Link path="theme.ts"
+				><code>@ryanatkn/moss/theme.ts</code></Module_Link
+			> and <Module_Link path="themes.ts"><code>@ryanatkn/moss/themes.ts</code></Module_Link>.
+		</p>
 		<!-- TODO explain when exported <Code code={`<Theme_Input\n\t{themes}\n\t{selected_theme}\n/>`} /> -->
 		<div class="width_sm mb_lg">
 			<Theme_Input {themes} enable_editing onedit={(t) => (editing_theme = t)} />
@@ -62,7 +83,9 @@
 		<!-- <button class="mb_lg" onclick={() => (show_create_theme_dialog = true)} disabled
 				>create a new theme (todo)</button
 			> -->
-		<aside>The builtin themes need more work, but the proof of concept is ready!</aside>
+		<Unfinished_Implementation_Warning
+			>The builtin themes need more work, but the proof of concept is ready!</Unfinished_Implementation_Warning
+		>
 	</section>
 </Tome_Detail>
 
