@@ -92,7 +92,7 @@
 		<!-- TODO add a slider for the font size here -->
 		<Tome_Subheading text="Font weights" slug="font-weight" />
 		<aside>
-			There are no variables for <Mdn_Link href="Web/CSS/font-weight" /> but there are utility
+			There are no variables for <Mdn_Link path="Web/CSS/font-weight" /> but there are utility
 			<Tome_Link name="classes" hash="utility-classes">utility classes</Tome_Link>.
 		</aside>
 		<form>
@@ -129,7 +129,7 @@
 	<!-- <section> 'text_disabled' 'text_active'</section> -->
 	<section>
 		<Tome_Subheading text="Line heights" slug="line-height" />
-		<aside>Learn more about <Mdn_Link href="Web/CSS/line-height" />.</aside>
+		<aside>Learn more about <Mdn_Link path="Web/CSS/line-height" />.</aside>
 		<div>
 			{#each line_height_names as name}
 				<div class="spaced">

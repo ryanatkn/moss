@@ -30,9 +30,9 @@
 	<section class="theme">
 		<p>
 			Moss supports both the browser's
-			<Mdn_Link href="Web/CSS/color-scheme" />
+			<Mdn_Link path="Web/CSS/color-scheme" />
 			and custom themes based on <Tome_Link name="variables" />, which use
-			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link>.
+			<Mdn_Link path="Web/CSS/--*">CSS custom properties</Mdn_Link>.
 		</p>
 		<p>
 			Moss works with any JS framework, but it provides only stylesheets, not integrations. This
@@ -44,13 +44,13 @@
 		<Tome_Subheading text="Color scheme" slug="color-scheme" />
 		<p>
 			Moss supports
-			<Mdn_Link href="Web/CSS/color-scheme" /> with dark and light modes. To apply dark mode manually,
+			<Mdn_Link path="Web/CSS/color-scheme" /> with dark and light modes. To apply dark mode manually,
 			add the <code>dark</code> class to the root <code>html</code>
 			element.
 		</p>
 		<p>
 			The Fuz integration detects the default with
-			<Mdn_Link href="Web/CSS/@media/prefers-color-scheme" />, and users can also set it directly
+			<Mdn_Link path="Web/CSS/@media/prefers-color-scheme" />, and users can also set it directly
 			with a component like
 			<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/Color_Scheme_Input.svelte"
 				>this one</a

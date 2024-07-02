@@ -23,24 +23,24 @@
 		>Element styles are incomplete. Any requests?</Unfinished_Implementation_Warning
 	>
 	<blockquote>
-		Styles for plain <Mdn_Link href="Web/HTML/Element">HTML elements</Mdn_Link>. See also <Tome_Link
+		Styles for plain <Mdn_Link path="Web/HTML/Element">HTML elements</Mdn_Link>. See also <Tome_Link
 			name="typography"
 		/> and <Tome_Link name="forms" />.
 	</blockquote>
 	<section>
 		<Tome_Subheading text="blockquote" slug="blockquote-element">
 			<span style="font-size: var(--size_xl3)">👆</span>
-			<Mdn_Link href="Web/HTML/Element/blockquote" />
+			<Mdn_Link path="Web/HTML/Element/blockquote" />
 		</Tome_Subheading>
 		<Tome_Subheading text="hr" slug="hr">
 			<span style="font-size: var(--size_xl3)">👇</span>
-			<Mdn_Link href="Web/HTML/Element/hr" />
+			<Mdn_Link path="Web/HTML/Element/hr" />
 		</Tome_Subheading>
 		<hr />
 	</section>
 	<section>
 		<Tome_Subheading text="a" slug="a-element">
-			<Mdn_Link href="Web/HTML/Element/a" />
+			<Mdn_Link path="Web/HTML/Element/a" />
 		</Tome_Subheading>
 		<p><a href="{base}/">a link</a> in a <code>p</code></p>
 		<div><a href="{base}/">a link</a> in a <code>div</code></div>
@@ -48,14 +48,14 @@
 	</section>
 	<section>
 		<Tome_Subheading text="code" slug="code-element">
-			<Mdn_Link href="Web/HTML/Element/code" />
+			<Mdn_Link path="Web/HTML/Element/code" />
 		</Tome_Subheading>
 		<p><code>code</code> in a <code>p</code></p>
 		<div><code>code</code> in a <code>div</code></div>
 	</section>
 	<section>
 		<Tome_Subheading text="pre" slug="pre-element">
-			<Mdn_Link href="Web/HTML/Element/pre" />
+			<Mdn_Link path="Web/HTML/Element/pre" />
 		</Tome_Subheading>
 		<pre>a <code class="inline">pre</code> is
   preformatted
@@ -68,9 +68,9 @@
 	</section>
 	<section>
 		<Tome_Subheading text="details and summary" slug="details-and-summary-elements">
-			<Mdn_Link href="Web/HTML/Element/details" />
+			<Mdn_Link path="Web/HTML/Element/details" />
 			and
-			<Mdn_Link href="Web/HTML/Element/summary" />
+			<Mdn_Link path="Web/HTML/Element/summary" />
 		</Tome_Subheading>
 		<details>
 			<summary>Click this <code>summary</code> to see the rest of the <code>details</code></summary>
@@ -89,7 +89,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="aside" slug="aside-element">
-			<Mdn_Link href="Web/HTML/Element/aside" />
+			<Mdn_Link path="Web/HTML/Element/aside" />
 		</Tome_Subheading>
 		<aside>
 			the <code>aside</code> looks like this
@@ -111,21 +111,21 @@
 	</section>
 	<section>
 		<Tome_Subheading text="header" slug="header-element">
-			<Mdn_Link href="Web/HTML/Element/header" />
+			<Mdn_Link path="Web/HTML/Element/header" />
 		</Tome_Subheading>
 		<Code content={`<header>header</header>`} />
 		<header>header</header>
 	</section>
 	<section>
 		<Tome_Subheading text="footer" slug="footer-element">
-			<Mdn_Link href="Web/HTML/Element/footer" />
+			<Mdn_Link path="Web/HTML/Element/footer" />
 		</Tome_Subheading>
 		<Code content={`<footer>footer</footer>`} />
 		<footer>footer</footer>
 	</section>
 	<section>
 		<Tome_Subheading text="section" slug="section-element">
-			<Mdn_Link href="Web/HTML/Element/section" />
+			<Mdn_Link path="Web/HTML/Element/section" />
 		</Tome_Subheading>
 		<Code content={`<section>section</section>`} />
 		<section>section</section>
@@ -174,7 +174,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="table" slug="table-element">
-			<Mdn_Link href="Web/HTML/Element/table" />
+			<Mdn_Link path="Web/HTML/Element/table" />
 		</Tome_Subheading>
 		<Unfinished_Implementation_Warning />
 		<Code

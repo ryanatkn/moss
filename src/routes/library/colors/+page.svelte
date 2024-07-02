@@ -75,7 +75,7 @@
 			color values (e.g. <code>hsl(120 55% 36%)</code>) and 9 HSL values (e.g.
 			<code>120 55% 36%</code>, useful to apply custom alpha), handling most cases, and the base
 			colors can be customized with platform APIs like the <Mdn_Link
-				href="Web/CSS/color_value/color-mix"
+				path="Web/CSS/color_value/color-mix"
 			/> CSS function.
 		</p>
 		<p>
@@ -90,11 +90,11 @@
 		<Unfinished_Implementation_Warning>
 			Colors are unfinished. I'm thinking of adding orange and cyan for a total of 9 hues. Moss may
 			also change from HSL to <Mdn_Link
-				href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch"
+				path="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch"
 			/>.
 		</Unfinished_Implementation_Warning>
 		<p>
-			Hue variables contain a single <Mdn_Link href="Web/CSS/hue" /> number. Each color variable combines
+			Hue variables contain a single <Mdn_Link path="Web/CSS/hue" /> number. Each color variable combines
 			a hue variable with hardcoded saturation and lightness values for light and dark modes.
 		</p>
 		<p>

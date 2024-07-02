@@ -16,7 +16,7 @@
 		<p>
 			Moss is a CSS framework and design system that can be used with any website and JS framework.
 			It's built around <em>style variables</em>, which are
-			<Mdn_Link href="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with additional
+			<Mdn_Link path="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with additional
 			capabilities and conventions.
 		</p>
 		<Unfinished_Implementation_Warning>
@@ -40,7 +40,7 @@
 			<li>themes are groups of variables</li>
 			<li>
 				dark mode is a first-class concept in the system, not a theme, instead each theme can
-				support light and/or dark <Mdn_Link href="Web/CSS/color-scheme">color-schemes</Mdn_Link>
+				support light and/or dark <Mdn_Link path="Web/CSS/color-scheme">color-schemes</Mdn_Link>
 			</li>
 			<li>includes a CSS reset that styles HTML tags directly with the variables</li>
 			<li>
