@@ -1,4 +1,4 @@
-[<img src="/static/favicon.png" align="right" width="192" height="192">](https://moss.ryanatkn.com/)
+[<img src="/static/logo.svg" alt="a fuzzy tuft of green moss" align="right" width="192" height="192">](https://moss.ryanatkn.com/)
 
 # @ryanatkn/moss 🌿
 
