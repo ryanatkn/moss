@@ -6,6 +6,8 @@
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
+	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+
 	const LIBRARY_ITEM_NAME = 'buttons';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -50,6 +52,11 @@
 
 	<section>
 		<Tome_Subheading text="Colorful buttons" slug="colorful-buttons" />
+		<Unfinished_Implementation_Warning>
+			Button colors will likely change significantly. Either fill will be an optional variant, or
+			selected will be changed to be filled. In either case, unselected colored buttons will be less
+			pronounced to be like the default but colored.
+		</Unfinished_Implementation_Warning>
 		{#each color_names as c}
 			{@const color_name = `color_${c}`}
 			<section>
