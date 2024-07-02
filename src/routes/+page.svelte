@@ -37,7 +37,7 @@
 				<a href="https://www.ryanatkn.com/">my other projects</a>
 				that focus on end-users. It's grown slowly over 5 years, adding new features when I feel they're
 				sufficiently generalizable or merit experimentation, and my goal for 2024 is to fill out its
-				APIs so it's more complete, coherent, and widely useful.
+				APIs so it's more coherent and complete.
 			</p>
 			<p>
 				To learn more see <a href="{base}/library">the docs</a>

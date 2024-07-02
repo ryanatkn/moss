@@ -92,8 +92,8 @@
 						>
 					</li>
 					<li>
-						optimizing the stylesheet will become increasingly important as the utility classes fill
-						out - the plan is to include the commonly useful things but not everything
+						optimizing the stylesheet will become increasingly important as the variables and
+						utility classes fill out
 					</li>
 				</ul>
 			</li>
