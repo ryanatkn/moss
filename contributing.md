@@ -22,8 +22,8 @@ Let's chat publicly on [Discord](https://discord.gg/YU5tyeK72X)
 or here in the [Github issues](https://github.com/ryanatkn/moss).
 
 I've been growing Moss slowly over 5+ years
-to support [Zzz](https://zzz.ryanatkn.com/) and [my other projects](http://www.ryanatkn.com/),
-with regular breaking changes and experimental patterns.
+to support [Zzz](https://zzz.ryanatkn.com/) and [my other projects](http://www.ryanatkn.com/)
+that focus on end users, with regular breaking changes and experimental patterns.
 
 ## Community
 
