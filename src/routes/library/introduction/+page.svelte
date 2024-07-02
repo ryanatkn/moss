@@ -13,12 +13,6 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<Unfinished_Implementation_Warning>
-			Docs are a work in progress. Moss was recently extracted from
-			<a href="https://www.fuz.dev/">Fuz</a>, and these docs are incomplete and misleading in some
-			cases, because they now need to be agnostic to Svelte and deal with more inner workings of the
-			CSS.
-		</Unfinished_Implementation_Warning>
 		<p>
 			Moss is a CSS framework that can be used with any website and JS framework. Its design system
 			centers on <em>style variables</em>, which are
