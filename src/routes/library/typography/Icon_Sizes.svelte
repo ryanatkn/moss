@@ -2,7 +2,7 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import {icon_sizes} from '$lib/variable_data';
+	import {icon_sizes} from '$lib/variable_data.js';
 </script>
 
 <section>
