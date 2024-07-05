@@ -29,11 +29,11 @@
 	</blockquote>
 	<section>
 		<Tome_Subheading text="blockquote" slug="blockquote-element">
-			<span style="font-size: var(--size_xl3)">👆</span>
+			<span class="size_xl3">👆</span>
 			<Mdn_Link path="Web/HTML/Element/blockquote" />
 		</Tome_Subheading>
 		<Tome_Subheading text="hr" slug="hr">
-			<span style="font-size: var(--size_xl3)">👇</span>
+			<span class="size_xl3">👇</span>
 			<Mdn_Link path="Web/HTML/Element/hr" />
 		</Tome_Subheading>
 		<hr />

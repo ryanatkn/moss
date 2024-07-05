@@ -86,11 +86,7 @@
 					>
 					<label>
 						<div class="title">select</div>
-						<select
-							class="text_align_center"
-							style="font-size: var(--size_xl5)"
-							disabled={created_account}
-						>
+						<select class="text_align_center size_xl5" disabled={created_account}>
 							{#each faces as face (face)}
 								<option value={face}>{face}</option>
 							{/each}

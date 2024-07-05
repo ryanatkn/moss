@@ -28,7 +28,7 @@
 	<section>
 		<div class="mb_lg">
 			<Code content={`<button>a button</button>`} />
-			<button onclick={() => (clicked_button = !clicked_button)}>a button</button>
+			<button type="button" onclick={() => (clicked_button = !clicked_button)}>a button</button>
 			{#if clicked_button}
 				<div transition:slide>clicked a button</div>
 			{/if}
@@ -41,11 +41,13 @@
 			<code>.deselectable</code> modifier class for buttons that can be clicked when selected. Themes
 			can customize this behavior.
 		</p>
-		<button disabled class:mb_xs>disabled button</button>
-		<button class="selected" class:mb_xs>button.selected</button>
-		<button class="selected" disabled class:mb_xs>disabled button.selected</button>
-		<button class="selected deselectable" class:mb_xs>button.selected.deselectable</button>
-		<button class="selected deselectable" disabled class:mb_xs
+		<button type="button" disabled class:mb_xs>disabled button</button>
+		<button type="button" class="selected" class:mb_xs>button.selected</button>
+		<button type="button" class="selected" disabled class:mb_xs>disabled button.selected</button>
+		<button type="button" class="selected deselectable" class:mb_xs
+			>button.selected.deselectable</button
+		>
+		<button type="button" class="selected deselectable" disabled class:mb_xs
 			>disabled button.selected.deselectable</button
 		>
 	</section>
@@ -61,16 +63,19 @@
 			{@const color_name = `color_${c}`}
 			<section>
 				<Code content={`<button class="${color_name}">`} />
-				<button class={color_name} class:mb_xs>.{color_name}</button>
-				<button class={color_name} disabled class:mb_xs>disabled .{color_name}</button>
-				<button class="{color_name} selected" class:mb_xs>.{color_name}.selected</button>
-				<button class="{color_name} selected" disabled class:mb_xs
+				<button type="button" class={color_name} class:mb_xs>.{color_name}</button>
+				<button type="button" class={color_name} disabled class:mb_xs>disabled .{color_name}</button
+				>
+				<button type="button" class="{color_name} selected" class:mb_xs
+					>.{color_name}.selected</button
+				>
+				<button type="button" class="{color_name} selected" disabled class:mb_xs
 					>disabled .{color_name}.selected</button
 				>
-				<button class="{color_name} selected deselectable" class:mb_xs
+				<button type="button" class="{color_name} selected deselectable" class:mb_xs
 					>.{color_name}.selected.deselectable</button
 				>
-				<button class="{color_name} selected deselectable" disabled class:mb_xs
+				<button type="button" class="{color_name} selected deselectable" disabled class:mb_xs
 					>disabled .{color_name}.selected.deselectable</button
 				>
 			</section>
@@ -83,11 +88,11 @@
 	<Tome_Subheading text="With disabled attribute" slug="disabled-attribute" />
 	<section>
 		<Code content={`<button disabled>\n\t:|\n</button>`} />
-		<button disabled>:|</button>
+		<button type="button" disabled>:|</button>
 	</section>
 	<section>
 		<Code content={`<button disabled>\n\ta bigger disabled button\n</button>`} />
-		<button disabled>a bigger disabled button</button>
+		<button type="button" disabled>a bigger disabled button</button>
 	</section>
 
 	<section>
@@ -96,6 +101,7 @@
 		</Tome_Subheading>
 		<nav>
 			<button
+				type="button"
 				class:selected={selected_button === 0}
 				onclick={() => (selected_button = 0)}
 				class:mb_xs
@@ -103,6 +109,7 @@
 				button 0
 			</button>
 			<button
+				type="button"
 				class:selected={selected_button === 1}
 				onclick={() => (selected_button = 1)}
 				class:mb_xs
@@ -110,6 +117,7 @@
 				button 1
 			</button>
 			<button
+				type="button"
 				class:selected={selected_button === 2}
 				onclick={() => (selected_button = 2)}
 				class:mb_xs
@@ -120,7 +128,7 @@
 	</section>
 	<section>
 		<Code content={`<button class="selected">...</button>`} />
-		<button class="w_100 selected">a button with <code>.selected</code></button>
+		<button type="button" class="w_100 selected">a button with <code>.selected</code></button>
 	</section>
 	<section>
 		<p>
@@ -130,13 +138,14 @@
 	</section>
 	<section>
 		<button
+			type="button"
 			class="w_100 deselectable"
 			class:selected={selected_deselectable_button}
 			onclick={() => (selected_deselectable_button = !selected_deselectable_button)}
 			>a <code>.deselectable</code>
 			{#if selected_deselectable_button}<code>.selected</code>{:else}unselected{/if} button</button
 		>
-		<button class="w_100 selected deselectable" disabled
+		<button type="button" class="w_100 selected deselectable" disabled
 			>disabled <code>.deselectable</code> <code>.selected</code></button
 		>
 	</section>
@@ -150,59 +159,59 @@
 	+
 </button>`}
 		/>
-		<button class="plain" class:mb_xs>+</button>
-		<button class="plain mb_lg" disabled>+</button>
+		<button type="button" class="plain" class:mb_xs>+</button>
+		<button type="button" class="plain mb_lg" disabled>+</button>
 		<Code
 			content={`<button class="icon_button">
 	+
 </button>`}
 		/>
-		<button class="icon_button" class:mb_xs>+</button>
-		<button class="icon_button mb_lg" disabled>+</button>
+		<button type="button" class="icon_button" class:mb_xs>+</button>
+		<button type="button" class="icon_button mb_lg" disabled>+</button>
 		<Code
 			content={`<button class="plain icon_button">
 	+
 </button>`}
 		/>
-		<button class="plain icon_button" class:mb_xs>+</button>
-		<button class="plain icon_button" disabled>+</button>
+		<button type="button" class="plain icon_button" class:mb_xs>+</button>
+		<button type="button" class="plain icon_button" disabled>+</button>
 		<h4><code>.selected</code> variants</h4>
 		<Code
 			content={`<button class="plain selected">
 	+
 </button>`}
 		/>
-		<button class="plain selected mb_lg">+</button>
+		<button type="button" class="plain selected mb_lg">+</button>
 		<Code
 			content={`<button class="icon_button selected">
 	+
 </button>`}
 		/>
-		<button class="icon_button selected mb_lg">+</button>
+		<button type="button" class="icon_button selected mb_lg">+</button>
 		<Code
 			content={`<button class="plain icon_button selected">
 	+
 </button>`}
 		/>
-		<button class="plain icon_button selected">+</button>
+		<button type="button" class="plain icon_button selected">+</button>
 		<h4><code>.selected</code> and <code>.deselectable</code> variants</h4>
 		<Code
 			content={`<button class="plain selected deselectable">
 	+
 </button>`}
 		/>
-		<button class="plain selected deselectable mb_lg">+</button>
+		<button type="button" class="plain selected deselectable mb_lg">+</button>
 		<Code
 			content={`<button class="icon_button selected deselectable">
 	+
 </button>`}
 		/>
-		<button class="icon_button selected deselectable mb_lg">+</button>
+		<button type="button" class="icon_button selected deselectable mb_lg">+</button>
 		<Code
 			content={`<button class="plain icon_button selected deselectable">
 	+
 </button>`}
 		/>
-		<button class="plain icon_button selected deselectable">+</button>
+		<button type="button" class="plain icon_button selected deselectable">+</button>
 	</section>
 </Tome_Detail>

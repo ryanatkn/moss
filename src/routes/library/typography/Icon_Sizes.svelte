@@ -20,7 +20,7 @@
 				<Style_Variable_Button {name} /> =
 				<code>{value}</code>
 			</figcaption>
-			<div style="font-size: var(--{name}); --size: var(--{name});" title="--{name} is {value}">
+			<div style:font-size="var(--{name})" style:--size="var(--{name})" title="--{name} is {value}">
 				🐢
 			</div>
 		</figure>

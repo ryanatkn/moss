@@ -124,8 +124,8 @@
 	<section>
 		<aside>
 			<p>
-				tip: Try <button onclick={toggle_color_scheme}>toggling</button> between light and dark to
-				see how <code>bg</code> and <code>fg</code>
+				tip: Try <button type="button" onclick={toggle_color_scheme}>toggling</button> between light
+				and dark to see how <code>bg</code> and <code>fg</code>
 				change, while <code>darken</code> and <code>lighten</code> don't change but do appear significantly
 				different because of the context.
 			</p>
