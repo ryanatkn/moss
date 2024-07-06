@@ -1,0 +1,1 @@
+import{h as u,r as S,u as c,q as k,S as q}from"./runtime.DKCg-osn.js";function h(r,i){var t;var f=r&&((t=r[q])==null?void 0:t.t);return r===i||f===i}function T(r={},i,f,t){u(()=>{var a,s;return S(()=>{a=s,s=[],c(()=>{r!==f(...s)&&(i(r,...s),a&&h(f(...a),r)&&i(null,...a))})}),()=>{k(()=>{s&&h(f(...s),r)&&i(null,...s)})}})}export{T as b};
