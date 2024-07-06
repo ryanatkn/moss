@@ -35,14 +35,16 @@ Some notes:
 
 :root,
 .themed {
+	color-scheme: light dark;
 	background-color: var(--bg);
 	color: var(--text_color);
 	accent-color: var(--color_a_5);
 	line-height: var(--line_height_md);
 }
 
-:root.dark {
-	color-scheme: dark; /* override for the meta tag set by `createThemeSetupHtml` */
+:root.dark,
+.themed.dark {
+	color-scheme: dark light;
 }
 
 body {
