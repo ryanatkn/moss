@@ -1,5 +1,5 @@
 ---
-'@ryanatkn/moss': patch
+'@ryanatkn/moss': minor
 ---
 
-tweak theme css
+remove `.themed` styles
