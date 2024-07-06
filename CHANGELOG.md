@@ -1,5 +1,15 @@
 # @ryanatkn/moss
 
+## 0.7.0
+
+### Minor Changes
+
+- update some theme-related styles ([#22](https://github.com/ryanatkn/moss/pull/22))
+
+  - remove `.themed` styles
+  - support `light` inside `.dark`, but as the fallback
+  - add explicit `color-scheme: light dark` to `:root`
+
 ## 0.6.3
 
 ### Patch Changes
