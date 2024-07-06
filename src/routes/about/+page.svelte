@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
 	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
+	import Community_Links_Panel from '@ryanatkn/fuz/Community_Links_Panel.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
 	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
 
@@ -18,6 +19,7 @@
 		</header>
 		<Breadcrumb><Moss_Logo size="32px" /></Breadcrumb>
 	</section>
+	<Community_Links_Panel />
 	<section>
 		<div class="panel p_md width_md">
 			<Package_Detail {pkg} />
