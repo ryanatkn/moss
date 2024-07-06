@@ -33,8 +33,7 @@ Some notes:
 	text-size-adjust: none;
 }
 
-:root,
-.themed {
+:root {
 	color-scheme: light dark;
 	background-color: var(--bg);
 	color: var(--text_color);
@@ -42,8 +41,7 @@ Some notes:
 	line-height: var(--line_height_md);
 }
 
-:root.dark,
-.themed.dark {
+:root.dark {
 	color-scheme: dark light;
 }
 
@@ -70,7 +68,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	display: none !important;
 }
 
-/* TODO what about .themed? */
 @media (prefers-reduced-motion) {
 	:root {
 		/* setting to `initial` disables animations but allows for fallbacks (see Pending_Animation)  */

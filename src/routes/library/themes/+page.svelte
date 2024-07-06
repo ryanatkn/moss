@@ -14,8 +14,6 @@
 	import Theme_Form from '$routes/Theme_Form.svelte';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
-	// TODO separate correctly from the Themed docs
-
 	const LIBRARY_ITEM_NAME = 'themes';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
