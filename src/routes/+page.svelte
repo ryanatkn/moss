@@ -3,6 +3,7 @@
 	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
 	import Card from '@ryanatkn/fuz/Card.svelte';
 	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
+	import Hidden_Personal_Links from '@ryanatkn/fuz/Hidden_Personal_Links.svelte';
 
 	import {get_pkg} from '$routes/pkg.js';
 
@@ -60,14 +61,7 @@
 			{#snippet logo_header()}
 				<a href="{base}/about" class="mb_xs">about</a>
 			{/snippet}
-			<div hidden>
-				@ryanatkn@hci.social on <a rel="me" href="https://hci.social/@ryanatkn">Mastodon</a>
-			</div>
-			<div hidden>
-				@webdevladder@mastodon.social on <a rel="me" href="https://mastodon.social/@webdevladder"
-					>Mastodon</a
-				>
-			</div>
+			<Hidden_Personal_Links />
 		</Library_Footer>
 	</section>
 </main>
