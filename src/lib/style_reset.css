@@ -29,8 +29,8 @@ Some notes:
 	text-size-adjust: none;
 }
 
-:root,
-.themed {
+:root {
+	color-scheme: light dark;
 	background-color: var(--bg);
 	color: var(--text_color);
 	accent-color: var(--color_a_5);
@@ -38,7 +38,7 @@ Some notes:
 }
 
 :root.dark {
-	color-scheme: dark; /* override for the meta tag set by `createThemeSetupHtml` */
+	color-scheme: dark light;
 }
 
 body {
@@ -64,7 +64,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	display: none !important;
 }
 
-/* TODO what about .themed? */
 @media (prefers-reduced-motion) {
 	:root {
 		/* setting to `initial` disables animations but allows for fallbacks (see Pending_Animation)  */
