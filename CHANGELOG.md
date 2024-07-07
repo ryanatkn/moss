@@ -1,5 +1,13 @@
 # @ryanatkn/moss
 
+## 0.7.1
+
+### Patch Changes
+
+- publish src files ([d4289dc](https://github.com/ryanatkn/moss/commit/d4289dc))
+- enable tsconfig `declaration` and `declarationMap` ([fe60a19](https://github.com/ryanatkn/moss/commit/fe60a19))
+- add tsconfig `sourceRoot` ([039be68](https://github.com/ryanatkn/moss/commit/039be68))
+
 ## 0.7.0
 
 ### Minor Changes
