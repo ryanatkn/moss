@@ -5,7 +5,7 @@
 	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
 
 	import {tomes} from '$routes/library/tomes.js';
-	import {set_selected_variable} from '$routes/style_variable_helpers.js';
+	import {set_selected_variable} from '$routes/style_variable_helpers.svelte.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
 	import {get_pkg} from '$routes/pkg.js';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
@@ -34,12 +34,12 @@
 	{@render children()}
 </Library>
 
-{#if $selected_variable}
-	<Dialog onclose={() => ($selected_variable = null)}>
+{#if selected_variable.value}
+	<Dialog onclose={() => (selected_variable.value = null)}>
 		{#snippet children(close)}
 			<div class="pane">
 				<div class="panel p_lg box">
-					<Style_Variable_Detail variable={$selected_variable} />
+					<Style_Variable_Detail variable={selected_variable.value} />
 					<Unfinished_Implementation_Warning />
 					<button type="button" onclick={close}>ok</button>
 				</div>
