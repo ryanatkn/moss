@@ -3,7 +3,7 @@
 	import type {Snippet} from 'svelte';
 
 	import {default_variables} from '$lib/variables.js';
-	import {get_selected_variable} from '$routes/style_variable_helpers.js';
+	import {get_selected_variable} from '$routes/style_variable_helpers.svelte.js';
 
 	interface Props {
 		name: string; // TODO type? generate from `tomes`? or keep extensible?
