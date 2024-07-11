@@ -34,12 +34,12 @@
 	{@render children()}
 </Library>
 
-{#if $selected_variable}
-	<Dialog onclose={() => ($selected_variable = null)}>
+{#if selected_variable.value}
+	<Dialog onclose={() => (selected_variable.value = null)}>
 		{#snippet children(close)}
 			<div class="pane">
 				<div class="panel p_lg box">
-					<Style_Variable_Detail variable={$selected_variable} />
+					<Style_Variable_Detail variable={selected_variable.value} />
 					<Unfinished_Implementation_Warning />
 					<button type="button" onclick={close}>ok</button>
 				</div>
