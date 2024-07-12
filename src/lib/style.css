@@ -725,6 +725,23 @@ for disabled colors without needing a wrapper .disabled class */
 	cursor: pointer;
 }
 
+.clickable {
+	cursor: pointer;
+	transform: var(--clickable_transform, scale3d(1, 1, 1));
+	transform-origin: var(--clickable_transform_origin);
+	transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
+}
+.clickable:focus {
+	transform: var(--clickable_transform_focus, scale3d(1.07, 1.07, 1.07));
+}
+.clickable:hover {
+	transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
+}
+.clickable:active,
+.clickable.active {
+	transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
+}
+
 /* A pane is a box floating over the page, like for dialogs.
 By default it's opaque, resetting the background to the initial depth. */
 .pane {
@@ -822,23 +839,6 @@ By default it's opaque, resetting the background to the initial depth. */
 }
 a.chip {
 	font-weight: 700;
-}
-
-.clickable {
-	cursor: pointer;
-	transform: var(--clickable_transform, scale3d(1, 1, 1));
-	transform-origin: var(--clickable_transform_origin);
-	transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
-}
-.clickable:focus {
-	transform: var(--clickable_transform_focus, scale3d(1.07, 1.07, 1.07));
-}
-.clickable:hover {
-	transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
-}
-.clickable:active,
-.clickable.active {
-	transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
 }
 
 /* end ./src/lib/style_components.css */
@@ -994,26 +994,6 @@ The utility classes not based on style variables are in `style_utilities.css`.
 }
 .flip_xy {
 	transform: scaleX(-1) scaleY(-1);
-}
-
-/*
-
-text
-
-*/
-
-.ellipsis {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.pixelated {
-	image-rendering: -webkit-optimize-contrast; /* Safari */
-	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
-	image-rendering: pixelated; /* in case crisp-edges isn't supported */
-	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /*
@@ -1183,6 +1163,20 @@ text
 }
 .font_weight_900 {
 	font-weight: 900;
+}
+
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.pixelated {
+	image-rendering: -webkit-optimize-contrast; /* Safari */
+	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated; /* in case crisp-edges isn't supported */
+	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /*
@@ -1923,37 +1917,6 @@ borders
 	outline-width: var(--outline_width_3);
 }
 
-.radius_100 {
-	border-radius: 100%;
-}
-.radius_50 {
-	border-radius: 50%;
-}
-.radius_0 {
-	border-radius: 0;
-}
-.radius_xs3 {
-	border-radius: var(--radius_xs3);
-}
-.radius_xs2 {
-	border-radius: var(--radius_xs2);
-}
-.radius_xs {
-	border-radius: var(--radius_xs);
-}
-.radius_sm {
-	border-radius: var(--radius_sm);
-}
-.radius_md {
-	border-radius: var(--radius_md);
-}
-.radius_lg {
-	border-radius: var(--radius_lg);
-}
-.radius_xl {
-	border-radius: var(--radius_xl);
-}
-
 /* TODO add the top/right/bottom/left variants */
 /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
 .border_none {
@@ -1985,6 +1948,37 @@ borders
 }
 .border_outset {
 	border-style: outset;
+}
+
+.radius_100 {
+	border-radius: 100%;
+}
+.radius_50 {
+	border-radius: 50%;
+}
+.radius_0 {
+	border-radius: 0;
+}
+.radius_xs3 {
+	border-radius: var(--radius_xs3);
+}
+.radius_xs2 {
+	border-radius: var(--radius_xs2);
+}
+.radius_xs {
+	border-radius: var(--radius_xs);
+}
+.radius_sm {
+	border-radius: var(--radius_sm);
+}
+.radius_md {
+	border-radius: var(--radius_md);
+}
+.radius_lg {
+	border-radius: var(--radius_lg);
+}
+.radius_xl {
+	border-radius: var(--radius_xl);
 }
 
 /*
@@ -2065,6 +2059,7 @@ shading
 .shadow_inset_xl {
 	box-shadow: var(--shadow_inset_xl);
 }
+
 .shadow_a_xs {
 	box-shadow: var(--shadow_a_xs);
 }
@@ -2380,6 +2375,7 @@ shading
 .shadow_g_inset_xl {
 	box-shadow: var(--shadow_g_inset_xl);
 }
+
 /* higher specificity */
 /* TODO which order should these be in? */
 .shadow_inherit {
