@@ -16,8 +16,7 @@
 		{@const num = i + 1}
 		{@const name = `color_${color_name}_${num}`}
 		{@const value = computed_styles?.getPropertyValue('--' + name)}
-		<!-- TODO this is a hack, should have a parse variant that doesn't require wrapping -->
-		{@const hsl = value && parse_hsl_string(`hsl(${value})`)}
+		{@const hsl = value && parse_hsl_string(value)}
 		<li style:--bg_color="var(--{name})">
 			<div class="color"></div>
 			<div class="text">
