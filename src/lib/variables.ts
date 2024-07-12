@@ -330,258 +330,6 @@ export const hsl_g_9: Style_Variable = {
 	name: 'hsl_g_9',
 	light: 'var(--hue_g) 72% 10%',
 };
-export const color_a_1: Style_Variable = {
-	name: 'color_a_1',
-	light: 'hsl(var(--hsl_a_1))',
-};
-export const color_a_2: Style_Variable = {
-	name: 'color_a_2',
-	light: 'hsl(var(--hsl_a_2))',
-};
-export const color_a_3: Style_Variable = {
-	name: 'color_a_3',
-	light: 'hsl(var(--hsl_a_3))',
-};
-export const color_a_4: Style_Variable = {
-	name: 'color_a_4',
-	light: 'hsl(var(--hsl_a_4))',
-};
-export const color_a_5: Style_Variable = {
-	name: 'color_a_5',
-	light: 'hsl(var(--hsl_a_5))',
-};
-export const color_a_6: Style_Variable = {
-	name: 'color_a_6',
-	light: 'hsl(var(--hsl_a_6))',
-};
-export const color_a_7: Style_Variable = {
-	name: 'color_a_7',
-	light: 'hsl(var(--hsl_a_7))',
-};
-export const color_a_8: Style_Variable = {
-	name: 'color_a_8',
-	light: 'hsl(var(--hsl_a_8))',
-};
-export const color_a_9: Style_Variable = {
-	name: 'color_a_9',
-	light: 'hsl(var(--hsl_a_9))',
-};
-export const color_b_1: Style_Variable = {
-	name: 'color_b_1',
-	light: 'hsl(var(--hsl_b_1))',
-};
-export const color_b_2: Style_Variable = {
-	name: 'color_b_2',
-	light: 'hsl(var(--hsl_b_2))',
-};
-export const color_b_3: Style_Variable = {
-	name: 'color_b_3',
-	light: 'hsl(var(--hsl_b_3))',
-};
-export const color_b_4: Style_Variable = {
-	name: 'color_b_4',
-	light: 'hsl(var(--hsl_b_4))',
-};
-export const color_b_5: Style_Variable = {
-	name: 'color_b_5',
-	light: 'hsl(var(--hsl_b_5))',
-};
-export const color_b_6: Style_Variable = {
-	name: 'color_b_6',
-	light: 'hsl(var(--hsl_b_6))',
-};
-export const color_b_7: Style_Variable = {
-	name: 'color_b_7',
-	light: 'hsl(var(--hsl_b_7))',
-};
-export const color_b_8: Style_Variable = {
-	name: 'color_b_8',
-	light: 'hsl(var(--hsl_b_8))',
-};
-export const color_b_9: Style_Variable = {
-	name: 'color_b_9',
-	light: 'hsl(var(--hsl_b_9))',
-};
-export const color_c_1: Style_Variable = {
-	name: 'color_c_1',
-	light: 'hsl(var(--hsl_c_1))',
-};
-export const color_c_2: Style_Variable = {
-	name: 'color_c_2',
-	light: 'hsl(var(--hsl_c_2))',
-};
-export const color_c_3: Style_Variable = {
-	name: 'color_c_3',
-	light: 'hsl(var(--hsl_c_3))',
-};
-export const color_c_4: Style_Variable = {
-	name: 'color_c_4',
-	light: 'hsl(var(--hsl_c_4))',
-};
-export const color_c_5: Style_Variable = {
-	name: 'color_c_5',
-	light: 'hsl(var(--hsl_c_5))',
-};
-export const color_c_6: Style_Variable = {
-	name: 'color_c_6',
-	light: 'hsl(var(--hsl_c_6))',
-};
-export const color_c_7: Style_Variable = {
-	name: 'color_c_7',
-	light: 'hsl(var(--hsl_c_7))',
-};
-export const color_c_8: Style_Variable = {
-	name: 'color_c_8',
-	light: 'hsl(var(--hsl_c_8))',
-};
-export const color_c_9: Style_Variable = {
-	name: 'color_c_9',
-	light: 'hsl(var(--hsl_c_9))',
-};
-export const color_d_1: Style_Variable = {
-	name: 'color_d_1',
-	light: 'hsl(var(--hsl_d_1))',
-};
-export const color_d_2: Style_Variable = {
-	name: 'color_d_2',
-	light: 'hsl(var(--hsl_d_2))',
-};
-export const color_d_3: Style_Variable = {
-	name: 'color_d_3',
-	light: 'hsl(var(--hsl_d_3))',
-};
-export const color_d_4: Style_Variable = {
-	name: 'color_d_4',
-	light: 'hsl(var(--hsl_d_4))',
-};
-export const color_d_5: Style_Variable = {
-	name: 'color_d_5',
-	light: 'hsl(var(--hsl_d_5))',
-};
-export const color_d_6: Style_Variable = {
-	name: 'color_d_6',
-	light: 'hsl(var(--hsl_d_6))',
-};
-export const color_d_7: Style_Variable = {
-	name: 'color_d_7',
-	light: 'hsl(var(--hsl_d_7))',
-};
-export const color_d_8: Style_Variable = {
-	name: 'color_d_8',
-	light: 'hsl(var(--hsl_d_8))',
-};
-export const color_d_9: Style_Variable = {
-	name: 'color_d_9',
-	light: 'hsl(var(--hsl_d_9))',
-};
-export const color_e_1: Style_Variable = {
-	name: 'color_e_1',
-	light: 'hsl(var(--hsl_e_1))',
-};
-export const color_e_2: Style_Variable = {
-	name: 'color_e_2',
-	light: 'hsl(var(--hsl_e_2))',
-};
-export const color_e_3: Style_Variable = {
-	name: 'color_e_3',
-	light: 'hsl(var(--hsl_e_3))',
-};
-export const color_e_4: Style_Variable = {
-	name: 'color_e_4',
-	light: 'hsl(var(--hsl_e_4))',
-};
-export const color_e_5: Style_Variable = {
-	name: 'color_e_5',
-	light: 'hsl(var(--hsl_e_5))',
-};
-export const color_e_6: Style_Variable = {
-	name: 'color_e_6',
-	light: 'hsl(var(--hsl_e_6))',
-};
-export const color_e_7: Style_Variable = {
-	name: 'color_e_7',
-	light: 'hsl(var(--hsl_e_7))',
-};
-export const color_e_8: Style_Variable = {
-	name: 'color_e_8',
-	light: 'hsl(var(--hsl_e_8))',
-};
-export const color_e_9: Style_Variable = {
-	name: 'color_e_9',
-	light: 'hsl(var(--hsl_e_9))',
-};
-export const color_f_1: Style_Variable = {
-	name: 'color_f_1',
-	light: 'hsl(var(--hsl_f_1))',
-};
-export const color_f_2: Style_Variable = {
-	name: 'color_f_2',
-	light: 'hsl(var(--hsl_f_2))',
-};
-export const color_f_3: Style_Variable = {
-	name: 'color_f_3',
-	light: 'hsl(var(--hsl_f_3))',
-};
-export const color_f_4: Style_Variable = {
-	name: 'color_f_4',
-	light: 'hsl(var(--hsl_f_4))',
-};
-export const color_f_5: Style_Variable = {
-	name: 'color_f_5',
-	light: 'hsl(var(--hsl_f_5))',
-};
-export const color_f_6: Style_Variable = {
-	name: 'color_f_6',
-	light: 'hsl(var(--hsl_f_6))',
-};
-export const color_f_7: Style_Variable = {
-	name: 'color_f_7',
-	light: 'hsl(var(--hsl_f_7))',
-};
-export const color_f_8: Style_Variable = {
-	name: 'color_f_8',
-	light: 'hsl(var(--hsl_f_8))',
-};
-export const color_f_9: Style_Variable = {
-	name: 'color_f_9',
-	light: 'hsl(var(--hsl_f_9))',
-};
-export const color_g_1: Style_Variable = {
-	name: 'color_g_1',
-	light: 'hsl(var(--hsl_g_1))',
-};
-export const color_g_2: Style_Variable = {
-	name: 'color_g_2',
-	light: 'hsl(var(--hsl_g_2))',
-};
-export const color_g_3: Style_Variable = {
-	name: 'color_g_3',
-	light: 'hsl(var(--hsl_g_3))',
-};
-export const color_g_4: Style_Variable = {
-	name: 'color_g_4',
-	light: 'hsl(var(--hsl_g_4))',
-};
-export const color_g_5: Style_Variable = {
-	name: 'color_g_5',
-	light: 'hsl(var(--hsl_g_5))',
-};
-export const color_g_6: Style_Variable = {
-	name: 'color_g_6',
-	light: 'hsl(var(--hsl_g_6))',
-};
-export const color_g_7: Style_Variable = {
-	name: 'color_g_7',
-	light: 'hsl(var(--hsl_g_7))',
-};
-export const color_g_8: Style_Variable = {
-	name: 'color_g_8',
-	light: 'hsl(var(--hsl_g_8))',
-};
-export const color_g_9: Style_Variable = {
-	name: 'color_g_9',
-	light: 'hsl(var(--hsl_g_9))',
-};
 
 /*
 		color variants - using these usually means handling both light and dark modes separately -
@@ -744,38 +492,38 @@ export const fg_10: Style_Variable = {
 };
 export const fill_a: Style_Variable = {
 	name: 'fill_a',
-	light: 'var(--color_a_4)',
-	dark: 'var(--color_a_6)',
+	light: 'hsl(var(--color_a_4))',
+	dark: 'hsl(var(--color_a_6))',
 };
 export const fill_b: Style_Variable = {
 	name: 'fill_b',
-	light: 'var(--color_b_4)',
-	dark: 'var(--color_b_6)',
+	light: 'hsl(var(--color_b_4))',
+	dark: 'hsl(var(--color_b_6))',
 };
 export const fill_c: Style_Variable = {
 	name: 'fill_c',
-	light: 'var(--color_c_4)',
-	dark: 'var(--color_c_6)',
+	light: 'hsl(var(--color_c_4))',
+	dark: 'hsl(var(--color_c_6))',
 };
 export const fill_d: Style_Variable = {
 	name: 'fill_d',
-	light: 'var(--color_d_4)',
-	dark: 'var(--color_d_6)',
+	light: 'hsl(var(--color_d_4))',
+	dark: 'hsl(var(--color_d_6))',
 };
 export const fill_e: Style_Variable = {
 	name: 'fill_e',
-	light: 'var(--color_e_4)',
-	dark: 'var(--color_e_6)',
+	light: 'hsl(var(--color_e_4))',
+	dark: 'hsl(var(--color_e_6))',
 };
 export const fill_f: Style_Variable = {
 	name: 'fill_f',
-	light: 'var(--color_f_4)',
-	dark: 'var(--color_f_6)',
+	light: 'hsl(var(--color_f_4))',
+	dark: 'hsl(var(--color_f_6))',
 };
 export const fill_g: Style_Variable = {
 	name: 'fill_g',
-	light: 'var(--color_g_4)',
-	dark: 'var(--color_g_6)',
+	light: 'hsl(var(--color_g_4))',
+	dark: 'hsl(var(--color_g_6))',
 };
 
 /*
@@ -927,31 +675,31 @@ export const border_color_5: Style_Variable = {
 };
 export const border_color_a: Style_Variable = {
 	name: 'border_color_a',
-	light: 'var(--color_a_5)',
+	light: 'hsl(var(--color_a_5))',
 };
 export const border_color_b: Style_Variable = {
 	name: 'border_color_b',
-	light: 'var(--color_b_5)',
+	light: 'hsl(var(--color_b_5))',
 };
 export const border_color_c: Style_Variable = {
 	name: 'border_color_c',
-	light: 'var(--color_c_5)',
+	light: 'hsl(var(--color_c_5))',
 };
 export const border_color_d: Style_Variable = {
 	name: 'border_color_d',
-	light: 'var(--color_d_5)',
+	light: 'hsl(var(--color_d_5))',
 };
 export const border_color_e: Style_Variable = {
 	name: 'border_color_e',
-	light: 'var(--color_e_5)',
+	light: 'hsl(var(--color_e_5))',
 };
 export const border_color_f: Style_Variable = {
 	name: 'border_color_f',
-	light: 'var(--color_f_5)',
+	light: 'hsl(var(--color_f_5))',
 };
 export const border_color_g: Style_Variable = {
 	name: 'border_color_g',
-	light: 'var(--color_g_5)',
+	light: 'hsl(var(--color_g_5))',
 };
 // TODO disabled doesn't work with colors
 export const border_disabled: Style_Variable = {
@@ -1806,69 +1554,6 @@ export const default_variables: Style_Variable[] = [
 	hsl_g_7,
 	hsl_g_8,
 	hsl_g_9,
-	color_a_1,
-	color_a_2,
-	color_a_3,
-	color_a_4,
-	color_a_5,
-	color_a_6,
-	color_a_7,
-	color_a_8,
-	color_a_9,
-	color_b_1,
-	color_b_2,
-	color_b_3,
-	color_b_4,
-	color_b_5,
-	color_b_6,
-	color_b_7,
-	color_b_8,
-	color_b_9,
-	color_c_1,
-	color_c_2,
-	color_c_3,
-	color_c_4,
-	color_c_5,
-	color_c_6,
-	color_c_7,
-	color_c_8,
-	color_c_9,
-	color_d_1,
-	color_d_2,
-	color_d_3,
-	color_d_4,
-	color_d_5,
-	color_d_6,
-	color_d_7,
-	color_d_8,
-	color_d_9,
-	color_e_1,
-	color_e_2,
-	color_e_3,
-	color_e_4,
-	color_e_5,
-	color_e_6,
-	color_e_7,
-	color_e_8,
-	color_e_9,
-	color_f_1,
-	color_f_2,
-	color_f_3,
-	color_f_4,
-	color_f_5,
-	color_f_6,
-	color_f_7,
-	color_f_8,
-	color_f_9,
-	color_g_1,
-	color_g_2,
-	color_g_3,
-	color_g_4,
-	color_g_5,
-	color_g_6,
-	color_g_7,
-	color_g_8,
-	color_g_9,
 
 	/*
 		color variants - using these usually means handling both light and dark modes separately -

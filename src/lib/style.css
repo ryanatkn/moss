@@ -37,7 +37,7 @@ Some notes:
 	color-scheme: light dark;
 	background-color: var(--bg);
 	color: var(--text_color);
-	accent-color: var(--color_a_5);
+	accent-color: hsl(var(--color_a_5));
 	line-height: var(--line_height_md);
 }
 
@@ -372,13 +372,13 @@ so for consistent visuals we opt to include no active state */
 	cursor: pointer;
 }
 :where(input[type='range']:hover) {
-	--thumb_background_color: var(--color_a_5);
+	--thumb_background_color: hsl(var(--color_a_5));
 }
 :where(input[type='range']:disabled) {
 	--thumb_background_color: var(--text_disabled);
 }
 :where(input[type='range']:disabled:active) {
-	--thumb_background_color: var(--color_c_5);
+	--thumb_background_color: hsl(var(--color_c_5));
 }
 :where(input[type='range'])::-webkit-slider-thumb {
 	appearance: none;
@@ -426,7 +426,7 @@ so for consistent visuals we opt to include no active state */
 }
 
 :where(:where(button, input, textarea, select):focus) {
-	--border_color: var(--color_a_5);
+	--border_color: hsl(var(--color_a_5));
 	--outline_width: var(--outline_width_2);
 }
 :where([contenteditable]:focus-visible) {
@@ -488,7 +488,7 @@ see https://caniuse.com/css-has
 currently `:disabled` overrides this */
 :where(button.selected) {
 	--text_color: var(--text_active);
-	--border_color: var(--color_a_5);
+	--border_color: hsl(var(--color_a_5));
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
@@ -496,7 +496,7 @@ currently `:disabled` overrides this */
 }
 :where(input:checked) {
 	--text_color: var(--text_active);
-	--border_color: var(--color_a_5);
+	--border_color: hsl(var(--color_a_5));
 }
 :where(input[type='radio']:checked) {
 	cursor: default;
@@ -515,8 +515,8 @@ currently `:disabled` overrides this */
 	outline: none;
 }
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
-	--border_color: var(--color_c_5);
-	--text_color: var(--color_c_5);
+	--border_color: hsl(var(--color_c_5));
+	--text_color: hsl(var(--color_c_5));
 }
 
 /* TODO these need design work for visuals/consistency/customizability  */
@@ -571,25 +571,25 @@ currently `:disabled` overrides this */
 }
 /* TODO set text_color */
 :where(button.selected.color_a) {
-	--text_color: var(--color_a_5);
+	--text_color: hsl(var(--color_a_5));
 }
 :where(button.selected.color_b) {
-	--text_color: var(--color_b_5);
+	--text_color: hsl(var(--color_b_5));
 }
 :where(button.selected.color_c) {
-	--text_color: var(--color_c_5);
+	--text_color: hsl(var(--color_c_5));
 }
 :where(button.selected.color_d) {
-	--text_color: var(--color_d_5);
+	--text_color: hsl(var(--color_d_5));
 }
 :where(button.selected.color_e) {
-	--text_color: var(--color_e_5);
+	--text_color: hsl(var(--color_e_5));
 }
 :where(button.selected.color_f) {
-	--text_color: var(--color_f_5);
+	--text_color: hsl(var(--color_f_5));
 }
 :where(button.selected.color_g) {
-	--text_color: var(--color_g_5);
+	--text_color: hsl(var(--color_g_5));
 }
 :where(button.selected) {
 	--fill: var(--button_fill_selected);
@@ -716,7 +716,7 @@ for disabled colors without needing a wrapper .disabled class */
 .selectable.selected,
 .selectable:active {
 	background-color: var(--button_fill_active);
-	border-color: var(--color_a_5);
+	border-color: hsl(var(--color_a_5));
 }
 .selectable.selected {
 	cursor: default;
@@ -773,7 +773,7 @@ By default it's opaque, resetting the background to the initial depth. */
 }
 .menu_item.selected {
 	/* TODO different patterns for border and bg? */
-	--border_color: var(--color_a_5);
+	--border_color: hsl(var(--color_a_5));
 	background-color: var(--fg_1);
 	z-index: 1;
 }
@@ -1464,383 +1464,383 @@ colors
 }
 
 .color_a_1 {
-	color: var(--color_a_1);
+	color: hsl(var(--color_a_1));
 }
 .color_a_2 {
-	color: var(--color_a_2);
+	color: hsl(var(--color_a_2));
 }
 .color_a_3 {
-	color: var(--color_a_3);
+	color: hsl(var(--color_a_3));
 }
 .color_a_4 {
-	color: var(--color_a_4);
+	color: hsl(var(--color_a_4));
 }
 .color_a_5 {
-	color: var(--color_a_5);
+	color: hsl(var(--color_a_5));
 }
 .color_a_6 {
-	color: var(--color_a_6);
+	color: hsl(var(--color_a_6));
 }
 .color_a_7 {
-	color: var(--color_a_7);
+	color: hsl(var(--color_a_7));
 }
 .color_a_8 {
-	color: var(--color_a_8);
+	color: hsl(var(--color_a_8));
 }
 .color_a_9 {
-	color: var(--color_a_9);
+	color: hsl(var(--color_a_9));
 }
 .color_b_1 {
-	color: var(--color_b_1);
+	color: hsl(var(--color_b_1));
 }
 .color_b_2 {
-	color: var(--color_b_2);
+	color: hsl(var(--color_b_2));
 }
 .color_b_3 {
-	color: var(--color_b_3);
+	color: hsl(var(--color_b_3));
 }
 .color_b_4 {
-	color: var(--color_b_4);
+	color: hsl(var(--color_b_4));
 }
 .color_b_5 {
-	color: var(--color_b_5);
+	color: hsl(var(--color_b_5));
 }
 .color_b_6 {
-	color: var(--color_b_6);
+	color: hsl(var(--color_b_6));
 }
 .color_b_7 {
-	color: var(--color_b_7);
+	color: hsl(var(--color_b_7));
 }
 .color_b_8 {
-	color: var(--color_b_8);
+	color: hsl(var(--color_b_8));
 }
 .color_b_9 {
-	color: var(--color_b_9);
+	color: hsl(var(--color_b_9));
 }
 .color_c_1 {
-	color: var(--color_c_1);
+	color: hsl(var(--color_c_1));
 }
 .color_c_2 {
-	color: var(--color_c_2);
+	color: hsl(var(--color_c_2));
 }
 .color_c_3 {
-	color: var(--color_c_3);
+	color: hsl(var(--color_c_3));
 }
 .color_c_4 {
-	color: var(--color_c_4);
+	color: hsl(var(--color_c_4));
 }
 .color_c_5 {
-	color: var(--color_c_5);
+	color: hsl(var(--color_c_5));
 }
 .color_c_6 {
-	color: var(--color_c_6);
+	color: hsl(var(--color_c_6));
 }
 .color_c_7 {
-	color: var(--color_c_7);
+	color: hsl(var(--color_c_7));
 }
 .color_c_8 {
-	color: var(--color_c_8);
+	color: hsl(var(--color_c_8));
 }
 .color_c_9 {
-	color: var(--color_c_9);
+	color: hsl(var(--color_c_9));
 }
 .color_d_1 {
-	color: var(--color_d_1);
+	color: hsl(var(--color_d_1));
 }
 .color_d_2 {
-	color: var(--color_d_2);
+	color: hsl(var(--color_d_2));
 }
 .color_d_3 {
-	color: var(--color_d_3);
+	color: hsl(var(--color_d_3));
 }
 .color_d_4 {
-	color: var(--color_d_4);
+	color: hsl(var(--color_d_4));
 }
 .color_d_5 {
-	color: var(--color_d_5);
+	color: hsl(var(--color_d_5));
 }
 .color_d_6 {
-	color: var(--color_d_6);
+	color: hsl(var(--color_d_6));
 }
 .color_d_7 {
-	color: var(--color_d_7);
+	color: hsl(var(--color_d_7));
 }
 .color_d_8 {
-	color: var(--color_d_8);
+	color: hsl(var(--color_d_8));
 }
 .color_d_9 {
-	color: var(--color_d_9);
+	color: hsl(var(--color_d_9));
 }
 .color_e_1 {
-	color: var(--color_e_1);
+	color: hsl(var(--color_e_1));
 }
 .color_e_2 {
-	color: var(--color_e_2);
+	color: hsl(var(--color_e_2));
 }
 .color_e_3 {
-	color: var(--color_e_3);
+	color: hsl(var(--color_e_3));
 }
 .color_e_4 {
-	color: var(--color_e_4);
+	color: hsl(var(--color_e_4));
 }
 .color_e_5 {
-	color: var(--color_e_5);
+	color: hsl(var(--color_e_5));
 }
 .color_e_6 {
-	color: var(--color_e_6);
+	color: hsl(var(--color_e_6));
 }
 .color_e_7 {
-	color: var(--color_e_7);
+	color: hsl(var(--color_e_7));
 }
 .color_e_8 {
-	color: var(--color_e_8);
+	color: hsl(var(--color_e_8));
 }
 .color_e_9 {
-	color: var(--color_e_9);
+	color: hsl(var(--color_e_9));
 }
 .color_f_1 {
-	color: var(--color_f_1);
+	color: hsl(var(--color_f_1));
 }
 .color_f_2 {
-	color: var(--color_f_2);
+	color: hsl(var(--color_f_2));
 }
 .color_f_3 {
-	color: var(--color_f_3);
+	color: hsl(var(--color_f_3));
 }
 .color_f_4 {
-	color: var(--color_f_4);
+	color: hsl(var(--color_f_4));
 }
 .color_f_5 {
-	color: var(--color_f_5);
+	color: hsl(var(--color_f_5));
 }
 .color_f_6 {
-	color: var(--color_f_6);
+	color: hsl(var(--color_f_6));
 }
 .color_f_7 {
-	color: var(--color_f_7);
+	color: hsl(var(--color_f_7));
 }
 .color_f_8 {
-	color: var(--color_f_8);
+	color: hsl(var(--color_f_8));
 }
 .color_f_9 {
-	color: var(--color_f_9);
+	color: hsl(var(--color_f_9));
 }
 .color_g_1 {
-	color: var(--color_g_1);
+	color: hsl(var(--color_g_1));
 }
 .color_g_2 {
-	color: var(--color_g_2);
+	color: hsl(var(--color_g_2));
 }
 .color_g_3 {
-	color: var(--color_g_3);
+	color: hsl(var(--color_g_3));
 }
 .color_g_4 {
-	color: var(--color_g_4);
+	color: hsl(var(--color_g_4));
 }
 .color_g_5 {
-	color: var(--color_g_5);
+	color: hsl(var(--color_g_5));
 }
 .color_g_6 {
-	color: var(--color_g_6);
+	color: hsl(var(--color_g_6));
 }
 .color_g_7 {
-	color: var(--color_g_7);
+	color: hsl(var(--color_g_7));
 }
 .color_g_8 {
-	color: var(--color_g_8);
+	color: hsl(var(--color_g_8));
 }
 .color_g_9 {
-	color: var(--color_g_9);
+	color: hsl(var(--color_g_9));
 }
 
 .bg_a_1 {
-	background-color: var(--color_a_1);
+	background-color: hsl(var(--color_a_1));
 }
 .bg_a_2 {
-	background-color: var(--color_a_2);
+	background-color: hsl(var(--color_a_2));
 }
 .bg_a_3 {
-	background-color: var(--color_a_3);
+	background-color: hsl(var(--color_a_3));
 }
 .bg_a_4 {
-	background-color: var(--color_a_4);
+	background-color: hsl(var(--color_a_4));
 }
 .bg_a_5 {
-	background-color: var(--color_a_5);
+	background-color: hsl(var(--color_a_5));
 }
 .bg_a_6 {
-	background-color: var(--color_a_6);
+	background-color: hsl(var(--color_a_6));
 }
 .bg_a_7 {
-	background-color: var(--color_a_7);
+	background-color: hsl(var(--color_a_7));
 }
 .bg_a_8 {
-	background-color: var(--color_a_8);
+	background-color: hsl(var(--color_a_8));
 }
 .bg_a_9 {
-	background-color: var(--color_a_9);
+	background-color: hsl(var(--color_a_9));
 }
 .bg_b_1 {
-	background-color: var(--color_b_1);
+	background-color: hsl(var(--color_b_1));
 }
 .bg_b_2 {
-	background-color: var(--color_b_2);
+	background-color: hsl(var(--color_b_2));
 }
 .bg_b_3 {
-	background-color: var(--color_b_3);
+	background-color: hsl(var(--color_b_3));
 }
 .bg_b_4 {
-	background-color: var(--color_b_4);
+	background-color: hsl(var(--color_b_4));
 }
 .bg_b_5 {
-	background-color: var(--color_b_5);
+	background-color: hsl(var(--color_b_5));
 }
 .bg_b_6 {
-	background-color: var(--color_b_6);
+	background-color: hsl(var(--color_b_6));
 }
 .bg_b_7 {
-	background-color: var(--color_b_7);
+	background-color: hsl(var(--color_b_7));
 }
 .bg_b_8 {
-	background-color: var(--color_b_8);
+	background-color: hsl(var(--color_b_8));
 }
 .bg_b_9 {
-	background-color: var(--color_b_9);
+	background-color: hsl(var(--color_b_9));
 }
 .bg_c_1 {
-	background-color: var(--color_c_1);
+	background-color: hsl(var(--color_c_1));
 }
 .bg_c_2 {
-	background-color: var(--color_c_2);
+	background-color: hsl(var(--color_c_2));
 }
 .bg_c_3 {
-	background-color: var(--color_c_3);
+	background-color: hsl(var(--color_c_3));
 }
 .bg_c_4 {
-	background-color: var(--color_c_4);
+	background-color: hsl(var(--color_c_4));
 }
 .bg_c_5 {
-	background-color: var(--color_c_5);
+	background-color: hsl(var(--color_c_5));
 }
 .bg_c_6 {
-	background-color: var(--color_c_6);
+	background-color: hsl(var(--color_c_6));
 }
 .bg_c_7 {
-	background-color: var(--color_c_7);
+	background-color: hsl(var(--color_c_7));
 }
 .bg_c_8 {
-	background-color: var(--color_c_8);
+	background-color: hsl(var(--color_c_8));
 }
 .bg_c_9 {
-	background-color: var(--color_c_9);
+	background-color: hsl(var(--color_c_9));
 }
 .bg_d_1 {
-	background-color: var(--color_d_1);
+	background-color: hsl(var(--color_d_1));
 }
 .bg_d_2 {
-	background-color: var(--color_d_2);
+	background-color: hsl(var(--color_d_2));
 }
 .bg_d_3 {
-	background-color: var(--color_d_3);
+	background-color: hsl(var(--color_d_3));
 }
 .bg_d_4 {
-	background-color: var(--color_d_4);
+	background-color: hsl(var(--color_d_4));
 }
 .bg_d_5 {
-	background-color: var(--color_d_5);
+	background-color: hsl(var(--color_d_5));
 }
 .bg_d_6 {
-	background-color: var(--color_d_6);
+	background-color: hsl(var(--color_d_6));
 }
 .bg_d_7 {
-	background-color: var(--color_d_7);
+	background-color: hsl(var(--color_d_7));
 }
 .bg_d_8 {
-	background-color: var(--color_d_8);
+	background-color: hsl(var(--color_d_8));
 }
 .bg_d_9 {
-	background-color: var(--color_d_9);
+	background-color: hsl(var(--color_d_9));
 }
 .bg_e_1 {
-	background-color: var(--color_e_1);
+	background-color: hsl(var(--color_e_1));
 }
 .bg_e_2 {
-	background-color: var(--color_e_2);
+	background-color: hsl(var(--color_e_2));
 }
 .bg_e_3 {
-	background-color: var(--color_e_3);
+	background-color: hsl(var(--color_e_3));
 }
 .bg_e_4 {
-	background-color: var(--color_e_4);
+	background-color: hsl(var(--color_e_4));
 }
 .bg_e_5 {
-	background-color: var(--color_e_5);
+	background-color: hsl(var(--color_e_5));
 }
 .bg_e_6 {
-	background-color: var(--color_e_6);
+	background-color: hsl(var(--color_e_6));
 }
 .bg_e_7 {
-	background-color: var(--color_e_7);
+	background-color: hsl(var(--color_e_7));
 }
 .bg_e_8 {
-	background-color: var(--color_e_8);
+	background-color: hsl(var(--color_e_8));
 }
 .bg_e_9 {
-	background-color: var(--color_e_9);
+	background-color: hsl(var(--color_e_9));
 }
 .bg_f_1 {
-	background-color: var(--color_f_1);
+	background-color: hsl(var(--color_f_1));
 }
 .bg_f_2 {
-	background-color: var(--color_f_2);
+	background-color: hsl(var(--color_f_2));
 }
 .bg_f_3 {
-	background-color: var(--color_f_3);
+	background-color: hsl(var(--color_f_3));
 }
 .bg_f_4 {
-	background-color: var(--color_f_4);
+	background-color: hsl(var(--color_f_4));
 }
 .bg_f_5 {
-	background-color: var(--color_f_5);
+	background-color: hsl(var(--color_f_5));
 }
 .bg_f_6 {
-	background-color: var(--color_f_6);
+	background-color: hsl(var(--color_f_6));
 }
 .bg_f_7 {
-	background-color: var(--color_f_7);
+	background-color: hsl(var(--color_f_7));
 }
 .bg_f_8 {
-	background-color: var(--color_f_8);
+	background-color: hsl(var(--color_f_8));
 }
 .bg_f_9 {
-	background-color: var(--color_f_9);
+	background-color: hsl(var(--color_f_9));
 }
 .bg_g_1 {
-	background-color: var(--color_g_1);
+	background-color: hsl(var(--color_g_1));
 }
 .bg_g_2 {
-	background-color: var(--color_g_2);
+	background-color: hsl(var(--color_g_2));
 }
 .bg_g_3 {
-	background-color: var(--color_g_3);
+	background-color: hsl(var(--color_g_3));
 }
 .bg_g_4 {
-	background-color: var(--color_g_4);
+	background-color: hsl(var(--color_g_4));
 }
 .bg_g_5 {
-	background-color: var(--color_g_5);
+	background-color: hsl(var(--color_g_5));
 }
 .bg_g_6 {
-	background-color: var(--color_g_6);
+	background-color: hsl(var(--color_g_6));
 }
 .bg_g_7 {
-	background-color: var(--color_g_7);
+	background-color: hsl(var(--color_g_7));
 }
 .bg_g_8 {
-	background-color: var(--color_g_8);
+	background-color: hsl(var(--color_g_8));
 }
 .bg_g_9 {
-	background-color: var(--color_g_9);
+	background-color: hsl(var(--color_g_9));
 }
 
 /*
