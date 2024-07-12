@@ -96,7 +96,7 @@
 		<p>Moss has three optional CSS files with different kinds of classes:</p>
 		<Code
 			content={`<!-- +layout.svelte -->
-<script>
+${'<' as string}script>
 	import '@ryanatkn/moss/style.css';
 	import '@ryanatkn/moss/theme.css'; // or bring your own
 	// or import individual parts of \`@ryanatkn/moss/style.css\`:
