@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.8.0
+
+### Minor Changes
+
+- remove the `hsl_` variables and change the `--color_` variables to require being wrapped in `hsl()` ([#24](https://github.com/ryanatkn/moss/pull/24))
+
 ## 0.7.1
 
 ### Patch Changes
