@@ -141,26 +141,6 @@ text
 
 */
 
-.ellipsis {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.pixelated {
-	image-rendering: -webkit-optimize-contrast; /* Safari */
-	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
-	image-rendering: pixelated; /* in case crisp-edges isn't supported */
-	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
-}
-
-/*
-
-text
-
-*/
-
 .font_sans {
 	font-family: var(--font_sans);
 }
@@ -322,6 +302,20 @@ text
 }
 .font_weight_900 {
 	font-weight: 900;
+}
+
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.pixelated {
+	image-rendering: -webkit-optimize-contrast; /* Safari */
+	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated; /* in case crisp-edges isn't supported */
+	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /*
@@ -1062,37 +1056,6 @@ borders
 	outline-width: var(--outline_width_3);
 }
 
-.radius_100 {
-	border-radius: 100%;
-}
-.radius_50 {
-	border-radius: 50%;
-}
-.radius_0 {
-	border-radius: 0;
-}
-.radius_xs3 {
-	border-radius: var(--radius_xs3);
-}
-.radius_xs2 {
-	border-radius: var(--radius_xs2);
-}
-.radius_xs {
-	border-radius: var(--radius_xs);
-}
-.radius_sm {
-	border-radius: var(--radius_sm);
-}
-.radius_md {
-	border-radius: var(--radius_md);
-}
-.radius_lg {
-	border-radius: var(--radius_lg);
-}
-.radius_xl {
-	border-radius: var(--radius_xl);
-}
-
 /* TODO add the top/right/bottom/left variants */
 /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
 .border_none {
@@ -1124,6 +1087,37 @@ borders
 }
 .border_outset {
 	border-style: outset;
+}
+
+.radius_100 {
+	border-radius: 100%;
+}
+.radius_50 {
+	border-radius: 50%;
+}
+.radius_0 {
+	border-radius: 0;
+}
+.radius_xs3 {
+	border-radius: var(--radius_xs3);
+}
+.radius_xs2 {
+	border-radius: var(--radius_xs2);
+}
+.radius_xs {
+	border-radius: var(--radius_xs);
+}
+.radius_sm {
+	border-radius: var(--radius_sm);
+}
+.radius_md {
+	border-radius: var(--radius_md);
+}
+.radius_lg {
+	border-radius: var(--radius_lg);
+}
+.radius_xl {
+	border-radius: var(--radius_xl);
 }
 
 /*
@@ -1204,6 +1198,7 @@ shading
 .shadow_inset_xl {
 	box-shadow: var(--shadow_inset_xl);
 }
+
 .shadow_a_xs {
 	box-shadow: var(--shadow_a_xs);
 }
@@ -1519,6 +1514,7 @@ shading
 .shadow_g_inset_xl {
 	box-shadow: var(--shadow_g_inset_xl);
 }
+
 /* higher specificity */
 /* TODO which order should these be in? */
 .shadow_inherit {
