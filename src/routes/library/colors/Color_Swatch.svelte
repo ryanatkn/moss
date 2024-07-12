@@ -17,7 +17,7 @@
 		{@const name = `color_${color_name}_${num}`}
 		{@const value = computed_styles?.getPropertyValue('--' + name)}
 		{@const hsl = value && parse_hsl_string(value)}
-		<li style:--bg_color="var(--{name})">
+		<li style:--bg_color="hsl(var(--{name}))">
 			<div class="color"></div>
 			<div class="text">
 				<Style_Variable_Button {name} />

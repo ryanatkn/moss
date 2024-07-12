@@ -141,26 +141,6 @@ text
 
 */
 
-.ellipsis {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.pixelated {
-	image-rendering: -webkit-optimize-contrast; /* Safari */
-	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
-	image-rendering: pixelated; /* in case crisp-edges isn't supported */
-	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
-}
-
-/*
-
-text
-
-*/
-
 .font_sans {
 	font-family: var(--font_sans);
 }
@@ -322,6 +302,20 @@ text
 }
 .font_weight_900 {
 	font-weight: 900;
+}
+
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.pixelated {
+	image-rendering: -webkit-optimize-contrast; /* Safari */
+	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated; /* in case crisp-edges isn't supported */
+	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /*
@@ -603,383 +597,383 @@ colors
 }
 
 .color_a_1 {
-	color: var(--color_a_1);
+	color: hsl(var(--color_a_1));
 }
 .color_a_2 {
-	color: var(--color_a_2);
+	color: hsl(var(--color_a_2));
 }
 .color_a_3 {
-	color: var(--color_a_3);
+	color: hsl(var(--color_a_3));
 }
 .color_a_4 {
-	color: var(--color_a_4);
+	color: hsl(var(--color_a_4));
 }
 .color_a_5 {
-	color: var(--color_a_5);
+	color: hsl(var(--color_a_5));
 }
 .color_a_6 {
-	color: var(--color_a_6);
+	color: hsl(var(--color_a_6));
 }
 .color_a_7 {
-	color: var(--color_a_7);
+	color: hsl(var(--color_a_7));
 }
 .color_a_8 {
-	color: var(--color_a_8);
+	color: hsl(var(--color_a_8));
 }
 .color_a_9 {
-	color: var(--color_a_9);
+	color: hsl(var(--color_a_9));
 }
 .color_b_1 {
-	color: var(--color_b_1);
+	color: hsl(var(--color_b_1));
 }
 .color_b_2 {
-	color: var(--color_b_2);
+	color: hsl(var(--color_b_2));
 }
 .color_b_3 {
-	color: var(--color_b_3);
+	color: hsl(var(--color_b_3));
 }
 .color_b_4 {
-	color: var(--color_b_4);
+	color: hsl(var(--color_b_4));
 }
 .color_b_5 {
-	color: var(--color_b_5);
+	color: hsl(var(--color_b_5));
 }
 .color_b_6 {
-	color: var(--color_b_6);
+	color: hsl(var(--color_b_6));
 }
 .color_b_7 {
-	color: var(--color_b_7);
+	color: hsl(var(--color_b_7));
 }
 .color_b_8 {
-	color: var(--color_b_8);
+	color: hsl(var(--color_b_8));
 }
 .color_b_9 {
-	color: var(--color_b_9);
+	color: hsl(var(--color_b_9));
 }
 .color_c_1 {
-	color: var(--color_c_1);
+	color: hsl(var(--color_c_1));
 }
 .color_c_2 {
-	color: var(--color_c_2);
+	color: hsl(var(--color_c_2));
 }
 .color_c_3 {
-	color: var(--color_c_3);
+	color: hsl(var(--color_c_3));
 }
 .color_c_4 {
-	color: var(--color_c_4);
+	color: hsl(var(--color_c_4));
 }
 .color_c_5 {
-	color: var(--color_c_5);
+	color: hsl(var(--color_c_5));
 }
 .color_c_6 {
-	color: var(--color_c_6);
+	color: hsl(var(--color_c_6));
 }
 .color_c_7 {
-	color: var(--color_c_7);
+	color: hsl(var(--color_c_7));
 }
 .color_c_8 {
-	color: var(--color_c_8);
+	color: hsl(var(--color_c_8));
 }
 .color_c_9 {
-	color: var(--color_c_9);
+	color: hsl(var(--color_c_9));
 }
 .color_d_1 {
-	color: var(--color_d_1);
+	color: hsl(var(--color_d_1));
 }
 .color_d_2 {
-	color: var(--color_d_2);
+	color: hsl(var(--color_d_2));
 }
 .color_d_3 {
-	color: var(--color_d_3);
+	color: hsl(var(--color_d_3));
 }
 .color_d_4 {
-	color: var(--color_d_4);
+	color: hsl(var(--color_d_4));
 }
 .color_d_5 {
-	color: var(--color_d_5);
+	color: hsl(var(--color_d_5));
 }
 .color_d_6 {
-	color: var(--color_d_6);
+	color: hsl(var(--color_d_6));
 }
 .color_d_7 {
-	color: var(--color_d_7);
+	color: hsl(var(--color_d_7));
 }
 .color_d_8 {
-	color: var(--color_d_8);
+	color: hsl(var(--color_d_8));
 }
 .color_d_9 {
-	color: var(--color_d_9);
+	color: hsl(var(--color_d_9));
 }
 .color_e_1 {
-	color: var(--color_e_1);
+	color: hsl(var(--color_e_1));
 }
 .color_e_2 {
-	color: var(--color_e_2);
+	color: hsl(var(--color_e_2));
 }
 .color_e_3 {
-	color: var(--color_e_3);
+	color: hsl(var(--color_e_3));
 }
 .color_e_4 {
-	color: var(--color_e_4);
+	color: hsl(var(--color_e_4));
 }
 .color_e_5 {
-	color: var(--color_e_5);
+	color: hsl(var(--color_e_5));
 }
 .color_e_6 {
-	color: var(--color_e_6);
+	color: hsl(var(--color_e_6));
 }
 .color_e_7 {
-	color: var(--color_e_7);
+	color: hsl(var(--color_e_7));
 }
 .color_e_8 {
-	color: var(--color_e_8);
+	color: hsl(var(--color_e_8));
 }
 .color_e_9 {
-	color: var(--color_e_9);
+	color: hsl(var(--color_e_9));
 }
 .color_f_1 {
-	color: var(--color_f_1);
+	color: hsl(var(--color_f_1));
 }
 .color_f_2 {
-	color: var(--color_f_2);
+	color: hsl(var(--color_f_2));
 }
 .color_f_3 {
-	color: var(--color_f_3);
+	color: hsl(var(--color_f_3));
 }
 .color_f_4 {
-	color: var(--color_f_4);
+	color: hsl(var(--color_f_4));
 }
 .color_f_5 {
-	color: var(--color_f_5);
+	color: hsl(var(--color_f_5));
 }
 .color_f_6 {
-	color: var(--color_f_6);
+	color: hsl(var(--color_f_6));
 }
 .color_f_7 {
-	color: var(--color_f_7);
+	color: hsl(var(--color_f_7));
 }
 .color_f_8 {
-	color: var(--color_f_8);
+	color: hsl(var(--color_f_8));
 }
 .color_f_9 {
-	color: var(--color_f_9);
+	color: hsl(var(--color_f_9));
 }
 .color_g_1 {
-	color: var(--color_g_1);
+	color: hsl(var(--color_g_1));
 }
 .color_g_2 {
-	color: var(--color_g_2);
+	color: hsl(var(--color_g_2));
 }
 .color_g_3 {
-	color: var(--color_g_3);
+	color: hsl(var(--color_g_3));
 }
 .color_g_4 {
-	color: var(--color_g_4);
+	color: hsl(var(--color_g_4));
 }
 .color_g_5 {
-	color: var(--color_g_5);
+	color: hsl(var(--color_g_5));
 }
 .color_g_6 {
-	color: var(--color_g_6);
+	color: hsl(var(--color_g_6));
 }
 .color_g_7 {
-	color: var(--color_g_7);
+	color: hsl(var(--color_g_7));
 }
 .color_g_8 {
-	color: var(--color_g_8);
+	color: hsl(var(--color_g_8));
 }
 .color_g_9 {
-	color: var(--color_g_9);
+	color: hsl(var(--color_g_9));
 }
 
 .bg_a_1 {
-	background-color: var(--color_a_1);
+	background-color: hsl(var(--color_a_1));
 }
 .bg_a_2 {
-	background-color: var(--color_a_2);
+	background-color: hsl(var(--color_a_2));
 }
 .bg_a_3 {
-	background-color: var(--color_a_3);
+	background-color: hsl(var(--color_a_3));
 }
 .bg_a_4 {
-	background-color: var(--color_a_4);
+	background-color: hsl(var(--color_a_4));
 }
 .bg_a_5 {
-	background-color: var(--color_a_5);
+	background-color: hsl(var(--color_a_5));
 }
 .bg_a_6 {
-	background-color: var(--color_a_6);
+	background-color: hsl(var(--color_a_6));
 }
 .bg_a_7 {
-	background-color: var(--color_a_7);
+	background-color: hsl(var(--color_a_7));
 }
 .bg_a_8 {
-	background-color: var(--color_a_8);
+	background-color: hsl(var(--color_a_8));
 }
 .bg_a_9 {
-	background-color: var(--color_a_9);
+	background-color: hsl(var(--color_a_9));
 }
 .bg_b_1 {
-	background-color: var(--color_b_1);
+	background-color: hsl(var(--color_b_1));
 }
 .bg_b_2 {
-	background-color: var(--color_b_2);
+	background-color: hsl(var(--color_b_2));
 }
 .bg_b_3 {
-	background-color: var(--color_b_3);
+	background-color: hsl(var(--color_b_3));
 }
 .bg_b_4 {
-	background-color: var(--color_b_4);
+	background-color: hsl(var(--color_b_4));
 }
 .bg_b_5 {
-	background-color: var(--color_b_5);
+	background-color: hsl(var(--color_b_5));
 }
 .bg_b_6 {
-	background-color: var(--color_b_6);
+	background-color: hsl(var(--color_b_6));
 }
 .bg_b_7 {
-	background-color: var(--color_b_7);
+	background-color: hsl(var(--color_b_7));
 }
 .bg_b_8 {
-	background-color: var(--color_b_8);
+	background-color: hsl(var(--color_b_8));
 }
 .bg_b_9 {
-	background-color: var(--color_b_9);
+	background-color: hsl(var(--color_b_9));
 }
 .bg_c_1 {
-	background-color: var(--color_c_1);
+	background-color: hsl(var(--color_c_1));
 }
 .bg_c_2 {
-	background-color: var(--color_c_2);
+	background-color: hsl(var(--color_c_2));
 }
 .bg_c_3 {
-	background-color: var(--color_c_3);
+	background-color: hsl(var(--color_c_3));
 }
 .bg_c_4 {
-	background-color: var(--color_c_4);
+	background-color: hsl(var(--color_c_4));
 }
 .bg_c_5 {
-	background-color: var(--color_c_5);
+	background-color: hsl(var(--color_c_5));
 }
 .bg_c_6 {
-	background-color: var(--color_c_6);
+	background-color: hsl(var(--color_c_6));
 }
 .bg_c_7 {
-	background-color: var(--color_c_7);
+	background-color: hsl(var(--color_c_7));
 }
 .bg_c_8 {
-	background-color: var(--color_c_8);
+	background-color: hsl(var(--color_c_8));
 }
 .bg_c_9 {
-	background-color: var(--color_c_9);
+	background-color: hsl(var(--color_c_9));
 }
 .bg_d_1 {
-	background-color: var(--color_d_1);
+	background-color: hsl(var(--color_d_1));
 }
 .bg_d_2 {
-	background-color: var(--color_d_2);
+	background-color: hsl(var(--color_d_2));
 }
 .bg_d_3 {
-	background-color: var(--color_d_3);
+	background-color: hsl(var(--color_d_3));
 }
 .bg_d_4 {
-	background-color: var(--color_d_4);
+	background-color: hsl(var(--color_d_4));
 }
 .bg_d_5 {
-	background-color: var(--color_d_5);
+	background-color: hsl(var(--color_d_5));
 }
 .bg_d_6 {
-	background-color: var(--color_d_6);
+	background-color: hsl(var(--color_d_6));
 }
 .bg_d_7 {
-	background-color: var(--color_d_7);
+	background-color: hsl(var(--color_d_7));
 }
 .bg_d_8 {
-	background-color: var(--color_d_8);
+	background-color: hsl(var(--color_d_8));
 }
 .bg_d_9 {
-	background-color: var(--color_d_9);
+	background-color: hsl(var(--color_d_9));
 }
 .bg_e_1 {
-	background-color: var(--color_e_1);
+	background-color: hsl(var(--color_e_1));
 }
 .bg_e_2 {
-	background-color: var(--color_e_2);
+	background-color: hsl(var(--color_e_2));
 }
 .bg_e_3 {
-	background-color: var(--color_e_3);
+	background-color: hsl(var(--color_e_3));
 }
 .bg_e_4 {
-	background-color: var(--color_e_4);
+	background-color: hsl(var(--color_e_4));
 }
 .bg_e_5 {
-	background-color: var(--color_e_5);
+	background-color: hsl(var(--color_e_5));
 }
 .bg_e_6 {
-	background-color: var(--color_e_6);
+	background-color: hsl(var(--color_e_6));
 }
 .bg_e_7 {
-	background-color: var(--color_e_7);
+	background-color: hsl(var(--color_e_7));
 }
 .bg_e_8 {
-	background-color: var(--color_e_8);
+	background-color: hsl(var(--color_e_8));
 }
 .bg_e_9 {
-	background-color: var(--color_e_9);
+	background-color: hsl(var(--color_e_9));
 }
 .bg_f_1 {
-	background-color: var(--color_f_1);
+	background-color: hsl(var(--color_f_1));
 }
 .bg_f_2 {
-	background-color: var(--color_f_2);
+	background-color: hsl(var(--color_f_2));
 }
 .bg_f_3 {
-	background-color: var(--color_f_3);
+	background-color: hsl(var(--color_f_3));
 }
 .bg_f_4 {
-	background-color: var(--color_f_4);
+	background-color: hsl(var(--color_f_4));
 }
 .bg_f_5 {
-	background-color: var(--color_f_5);
+	background-color: hsl(var(--color_f_5));
 }
 .bg_f_6 {
-	background-color: var(--color_f_6);
+	background-color: hsl(var(--color_f_6));
 }
 .bg_f_7 {
-	background-color: var(--color_f_7);
+	background-color: hsl(var(--color_f_7));
 }
 .bg_f_8 {
-	background-color: var(--color_f_8);
+	background-color: hsl(var(--color_f_8));
 }
 .bg_f_9 {
-	background-color: var(--color_f_9);
+	background-color: hsl(var(--color_f_9));
 }
 .bg_g_1 {
-	background-color: var(--color_g_1);
+	background-color: hsl(var(--color_g_1));
 }
 .bg_g_2 {
-	background-color: var(--color_g_2);
+	background-color: hsl(var(--color_g_2));
 }
 .bg_g_3 {
-	background-color: var(--color_g_3);
+	background-color: hsl(var(--color_g_3));
 }
 .bg_g_4 {
-	background-color: var(--color_g_4);
+	background-color: hsl(var(--color_g_4));
 }
 .bg_g_5 {
-	background-color: var(--color_g_5);
+	background-color: hsl(var(--color_g_5));
 }
 .bg_g_6 {
-	background-color: var(--color_g_6);
+	background-color: hsl(var(--color_g_6));
 }
 .bg_g_7 {
-	background-color: var(--color_g_7);
+	background-color: hsl(var(--color_g_7));
 }
 .bg_g_8 {
-	background-color: var(--color_g_8);
+	background-color: hsl(var(--color_g_8));
 }
 .bg_g_9 {
-	background-color: var(--color_g_9);
+	background-color: hsl(var(--color_g_9));
 }
 
 /*
@@ -1062,37 +1056,6 @@ borders
 	outline-width: var(--outline_width_3);
 }
 
-.radius_100 {
-	border-radius: 100%;
-}
-.radius_50 {
-	border-radius: 50%;
-}
-.radius_0 {
-	border-radius: 0;
-}
-.radius_xs3 {
-	border-radius: var(--radius_xs3);
-}
-.radius_xs2 {
-	border-radius: var(--radius_xs2);
-}
-.radius_xs {
-	border-radius: var(--radius_xs);
-}
-.radius_sm {
-	border-radius: var(--radius_sm);
-}
-.radius_md {
-	border-radius: var(--radius_md);
-}
-.radius_lg {
-	border-radius: var(--radius_lg);
-}
-.radius_xl {
-	border-radius: var(--radius_xl);
-}
-
 /* TODO add the top/right/bottom/left variants */
 /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
 .border_none {
@@ -1124,6 +1087,37 @@ borders
 }
 .border_outset {
 	border-style: outset;
+}
+
+.radius_100 {
+	border-radius: 100%;
+}
+.radius_50 {
+	border-radius: 50%;
+}
+.radius_0 {
+	border-radius: 0;
+}
+.radius_xs3 {
+	border-radius: var(--radius_xs3);
+}
+.radius_xs2 {
+	border-radius: var(--radius_xs2);
+}
+.radius_xs {
+	border-radius: var(--radius_xs);
+}
+.radius_sm {
+	border-radius: var(--radius_sm);
+}
+.radius_md {
+	border-radius: var(--radius_md);
+}
+.radius_lg {
+	border-radius: var(--radius_lg);
+}
+.radius_xl {
+	border-radius: var(--radius_xl);
 }
 
 /*
@@ -1204,6 +1198,7 @@ shading
 .shadow_inset_xl {
 	box-shadow: var(--shadow_inset_xl);
 }
+
 .shadow_a_xs {
 	box-shadow: var(--shadow_a_xs);
 }
@@ -1519,6 +1514,7 @@ shading
 .shadow_g_inset_xl {
 	box-shadow: var(--shadow_g_inset_xl);
 }
+
 /* higher specificity */
 /* TODO which order should these be in? */
 .shadow_inherit {

@@ -23,17 +23,14 @@
 		'inline|inline_block|block|flex|grid',
 		'display_none|contents',
 		'flex_1',
-		'box',
-		'row',
-		'wrap|nowrap',
 		'float_none|left|right|inline_start|inline_end',
 		'flip_x|y|xy',
 		'font_sans|mono',
-		'line_height',
 		'line_height_xs-xl',
 		'size_xs-xl9',
-		'icon_size_xs-xl2',
-		'text_align_center|right|left|justify',
+		'icon_size_xs-xl3',
+		'text_align_start|end|left|right|center|justify|justify_all|match_parent',
+		'vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom',
 		'font_weight_100-900',
 		'ellipsis',
 		'pixelated',
@@ -57,6 +54,8 @@
 		'fade_1-6',
 		'shadow_xs-xl',
 		'shadow_inset|outset_xs-xl',
+		'shadow_a-g_xs-xl',
+		'shadow_a-g_inset|outset_xs-xl',
 		'shadow_inherit|initial|none',
 		'w|h_0|100',
 		'w|h_xs-xl15',
@@ -66,10 +65,16 @@
 		'm|mt|mr|mb|ml|mx|my_0',
 		'm|mt|mr|mb|ml|mx|my_xs5-xl15',
 		'gap_xs5-xl15',
-		'row|column_gap_xs5-xl15',
+		'column|row_gap_xs5-xl15',
 	];
 	const style_components_items = [
+		'box',
+		'row',
+		'wrap|nowrap',
+		'formatted',
+		'width_xs-md',
 		'selectable',
+		'clickable',
 		'pane',
 		'panel',
 		'icon_button',
@@ -77,8 +82,6 @@
 		'menu_item',
 		'chevron',
 		'chip',
-		'formatted',
-		'width_xs-md',
 	];
 
 	// TODO extract a `Github_Link` like `Mdn_Link`
@@ -93,7 +96,7 @@
 		<p>Moss has three optional CSS files with different kinds of classes:</p>
 		<Code
 			content={`<!-- +layout.svelte -->
-<script>
+${'<' as string}script>
 	import '@ryanatkn/moss/style.css';
 	import '@ryanatkn/moss/theme.css'; // or bring your own
 	// or import individual parts of \`@ryanatkn/moss/style.css\`:
@@ -101,7 +104,8 @@
 	import '@ryanatkn/moss/style_utilities.css'; // optional
 	import '@ryanatkn/moss/style_components.css'; // optional
 	import '@ryanatkn/moss/style_animations.css'; // optional
-	// ...`}
+	// ...
+</script>`}
 		/>
 		<p>
 			Utility classes use plain CSS for convenient HTML authoring. Many are based on Moss style <Tome_Link

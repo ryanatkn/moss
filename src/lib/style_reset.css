@@ -33,7 +33,7 @@ Some notes:
 	color-scheme: light dark;
 	background-color: var(--bg);
 	color: var(--text_color);
-	accent-color: var(--color_a_5);
+	accent-color: hsl(var(--color_a_5));
 	line-height: var(--line_height_md);
 }
 
@@ -368,13 +368,13 @@ so for consistent visuals we opt to include no active state */
 	cursor: pointer;
 }
 :where(input[type='range']:hover) {
-	--thumb_background_color: var(--color_a_5);
+	--thumb_background_color: hsl(var(--color_a_5));
 }
 :where(input[type='range']:disabled) {
 	--thumb_background_color: var(--text_disabled);
 }
 :where(input[type='range']:disabled:active) {
-	--thumb_background_color: var(--color_c_5);
+	--thumb_background_color: hsl(var(--color_c_5));
 }
 :where(input[type='range'])::-webkit-slider-thumb {
 	appearance: none;
@@ -422,7 +422,7 @@ so for consistent visuals we opt to include no active state */
 }
 
 :where(:where(button, input, textarea, select):focus) {
-	--border_color: var(--color_a_5);
+	--border_color: hsl(var(--color_a_5));
 	--outline_width: var(--outline_width_2);
 }
 :where([contenteditable]:focus-visible) {
@@ -484,7 +484,7 @@ see https://caniuse.com/css-has
 currently `:disabled` overrides this */
 :where(button.selected) {
 	--text_color: var(--text_active);
-	--border_color: var(--color_a_5);
+	--border_color: hsl(var(--color_a_5));
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
@@ -492,7 +492,7 @@ currently `:disabled` overrides this */
 }
 :where(input:checked) {
 	--text_color: var(--text_active);
-	--border_color: var(--color_a_5);
+	--border_color: hsl(var(--color_a_5));
 }
 :where(input[type='radio']:checked) {
 	cursor: default;
@@ -511,8 +511,8 @@ currently `:disabled` overrides this */
 	outline: none;
 }
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
-	--border_color: var(--color_c_5);
-	--text_color: var(--color_c_5);
+	--border_color: hsl(var(--color_c_5));
+	--text_color: hsl(var(--color_c_5));
 }
 
 /* TODO these need design work for visuals/consistency/customizability  */
@@ -567,25 +567,25 @@ currently `:disabled` overrides this */
 }
 /* TODO set text_color */
 :where(button.selected.color_a) {
-	--text_color: var(--color_a_5);
+	--text_color: hsl(var(--color_a_5));
 }
 :where(button.selected.color_b) {
-	--text_color: var(--color_b_5);
+	--text_color: hsl(var(--color_b_5));
 }
 :where(button.selected.color_c) {
-	--text_color: var(--color_c_5);
+	--text_color: hsl(var(--color_c_5));
 }
 :where(button.selected.color_d) {
-	--text_color: var(--color_d_5);
+	--text_color: hsl(var(--color_d_5));
 }
 :where(button.selected.color_e) {
-	--text_color: var(--color_e_5);
+	--text_color: hsl(var(--color_e_5));
 }
 :where(button.selected.color_f) {
-	--text_color: var(--color_f_5);
+	--text_color: hsl(var(--color_f_5));
 }
 :where(button.selected.color_g) {
-	--text_color: var(--color_g_5);
+	--text_color: hsl(var(--color_g_5));
 }
 :where(button.selected) {
 	--fill: var(--button_fill_selected);

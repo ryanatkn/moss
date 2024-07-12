@@ -136,17 +136,13 @@
 		<Unfinished_Implementation_Warning />
 		<div class="swatch">
 			<div>
-				<div class="color" style:background-color="var(--color_a_5)"></div>
+				<div class="color bg_a_5"></div>
 				<small style:font-family="var(--font_sans)">full opacity</small>
 			</div>
 			{#each {length: 6} as _, i}
 				{@const name = 'fade_' + (i + 1)}
 				<div>
-					<div
-						class="color"
-						style:background-color="var(--color_a_5)"
-						style:opacity="var(--{name})"
-					></div>
+					<div class="color bg_a_5" style:opacity="var(--{name})"></div>
 					<small><Style_Variable_Button {name} /></small>
 				</div>
 			{/each}

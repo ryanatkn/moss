@@ -58,13 +58,30 @@
 .selectable.selected,
 .selectable:active {
 	background-color: var(--button_fill_active);
-	border-color: var(--color_a_5);
+	border-color: hsl(var(--color_a_5));
 }
 .selectable.selected {
 	cursor: default;
 }
 .selectable.selected.deselectable:not(:disabled) {
 	cursor: pointer;
+}
+
+.clickable {
+	cursor: pointer;
+	transform: var(--clickable_transform, scale3d(1, 1, 1));
+	transform-origin: var(--clickable_transform_origin);
+	transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
+}
+.clickable:focus {
+	transform: var(--clickable_transform_focus, scale3d(1.07, 1.07, 1.07));
+}
+.clickable:hover {
+	transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
+}
+.clickable:active,
+.clickable.active {
+	transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
 }
 
 /* A pane is a box floating over the page, like for dialogs.
@@ -115,7 +132,7 @@ By default it's opaque, resetting the background to the initial depth. */
 }
 .menu_item.selected {
 	/* TODO different patterns for border and bg? */
-	--border_color: var(--color_a_5);
+	--border_color: hsl(var(--color_a_5));
 	background-color: var(--fg_1);
 	z-index: 1;
 }
@@ -164,21 +181,4 @@ By default it's opaque, resetting the background to the initial depth. */
 }
 a.chip {
 	font-weight: 700;
-}
-
-.clickable {
-	cursor: pointer;
-	transform: var(--clickable_transform, scale3d(1, 1, 1));
-	transform-origin: var(--clickable_transform_origin);
-	transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
-}
-.clickable:focus {
-	transform: var(--clickable_transform_focus, scale3d(1.07, 1.07, 1.07));
-}
-.clickable:hover {
-	transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
-}
-.clickable:active,
-.clickable.active {
-	transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
 }
