@@ -104,7 +104,8 @@
 	import '@ryanatkn/moss/style_utilities.css'; // optional
 	import '@ryanatkn/moss/style_components.css'; // optional
 	import '@ryanatkn/moss/style_animations.css'; // optional
-	// ...`}
+	// ...
+</script>`}
 		/>
 		<p>
 			Utility classes use plain CSS for convenient HTML authoring. Many are based on Moss style <Tome_Link
