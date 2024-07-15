@@ -8,7 +8,7 @@
 
 	let {selected_font_weight = $bindable(400), children}: Props = $props();
 
-	// TODO @multiple publish in $lib when ready
+	// TODO @many publish in $lib when ready
 </script>
 
 <label

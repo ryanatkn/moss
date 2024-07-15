@@ -8,7 +8,7 @@
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
-	// TODO @multiple add to $lib?
+	// TODO @many add to $lib?
 
 	// TODO should this be merged with `Theme_Input`?
 

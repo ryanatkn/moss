@@ -13,7 +13,7 @@
 
 	// TODO the API is strange
 
-	// TODO @multiple publish in $lib when ready
+	// TODO @many publish in $lib when ready
 
 	const min = 1;
 	const max = size_variants.length;
