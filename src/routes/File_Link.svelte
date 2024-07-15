@@ -25,7 +25,7 @@
 		children,
 	}: Props = $props();
 
-	const final_path = js ? path : path.replace(/\.js$/u, '.ts');
+	const final_path = js ? path : path.replace(/\.js$/, '.ts');
 
 	const href = $derived(base_path + final_path);
 </script>

@@ -89,7 +89,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	text-decoration: var(--text_decoration);
 	border-radius: var(--radius_xs2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @multiple outline-offset */
+	/* TODO @many outline-offset */
 	/* outline-offset: 2px; */
 }
 /* TODO should these be customizable with utility classes? */
@@ -284,7 +284,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-width: var(--border_width);
 	border-radius: var(--border_radius, var(--radius_md));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @multiple outline-offset */
+	/* TODO @many outline-offset */
 	/* outline-offset: 2px; */
 	padding: var(--input_padding_y) var(--input_padding_x);
 	width: 100%;
@@ -365,7 +365,7 @@ so for consistent visuals we opt to include no active state */
 	border-radius: 50%;
 }
 
-/* TODO @multiple figure these variables out so they're easily customized (similar pattern in a lot of places) */
+/* TODO @many figure these variables out so they're easily customized (similar pattern in a lot of places) */
 :where(input[type='range']) {
 	--thumb_size: var(--space_xl);
 	--thumb_background_color: var(--text_2);
@@ -432,7 +432,7 @@ so for consistent visuals we opt to include no active state */
 :where([contenteditable]:focus-visible) {
 	--outline_width: var(--outline_width_2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @multiple outline-offset */
+	/* TODO @many outline-offset */
 	/* outline-offset: 2px; */
 }
 
@@ -462,7 +462,7 @@ so for consistent visuals we opt to include no active state */
 	border-color: var(--border_color);
 	border-radius: var(--border_radius, var(--radius_md));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @multiple outline-offset */
+	/* TODO @many outline-offset */
 	/* outline-offset: 2px; */
 }
 /* TODO this is weird because we're overriding for colored variants */
@@ -755,7 +755,7 @@ By default it's opaque, resetting the background to the initial depth. */
 	background-color: var(--panel_bg, var(--fg_1));
 }
 
-/* TODO @multiple docs in library */
+/* TODO @many docs in library */
 
 /* TODO other button variants? */
 /* TODO this is slightly strange that it doesn't use --icon_size */
@@ -861,7 +861,7 @@ a.chip {
 
 /* @ryanatkn/moss/style_utilities.css */
 
-/* TODO @multiple docs in library */
+/* TODO @many docs in library */
 
 /* TODO what would APIs look like that used classes to set variables? */
 

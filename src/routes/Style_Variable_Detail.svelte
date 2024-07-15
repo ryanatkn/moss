@@ -7,7 +7,7 @@
 
 	const {variable}: Props = $props();
 
-	// TODO @multiple add to $lib?
+	// TODO @many add to $lib?
 
 	// TODO needs a lot of work - for example, enable editing the values directly, and certain values like colors could be rendered
 </script>

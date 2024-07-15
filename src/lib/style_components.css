@@ -97,7 +97,7 @@ By default it's opaque, resetting the background to the initial depth. */
 	background-color: var(--panel_bg, var(--fg_1));
 }
 
-/* TODO @multiple docs in library */
+/* TODO @many docs in library */
 
 /* TODO other button variants? */
 /* TODO this is slightly strange that it doesn't use --icon_size */

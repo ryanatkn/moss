@@ -16,7 +16,7 @@
 
 	const {name, classes, inline = false, plain = true, attrs, children}: Props = $props();
 
-	// TODO @multiple add to $lib?
+	// TODO @many add to $lib?
 
 	// TODO add contextmenu behavior
 
