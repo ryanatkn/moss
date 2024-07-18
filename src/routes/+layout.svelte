@@ -23,7 +23,7 @@
 
 	const {children}: Props = $props();
 
-	set_pkg(parse_package_meta(package_json.homepage, package_json, src_json));
+	set_pkg(parse_package_meta(package_json, src_json));
 
 	// let show_settings = $state(false);
 </script>
