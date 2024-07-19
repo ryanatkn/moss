@@ -7,6 +7,7 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import {color_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'buttons';
 
@@ -18,8 +19,6 @@
 	let selected_deselectable_button = $state(true);
 
 	// TODO probably want to put the buttons in a more consistent format so we can include `disabled` versions of each in a condensed format
-
-	const color_names = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 
 	const mb_xs = true;
 </script>
@@ -59,7 +58,7 @@
 			selected will be changed to be filled. In either case, unselected colored buttons will be less
 			pronounced to be like the default but colored.
 		</Unfinished_Implementation_Warning>
-		{#each color_names as c}
+		{#each color_variants as c}
 			{@const color_name = `color_${c}`}
 			<section>
 				<Code content={`<button class="${color_name}">`} />

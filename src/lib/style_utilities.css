@@ -785,6 +785,60 @@ colors
 .color_g_9 {
 	color: hsl(var(--color_g_9));
 }
+.color_h_1 {
+	color: hsl(var(--color_h_1));
+}
+.color_h_2 {
+	color: hsl(var(--color_h_2));
+}
+.color_h_3 {
+	color: hsl(var(--color_h_3));
+}
+.color_h_4 {
+	color: hsl(var(--color_h_4));
+}
+.color_h_5 {
+	color: hsl(var(--color_h_5));
+}
+.color_h_6 {
+	color: hsl(var(--color_h_6));
+}
+.color_h_7 {
+	color: hsl(var(--color_h_7));
+}
+.color_h_8 {
+	color: hsl(var(--color_h_8));
+}
+.color_h_9 {
+	color: hsl(var(--color_h_9));
+}
+.color_i_1 {
+	color: hsl(var(--color_i_1));
+}
+.color_i_2 {
+	color: hsl(var(--color_i_2));
+}
+.color_i_3 {
+	color: hsl(var(--color_i_3));
+}
+.color_i_4 {
+	color: hsl(var(--color_i_4));
+}
+.color_i_5 {
+	color: hsl(var(--color_i_5));
+}
+.color_i_6 {
+	color: hsl(var(--color_i_6));
+}
+.color_i_7 {
+	color: hsl(var(--color_i_7));
+}
+.color_i_8 {
+	color: hsl(var(--color_i_8));
+}
+.color_i_9 {
+	color: hsl(var(--color_i_9));
+}
 
 .bg_a_1 {
 	background-color: hsl(var(--color_a_1));
@@ -974,6 +1028,60 @@ colors
 }
 .bg_g_9 {
 	background-color: hsl(var(--color_g_9));
+}
+.bg_h_1 {
+	background-color: hsl(var(--color_h_1));
+}
+.bg_h_2 {
+	background-color: hsl(var(--color_h_2));
+}
+.bg_h_3 {
+	background-color: hsl(var(--color_h_3));
+}
+.bg_h_4 {
+	background-color: hsl(var(--color_h_4));
+}
+.bg_h_5 {
+	background-color: hsl(var(--color_h_5));
+}
+.bg_h_6 {
+	background-color: hsl(var(--color_h_6));
+}
+.bg_h_7 {
+	background-color: hsl(var(--color_h_7));
+}
+.bg_h_8 {
+	background-color: hsl(var(--color_h_8));
+}
+.bg_h_9 {
+	background-color: hsl(var(--color_h_9));
+}
+.bg_i_1 {
+	background-color: hsl(var(--color_i_1));
+}
+.bg_i_2 {
+	background-color: hsl(var(--color_i_2));
+}
+.bg_i_3 {
+	background-color: hsl(var(--color_i_3));
+}
+.bg_i_4 {
+	background-color: hsl(var(--color_i_4));
+}
+.bg_i_5 {
+	background-color: hsl(var(--color_i_5));
+}
+.bg_i_6 {
+	background-color: hsl(var(--color_i_6));
+}
+.bg_i_7 {
+	background-color: hsl(var(--color_i_7));
+}
+.bg_i_8 {
+	background-color: hsl(var(--color_i_8));
+}
+.bg_i_9 {
+	background-color: hsl(var(--color_i_9));
 }
 
 /*
@@ -1513,6 +1621,96 @@ shading
 }
 .shadow_g_inset_xl {
 	box-shadow: var(--shadow_g_inset_xl);
+}
+.shadow_h_xs {
+	box-shadow: var(--shadow_h_xs);
+}
+.shadow_h_sm {
+	box-shadow: var(--shadow_h_sm);
+}
+.shadow_h_md {
+	box-shadow: var(--shadow_h_md);
+}
+.shadow_h_lg {
+	box-shadow: var(--shadow_h_lg);
+}
+.shadow_h_xl {
+	box-shadow: var(--shadow_h_xl);
+}
+.shadow_h_outset_xs {
+	box-shadow: var(--shadow_h_outset_xs);
+}
+.shadow_h_outset_sm {
+	box-shadow: var(--shadow_h_outset_sm);
+}
+.shadow_h_outset_md {
+	box-shadow: var(--shadow_h_outset_md);
+}
+.shadow_h_outset_lg {
+	box-shadow: var(--shadow_h_outset_lg);
+}
+.shadow_h_outset_xl {
+	box-shadow: var(--shadow_h_outset_xl);
+}
+.shadow_h_inset_xs {
+	box-shadow: var(--shadow_h_inset_xs);
+}
+.shadow_h_inset_sm {
+	box-shadow: var(--shadow_h_inset_sm);
+}
+.shadow_h_inset_md {
+	box-shadow: var(--shadow_h_inset_md);
+}
+.shadow_h_inset_lg {
+	box-shadow: var(--shadow_h_inset_lg);
+}
+.shadow_h_inset_xl {
+	box-shadow: var(--shadow_h_inset_xl);
+}
+.shadow_i_xs {
+	box-shadow: var(--shadow_i_xs);
+}
+.shadow_i_sm {
+	box-shadow: var(--shadow_i_sm);
+}
+.shadow_i_md {
+	box-shadow: var(--shadow_i_md);
+}
+.shadow_i_lg {
+	box-shadow: var(--shadow_i_lg);
+}
+.shadow_i_xl {
+	box-shadow: var(--shadow_i_xl);
+}
+.shadow_i_outset_xs {
+	box-shadow: var(--shadow_i_outset_xs);
+}
+.shadow_i_outset_sm {
+	box-shadow: var(--shadow_i_outset_sm);
+}
+.shadow_i_outset_md {
+	box-shadow: var(--shadow_i_outset_md);
+}
+.shadow_i_outset_lg {
+	box-shadow: var(--shadow_i_outset_lg);
+}
+.shadow_i_outset_xl {
+	box-shadow: var(--shadow_i_outset_xl);
+}
+.shadow_i_inset_xs {
+	box-shadow: var(--shadow_i_inset_xs);
+}
+.shadow_i_inset_sm {
+	box-shadow: var(--shadow_i_inset_sm);
+}
+.shadow_i_inset_md {
+	box-shadow: var(--shadow_i_inset_md);
+}
+.shadow_i_inset_lg {
+	box-shadow: var(--shadow_i_inset_lg);
+}
+.shadow_i_inset_xl {
+	box-shadow: var(--shadow_i_inset_xl);
 }
 
 /* higher specificity */

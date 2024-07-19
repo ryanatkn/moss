@@ -74,24 +74,24 @@
 	--color_g_7: var(--hue_g) 72% 32%;
 	--color_g_8: var(--hue_g) 72% 20%;
 	--color_g_9: var(--hue_g) 72% 10%;
-	--color_h_1: var(--hue_h) 85% 91%;
-	--color_h_2: var(--hue_h) 85% 82%;
-	--color_h_3: var(--hue_h) 85% 72%;
-	--color_h_4: var(--hue_h) 85% 62%;
-	--color_h_5: var(--hue_h) 85% 50%;
-	--color_h_6: var(--hue_h) 85% 40%;
-	--color_h_7: var(--hue_h) 85% 30%;
-	--color_h_8: var(--hue_h) 85% 20%;
-	--color_h_9: var(--hue_h) 85% 10%;
-	--color_i_1: var(--hue_i) 70% 91%;
-	--color_i_2: var(--hue_i) 70% 82%;
-	--color_i_3: var(--hue_i) 70% 72%;
-	--color_i_4: var(--hue_i) 70% 62%;
-	--color_i_5: var(--hue_i) 70% 50%;
-	--color_i_6: var(--hue_i) 70% 40%;
-	--color_i_7: var(--hue_i) 70% 30%;
-	--color_i_8: var(--hue_i) 70% 20%;
-	--color_i_9: var(--hue_i) 70% 10%;
+	--color_h_1: var(--hue_h) 90% 91%;
+	--color_h_2: var(--hue_h) 90% 82%;
+	--color_h_3: var(--hue_h) 90% 72%;
+	--color_h_4: var(--hue_h) 90% 62%;
+	--color_h_5: var(--hue_h) 90% 50%;
+	--color_h_6: var(--hue_h) 90% 40%;
+	--color_h_7: var(--hue_h) 90% 30%;
+	--color_h_8: var(--hue_h) 90% 20%;
+	--color_h_9: var(--hue_h) 90% 10%;
+	--color_i_1: var(--hue_i) 75% 91%;
+	--color_i_2: var(--hue_i) 75% 80%;
+	--color_i_3: var(--hue_i) 75% 68%;
+	--color_i_4: var(--hue_i) 75% 55%;
+	--color_i_5: var(--hue_i) 75% 40%;
+	--color_i_6: var(--hue_i) 75% 33%;
+	--color_i_7: var(--hue_i) 75% 25%;
+	--color_i_8: var(--hue_i) 75% 18%;
+	--color_i_9: var(--hue_i) 75% 10%;
 	--darken_1: #0000000f; /* 6% */
 	--darken_2: #0000001f; /* 12% */
 	--darken_3: #00000036; /* 21% */
@@ -143,6 +143,8 @@
 	--fill_e: hsl(var(--color_e_4));
 	--fill_f: hsl(var(--color_f_4));
 	--fill_g: hsl(var(--color_g_4));
+	--fill_h: hsl(var(--color_h_4));
+	--fill_i: hsl(var(--color_i_4));
 	--text_color: var(--text_1);
 	--text_1: hsl(var(--tint_hue), var(--tint_saturation), 16%);
 	--text_2: hsl(var(--tint_hue), var(--tint_saturation), 32%);
@@ -215,6 +217,8 @@
 	--border_color_e: hsl(var(--color_e_5));
 	--border_color_f: hsl(var(--color_f_5));
 	--border_color_g: hsl(var(--color_g_5));
+	--border_color_h: hsl(var(--color_h_5));
+	--border_color_i: hsl(var(--color_i_5));
 	--border_disabled: var(--border_color_3);
 	--border_width: var(--border_width_1);
 	--border_width_1: 1px;
@@ -258,6 +262,8 @@
 	--shadow_e_color: var(--color_e_7);
 	--shadow_f_color: var(--color_f_7);
 	--shadow_g_color: var(--color_g_7);
+	--shadow_h_color: var(--color_h_7);
+	--shadow_i_color: var(--color_i_7);
 	--shadow_values_xs: 0.5px 1px 3px 0px;
 	--shadow_values_sm: 1px 2px 4px 0px;
 	--shadow_values_md: 1.5px 3px 6px 0px;
@@ -478,6 +484,56 @@
 		hsla(var(--shadow_g_color) / var(--shadow_alpha_lg)) inset;
 	--shadow_g_outset_xl: var(--shadow_values_outset_xl)
 		hsla(var(--shadow_g_color) / var(--shadow_alpha_xl)) inset;
+	--shadow_h_xs: var(--shadow_values_xs) hsla(var(--shadow_h_color) / var(--shadow_alpha_xs));
+	--shadow_h_sm: var(--shadow_values_sm) hsla(var(--shadow_h_color) / var(--shadow_alpha_sm));
+	--shadow_h_md: var(--shadow_values_md) hsla(var(--shadow_h_color) / var(--shadow_alpha_md));
+	--shadow_h_lg: var(--shadow_values_lg) hsla(var(--shadow_h_color) / var(--shadow_alpha_lg));
+	--shadow_h_xl: var(--shadow_values_xl) hsla(var(--shadow_h_color) / var(--shadow_alpha_xl));
+	--shadow_h_inset_xs: var(--shadow_values_inset_xs)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_xs)) inset;
+	--shadow_h_inset_sm: var(--shadow_values_inset_sm)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_sm)) inset;
+	--shadow_h_inset_md: var(--shadow_values_inset_md)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_md)) inset;
+	--shadow_h_inset_lg: var(--shadow_values_inset_lg)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_lg)) inset;
+	--shadow_h_inset_xl: var(--shadow_values_inset_xl)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_xl)) inset;
+	--shadow_h_outset_xs: var(--shadow_values_outset_xs)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_xs)) inset;
+	--shadow_h_outset_sm: var(--shadow_values_outset_sm)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_sm)) inset;
+	--shadow_h_outset_md: var(--shadow_values_outset_md)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_md)) inset;
+	--shadow_h_outset_lg: var(--shadow_values_outset_lg)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_lg)) inset;
+	--shadow_h_outset_xl: var(--shadow_values_outset_xl)
+		hsla(var(--shadow_h_color) / var(--shadow_alpha_xl)) inset;
+	--shadow_i_xs: var(--shadow_values_xs) hsla(var(--shadow_i_color) / var(--shadow_alpha_xs));
+	--shadow_i_sm: var(--shadow_values_sm) hsla(var(--shadow_i_color) / var(--shadow_alpha_sm));
+	--shadow_i_md: var(--shadow_values_md) hsla(var(--shadow_i_color) / var(--shadow_alpha_md));
+	--shadow_i_lg: var(--shadow_values_lg) hsla(var(--shadow_i_color) / var(--shadow_alpha_lg));
+	--shadow_i_xl: var(--shadow_values_xl) hsla(var(--shadow_i_color) / var(--shadow_alpha_xl));
+	--shadow_i_inset_xs: var(--shadow_values_inset_xs)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_xs)) inset;
+	--shadow_i_inset_sm: var(--shadow_values_inset_sm)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_sm)) inset;
+	--shadow_i_inset_md: var(--shadow_values_inset_md)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_md)) inset;
+	--shadow_i_inset_lg: var(--shadow_values_inset_lg)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_lg)) inset;
+	--shadow_i_inset_xl: var(--shadow_values_inset_xl)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_xl)) inset;
+	--shadow_i_outset_xs: var(--shadow_values_outset_xs)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_xs)) inset;
+	--shadow_i_outset_sm: var(--shadow_values_outset_sm)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_sm)) inset;
+	--shadow_i_outset_md: var(--shadow_values_outset_md)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_md)) inset;
+	--shadow_i_outset_lg: var(--shadow_values_outset_lg)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_lg)) inset;
+	--shadow_i_outset_xl: var(--shadow_values_outset_xl)
+		hsla(var(--shadow_i_color) / var(--shadow_alpha_xl)) inset;
 	--icon_size_xs: 18px;
 	--icon_size_sm: 32px;
 	--icon_size_md: 48px;
@@ -549,20 +605,20 @@
 	--color_g_6: var(--hue_g) 72% 55%;
 	--color_g_7: var(--hue_g) 72% 40%;
 	--color_g_8: var(--hue_g) 72% 25%;
-	--color_h_2: var(--hue_h) 85% 86%;
-	--color_h_3: var(--hue_h) 85% 81%;
-	--color_h_4: var(--hue_h) 85% 74%;
-	--color_h_5: var(--hue_h) 85% 63%;
-	--color_h_6: var(--hue_h) 85% 55%;
-	--color_h_7: var(--hue_h) 85% 40%;
-	--color_h_8: var(--hue_h) 85% 25%;
-	--color_i_2: var(--hue_i) 70% 86%;
-	--color_i_3: var(--hue_i) 70% 81%;
-	--color_i_4: var(--hue_i) 70% 76%;
-	--color_i_5: var(--hue_i) 70% 70%;
-	--color_i_6: var(--hue_i) 70% 55%;
-	--color_i_7: var(--hue_i) 70% 40%;
-	--color_i_8: var(--hue_i) 70% 25%;
+	--color_h_2: var(--hue_h) 90% 86%;
+	--color_h_3: var(--hue_h) 90% 81%;
+	--color_h_4: var(--hue_h) 90% 74%;
+	--color_h_5: var(--hue_h) 90% 63%;
+	--color_h_6: var(--hue_h) 90% 55%;
+	--color_h_7: var(--hue_h) 90% 40%;
+	--color_h_8: var(--hue_h) 90% 25%;
+	--color_i_2: var(--hue_i) 75% 86%;
+	--color_i_3: var(--hue_i) 75% 81%;
+	--color_i_4: var(--hue_i) 75% 76%;
+	--color_i_5: var(--hue_i) 75% 70%;
+	--color_i_6: var(--hue_i) 75% 55%;
+	--color_i_7: var(--hue_i) 75% 40%;
+	--color_i_8: var(--hue_i) 75% 25%;
 	--bg: hsl(var(--tint_hue), var(--tint_saturation), 6%);
 	--fg: hsl(var(--tint_hue), var(--tint_saturation), 96%);
 	--bg_0: #fff;
@@ -594,6 +650,8 @@
 	--fill_e: hsl(var(--color_e_6));
 	--fill_f: hsl(var(--color_f_6));
 	--fill_g: hsl(var(--color_g_6));
+	--fill_h: hsl(var(--color_h_6));
+	--fill_i: hsl(var(--color_i_6));
 	--text_1: hsl(var(--tint_hue), var(--tint_saturation), 80%);
 	--text_2: hsl(var(--tint_hue), var(--tint_saturation), 65%);
 	--text_3: hsl(var(--tint_hue), var(--tint_saturation), 50%);
@@ -612,6 +670,8 @@
 	--shadow_e_color: var(--color_e_3);
 	--shadow_f_color: var(--color_f_3);
 	--shadow_g_color: var(--color_g_3);
+	--shadow_h_color: var(--color_h_3);
+	--shadow_i_color: var(--color_i_3);
 }
 
 /* generated by src/lib/theme.gen.css.ts */
