@@ -516,20 +516,39 @@ currently `:disabled` overrides this */
 }
 
 /* TODO these need design work for visuals/consistency/customizability  */
-:where(button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g)) {
+:where(
+		button:where(
+				.color_a,
+				.color_b,
+				.color_c,
+				.color_d,
+				.color_e,
+				.color_f,
+				.color_g,
+				.color_h,
+				.color_i
+			)
+	) {
 	--text_color: var(
 		--bg_8
 	); /* TODO rethink this, maybe gradients instead? or at least use a text_color */
 }
 :where(
-		button:where(.color_a, .color_b, .color_c, .color_d, .color_e, .color_f, .color_g):where(
-				:hover,
-				:focus,
-				:active
-			)
+		button:where(
+				.color_a,
+				.color_b,
+				.color_c,
+				.color_d,
+				.color_e,
+				.color_f,
+				.color_g,
+				.color_h,
+				.color_i
+			):where(:hover, :focus, :active)
 	) {
 	--text_color: var(--bg_10);
 }
+/* TODO maybe move these to `style_components` or a different CSS file? */
 :where(button.color_a) {
 	/* TODO change to setting a variable */
 	--fill: var(--fill_a);
@@ -565,6 +584,16 @@ currently `:disabled` overrides this */
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
 }
+:where(button.color_h) {
+	--fill: var(--fill_h);
+	--border_color: var(--border_color_h);
+	--outline_color: var(--border_color_h);
+}
+:where(button.color_i) {
+	--fill: var(--fill_i);
+	--border_color: var(--border_color_i);
+	--outline_color: var(--border_color_i);
+}
 /* TODO set text_color */
 :where(button.selected.color_a) {
 	--text_color: hsl(var(--color_a_5));
@@ -586,6 +615,12 @@ currently `:disabled` overrides this */
 }
 :where(button.selected.color_g) {
 	--text_color: hsl(var(--color_g_5));
+}
+:where(button.selected.color_h) {
+	--text_color: hsl(var(--color_h_5));
+}
+:where(button.selected.color_i) {
+	--text_color: hsl(var(--color_i_5));
 }
 :where(button.selected) {
 	--fill: var(--button_fill_selected);
