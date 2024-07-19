@@ -530,6 +530,7 @@ currently `:disabled` overrides this */
 	) {
 	--text_color: var(--bg_10);
 }
+/* TODO maybe move these to `style_components` or a different CSS file? */
 :where(button.color_a) {
 	/* TODO change to setting a variable */
 	--fill: var(--fill_a);
