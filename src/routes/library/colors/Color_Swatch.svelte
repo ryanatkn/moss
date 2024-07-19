@@ -22,7 +22,7 @@
 			<div class="text">
 				<Style_Variable_Button {name} />
 				<div class="hex">{hsl && hsl_to_hex_string(...hsl)}</div>
-				<div class="hsl">{value}</div>
+				<div class="hsl">hsl({value})</div>
 				<div class="rgb">rgb({hsl && hsl_to_rgb(...hsl).join(' ')})</div>
 			</div>
 		</li>

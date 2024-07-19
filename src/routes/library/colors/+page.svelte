@@ -9,12 +9,11 @@
 	import Hue_Swatch from '$routes/library/colors/Hue_Swatch.svelte';
 	import Color_Swatch from '$routes/library/colors/Color_Swatch.svelte';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import {color_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'colors';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
-
-	const color_names = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
@@ -110,7 +109,7 @@
 		</p>
 		<p>Unlike the color variables, the hue variables are the same in both light and dark modes.</p>
 		<ul class="palette unstyled">
-			{#each color_names as color_name, i}
+			{#each color_variants as color_name, i}
 				<Hue_Swatch {color_name} {computed_styles} description={descriptions[i]} />
 			{/each}
 		</ul>
@@ -126,7 +125,7 @@
 		</p>
 		<p>These colors were eyeballed by a programmer, and will change :]</p>
 		<ul class="palette unstyled pt_xl2">
-			{#each color_names as color_name}
+			{#each color_variants as color_name}
 				<Color_Swatch {color_name} {computed_styles} />
 			{/each}
 		</ul>

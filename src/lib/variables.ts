@@ -29,6 +29,8 @@ export const hue_d: Style_Variable = {name: 'hue_d', light: '260', summary: 'pur
 export const hue_e: Style_Variable = {name: 'hue_e', light: '50', summary: 'yellow'};
 export const hue_f: Style_Variable = {name: 'hue_f', light: '27', summary: 'brown'};
 export const hue_g: Style_Variable = {name: 'hue_g', light: '335', summary: 'pink'};
+export const hue_h: Style_Variable = {name: 'hue_h', light: '17', summary: 'orange'};
+export const hue_i: Style_Variable = {name: 'hue_i', light: '165', summary: 'cyan'};
 export const color_a_1: Style_Variable = {
 	name: 'color_a_1',
 	light: 'var(--hue_a) 65% 91%',
@@ -329,6 +331,92 @@ export const color_g_8: Style_Variable = {
 export const color_g_9: Style_Variable = {
 	name: 'color_g_9',
 	light: 'var(--hue_g) 72% 10%',
+};
+export const color_h_1: Style_Variable = {
+	name: 'color_h_1',
+	light: 'var(--hue_h) 50% 91%',
+};
+export const color_h_2: Style_Variable = {
+	name: 'color_h_2',
+	light: 'var(--hue_h) 50% 82%',
+	dark: 'var(--hue_h) 50% 86%',
+};
+export const color_h_3: Style_Variable = {
+	name: 'color_h_3',
+	light: 'var(--hue_h) 50% 72%',
+	dark: 'var(--hue_h) 50% 81%',
+};
+export const color_h_4: Style_Variable = {
+	name: 'color_h_4',
+	light: 'var(--hue_h) 50% 62%',
+	dark: 'var(--hue_h) 50% 76%',
+};
+export const color_h_5: Style_Variable = {
+	name: 'color_h_5',
+	light: 'var(--hue_h) 50% 50%',
+	dark: 'var(--hue_h) 50% 70%',
+};
+export const color_h_6: Style_Variable = {
+	name: 'color_h_6',
+	light: 'var(--hue_h) 50% 40%',
+	dark: 'var(--hue_h) 50% 55%',
+};
+export const color_h_7: Style_Variable = {
+	name: 'color_h_7',
+	light: 'var(--hue_h) 50% 30%',
+	dark: 'var(--hue_h) 50% 40%',
+};
+export const color_h_8: Style_Variable = {
+	name: 'color_h_8',
+	light: 'var(--hue_h) 50% 20%',
+	dark: 'var(--hue_h) 50% 25%',
+};
+export const color_h_9: Style_Variable = {
+	name: 'color_h_9',
+	light: 'var(--hue_h) 50% 10%',
+};
+export const color_i_1: Style_Variable = {
+	name: 'color_i_1',
+	light: 'var(--hue_i) 50% 91%',
+};
+export const color_i_2: Style_Variable = {
+	name: 'color_i_2',
+	light: 'var(--hue_i) 50% 82%',
+	dark: 'var(--hue_i) 50% 86%',
+};
+export const color_i_3: Style_Variable = {
+	name: 'color_i_3',
+	light: 'var(--hue_i) 50% 72%',
+	dark: 'var(--hue_i) 50% 81%',
+};
+export const color_i_4: Style_Variable = {
+	name: 'color_i_4',
+	light: 'var(--hue_i) 50% 62%',
+	dark: 'var(--hue_i) 50% 76%',
+};
+export const color_i_5: Style_Variable = {
+	name: 'color_i_5',
+	light: 'var(--hue_i) 50% 50%',
+	dark: 'var(--hue_i) 50% 70%',
+};
+export const color_i_6: Style_Variable = {
+	name: 'color_i_6',
+	light: 'var(--hue_i) 50% 40%',
+	dark: 'var(--hue_i) 50% 55%',
+};
+export const color_i_7: Style_Variable = {
+	name: 'color_i_7',
+	light: 'var(--hue_i) 50% 30%',
+	dark: 'var(--hue_i) 50% 40%',
+};
+export const color_i_8: Style_Variable = {
+	name: 'color_i_8',
+	light: 'var(--hue_i) 50% 20%',
+	dark: 'var(--hue_i) 50% 25%',
+};
+export const color_i_9: Style_Variable = {
+	name: 'color_i_9',
+	light: 'var(--hue_i) 50% 10%',
 };
 
 /*
@@ -1491,6 +1579,8 @@ export const default_variables: Style_Variable[] = [
 	hue_e,
 	hue_f,
 	hue_g,
+	hue_h,
+	hue_i,
 	color_a_1,
 	color_a_2,
 	color_a_3,
@@ -1554,6 +1644,24 @@ export const default_variables: Style_Variable[] = [
 	color_g_7,
 	color_g_8,
 	color_g_9,
+	color_h_1,
+	color_h_2,
+	color_h_3,
+	color_h_4,
+	color_h_5,
+	color_h_6,
+	color_h_7,
+	color_h_8,
+	color_h_9,
+	color_i_1,
+	color_i_2,
+	color_i_3,
+	color_i_4,
+	color_i_5,
+	color_i_6,
+	color_i_7,
+	color_i_8,
+	color_i_9,
 
 	/*
 		color variants - using these usually means handling both light and dark modes separately -
