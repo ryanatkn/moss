@@ -484,16 +484,6 @@ so for consistent visuals we opt to include no active state */
 /*  TODO :has selector? `button:has(input[type='checkbox']:checked)`
 see https://caniuse.com/css-has
  */
-/* TODO maybe add a style for `button.selected:disabled`, probably reduced brightness,
-currently `:disabled` overrides this */
-:where(button.selected) {
-	--text_color: var(--text_active);
-	--border_color: hsl(var(--color_a_5));
-}
-:where(button.selected:not(.deselectable)) {
-	cursor: default;
-	box-shadow: none;
-}
 :where(input:checked) {
 	--text_color: var(--text_active);
 	--border_color: hsl(var(--color_a_5));
@@ -520,23 +510,7 @@ currently `:disabled` overrides this */
 }
 
 /* TODO these need design work for visuals/consistency/customizability  */
-:where(
-		button:where(
-				.color_a,
-				.color_b,
-				.color_c,
-				.color_d,
-				.color_e,
-				.color_f,
-				.color_g,
-				.color_h,
-				.color_i
-			)
-	) {
-	--text_color: var(
-		--bg_8
-	); /* TODO rethink this, maybe gradients instead? or at least use a text_color */
-}
+/* TODO rethink this, maybe gradients instead? or at least use a text_color */
 :where(
 		button:where(
 				.color_a,
@@ -552,82 +526,93 @@ currently `:disabled` overrides this */
 	) {
 	--text_color: var(--bg_10);
 }
-/* TODO maybe move these to `style_components` or a different CSS file? */
+/*
+TODO maybe move these to `style_components.css` or a different CSS file?
+including colored button styles, selected button styles, ...
+*/
 :where(button.color_a) {
 	/* TODO change to setting a variable */
-	--fill: var(--fill_a);
+	--text_color: hsl(var(--color_a_5));
 	--border_color: var(--border_color_a);
 }
 :where(button.color_b) {
-	--fill: var(--fill_b);
+	--text_color: hsl(var(--color_b_5));
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
 }
 :where(button.color_c) {
-	--fill: var(--fill_c);
+	--text_color: hsl(var(--color_c_5));
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
 }
 :where(button.color_d) {
-	--fill: var(--fill_d);
+	--text_color: hsl(var(--color_d_5));
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
 }
 :where(button.color_e) {
-	--fill: var(--fill_e);
+	--text_color: hsl(var(--color_e_5));
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
 }
 :where(button.color_f) {
-	--fill: var(--fill_f);
+	--text_color: hsl(var(--color_f_5));
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
 }
 :where(button.color_g) {
-	--fill: var(--fill_g);
+	--text_color: hsl(var(--color_g_5));
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
 }
 :where(button.color_h) {
-	--fill: var(--fill_h);
+	--text_color: hsl(var(--color_h_5));
 	--border_color: var(--border_color_h);
 	--outline_color: var(--border_color_h);
 }
 :where(button.color_i) {
-	--fill: var(--fill_i);
+	--text_color: hsl(var(--color_i_5));
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
 }
-/* TODO set text_color */
-:where(button.selected.color_a) {
-	--text_color: hsl(var(--color_a_5));
-}
-:where(button.selected.color_b) {
-	--text_color: hsl(var(--color_b_5));
-}
-:where(button.selected.color_c) {
-	--text_color: hsl(var(--color_c_5));
-}
-:where(button.selected.color_d) {
-	--text_color: hsl(var(--color_d_5));
-}
-:where(button.selected.color_e) {
-	--text_color: hsl(var(--color_e_5));
-}
-:where(button.selected.color_f) {
-	--text_color: hsl(var(--color_f_5));
-}
-:where(button.selected.color_g) {
-	--text_color: hsl(var(--color_g_5));
-}
-:where(button.selected.color_h) {
-	--text_color: hsl(var(--color_h_5));
-}
-:where(button.selected.color_i) {
-	--text_color: hsl(var(--color_i_5));
-}
+/* TODO maybe add a style for `button.selected:disabled`, probably reduced brightness,
+currently `:disabled` overrides this */
 :where(button.selected) {
+	--text_color: var(--bg_8);
+	--border_color: hsl(var(--color_a_5));
 	--fill: var(--button_fill_selected);
+}
+:where(button.selected:not(.deselectable)) {
+	cursor: default;
+	box-shadow: none;
+}
+/* TODO set text_color */
+:where(button.color_a.selected) {
+	--fill: var(--fill_a);
+}
+:where(button.color_b.selected) {
+	--fill: var(--fill_b);
+}
+:where(button.color_c.selected) {
+	--fill: var(--fill_c);
+}
+:where(button.color_d.selected) {
+	--fill: var(--fill_d);
+}
+:where(button.color_e.selected) {
+	--fill: var(--fill_e);
+}
+:where(button.color_f.selected) {
+	--fill: var(--fill_f);
+}
+:where(button.color_g.selected) {
+	--fill: var(--fill_g);
+}
+:where(button.color_h.selected) {
+	--fill: var(--fill_h);
+}
+:where(button.color_i.selected) {
+	--fill: var(--fill_i);
 }
 
 /* TODO could improve this with the coming `:has` selector
