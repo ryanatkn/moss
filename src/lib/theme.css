@@ -242,8 +242,8 @@
 	--radius_xs3: 0.3rem;
 	--button_fill: var(--fg_1);
 	--button_fill_hover: var(--fg_2);
-	--button_fill_active: var(--bg_3);
-	--button_fill_selected: var(--bg_3);
+	--button_fill_active: var(--fg_2);
+	--button_fill_selected: var(--fg_5);
 	--button_fill_disabled: transparent;
 	--input_fill: var(--bg_5);
 	--input_padding_y: 0;

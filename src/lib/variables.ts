@@ -852,11 +852,11 @@ export const button_fill: Style_Variable = {name: 'button_fill', light: 'var(--f
 export const button_fill_hover: Style_Variable = {name: 'button_fill_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
 export const button_fill_active: Style_Variable = {
 	name: 'button_fill_active',
-	light: 'var(--bg_3)',
+	light: 'var(--fg_2)',
 };
 export const button_fill_selected: Style_Variable = {
 	name: 'button_fill_selected',
-	light: 'var(--bg_3)',
+	light: 'var(--fg_5)',
 };
 export const button_fill_disabled: Style_Variable = {
 	name: 'button_fill_disabled',
