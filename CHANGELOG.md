@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.10.0
+
+### Minor Changes
+
+- swap styles for colored buttons and selected variants ([#27](https://github.com/ryanatkn/moss/pull/27))
+
 ## 0.9.0
 
 ### Minor Changes
