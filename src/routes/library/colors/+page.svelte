@@ -20,6 +20,7 @@
 
 	// TODO button to add an inline hue input for runtime modification of the theme
 
+	// TODO maybe add this to the variable data as comments
 	const descriptions = [
 		'primary',
 		'success/help',
@@ -28,6 +29,8 @@
 		'tertiary',
 		'quaternary',
 		'quinary',
+		'senary',
+		'septenary',
 	];
 </script>
 
