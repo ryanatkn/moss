@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.9.0
+
+### Minor Changes
+
+- add colors `h` and `i` ([#26](https://github.com/ryanatkn/moss/pull/26))
+
 ## 0.8.0
 
 ### Minor Changes
