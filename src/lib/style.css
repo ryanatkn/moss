@@ -1491,6 +1491,12 @@ colors
 .hue_g {
 	--hue: var(--hue_g);
 }
+.hue_h {
+	--hue: var(--hue_h);
+}
+.hue_i {
+	--hue: var(--hue_i);
+}
 
 .color_a_1 {
 	color: hsl(var(--color_a_1));
@@ -2020,6 +2026,12 @@ borders
 }
 .border_color_g {
 	border-color: var(--border_color_g);
+}
+.border_color_h {
+	border-color: var(--border_color_h);
+}
+.border_color_i {
+	border-color: var(--border_color_i);
 }
 .border_color_disabled {
 	border-color: var(--border_color_disabled);
