@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -164,6 +164,14 @@
         },
         {
           "name": "hue_g",
+          "kind": "variable"
+        },
+        {
+          "name": "hue_h",
+          "kind": "variable"
+        },
+        {
+          "name": "hue_i",
           "kind": "variable"
         },
         {
@@ -419,6 +427,78 @@
           "kind": "variable"
         },
         {
+          "name": "color_h_1",
+          "kind": "variable"
+        },
+        {
+          "name": "color_h_2",
+          "kind": "variable"
+        },
+        {
+          "name": "color_h_3",
+          "kind": "variable"
+        },
+        {
+          "name": "color_h_4",
+          "kind": "variable"
+        },
+        {
+          "name": "color_h_5",
+          "kind": "variable"
+        },
+        {
+          "name": "color_h_6",
+          "kind": "variable"
+        },
+        {
+          "name": "color_h_7",
+          "kind": "variable"
+        },
+        {
+          "name": "color_h_8",
+          "kind": "variable"
+        },
+        {
+          "name": "color_h_9",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_1",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_2",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_3",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_4",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_5",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_6",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_7",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_8",
+          "kind": "variable"
+        },
+        {
+          "name": "color_i_9",
+          "kind": "variable"
+        },
+        {
           "name": "darken_1",
           "kind": "variable"
         },
@@ -620,6 +700,14 @@
         },
         {
           "name": "fill_g",
+          "kind": "variable"
+        },
+        {
+          "name": "fill_h",
+          "kind": "variable"
+        },
+        {
+          "name": "fill_i",
           "kind": "variable"
         },
         {
@@ -907,6 +995,14 @@
           "kind": "variable"
         },
         {
+          "name": "border_color_h",
+          "kind": "variable"
+        },
+        {
+          "name": "border_color_i",
+          "kind": "variable"
+        },
+        {
           "name": "border_disabled",
           "kind": "variable"
         },
@@ -1072,6 +1168,14 @@
         },
         {
           "name": "shadow_g_color",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_color",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_color",
           "kind": "variable"
         },
         {
@@ -1632,6 +1736,126 @@
         },
         {
           "name": "shadow_g_outset_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_md",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_inset_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_inset_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_inset_md",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_inset_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_inset_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_outset_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_outset_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_outset_md",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_outset_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_h_outset_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_md",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_inset_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_inset_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_inset_md",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_inset_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_inset_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_outset_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_outset_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_outset_md",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_outset_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_i_outset_xl",
           "kind": "variable"
         },
         {
