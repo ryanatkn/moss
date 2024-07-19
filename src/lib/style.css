@@ -511,6 +511,14 @@ see https://caniuse.com/css-has
 
 /* TODO these need design work for visuals/consistency/customizability  */
 /* TODO rethink this, maybe gradients instead? or at least use a text_color */
+/* TODO maybe add a style for `button.selected:disabled`, probably reduced brightness,
+currently `:disabled` overrides this */
+/* TODO hover variants with brighter borders? maybe use a colorless border for that? */
+:where(button.selected) {
+	--text_color: var(--bg_8);
+	--border_color: var(--border_color_2);
+	--fill: var(--button_fill_selected);
+}
 :where(
 		button:where(
 				.color_a,
@@ -531,7 +539,6 @@ TODO maybe move these to `style_components.css` or a different CSS file?
 including colored button styles, selected button styles, ...
 */
 :where(button.color_a) {
-	/* TODO change to setting a variable */
 	--text_color: hsl(var(--color_a_5));
 	--border_color: var(--border_color_a);
 }
@@ -575,18 +582,17 @@ including colored button styles, selected button styles, ...
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
 }
-/* TODO maybe add a style for `button.selected:disabled`, probably reduced brightness,
-currently `:disabled` overrides this */
+/*
+This selector follows the colored buttons to override them.
+Other `button.selected` styles are above.
+*/
 :where(button.selected) {
 	--text_color: var(--bg_8);
-	--border_color: hsl(var(--color_a_5));
-	--fill: var(--button_fill_selected);
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
 	box-shadow: none;
 }
-/* TODO set text_color */
 :where(button.color_a.selected) {
 	--fill: var(--fill_a);
 }
