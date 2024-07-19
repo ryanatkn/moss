@@ -574,7 +574,7 @@ including colored button styles, selected button styles, ...
 currently `:disabled` overrides this */
 :where(button.selected) {
 	--text_color: var(--bg_8);
-	--border_color: hsl(var(--color_a_5));
+	--border_color: hsl(var(--border_color_5));
 	--fill: var(--button_fill_selected);
 }
 :where(button.selected:not(.deselectable)) {
