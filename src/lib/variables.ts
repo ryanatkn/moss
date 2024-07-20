@@ -847,7 +847,7 @@ export const radius_xs: Style_Variable = {name: 'radius_xs', light: '0.8rem'};
 export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
-/* button colors */
+/* button styles */
 export const button_fill: Style_Variable = {name: 'button_fill', light: 'var(--fg_1)'};
 export const button_fill_hover: Style_Variable = {name: 'button_fill_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
 export const button_fill_active: Style_Variable = {
@@ -861,6 +861,21 @@ export const button_fill_selected: Style_Variable = {
 export const button_fill_disabled: Style_Variable = {
 	name: 'button_fill_disabled',
 	light: 'transparent',
+};
+export const button_shadow: Style_Variable = {
+	name: 'button_shadow',
+	light: 'var(--shadow_outset_xs)',
+	dark: 'var(--shadow_inset_xs)',
+};
+export const button_shadow_hover: Style_Variable = {
+	name: 'button_shadow_hover',
+	light: 'var(--shadow_outset_sm)',
+	dark: 'var(--shadow_inset_sm)',
+};
+export const button_shadow_active: Style_Variable = {
+	name: 'button_shadow_active',
+	light: 'var(--shadow_inset_sm)',
+	dark: 'var(--shadow_outset_sm)',
 };
 
 /* inputs */
