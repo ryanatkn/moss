@@ -18,7 +18,6 @@
 
 <Tome_Detail {tome}>
 	<!-- TODO  -->
-	<!-- <div>border_disabled</div> -->
 	<!-- <div>border_color</div> -->
 	<!-- <div>border_style</div> -->
 	<!-- <div>border_width</div> -->
@@ -58,7 +57,7 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
-		<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" />
+		<Tome_Subheading text="Colorful border variants" slug="colorful-border-variants" />
 		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_colors">
 			{#each color_variants as color_variant}

@@ -456,7 +456,7 @@ so for consistent visuals we opt to include no active state */
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
 	background-color: var(--fill, var(--button_fill));
-	box-shadow: var(--shadow_outset_xs);
+	box-shadow: var(--shadow, var(--button_shadow));
 	border-width: var(--border_width);
 	border-style: var(--border_style);
 	border-color: var(--border_color);
@@ -469,13 +469,13 @@ so for consistent visuals we opt to include no active state */
 :where(button:hover, button:focus) {
 	--fill: var(--button_fill_hover);
 	--border_color: var(--border_color_2);
-	box-shadow: var(--shadow_outset_sm);
+	--shadow: var(--button_shadow_hover);
 }
 :where(button:active) {
 	--fill: var(--button_fill_active);
 	--border_color: var(--border_color_5);
 	--outline_width: var(--outline_width_3);
-	box-shadow: var(--shadow_inset_sm);
+	--shadow: var(--button_shadow_active);
 }
 :where(button.inline, p button) {
 	display: inline-block;
@@ -496,7 +496,6 @@ see https://caniuse.com/css-has
 	--text_color: var(--text_disabled);
 	/* TODO using `button_` here looks wrong, conflating button with others */
 	--fill: var(--button_fill_disabled);
-	--border_color: var(--border_disabled);
 	--border_style: solid dashed;
 	cursor: default;
 	box-shadow: none;
@@ -599,8 +598,6 @@ Also if we add colored inputs, they would be added to this selector list.
 */
 :where(button:disabled:not(.selected)) {
 	--fill: var(--button_fill_disabled);
-	/* TODO maybe change this border color for color buttons? or remove it completely?  */
-	/* --border_color: var(--border_disabled); */
 }
 /*
 This selector follows the colored buttons to override them.
@@ -3373,7 +3370,7 @@ layout
 .m_md {
 	margin: var(--space_md);
 }
-.mlg {
+.m_lg {
 	margin: var(--space_lg);
 }
 .m_xl {
