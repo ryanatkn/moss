@@ -908,7 +908,7 @@ export interface Create_Shadow_Options {
 export const glow_color: Style_Variable = {
 	name: 'glow_color',
 	light: 'var(--tint_hue) var(--tint_saturation) 94%',
-	dark: 'var(--tint_hue) var(--tint_saturation) 6%',
+	dark: 'var(--tint_hue) var(--tint_saturation) 0%',
 };
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
