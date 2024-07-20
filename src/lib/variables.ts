@@ -964,27 +964,27 @@ export const shadow_values_outset_xs: Style_Variable = {
 };
 export const shadow_values_sm: Style_Variable = {
 	name: 'shadow_values_sm',
-	light: '1px 2px 4px 0px',
+	light: '1px 1.5px 4px 0px',
 };
 export const shadow_values_inset_sm: Style_Variable = {
 	name: 'shadow_values_inset_sm',
-	light: '1px 2px 4px 0px',
+	light: '1px 1.5px 4px 0px',
 };
 export const shadow_values_outset_sm: Style_Variable = {
 	name: 'shadow_values_outset_sm',
-	light: '-1px -2px 4px 0px',
+	light: '-1px -1.5px 4px 0px',
 };
 export const shadow_values_md: Style_Variable = {
 	name: 'shadow_values_md',
-	light: '1.5px 3px 6px 0px',
+	light: '1.5px 2.5px 6px 0px',
 };
 export const shadow_values_inset_md: Style_Variable = {
 	name: 'shadow_values_inset_md',
-	light: '1.5px 3px 6px 0px',
+	light: '1.5px 2.5px 6px 0px',
 };
 export const shadow_values_outset_md: Style_Variable = {
 	name: 'shadow_values_outset_md',
-	light: '-1.5px -3px 6px 0px',
+	light: '-1.5px -2.5px 6px 0px',
 };
 export const shadow_values_lg: Style_Variable = {
 	name: 'shadow_values_lg',
