@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -1003,10 +1003,6 @@
           "kind": "variable"
         },
         {
-          "name": "border_disabled",
-          "kind": "variable"
-        },
-        {
           "name": "border_width",
           "kind": "variable"
         },
@@ -1107,6 +1103,18 @@
           "kind": "variable"
         },
         {
+          "name": "button_shadow",
+          "kind": "variable"
+        },
+        {
+          "name": "button_shadow_hover",
+          "kind": "variable"
+        },
+        {
+          "name": "button_shadow_active",
+          "kind": "variable"
+        },
+        {
           "name": "input_fill",
           "kind": "variable"
         },
@@ -1137,6 +1145,10 @@
         {
           "name": "Create_Shadow_Options",
           "kind": "type"
+        },
+        {
+          "name": "glow_color",
+          "kind": "variable"
         },
         {
           "name": "shadow_color",
@@ -1256,6 +1268,66 @@
         },
         {
           "name": "shadow_alpha_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_md",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_inset_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_inset_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_inset_md",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_inset_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_inset_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_outset_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_outset_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_outset_md",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_outset_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "glow_outset_xl",
           "kind": "variable"
         },
         {
