@@ -219,7 +219,6 @@
 	--border_color_g: hsl(var(--color_g_5));
 	--border_color_h: hsl(var(--color_h_5));
 	--border_color_i: hsl(var(--color_i_5));
-	--border_disabled: var(--border_color_3);
 	--border_width: var(--border_width_1);
 	--border_width_1: 1px;
 	--border_width_2: 2px;

@@ -352,7 +352,6 @@ export const src_json = {
 				{name: 'border_color_g', kind: 'variable'},
 				{name: 'border_color_h', kind: 'variable'},
 				{name: 'border_color_i', kind: 'variable'},
-				{name: 'border_disabled', kind: 'variable'},
 				{name: 'border_width', kind: 'variable'},
 				{name: 'border_width_1', kind: 'variable'},
 				{name: 'border_width_2', kind: 'variable'},

@@ -18,7 +18,6 @@
 
 <Tome_Detail {tome}>
 	<!-- TODO  -->
-	<!-- <div>border_disabled</div> -->
 	<!-- <div>border_color</div> -->
 	<!-- <div>border_style</div> -->
 	<!-- <div>border_width</div> -->

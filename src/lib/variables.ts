@@ -807,11 +807,6 @@ export const border_color_i: Style_Variable = {
 	name: 'border_color_i',
 	light: 'hsl(var(--color_i_5))',
 };
-// TODO disabled doesn't work with colors
-export const border_disabled: Style_Variable = {
-	name: 'border_disabled',
-	light: 'var(--border_color_3)',
-};
 export const border_width: Style_Variable = {name: 'border_width', light: 'var(--border_width_1)'};
 export const border_width_1: Style_Variable = {name: 'border_width_1', light: '1px'};
 export const border_width_2: Style_Variable = {name: 'border_width_2', light: '2px'};
@@ -2054,7 +2049,6 @@ export const default_variables: Style_Variable[] = [
 	border_color_g,
 	border_color_h,
 	border_color_i,
-	border_disabled,
 	border_width,
 	border_width_1,
 	border_width_2,

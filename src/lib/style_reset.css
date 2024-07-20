@@ -492,7 +492,6 @@ see https://caniuse.com/css-has
 	--text_color: var(--text_disabled);
 	/* TODO using `button_` here looks wrong, conflating button with others */
 	--fill: var(--button_fill_disabled);
-	--border_color: var(--border_disabled);
 	--border_style: solid dashed;
 	cursor: default;
 	box-shadow: none;
@@ -595,8 +594,6 @@ Also if we add colored inputs, they would be added to this selector list.
 */
 :where(button:disabled:not(.selected)) {
 	--fill: var(--button_fill_disabled);
-	/* TODO maybe change this border color for color buttons? or remove it completely?  */
-	/* --border_color: var(--border_disabled); */
 }
 /*
 This selector follows the colored buttons to override them.
