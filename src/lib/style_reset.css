@@ -452,7 +452,7 @@ so for consistent visuals we opt to include no active state */
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
 	background-color: var(--fill, var(--button_fill));
-	box-shadow: var(--shadow_outset_xs);
+	box-shadow: var(--shadow, var(--button_shadow));
 	border-width: var(--border_width);
 	border-style: var(--border_style);
 	border-color: var(--border_color);
@@ -465,13 +465,13 @@ so for consistent visuals we opt to include no active state */
 :where(button:hover, button:focus) {
 	--fill: var(--button_fill_hover);
 	--border_color: var(--border_color_2);
-	box-shadow: var(--shadow_outset_sm);
+	--shadow: var(--button_shadow_hover);
 }
 :where(button:active) {
 	--fill: var(--button_fill_active);
 	--border_color: var(--border_color_5);
 	--outline_width: var(--outline_width_3);
-	box-shadow: var(--shadow_inset_sm);
+	--shadow: var(--button_shadow_active);
 }
 :where(button.inline, p button) {
 	display: inline-block;
