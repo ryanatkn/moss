@@ -36,6 +36,32 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
+		<Tome_Subheading text="Glows" slug="glows" />
+		<Unfinished_Implementation_Warning
+			>Currently glows and shadows are inverted for dark mode, but that may change for clarity.</Unfinished_Implementation_Warning
+		>
+		<div class="panel fg_2 p_md">
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
+					<Style_Variable_Button name="glow_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--glow_inset_{variant})">
+					<Style_Variable_Button name="glow_inset_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
+					<Style_Variable_Button name="glow_outset_{variant}" />
+				</div>
+			{/each}
+		</div>
+	</section>
+	<section>
+		<Color_Scheme_Input />
+	</section>
+	<section>
 		<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" />
 		<Unfinished_Implementation_Warning />
 		{#each color_variants as color_variant}

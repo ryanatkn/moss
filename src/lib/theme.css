@@ -245,9 +245,9 @@
 	--button_fill_active: var(--fg_2);
 	--button_fill_selected: var(--fg_5);
 	--button_fill_disabled: transparent;
-	--button_shadow: var(--shadow_outset_xs);
-	--button_shadow_hover: var(--shadow_outset_sm);
-	--button_shadow_active: var(--shadow_inset_sm);
+	--button_shadow: var(--shadow_outset_xs), var(--glow_inset_xs);
+	--button_shadow_hover: var(--shadow_outset_sm), var(--glow_inset_sm);
+	--button_shadow_active: var(--shadow_inset_sm), var(--glow_outset_sm);
 	--input_fill: var(--bg_5);
 	--input_padding_y: 0;
 	--input_padding_x: var(--space_lg);
@@ -257,6 +257,7 @@
 	--input_height_inner: calc(
 		var(--input_height) - 2 * var(--border_width) - 2 * var(--input_padding_y)
 	);
+	--glow_color: var(--tint_hue) var(--tint_saturation) 94%;
 	--shadow_color: var(--tint_hue) var(--tint_saturation) 6%;
 	--shadow_a_color: var(--color_a_7);
 	--shadow_b_color: var(--color_b_7);
@@ -287,6 +288,31 @@
 	--shadow_alpha_md: 0.4;
 	--shadow_alpha_lg: 0.6;
 	--shadow_alpha_xl: 0.8;
+	--glow_xs: var(--shadow_values_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs));
+	--glow_sm: var(--shadow_values_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm));
+	--glow_md: var(--shadow_values_md) hsla(var(--glow_color) / var(--shadow_alpha_md));
+	--glow_lg: var(--shadow_values_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg));
+	--glow_xl: var(--shadow_values_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl));
+	--glow_inset_xs: var(--shadow_values_inset_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs))
+		inset;
+	--glow_inset_sm: var(--shadow_values_inset_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm))
+		inset;
+	--glow_inset_md: var(--shadow_values_inset_md) hsla(var(--glow_color) / var(--shadow_alpha_md))
+		inset;
+	--glow_inset_lg: var(--shadow_values_inset_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg))
+		inset;
+	--glow_inset_xl: var(--shadow_values_inset_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl))
+		inset;
+	--glow_outset_xs: var(--shadow_values_outset_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs))
+		inset;
+	--glow_outset_sm: var(--shadow_values_outset_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm))
+		inset;
+	--glow_outset_md: var(--shadow_values_outset_md) hsla(var(--glow_color) / var(--shadow_alpha_md))
+		inset;
+	--glow_outset_lg: var(--shadow_values_outset_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg))
+		inset;
+	--glow_outset_xl: var(--shadow_values_outset_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl))
+		inset;
 	--shadow_xs: var(--shadow_values_xs) hsla(var(--shadow_color) / var(--shadow_alpha_xs));
 	--shadow_sm: var(--shadow_values_sm) hsla(var(--shadow_color) / var(--shadow_alpha_sm));
 	--shadow_md: var(--shadow_values_md) hsla(var(--shadow_color) / var(--shadow_alpha_md));
@@ -665,9 +691,10 @@
 	--border_color_3: hsl(var(--tint_hue), 60%, 80%, 50%);
 	--border_color_4: hsl(var(--tint_hue), 60%, 80%, 40%);
 	--border_color_5: hsl(var(--tint_hue), 60%, 80%, 25%);
-	--button_shadow: var(--shadow_inset_xs);
-	--button_shadow_hover: var(--shadow_inset_sm);
-	--button_shadow_active: var(--shadow_outset_sm);
+	--button_shadow: var(--shadow_inset_xs), var(--glow_outset_xs);
+	--button_shadow_hover: var(--shadow_inset_sm), var(--glow_outset_sm);
+	--button_shadow_active: var(--shadow_outset_sm), var(--glow_inset_sm);
+	--glow_color: var(--tint_hue) var(--tint_saturation) 6%;
 	--shadow_color: var(--tint_hue) var(--tint_saturation) 82%;
 	--shadow_a_color: var(--color_a_3);
 	--shadow_b_color: var(--color_b_3);

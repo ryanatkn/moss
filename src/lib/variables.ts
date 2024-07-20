@@ -864,18 +864,18 @@ export const button_fill_disabled: Style_Variable = {
 };
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
-	light: 'var(--shadow_outset_xs)',
-	dark: 'var(--shadow_inset_xs)',
+	light: 'var(--shadow_outset_xs), var(--glow_inset_xs)',
+	dark: 'var(--shadow_inset_xs), var(--glow_outset_xs)',
 };
 export const button_shadow_hover: Style_Variable = {
 	name: 'button_shadow_hover',
-	light: 'var(--shadow_outset_sm)',
-	dark: 'var(--shadow_inset_sm)',
+	light: 'var(--shadow_outset_sm), var(--glow_inset_sm)',
+	dark: 'var(--shadow_inset_sm), var(--glow_outset_sm)',
 };
 export const button_shadow_active: Style_Variable = {
 	name: 'button_shadow_active',
-	light: 'var(--shadow_inset_sm)',
-	dark: 'var(--shadow_outset_sm)',
+	light: 'var(--shadow_inset_sm), var(--glow_outset_sm)',
+	dark: 'var(--shadow_outset_sm), var(--glow_inset_sm), ',
 };
 
 /* inputs */
@@ -893,7 +893,7 @@ export const input_height_inner: Style_Variable = {
 // TODO think about more API surface area like colors, `shadow_xs_a-i` or use a variable `--shadow_color`
 // rewrite this with helpers so we get the color variants declared here statically, without repeating things like the px values
 // if we have a generic form for those variables, we could make it work with fg/bg/border colors, etc,
-// thus giving us the idea of "highlights" (bg color) as the base, and keeping the current tinted versions as the default.
+// thus giving us the idea of "glows" (bg color) as the base, and keeping the current tinted versions as the default.
 
 /* shadows */
 // TODO these shouldn't use tint, use lighten/darken instead,
@@ -902,7 +902,7 @@ export const input_height_inner: Style_Variable = {
 // but that's heavier and requires the element to be positioned (I think?)
 
 // TODO maybe:
-// - shadow and glow - color-scheme-agnostic
+// - make shadow and glow color-scheme-agnostic?
 // - lift and depth that have both shadow and glow, color-scheme-aware
 
 export interface Create_Shadow_Options {
@@ -910,6 +910,12 @@ export interface Create_Shadow_Options {
 	scale?: number;
 }
 
+// TODO BLOCK is this right? maybe shadow and glow should not change for the color-scheme?
+export const glow_color: Style_Variable = {
+	name: 'glow_color',
+	light: 'var(--tint_hue) var(--tint_saturation) 94%',
+	dark: 'var(--tint_hue) var(--tint_saturation) 6%',
+};
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
 	light: 'var(--tint_hue) var(--tint_saturation) 6%',
@@ -1044,6 +1050,67 @@ export const shadow_alpha_lg: Style_Variable = {
 export const shadow_alpha_xl: Style_Variable = {
 	name: 'shadow_alpha_xl',
 	light: '0.8',
+};
+
+export const glow_xs: Style_Variable = {
+	name: 'glow_xs',
+	light: 'var(--shadow_values_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs))',
+};
+export const glow_sm: Style_Variable = {
+	name: 'glow_sm',
+	light: 'var(--shadow_values_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm))',
+};
+export const glow_md: Style_Variable = {
+	name: 'glow_md',
+	light: 'var(--shadow_values_md) hsla(var(--glow_color) / var(--shadow_alpha_md))',
+};
+export const glow_lg: Style_Variable = {
+	name: 'glow_lg',
+	light: 'var(--shadow_values_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg))',
+};
+export const glow_xl: Style_Variable = {
+	name: 'glow_xl',
+	light: 'var(--shadow_values_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl))',
+};
+export const glow_inset_xs: Style_Variable = {
+	name: 'glow_inset_xs',
+	light: 'var(--shadow_values_inset_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs)) inset',
+};
+export const glow_inset_sm: Style_Variable = {
+	name: 'glow_inset_sm',
+	light: 'var(--shadow_values_inset_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm)) inset',
+};
+export const glow_inset_md: Style_Variable = {
+	name: 'glow_inset_md',
+	light: 'var(--shadow_values_inset_md) hsla(var(--glow_color) / var(--shadow_alpha_md)) inset',
+};
+export const glow_inset_lg: Style_Variable = {
+	name: 'glow_inset_lg',
+	light: 'var(--shadow_values_inset_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg)) inset',
+};
+export const glow_inset_xl: Style_Variable = {
+	name: 'glow_inset_xl',
+	light: 'var(--shadow_values_inset_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl)) inset',
+};
+export const glow_outset_xs: Style_Variable = {
+	name: 'glow_outset_xs',
+	light: 'var(--shadow_values_outset_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs)) inset',
+};
+export const glow_outset_sm: Style_Variable = {
+	name: 'glow_outset_sm',
+	light: 'var(--shadow_values_outset_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm)) inset',
+};
+export const glow_outset_md: Style_Variable = {
+	name: 'glow_outset_md',
+	light: 'var(--shadow_values_outset_md) hsla(var(--glow_color) / var(--shadow_alpha_md)) inset',
+};
+export const glow_outset_lg: Style_Variable = {
+	name: 'glow_outset_lg',
+	light: 'var(--shadow_values_outset_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg)) inset',
+};
+export const glow_outset_xl: Style_Variable = {
+	name: 'glow_outset_xl',
+	light: 'var(--shadow_values_outset_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl)) inset',
 };
 
 export const shadow_xs: Style_Variable = {
@@ -2031,7 +2098,8 @@ export const default_variables: Style_Variable[] = [
 	input_height_sm,
 	input_height_inner,
 
-	/* shadows */
+	/* shadows and glows */
+	glow_color,
 	shadow_color,
 	shadow_a_color,
 	shadow_b_color,
@@ -2062,6 +2130,21 @@ export const default_variables: Style_Variable[] = [
 	shadow_alpha_md,
 	shadow_alpha_lg,
 	shadow_alpha_xl,
+	glow_xs,
+	glow_sm,
+	glow_md,
+	glow_lg,
+	glow_xl,
+	glow_inset_xs,
+	glow_inset_sm,
+	glow_inset_md,
+	glow_inset_lg,
+	glow_inset_xl,
+	glow_outset_xs,
+	glow_outset_sm,
+	glow_outset_md,
+	glow_outset_lg,
+	glow_outset_xl,
 	shadow_xs,
 	shadow_sm,
 	shadow_md,
