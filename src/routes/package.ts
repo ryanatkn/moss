@@ -77,6 +77,7 @@ export const package_json = {
 		'./theme.js': {types: './dist/theme.d.ts', default: './dist/theme.js'},
 		'./themes.js': {types: './dist/themes.d.ts', default: './dist/themes.js'},
 		'./variable_data.js': {types: './dist/variable_data.d.ts', default: './dist/variable_data.js'},
+		'./variable.js': {types: './dist/variable.d.ts', default: './dist/variable.js'},
 		'./variables.js': {types: './dist/variables.d.ts', default: './dist/variables.js'},
 	},
 } satisfies Package_Json;
@@ -106,7 +107,6 @@ export const src_json = {
 				{name: 'Color_Scheme', kind: 'type'},
 				{name: 'color_schemes', kind: 'variable'},
 				{name: 'Theme', kind: 'type'},
-				{name: 'Style_Variable', kind: 'type'},
 				{name: 'Render_Theme_Style_Options', kind: 'type'},
 				{name: 'render_theme_style', kind: 'function'},
 				{name: 'render_theme_variable', kind: 'function'},
@@ -131,6 +131,15 @@ export const src_json = {
 				{name: 'shadow_variants', kind: 'variable'},
 				{name: 'icon_sizes', kind: 'variable'},
 				{name: 'color_variants', kind: 'variable'},
+			],
+		},
+		'./variable.js': {
+			path: 'variable.ts',
+			declarations: [
+				{name: 'Style_Variable_Name', kind: 'type'},
+				{name: 'Style_Variable', kind: 'type'},
+				{name: 'STYLE_VARIABLE_NAME_MATCHER', kind: 'variable'},
+				{name: 'is_style_variable_name', kind: 'function'},
 			],
 		},
 		'./variables.js': {

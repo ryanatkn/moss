@@ -693,7 +693,7 @@
 	--button_shadow: var(--shadow_inset_xs), var(--glow_outset_xs);
 	--button_shadow_hover: var(--shadow_inset_sm), var(--glow_outset_sm);
 	--button_shadow_active: var(--shadow_outset_sm), var(--glow_inset_sm);
-	--glow_color: var(--tint_hue) var(--tint_saturation) 6%;
+	--glow_color: var(--tint_hue) var(--tint_saturation) 0%;
 	--shadow_color: var(--tint_hue) var(--tint_saturation) 82%;
 	--shadow_a_color: var(--color_a_3);
 	--shadow_b_color: var(--color_b_3);

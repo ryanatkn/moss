@@ -3,7 +3,13 @@ import * as assert from 'uvu/assert';
 
 import {default_variables} from '$lib/variables.js';
 import * as exported_variables from '$lib/variables.js';
-import type {Style_Variable} from '$lib/theme.js';
+import {is_style_variable_name, type Style_Variable} from '$lib/variable.js';
+
+test('variable names are valid', () => {
+	for (const v of default_variables) {
+		assert.ok(is_style_variable_name(v.name), `variable name "${v.name}" is valid`);
+	}
+});
 
 test('variable names match their identifiers', () => {
 	for (const v of default_variables) {

@@ -1,4 +1,4 @@
-import type {Style_Variable} from '$lib/theme.js';
+import type {Style_Variable} from '$lib/variable.js';
 import {icon_sizes} from '$lib/variable_data.js';
 
 /*
