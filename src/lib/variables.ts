@@ -2012,12 +2012,15 @@ export const default_variables: Style_Variable[] = [
 	radius_xs2,
 	radius_xs3,
 
-	/* button colors */
+	/* button styles */
 	button_fill,
 	button_fill_hover,
 	button_fill_active,
 	button_fill_selected,
 	button_fill_disabled,
+	button_shadow,
+	button_shadow_hover,
+	button_shadow_active,
 
 	/* inputs */
 	input_fill,
