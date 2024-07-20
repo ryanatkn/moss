@@ -910,7 +910,6 @@ export interface Create_Shadow_Options {
 	scale?: number;
 }
 
-// TODO BLOCK is this right? maybe shadow and glow should not change for the color-scheme?
 export const glow_color: Style_Variable = {
 	name: 'glow_color',
 	light: 'var(--tint_hue) var(--tint_saturation) 94%',
