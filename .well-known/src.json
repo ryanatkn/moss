@@ -64,10 +64,6 @@
           "kind": "type"
         },
         {
-          "name": "Style_Variable",
-          "kind": "type"
-        },
-        {
           "name": "Render_Theme_Style_Options",
           "kind": "type"
         },
@@ -132,6 +128,27 @@
         {
           "name": "color_variants",
           "kind": "variable"
+        }
+      ]
+    },
+    "./variable.js": {
+      "path": "variable.ts",
+      "declarations": [
+        {
+          "name": "Style_Variable_Name",
+          "kind": "type"
+        },
+        {
+          "name": "Style_Variable",
+          "kind": "type"
+        },
+        {
+          "name": "STYLE_VARIABLE_NAME_MATCHER",
+          "kind": "variable"
+        },
+        {
+          "name": "is_style_variable_name",
+          "kind": "function"
         }
       ]
     },
