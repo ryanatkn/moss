@@ -1,5 +1,15 @@
 # @ryanatkn/moss
 
+## 0.10.1
+
+### Patch Changes
+
+- refactor some variables ([#28](https://github.com/ryanatkn/moss/pull/28))
+
+  - add `button_shadow`, `button_shadow_hover`, and `button_shadow_active`
+
+- soften xs and sm shadows ([d309880](https://github.com/ryanatkn/moss/commit/d309880))
+
 ## 0.10.0
 
 ### Minor Changes
