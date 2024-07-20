@@ -4,7 +4,8 @@
 	import Copy_To_Clipboard from '@ryanatkn/fuz/Copy_To_Clipboard.svelte';
 	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
 
-	import {render_theme_style, type Style_Variable, type Theme} from '$lib/theme.js';
+	import {render_theme_style, type Theme} from '$lib/theme.js';
+	import type {Style_Variable} from '$lib/variable.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 

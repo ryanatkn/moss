@@ -1,6 +1,6 @@
 import {getContext, setContext} from 'svelte';
 
-import type {Style_Variable} from '$lib/theme.js';
+import type {Style_Variable} from '$lib/variable.js';
 
 // TODO maybe change this to a generic wrapper class for any value?
 // TODO @many add to $lib?

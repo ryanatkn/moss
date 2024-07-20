@@ -1,5 +1,6 @@
 import {default_variables} from '$lib/variables.js';
 import {default_themes} from '$lib/themes.js'; // TODO shoudln't be a dep, see usage below
+import type {Style_Variable} from '$lib/variable.js';
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
@@ -11,13 +12,6 @@ export const color_schemes: Color_Scheme[] = ['light', 'auto', 'dark'];
 export interface Theme {
 	name: string;
 	variables: Style_Variable[];
-}
-
-export interface Style_Variable {
-	name: string;
-	light?: string;
-	dark?: string;
-	summary?: string;
 }
 
 export interface Render_Theme_Style_Options {

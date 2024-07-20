@@ -69,7 +69,7 @@
 		width: 100px;
 		min-width: 50px;
 		background-color: var(--bg_color);
-		color: hsl(210, 55%, 62%);
+		color: hsl(210 55% 62%);
 	}
 	@media (max-width: 630px) {
 		.text {

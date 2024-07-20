@@ -121,6 +121,10 @@
       "types": "./dist/variable_data.d.ts",
       "default": "./dist/variable_data.js"
     },
+    "./variable.js": {
+      "types": "./dist/variable.d.ts",
+      "default": "./dist/variable.js"
+    },
     "./variables.js": {
       "types": "./dist/variables.d.ts",
       "default": "./dist/variables.js"

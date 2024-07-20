@@ -1,4 +1,4 @@
-import type {Style_Variable} from '$lib/theme.js';
+import type {Style_Variable} from '$lib/variable.js';
 import {icon_sizes} from '$lib/variable_data.js';
 
 /*
@@ -458,13 +458,13 @@ background colors
 */
 export const bg: Style_Variable = {
 	name: 'bg',
-	light: 'hsl(var(--tint_hue), var(--tint_saturation), 96%)',
-	dark: 'hsl(var(--tint_hue), var(--tint_saturation), 6%)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 6%)',
 };
 export const fg: Style_Variable = {
 	name: 'fg',
-	light: 'hsl(var(--tint_hue), var(--tint_saturation), 6%)',
-	dark: 'hsl(var(--tint_hue), var(--tint_saturation), 96%)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 6%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
 };
 /* these are light or dark with a low alpha, so they nest/stack arbitrarily */
 // TODO these inconsistently don't use tint, unlike bg/fg
@@ -635,24 +635,24 @@ text colors
 export const text_color: Style_Variable = {name: 'text_color', light: 'var(--text_1)'};
 export const text_1: Style_Variable = {
 	name: 'text_1',
-	light: 'hsl(var(--tint_hue), var(--tint_saturation), 16%)',
-	dark: 'hsl(var(--tint_hue), var(--tint_saturation), 80%)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 16%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 80%)',
 };
 export const text_2: Style_Variable = {
 	name: 'text_2',
-	light: 'hsl(var(--tint_hue), var(--tint_saturation), 32%)',
-	dark: 'hsl(var(--tint_hue), var(--tint_saturation), 65%)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 32%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 65%)',
 };
 export const text_3: Style_Variable = {
 	name: 'text_3',
-	light: 'hsl(var(--tint_hue), var(--tint_saturation), 48%)',
-	dark: 'hsl(var(--tint_hue), var(--tint_saturation), 50%)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 48%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 50%)',
 };
 export const text_disabled: Style_Variable = {name: 'text_disabled', light: 'var(--text_3)'};
 export const text_active: Style_Variable = {
 	name: 'text_active',
-	light: 'hsl(var(--hue_a), 55%, 40%);',
-	dark: 'hsl(var(--hue_a), 65%, 65%);',
+	light: 'hsl(var(--hue_a) 55% 40%);',
+	dark: 'hsl(var(--hue_a) 65% 65%);',
 };
 
 /* fonts */
@@ -690,8 +690,8 @@ export const size_xl9: Style_Variable = {name: 'size_xl9', light: '17.74rem'};
 /* links */
 export const link_color: Style_Variable = {
 	name: 'link_color',
-	light: 'hsl(var(--hue_a), 61%, 35%)',
-	dark: 'hsl(var(--hue_a), 61%, 58%)',
+	light: 'hsl(var(--hue_a) 61% 35%)',
+	dark: 'hsl(var(--hue_a) 61% 58%)',
 };
 export const text_decoration: Style_Variable = {name: 'text_decoration', light: 'none'};
 export const text_decoration_hover: Style_Variable = {
@@ -748,28 +748,28 @@ export const border_style: Style_Variable = {
 // TODO add tint vars for these?
 export const border_color_1: Style_Variable = {
 	name: 'border_color_1',
-	light: 'hsl(var(--tint_hue), 60%, 20%, 15%)',
-	dark: 'hsl(var(--tint_hue), 60%, 80%, 85%)',
+	light: 'hsl(var(--tint_hue) 60% 20% / 15%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 85%)',
 };
 export const border_color_2: Style_Variable = {
 	name: 'border_color_2',
-	light: 'hsl(var(--tint_hue), 60%, 20%, 25%)',
-	dark: 'hsl(var(--tint_hue), 60%, 80%, 70%)',
+	light: 'hsl(var(--tint_hue) 60% 20% / 25%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 70%)',
 };
 export const border_color_3: Style_Variable = {
 	name: 'border_color_3',
-	light: 'hsl(var(--tint_hue), 60%, 20%, 35%)',
-	dark: 'hsl(var(--tint_hue), 60%, 80%, 50%)',
+	light: 'hsl(var(--tint_hue) 60% 20% / 35%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 50%)',
 };
 export const border_color_4: Style_Variable = {
 	name: 'border_color_4',
-	light: 'hsl(var(--tint_hue), 60%, 20%, 50%)',
-	dark: 'hsl(var(--tint_hue), 60%, 80%, 40%)',
+	light: 'hsl(var(--tint_hue) 60% 20% / 50%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 40%)',
 };
 export const border_color_5: Style_Variable = {
 	name: 'border_color_5',
-	light: 'hsl(var(--tint_hue), 60%, 20%, 70%)',
-	dark: 'hsl(var(--tint_hue), 60%, 80%, 25%)',
+	light: 'hsl(var(--tint_hue) 60% 20% / 70%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 25%)',
 };
 export const border_color_a: Style_Variable = {
 	name: 'border_color_a',
@@ -908,7 +908,7 @@ export interface Create_Shadow_Options {
 export const glow_color: Style_Variable = {
 	name: 'glow_color',
 	light: 'var(--tint_hue) var(--tint_saturation) 94%',
-	dark: 'var(--tint_hue) var(--tint_saturation) 6%',
+	dark: 'var(--tint_hue) var(--tint_saturation) 0%',
 };
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
