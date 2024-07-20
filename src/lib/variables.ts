@@ -214,17 +214,17 @@ export const color_e_2: Style_Variable = {
 };
 export const color_e_3: Style_Variable = {
 	name: 'color_e_3',
-	light: 'var(--hue_e) 75% 68%',
+	light: 'var(--hue_e) 75% 65%',
 	dark: 'var(--hue_e) 75% 76%',
 };
 export const color_e_4: Style_Variable = {
 	name: 'color_e_4',
-	light: 'var(--hue_e) 70% 56%',
+	light: 'var(--hue_e) 70% 50%',
 	dark: 'var(--hue_e) 70% 69%',
 };
 export const color_e_5: Style_Variable = {
 	name: 'color_e_5',
-	light: 'var(--hue_e) 65% 42%',
+	light: 'var(--hue_e) 65% 41%',
 	dark: 'var(--hue_e) 70% 62%',
 };
 export const color_e_6: Style_Variable = {
@@ -381,17 +381,17 @@ export const color_i_1: Style_Variable = {
 };
 export const color_i_2: Style_Variable = {
 	name: 'color_i_2',
-	light: 'var(--hue_i) 75% 80%',
+	light: 'var(--hue_i) 75% 77%',
 	dark: 'var(--hue_i) 75% 86%',
 };
 export const color_i_3: Style_Variable = {
 	name: 'color_i_3',
-	light: 'var(--hue_i) 75% 68%',
+	light: 'var(--hue_i) 75% 60%',
 	dark: 'var(--hue_i) 75% 81%',
 };
 export const color_i_4: Style_Variable = {
 	name: 'color_i_4',
-	light: 'var(--hue_i) 75% 55%',
+	light: 'var(--hue_i) 75% 47%',
 	dark: 'var(--hue_i) 75% 76%',
 };
 export const color_i_5: Style_Variable = {
