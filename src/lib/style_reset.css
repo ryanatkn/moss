@@ -602,6 +602,9 @@ Other `button.selected` styles are above.
 :where(button.selected) {
 	--text_color: var(--bg_8);
 }
+:where(button.selected.deselectable:hover:not(:disabled)) {
+	--text_color: var(--bg_10);
+}
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
 	box-shadow: none;
