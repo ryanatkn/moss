@@ -256,8 +256,8 @@
 	--input_height_inner: calc(
 		var(--input_height) - 2 * var(--border_width) - 2 * var(--input_padding_y)
 	);
-	--glow_color: var(--tint_hue) var(--tint_saturation) 94%;
-	--shadow_color: var(--tint_hue) var(--tint_saturation) 6%;
+	--glow_color: hsl(var(--tint_hue) var(--tint_saturation) 94%);
+	--shadow_color: hsl(var(--tint_hue) var(--tint_saturation) 0%);
 	--shadow_a_color: var(--color_a_7);
 	--shadow_b_color: var(--color_b_7);
 	--shadow_c_color: var(--color_c_7);
@@ -282,286 +282,341 @@
 	--shadow_values_outset_md: -1.5px -2.5px 6px 0px;
 	--shadow_values_outset_lg: -2px -4px 10px 0px;
 	--shadow_values_outset_xl: -3px -5px 20px 0px;
-	--shadow_alpha_xs: 0.2;
-	--shadow_alpha_sm: 0.3;
-	--shadow_alpha_md: 0.4;
-	--shadow_alpha_lg: 0.6;
-	--shadow_alpha_xl: 0.8;
-	--glow_xs: var(--shadow_values_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs));
-	--glow_sm: var(--shadow_values_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm));
-	--glow_md: var(--shadow_values_md) hsla(var(--glow_color) / var(--shadow_alpha_md));
-	--glow_lg: var(--shadow_values_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg));
-	--glow_xl: var(--shadow_values_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl));
-	--glow_inset_xs: var(--shadow_values_inset_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs))
-		inset;
-	--glow_inset_sm: var(--shadow_values_inset_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm))
-		inset;
-	--glow_inset_md: var(--shadow_values_inset_md) hsla(var(--glow_color) / var(--shadow_alpha_md))
-		inset;
-	--glow_inset_lg: var(--shadow_values_inset_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg))
-		inset;
-	--glow_inset_xl: var(--shadow_values_inset_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl))
-		inset;
-	--glow_outset_xs: var(--shadow_values_outset_xs) hsla(var(--glow_color) / var(--shadow_alpha_xs))
-		inset;
-	--glow_outset_sm: var(--shadow_values_outset_sm) hsla(var(--glow_color) / var(--shadow_alpha_sm))
-		inset;
-	--glow_outset_md: var(--shadow_values_outset_md) hsla(var(--glow_color) / var(--shadow_alpha_md))
-		inset;
-	--glow_outset_lg: var(--shadow_values_outset_lg) hsla(var(--glow_color) / var(--shadow_alpha_lg))
-		inset;
-	--glow_outset_xl: var(--shadow_values_outset_xl) hsla(var(--glow_color) / var(--shadow_alpha_xl))
-		inset;
-	--shadow_xs: var(--shadow_values_xs) hsla(var(--shadow_color) / var(--shadow_alpha_xs));
-	--shadow_sm: var(--shadow_values_sm) hsla(var(--shadow_color) / var(--shadow_alpha_sm));
-	--shadow_md: var(--shadow_values_md) hsla(var(--shadow_color) / var(--shadow_alpha_md));
-	--shadow_lg: var(--shadow_values_lg) hsla(var(--shadow_color) / var(--shadow_alpha_lg));
-	--shadow_xl: var(--shadow_values_xl) hsla(var(--shadow_color) / var(--shadow_alpha_xl));
+	--shadow_alpha_xs: 20%;
+	--shadow_alpha_sm: 30%;
+	--shadow_alpha_md: 40%;
+	--shadow_alpha_lg: 60%;
+	--shadow_alpha_xl: 80%;
+	--glow_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xs), transparent);
+	--glow_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_sm), transparent);
+	--glow_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_md), transparent);
+	--glow_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_lg), transparent);
+	--glow_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xl), transparent);
+	--glow_inset_xs: var(--shadow_values_inset_xs)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xs), transparent) inset;
+	--glow_inset_sm: var(--shadow_values_inset_sm)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_sm), transparent) inset;
+	--glow_inset_md: var(--shadow_values_inset_md)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_md), transparent) inset;
+	--glow_inset_lg: var(--shadow_values_inset_lg)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_lg), transparent) inset;
+	--glow_inset_xl: var(--shadow_values_inset_xl)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xl), transparent) inset;
+	--glow_outset_xs: var(--shadow_values_outset_xs)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xs), transparent) inset;
+	--glow_outset_sm: var(--shadow_values_outset_sm)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_sm), transparent) inset;
+	--glow_outset_md: var(--shadow_values_outset_md)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_md), transparent) inset;
+	--glow_outset_lg: var(--shadow_values_outset_lg)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_lg), transparent) inset;
+	--glow_outset_xl: var(--shadow_values_outset_xl)
+		color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xs), transparent);
+	--shadow_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_sm), transparent);
+	--shadow_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_md), transparent);
+	--shadow_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_lg), transparent);
+	--shadow_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xl), transparent);
 	--shadow_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_a_xs: var(--shadow_values_xs) hsla(var(--shadow_a_color) / var(--shadow_alpha_xs));
-	--shadow_a_sm: var(--shadow_values_sm) hsla(var(--shadow_a_color) / var(--shadow_alpha_sm));
-	--shadow_a_md: var(--shadow_values_md) hsla(var(--shadow_a_color) / var(--shadow_alpha_md));
-	--shadow_a_lg: var(--shadow_values_lg) hsla(var(--shadow_a_color) / var(--shadow_alpha_lg));
-	--shadow_a_xl: var(--shadow_values_xl) hsla(var(--shadow_a_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_a_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_xs), transparent);
+	--shadow_a_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_sm), transparent);
+	--shadow_a_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_md), transparent);
+	--shadow_a_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_lg), transparent);
+	--shadow_a_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_xl), transparent);
 	--shadow_a_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_a_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_a_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_a_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_a_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_a_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_a_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_a_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_a_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_a_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_a_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_b_xs: var(--shadow_values_xs) hsla(var(--shadow_b_color) / var(--shadow_alpha_xs));
-	--shadow_b_sm: var(--shadow_values_sm) hsla(var(--shadow_b_color) / var(--shadow_alpha_sm));
-	--shadow_b_md: var(--shadow_values_md) hsla(var(--shadow_b_color) / var(--shadow_alpha_md));
-	--shadow_b_lg: var(--shadow_values_lg) hsla(var(--shadow_b_color) / var(--shadow_alpha_lg));
-	--shadow_b_xl: var(--shadow_values_xl) hsla(var(--shadow_b_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_b_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_xs), transparent);
+	--shadow_b_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_sm), transparent);
+	--shadow_b_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_md), transparent);
+	--shadow_b_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_lg), transparent);
+	--shadow_b_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_xl), transparent);
 	--shadow_b_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_b_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_b_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_b_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_b_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_b_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_b_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_b_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_b_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_b_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_b_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_c_xs: var(--shadow_values_xs) hsla(var(--shadow_c_color) / var(--shadow_alpha_xs));
-	--shadow_c_sm: var(--shadow_values_sm) hsla(var(--shadow_c_color) / var(--shadow_alpha_sm));
-	--shadow_c_md: var(--shadow_values_md) hsla(var(--shadow_c_color) / var(--shadow_alpha_md));
-	--shadow_c_lg: var(--shadow_values_lg) hsla(var(--shadow_c_color) / var(--shadow_alpha_lg));
-	--shadow_c_xl: var(--shadow_values_xl) hsla(var(--shadow_c_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_c_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_xs), transparent);
+	--shadow_c_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_sm), transparent);
+	--shadow_c_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_md), transparent);
+	--shadow_c_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_lg), transparent);
+	--shadow_c_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_xl), transparent);
 	--shadow_c_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_c_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_c_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_c_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_c_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_c_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_c_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_c_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_c_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_c_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_c_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_d_xs: var(--shadow_values_xs) hsla(var(--shadow_d_color) / var(--shadow_alpha_xs));
-	--shadow_d_sm: var(--shadow_values_sm) hsla(var(--shadow_d_color) / var(--shadow_alpha_sm));
-	--shadow_d_md: var(--shadow_values_md) hsla(var(--shadow_d_color) / var(--shadow_alpha_md));
-	--shadow_d_lg: var(--shadow_values_lg) hsla(var(--shadow_d_color) / var(--shadow_alpha_lg));
-	--shadow_d_xl: var(--shadow_values_xl) hsla(var(--shadow_d_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_d_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_xs), transparent);
+	--shadow_d_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_sm), transparent);
+	--shadow_d_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_md), transparent);
+	--shadow_d_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_lg), transparent);
+	--shadow_d_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_xl), transparent);
 	--shadow_d_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_d_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_d_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_d_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_d_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_d_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_d_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_d_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_d_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_d_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_d_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_e_xs: var(--shadow_values_xs) hsla(var(--shadow_e_color) / var(--shadow_alpha_xs));
-	--shadow_e_sm: var(--shadow_values_sm) hsla(var(--shadow_e_color) / var(--shadow_alpha_sm));
-	--shadow_e_md: var(--shadow_values_md) hsla(var(--shadow_e_color) / var(--shadow_alpha_md));
-	--shadow_e_lg: var(--shadow_values_lg) hsla(var(--shadow_e_color) / var(--shadow_alpha_lg));
-	--shadow_e_xl: var(--shadow_values_xl) hsla(var(--shadow_e_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_e_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_xs), transparent);
+	--shadow_e_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_sm), transparent);
+	--shadow_e_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_md), transparent);
+	--shadow_e_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_lg), transparent);
+	--shadow_e_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_xl), transparent);
 	--shadow_e_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_e_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_e_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_e_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_e_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_e_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_e_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_e_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_e_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_e_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_e_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_f_xs: var(--shadow_values_xs) hsla(var(--shadow_f_color) / var(--shadow_alpha_xs));
-	--shadow_f_sm: var(--shadow_values_sm) hsla(var(--shadow_f_color) / var(--shadow_alpha_sm));
-	--shadow_f_md: var(--shadow_values_md) hsla(var(--shadow_f_color) / var(--shadow_alpha_md));
-	--shadow_f_lg: var(--shadow_values_lg) hsla(var(--shadow_f_color) / var(--shadow_alpha_lg));
-	--shadow_f_xl: var(--shadow_values_xl) hsla(var(--shadow_f_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_f_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_xs), transparent);
+	--shadow_f_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_sm), transparent);
+	--shadow_f_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_md), transparent);
+	--shadow_f_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_lg), transparent);
+	--shadow_f_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_xl), transparent);
 	--shadow_f_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_f_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_f_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_f_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_f_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_f_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_f_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_f_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_f_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_f_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_f_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_g_xs: var(--shadow_values_xs) hsla(var(--shadow_g_color) / var(--shadow_alpha_xs));
-	--shadow_g_sm: var(--shadow_values_sm) hsla(var(--shadow_g_color) / var(--shadow_alpha_sm));
-	--shadow_g_md: var(--shadow_values_md) hsla(var(--shadow_g_color) / var(--shadow_alpha_md));
-	--shadow_g_lg: var(--shadow_values_lg) hsla(var(--shadow_g_color) / var(--shadow_alpha_lg));
-	--shadow_g_xl: var(--shadow_values_xl) hsla(var(--shadow_g_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_g_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_xs), transparent);
+	--shadow_g_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_sm), transparent);
+	--shadow_g_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_md), transparent);
+	--shadow_g_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_lg), transparent);
+	--shadow_g_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_xl), transparent);
 	--shadow_g_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_g_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_g_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_g_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_g_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_g_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_g_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_g_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_g_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_g_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_g_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_h_xs: var(--shadow_values_xs) hsla(var(--shadow_h_color) / var(--shadow_alpha_xs));
-	--shadow_h_sm: var(--shadow_values_sm) hsla(var(--shadow_h_color) / var(--shadow_alpha_sm));
-	--shadow_h_md: var(--shadow_values_md) hsla(var(--shadow_h_color) / var(--shadow_alpha_md));
-	--shadow_h_lg: var(--shadow_values_lg) hsla(var(--shadow_h_color) / var(--shadow_alpha_lg));
-	--shadow_h_xl: var(--shadow_values_xl) hsla(var(--shadow_h_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_h_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_xs), transparent);
+	--shadow_h_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_sm), transparent);
+	--shadow_h_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_md), transparent);
+	--shadow_h_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_lg), transparent);
+	--shadow_h_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_xl), transparent);
 	--shadow_h_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_h_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_h_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_h_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_h_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_h_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_h_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_h_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_h_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_h_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_h_color) / var(--shadow_alpha_xl)) inset;
-	--shadow_i_xs: var(--shadow_values_xs) hsla(var(--shadow_i_color) / var(--shadow_alpha_xs));
-	--shadow_i_sm: var(--shadow_values_sm) hsla(var(--shadow_i_color) / var(--shadow_alpha_sm));
-	--shadow_i_md: var(--shadow_values_md) hsla(var(--shadow_i_color) / var(--shadow_alpha_md));
-	--shadow_i_lg: var(--shadow_values_lg) hsla(var(--shadow_i_color) / var(--shadow_alpha_lg));
-	--shadow_i_xl: var(--shadow_values_xl) hsla(var(--shadow_i_color) / var(--shadow_alpha_xl));
+		color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_xl), transparent) inset;
+	--shadow_i_xs: var(--shadow_values_xs)
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_xs), transparent);
+	--shadow_i_sm: var(--shadow_values_sm)
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_sm), transparent);
+	--shadow_i_md: var(--shadow_values_md)
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_md), transparent);
+	--shadow_i_lg: var(--shadow_values_lg)
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_lg), transparent);
+	--shadow_i_xl: var(--shadow_values_xl)
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_xl), transparent);
 	--shadow_i_inset_xs: var(--shadow_values_inset_xs)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_i_inset_sm: var(--shadow_values_inset_sm)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_i_inset_md: var(--shadow_values_inset_md)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_i_inset_lg: var(--shadow_values_inset_lg)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_i_inset_xl: var(--shadow_values_inset_xl)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_xl), transparent) inset;
 	--shadow_i_outset_xs: var(--shadow_values_outset_xs)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_xs)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_xs), transparent) inset;
 	--shadow_i_outset_sm: var(--shadow_values_outset_sm)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_sm)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_sm), transparent) inset;
 	--shadow_i_outset_md: var(--shadow_values_outset_md)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_md)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_md), transparent) inset;
 	--shadow_i_outset_lg: var(--shadow_values_outset_lg)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_lg)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_lg), transparent) inset;
 	--shadow_i_outset_xl: var(--shadow_values_outset_xl)
-		hsla(var(--shadow_i_color) / var(--shadow_alpha_xl)) inset;
+		color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_xl), transparent) inset;
 	--icon_size_xs: 18px;
 	--icon_size_sm: 32px;
 	--icon_size_md: 48px;
@@ -693,8 +748,8 @@
 	--button_shadow: var(--shadow_inset_xs), var(--glow_outset_xs);
 	--button_shadow_hover: var(--shadow_inset_sm), var(--glow_outset_sm);
 	--button_shadow_active: var(--shadow_outset_sm), var(--glow_inset_sm);
-	--glow_color: var(--tint_hue) var(--tint_saturation) 0%;
-	--shadow_color: var(--tint_hue) var(--tint_saturation) 82%;
+	--glow_color: hsl(var(--tint_hue) var(--tint_saturation) 0%);
+	--shadow_color: hsl(var(--tint_hue) var(--tint_saturation) 82%);
 	--shadow_a_color: var(--color_a_3);
 	--shadow_b_color: var(--color_b_3);
 	--shadow_c_color: var(--color_c_3);

@@ -49,7 +49,7 @@ body {
 }
 
 ::selection {
-	background-color: hsla(var(--hue_a), 90%, 80%, var(--fade_3));
+	background-color: hsl(var(--hue_a) 90% 80% / var(--fade_3));
 }
 
 /*
@@ -519,21 +519,6 @@ to take advantage of the cascade to minimize overrides.
 	--border_color: var(--border_color_2);
 	--fill: var(--button_fill_selected);
 }
-:where(
-		button:where(
-				.color_a,
-				.color_b,
-				.color_c,
-				.color_d,
-				.color_e,
-				.color_f,
-				.color_g,
-				.color_h,
-				.color_i
-			):where(:hover, :focus, :active)
-	) {
-	--text_color: var(--bg_10);
-}
 /*
 TODO maybe move these to `style_components.css` or a different CSS file?
 including colored button styles, selected button styles, ...
@@ -543,11 +528,20 @@ including colored button styles, selected button styles, ...
 	--fill: color-mix(in hsl, var(--fill_a) 9%, transparent);
 	--border_color: var(--border_color_a);
 }
+/* TODO try to use variables to DRY these selectors up */
+:where(button.color_a:hover) {
+	--fill: color-mix(in hsl, var(--fill_a) 18%, transparent);
+	--button_shadow_hover: var(--shadow_a_outset_sm), var(--glow_inset_sm);
+}
 :where(button.color_b) {
 	--text_color: var(--color_b_5);
 	--fill: color-mix(in hsl, var(--fill_b) 9%, transparent);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
+}
+:where(button.color_b:hover) {
+	--fill: color-mix(in hsl, var(--fill_b) 18%, transparent);
+	--button_shadow_hover: var(--shadow_b_outset_sm), var(--glow_inset_sm);
 }
 :where(button.color_c) {
 	--text_color: var(--color_c_5);
@@ -555,11 +549,19 @@ including colored button styles, selected button styles, ...
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
 }
+:where(button.color_c:hover) {
+	--fill: color-mix(in hsl, var(--fill_c) 18%, transparent);
+	--button_shadow_hover: var(--shadow_c_outset_sm), var(--glow_inset_sm);
+}
 :where(button.color_d) {
 	--text_color: var(--color_d_5);
 	--fill: color-mix(in hsl, var(--fill_d) 9%, transparent);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
+}
+:where(button.color_d:hover) {
+	--fill: color-mix(in hsl, var(--fill_d) 18%, transparent);
+	--button_shadow_hover: var(--shadow_d_outset_sm), var(--glow_inset_sm);
 }
 :where(button.color_e) {
 	--text_color: var(--color_e_5);
@@ -567,11 +569,19 @@ including colored button styles, selected button styles, ...
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
 }
+:where(button.color_e:hover) {
+	--fill: color-mix(in hsl, var(--fill_e) 18%, transparent);
+	--button_shadow_hover: var(--shadow_e_outset_sm), var(--glow_inset_sm);
+}
 :where(button.color_f) {
 	--text_color: var(--color_f_5);
 	--fill: color-mix(in hsl, var(--fill_f) 9%, transparent);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
+}
+:where(button.color_f:hover) {
+	--fill: color-mix(in hsl, var(--fill_f) 18%, transparent);
+	--button_shadow_hover: var(--shadow_f_outset_sm), var(--glow_inset_sm);
 }
 :where(button.color_g) {
 	--text_color: var(--color_g_5);
@@ -579,17 +589,29 @@ including colored button styles, selected button styles, ...
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
 }
+:where(button.color_g:hover) {
+	--fill: color-mix(in hsl, var(--fill_g) 18%, transparent);
+	--button_shadow_hover: var(--shadow_g_outset_sm), var(--glow_inset_sm);
+}
 :where(button.color_h) {
 	--text_color: var(--color_h_5);
 	--fill: color-mix(in hsl, var(--fill_h) 9%, transparent);
 	--border_color: var(--border_color_h);
 	--outline_color: var(--border_color_h);
 }
+:where(button.color_h:hover) {
+	--fill: color-mix(in hsl, var(--fill_h) 18%, transparent);
+	--button_shadow_hover: var(--shadow_h_outset_sm), var(--glow_inset_sm);
+}
 :where(button.color_i) {
 	--text_color: var(--color_i_5);
 	--fill: color-mix(in hsl, var(--fill_i) 9%, transparent);
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
+}
+:where(button.color_i:hover) {
+	--fill: color-mix(in hsl, var(--fill_i) 18%, transparent);
+	--button_shadow_hover: var(--shadow_i_outset_sm), var(--glow_inset_sm);
 }
 /*
 This selector appears twice, once before and once after the color button styles.
