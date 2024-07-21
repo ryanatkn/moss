@@ -26,23 +26,22 @@ Some notes:
 }
 
 :root {
+	color-scheme: light dark;
+	background-color: var(--bg);
+	color: var(--text_color);
+	accent-color: var(--color_a_5);
+	line-height: var(--line_height_md);
 	font-size: 62.5%; /* see `body.font-size`, using `rem` font size units with a base 16px */
 	/* @source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
 }
-
-:root {
-	color-scheme: light dark;
-	background-color: var(--bg);
-	color: var(--text_color);
-	accent-color: var(--color_a_5);
-	line-height: var(--line_height_md);
-}
-
 :root.dark {
-	color-scheme: dark light;
+	color-scheme: dark;
+}
+:root.light {
+	color-scheme: light;
 }
 
 body {
