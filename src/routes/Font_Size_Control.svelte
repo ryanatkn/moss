@@ -22,7 +22,7 @@
 </script>
 
 <label
-	><div class="title row w_100 wrap">
+	><div class="title row w_100 flex_wrap">
 		{#if children}
 			{@render children()}
 		{:else}
