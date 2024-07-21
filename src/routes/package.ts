@@ -396,7 +396,6 @@ export const src_json = {
 				{name: 'input_height', kind: 'variable'},
 				{name: 'input_height_sm', kind: 'variable'},
 				{name: 'input_height_inner', kind: 'variable'},
-				{name: 'Create_Shadow_Options', kind: 'type'},
 				{name: 'glow_color', kind: 'variable'},
 				{name: 'shadow_color', kind: 'variable'},
 				{name: 'shadow_a_color', kind: 'variable'},
