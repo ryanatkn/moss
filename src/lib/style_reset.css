@@ -412,6 +412,17 @@ so for consistent visuals we opt to include no active state */
 	background-color: var(--thumb_background_color);
 }
 
+/*  TODO :has selector? `button:has(input[type='checkbox']:checked)`
+see https://caniuse.com/css-has
+ */
+:where(input:checked) {
+	--text_color: var(--text_active);
+	--border_color: var(--color_a_5);
+}
+:where(input[type='radio']:checked) {
+	cursor: default;
+}
+
 :where(:where(input, textarea, select).inline, p :where(input, textarea, select)) {
 	display: inline-block;
 	margin-left: var(--space_lg);
@@ -494,16 +505,7 @@ so for consistent visuals we opt to include no active state */
 	display: inline-block;
 	--min_height: var(--input_height_sm); /* TODO this increases paragraph line spacing */
 }
-/*  TODO :has selector? `button:has(input[type='checkbox']:checked)`
-see https://caniuse.com/css-has
- */
-:where(input:checked) {
-	--text_color: var(--text_active);
-	--border_color: var(--color_a_5);
-}
-:where(input[type='radio']:checked) {
-	cursor: default;
-}
+
 /* TODO maybe shouldn't mix button in with these */
 :where(:where(input, textarea, select, button):disabled) {
 	--text_color: var(--text_disabled);
