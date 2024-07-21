@@ -2,4 +2,4 @@
 '@ryanatkn/moss': patch
 ---
 
-tweak button colors
+tweak button styles
