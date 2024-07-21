@@ -20,9 +20,13 @@
 		'relative|absolute|fixed|sticky|static',
 		'overflow_auto|hidden|scroll|clip|visible',
 		'overflow_x|y_auto|hidden|scroll|clip|visible',
-		'inline|inline_block|block|flex|grid',
 		'display_none|contents',
+		'inline|inline_block|inline_flex|inline_grid',
+		'block',
+		'flex',
 		'flex_1',
+		'flex_wrap|wrap_reverse',
+		'grid',
 		'float_none|left|right|inline_start|inline_end',
 		'flip_x|y|xy',
 		'font_sans|mono',
@@ -31,9 +35,11 @@
 		'icon_size_xs-xl3',
 		'text_align_start|end|left|right|center|justify|justify_all|match_parent',
 		'vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom',
-		'font_weight_100-900',
+		'white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces',
+		'white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces',
+		'text_wrap_wrap|nowrap|balance|pretty|stable',
 		'ellipsis',
-		'pixelated',
+		'font_weight_100-900',
 		'text_1-3',
 		'darken|lighten_1-9',
 		'bg|fg',
@@ -66,6 +72,7 @@
 		'm|mt|mr|mb|ml|mx|my_xs5-xl15',
 		'gap_xs5-xl15',
 		'column|row_gap_xs5-xl15',
+		'pixelated',
 	];
 	const style_components_items = [
 		'box',
@@ -89,7 +96,7 @@
 
 <Tome_Detail {tome}>
 	<Unfinished_Implementation_Warning
-		>Both the docs and implementation of these need more work.</Unfinished_Implementation_Warning
+		>Both the docs and implementation of these need a lot more work.</Unfinished_Implementation_Warning
 	>
 	<section>
 		<Tome_Subheading text="Optional CSS classes" slug="css-classes" />

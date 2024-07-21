@@ -746,18 +746,6 @@ for disabled colors without needing a wrapper .disabled class */
 	align-items: center;
 }
 
-/* Makes flexboxes wrap. */
-.wrap {
-	flex-wrap: wrap;
-	white-space: initial;
-}
-
-/* Stops text from wrapping. */
-.nowrap {
-	flex-wrap: nowrap;
-	white-space: nowrap;
-}
-
 /* Formats content to wrap long strings and preserve displayed whitespace. */
 .formatted {
 	overflow: hidden;
@@ -1038,6 +1026,13 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .flex_1 {
 	flex: 1;
 }
+.flex_wrap {
+	flex-wrap: wrap;
+}
+.flex_wrap_reverse {
+	flex-wrap: wrap-reverse;
+}
+
 .grid {
 	display: grid;
 }
@@ -1209,6 +1204,66 @@ text
 	vertical-align: bottom;
 }
 
+.white_space_normal {
+	white-space: normal;
+}
+.white_space_nowrap {
+	white-space: nowrap;
+}
+.white_space_pre {
+	white-space: pre;
+}
+.white_space_pre_wrap {
+	white-space: pre-wrap;
+}
+.white_space_pre_line {
+	white-space: pre-line;
+}
+.white_space_break_spaces {
+	white-space: break-spaces;
+}
+
+/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
+.white_space_collapse_collapse {
+	white-space-collapse: collapse;
+}
+.white_space_collapse_preserve {
+	white-space-collapse: preserve;
+}
+.white_space_collapse_preserve_breaks {
+	white-space-collapse: preserve-breaks;
+}
+.white_space_collapse_preserve_spaces {
+	white-space-collapse: preserve-spaces;
+}
+.white_space_collapse_break_spaces {
+	white-space-collapse: break-spaces;
+}
+
+/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
+.text_wrap_wrap {
+	text-wrap: wrap;
+}
+.text_wrap_nowrap {
+	text-wrap: nowrap;
+}
+.text_wrap_balance {
+	text-wrap: balance;
+}
+.text_wrap_pretty {
+	text-wrap: pretty;
+}
+.text_wrap_stable {
+	text-wrap: stable;
+}
+
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .font_weight_100 {
 	font-weight: 100;
 }
@@ -1235,13 +1290,6 @@ text
 }
 .font_weight_900 {
 	font-weight: 900;
-}
-
-.ellipsis {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .pixelated {
