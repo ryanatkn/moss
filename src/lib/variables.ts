@@ -902,11 +902,6 @@ export const input_height_inner: Style_Variable = {
 // - make shadow and glow color-scheme-agnostic?
 // - lift and depth that have both shadow and glow, color-scheme-aware
 
-export interface Create_Shadow_Options {
-	inset?: boolean;
-	scale?: number;
-}
-
 export const glow_color: Style_Variable = {
 	name: 'glow_color',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
