@@ -477,6 +477,9 @@ so for consistent visuals we opt to include no active state */
 	--outline_width: var(--outline_width_3);
 	--shadow: var(--button_shadow_active);
 }
+:where(button.selected:not(.deselectable):active) {
+	--outline_width: var(--outline_width_2);
+}
 :where(button.inline, p button) {
 	display: inline-block;
 	--min_height: var(--input_height_sm); /* TODO this increases paragraph line spacing */
