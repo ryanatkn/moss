@@ -649,6 +649,16 @@ export const text_3: Style_Variable = {
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 48%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 50%)',
 };
+export const text_4: Style_Variable = {
+	name: 'text_4',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 68%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 30%)',
+};
+export const text_5: Style_Variable = {
+	name: 'text_5',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 12%)',
+};
 export const text_disabled: Style_Variable = {name: 'text_disabled', light: 'var(--text_3)'};
 export const text_active: Style_Variable = {
 	name: 'text_active',
@@ -2087,6 +2097,8 @@ export const default_variables: Style_Variable[] = [
 	text_1,
 	text_2,
 	text_3,
+	text_4,
+	text_5,
 	text_disabled,
 	text_active,
 

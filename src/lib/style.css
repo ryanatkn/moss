@@ -489,12 +489,9 @@ see https://caniuse.com/css-has
 	);
 }
 /* TODO maybe set a variable so it can be used by descendents, but can't be `text_color`, maybe `button_text_color`? */
-/* :where(button.selected.deselectable:hover) {
-	--button_text_color: light-dark(
-		color-mix(in hsl, var(--text_color) 85%, #fff),
-		color-mix(in hsl, var(--text_color) 85%, #000)
-	);
-} */
+:where(button.selected.deselectable:hover:not(:disabled)) {
+	--button_text_color: light-dark(#fff, #000);
+}
 :where(button:active) {
 	--fill: var(--button_fill_active);
 	--border_color: var(--border_color_5);
@@ -636,10 +633,7 @@ This selector follows the colored buttons to override them.
 Other `button.selected` styles are above.
 */
 :where(button.selected) {
-	--text_color: var(--bg_8);
-}
-:where(button.selected.deselectable:hover:not(:disabled)) {
-	--text_color: var(--bg_10);
+	--text_color: var(--text_5);
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;

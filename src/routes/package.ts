@@ -292,6 +292,8 @@ export const src_json = {
 				{name: 'text_1', kind: 'variable'},
 				{name: 'text_2', kind: 'variable'},
 				{name: 'text_3', kind: 'variable'},
+				{name: 'text_4', kind: 'variable'},
+				{name: 'text_5', kind: 'variable'},
 				{name: 'text_disabled', kind: 'variable'},
 				{name: 'text_active', kind: 'variable'},
 				{name: 'line_height_xs', kind: 'variable'},
