@@ -581,48 +581,48 @@ export const fg_10: Style_Variable = {
 };
 export const fill_a: Style_Variable = {
 	name: 'fill_a',
-	light: 'hsl(var(--color_a_4))',
-	dark: 'hsl(var(--color_a_6))',
+	light: 'var(--color_a_4)',
+	dark: 'var(--color_a_6)',
 };
 export const fill_b: Style_Variable = {
 	name: 'fill_b',
-	light: 'hsl(var(--color_b_4))',
-	dark: 'hsl(var(--color_b_6))',
+	light: 'var(--color_b_4)',
+	dark: 'var(--color_b_6)',
 };
 export const fill_c: Style_Variable = {
 	name: 'fill_c',
-	light: 'hsl(var(--color_c_4))',
-	dark: 'hsl(var(--color_c_6))',
+	light: 'var(--color_c_4)',
+	dark: 'var(--color_c_6)',
 };
 export const fill_d: Style_Variable = {
 	name: 'fill_d',
-	light: 'hsl(var(--color_d_4))',
-	dark: 'hsl(var(--color_d_6))',
+	light: 'var(--color_d_4)',
+	dark: 'var(--color_d_6)',
 };
 export const fill_e: Style_Variable = {
 	name: 'fill_e',
-	light: 'hsl(var(--color_e_4))',
-	dark: 'hsl(var(--color_e_6))',
+	light: 'var(--color_e_4)',
+	dark: 'var(--color_e_6)',
 };
 export const fill_f: Style_Variable = {
 	name: 'fill_f',
-	light: 'hsl(var(--color_f_4))',
-	dark: 'hsl(var(--color_f_6))',
+	light: 'var(--color_f_4)',
+	dark: 'var(--color_f_6)',
 };
 export const fill_g: Style_Variable = {
 	name: 'fill_g',
-	light: 'hsl(var(--color_g_4))',
-	dark: 'hsl(var(--color_g_6))',
+	light: 'var(--color_g_4)',
+	dark: 'var(--color_g_6)',
 };
 export const fill_h: Style_Variable = {
 	name: 'fill_h',
-	light: 'hsl(var(--color_h_4))',
-	dark: 'hsl(var(--color_h_6))',
+	light: 'var(--color_h_4)',
+	dark: 'var(--color_h_6)',
 };
 export const fill_i: Style_Variable = {
 	name: 'fill_i',
-	light: 'hsl(var(--color_i_4))',
-	dark: 'hsl(var(--color_i_6))',
+	light: 'var(--color_i_4)',
+	dark: 'var(--color_i_6)',
 };
 
 /*
@@ -772,41 +772,42 @@ export const border_color_5: Style_Variable = {
 	light: 'hsl(var(--tint_hue) 60% 20% / 70%)',
 	dark: 'hsl(var(--tint_hue) 60% 80% / 25%)',
 };
+// TODO having these for theming seems wise, right? but then we'd want variants, like 1-3 or 1-5?
 export const border_color_a: Style_Variable = {
 	name: 'border_color_a',
-	light: 'hsl(var(--color_a_5))',
+	light: 'var(--color_a_5)',
 };
 export const border_color_b: Style_Variable = {
 	name: 'border_color_b',
-	light: 'hsl(var(--color_b_5))',
+	light: 'var(--color_b_5)',
 };
 export const border_color_c: Style_Variable = {
 	name: 'border_color_c',
-	light: 'hsl(var(--color_c_5))',
+	light: 'var(--color_c_5)',
 };
 export const border_color_d: Style_Variable = {
 	name: 'border_color_d',
-	light: 'hsl(var(--color_d_5))',
+	light: 'var(--color_d_5)',
 };
 export const border_color_e: Style_Variable = {
 	name: 'border_color_e',
-	light: 'hsl(var(--color_e_5))',
+	light: 'var(--color_e_5)',
 };
 export const border_color_f: Style_Variable = {
 	name: 'border_color_f',
-	light: 'hsl(var(--color_f_5))',
+	light: 'var(--color_f_5)',
 };
 export const border_color_g: Style_Variable = {
 	name: 'border_color_g',
-	light: 'hsl(var(--color_g_5))',
+	light: 'var(--color_g_5)',
 };
 export const border_color_h: Style_Variable = {
 	name: 'border_color_h',
-	light: 'hsl(var(--color_h_5))',
+	light: 'var(--color_h_5)',
 };
 export const border_color_i: Style_Variable = {
 	name: 'border_color_i',
-	light: 'hsl(var(--color_i_5))',
+	light: 'var(--color_i_5)',
 };
 export const border_width: Style_Variable = {name: 'border_width', light: 'var(--border_width_1)'};
 export const border_width_1: Style_Variable = {name: 'border_width_1', light: '1px'};

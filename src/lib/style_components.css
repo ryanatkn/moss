@@ -58,7 +58,7 @@
 .selectable.selected,
 .selectable:active {
 	background-color: var(--button_fill_active);
-	border-color: hsl(var(--color_a_5));
+	border-color: var(--color_a_5);
 }
 .selectable.selected {
 	cursor: default;
@@ -132,7 +132,7 @@ By default it's opaque, resetting the background to the initial depth. */
 }
 .menu_item.selected {
 	/* TODO different patterns for border and bg? */
-	--border_color: hsl(var(--color_a_5));
+	--border_color: var(--color_a_5);
 	background-color: var(--fg_1);
 	z-index: 1;
 }

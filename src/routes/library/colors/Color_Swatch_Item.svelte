@@ -25,7 +25,7 @@
 	const hsl = $derived(value && parse_hsl_string(value));
 </script>
 
-<li style:--bg_color="hsl(var(--{name}))">
+<li style:--bg_color="var(--{name})">
 	<div class="color"></div>
 	<div class="text">
 		<Style_Variable_Button {name} />
