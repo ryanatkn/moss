@@ -33,7 +33,7 @@ Some notes:
 	color-scheme: light dark;
 	background-color: var(--bg);
 	color: var(--text_color);
-	accent-color: hsl(var(--color_a_5));
+	accent-color: var(--color_a_5);
 	line-height: var(--line_height_md);
 }
 
@@ -368,13 +368,13 @@ so for consistent visuals we opt to include no active state */
 	cursor: pointer;
 }
 :where(input[type='range']:hover) {
-	--thumb_background_color: hsl(var(--color_a_5));
+	--thumb_background_color: var(--color_a_5);
 }
 :where(input[type='range']:disabled) {
 	--thumb_background_color: var(--text_disabled);
 }
 :where(input[type='range']:disabled:active) {
-	--thumb_background_color: hsl(var(--color_c_5));
+	--thumb_background_color: var(--color_c_5);
 }
 :where(input[type='range'])::-webkit-slider-thumb {
 	appearance: none;
@@ -422,7 +422,7 @@ so for consistent visuals we opt to include no active state */
 }
 
 :where(:where(button, input, textarea, select):focus) {
-	--border_color: hsl(var(--color_a_5));
+	--border_color: var(--color_a_5);
 	--outline_width: var(--outline_width_2);
 }
 :where([contenteditable]:focus-visible) {
@@ -482,7 +482,7 @@ see https://caniuse.com/css-has
  */
 :where(input:checked) {
 	--text_color: var(--text_active);
-	--border_color: hsl(var(--color_a_5));
+	--border_color: var(--color_a_5);
 }
 :where(input[type='radio']:checked) {
 	cursor: default;
@@ -499,8 +499,8 @@ see https://caniuse.com/css-has
 	outline: none;
 }
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
-	--border_color: hsl(var(--color_c_5));
-	--text_color: hsl(var(--color_c_5));
+	--border_color: var(--color_c_5);
+	--text_color: var(--color_c_5);
 }
 
 /* TODO these need design work for visuals/consistency/customizability  */
@@ -536,55 +536,55 @@ TODO maybe move these to `style_components.css` or a different CSS file?
 including colored button styles, selected button styles, ...
 */
 :where(button.color_a) {
-	--text_color: hsl(var(--color_a_5));
-	--fill: hsl(var(--color_a_5) / 0.1);
+	--text_color: var(--color_a_5);
+	--fill: color-mix(in hsl, var(--fill_a) 9%, transparent);
 	--border_color: var(--border_color_a);
 }
 :where(button.color_b) {
-	--text_color: hsl(var(--color_b_5));
-	--fill: hsl(var(--color_b_5) / 0.1);
+	--text_color: var(--color_b_5);
+	--fill: color-mix(in hsl, var(--fill_b) 9%, transparent);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
 }
 :where(button.color_c) {
-	--text_color: hsl(var(--color_c_5));
-	--fill: hsl(var(--color_c_5) / 0.1);
+	--text_color: var(--color_c_5);
+	--fill: color-mix(in hsl, var(--fill_c) 9%, transparent);
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
 }
 :where(button.color_d) {
-	--text_color: hsl(var(--color_d_5));
-	--fill: hsl(var(--color_d_5) / 0.1);
+	--text_color: var(--color_d_5);
+	--fill: color-mix(in hsl, var(--fill_d) 9%, transparent);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
 }
 :where(button.color_e) {
-	--text_color: hsl(var(--color_e_5));
-	--fill: hsl(var(--color_e_5) / 0.1);
+	--text_color: var(--color_e_5);
+	--fill: color-mix(in hsl, var(--fill_e) 9%, transparent);
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
 }
 :where(button.color_f) {
-	--text_color: hsl(var(--color_f_5));
-	--fill: hsl(var(--color_f_5) / 0.1);
+	--text_color: var(--color_f_5);
+	--fill: color-mix(in hsl, var(--fill_f) 9%, transparent);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
 }
 :where(button.color_g) {
-	--text_color: hsl(var(--color_g_5));
-	--fill: hsl(var(--color_g_5) / 0.1);
+	--text_color: var(--color_g_5);
+	--fill: color-mix(in hsl, var(--fill_g) 9%, transparent);
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
 }
 :where(button.color_h) {
-	--text_color: hsl(var(--color_h_5));
-	--fill: hsl(var(--color_h_5) / 0.1);
+	--text_color: var(--color_h_5);
+	--fill: color-mix(in hsl, var(--fill_h) 9%, transparent);
 	--border_color: var(--border_color_h);
 	--outline_color: var(--border_color_h);
 }
 :where(button.color_i) {
-	--text_color: hsl(var(--color_i_5));
-	--fill: hsl(var(--color_i_5) / 0.1);
+	--text_color: var(--color_i_5);
+	--fill: color-mix(in hsl, var(--fill_i) 9%, transparent);
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
 }
