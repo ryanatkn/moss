@@ -470,7 +470,7 @@ see https://caniuse.com/css-has
 	color: var(--button_text_color, var(--text_color));
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
-	background-color: var(--fill, var(--button_fill));
+	background-color: var(--fill);
 	box-shadow: var(--shadow, var(--button_shadow));
 	border-width: var(--border_width);
 	border-style: var(--border_style);

@@ -466,7 +466,7 @@ see https://caniuse.com/css-has
 	color: var(--button_text_color, var(--text_color));
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
-	background-color: var(--fill, var(--button_fill));
+	background-color: var(--fill);
 	box-shadow: var(--shadow, var(--button_shadow));
 	border-width: var(--border_width);
 	border-style: var(--border_style);
@@ -483,10 +483,8 @@ see https://caniuse.com/css-has
 	--shadow: var(--button_shadow_hover);
 }
 :where(button:not(.selected):not(:disabled):hover) {
-	/* TODO maybe set a variable so it can be used by descendents, but can't be `text_color`, maybe `button_text_color`? */
 	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
 }
-/* TODO maybe set a variable so it can be used by descendents, but can't be `text_color`, maybe `button_text_color`? */
 :where(button.selected.deselectable:hover:not(:disabled)) {
 	--button_text_color: var(--fg_0);
 }
