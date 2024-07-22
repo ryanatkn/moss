@@ -474,6 +474,7 @@ see https://caniuse.com/css-has
 /* TODO maybe shouldn't mix button in with these */
 :where(:where(input, textarea, select, button):disabled) {
 	--button_fill: transparent;
+	--input_fill: transparent;
 	--border_style: solid dashed;
 	cursor: default;
 	box-shadow: none;
