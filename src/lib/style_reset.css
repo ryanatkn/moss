@@ -514,10 +514,6 @@ see https://caniuse.com/css-has
 	opacity: var(--disabled_opacity);
 	outline: none;
 }
-:where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
-	--border_color: var(--color_c_5);
-	--text_color: var(--color_c_5);
-}
 
 /* TODO these need design work for visuals/consistency/customizability  */
 /* TODO rethink this, maybe gradients instead? or at least use a text_color */
@@ -618,12 +614,13 @@ including colored button styles, selected button styles, ...
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
 }
-/*
-This selector appears twice, once before and once after the color button styles.
-Also if we add colored inputs, they would be added to this selector list.
-*/
+
 :where(button:disabled:not(.selected)) {
 	--fill: var(--button_fill_disabled);
+}
+:where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
+	--border_color: var(--color_c_5);
+	--text_color: var(--color_c_5);
 }
 /*
 This selector follows the colored buttons to override them.
