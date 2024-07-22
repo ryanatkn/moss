@@ -866,10 +866,6 @@ export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
 /* button styles */
-export const button_text_color: Style_Variable = {
-	name: 'button_text_color',
-	light: 'var(--text_2)',
-};
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
 	light:
@@ -1664,7 +1660,6 @@ export const default_variables: Style_Variable[] = [
 	radius_xs3,
 
 	/* button styles */
-	button_text_color,
 	button_shadow,
 	button_shadow_hover,
 	button_shadow_active,

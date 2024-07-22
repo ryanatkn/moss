@@ -242,7 +242,6 @@
 	--radius_xs: 0.8rem;
 	--radius_xs2: 0.5rem;
 	--radius_xs3: 0.3rem;
-	--button_text_color: var(--text_2);
 	--button_shadow: var(--shadow_outset_xs) var(--shadow_color_xs),
 		var(--shadow_inset_xs) var(--highlight_color_xs);
 	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_sm),

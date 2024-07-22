@@ -384,7 +384,6 @@ export const src_json = {
 				{name: 'radius_xs', kind: 'variable'},
 				{name: 'radius_xs2', kind: 'variable'},
 				{name: 'radius_xs3', kind: 'variable'},
-				{name: 'button_text_color', kind: 'variable'},
 				{name: 'button_shadow', kind: 'variable'},
 				{name: 'button_shadow_hover', kind: 'variable'},
 				{name: 'button_shadow_active', kind: 'variable'},
