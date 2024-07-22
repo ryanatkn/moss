@@ -16,7 +16,10 @@
 <Tome_Detail {tome}>
 	<section>
 		<Tome_Subheading text="Shadows" slug="shadows" />
-		<Unfinished_Implementation_Warning>TODO</Unfinished_Implementation_Warning>
+		<p>Shadows darken in light mode and lighten in dark mode.</p>
+		<Unfinished_Implementation_Warning
+			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
+		>
 		{#each shadow_variants as variant}
 			<div
 				class="shadow_example"
@@ -50,7 +53,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Highlights" slug="highlights" />
-		<Unfinished_Implementation_Warning>TODO</Unfinished_Implementation_Warning>
+		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
 			{#each shadow_variants as variant}
 				<div
@@ -85,9 +88,9 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
+		<Tome_Subheading text="Glows" slug="glows" />
+		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
-			<Tome_Subheading text="Glows" slug="glows" />
-			<Unfinished_Implementation_Warning>TODO</Unfinished_Implementation_Warning>
 			{#each shadow_variants as variant}
 				<div
 					class="shadow_example"
@@ -122,7 +125,7 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Shrouds" slug="shrouds" />
-		<Unfinished_Implementation_Warning>testing this</Unfinished_Implementation_Warning>
+		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
 			{#each shadow_variants as variant}
 				<div
@@ -157,8 +160,8 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
-		<Tome_Subheading text="Colorful shadow variants" slug="colorful-shadow-variants" />
-		<Unfinished_Implementation_Warning />
+		<Tome_Subheading text="Colorful glows" slug="colorful-glows" />
+		<p>These are darker in light mode than in dark mode.</p>
 		{#each color_variants as color_variant}
 			<section>
 				{#each shadow_variants as variant}
