@@ -1,5 +1,20 @@
 # @ryanatkn/moss
 
+## 0.11.0
+
+### Minor Changes
+
+- change colors back to including `hsl()` ([#30](https://github.com/ryanatkn/moss/pull/30))
+- move `Style_Variable` to `variables.ts` ([#29](https://github.com/ryanatkn/moss/pull/29))
+
+### Patch Changes
+
+- rework styles ([#31](https://github.com/ryanatkn/moss/pull/31))
+
+  - rework button styles
+  - reduce input border radius
+  - rework shadow styles, reducing variable count by separating shadow position/blue/spread and color
+
 ## 0.10.1
 
 ### Patch Changes
