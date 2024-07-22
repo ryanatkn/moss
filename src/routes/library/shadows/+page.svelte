@@ -60,7 +60,7 @@
 					class="shadow_example"
 					style:box-shadow="var(--shadow_{variant}) var(--glow_color_{variant})"
 				>
-					<Style_Variable_Button name="glow_{variant}" />
+					<Style_Variable_Button name="shadow_{variant}" />
 					<Style_Variable_Button name="glow_color_{variant}" />
 				</div>
 			{/each}
@@ -69,7 +69,7 @@
 					class="shadow_example"
 					style:box-shadow="var(--shadow_inset_{variant}) var(--glow_color_{variant})"
 				>
-					<Style_Variable_Button name="glow_inset_{variant}" />
+					<Style_Variable_Button name="shadow_inset_{variant}" />
 					<Style_Variable_Button name="glow_color_{variant}" />
 				</div>
 			{/each}
@@ -78,7 +78,7 @@
 					class="shadow_example"
 					style:box-shadow="var(--shadow_outset_{variant}) var(--glow_color_{variant})"
 				>
-					<Style_Variable_Button name="glow_outset_{variant}" />
+					<Style_Variable_Button name="shadow_outset_{variant}" />
 					<Style_Variable_Button name="glow_color_{variant}" />
 				</div>
 			{/each}
