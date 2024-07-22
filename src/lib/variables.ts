@@ -582,6 +582,11 @@ export const fg_10: Style_Variable = {
 	light: '#000',
 	dark: '#fff',
 };
+
+export const fill: Style_Variable = {
+	name: 'fill',
+	light: 'hsl(var(--tint_hue) 5% 50%)',
+};
 export const fill_a: Style_Variable = {
 	name: 'fill_a',
 	light: 'var(--color_a_4)',
@@ -861,10 +866,6 @@ export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
 /* button styles */
-export const button_fill: Style_Variable = {
-	name: 'button_fill',
-	light: 'hsl(var(--tint_hue) 5% 50%)',
-};
 export const button_text_color: Style_Variable = {
 	name: 'button_text_color',
 	light: 'var(--text_2)',
@@ -1541,6 +1542,7 @@ export const default_variables: Style_Variable[] = [
 	fg_8,
 	fg_9,
 	fg_10,
+	fill,
 	fill_a,
 	fill_b,
 	fill_c,
@@ -1662,7 +1664,6 @@ export const default_variables: Style_Variable[] = [
 	radius_xs3,
 
 	/* button styles */
-	button_fill,
 	button_text_color,
 	button_shadow,
 	button_shadow_hover,

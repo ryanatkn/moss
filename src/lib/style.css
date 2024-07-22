@@ -447,11 +447,11 @@ see https://caniuse.com/css-has
 	--text_color: var(--button_text_color);
 	--button_text_color_hover: color-mix(in hsl, var(--button_text_color) 90%, var(--fg_10));
 	--button_text_color_selected_hover: var(--fg_0);
-	--fill: color-mix(in hsl, var(--button_fill) 8%, transparent);
-	--button_fill_hover: color-mix(in hsl, var(--button_fill) 16%, transparent);
-	--button_fill_active: color-mix(in hsl, var(--button_fill) 24%, transparent);
+	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
+	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
+	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
 	color: var(--text_color);
-	background-color: var(--fill);
+	background-color: var(--button_fill);
 	cursor: pointer;
 	appearance: none;
 	display: flex;
@@ -472,7 +472,7 @@ see https://caniuse.com/css-has
 }
 /* TODO maybe shouldn't mix button in with these */
 :where(:where(input, textarea, select, button):disabled) {
-	--fill: transparent;
+	--button_fill: transparent;
 	--border_style: solid dashed;
 	--border_color: var(--border_color_3); /* override checked border color */
 	cursor: default;
@@ -483,9 +483,9 @@ see https://caniuse.com/css-has
 :where(button.selected) {
 	--text_color: var(--text_5);
 	--border_color: var(--border_color_2);
-	--fill: var(--button_fill);
-	--button_fill_hover: var(--button_fill);
-	--button_fill_active: var(--button_fill);
+	--button_fill: var(--fill);
+	--button_fill_hover: var(--fill);
+	--button_fill_active: var(--fill);
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
@@ -493,7 +493,7 @@ see https://caniuse.com/css-has
 }
 /* TODO this is weird because we're overriding for colored variants */
 :where(button:not(:disabled):hover, button:focus) {
-	--fill: var(--button_fill_hover);
+	--button_fill: var(--button_fill_hover);
 	--border_color: var(--border_color_2);
 	--shadow: var(--button_shadow_hover);
 }
@@ -504,7 +504,7 @@ see https://caniuse.com/css-has
 	--text_color: var(--button_text_color_selected_hover);
 }
 :where(button:active) {
-	--fill: var(--button_fill_active);
+	--button_fill: var(--button_fill_active);
 	--border_color: var(--border_color_5);
 	--outline_width: var(--outline_width_3);
 	--shadow: var(--button_shadow_active);
@@ -515,55 +515,55 @@ see https://caniuse.com/css-has
 
 :where(button.color_a) {
 	--button_text_color: var(--color_a_5);
-	--button_fill: var(--fill_a);
+	--fill: var(--fill_a);
 	--border_color: var(--border_color_a);
 	--outline_color: var(--border_color_a);
 }
 :where(button.color_b) {
 	--button_text_color: var(--color_b_5);
-	--button_fill: var(--fill_b);
+	--fill: var(--fill_b);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
 }
 :where(button.color_c) {
 	--button_text_color: var(--color_c_5);
-	--button_fill: var(--fill_c);
+	--fill: var(--fill_c);
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
 }
 :where(button.color_d) {
 	--button_text_color: var(--color_d_5);
-	--button_fill: var(--fill_d);
+	--fill: var(--fill_d);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
 }
 :where(button.color_e) {
 	--button_text_color: var(--color_e_5);
-	--button_fill: var(--fill_e);
+	--fill: var(--fill_e);
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
 }
 :where(button.color_f) {
 	--button_text_color: var(--color_f_5);
-	--button_fill: var(--fill_f);
+	--fill: var(--fill_f);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
 }
 :where(button.color_g) {
 	--button_text_color: var(--color_g_5);
-	--button_fill: var(--fill_g);
+	--fill: var(--fill_g);
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
 }
 :where(button.color_h) {
 	--button_text_color: var(--color_h_5);
-	--button_fill: var(--fill_h);
+	--fill: var(--fill_h);
 	--border_color: var(--border_color_h);
 	--outline_color: var(--border_color_h);
 }
 :where(button.color_i) {
 	--button_text_color: var(--color_i_5);
-	--button_fill: var(--fill_i);
+	--fill: var(--fill_i);
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
 }
@@ -603,12 +603,13 @@ for disabled colors without needing a wrapper .disabled class */
 	--text_color: var(--color_c_5);
 	--border_color: var(--color_c_5);
 }
+/* TODO is there a cleaner way to override these through vars? */
 :where(button.selected:disabled:active) {
 	--text_color: var(--text_5);
-	--button_fill: var(--fill_c);
+	--fill: var(--fill_c);
 }
 :where(button:not(.selected):disabled:active) {
-	--button_fill: transparent;
+	--fill: transparent;
 }
 :where(button.selected:not(.deselectable):active) {
 	--outline_width: var(--outline_width_2);
