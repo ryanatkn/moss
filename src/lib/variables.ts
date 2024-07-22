@@ -634,7 +634,7 @@ text colors
 
 */
 
-// TODO probably need more variants, 5 total?
+// TODO is this shorthand a good idea? change to `text_color_N`?
 /* text colors don't use alpha because it affects performance too much */
 export const text_color: Style_Variable = {name: 'text_color', light: 'var(--text_1)'};
 export const text_1: Style_Variable = {
@@ -858,19 +858,9 @@ export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
 /* button styles */
-export const button_fill: Style_Variable = {name: 'button_fill', light: 'var(--fg_1)'};
-export const button_fill_hover: Style_Variable = {name: 'button_fill_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
-export const button_fill_active: Style_Variable = {
-	name: 'button_fill_active',
-	light: 'var(--fg_2)',
-};
-export const button_fill_selected: Style_Variable = {
-	name: 'button_fill_selected',
-	light: 'var(--fg_5)',
-};
-export const button_fill_disabled: Style_Variable = {
-	name: 'button_fill_disabled',
-	light: 'transparent',
+export const button_fill: Style_Variable = {
+	name: 'button_fill',
+	light: 'hsl(var(--tint_hue) 5% 50%)',
 };
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
@@ -892,7 +882,7 @@ export const button_shadow_active: Style_Variable = {
 };
 
 /* inputs */
-export const input_fill: Style_Variable = {name: 'input_fill', light: 'var(--bg_5)'};
+export const input_fill: Style_Variable = {name: 'input_fill', light: 'var(--bg_10)'};
 export const input_padding_y: Style_Variable = {name: 'input_padding_y', light: '0'};
 export const input_padding_x: Style_Variable = {name: 'input_padding_x', light: 'var(--space_lg)'};
 export const input_width_min: Style_Variable = {name: 'input_width_min', light: '100px'};
@@ -1666,10 +1656,6 @@ export const default_variables: Style_Variable[] = [
 
 	/* button styles */
 	button_fill,
-	button_fill_hover,
-	button_fill_active,
-	button_fill_selected,
-	button_fill_disabled,
 	button_shadow,
 	button_shadow_hover,
 	button_shadow_active,
