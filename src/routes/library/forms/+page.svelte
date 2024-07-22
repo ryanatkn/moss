@@ -62,11 +62,11 @@
 			<form>
 				<fieldset>
 					<legend>This is a <Mdn_Link path="Web/HTML/Element/legend" /></legend>
-					<label>
+					<label class:disabled={created_account}>
 						<div class="title">username</div>
 						<input bind:value={username} disabled={created_account} placeholder=">" />
 					</label>
-					<label>
+					<label class:disabled={created_account}>
 						<div class="title">password</div>
 						<input
 							type="password"
@@ -79,12 +79,12 @@
 						More info can be included in <code>{'<'}p></code> tags like this one. Here we could include
 						info about passwords.
 					</p>
-					<label>
+					<label class:disabled={created_account}>
 						<div class="title">lifestory</div>
 						<textarea bind:value={lifestory} disabled={created_account} placeholder="👀"
 						></textarea></label
 					>
-					<label>
+					<label class:disabled={created_account}>
 						<div class="title">select</div>
 						<select class="text_align_center size_xl5" disabled={created_account}>
 							{#each faces as face (face)}
@@ -103,7 +103,9 @@
 					out:fly={{y: 100, duration: ANIMATION_DURATION_FAST}}
 				>
 					<Alert status="error">cannot create account because this library is fake</Alert>
-					<button type="button" onclick={() => (created_account = false)}> undo undo! </button>
+					<button type="button" class="w_100" onclick={() => (created_account = false)}>
+						undo undo!
+					</button>
 				</form>
 			{/if}
 		</div>

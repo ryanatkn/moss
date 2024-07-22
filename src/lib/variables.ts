@@ -662,7 +662,10 @@ export const text_5: Style_Variable = {
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 12%)',
 };
-export const text_disabled: Style_Variable = {name: 'text_disabled', light: 'var(--text_3)'};
+export const text_color_disabled: Style_Variable = {
+	name: 'text_color_disabled',
+	light: 'var(--text_3)',
+};
 export const text_active: Style_Variable = {
 	name: 'text_active',
 	light: 'hsl(var(--hue_a) 55% 40%);',
@@ -861,6 +864,10 @@ export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 export const button_fill: Style_Variable = {
 	name: 'button_fill',
 	light: 'hsl(var(--tint_hue) 5% 50%)',
+};
+export const button_text_color: Style_Variable = {
+	name: 'button_text_color',
+	light: 'var(--text_2)',
 };
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
@@ -1551,7 +1558,7 @@ export const default_variables: Style_Variable[] = [
 	text_3,
 	text_4,
 	text_5,
-	text_disabled,
+	text_color_disabled,
 	text_active,
 
 	/* fonts */
@@ -1656,6 +1663,7 @@ export const default_variables: Style_Variable[] = [
 
 	/* button styles */
 	button_fill,
+	button_text_color,
 	button_shadow,
 	button_shadow_hover,
 	button_shadow_active,

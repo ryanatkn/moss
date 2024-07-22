@@ -126,7 +126,7 @@
 			{/each}
 		</div>
 	</section>
-	<!-- <section> 'text_disabled' 'text_active'</section> -->
+	<!-- <section> 'text_color_disabled' 'text_active'</section> -->
 	<section>
 		<Tome_Subheading text="Line heights" slug="line-height" />
 		<aside>Learn more about <Mdn_Link path="Web/CSS/line-height" />.</aside>

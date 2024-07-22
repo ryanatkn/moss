@@ -151,7 +151,7 @@
 	--text_3: hsl(var(--tint_hue) var(--tint_saturation) 48%);
 	--text_4: hsl(var(--tint_hue) var(--tint_saturation) 68%);
 	--text_5: hsl(var(--tint_hue) var(--tint_saturation) 96%);
-	--text_disabled: var(--text_3);
+	--text_color_disabled: var(--text_3);
 	--text_active: hsl(var(--hue_a) 55% 40%);
 	--line_height_xs: 1;
 	--line_height_sm: 1.2;
@@ -242,6 +242,7 @@
 	--radius_xs2: 0.5rem;
 	--radius_xs3: 0.3rem;
 	--button_fill: hsl(var(--tint_hue) 5% 50%);
+	--button_text_color: var(--text_2);
 	--button_shadow: var(--shadow_outset_xs) var(--shadow_color_xs),
 		var(--shadow_inset_xs) var(--highlight_color_xs);
 	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_sm),
