@@ -26,23 +26,22 @@ Some notes:
 }
 
 :root {
+	color-scheme: light dark;
+	background-color: var(--bg);
+	color: var(--text_color);
+	accent-color: var(--color_a_5);
+	line-height: var(--line_height_md);
 	font-size: 62.5%; /* see `body.font-size`, using `rem` font size units with a base 16px */
 	/* @source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
 }
-
-:root {
-	color-scheme: light dark;
-	background-color: var(--bg);
-	color: var(--text_color);
-	accent-color: var(--color_a_5);
-	line-height: var(--line_height_md);
-}
-
 :root.dark {
-	color-scheme: dark light;
+	color-scheme: dark;
+}
+:root.light {
+	color-scheme: light;
 }
 
 body {
@@ -53,7 +52,7 @@ body {
 }
 
 ::selection {
-	background-color: hsla(var(--hue_a), 90%, 80%, var(--fade_3));
+	background-color: hsl(var(--hue_a) 90% 80% / var(--fade_3));
 }
 
 /*
@@ -89,8 +88,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	text-decoration: var(--text_decoration);
 	border-radius: var(--radius_xs2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
 /* TODO should these be customizable with utility classes? */
 :where(a):hover {
@@ -282,10 +279,8 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-color: var(--border_color);
 	border-style: var(--border_style);
 	border-width: var(--border_width);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 	padding: var(--input_padding_y) var(--input_padding_x);
 	width: 100%;
 	min-width: var(--input_width_min);
@@ -348,6 +343,7 @@ so for consistent visuals we opt to include no active state */
 	cursor: pointer;
 	width: var(--input_height_sm);
 	height: var(--input_height_sm);
+	border-radius: 50%;
 	min-width: var(--input_height_sm);
 	min-height: var(--input_height_sm);
 	--input_padding_x: 0;
@@ -371,11 +367,8 @@ so for consistent visuals we opt to include no active state */
 	--thumb_background_color: var(--text_2);
 	cursor: pointer;
 }
-:where(input[type='range']:hover) {
+:where(input[type='range']:hover:not(:disabled)) {
 	--thumb_background_color: var(--color_a_5);
-}
-:where(input[type='range']:disabled) {
-	--thumb_background_color: var(--text_disabled);
 }
 :where(input[type='range']:disabled:active) {
 	--thumb_background_color: var(--color_c_5);
@@ -384,7 +377,7 @@ so for consistent visuals we opt to include no active state */
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: 50%;
 	background-color: var(--thumb_background_color);
 	border: 0;
 	/*
@@ -401,7 +394,7 @@ so for consistent visuals we opt to include no active state */
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: 50%;
 	background-color: var(--thumb_background_color);
 	border: 0;
 }
@@ -414,6 +407,17 @@ so for consistent visuals we opt to include no active state */
 	width: 100%;
 	height: var(--border_width);
 	background-color: var(--thumb_background_color);
+}
+
+/*  TODO :has selector? `button:has(input[type='checkbox']:checked)`
+see https://caniuse.com/css-has
+ */
+:where(input:checked:not(:disabled)) {
+	--text_color: var(--text_active);
+	--border_color: var(--color_a_5);
+}
+:where(input[type='radio']:checked) {
+	cursor: default;
 }
 
 :where(:where(input, textarea, select).inline, p :where(input, textarea, select)) {
@@ -432,8 +436,6 @@ so for consistent visuals we opt to include no active state */
 :where([contenteditable]:focus-visible) {
 	--outline_width: var(--outline_width_2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
 
 :where(:where(input, textarea, select, [contenteditable]):active) {
@@ -441,8 +443,16 @@ so for consistent visuals we opt to include no active state */
 }
 
 :where(button) {
-	--text_color: var(--text_2);
 	--min_height: var(--input_height);
+	--text_color: var(--text_2);
+	--button_text_color: var(--text_color);
+	--button_text_color_hover: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
+	--button_text_color_selected_hover: var(--fg_0);
+	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
+	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
+	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
+	color: var(--button_text_color);
+	background-color: var(--button_fill);
 	cursor: pointer;
 	appearance: none;
 	display: flex;
@@ -452,190 +462,119 @@ so for consistent visuals we opt to include no active state */
 	font: inherit;
 	font-weight: 700;
 	line-height: normal;
-	color: var(--text_color);
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
-	background-color: var(--fill, var(--button_fill));
 	box-shadow: var(--shadow, var(--button_shadow));
 	border-width: var(--border_width);
 	border-style: var(--border_style);
 	border-color: var(--border_color);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
-/* TODO this is weird because we're overriding for colored variants */
-:where(button:hover, button:focus) {
-	--fill: var(--button_fill_hover);
-	--border_color: var(--border_color_2);
-	--shadow: var(--button_shadow_hover);
-}
-:where(button:active) {
-	--fill: var(--button_fill_active);
-	--border_color: var(--border_color_5);
-	--outline_width: var(--outline_width_3);
-	--shadow: var(--button_shadow_active);
-}
-:where(button.inline, p button) {
-	display: inline-block;
-	--min_height: var(--input_height_sm); /* TODO this increases paragraph line spacing */
-}
-/*  TODO :has selector? `button:has(input[type='checkbox']:checked)`
-see https://caniuse.com/css-has
- */
-:where(input:checked) {
-	--text_color: var(--text_active);
-	--border_color: var(--color_a_5);
-}
-:where(input[type='radio']:checked) {
-	cursor: default;
-}
+
+/* TODO try to rearrange some of this to go after the colored variants */
 /* TODO maybe shouldn't mix button in with these */
 :where(:where(input, textarea, select, button):disabled) {
-	--text_color: var(--text_disabled);
-	/* TODO using `button_` here looks wrong, conflating button with others */
-	--fill: var(--button_fill_disabled);
+	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
+	--button_fill: transparent;
+	--input_fill: transparent;
 	--border_style: solid dashed;
 	cursor: default;
 	box-shadow: none;
 	opacity: var(--disabled_opacity);
 	outline: none;
 }
-:where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
-	--border_color: var(--color_c_5);
-	--text_color: var(--color_c_5);
-}
-
-/* TODO these need design work for visuals/consistency/customizability  */
-/* TODO rethink this, maybe gradients instead? or at least use a text_color */
-/* TODO maybe add a style for `button.selected:disabled`, probably reduced brightness,
-currently `:disabled` overrides this */
-/* TODO hover variants with brighter borders? maybe use a colorless border for that? */
-/*
-This selector appears twice, once before and once after the color button styles,
-to take advantage of the cascade to minimize overrides.
-*/
 :where(button.selected) {
+	--button_text_color: var(--text_5);
 	--border_color: var(--border_color_2);
-	--fill: var(--button_fill_selected);
-}
-:where(
-		button:where(
-				.color_a,
-				.color_b,
-				.color_c,
-				.color_d,
-				.color_e,
-				.color_f,
-				.color_g,
-				.color_h,
-				.color_i
-			):where(:hover, :focus, :active)
-	) {
-	--text_color: var(--bg_10);
-}
-/*
-TODO maybe move these to `style_components.css` or a different CSS file?
-including colored button styles, selected button styles, ...
-*/
-:where(button.color_a) {
-	--text_color: var(--color_a_5);
-	--fill: color-mix(in hsl, var(--fill_a) 9%, transparent);
-	--border_color: var(--border_color_a);
-}
-:where(button.color_b) {
-	--text_color: var(--color_b_5);
-	--fill: color-mix(in hsl, var(--fill_b) 9%, transparent);
-	--border_color: var(--border_color_b);
-	--outline_color: var(--border_color_b);
-}
-:where(button.color_c) {
-	--text_color: var(--color_c_5);
-	--fill: color-mix(in hsl, var(--fill_c) 9%, transparent);
-	--border_color: var(--border_color_c);
-	--outline_color: var(--border_color_c);
-}
-:where(button.color_d) {
-	--text_color: var(--color_d_5);
-	--fill: color-mix(in hsl, var(--fill_d) 9%, transparent);
-	--border_color: var(--border_color_d);
-	--outline_color: var(--border_color_d);
-}
-:where(button.color_e) {
-	--text_color: var(--color_e_5);
-	--fill: color-mix(in hsl, var(--fill_e) 9%, transparent);
-	--border_color: var(--border_color_e);
-	--outline_color: var(--border_color_e);
-}
-:where(button.color_f) {
-	--text_color: var(--color_f_5);
-	--fill: color-mix(in hsl, var(--fill_f) 9%, transparent);
-	--border_color: var(--border_color_f);
-	--outline_color: var(--border_color_f);
-}
-:where(button.color_g) {
-	--text_color: var(--color_g_5);
-	--fill: color-mix(in hsl, var(--fill_g) 9%, transparent);
-	--border_color: var(--border_color_g);
-	--outline_color: var(--border_color_g);
-}
-:where(button.color_h) {
-	--text_color: var(--color_h_5);
-	--fill: color-mix(in hsl, var(--fill_h) 9%, transparent);
-	--border_color: var(--border_color_h);
-	--outline_color: var(--border_color_h);
-}
-:where(button.color_i) {
-	--text_color: var(--color_i_5);
-	--fill: color-mix(in hsl, var(--fill_i) 9%, transparent);
-	--border_color: var(--border_color_i);
-	--outline_color: var(--border_color_i);
-}
-/*
-This selector appears twice, once before and once after the color button styles.
-Also if we add colored inputs, they would be added to this selector list.
-*/
-:where(button:disabled:not(.selected)) {
-	--fill: var(--button_fill_disabled);
-}
-/*
-This selector follows the colored buttons to override them.
-Other `button.selected` styles are above.
-*/
-:where(button.selected) {
-	--text_color: var(--bg_8);
+	--button_fill: var(--fill);
+	--button_fill_hover: var(--fill);
+	--button_fill_active: var(--fill);
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
 	box-shadow: none;
 }
-:where(button.color_a.selected) {
+/* TODO this is weird because we're overriding for colored variants */
+:where(button:not(:disabled):hover, button:focus) {
+	--button_fill: var(--button_fill_hover);
+	--border_color: var(--border_color_2);
+	--shadow: var(--button_shadow_hover);
+}
+:where(button:not(.selected):not(:disabled):hover) {
+	--button_text_color: var(--button_text_color_hover);
+}
+:where(button.selected.deselectable:not(:disabled):hover) {
+	--button_text_color: var(--button_text_color_selected_hover);
+}
+:where(button:active) {
+	--button_fill: var(--button_fill_active);
+	--border_color: var(--border_color_5);
+	--outline_width: var(--outline_width_3);
+	--shadow: var(--button_shadow_active);
+}
+
+/* TODO maybe gradients? or at least use a text_color */
+/* TODO hover variants with brighter borders? maybe use a colorless border for that? */
+
+:where(button.color_a) {
+	--text_color: var(--color_a_5);
 	--fill: var(--fill_a);
+	--border_color: var(--border_color_a);
+	--outline_color: var(--border_color_a);
 }
-:where(button.color_b.selected) {
+:where(button.color_b) {
+	--text_color: var(--color_b_5);
 	--fill: var(--fill_b);
+	--border_color: var(--border_color_b);
+	--outline_color: var(--border_color_b);
 }
-:where(button.color_c.selected) {
+:where(button.color_c) {
+	--text_color: var(--color_c_5);
 	--fill: var(--fill_c);
+	--border_color: var(--border_color_c);
+	--outline_color: var(--border_color_c);
 }
-:where(button.color_d.selected) {
+:where(button.color_d) {
+	--text_color: var(--color_d_5);
 	--fill: var(--fill_d);
+	--border_color: var(--border_color_d);
+	--outline_color: var(--border_color_d);
 }
-:where(button.color_e.selected) {
+:where(button.color_e) {
+	--text_color: var(--color_e_5);
 	--fill: var(--fill_e);
+	--border_color: var(--border_color_e);
+	--outline_color: var(--border_color_e);
 }
-:where(button.color_f.selected) {
+:where(button.color_f) {
+	--text_color: var(--color_f_5);
 	--fill: var(--fill_f);
+	--border_color: var(--border_color_f);
+	--outline_color: var(--border_color_f);
 }
-:where(button.color_g.selected) {
+:where(button.color_g) {
+	--text_color: var(--color_g_5);
 	--fill: var(--fill_g);
+	--border_color: var(--border_color_g);
+	--outline_color: var(--border_color_g);
 }
-:where(button.color_h.selected) {
+:where(button.color_h) {
+	--text_color: var(--color_h_5);
 	--fill: var(--fill_h);
+	--border_color: var(--border_color_h);
+	--outline_color: var(--border_color_h);
 }
-:where(button.color_i.selected) {
+:where(button.color_i) {
+	--text_color: var(--color_i_5);
 	--fill: var(--fill_i);
+	--border_color: var(--border_color_i);
+	--outline_color: var(--border_color_i);
+}
+
+:where(button.inline, p button) {
+	display: inline-block;
+	--min_height: var(--input_height_sm); /* TODO this increases paragraph line spacing */
 }
 
 /* TODO could improve this with the coming `:has` selector
@@ -654,7 +593,7 @@ for disabled colors without needing a wrapper .disabled class */
 }
 :where(label.disabled) {
 	cursor: default;
-	--text_color: var(--text_disabled);
+	--text_color: var(--text_color_disabled);
 }
 :where(label.row) {
 	justify-content: flex-start;
@@ -662,6 +601,22 @@ for disabled colors without needing a wrapper .disabled class */
 }
 :where(label.row :where(input[type='checkbox'], input[type='radio'])) {
 	margin-right: var(--space_md);
+}
+
+:where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
+	--text_color: var(--color_c_5);
+	--border_color: var(--color_c_5);
+}
+/* TODO is there a cleaner way to override these through vars? */
+:where(button.selected:disabled:active) {
+	--text_color: var(--text_5);
+	--fill: var(--fill_c);
+}
+:where(button:not(.selected):disabled:active) {
+	--fill: transparent;
+}
+:where(button.selected:not(.deselectable):active) {
+	--outline_width: var(--outline_width_2);
 }
 
 :where(small) {
@@ -715,18 +670,6 @@ for disabled colors without needing a wrapper .disabled class */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-}
-
-/* Makes flexboxes wrap. */
-.wrap {
-	flex-wrap: wrap;
-	white-space: initial;
-}
-
-/* Stops text from wrapping. */
-.nowrap {
-	flex-wrap: nowrap;
-	white-space: nowrap;
 }
 
 /* Formats content to wrap long strings and preserve displayed whitespace. */
@@ -789,12 +732,12 @@ for disabled colors without needing a wrapper .disabled class */
 By default it's opaque, resetting the background to the initial depth. */
 .pane {
 	background-color: var(--pane_bg, var(--bg));
-	box-shadow: var(--pane_shadow, var(--shadow_md));
+	box-shadow: var(--pane_shadow, var(--shadow_md) var(--shadow_color_md));
 	border-radius: var(--radius_xs);
 }
 /* A panel is a box embedded into the page, useful for visually isolating content. */
 .panel {
-	border-radius: var(--radius_sm);
+	border-radius: var(--radius_xs);
 	background-color: var(--panel_bg, var(--fg_1));
 }
 
@@ -985,21 +928,32 @@ The utility classes not based on style variables are in `style_utilities.css`.
 	overflow-y: visible;
 }
 
-.inline {
-	display: inline;
-}
-.inline_block {
-	display: inline-block;
-}
-.block {
-	display: block;
-}
+/* these include the longhand `display_` because they're less common and would be more ambiguous */
 .display_none {
 	display: none;
 }
 .display_contents {
 	display: contents;
 }
+/* TODO others like `list-item` and `table` variants? after optimizing, sure - https://developer.mozilla.org/en-US/docs/Web/CSS/display */
+
+.inline {
+	display: inline;
+}
+.inline_block {
+	display: inline-block;
+}
+.inline_flex {
+	display: inline-flex;
+}
+.inline_grid {
+	display: inline-grid;
+}
+
+.block {
+	display: block;
+}
+
 /* TODO lots of these, but optimize first? .display_table {
 	display: table;
 } */
@@ -1009,6 +963,14 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .flex_1 {
 	flex: 1;
 }
+/* not including `.flex_nowrap` because it's the initial value and it's not inherited */
+.flex_wrap {
+	flex-wrap: wrap;
+}
+.flex_wrap_reverse {
+	flex-wrap: wrap-reverse;
+}
+
 .grid {
 	display: grid;
 }
@@ -1038,6 +1000,8 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .flip_xy {
 	transform: scaleX(-1) scaleY(-1);
 }
+
+/* TODO rotate */
 
 /*
 
@@ -1180,6 +1144,66 @@ text
 	vertical-align: bottom;
 }
 
+.white_space_normal {
+	white-space: normal;
+}
+.white_space_nowrap {
+	white-space: nowrap;
+}
+.white_space_pre {
+	white-space: pre;
+}
+.white_space_pre_wrap {
+	white-space: pre-wrap;
+}
+.white_space_pre_line {
+	white-space: pre-line;
+}
+.white_space_break_spaces {
+	white-space: break-spaces;
+}
+
+/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
+.white_space_collapse_collapse {
+	white-space-collapse: collapse;
+}
+.white_space_collapse_preserve {
+	white-space-collapse: preserve;
+}
+.white_space_collapse_preserve_breaks {
+	white-space-collapse: preserve-breaks;
+}
+.white_space_collapse_preserve_spaces {
+	white-space-collapse: preserve-spaces;
+}
+.white_space_collapse_break_spaces {
+	white-space-collapse: break-spaces;
+}
+
+/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
+.text_wrap_wrap {
+	text-wrap: wrap;
+}
+.text_wrap_nowrap {
+	text-wrap: nowrap;
+}
+.text_wrap_balance {
+	text-wrap: balance;
+}
+.text_wrap_pretty {
+	text-wrap: pretty;
+}
+.text_wrap_stable {
+	text-wrap: stable;
+}
+
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .font_weight_100 {
 	font-weight: 100;
 }
@@ -1206,20 +1230,6 @@ text
 }
 .font_weight_900 {
 	font-weight: 900;
-}
-
-.ellipsis {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.pixelated {
-	image-rendering: -webkit-optimize-contrast; /* Safari */
-	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
-	image-rendering: pixelated; /* in case crisp-edges isn't supported */
-	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /*
@@ -2041,8 +2051,8 @@ borders
 .border_color_i {
 	border-color: var(--border_color_i);
 }
-.border_color_disabled {
-	border-color: var(--border_color_disabled);
+.border_color_transparent {
+	border-color: transparent;
 }
 
 .border_width_0 {
@@ -2178,464 +2188,607 @@ shading
 /* shadows */
 
 .shadow_xs {
-	box-shadow: var(--shadow_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_xs);
 }
 .shadow_sm {
-	box-shadow: var(--shadow_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_sm);
 }
 .shadow_md {
-	box-shadow: var(--shadow_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_md);
 }
 .shadow_lg {
-	box-shadow: var(--shadow_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_lg);
 }
 .shadow_xl {
-	box-shadow: var(--shadow_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_xl);
 }
 .shadow_outset_xs {
-	box-shadow: var(--shadow_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_xs);
 }
 .shadow_outset_sm {
-	box-shadow: var(--shadow_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_sm);
 }
 .shadow_outset_md {
-	box-shadow: var(--shadow_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_md);
 }
 .shadow_outset_lg {
-	box-shadow: var(--shadow_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_lg);
 }
 .shadow_outset_xl {
-	box-shadow: var(--shadow_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_xl);
 }
 .shadow_inset_xs {
-	box-shadow: var(--shadow_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_xs);
 }
 .shadow_inset_sm {
-	box-shadow: var(--shadow_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_sm);
 }
 .shadow_inset_md {
-	box-shadow: var(--shadow_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_md);
 }
 .shadow_inset_lg {
-	box-shadow: var(--shadow_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_lg);
 }
 .shadow_inset_xl {
-	box-shadow: var(--shadow_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_xl);
 }
 
+/* highlights */
+
+.highlight_xs {
+	box-shadow: var(--shadow_xs) var(--highlight_color_xs);
+}
+.highlight_sm {
+	box-shadow: var(--shadow_sm) var(--highlight_color_sm);
+}
+.highlight_md {
+	box-shadow: var(--shadow_md) var(--highlight_color_md);
+}
+.highlight_lg {
+	box-shadow: var(--shadow_lg) var(--highlight_color_lg);
+}
+.highlight_xl {
+	box-shadow: var(--shadow_xl) var(--highlight_color_xl);
+}
+.highlight_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--highlight_color_xs);
+}
+.highlight_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--highlight_color_sm);
+}
+.highlight_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--highlight_color_md);
+}
+.highlight_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--highlight_color_lg);
+}
+.highlight_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--highlight_color_xl);
+}
+.highlight_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--highlight_color_xs);
+}
+.highlight_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--highlight_color_sm);
+}
+.highlight_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--highlight_color_md);
+}
+.highlight_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--highlight_color_lg);
+}
+.highlight_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--highlight_color_xl);
+}
+
+/* glows */
+
+.glow_xs {
+	box-shadow: var(--shadow_xs) var(--glow_color_xs);
+}
+.glow_sm {
+	box-shadow: var(--shadow_sm) var(--glow_color_sm);
+}
+.glow_md {
+	box-shadow: var(--shadow_md) var(--glow_color_md);
+}
+.glow_lg {
+	box-shadow: var(--shadow_lg) var(--glow_color_lg);
+}
+.glow_xl {
+	box-shadow: var(--shadow_xl) var(--glow_color_xl);
+}
+.glow_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--glow_color_xs);
+}
+.glow_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--glow_color_sm);
+}
+.glow_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--glow_color_md);
+}
+.glow_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--glow_color_lg);
+}
+.glow_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--glow_color_xl);
+}
+.glow_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--glow_color_xs);
+}
+.glow_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--glow_color_sm);
+}
+.glow_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--glow_color_md);
+}
+.glow_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--glow_color_lg);
+}
+.glow_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--glow_color_xl);
+}
+
+/* shrouds */
+
+.shroud_xs {
+	box-shadow: var(--shadow_xs) var(--shroud_color_xs);
+}
+.shroud_sm {
+	box-shadow: var(--shadow_sm) var(--shroud_color_sm);
+}
+.shroud_md {
+	box-shadow: var(--shadow_md) var(--shroud_color_md);
+}
+.shroud_lg {
+	box-shadow: var(--shadow_lg) var(--shroud_color_lg);
+}
+.shroud_xl {
+	box-shadow: var(--shadow_xl) var(--shroud_color_xl);
+}
+.shroud_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--shroud_color_xs);
+}
+.shroud_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--shroud_color_sm);
+}
+.shroud_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--shroud_color_md);
+}
+.shroud_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--shroud_color_lg);
+}
+.shroud_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--shroud_color_xl);
+}
+.shroud_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--shroud_color_xs);
+}
+.shroud_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--shroud_color_sm);
+}
+.shroud_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--shroud_color_md);
+}
+.shroud_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--shroud_color_lg);
+}
+.shroud_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--shroud_color_xl);
+}
+
+/* colorful shadows */
+
 .shadow_a_xs {
-	box-shadow: var(--shadow_a_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_a_xs);
 }
 .shadow_a_sm {
-	box-shadow: var(--shadow_a_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_a_sm);
 }
 .shadow_a_md {
-	box-shadow: var(--shadow_a_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_a_md);
 }
 .shadow_a_lg {
-	box-shadow: var(--shadow_a_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_a_lg);
 }
 .shadow_a_xl {
-	box-shadow: var(--shadow_a_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_a_xl);
 }
 .shadow_a_outset_xs {
-	box-shadow: var(--shadow_a_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_a_xs);
 }
 .shadow_a_outset_sm {
-	box-shadow: var(--shadow_a_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_a_sm);
 }
 .shadow_a_outset_md {
-	box-shadow: var(--shadow_a_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_a_md);
 }
 .shadow_a_outset_lg {
-	box-shadow: var(--shadow_a_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_a_lg);
 }
 .shadow_a_outset_xl {
-	box-shadow: var(--shadow_a_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_a_xl);
 }
 .shadow_a_inset_xs {
-	box-shadow: var(--shadow_a_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_a_xs);
 }
 .shadow_a_inset_sm {
-	box-shadow: var(--shadow_a_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_a_sm);
 }
 .shadow_a_inset_md {
-	box-shadow: var(--shadow_a_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_a_md);
 }
 .shadow_a_inset_lg {
-	box-shadow: var(--shadow_a_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_a_lg);
 }
 .shadow_a_inset_xl {
-	box-shadow: var(--shadow_a_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_a_xl);
 }
 .shadow_b_xs {
-	box-shadow: var(--shadow_b_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_b_xs);
 }
 .shadow_b_sm {
-	box-shadow: var(--shadow_b_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_b_sm);
 }
 .shadow_b_md {
-	box-shadow: var(--shadow_b_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_b_md);
 }
 .shadow_b_lg {
-	box-shadow: var(--shadow_b_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_b_lg);
 }
 .shadow_b_xl {
-	box-shadow: var(--shadow_b_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_b_xl);
 }
 .shadow_b_outset_xs {
-	box-shadow: var(--shadow_b_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_b_xs);
 }
 .shadow_b_outset_sm {
-	box-shadow: var(--shadow_b_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_b_sm);
 }
 .shadow_b_outset_md {
-	box-shadow: var(--shadow_b_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_b_md);
 }
 .shadow_b_outset_lg {
-	box-shadow: var(--shadow_b_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_b_lg);
 }
 .shadow_b_outset_xl {
-	box-shadow: var(--shadow_b_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_b_xl);
 }
 .shadow_b_inset_xs {
-	box-shadow: var(--shadow_b_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_b_xs);
 }
 .shadow_b_inset_sm {
-	box-shadow: var(--shadow_b_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_b_sm);
 }
 .shadow_b_inset_md {
-	box-shadow: var(--shadow_b_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_b_md);
 }
 .shadow_b_inset_lg {
-	box-shadow: var(--shadow_b_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_b_lg);
 }
 .shadow_b_inset_xl {
-	box-shadow: var(--shadow_b_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_b_xl);
 }
 .shadow_c_xs {
-	box-shadow: var(--shadow_c_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_c_xs);
 }
 .shadow_c_sm {
-	box-shadow: var(--shadow_c_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_c_sm);
 }
 .shadow_c_md {
-	box-shadow: var(--shadow_c_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_c_md);
 }
 .shadow_c_lg {
-	box-shadow: var(--shadow_c_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_c_lg);
 }
 .shadow_c_xl {
-	box-shadow: var(--shadow_c_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_c_xl);
 }
 .shadow_c_outset_xs {
-	box-shadow: var(--shadow_c_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_c_xs);
 }
 .shadow_c_outset_sm {
-	box-shadow: var(--shadow_c_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_c_sm);
 }
 .shadow_c_outset_md {
-	box-shadow: var(--shadow_c_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_c_md);
 }
 .shadow_c_outset_lg {
-	box-shadow: var(--shadow_c_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_c_lg);
 }
 .shadow_c_outset_xl {
-	box-shadow: var(--shadow_c_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_c_xl);
 }
 .shadow_c_inset_xs {
-	box-shadow: var(--shadow_c_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_c_xs);
 }
 .shadow_c_inset_sm {
-	box-shadow: var(--shadow_c_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_c_sm);
 }
 .shadow_c_inset_md {
-	box-shadow: var(--shadow_c_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_c_md);
 }
 .shadow_c_inset_lg {
-	box-shadow: var(--shadow_c_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_c_lg);
 }
 .shadow_c_inset_xl {
-	box-shadow: var(--shadow_c_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_c_xl);
 }
 .shadow_d_xs {
-	box-shadow: var(--shadow_d_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_d_xs);
 }
 .shadow_d_sm {
-	box-shadow: var(--shadow_d_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_d_sm);
 }
 .shadow_d_md {
-	box-shadow: var(--shadow_d_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_d_md);
 }
 .shadow_d_lg {
-	box-shadow: var(--shadow_d_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_d_lg);
 }
 .shadow_d_xl {
-	box-shadow: var(--shadow_d_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_d_xl);
 }
 .shadow_d_outset_xs {
-	box-shadow: var(--shadow_d_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_d_xs);
 }
 .shadow_d_outset_sm {
-	box-shadow: var(--shadow_d_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_d_sm);
 }
 .shadow_d_outset_md {
-	box-shadow: var(--shadow_d_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_d_md);
 }
 .shadow_d_outset_lg {
-	box-shadow: var(--shadow_d_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_d_lg);
 }
 .shadow_d_outset_xl {
-	box-shadow: var(--shadow_d_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_d_xl);
 }
 .shadow_d_inset_xs {
-	box-shadow: var(--shadow_d_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_d_xs);
 }
 .shadow_d_inset_sm {
-	box-shadow: var(--shadow_d_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_d_sm);
 }
 .shadow_d_inset_md {
-	box-shadow: var(--shadow_d_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_d_md);
 }
 .shadow_d_inset_lg {
-	box-shadow: var(--shadow_d_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_d_lg);
 }
 .shadow_d_inset_xl {
-	box-shadow: var(--shadow_d_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_d_xl);
 }
 .shadow_e_xs {
-	box-shadow: var(--shadow_e_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_e_xs);
 }
 .shadow_e_sm {
-	box-shadow: var(--shadow_e_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_e_sm);
 }
 .shadow_e_md {
-	box-shadow: var(--shadow_e_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_e_md);
 }
 .shadow_e_lg {
-	box-shadow: var(--shadow_e_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_e_lg);
 }
 .shadow_e_xl {
-	box-shadow: var(--shadow_e_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_e_xl);
 }
 .shadow_e_outset_xs {
-	box-shadow: var(--shadow_e_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_e_xs);
 }
 .shadow_e_outset_sm {
-	box-shadow: var(--shadow_e_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_e_sm);
 }
 .shadow_e_outset_md {
-	box-shadow: var(--shadow_e_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_e_md);
 }
 .shadow_e_outset_lg {
-	box-shadow: var(--shadow_e_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_e_lg);
 }
 .shadow_e_outset_xl {
-	box-shadow: var(--shadow_e_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_e_xl);
 }
 .shadow_e_inset_xs {
-	box-shadow: var(--shadow_e_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_e_xs);
 }
 .shadow_e_inset_sm {
-	box-shadow: var(--shadow_e_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_e_sm);
 }
 .shadow_e_inset_md {
-	box-shadow: var(--shadow_e_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_e_md);
 }
 .shadow_e_inset_lg {
-	box-shadow: var(--shadow_e_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_e_lg);
 }
 .shadow_e_inset_xl {
-	box-shadow: var(--shadow_e_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_e_xl);
 }
 .shadow_f_xs {
-	box-shadow: var(--shadow_f_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_f_xs);
 }
 .shadow_f_sm {
-	box-shadow: var(--shadow_f_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_f_sm);
 }
 .shadow_f_md {
-	box-shadow: var(--shadow_f_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_f_md);
 }
 .shadow_f_lg {
-	box-shadow: var(--shadow_f_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_f_lg);
 }
 .shadow_f_xl {
-	box-shadow: var(--shadow_f_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_f_xl);
 }
 .shadow_f_outset_xs {
-	box-shadow: var(--shadow_f_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_f_xs);
 }
 .shadow_f_outset_sm {
-	box-shadow: var(--shadow_f_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_f_sm);
 }
 .shadow_f_outset_md {
-	box-shadow: var(--shadow_f_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_f_md);
 }
 .shadow_f_outset_lg {
-	box-shadow: var(--shadow_f_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_f_lg);
 }
 .shadow_f_outset_xl {
-	box-shadow: var(--shadow_f_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_f_xl);
 }
 .shadow_f_inset_xs {
-	box-shadow: var(--shadow_f_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_f_xs);
 }
 .shadow_f_inset_sm {
-	box-shadow: var(--shadow_f_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_f_sm);
 }
 .shadow_f_inset_md {
-	box-shadow: var(--shadow_f_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_f_md);
 }
 .shadow_f_inset_lg {
-	box-shadow: var(--shadow_f_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_f_lg);
 }
 .shadow_f_inset_xl {
-	box-shadow: var(--shadow_f_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_f_xl);
 }
 .shadow_g_xs {
-	box-shadow: var(--shadow_g_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_g_xs);
 }
 .shadow_g_sm {
-	box-shadow: var(--shadow_g_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_g_sm);
 }
 .shadow_g_md {
-	box-shadow: var(--shadow_g_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_g_md);
 }
 .shadow_g_lg {
-	box-shadow: var(--shadow_g_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_g_lg);
 }
 .shadow_g_xl {
-	box-shadow: var(--shadow_g_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_g_xl);
 }
 .shadow_g_outset_xs {
-	box-shadow: var(--shadow_g_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_g_xs);
 }
 .shadow_g_outset_sm {
-	box-shadow: var(--shadow_g_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_g_sm);
 }
 .shadow_g_outset_md {
-	box-shadow: var(--shadow_g_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_g_md);
 }
 .shadow_g_outset_lg {
-	box-shadow: var(--shadow_g_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_g_lg);
 }
 .shadow_g_outset_xl {
-	box-shadow: var(--shadow_g_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_g_xl);
 }
 .shadow_g_inset_xs {
-	box-shadow: var(--shadow_g_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_g_xs);
 }
 .shadow_g_inset_sm {
-	box-shadow: var(--shadow_g_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_g_sm);
 }
 .shadow_g_inset_md {
-	box-shadow: var(--shadow_g_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_g_md);
 }
 .shadow_g_inset_lg {
-	box-shadow: var(--shadow_g_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_g_lg);
 }
 .shadow_g_inset_xl {
-	box-shadow: var(--shadow_g_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_g_xl);
 }
 .shadow_h_xs {
-	box-shadow: var(--shadow_h_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_h_xs);
 }
 .shadow_h_sm {
-	box-shadow: var(--shadow_h_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_h_sm);
 }
 .shadow_h_md {
-	box-shadow: var(--shadow_h_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_h_md);
 }
 .shadow_h_lg {
-	box-shadow: var(--shadow_h_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_h_lg);
 }
 .shadow_h_xl {
-	box-shadow: var(--shadow_h_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_h_xl);
 }
 .shadow_h_outset_xs {
-	box-shadow: var(--shadow_h_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_h_xs);
 }
 .shadow_h_outset_sm {
-	box-shadow: var(--shadow_h_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_h_sm);
 }
 .shadow_h_outset_md {
-	box-shadow: var(--shadow_h_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_h_md);
 }
 .shadow_h_outset_lg {
-	box-shadow: var(--shadow_h_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_h_lg);
 }
 .shadow_h_outset_xl {
-	box-shadow: var(--shadow_h_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_h_xl);
 }
 .shadow_h_inset_xs {
-	box-shadow: var(--shadow_h_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_h_xs);
 }
 .shadow_h_inset_sm {
-	box-shadow: var(--shadow_h_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_h_sm);
 }
 .shadow_h_inset_md {
-	box-shadow: var(--shadow_h_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_h_md);
 }
 .shadow_h_inset_lg {
-	box-shadow: var(--shadow_h_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_h_lg);
 }
 .shadow_h_inset_xl {
-	box-shadow: var(--shadow_h_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_h_xl);
 }
 .shadow_i_xs {
-	box-shadow: var(--shadow_i_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_i_xs);
 }
 .shadow_i_sm {
-	box-shadow: var(--shadow_i_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_i_sm);
 }
 .shadow_i_md {
-	box-shadow: var(--shadow_i_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_i_md);
 }
 .shadow_i_lg {
-	box-shadow: var(--shadow_i_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_i_lg);
 }
 .shadow_i_xl {
-	box-shadow: var(--shadow_i_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_i_xl);
 }
 .shadow_i_outset_xs {
-	box-shadow: var(--shadow_i_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_i_xs);
 }
 .shadow_i_outset_sm {
-	box-shadow: var(--shadow_i_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_i_sm);
 }
 .shadow_i_outset_md {
-	box-shadow: var(--shadow_i_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_i_md);
 }
 .shadow_i_outset_lg {
-	box-shadow: var(--shadow_i_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_i_lg);
 }
 .shadow_i_outset_xl {
-	box-shadow: var(--shadow_i_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_i_xl);
 }
 .shadow_i_inset_xs {
-	box-shadow: var(--shadow_i_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_i_xs);
 }
 .shadow_i_inset_sm {
-	box-shadow: var(--shadow_i_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_i_sm);
 }
 .shadow_i_inset_md {
-	box-shadow: var(--shadow_i_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_i_md);
 }
 .shadow_i_inset_lg {
-	box-shadow: var(--shadow_i_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_i_lg);
 }
 .shadow_i_inset_xl {
-	box-shadow: var(--shadow_i_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_i_xl);
 }
 
 /* higher specificity */
 /* TODO which order should these be in? */
 .shadow_inherit {
 	box-shadow: inherit;
-}
-.shadow_initial {
-	box-shadow: initial;
 }
 .shadow_none {
 	box-shadow: none;
@@ -4113,6 +4266,13 @@ layout
 }
 .row_gap_xl15 {
 	row-gap: var(--space_xl15);
+}
+
+.pixelated {
+	image-rendering: -webkit-optimize-contrast; /* Safari */
+	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated; /* in case crisp-edges isn't supported */
+	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /* end ./src/lib/style_utilities.css */

@@ -81,21 +81,32 @@ The utility classes not based on style variables are in `style_utilities.css`.
 	overflow-y: visible;
 }
 
-.inline {
-	display: inline;
-}
-.inline_block {
-	display: inline-block;
-}
-.block {
-	display: block;
-}
+/* these include the longhand `display_` because they're less common and would be more ambiguous */
 .display_none {
 	display: none;
 }
 .display_contents {
 	display: contents;
 }
+/* TODO others like `list-item` and `table` variants? after optimizing, sure - https://developer.mozilla.org/en-US/docs/Web/CSS/display */
+
+.inline {
+	display: inline;
+}
+.inline_block {
+	display: inline-block;
+}
+.inline_flex {
+	display: inline-flex;
+}
+.inline_grid {
+	display: inline-grid;
+}
+
+.block {
+	display: block;
+}
+
 /* TODO lots of these, but optimize first? .display_table {
 	display: table;
 } */
@@ -105,6 +116,14 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .flex_1 {
 	flex: 1;
 }
+/* not including `.flex_nowrap` because it's the initial value and it's not inherited */
+.flex_wrap {
+	flex-wrap: wrap;
+}
+.flex_wrap_reverse {
+	flex-wrap: wrap-reverse;
+}
+
 .grid {
 	display: grid;
 }
@@ -134,6 +153,8 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .flip_xy {
 	transform: scaleX(-1) scaleY(-1);
 }
+
+/* TODO rotate */
 
 /*
 
@@ -276,6 +297,66 @@ text
 	vertical-align: bottom;
 }
 
+.white_space_normal {
+	white-space: normal;
+}
+.white_space_nowrap {
+	white-space: nowrap;
+}
+.white_space_pre {
+	white-space: pre;
+}
+.white_space_pre_wrap {
+	white-space: pre-wrap;
+}
+.white_space_pre_line {
+	white-space: pre-line;
+}
+.white_space_break_spaces {
+	white-space: break-spaces;
+}
+
+/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
+.white_space_collapse_collapse {
+	white-space-collapse: collapse;
+}
+.white_space_collapse_preserve {
+	white-space-collapse: preserve;
+}
+.white_space_collapse_preserve_breaks {
+	white-space-collapse: preserve-breaks;
+}
+.white_space_collapse_preserve_spaces {
+	white-space-collapse: preserve-spaces;
+}
+.white_space_collapse_break_spaces {
+	white-space-collapse: break-spaces;
+}
+
+/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
+.text_wrap_wrap {
+	text-wrap: wrap;
+}
+.text_wrap_nowrap {
+	text-wrap: nowrap;
+}
+.text_wrap_balance {
+	text-wrap: balance;
+}
+.text_wrap_pretty {
+	text-wrap: pretty;
+}
+.text_wrap_stable {
+	text-wrap: stable;
+}
+
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .font_weight_100 {
 	font-weight: 100;
 }
@@ -302,20 +383,6 @@ text
 }
 .font_weight_900 {
 	font-weight: 900;
-}
-
-.ellipsis {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.pixelated {
-	image-rendering: -webkit-optimize-contrast; /* Safari */
-	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
-	image-rendering: pixelated; /* in case crisp-edges isn't supported */
-	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /*
@@ -1137,8 +1204,8 @@ borders
 .border_color_i {
 	border-color: var(--border_color_i);
 }
-.border_color_disabled {
-	border-color: var(--border_color_disabled);
+.border_color_transparent {
+	border-color: transparent;
 }
 
 .border_width_0 {
@@ -1274,464 +1341,607 @@ shading
 /* shadows */
 
 .shadow_xs {
-	box-shadow: var(--shadow_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_xs);
 }
 .shadow_sm {
-	box-shadow: var(--shadow_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_sm);
 }
 .shadow_md {
-	box-shadow: var(--shadow_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_md);
 }
 .shadow_lg {
-	box-shadow: var(--shadow_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_lg);
 }
 .shadow_xl {
-	box-shadow: var(--shadow_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_xl);
 }
 .shadow_outset_xs {
-	box-shadow: var(--shadow_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_xs);
 }
 .shadow_outset_sm {
-	box-shadow: var(--shadow_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_sm);
 }
 .shadow_outset_md {
-	box-shadow: var(--shadow_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_md);
 }
 .shadow_outset_lg {
-	box-shadow: var(--shadow_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_lg);
 }
 .shadow_outset_xl {
-	box-shadow: var(--shadow_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_xl);
 }
 .shadow_inset_xs {
-	box-shadow: var(--shadow_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_xs);
 }
 .shadow_inset_sm {
-	box-shadow: var(--shadow_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_sm);
 }
 .shadow_inset_md {
-	box-shadow: var(--shadow_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_md);
 }
 .shadow_inset_lg {
-	box-shadow: var(--shadow_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_lg);
 }
 .shadow_inset_xl {
-	box-shadow: var(--shadow_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_xl);
 }
 
+/* highlights */
+
+.highlight_xs {
+	box-shadow: var(--shadow_xs) var(--highlight_color_xs);
+}
+.highlight_sm {
+	box-shadow: var(--shadow_sm) var(--highlight_color_sm);
+}
+.highlight_md {
+	box-shadow: var(--shadow_md) var(--highlight_color_md);
+}
+.highlight_lg {
+	box-shadow: var(--shadow_lg) var(--highlight_color_lg);
+}
+.highlight_xl {
+	box-shadow: var(--shadow_xl) var(--highlight_color_xl);
+}
+.highlight_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--highlight_color_xs);
+}
+.highlight_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--highlight_color_sm);
+}
+.highlight_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--highlight_color_md);
+}
+.highlight_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--highlight_color_lg);
+}
+.highlight_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--highlight_color_xl);
+}
+.highlight_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--highlight_color_xs);
+}
+.highlight_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--highlight_color_sm);
+}
+.highlight_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--highlight_color_md);
+}
+.highlight_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--highlight_color_lg);
+}
+.highlight_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--highlight_color_xl);
+}
+
+/* glows */
+
+.glow_xs {
+	box-shadow: var(--shadow_xs) var(--glow_color_xs);
+}
+.glow_sm {
+	box-shadow: var(--shadow_sm) var(--glow_color_sm);
+}
+.glow_md {
+	box-shadow: var(--shadow_md) var(--glow_color_md);
+}
+.glow_lg {
+	box-shadow: var(--shadow_lg) var(--glow_color_lg);
+}
+.glow_xl {
+	box-shadow: var(--shadow_xl) var(--glow_color_xl);
+}
+.glow_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--glow_color_xs);
+}
+.glow_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--glow_color_sm);
+}
+.glow_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--glow_color_md);
+}
+.glow_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--glow_color_lg);
+}
+.glow_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--glow_color_xl);
+}
+.glow_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--glow_color_xs);
+}
+.glow_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--glow_color_sm);
+}
+.glow_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--glow_color_md);
+}
+.glow_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--glow_color_lg);
+}
+.glow_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--glow_color_xl);
+}
+
+/* shrouds */
+
+.shroud_xs {
+	box-shadow: var(--shadow_xs) var(--shroud_color_xs);
+}
+.shroud_sm {
+	box-shadow: var(--shadow_sm) var(--shroud_color_sm);
+}
+.shroud_md {
+	box-shadow: var(--shadow_md) var(--shroud_color_md);
+}
+.shroud_lg {
+	box-shadow: var(--shadow_lg) var(--shroud_color_lg);
+}
+.shroud_xl {
+	box-shadow: var(--shadow_xl) var(--shroud_color_xl);
+}
+.shroud_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--shroud_color_xs);
+}
+.shroud_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--shroud_color_sm);
+}
+.shroud_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--shroud_color_md);
+}
+.shroud_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--shroud_color_lg);
+}
+.shroud_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--shroud_color_xl);
+}
+.shroud_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--shroud_color_xs);
+}
+.shroud_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--shroud_color_sm);
+}
+.shroud_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--shroud_color_md);
+}
+.shroud_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--shroud_color_lg);
+}
+.shroud_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--shroud_color_xl);
+}
+
+/* colorful shadows */
+
 .shadow_a_xs {
-	box-shadow: var(--shadow_a_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_a_xs);
 }
 .shadow_a_sm {
-	box-shadow: var(--shadow_a_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_a_sm);
 }
 .shadow_a_md {
-	box-shadow: var(--shadow_a_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_a_md);
 }
 .shadow_a_lg {
-	box-shadow: var(--shadow_a_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_a_lg);
 }
 .shadow_a_xl {
-	box-shadow: var(--shadow_a_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_a_xl);
 }
 .shadow_a_outset_xs {
-	box-shadow: var(--shadow_a_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_a_xs);
 }
 .shadow_a_outset_sm {
-	box-shadow: var(--shadow_a_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_a_sm);
 }
 .shadow_a_outset_md {
-	box-shadow: var(--shadow_a_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_a_md);
 }
 .shadow_a_outset_lg {
-	box-shadow: var(--shadow_a_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_a_lg);
 }
 .shadow_a_outset_xl {
-	box-shadow: var(--shadow_a_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_a_xl);
 }
 .shadow_a_inset_xs {
-	box-shadow: var(--shadow_a_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_a_xs);
 }
 .shadow_a_inset_sm {
-	box-shadow: var(--shadow_a_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_a_sm);
 }
 .shadow_a_inset_md {
-	box-shadow: var(--shadow_a_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_a_md);
 }
 .shadow_a_inset_lg {
-	box-shadow: var(--shadow_a_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_a_lg);
 }
 .shadow_a_inset_xl {
-	box-shadow: var(--shadow_a_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_a_xl);
 }
 .shadow_b_xs {
-	box-shadow: var(--shadow_b_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_b_xs);
 }
 .shadow_b_sm {
-	box-shadow: var(--shadow_b_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_b_sm);
 }
 .shadow_b_md {
-	box-shadow: var(--shadow_b_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_b_md);
 }
 .shadow_b_lg {
-	box-shadow: var(--shadow_b_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_b_lg);
 }
 .shadow_b_xl {
-	box-shadow: var(--shadow_b_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_b_xl);
 }
 .shadow_b_outset_xs {
-	box-shadow: var(--shadow_b_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_b_xs);
 }
 .shadow_b_outset_sm {
-	box-shadow: var(--shadow_b_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_b_sm);
 }
 .shadow_b_outset_md {
-	box-shadow: var(--shadow_b_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_b_md);
 }
 .shadow_b_outset_lg {
-	box-shadow: var(--shadow_b_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_b_lg);
 }
 .shadow_b_outset_xl {
-	box-shadow: var(--shadow_b_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_b_xl);
 }
 .shadow_b_inset_xs {
-	box-shadow: var(--shadow_b_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_b_xs);
 }
 .shadow_b_inset_sm {
-	box-shadow: var(--shadow_b_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_b_sm);
 }
 .shadow_b_inset_md {
-	box-shadow: var(--shadow_b_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_b_md);
 }
 .shadow_b_inset_lg {
-	box-shadow: var(--shadow_b_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_b_lg);
 }
 .shadow_b_inset_xl {
-	box-shadow: var(--shadow_b_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_b_xl);
 }
 .shadow_c_xs {
-	box-shadow: var(--shadow_c_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_c_xs);
 }
 .shadow_c_sm {
-	box-shadow: var(--shadow_c_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_c_sm);
 }
 .shadow_c_md {
-	box-shadow: var(--shadow_c_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_c_md);
 }
 .shadow_c_lg {
-	box-shadow: var(--shadow_c_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_c_lg);
 }
 .shadow_c_xl {
-	box-shadow: var(--shadow_c_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_c_xl);
 }
 .shadow_c_outset_xs {
-	box-shadow: var(--shadow_c_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_c_xs);
 }
 .shadow_c_outset_sm {
-	box-shadow: var(--shadow_c_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_c_sm);
 }
 .shadow_c_outset_md {
-	box-shadow: var(--shadow_c_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_c_md);
 }
 .shadow_c_outset_lg {
-	box-shadow: var(--shadow_c_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_c_lg);
 }
 .shadow_c_outset_xl {
-	box-shadow: var(--shadow_c_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_c_xl);
 }
 .shadow_c_inset_xs {
-	box-shadow: var(--shadow_c_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_c_xs);
 }
 .shadow_c_inset_sm {
-	box-shadow: var(--shadow_c_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_c_sm);
 }
 .shadow_c_inset_md {
-	box-shadow: var(--shadow_c_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_c_md);
 }
 .shadow_c_inset_lg {
-	box-shadow: var(--shadow_c_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_c_lg);
 }
 .shadow_c_inset_xl {
-	box-shadow: var(--shadow_c_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_c_xl);
 }
 .shadow_d_xs {
-	box-shadow: var(--shadow_d_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_d_xs);
 }
 .shadow_d_sm {
-	box-shadow: var(--shadow_d_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_d_sm);
 }
 .shadow_d_md {
-	box-shadow: var(--shadow_d_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_d_md);
 }
 .shadow_d_lg {
-	box-shadow: var(--shadow_d_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_d_lg);
 }
 .shadow_d_xl {
-	box-shadow: var(--shadow_d_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_d_xl);
 }
 .shadow_d_outset_xs {
-	box-shadow: var(--shadow_d_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_d_xs);
 }
 .shadow_d_outset_sm {
-	box-shadow: var(--shadow_d_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_d_sm);
 }
 .shadow_d_outset_md {
-	box-shadow: var(--shadow_d_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_d_md);
 }
 .shadow_d_outset_lg {
-	box-shadow: var(--shadow_d_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_d_lg);
 }
 .shadow_d_outset_xl {
-	box-shadow: var(--shadow_d_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_d_xl);
 }
 .shadow_d_inset_xs {
-	box-shadow: var(--shadow_d_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_d_xs);
 }
 .shadow_d_inset_sm {
-	box-shadow: var(--shadow_d_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_d_sm);
 }
 .shadow_d_inset_md {
-	box-shadow: var(--shadow_d_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_d_md);
 }
 .shadow_d_inset_lg {
-	box-shadow: var(--shadow_d_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_d_lg);
 }
 .shadow_d_inset_xl {
-	box-shadow: var(--shadow_d_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_d_xl);
 }
 .shadow_e_xs {
-	box-shadow: var(--shadow_e_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_e_xs);
 }
 .shadow_e_sm {
-	box-shadow: var(--shadow_e_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_e_sm);
 }
 .shadow_e_md {
-	box-shadow: var(--shadow_e_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_e_md);
 }
 .shadow_e_lg {
-	box-shadow: var(--shadow_e_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_e_lg);
 }
 .shadow_e_xl {
-	box-shadow: var(--shadow_e_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_e_xl);
 }
 .shadow_e_outset_xs {
-	box-shadow: var(--shadow_e_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_e_xs);
 }
 .shadow_e_outset_sm {
-	box-shadow: var(--shadow_e_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_e_sm);
 }
 .shadow_e_outset_md {
-	box-shadow: var(--shadow_e_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_e_md);
 }
 .shadow_e_outset_lg {
-	box-shadow: var(--shadow_e_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_e_lg);
 }
 .shadow_e_outset_xl {
-	box-shadow: var(--shadow_e_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_e_xl);
 }
 .shadow_e_inset_xs {
-	box-shadow: var(--shadow_e_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_e_xs);
 }
 .shadow_e_inset_sm {
-	box-shadow: var(--shadow_e_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_e_sm);
 }
 .shadow_e_inset_md {
-	box-shadow: var(--shadow_e_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_e_md);
 }
 .shadow_e_inset_lg {
-	box-shadow: var(--shadow_e_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_e_lg);
 }
 .shadow_e_inset_xl {
-	box-shadow: var(--shadow_e_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_e_xl);
 }
 .shadow_f_xs {
-	box-shadow: var(--shadow_f_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_f_xs);
 }
 .shadow_f_sm {
-	box-shadow: var(--shadow_f_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_f_sm);
 }
 .shadow_f_md {
-	box-shadow: var(--shadow_f_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_f_md);
 }
 .shadow_f_lg {
-	box-shadow: var(--shadow_f_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_f_lg);
 }
 .shadow_f_xl {
-	box-shadow: var(--shadow_f_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_f_xl);
 }
 .shadow_f_outset_xs {
-	box-shadow: var(--shadow_f_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_f_xs);
 }
 .shadow_f_outset_sm {
-	box-shadow: var(--shadow_f_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_f_sm);
 }
 .shadow_f_outset_md {
-	box-shadow: var(--shadow_f_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_f_md);
 }
 .shadow_f_outset_lg {
-	box-shadow: var(--shadow_f_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_f_lg);
 }
 .shadow_f_outset_xl {
-	box-shadow: var(--shadow_f_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_f_xl);
 }
 .shadow_f_inset_xs {
-	box-shadow: var(--shadow_f_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_f_xs);
 }
 .shadow_f_inset_sm {
-	box-shadow: var(--shadow_f_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_f_sm);
 }
 .shadow_f_inset_md {
-	box-shadow: var(--shadow_f_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_f_md);
 }
 .shadow_f_inset_lg {
-	box-shadow: var(--shadow_f_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_f_lg);
 }
 .shadow_f_inset_xl {
-	box-shadow: var(--shadow_f_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_f_xl);
 }
 .shadow_g_xs {
-	box-shadow: var(--shadow_g_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_g_xs);
 }
 .shadow_g_sm {
-	box-shadow: var(--shadow_g_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_g_sm);
 }
 .shadow_g_md {
-	box-shadow: var(--shadow_g_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_g_md);
 }
 .shadow_g_lg {
-	box-shadow: var(--shadow_g_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_g_lg);
 }
 .shadow_g_xl {
-	box-shadow: var(--shadow_g_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_g_xl);
 }
 .shadow_g_outset_xs {
-	box-shadow: var(--shadow_g_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_g_xs);
 }
 .shadow_g_outset_sm {
-	box-shadow: var(--shadow_g_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_g_sm);
 }
 .shadow_g_outset_md {
-	box-shadow: var(--shadow_g_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_g_md);
 }
 .shadow_g_outset_lg {
-	box-shadow: var(--shadow_g_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_g_lg);
 }
 .shadow_g_outset_xl {
-	box-shadow: var(--shadow_g_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_g_xl);
 }
 .shadow_g_inset_xs {
-	box-shadow: var(--shadow_g_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_g_xs);
 }
 .shadow_g_inset_sm {
-	box-shadow: var(--shadow_g_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_g_sm);
 }
 .shadow_g_inset_md {
-	box-shadow: var(--shadow_g_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_g_md);
 }
 .shadow_g_inset_lg {
-	box-shadow: var(--shadow_g_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_g_lg);
 }
 .shadow_g_inset_xl {
-	box-shadow: var(--shadow_g_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_g_xl);
 }
 .shadow_h_xs {
-	box-shadow: var(--shadow_h_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_h_xs);
 }
 .shadow_h_sm {
-	box-shadow: var(--shadow_h_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_h_sm);
 }
 .shadow_h_md {
-	box-shadow: var(--shadow_h_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_h_md);
 }
 .shadow_h_lg {
-	box-shadow: var(--shadow_h_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_h_lg);
 }
 .shadow_h_xl {
-	box-shadow: var(--shadow_h_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_h_xl);
 }
 .shadow_h_outset_xs {
-	box-shadow: var(--shadow_h_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_h_xs);
 }
 .shadow_h_outset_sm {
-	box-shadow: var(--shadow_h_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_h_sm);
 }
 .shadow_h_outset_md {
-	box-shadow: var(--shadow_h_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_h_md);
 }
 .shadow_h_outset_lg {
-	box-shadow: var(--shadow_h_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_h_lg);
 }
 .shadow_h_outset_xl {
-	box-shadow: var(--shadow_h_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_h_xl);
 }
 .shadow_h_inset_xs {
-	box-shadow: var(--shadow_h_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_h_xs);
 }
 .shadow_h_inset_sm {
-	box-shadow: var(--shadow_h_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_h_sm);
 }
 .shadow_h_inset_md {
-	box-shadow: var(--shadow_h_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_h_md);
 }
 .shadow_h_inset_lg {
-	box-shadow: var(--shadow_h_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_h_lg);
 }
 .shadow_h_inset_xl {
-	box-shadow: var(--shadow_h_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_h_xl);
 }
 .shadow_i_xs {
-	box-shadow: var(--shadow_i_xs);
+	box-shadow: var(--shadow_xs) var(--shadow_color_i_xs);
 }
 .shadow_i_sm {
-	box-shadow: var(--shadow_i_sm);
+	box-shadow: var(--shadow_sm) var(--shadow_color_i_sm);
 }
 .shadow_i_md {
-	box-shadow: var(--shadow_i_md);
+	box-shadow: var(--shadow_md) var(--shadow_color_i_md);
 }
 .shadow_i_lg {
-	box-shadow: var(--shadow_i_lg);
+	box-shadow: var(--shadow_lg) var(--shadow_color_i_lg);
 }
 .shadow_i_xl {
-	box-shadow: var(--shadow_i_xl);
+	box-shadow: var(--shadow_xl) var(--shadow_color_i_xl);
 }
 .shadow_i_outset_xs {
-	box-shadow: var(--shadow_i_outset_xs);
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_i_xs);
 }
 .shadow_i_outset_sm {
-	box-shadow: var(--shadow_i_outset_sm);
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_i_sm);
 }
 .shadow_i_outset_md {
-	box-shadow: var(--shadow_i_outset_md);
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_i_md);
 }
 .shadow_i_outset_lg {
-	box-shadow: var(--shadow_i_outset_lg);
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_i_lg);
 }
 .shadow_i_outset_xl {
-	box-shadow: var(--shadow_i_outset_xl);
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_i_xl);
 }
 .shadow_i_inset_xs {
-	box-shadow: var(--shadow_i_inset_xs);
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_i_xs);
 }
 .shadow_i_inset_sm {
-	box-shadow: var(--shadow_i_inset_sm);
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_i_sm);
 }
 .shadow_i_inset_md {
-	box-shadow: var(--shadow_i_inset_md);
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_i_md);
 }
 .shadow_i_inset_lg {
-	box-shadow: var(--shadow_i_inset_lg);
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_i_lg);
 }
 .shadow_i_inset_xl {
-	box-shadow: var(--shadow_i_inset_xl);
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_i_xl);
 }
 
 /* higher specificity */
 /* TODO which order should these be in? */
 .shadow_inherit {
 	box-shadow: inherit;
-}
-.shadow_initial {
-	box-shadow: initial;
 }
 .shadow_none {
 	box-shadow: none;
@@ -3209,4 +3419,11 @@ layout
 }
 .row_gap_xl15 {
 	row-gap: var(--space_xl15);
+}
+
+.pixelated {
+	image-rendering: -webkit-optimize-contrast; /* Safari */
+	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated; /* in case crisp-edges isn't supported */
+	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }

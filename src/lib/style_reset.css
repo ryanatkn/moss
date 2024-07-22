@@ -22,23 +22,22 @@ Some notes:
 }
 
 :root {
+	color-scheme: light dark;
+	background-color: var(--bg);
+	color: var(--text_color);
+	accent-color: var(--color_a_5);
+	line-height: var(--line_height_md);
 	font-size: 62.5%; /* see `body.font-size`, using `rem` font size units with a base 16px */
 	/* @source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
 }
-
-:root {
-	color-scheme: light dark;
-	background-color: var(--bg);
-	color: var(--text_color);
-	accent-color: var(--color_a_5);
-	line-height: var(--line_height_md);
-}
-
 :root.dark {
-	color-scheme: dark light;
+	color-scheme: dark;
+}
+:root.light {
+	color-scheme: light;
 }
 
 body {
@@ -49,7 +48,7 @@ body {
 }
 
 ::selection {
-	background-color: hsla(var(--hue_a), 90%, 80%, var(--fade_3));
+	background-color: hsl(var(--hue_a) 90% 80% / var(--fade_3));
 }
 
 /*
@@ -85,8 +84,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	text-decoration: var(--text_decoration);
 	border-radius: var(--radius_xs2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
 /* TODO should these be customizable with utility classes? */
 :where(a):hover {
@@ -278,10 +275,8 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-color: var(--border_color);
 	border-style: var(--border_style);
 	border-width: var(--border_width);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 	padding: var(--input_padding_y) var(--input_padding_x);
 	width: 100%;
 	min-width: var(--input_width_min);
@@ -344,6 +339,7 @@ so for consistent visuals we opt to include no active state */
 	cursor: pointer;
 	width: var(--input_height_sm);
 	height: var(--input_height_sm);
+	border-radius: 50%;
 	min-width: var(--input_height_sm);
 	min-height: var(--input_height_sm);
 	--input_padding_x: 0;
@@ -367,11 +363,8 @@ so for consistent visuals we opt to include no active state */
 	--thumb_background_color: var(--text_2);
 	cursor: pointer;
 }
-:where(input[type='range']:hover) {
+:where(input[type='range']:hover:not(:disabled)) {
 	--thumb_background_color: var(--color_a_5);
-}
-:where(input[type='range']:disabled) {
-	--thumb_background_color: var(--text_disabled);
 }
 :where(input[type='range']:disabled:active) {
 	--thumb_background_color: var(--color_c_5);
@@ -380,7 +373,7 @@ so for consistent visuals we opt to include no active state */
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: 50%;
 	background-color: var(--thumb_background_color);
 	border: 0;
 	/*
@@ -397,7 +390,7 @@ so for consistent visuals we opt to include no active state */
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: 50%;
 	background-color: var(--thumb_background_color);
 	border: 0;
 }
@@ -410,6 +403,17 @@ so for consistent visuals we opt to include no active state */
 	width: 100%;
 	height: var(--border_width);
 	background-color: var(--thumb_background_color);
+}
+
+/*  TODO :has selector? `button:has(input[type='checkbox']:checked)`
+see https://caniuse.com/css-has
+ */
+:where(input:checked:not(:disabled)) {
+	--text_color: var(--text_active);
+	--border_color: var(--color_a_5);
+}
+:where(input[type='radio']:checked) {
+	cursor: default;
 }
 
 :where(:where(input, textarea, select).inline, p :where(input, textarea, select)) {
@@ -428,8 +432,6 @@ so for consistent visuals we opt to include no active state */
 :where([contenteditable]:focus-visible) {
 	--outline_width: var(--outline_width_2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
 
 :where(:where(input, textarea, select, [contenteditable]):active) {
@@ -437,8 +439,16 @@ so for consistent visuals we opt to include no active state */
 }
 
 :where(button) {
-	--text_color: var(--text_2);
 	--min_height: var(--input_height);
+	--text_color: var(--text_2);
+	--button_text_color: var(--text_color);
+	--button_text_color_hover: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
+	--button_text_color_selected_hover: var(--fg_0);
+	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
+	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
+	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
+	color: var(--button_text_color);
+	background-color: var(--button_fill);
 	cursor: pointer;
 	appearance: none;
 	display: flex;
@@ -448,190 +458,119 @@ so for consistent visuals we opt to include no active state */
 	font: inherit;
 	font-weight: 700;
 	line-height: normal;
-	color: var(--text_color);
 	min-height: var(--min_height);
 	padding: 0 var(--input_padding_x);
-	background-color: var(--fill, var(--button_fill));
 	box-shadow: var(--shadow, var(--button_shadow));
 	border-width: var(--border_width);
 	border-style: var(--border_style);
 	border-color: var(--border_color);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
-/* TODO this is weird because we're overriding for colored variants */
-:where(button:hover, button:focus) {
-	--fill: var(--button_fill_hover);
-	--border_color: var(--border_color_2);
-	--shadow: var(--button_shadow_hover);
-}
-:where(button:active) {
-	--fill: var(--button_fill_active);
-	--border_color: var(--border_color_5);
-	--outline_width: var(--outline_width_3);
-	--shadow: var(--button_shadow_active);
-}
-:where(button.inline, p button) {
-	display: inline-block;
-	--min_height: var(--input_height_sm); /* TODO this increases paragraph line spacing */
-}
-/*  TODO :has selector? `button:has(input[type='checkbox']:checked)`
-see https://caniuse.com/css-has
- */
-:where(input:checked) {
-	--text_color: var(--text_active);
-	--border_color: var(--color_a_5);
-}
-:where(input[type='radio']:checked) {
-	cursor: default;
-}
+
+/* TODO try to rearrange some of this to go after the colored variants */
 /* TODO maybe shouldn't mix button in with these */
 :where(:where(input, textarea, select, button):disabled) {
-	--text_color: var(--text_disabled);
-	/* TODO using `button_` here looks wrong, conflating button with others */
-	--fill: var(--button_fill_disabled);
+	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
+	--button_fill: transparent;
+	--input_fill: transparent;
 	--border_style: solid dashed;
 	cursor: default;
 	box-shadow: none;
 	opacity: var(--disabled_opacity);
 	outline: none;
 }
-:where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
-	--border_color: var(--color_c_5);
-	--text_color: var(--color_c_5);
-}
-
-/* TODO these need design work for visuals/consistency/customizability  */
-/* TODO rethink this, maybe gradients instead? or at least use a text_color */
-/* TODO maybe add a style for `button.selected:disabled`, probably reduced brightness,
-currently `:disabled` overrides this */
-/* TODO hover variants with brighter borders? maybe use a colorless border for that? */
-/*
-This selector appears twice, once before and once after the color button styles,
-to take advantage of the cascade to minimize overrides.
-*/
 :where(button.selected) {
+	--button_text_color: var(--text_5);
 	--border_color: var(--border_color_2);
-	--fill: var(--button_fill_selected);
-}
-:where(
-		button:where(
-				.color_a,
-				.color_b,
-				.color_c,
-				.color_d,
-				.color_e,
-				.color_f,
-				.color_g,
-				.color_h,
-				.color_i
-			):where(:hover, :focus, :active)
-	) {
-	--text_color: var(--bg_10);
-}
-/*
-TODO maybe move these to `style_components.css` or a different CSS file?
-including colored button styles, selected button styles, ...
-*/
-:where(button.color_a) {
-	--text_color: var(--color_a_5);
-	--fill: color-mix(in hsl, var(--fill_a) 9%, transparent);
-	--border_color: var(--border_color_a);
-}
-:where(button.color_b) {
-	--text_color: var(--color_b_5);
-	--fill: color-mix(in hsl, var(--fill_b) 9%, transparent);
-	--border_color: var(--border_color_b);
-	--outline_color: var(--border_color_b);
-}
-:where(button.color_c) {
-	--text_color: var(--color_c_5);
-	--fill: color-mix(in hsl, var(--fill_c) 9%, transparent);
-	--border_color: var(--border_color_c);
-	--outline_color: var(--border_color_c);
-}
-:where(button.color_d) {
-	--text_color: var(--color_d_5);
-	--fill: color-mix(in hsl, var(--fill_d) 9%, transparent);
-	--border_color: var(--border_color_d);
-	--outline_color: var(--border_color_d);
-}
-:where(button.color_e) {
-	--text_color: var(--color_e_5);
-	--fill: color-mix(in hsl, var(--fill_e) 9%, transparent);
-	--border_color: var(--border_color_e);
-	--outline_color: var(--border_color_e);
-}
-:where(button.color_f) {
-	--text_color: var(--color_f_5);
-	--fill: color-mix(in hsl, var(--fill_f) 9%, transparent);
-	--border_color: var(--border_color_f);
-	--outline_color: var(--border_color_f);
-}
-:where(button.color_g) {
-	--text_color: var(--color_g_5);
-	--fill: color-mix(in hsl, var(--fill_g) 9%, transparent);
-	--border_color: var(--border_color_g);
-	--outline_color: var(--border_color_g);
-}
-:where(button.color_h) {
-	--text_color: var(--color_h_5);
-	--fill: color-mix(in hsl, var(--fill_h) 9%, transparent);
-	--border_color: var(--border_color_h);
-	--outline_color: var(--border_color_h);
-}
-:where(button.color_i) {
-	--text_color: var(--color_i_5);
-	--fill: color-mix(in hsl, var(--fill_i) 9%, transparent);
-	--border_color: var(--border_color_i);
-	--outline_color: var(--border_color_i);
-}
-/*
-This selector appears twice, once before and once after the color button styles.
-Also if we add colored inputs, they would be added to this selector list.
-*/
-:where(button:disabled:not(.selected)) {
-	--fill: var(--button_fill_disabled);
-}
-/*
-This selector follows the colored buttons to override them.
-Other `button.selected` styles are above.
-*/
-:where(button.selected) {
-	--text_color: var(--bg_8);
+	--button_fill: var(--fill);
+	--button_fill_hover: var(--fill);
+	--button_fill_active: var(--fill);
 }
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
 	box-shadow: none;
 }
-:where(button.color_a.selected) {
+/* TODO this is weird because we're overriding for colored variants */
+:where(button:not(:disabled):hover, button:focus) {
+	--button_fill: var(--button_fill_hover);
+	--border_color: var(--border_color_2);
+	--shadow: var(--button_shadow_hover);
+}
+:where(button:not(.selected):not(:disabled):hover) {
+	--button_text_color: var(--button_text_color_hover);
+}
+:where(button.selected.deselectable:not(:disabled):hover) {
+	--button_text_color: var(--button_text_color_selected_hover);
+}
+:where(button:active) {
+	--button_fill: var(--button_fill_active);
+	--border_color: var(--border_color_5);
+	--outline_width: var(--outline_width_3);
+	--shadow: var(--button_shadow_active);
+}
+
+/* TODO maybe gradients? or at least use a text_color */
+/* TODO hover variants with brighter borders? maybe use a colorless border for that? */
+
+:where(button.color_a) {
+	--text_color: var(--color_a_5);
 	--fill: var(--fill_a);
+	--border_color: var(--border_color_a);
+	--outline_color: var(--border_color_a);
 }
-:where(button.color_b.selected) {
+:where(button.color_b) {
+	--text_color: var(--color_b_5);
 	--fill: var(--fill_b);
+	--border_color: var(--border_color_b);
+	--outline_color: var(--border_color_b);
 }
-:where(button.color_c.selected) {
+:where(button.color_c) {
+	--text_color: var(--color_c_5);
 	--fill: var(--fill_c);
+	--border_color: var(--border_color_c);
+	--outline_color: var(--border_color_c);
 }
-:where(button.color_d.selected) {
+:where(button.color_d) {
+	--text_color: var(--color_d_5);
 	--fill: var(--fill_d);
+	--border_color: var(--border_color_d);
+	--outline_color: var(--border_color_d);
 }
-:where(button.color_e.selected) {
+:where(button.color_e) {
+	--text_color: var(--color_e_5);
 	--fill: var(--fill_e);
+	--border_color: var(--border_color_e);
+	--outline_color: var(--border_color_e);
 }
-:where(button.color_f.selected) {
+:where(button.color_f) {
+	--text_color: var(--color_f_5);
 	--fill: var(--fill_f);
+	--border_color: var(--border_color_f);
+	--outline_color: var(--border_color_f);
 }
-:where(button.color_g.selected) {
+:where(button.color_g) {
+	--text_color: var(--color_g_5);
 	--fill: var(--fill_g);
+	--border_color: var(--border_color_g);
+	--outline_color: var(--border_color_g);
 }
-:where(button.color_h.selected) {
+:where(button.color_h) {
+	--text_color: var(--color_h_5);
 	--fill: var(--fill_h);
+	--border_color: var(--border_color_h);
+	--outline_color: var(--border_color_h);
 }
-:where(button.color_i.selected) {
+:where(button.color_i) {
+	--text_color: var(--color_i_5);
 	--fill: var(--fill_i);
+	--border_color: var(--border_color_i);
+	--outline_color: var(--border_color_i);
+}
+
+:where(button.inline, p button) {
+	display: inline-block;
+	--min_height: var(--input_height_sm); /* TODO this increases paragraph line spacing */
 }
 
 /* TODO could improve this with the coming `:has` selector
@@ -650,7 +589,7 @@ for disabled colors without needing a wrapper .disabled class */
 }
 :where(label.disabled) {
 	cursor: default;
-	--text_color: var(--text_disabled);
+	--text_color: var(--text_color_disabled);
 }
 :where(label.row) {
 	justify-content: flex-start;
@@ -658,6 +597,22 @@ for disabled colors without needing a wrapper .disabled class */
 }
 :where(label.row :where(input[type='checkbox'], input[type='radio'])) {
 	margin-right: var(--space_md);
+}
+
+:where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
+	--text_color: var(--color_c_5);
+	--border_color: var(--color_c_5);
+}
+/* TODO is there a cleaner way to override these through vars? */
+:where(button.selected:disabled:active) {
+	--text_color: var(--text_5);
+	--fill: var(--fill_c);
+}
+:where(button:not(.selected):disabled:active) {
+	--fill: transparent;
+}
+:where(button.selected:not(.deselectable):active) {
+	--outline_width: var(--outline_width_2);
 }
 
 :where(small) {

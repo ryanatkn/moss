@@ -6,7 +6,6 @@
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 	import {color_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'buttons';
@@ -25,13 +24,6 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<div class="mb_lg">
-			<Code content={`<button>a button</button>`} />
-			<button type="button" onclick={() => (clicked_button = !clicked_button)}>a button</button>
-			{#if clicked_button}
-				<div transition:slide>clicked a button</div>
-			{/if}
-		</div>
 		<p>
 			Buttons have a <code>.selected</code> state that can be used for various UI purposes, like
 			showing a selected item in a menu or a styling button's <code>aria-pressed</code> state.
@@ -40,42 +32,56 @@
 			<code>.deselectable</code> modifier class for buttons that can be clicked when selected. Themes
 			can customize this behavior.
 		</p>
-		<button type="button" disabled class:mb_xs>disabled button</button>
+		<div class:mb_xs>
+			<Code content={`<button>a button</button>`} />
+			<button type="button" onclick={() => (clicked_button = !clicked_button)}>a button</button>
+			{#if clicked_button}
+				<div transition:slide>clicked a button</div>
+			{/if}
+		</div>
+		<button type="button" disabled class:mb_xs>button:disabled</button>
+		<button type="button" class="plain" class:mb_xs>button.plain</button>
+		<button type="button" class="plain" disabled class:mb_xs>button.plain:disabled</button>
 		<button type="button" class="selected" class:mb_xs>button.selected</button>
-		<button type="button" class="selected" disabled class:mb_xs>disabled button.selected</button>
+		<button type="button" class="selected" disabled class:mb_xs>button.selected:disabled</button>
 		<button type="button" class="selected deselectable" class:mb_xs
 			>button.selected.deselectable</button
 		>
 		<button type="button" class="selected deselectable" disabled class:mb_xs
-			>disabled button.selected.deselectable</button
+			>button.selected.deselectable:disabled</button
 		>
 	</section>
 
 	<section>
+		<div class="box w_100 mb_lg">
+			<Color_Scheme_Input />
+		</div>
+	</section>
+
+	<section>
 		<Tome_Subheading text="Colorful buttons" slug="colorful-buttons" />
-		<Unfinished_Implementation_Warning>
-			Button colors will likely change significantly. Either fill will be an optional variant, or
-			selected will be changed to be filled. In either case, unselected colored buttons will be less
-			pronounced to be like the default but colored.
-		</Unfinished_Implementation_Warning>
 		{#each color_variants as c}
 			{@const color_name = `color_${c}`}
 			<section>
 				<Code content={`<button class="${color_name}">`} />
 				<button type="button" class={color_name} class:mb_xs>.{color_name}</button>
-				<button type="button" class={color_name} disabled class:mb_xs>disabled .{color_name}</button
+				<button type="button" class={color_name} disabled class:mb_xs>.{color_name}:disabled</button
+				>
+				<button type="button" class="{color_name} plain" class:mb_xs>.{color_name}.plain</button>
+				<button type="button" class="{color_name} plain" disabled class:mb_xs
+					>.{color_name}.plain:disabled</button
 				>
 				<button type="button" class="{color_name} selected" class:mb_xs
 					>.{color_name}.selected</button
 				>
 				<button type="button" class="{color_name} selected" disabled class:mb_xs
-					>disabled .{color_name}.selected</button
+					>.{color_name}.selected:disabled</button
 				>
 				<button type="button" class="{color_name} selected deselectable" class:mb_xs
 					>.{color_name}.selected.deselectable</button
 				>
 				<button type="button" class="{color_name} selected deselectable" disabled class:mb_xs
-					>disabled .{color_name}.selected.deselectable</button
+					>.{color_name}.selected.deselectable:disabled</button
 				>
 			</section>
 		{/each}
@@ -87,10 +93,7 @@
 	<Tome_Subheading text="With disabled attribute" slug="disabled-attribute" />
 	<section>
 		<Code content={`<button disabled>\n\t:|\n</button>`} />
-		<button type="button" disabled>:|</button>
-	</section>
-	<section>
-		<Code content={`<button disabled>\n\ta bigger disabled button\n</button>`} />
+		<button type="button" disabled class:mb_xs>:|</button>
 		<button type="button" disabled>a bigger disabled button</button>
 	</section>
 
