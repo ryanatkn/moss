@@ -15,9 +15,8 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<Unfinished_Implementation_Warning
-			>Currently glows and shadows are inverted for dark mode, but that may change for clarity.</Unfinished_Implementation_Warning
-		>
+		<Tome_Subheading text="Shadows" slug="shadows" />
+		<Unfinished_Implementation_Warning>TODO</Unfinished_Implementation_Warning>
 		{#each shadow_variants as variant}
 			<div
 				class="shadow_example"
@@ -50,11 +49,45 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
-		<Tome_Subheading text="Glows" slug="glows" />
-		<Unfinished_Implementation_Warning
-			>Currently glows and shadows are inverted for dark mode, but that may change for clarity.</Unfinished_Implementation_Warning
-		>
+		<Tome_Subheading text="Highlights" slug="highlights" />
+		<Unfinished_Implementation_Warning>TODO</Unfinished_Implementation_Warning>
 		<div class="panel fg_3 p_md">
+			{#each shadow_variants as variant}
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--shadow_{variant}) var(--highlight_color_{variant})"
+				>
+					<Style_Variable_Button name="shadow_{variant}" />
+					<Style_Variable_Button name="highlight_color_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--shadow_inset_{variant}) var(--highlight_color_{variant})"
+				>
+					<Style_Variable_Button name="shadow_inset_{variant}" />
+					<Style_Variable_Button name="highlight_color_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--shadow_outset_{variant}) var(--highlight_color_{variant})"
+				>
+					<Style_Variable_Button name="shadow_outset_{variant}" />
+					<Style_Variable_Button name="highlight_color_{variant}" />
+				</div>
+			{/each}
+		</div>
+	</section>
+	<section>
+		<Color_Scheme_Input />
+	</section>
+	<section>
+		<div class="panel darken_3 p_md">
+			<Tome_Subheading text="Glows" slug="glows" />
+			<Unfinished_Implementation_Warning>TODO</Unfinished_Implementation_Warning>
 			{#each shadow_variants as variant}
 				<div
 					class="shadow_example"
@@ -80,6 +113,42 @@
 				>
 					<Style_Variable_Button name="shadow_outset_{variant}" />
 					<Style_Variable_Button name="glow_color_{variant}" />
+				</div>
+			{/each}
+		</div>
+	</section>
+	<section>
+		<Color_Scheme_Input />
+	</section>
+	<section>
+		<Tome_Subheading text="Shrouds" slug="shrouds" />
+		<Unfinished_Implementation_Warning>testing this</Unfinished_Implementation_Warning>
+		<div class="panel lighten_3 p_md">
+			{#each shadow_variants as variant}
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--shadow_{variant}) var(--shroud_color_{variant})"
+				>
+					<Style_Variable_Button name="shadow_{variant}" />
+					<Style_Variable_Button name="shroud_color_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--shadow_inset_{variant}) var(--shroud_color_{variant})"
+				>
+					<Style_Variable_Button name="shadow_inset_{variant}" />
+					<Style_Variable_Button name="shroud_color_{variant}" />
+				</div>
+			{/each}
+			{#each shadow_variants as variant}
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--shadow_outset_{variant}) var(--shroud_color_{variant})"
+				>
+					<Style_Variable_Button name="shadow_outset_{variant}" />
+					<Style_Variable_Button name="shroud_color_{variant}" />
 				</div>
 			{/each}
 		</div>

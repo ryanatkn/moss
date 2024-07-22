@@ -1338,6 +1338,102 @@ shading
 	opacity: var(--fade_6);
 }
 
+/* shadows */
+
+.shadow_xs {
+	box-shadow: var(--shadow_xs) var(--shadow_color_xs);
+}
+.shadow_sm {
+	box-shadow: var(--shadow_sm) var(--shadow_color_sm);
+}
+.shadow_md {
+	box-shadow: var(--shadow_md) var(--shadow_color_md);
+}
+.shadow_lg {
+	box-shadow: var(--shadow_lg) var(--shadow_color_lg);
+}
+.shadow_xl {
+	box-shadow: var(--shadow_xl) var(--shadow_color_xl);
+}
+.shadow_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--shadow_color_xs);
+}
+.shadow_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--shadow_color_sm);
+}
+.shadow_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--shadow_color_md);
+}
+.shadow_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--shadow_color_lg);
+}
+.shadow_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--shadow_color_xl);
+}
+.shadow_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--shadow_color_xs);
+}
+.shadow_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--shadow_color_sm);
+}
+.shadow_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--shadow_color_md);
+}
+.shadow_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--shadow_color_lg);
+}
+.shadow_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--shadow_color_xl);
+}
+
+/* highlights */
+
+.highlight_xs {
+	box-shadow: var(--shadow_xs) var(--highlight_color_xs);
+}
+.highlight_sm {
+	box-shadow: var(--shadow_sm) var(--highlight_color_sm);
+}
+.highlight_md {
+	box-shadow: var(--shadow_md) var(--highlight_color_md);
+}
+.highlight_lg {
+	box-shadow: var(--shadow_lg) var(--highlight_color_lg);
+}
+.highlight_xl {
+	box-shadow: var(--shadow_xl) var(--highlight_color_xl);
+}
+.highlight_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--highlight_color_xs);
+}
+.highlight_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--highlight_color_sm);
+}
+.highlight_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--highlight_color_md);
+}
+.highlight_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--highlight_color_lg);
+}
+.highlight_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--highlight_color_xl);
+}
+.highlight_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--highlight_color_xs);
+}
+.highlight_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--highlight_color_sm);
+}
+.highlight_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--highlight_color_md);
+}
+.highlight_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--highlight_color_lg);
+}
+.highlight_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--highlight_color_xl);
+}
+
 /* glows */
 
 .glow_xs {
@@ -1386,53 +1482,55 @@ shading
 	box-shadow: var(--shadow_inset_xl) var(--glow_color_xl);
 }
 
-/* shadows */
+/* shrouds */
 
-.shadow_xs {
-	box-shadow: var(--shadow_xs) var(--shadow_color_xs);
+.shroud_xs {
+	box-shadow: var(--shadow_xs) var(--shroud_color_xs);
 }
-.shadow_sm {
-	box-shadow: var(--shadow_sm) var(--shadow_color_sm);
+.shroud_sm {
+	box-shadow: var(--shadow_sm) var(--shroud_color_sm);
 }
-.shadow_md {
-	box-shadow: var(--shadow_md) var(--shadow_color_md);
+.shroud_md {
+	box-shadow: var(--shadow_md) var(--shroud_color_md);
 }
-.shadow_lg {
-	box-shadow: var(--shadow_lg) var(--shadow_color_lg);
+.shroud_lg {
+	box-shadow: var(--shadow_lg) var(--shroud_color_lg);
 }
-.shadow_xl {
-	box-shadow: var(--shadow_xl) var(--shadow_color_xl);
+.shroud_xl {
+	box-shadow: var(--shadow_xl) var(--shroud_color_xl);
 }
-.shadow_outset_xs {
-	box-shadow: var(--shadow_outset_xs) var(--shadow_color_xs);
+.shroud_outset_xs {
+	box-shadow: var(--shadow_outset_xs) var(--shroud_color_xs);
 }
-.shadow_outset_sm {
-	box-shadow: var(--shadow_outset_sm) var(--shadow_color_sm);
+.shroud_outset_sm {
+	box-shadow: var(--shadow_outset_sm) var(--shroud_color_sm);
 }
-.shadow_outset_md {
-	box-shadow: var(--shadow_outset_md) var(--shadow_color_md);
+.shroud_outset_md {
+	box-shadow: var(--shadow_outset_md) var(--shroud_color_md);
 }
-.shadow_outset_lg {
-	box-shadow: var(--shadow_outset_lg) var(--shadow_color_lg);
+.shroud_outset_lg {
+	box-shadow: var(--shadow_outset_lg) var(--shroud_color_lg);
 }
-.shadow_outset_xl {
-	box-shadow: var(--shadow_outset_xl) var(--shadow_color_xl);
+.shroud_outset_xl {
+	box-shadow: var(--shadow_outset_xl) var(--shroud_color_xl);
 }
-.shadow_inset_xs {
-	box-shadow: var(--shadow_inset_xs) var(--shadow_color_xs);
+.shroud_inset_xs {
+	box-shadow: var(--shadow_inset_xs) var(--shroud_color_xs);
 }
-.shadow_inset_sm {
-	box-shadow: var(--shadow_inset_sm) var(--shadow_color_sm);
+.shroud_inset_sm {
+	box-shadow: var(--shadow_inset_sm) var(--shroud_color_sm);
 }
-.shadow_inset_md {
-	box-shadow: var(--shadow_inset_md) var(--shadow_color_md);
+.shroud_inset_md {
+	box-shadow: var(--shadow_inset_md) var(--shroud_color_md);
 }
-.shadow_inset_lg {
-	box-shadow: var(--shadow_inset_lg) var(--shadow_color_lg);
+.shroud_inset_lg {
+	box-shadow: var(--shadow_inset_lg) var(--shroud_color_lg);
 }
-.shadow_inset_xl {
-	box-shadow: var(--shadow_inset_xl) var(--shadow_color_xl);
+.shroud_inset_xl {
+	box-shadow: var(--shadow_inset_xl) var(--shroud_color_xl);
 }
+
+/* colorful shadows */
 
 .shadow_a_xs {
 	box-shadow: var(--shadow_xs) var(--shadow_color_a_xs);

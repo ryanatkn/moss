@@ -420,10 +420,22 @@ export const color_i_9: Style_Variable = {
 };
 
 /*
-		color variants - using these usually means handling both light and dark modes separately -
-		the semantic variants	that handle `color-schema` automatically include `--bg_1` and `--bg_2`
-	*/
+
+tint colors
+
+*/
+// TODO change/delete this?
+export const tint_hue: Style_Variable = {name: 'tint_hue', light: 'var(--hue_f)'};
+export const tint_saturation: Style_Variable = {name: 'tint_saturation', light: '11%'};
+
+/*
+
+shading - using these usually means handling both light and dark modes separately -
+the semantic variants	that handle `color-schema` automatically include `--bg_1` and `--bg_2`
+
+*/
 // TODO some of these may be too subtle, but there may be cases where it's needed so keeping them for now
+// TODO no tint here? is that best?
 export const darken_1: Style_Variable = {name: 'darken_1', light: '#0000000f', summary: '6%'};
 export const darken_2: Style_Variable = {name: 'darken_2', light: '#0000001f', summary: '12%'};
 export const darken_3: Style_Variable = {name: 'darken_3', light: '#00000036', summary: '21%'};
@@ -442,15 +454,6 @@ export const lighten_6: Style_Variable = {name: 'lighten_6', light: '#ffffffa6',
 export const lighten_7: Style_Variable = {name: 'lighten_7', light: '#ffffffcc', summary: '80%'};
 export const lighten_8: Style_Variable = {name: 'lighten_8', light: '#ffffffe3', summary: '89%'};
 export const lighten_9: Style_Variable = {name: 'lighten_9', light: '#fffffff5', summary: '96%'};
-
-/*
-
-tint colors
-
-*/
-// TODO change/delete this?
-export const tint_hue: Style_Variable = {name: 'tint_hue', light: 'var(--hue_e)'};
-export const tint_saturation: Style_Variable = {name: 'tint_saturation', light: '11%'};
 
 /*
 
@@ -873,20 +876,20 @@ export const button_fill_disabled: Style_Variable = {
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
 	light:
-		'var(--shadow_outset_xs) var(--shadow_color_xs), var(--shadow_inset_xs) var(--glow_color_xs)',
-	dark: 'var(--shadow_inset_xs) var(--shadow_color_xs), var(--shadow_outset_xs) var(--glow_color_xs)',
+		'var(--shadow_outset_xs) var(--shadow_color_xs), var(--shadow_inset_xs) var(--highlight_color_xs)',
+	dark: 'var(--shadow_inset_xs) var(--shadow_color_xs), var(--shadow_outset_xs) var(--highlight_color_xs)',
 };
 export const button_shadow_hover: Style_Variable = {
 	name: 'button_shadow_hover',
 	light:
-		'var(--shadow_outset_sm) var(--shadow_color_sm), var(--shadow_inset_sm) var(--glow_color_sm)',
-	dark: 'var(--shadow_inset_sm) var(--shadow_color_sm), var(--shadow_outset_sm) var(--glow_color_sm)',
+		'var(--shadow_outset_sm) var(--shadow_color_sm), var(--shadow_inset_sm) var(--highlight_color_sm)',
+	dark: 'var(--shadow_inset_sm) var(--shadow_color_sm), var(--shadow_outset_sm) var(--highlight_color_sm)',
 };
 export const button_shadow_active: Style_Variable = {
 	name: 'button_shadow_active',
 	light:
-		'var(--shadow_inset_sm) var(--shadow_color_sm), var(--shadow_outset_sm) var(--glow_color_sm)',
-	dark: 'var(--shadow_outset_sm) var(--shadow_color_sm), var(--shadow_inset_sm) var(--glow_color_sm), ',
+		'var(--shadow_inset_sm) var(--shadow_color_sm), var(--shadow_outset_sm) var(--highlight_color_sm)',
+	dark: 'var(--shadow_outset_sm) var(--shadow_color_sm), var(--shadow_inset_sm) var(--highlight_color_sm), ',
 };
 
 /* inputs */
@@ -916,17 +919,25 @@ export const input_height_inner: Style_Variable = {
 // - make shadow and glow color-scheme-agnostic?
 // - lift and depth that have both shadow and glow, color-scheme-aware
 
-export const glow_color: Style_Variable = {
-	name: 'glow_color',
-	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
-	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
-};
 export const shadow_color: Style_Variable = {
 	name: 'shadow_color',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
-	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 86%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
 };
-// TODO BLOCK remove these?
+export const highlight_color: Style_Variable = {
+	name: 'highlight_color',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
+};
+export const glow_color: Style_Variable = {
+	name: 'glow_color',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
+};
+export const shroud_color: Style_Variable = {
+	name: 'shroud_color',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
+};
 export const shadow_a_color: Style_Variable = {
 	name: 'shadow_a_color',
 	light: 'var(--color_a_7)',
@@ -1038,26 +1049,6 @@ export const shadow_outset_xl: Style_Variable = {
 	light: 'inset -3px -5px 20px 0px',
 };
 
-export const glow_alpha_xs: Style_Variable = {
-	name: 'glow_alpha_xs',
-	light: '50%',
-};
-export const glow_alpha_sm: Style_Variable = {
-	name: 'glow_alpha_sm',
-	light: '55%',
-};
-export const glow_alpha_md: Style_Variable = {
-	name: 'glow_alpha_md',
-	light: '60%',
-};
-export const glow_alpha_lg: Style_Variable = {
-	name: 'glow_alpha_lg',
-	light: '65%',
-};
-export const glow_alpha_xl: Style_Variable = {
-	name: 'glow_alpha_xl',
-	light: '70%',
-};
 export const shadow_alpha_xs: Style_Variable = {
 	name: 'shadow_alpha_xs',
 	light: '20%',
@@ -1078,26 +1069,25 @@ export const shadow_alpha_xl: Style_Variable = {
 	name: 'shadow_alpha_xl',
 	light: '80%',
 };
-
-export const glow_color_xs: Style_Variable = {
-	name: 'glow_color_xs',
-	light: 'color-mix(in hsl, var(--glow_color) var(--glow_alpha_xs), transparent)',
+export const highlight_alpha_xs: Style_Variable = {
+	name: 'highlight_alpha_xs',
+	light: '40%',
 };
-export const glow_color_sm: Style_Variable = {
-	name: 'glow_color_sm',
-	light: 'color-mix(in hsl, var(--glow_color) var(--glow_alpha_sm), transparent)',
+export const highlight_alpha_sm: Style_Variable = {
+	name: 'highlight_alpha_sm',
+	light: '50%',
 };
-export const glow_color_md: Style_Variable = {
-	name: 'glow_color_md',
-	light: 'color-mix(in hsl, var(--glow_color) var(--glow_alpha_md), transparent)',
+export const highlight_alpha_md: Style_Variable = {
+	name: 'highlight_alpha_md',
+	light: '60%',
 };
-export const glow_color_lg: Style_Variable = {
-	name: 'glow_color_lg',
-	light: 'color-mix(in hsl, var(--glow_color) var(--glow_alpha_lg), transparent)',
+export const highlight_alpha_lg: Style_Variable = {
+	name: 'highlight_alpha_lg',
+	light: '70%',
 };
-export const glow_color_xl: Style_Variable = {
-	name: 'glow_color_xl',
-	light: 'color-mix(in hsl, var(--glow_color) var(--glow_alpha_xl), transparent)',
+export const highlight_alpha_xl: Style_Variable = {
+	name: 'highlight_alpha_xl',
+	light: '80%',
 };
 
 export const shadow_color_xs: Style_Variable = {
@@ -1119,6 +1109,67 @@ export const shadow_color_lg: Style_Variable = {
 export const shadow_color_xl: Style_Variable = {
 	name: 'shadow_color_xl',
 	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xl), transparent)',
+};
+export const highlight_color_xs: Style_Variable = {
+	name: 'highlight_color_xs',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_xs), transparent)',
+};
+export const highlight_color_sm: Style_Variable = {
+	name: 'highlight_color_sm',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_sm), transparent)',
+};
+export const highlight_color_md: Style_Variable = {
+	name: 'highlight_color_md',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_md), transparent)',
+};
+export const highlight_color_lg: Style_Variable = {
+	name: 'highlight_color_lg',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_lg), transparent)',
+};
+export const highlight_color_xl: Style_Variable = {
+	name: 'highlight_color_xl',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_xl), transparent)',
+};
+
+export const glow_color_xs: Style_Variable = {
+	name: 'glow_color_xs',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xs), transparent)',
+};
+export const glow_color_sm: Style_Variable = {
+	name: 'glow_color_sm',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_sm), transparent)',
+};
+export const glow_color_md: Style_Variable = {
+	name: 'glow_color_md',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_md), transparent)',
+};
+export const glow_color_lg: Style_Variable = {
+	name: 'glow_color_lg',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_lg), transparent)',
+};
+export const glow_color_xl: Style_Variable = {
+	name: 'glow_color_xl',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xl), transparent)',
+};
+export const shroud_color_xs: Style_Variable = {
+	name: 'shroud_color_xs',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_xs), transparent)',
+};
+export const shroud_color_sm: Style_Variable = {
+	name: 'shroud_color_sm',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_sm), transparent)',
+};
+export const shroud_color_md: Style_Variable = {
+	name: 'shroud_color_md',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_md), transparent)',
+};
+export const shroud_color_lg: Style_Variable = {
+	name: 'shroud_color_lg',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_lg), transparent)',
+};
+export const shroud_color_xl: Style_Variable = {
+	name: 'shroud_color_xl',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_xl), transparent)',
 };
 
 export const shadow_color_a_xs: Style_Variable = {
@@ -1439,6 +1490,10 @@ export const default_variables: Style_Variable[] = [
 	color_i_8,
 	color_i_9,
 
+	/* tint colors */
+	tint_hue,
+	tint_saturation,
+
 	/*
 		color variants - using these usually means handling both light and dark modes separately -
 		the semantic variants	that handle `color-schema` automatically include `--bg_1` and `--bg_2`
@@ -1462,10 +1517,6 @@ export const default_variables: Style_Variable[] = [
 	lighten_7,
 	lighten_8,
 	lighten_9,
-
-	/* tint colors */
-	tint_hue,
-	tint_saturation,
 
 	/* bg colors */
 	bg,
@@ -1634,8 +1685,10 @@ export const default_variables: Style_Variable[] = [
 	input_height_inner,
 
 	/* shadows and glows */
-	glow_color,
 	shadow_color,
+	highlight_color,
+	glow_color,
+	shroud_color,
 	shadow_a_color,
 	shadow_b_color,
 	shadow_c_color,
@@ -1660,26 +1713,36 @@ export const default_variables: Style_Variable[] = [
 	shadow_outset_md,
 	shadow_outset_lg,
 	shadow_outset_xl,
-	glow_alpha_xs,
-	glow_alpha_sm,
-	glow_alpha_md,
-	glow_alpha_lg,
-	glow_alpha_xl,
 	shadow_alpha_xs,
 	shadow_alpha_sm,
 	shadow_alpha_md,
 	shadow_alpha_lg,
 	shadow_alpha_xl,
-	glow_color_xs,
-	glow_color_sm,
-	glow_color_md,
-	glow_color_lg,
-	glow_color_xl,
+	highlight_alpha_xs,
+	highlight_alpha_sm,
+	highlight_alpha_md,
+	highlight_alpha_lg,
+	highlight_alpha_xl,
 	shadow_color_xs,
 	shadow_color_sm,
 	shadow_color_md,
 	shadow_color_lg,
 	shadow_color_xl,
+	highlight_color_xs,
+	highlight_color_sm,
+	highlight_color_md,
+	highlight_color_lg,
+	highlight_color_xl,
+	glow_color_xs,
+	glow_color_sm,
+	glow_color_md,
+	glow_color_lg,
+	glow_color_xl,
+	shroud_color_xs,
+	shroud_color_sm,
+	shroud_color_md,
+	shroud_color_lg,
+	shroud_color_xl,
 	shadow_color_a_xs,
 	shadow_color_a_sm,
 	shadow_color_a_md,

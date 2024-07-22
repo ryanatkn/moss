@@ -81,7 +81,7 @@ By default it's opaque, resetting the background to the initial depth. */
 }
 /* A panel is a box embedded into the page, useful for visually isolating content. */
 .panel {
-	border-radius: var(--radius_sm);
+	border-radius: var(--radius_xs);
 	background-color: var(--panel_bg, var(--fg_1));
 }
 
