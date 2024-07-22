@@ -277,7 +277,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-color: var(--border_color);
 	border-style: var(--border_style);
 	border-width: var(--border_width);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 	/* TODO @many outline-offset */
 	/* outline-offset: 2px; */
@@ -343,6 +343,7 @@ so for consistent visuals we opt to include no active state */
 	cursor: pointer;
 	width: var(--input_height_sm);
 	height: var(--input_height_sm);
+	border-radius: 50%;
 	min-width: var(--input_height_sm);
 	min-height: var(--input_height_sm);
 	--input_padding_x: 0;
@@ -379,7 +380,7 @@ so for consistent visuals we opt to include no active state */
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: 50%;
 	background-color: var(--thumb_background_color);
 	border: 0;
 	/*
@@ -396,7 +397,7 @@ so for consistent visuals we opt to include no active state */
 	appearance: none;
 	height: var(--thumb_size);
 	width: var(--thumb_size);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: 50%;
 	background-color: var(--thumb_background_color);
 	border: 0;
 }
@@ -466,7 +467,7 @@ see https://caniuse.com/css-has
 	border-width: var(--border_width);
 	border-style: var(--border_style);
 	border-color: var(--border_color);
-	border-radius: var(--border_radius, var(--radius_md));
+	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 	/* TODO @many outline-offset */
 	/* outline-offset: 2px; */
@@ -543,7 +544,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_a) 24%, transparent);
 	--border_color: var(--border_color_a);
 	--outline_color: var(--border_color_a); /* TODO can be deleted, doing for editing convenience */
-	--button_shadow_hover: var(--shadow_a_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_a_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 :where(button.color_b) {
 	--text_color: var(--color_b_5);
@@ -552,7 +554,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_b) 24%, transparent);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
-	--button_shadow_hover: var(--shadow_b_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_b_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 :where(button.color_c) {
 	--text_color: var(--color_c_5);
@@ -561,7 +564,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_c) 24%, transparent);
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
-	--button_shadow_hover: var(--shadow_c_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_c_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 :where(button.color_d) {
 	--text_color: var(--color_d_5);
@@ -570,7 +574,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_d) 24%, transparent);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
-	--button_shadow_hover: var(--shadow_d_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_d_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 :where(button.color_e) {
 	--text_color: var(--color_e_5);
@@ -579,7 +584,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_e) 24%, transparent);
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
-	--button_shadow_hover: var(--shadow_e_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_e_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 :where(button.color_f) {
 	--text_color: var(--color_f_5);
@@ -588,7 +594,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_f) 24%, transparent);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
-	--button_shadow_hover: var(--shadow_f_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_f_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 :where(button.color_g) {
 	--text_color: var(--color_g_5);
@@ -597,7 +604,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_g) 24%, transparent);
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
-	--button_shadow_hover: var(--shadow_g_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_g_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 :where(button.color_h) {
 	--text_color: var(--color_h_5);
@@ -606,7 +614,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_h) 24%, transparent);
 	--border_color: var(--border_color_h);
 	--outline_color: var(--border_color_h);
-	--button_shadow_hover: var(--shadow_h_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_h_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 :where(button.color_i) {
 	--text_color: var(--color_i_5);
@@ -615,7 +624,8 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_i) 24%, transparent);
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
-	--button_shadow_hover: var(--shadow_i_outset_sm), var(--glow_inset_sm);
+	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_i_sm),
+		var(--glow_inset_sm) var(--glow_color_sm);
 }
 /*
 This selector appears twice, once before and once after the color button styles.

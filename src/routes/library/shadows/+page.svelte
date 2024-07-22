@@ -19,18 +19,30 @@
 			>Currently glows and shadows are inverted for dark mode, but that may change for clarity.</Unfinished_Implementation_Warning
 		>
 		{#each shadow_variants as variant}
-			<div class="shadow_example" style:box-shadow="var(--shadow_{variant})">
+			<div
+				class="shadow_example"
+				style:box-shadow="var(--shadow_{variant}) var(--shadow_color_{variant})"
+			>
 				<Style_Variable_Button name="shadow_{variant}" />
+				<Style_Variable_Button name="shadow_color_{variant}" />
 			</div>
 		{/each}
 		{#each shadow_variants as variant}
-			<div class="shadow_example" style:box-shadow="var(--shadow_inset_{variant})">
+			<div
+				class="shadow_example"
+				style:box-shadow="var(--shadow_inset_{variant}) var(--shadow_color_{variant})"
+			>
 				<Style_Variable_Button name="shadow_inset_{variant}" />
+				<Style_Variable_Button name="shadow_color_{variant}" />
 			</div>
 		{/each}
 		{#each shadow_variants as variant}
-			<div class="shadow_example" style:box-shadow="var(--shadow_outset_{variant})">
+			<div
+				class="shadow_example"
+				style:box-shadow="var(--shadow_outset_{variant}) var(--shadow_color_{variant})"
+			>
 				<Style_Variable_Button name="shadow_outset_{variant}" />
+				<Style_Variable_Button name="shadow_color_{variant}" />
 			</div>
 		{/each}
 	</section>
@@ -44,18 +56,30 @@
 		>
 		<div class="panel fg_3 p_md">
 			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--glow_{variant})">
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--glow_{variant}) var(--glow_color_{variant})"
+				>
 					<Style_Variable_Button name="glow_{variant}" />
+					<Style_Variable_Button name="glow_color_{variant}" />
 				</div>
 			{/each}
 			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--glow_inset_{variant})">
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--glow_inset_{variant}) var(--glow_color_{variant})"
+				>
 					<Style_Variable_Button name="glow_inset_{variant}" />
+					<Style_Variable_Button name="glow_color_{variant}" />
 				</div>
 			{/each}
 			{#each shadow_variants as variant}
-				<div class="shadow_example" style:box-shadow="var(--glow_outset_{variant})">
+				<div
+					class="shadow_example"
+					style:box-shadow="var(--glow_outset_{variant}) var(--glow_color_{variant})"
+				>
 					<Style_Variable_Button name="glow_outset_{variant}" />
+					<Style_Variable_Button name="glow_color_{variant}" />
 				</div>
 			{/each}
 		</div>
@@ -69,24 +93,30 @@
 		{#each color_variants as color_variant}
 			<section>
 				{#each shadow_variants as variant}
-					<div class="shadow_example" style:box-shadow="var(--shadow_{color_variant}_{variant})">
-						<Style_Variable_Button name="shadow_{color_variant}_{variant}" />
+					<div
+						class="shadow_example"
+						style:box-shadow="var(--shadow_{variant}) var(--shadow_color_{color_variant}_{variant})"
+					>
+						<Style_Variable_Button name="shadow_{variant}" />
+						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" />
 					</div>
 				{/each}
 				{#each shadow_variants as variant}
 					<div
 						class="shadow_example"
-						style:box-shadow="var(--shadow_{color_variant}_inset_{variant})"
+						style:box-shadow="var(--shadow_inset_{variant}) var(--shadow_color_{color_variant}_{variant})"
 					>
-						<Style_Variable_Button name="shadow_{color_variant}_inset_{variant}" />
+						<Style_Variable_Button name="shadow_inset_{variant}" />
+						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" />
 					</div>
 				{/each}
 				{#each shadow_variants as variant}
 					<div
 						class="shadow_example"
-						style:box-shadow="var(--shadow_{color_variant}_outset_{variant})"
+						style:box-shadow="var(--shadow_outset_{variant}) var(--shadow_color_{color_variant}_{variant})"
 					>
-						<Style_Variable_Button name="shadow_{color_variant}_outset_{variant}" />
+						<Style_Variable_Button name="shadow_outset_{variant}" />
+						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" />
 					</div>
 				{/each}
 			</section>
