@@ -88,8 +88,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	text-decoration: var(--text_decoration);
 	border-radius: var(--radius_xs2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
 /* TODO should these be customizable with utility classes? */
 :where(a):hover {
@@ -283,8 +281,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-width: var(--border_width);
 	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 	padding: var(--input_padding_y) var(--input_padding_x);
 	width: 100%;
 	min-width: var(--input_width_min);
@@ -443,8 +439,6 @@ see https://caniuse.com/css-has
 :where([contenteditable]:focus-visible) {
 	--outline_width: var(--outline_width_2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
 
 :where(:where(input, textarea, select, [contenteditable]):active) {
@@ -477,8 +471,6 @@ see https://caniuse.com/css-has
 	border-color: var(--border_color);
 	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-	/* TODO @many outline-offset */
-	/* outline-offset: 2px; */
 }
 /* TODO this is weird because we're overriding for colored variants */
 :where(button:hover, button:focus) {
@@ -487,10 +479,8 @@ see https://caniuse.com/css-has
 	--shadow: var(--button_shadow_hover);
 }
 :where(button:not(.selected):not(:disabled):hover) {
-	/* TODO maybe set a variable so it can be used by descendents, but can't be `text_color`, maybe `button_text_color`? */
 	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
 }
-/* TODO maybe set a variable so it can be used by descendents, but can't be `text_color`, maybe `button_text_color`? */
 :where(button.selected.deselectable:hover:not(:disabled)) {
 	--button_text_color: var(--fg_0);
 }
