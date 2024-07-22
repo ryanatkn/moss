@@ -1002,21 +1002,32 @@ The utility classes not based on style variables are in `style_utilities.css`.
 	overflow-y: visible;
 }
 
-.inline {
-	display: inline;
-}
-.inline_block {
-	display: inline-block;
-}
-.block {
-	display: block;
-}
+/* these include the longhand `display_` because they're less common and would be more ambiguous */
 .display_none {
 	display: none;
 }
 .display_contents {
 	display: contents;
 }
+/* TODO others like `list-item` and `table` variants? after optimizing, sure - https://developer.mozilla.org/en-US/docs/Web/CSS/display */
+
+.inline {
+	display: inline;
+}
+.inline_block {
+	display: inline-block;
+}
+.inline_flex {
+	display: inline-flex;
+}
+.inline_grid {
+	display: inline-grid;
+}
+
+.block {
+	display: block;
+}
+
 /* TODO lots of these, but optimize first? .display_table {
 	display: table;
 } */
@@ -1026,6 +1037,7 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .flex_1 {
 	flex: 1;
 }
+/* not including `.flex_nowrap` because it's the initial value and it's not inherited */
 .flex_wrap {
 	flex-wrap: wrap;
 }
@@ -1062,6 +1074,8 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .flip_xy {
 	transform: scaleX(-1) scaleY(-1);
 }
+
+/* TODO rotate */
 
 /*
 
@@ -1290,13 +1304,6 @@ text
 }
 .font_weight_900 {
 	font-weight: 900;
-}
-
-.pixelated {
-	image-rendering: -webkit-optimize-contrast; /* Safari */
-	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
-	image-rendering: pixelated; /* in case crisp-edges isn't supported */
-	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /*
@@ -4190,6 +4197,13 @@ layout
 }
 .row_gap_xl15 {
 	row-gap: var(--space_xl15);
+}
+
+.pixelated {
+	image-rendering: -webkit-optimize-contrast; /* Safari */
+	image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated; /* in case crisp-edges isn't supported */
+	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
 
 /* end ./src/lib/style_utilities.css */
