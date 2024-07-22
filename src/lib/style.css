@@ -509,9 +509,6 @@ see https://caniuse.com/css-has
 	--outline_width: var(--outline_width_3);
 	--shadow: var(--button_shadow_active);
 }
-:where(button.selected:not(.deselectable):active) {
-	--outline_width: var(--outline_width_2);
-}
 
 /* TODO maybe gradients? or at least use a text_color */
 /* TODO hover variants with brighter borders? maybe use a colorless border for that? */
@@ -604,8 +601,17 @@ for disabled colors without needing a wrapper .disabled class */
 
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
 	--text_color: var(--color_c_5);
-	--button_fill: var(--fill_c);
 	--border_color: var(--color_c_5);
+}
+:where(button.selected:disabled:active) {
+	--text_color: var(--text_5);
+	--button_fill: var(--fill_c);
+}
+:where(button:not(.selected):disabled:active) {
+	--button_fill: transparent;
+}
+:where(button.selected:not(.deselectable):active) {
+	--outline_width: var(--outline_width_2);
 }
 
 :where(small) {
