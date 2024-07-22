@@ -472,8 +472,10 @@ see https://caniuse.com/css-has
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 
+/* TODO try to rearrange some of this to go after the colored variants */
 /* TODO maybe shouldn't mix button in with these */
 :where(:where(input, textarea, select, button):disabled) {
+	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
 	--button_fill: transparent;
 	--input_fill: transparent;
 	--border_style: solid dashed;
