@@ -509,6 +509,7 @@ see https://caniuse.com/css-has
 	/* TODO using `button_` here looks wrong, conflating button with others */
 	--fill: var(--button_fill_disabled);
 	--border_style: solid dashed;
+	--border_color: var(--border_color_3); /* override checked border color */
 	cursor: default;
 	box-shadow: none;
 	opacity: var(--disabled_opacity);
@@ -615,9 +616,6 @@ including colored button styles, selected button styles, ...
 	--outline_color: var(--border_color_i);
 }
 
-:where(button:disabled:not(.selected)) {
-	--fill: var(--button_fill_disabled);
-}
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
 	--border_color: var(--color_c_5);
 	--text_color: var(--color_c_5);
