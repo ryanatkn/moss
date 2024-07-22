@@ -858,7 +858,6 @@ export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
 /* button styles */
-// TODO BLOCK looks like these could be deleted, but should they? what about themability? problem is these don't work for the color variants, so we'd need to add those
 export const button_fill: Style_Variable = {name: 'button_fill', light: 'var(--fg_1)'};
 export const button_fill_hover: Style_Variable = {name: 'button_fill_hover', light: 'var(--fg_2)'}; // TODO keep these? what about `::before` and `::after` visuals with gradients/animations;
 export const button_fill_active: Style_Variable = {
