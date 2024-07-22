@@ -2,4 +2,7 @@
 '@ryanatkn/moss': patch
 ---
 
-tweak button styles
+rework styles
+
+- rework button styles
+- rework shadow styles, reducing variable count by separating shadow position/blue/spread and color

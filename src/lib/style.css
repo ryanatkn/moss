@@ -2135,8 +2135,8 @@ borders
 .border_color_i {
 	border-color: var(--border_color_i);
 }
-.border_color_disabled {
-	border-color: var(--border_color_disabled);
+.border_color_transparent {
+	border-color: transparent;
 }
 
 .border_width_0 {
