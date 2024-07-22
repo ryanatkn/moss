@@ -544,9 +544,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_a) 24%, transparent);
 	--border_color: var(--border_color_a);
 	--outline_color: var(--border_color_a); /* TODO can be deleted, doing for editing convenience */
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_a_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_a_sm)); */
 }
 :where(button.color_b) {
 	--text_color: var(--color_b_5);
@@ -555,9 +552,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_b) 24%, transparent);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_b_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_b_sm)); */
 }
 :where(button.color_c) {
 	--text_color: var(--color_c_5);
@@ -566,9 +560,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_c) 24%, transparent);
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_c_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_c_sm)); */
 }
 :where(button.color_d) {
 	--text_color: var(--color_d_5);
@@ -577,9 +568,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_d) 24%, transparent);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_d_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_d_sm)); */
 }
 :where(button.color_e) {
 	--text_color: var(--color_e_5);
@@ -588,9 +576,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_e) 24%, transparent);
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_e_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_e_sm)); */
 }
 :where(button.color_f) {
 	--text_color: var(--color_f_5);
@@ -599,9 +584,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_f) 24%, transparent);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_f_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_f_sm)); */
 }
 :where(button.color_g) {
 	--text_color: var(--color_g_5);
@@ -610,9 +592,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_g) 24%, transparent);
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_g_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_g_sm)); */
 }
 :where(button.color_h) {
 	--text_color: var(--color_h_5);
@@ -621,9 +600,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_h) 24%, transparent);
 	--border_color: var(--border_color_h);
 	--outline_color: var(--border_color_h);
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_h_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_h_sm)); */
 }
 :where(button.color_i) {
 	--text_color: var(--color_i_5);
@@ -632,9 +608,6 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_i) 24%, transparent);
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
-	/* --button_shadow_hover: var(--shadow_outset_sm)
-			light-dark(var(--shadow_color_i_sm), var(--glow_color_sm)),
-		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_i_sm)); */
 }
 /*
 This selector appears twice, once before and once after the color button styles.
