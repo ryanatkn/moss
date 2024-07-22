@@ -53,6 +53,12 @@
 	</section>
 
 	<section>
+		<div class="box w_100 mb_lg">
+			<Color_Scheme_Input />
+		</div>
+	</section>
+
+	<section>
 		<Tome_Subheading text="Colorful buttons" slug="colorful-buttons" />
 		{#each color_variants as c}
 			{@const color_name = `color_${c}`}

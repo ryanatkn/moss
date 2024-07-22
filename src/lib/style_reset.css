@@ -484,14 +484,11 @@ see https://caniuse.com/css-has
 }
 :where(button:not(.selected):not(:disabled):hover) {
 	/* TODO maybe set a variable so it can be used by descendents, but can't be `text_color`, maybe `button_text_color`? */
-	--button_text_color: light-dark(
-		color-mix(in hsl, var(--text_color) 90%, #000),
-		color-mix(in hsl, var(--text_color) 90%, #fff)
-	);
+	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
 }
 /* TODO maybe set a variable so it can be used by descendents, but can't be `text_color`, maybe `button_text_color`? */
 :where(button.selected.deselectable:hover:not(:disabled)) {
-	--button_text_color: light-dark(#fff, #000);
+	--button_text_color: var(--fg_0);
 }
 :where(button:active) {
 	--fill: var(--button_fill_active);
