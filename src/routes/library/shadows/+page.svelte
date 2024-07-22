@@ -163,17 +163,15 @@
 		<Tome_Subheading text="Colorful glows" slug="colorful-glows" />
 		<p>These are darker in light mode than in dark mode.</p>
 		{#each color_variants as color_variant}
+			{@const classes = 'color_' + color_variant}
 			<section>
 				{#each shadow_variants as variant}
 					<div
 						class="shadow_example"
 						style:box-shadow="var(--shadow_{variant}) var(--shadow_color_{color_variant}_{variant})"
 					>
-						<Style_Variable_Button name="shadow_{variant}" classes="color_{color_variant}" />
-						<Style_Variable_Button
-							name="shadow_color_{color_variant}_{variant}"
-							classes="color_{color_variant}"
-						/>
+						<Style_Variable_Button name="shadow_{variant}" {classes} />
+						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" {classes} />
 					</div>
 				{/each}
 				{#each shadow_variants as variant}
@@ -181,11 +179,8 @@
 						class="shadow_example"
 						style:box-shadow="var(--shadow_inset_{variant}) var(--shadow_color_{color_variant}_{variant})"
 					>
-						<Style_Variable_Button name="shadow_inset_{variant}" classes="color_{color_variant}" />
-						<Style_Variable_Button
-							name="shadow_color_{color_variant}_{variant}"
-							classes="color_{color_variant}"
-						/>
+						<Style_Variable_Button name="shadow_inset_{variant}" {classes} />
+						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" {classes} />
 					</div>
 				{/each}
 				{#each shadow_variants as variant}
@@ -193,11 +188,8 @@
 						class="shadow_example"
 						style:box-shadow="var(--shadow_outset_{variant}) var(--shadow_color_{color_variant}_{variant})"
 					>
-						<Style_Variable_Button name="shadow_outset_{variant}" classes="color_{color_variant}" />
-						<Style_Variable_Button
-							name="shadow_color_{color_variant}_{variant}"
-							classes="color_{color_variant}"
-						/>
+						<Style_Variable_Button name="shadow_outset_{variant}" {classes} />
+						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" {classes} />
 					</div>
 				{/each}
 			</section>
