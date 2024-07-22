@@ -548,8 +548,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_a) 24%, transparent);
 	--border_color: var(--border_color_a);
 	--outline_color: var(--border_color_a); /* TODO can be deleted, doing for editing convenience */
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_a_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_a_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_a_sm)); */
 }
 :where(button.color_b) {
 	--text_color: var(--color_b_5);
@@ -558,8 +559,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_b) 24%, transparent);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_b_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_b_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_b_sm)); */
 }
 :where(button.color_c) {
 	--text_color: var(--color_c_5);
@@ -568,8 +570,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_c) 24%, transparent);
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_c_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_c_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_c_sm)); */
 }
 :where(button.color_d) {
 	--text_color: var(--color_d_5);
@@ -578,8 +581,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_d) 24%, transparent);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_d_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_d_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_d_sm)); */
 }
 :where(button.color_e) {
 	--text_color: var(--color_e_5);
@@ -588,8 +592,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_e) 24%, transparent);
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_e_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_e_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_e_sm)); */
 }
 :where(button.color_f) {
 	--text_color: var(--color_f_5);
@@ -598,8 +603,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_f) 24%, transparent);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_f_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_f_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_f_sm)); */
 }
 :where(button.color_g) {
 	--text_color: var(--color_g_5);
@@ -608,8 +614,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_g) 24%, transparent);
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_g_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_g_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_g_sm)); */
 }
 :where(button.color_h) {
 	--text_color: var(--color_h_5);
@@ -618,8 +625,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_h) 24%, transparent);
 	--border_color: var(--border_color_h);
 	--outline_color: var(--border_color_h);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_h_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_h_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_h_sm)); */
 }
 :where(button.color_i) {
 	--text_color: var(--color_i_5);
@@ -628,8 +636,9 @@ including colored button styles, selected button styles, ...
 	--button_fill_active: color-mix(in hsl, var(--fill_i) 24%, transparent);
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_i_sm),
-		var(--glow_inset_sm) var(--glow_color_sm);
+	/* --button_shadow_hover: var(--shadow_outset_sm)
+			light-dark(var(--shadow_color_i_sm), var(--glow_color_sm)),
+		var(--shadow_inset_sm) light-dark(var(--glow_color_sm), var(--shadow_color_i_sm)); */
 }
 /*
 This selector appears twice, once before and once after the color button styles.
@@ -2272,49 +2281,49 @@ shading
 /* glows */
 
 .glow_xs {
-	box-shadow: var(--glow_xs) var(--glow_color_xs);
+	box-shadow: var(--shadow_xs) var(--glow_color_xs);
 }
 .glow_sm {
-	box-shadow: var(--glow_sm) var(--glow_color_sm);
+	box-shadow: var(--shadow_sm) var(--glow_color_sm);
 }
 .glow_md {
-	box-shadow: var(--glow_md) var(--glow_color_md);
+	box-shadow: var(--shadow_md) var(--glow_color_md);
 }
 .glow_lg {
-	box-shadow: var(--glow_lg) var(--glow_color_lg);
+	box-shadow: var(--shadow_lg) var(--glow_color_lg);
 }
 .glow_xl {
-	box-shadow: var(--glow_xl) var(--glow_color_xl);
+	box-shadow: var(--shadow_xl) var(--glow_color_xl);
 }
 .glow_outset_xs {
-	box-shadow: var(--glow_outset_xs) var(--glow_color_xs);
+	box-shadow: var(--shadow_outset_xs) var(--glow_color_xs);
 }
 .glow_outset_sm {
-	box-shadow: var(--glow_outset_sm) var(--glow_color_sm);
+	box-shadow: var(--shadow_outset_sm) var(--glow_color_sm);
 }
 .glow_outset_md {
-	box-shadow: var(--glow_outset_md) var(--glow_color_md);
+	box-shadow: var(--shadow_outset_md) var(--glow_color_md);
 }
 .glow_outset_lg {
-	box-shadow: var(--glow_outset_lg) var(--glow_color_lg);
+	box-shadow: var(--shadow_outset_lg) var(--glow_color_lg);
 }
 .glow_outset_xl {
-	box-shadow: var(--glow_outset_xl) var(--glow_color_xl);
+	box-shadow: var(--shadow_outset_xl) var(--glow_color_xl);
 }
 .glow_inset_xs {
-	box-shadow: var(--glow_inset_xs) var(--glow_color_xs);
+	box-shadow: var(--shadow_inset_xs) var(--glow_color_xs);
 }
 .glow_inset_sm {
-	box-shadow: var(--glow_inset_sm) var(--glow_color_sm);
+	box-shadow: var(--shadow_inset_sm) var(--glow_color_sm);
 }
 .glow_inset_md {
-	box-shadow: var(--glow_inset_md) var(--glow_color_md);
+	box-shadow: var(--shadow_inset_md) var(--glow_color_md);
 }
 .glow_inset_lg {
-	box-shadow: var(--glow_inset_lg) var(--glow_color_lg);
+	box-shadow: var(--shadow_inset_lg) var(--glow_color_lg);
 }
 .glow_inset_xl {
-	box-shadow: var(--glow_inset_xl) var(--glow_color_xl);
+	box-shadow: var(--shadow_inset_xl) var(--glow_color_xl);
 }
 
 /* shadows */

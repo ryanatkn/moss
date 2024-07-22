@@ -58,7 +58,7 @@
 			{#each shadow_variants as variant}
 				<div
 					class="shadow_example"
-					style:box-shadow="var(--glow_{variant}) var(--glow_color_{variant})"
+					style:box-shadow="var(--shadow_{variant}) var(--glow_color_{variant})"
 				>
 					<Style_Variable_Button name="glow_{variant}" />
 					<Style_Variable_Button name="glow_color_{variant}" />
@@ -67,7 +67,7 @@
 			{#each shadow_variants as variant}
 				<div
 					class="shadow_example"
-					style:box-shadow="var(--glow_inset_{variant}) var(--glow_color_{variant})"
+					style:box-shadow="var(--shadow_inset_{variant}) var(--glow_color_{variant})"
 				>
 					<Style_Variable_Button name="glow_inset_{variant}" />
 					<Style_Variable_Button name="glow_color_{variant}" />
@@ -76,7 +76,7 @@
 			{#each shadow_variants as variant}
 				<div
 					class="shadow_example"
-					style:box-shadow="var(--glow_outset_{variant}) var(--glow_color_{variant})"
+					style:box-shadow="var(--shadow_outset_{variant}) var(--glow_color_{variant})"
 				>
 					<Style_Variable_Button name="glow_outset_{variant}" />
 					<Style_Variable_Button name="glow_color_{variant}" />
@@ -133,6 +133,7 @@
 		padding: var(--space_md);
 		font-family: var(--font_mono);
 		border-radius: var(--radius_xs3);
+		display: flex;
 	}
 	.shadow_example:not(:last-child) {
 		margin-bottom: var(--space_lg);

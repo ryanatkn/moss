@@ -11,6 +11,14 @@ test('variable names are valid', () => {
 	}
 });
 
+test('variables have no duplicates', () => {
+	const names = new Set();
+	for (const v of default_variables) {
+		assert.ok(!names.has(v.name), `variable "${v.name}" is duplicated in \`default_variables\``);
+		names.add(v.name);
+	}
+});
+
 test('variable names match their identifiers', () => {
 	for (const v of default_variables) {
 		assert.ok(
