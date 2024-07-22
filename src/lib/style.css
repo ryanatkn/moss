@@ -412,7 +412,7 @@ so for consistent visuals we opt to include no active state */
 /*  TODO :has selector? `button:has(input[type='checkbox']:checked)`
 see https://caniuse.com/css-has
  */
-:where(input:checked) {
+:where(input:checked:not(:disabled)) {
 	--text_color: var(--text_active);
 	--border_color: var(--color_a_5);
 }
@@ -470,11 +470,11 @@ see https://caniuse.com/css-has
 	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
+
 /* TODO maybe shouldn't mix button in with these */
 :where(:where(input, textarea, select, button):disabled) {
 	--button_fill: transparent;
 	--border_style: solid dashed;
-	--border_color: var(--border_color_3); /* override checked border color */
 	cursor: default;
 	box-shadow: none;
 	opacity: var(--disabled_opacity);
