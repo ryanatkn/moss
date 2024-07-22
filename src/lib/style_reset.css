@@ -542,6 +542,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_a) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_a) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_a) 24%, transparent);
+	--button_fill_selected: var(--fill_a);
 	--border_color: var(--border_color_a);
 	--outline_color: var(--border_color_a); /* TODO can be deleted, doing for editing convenience */
 }
@@ -550,6 +551,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_b) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_b) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_b) 24%, transparent);
+	--button_fill_selected: var(--fill_b);
 	--border_color: var(--border_color_b);
 	--outline_color: var(--border_color_b);
 }
@@ -558,6 +560,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_c) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_c) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_c) 24%, transparent);
+	--button_fill_selected: var(--fill_c);
 	--border_color: var(--border_color_c);
 	--outline_color: var(--border_color_c);
 }
@@ -566,6 +569,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_d) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_d) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_d) 24%, transparent);
+	--button_fill_selected: var(--fill_d);
 	--border_color: var(--border_color_d);
 	--outline_color: var(--border_color_d);
 }
@@ -574,6 +578,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_e) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_e) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_e) 24%, transparent);
+	--button_fill_selected: var(--fill_e);
 	--border_color: var(--border_color_e);
 	--outline_color: var(--border_color_e);
 }
@@ -582,6 +587,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_f) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_f) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_f) 24%, transparent);
+	--button_fill_selected: var(--fill_f);
 	--border_color: var(--border_color_f);
 	--outline_color: var(--border_color_f);
 }
@@ -590,6 +596,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_g) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_g) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_g) 24%, transparent);
+	--button_fill_selected: var(--fill_g);
 	--border_color: var(--border_color_g);
 	--outline_color: var(--border_color_g);
 }
@@ -598,6 +605,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_h) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_h) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_h) 24%, transparent);
+	--button_fill_selected: var(--fill_h);
 	--border_color: var(--border_color_h);
 	--outline_color: var(--border_color_h);
 }
@@ -606,6 +614,7 @@ including colored button styles, selected button styles, ...
 	--button_fill: color-mix(in hsl, var(--fill_i) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill_i) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill_i) 24%, transparent);
+	--button_fill_selected: var(--fill_i);
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
 }
@@ -626,33 +635,6 @@ Other `button.selected` styles are above.
 :where(button.selected:not(.deselectable)) {
 	cursor: default;
 	box-shadow: none;
-}
-:where(button.color_a.selected) {
-	--fill: var(--fill_a);
-}
-:where(button.color_b.selected) {
-	--fill: var(--fill_b);
-}
-:where(button.color_c.selected) {
-	--fill: var(--fill_c);
-}
-:where(button.color_d.selected) {
-	--fill: var(--fill_d);
-}
-:where(button.color_e.selected) {
-	--fill: var(--fill_e);
-}
-:where(button.color_f.selected) {
-	--fill: var(--fill_f);
-}
-:where(button.color_g.selected) {
-	--fill: var(--fill_g);
-}
-:where(button.color_h.selected) {
-	--fill: var(--fill_h);
-}
-:where(button.color_i.selected) {
-	--fill: var(--fill_i);
 }
 
 /* TODO could improve this with the coming `:has` selector
