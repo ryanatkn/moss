@@ -112,7 +112,6 @@
 	</section>
 	<section>
 		<Tome_Subheading text="Text colors" slug="text-colors">Text colors</Tome_Subheading>
-		<aside>TODO needs work</aside>
 		<div class="panel">
 			{#each text_variants as text_variant}
 				{@const name = 'text_color_' + text_variant}
