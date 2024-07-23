@@ -646,6 +646,7 @@ export const text_color_0: Style_Variable = {
 	name: 'text_color_0',
 	light: 'var(--fg_10)',
 };
+// TODO BLOCK the problem with this is that saturation doesn't make sense on colored backgrounds, we probably either want no saturation (in which case, just use `fg` variables for text but not transparent?), or a hue variant per color (could set a variable on buttons for example? `--hue: var(--hue_g)` for `.color_g`)
 // TODO BLOCK insert 1
 // TODO BLOCK 1 becomes 2
 export const text_color_1: Style_Variable = {
@@ -663,8 +664,7 @@ export const text_color_2: Style_Variable = {
 // TODO BLOCK 3 becomes 5
 export const text_color_3: Style_Variable = {
 	name: 'text_color_3',
-	light: 'hsl(var(--tint_hue) var(--tint_saturation) 48%)',
-	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 50%)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 50%)',
 };
 // TODO BLOCK insert 6
 // TODO BLOCK 4 becomes 7

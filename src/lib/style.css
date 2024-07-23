@@ -611,10 +611,8 @@ TODO think through these patterns to get somewhere consistent
 :where(button.selected.deselectable:not(:disabled):hover) {
 	--button_text_color: var(--text_color_6);
 }
-:where(button:active) {
+:where(button:not(:disabled):active) {
 	--button_fill: var(--button_fill_active);
-	/* TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-	looks fixed if `--border_color` but then breaks for .selected */
 	--button_border_color: var(--button_border_color_active);
 	--outline_width: var(--outline_width_3);
 	--shadow: var(--button_shadow_active);
