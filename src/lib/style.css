@@ -453,8 +453,6 @@ see https://caniuse.com/css-has
 	--min_height: var(--input_height);
 	--text_color: var(--text_color_2);
 	--button_text_color: var(--text_color);
-	--button_text_color_hover: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
-	--button_text_color_selected_hover: var(--text_color_6);
 	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
@@ -490,7 +488,7 @@ see https://caniuse.com/css-has
 	outline: none;
 }
 :where(button.selected) {
-	--text_color: var(--text_color_5);
+	--button_text_color: var(--text_color_5);
 	--border_color: var(--border_color_2);
 	--button_fill: var(--fill);
 	--button_fill_hover: var(--fill);
@@ -507,10 +505,10 @@ see https://caniuse.com/css-has
 	--shadow: var(--button_shadow_hover);
 }
 :where(button:not(.selected):not(:disabled):hover) {
-	--button_text_color: var(--button_text_color_hover);
+	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
 }
 :where(button.selected.deselectable:not(:disabled):hover) {
-	--button_text_color: var(--button_text_color_selected_hover);
+	--button_text_color: var(--text_color_6);
 }
 :where(button:active) {
 	--button_fill: var(--button_fill_active);
