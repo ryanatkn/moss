@@ -40,7 +40,7 @@
 		'text_wrap_wrap|nowrap|balance|pretty|stable',
 		'ellipsis',
 		'font_weight_100-900',
-		'text_color_0-6',
+		'text_color_0-10',
 		'darken|lighten_1-9',
 		'bg|fg',
 		'bg|fg_1-9',
