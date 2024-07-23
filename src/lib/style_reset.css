@@ -205,7 +205,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-left-width: var(--border_width_3);
 	border-radius: var(--radius_xs);
 	padding: var(--space_md);
-	color: var(--text_color, var(--text_color_2));
+	color: var(--text_color, var(--text_color_3));
 	background-color: var(--fg_1);
 }
 :where(aside:not(.unstyled):hover) {
@@ -215,7 +215,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 :where(blockquote:not(.unstyled)) {
 	border-radius: var(--radius_xs);
 	padding: var(--space_md);
-	color: var(--text_color, var(--text_color_2));
+	color: var(--text_color, var(--text_color_3));
 	background-color: var(--fg_1);
 }
 
@@ -224,7 +224,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	font-weight: 600;
 	-webkit-hyphens: none;
 	hyphens: none;
-	color: var(--text_color, var(--text_color_2));
+	color: var(--text_color, var(--text_color_3));
 	background-color: var(--fg_1);
 	padding: 0 var(--space_xs2);
 	border-radius: var(--radius_xs);
@@ -234,7 +234,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
 	/* TODO check for `Code` before adding this - white-space: break-spaces; */
 	font-family: var(--font_mono);
-	color: var(--text_color, var(--text_color_2));
+	color: var(--text_color, var(--text_color_3));
 	overflow: auto;
 	max-width: 100%;
 }
@@ -359,7 +359,7 @@ so for consistent visuals we opt to include no active state */
 /* TODO @many figure these variables out so they're easily customized (similar pattern in a lot of places) */
 :where(input[type='range']) {
 	--thumb_size: var(--space_xl);
-	--thumb_background_color: var(--text_color_2);
+	--thumb_background_color: var(--text_color_3);
 	cursor: pointer;
 }
 :where(input[type='range']:hover:not(:disabled)) {
@@ -483,7 +483,7 @@ TODO think through these patterns to get somewhere consistent
 */
 :where(button) {
 	--min_height: var(--input_height);
-	--text_color: var(--text_color_2);
+	--text_color: var(--text_color_3);
 	--button_text_color: var(--text_color);
 	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
@@ -582,7 +582,7 @@ TODO think through these patterns to get somewhere consistent
 	outline: none;
 }
 :where(button.selected) {
-	--button_text_color: var(--text_color_5);
+	--button_text_color: var(--text_color_9);
 	--button_fill: var(--fill);
 	--button_fill_hover: var(--fill);
 	--button_fill_active: var(--fill);
@@ -605,7 +605,7 @@ TODO think through these patterns to get somewhere consistent
 	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
 }
 :where(button.selected.deselectable:not(:disabled):hover) {
-	--button_text_color: var(--text_color_6);
+	--button_text_color: var(--text_color_10);
 }
 :where(button:not(:disabled):active) {
 	--button_fill: var(--button_fill_active);
@@ -619,7 +619,7 @@ TODO think through these patterns to get somewhere consistent
 }
 /* TODO is there a cleaner way to override these through vars? */
 :where(button.selected:disabled:active) {
-	--text_color: var(--text_color_5);
+	--text_color: var(--text_color_9);
 	--fill: var(--fill_c);
 }
 :where(button:not(.selected):disabled:active) {

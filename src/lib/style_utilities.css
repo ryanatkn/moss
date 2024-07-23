@@ -412,6 +412,18 @@ colors
 .text_color_6 {
 	color: var(--text_color_6);
 }
+.text_color_7 {
+	color: var(--text_color_7);
+}
+.text_color_8 {
+	color: var(--text_color_8);
+}
+.text_color_9 {
+	color: var(--text_color_9);
+}
+.text_color_10 {
+	color: var(--text_color_10);
+}
 
 .darken_1 {
 	background-color: var(--darken_1);

@@ -30,17 +30,17 @@ export const default_themes: Theme[] = [
 				dark: '#000',
 			},
 			{
-				name: 'text_color_1',
+				name: 'text_color_2',
 				light: 'hsl(var(--tint_hue) var(--tint_saturation) 8%)',
 				dark: 'hsl(var(--tint_hue) var(--tint_saturation) 90%)',
 			},
 			{
-				name: 'text_color_2',
+				name: 'text_color_3',
 				light: 'hsl(var(--tint_hue) var(--tint_saturation) 16%)',
 				dark: 'hsl(var(--tint_hue) var(--tint_saturation) 83%)',
 			},
 			{
-				name: 'text_color_3',
+				name: 'text_color_5',
 				light: 'hsl(var(--tint_hue) var(--tint_saturation) 24%)',
 				dark: 'hsl(var(--tint_hue) var(--tint_saturation) 75%)',
 			},
