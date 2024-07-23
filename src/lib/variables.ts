@@ -471,7 +471,7 @@ export const fg: Style_Variable = {
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
 };
 /* these are light or dark with a low alpha, so they nest/stack arbitrarily */
-// TODO BLOCK these inconsistently don't use tint, unlike bg/fg, and if they did they would be roughly equal to text_color_0-10
+// TODO these inconsistently don't use tint, unlike bg/fg, and if they did they would be roughly equal to text_color_0-10
 export const bg_0: Style_Variable = {
 	name: 'bg_0',
 	light: '#000',
@@ -646,7 +646,7 @@ export const text_color_0: Style_Variable = {
 	name: 'text_color_0',
 	light: 'var(--fg_10)',
 };
-// TODO BLOCK the problem with this is that saturation doesn't make sense on colored backgrounds, we probably either want no saturation (in which case, just use `fg` variables for text but not transparent?), or a hue variant per color (could set a variable on buttons for example? `--hue: var(--hue_g)` for `.color_g`)
+// TODO the problem with this is that saturation doesn't make sense on colored backgrounds, we probably either want no saturation (in which case, just use `fg` variables for text but not transparent?), or a hue variant per color (could set a variable on buttons for example? `--hue: var(--hue_g)` for `.color_g`)
 export const text_color_1: Style_Variable = {
 	name: 'text_color_1',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 8%)',
