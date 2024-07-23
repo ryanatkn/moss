@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -99,6 +99,10 @@
         },
         {
           "name": "size_names",
+          "kind": "variable"
+        },
+        {
+          "name": "text_variants",
           "kind": "variable"
         },
         {
@@ -736,23 +740,47 @@
           "kind": "variable"
         },
         {
-          "name": "text_1",
+          "name": "text_color_0",
           "kind": "variable"
         },
         {
-          "name": "text_2",
+          "name": "text_color_1",
           "kind": "variable"
         },
         {
-          "name": "text_3",
+          "name": "text_color_2",
           "kind": "variable"
         },
         {
-          "name": "text_4",
+          "name": "text_color_3",
           "kind": "variable"
         },
         {
-          "name": "text_5",
+          "name": "text_color_4",
+          "kind": "variable"
+        },
+        {
+          "name": "text_color_5",
+          "kind": "variable"
+        },
+        {
+          "name": "text_color_6",
+          "kind": "variable"
+        },
+        {
+          "name": "text_color_7",
+          "kind": "variable"
+        },
+        {
+          "name": "text_color_8",
+          "kind": "variable"
+        },
+        {
+          "name": "text_color_9",
+          "kind": "variable"
+        },
+        {
+          "name": "text_color_10",
           "kind": "variable"
         },
         {
