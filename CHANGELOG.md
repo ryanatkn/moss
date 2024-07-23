@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.11.1
+
+### Patch Changes
+
+- fix `.selectable` styles ([c55e4dd](https://github.com/ryanatkn/moss/commit/c55e4dd))
+
 ## 0.11.0
 
 ### Minor Changes
