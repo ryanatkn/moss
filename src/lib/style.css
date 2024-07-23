@@ -348,7 +348,6 @@ so for consistent visuals we opt to include no active state */
 	min-height: var(--input_height_sm);
 	--input_padding_x: 0;
 }
-/* TODO where to wrap the :where here and similar elsewhere ? */
 :where(input[type='radio']:checked)::before {
 	content: '';
 	display: block;
@@ -689,6 +688,10 @@ for disabled colors without needing a wrapper .disabled class */
 }
 
 .selectable {
+	/* TODO these are duplicated from buttons, needs refactoring, maybe make them vars? selected variants too? */
+	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
+	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
+	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
 	cursor: pointer;
 	background-color: var(--button_fill);
 	border-color: var(--border_color_3);

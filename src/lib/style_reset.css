@@ -344,7 +344,6 @@ so for consistent visuals we opt to include no active state */
 	min-height: var(--input_height_sm);
 	--input_padding_x: 0;
 }
-/* TODO where to wrap the :where here and similar elsewhere ? */
 :where(input[type='radio']:checked)::before {
 	content: '';
 	display: block;

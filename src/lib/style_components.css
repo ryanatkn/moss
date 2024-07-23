@@ -33,6 +33,10 @@
 }
 
 .selectable {
+	/* TODO these are duplicated from buttons, needs refactoring, maybe make them vars? selected variants too? */
+	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
+	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
+	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
 	cursor: pointer;
 	background-color: var(--button_fill);
 	border-color: var(--border_color_3);
