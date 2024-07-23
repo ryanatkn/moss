@@ -12,7 +12,7 @@
 	import {default_variables} from '$lib/variables.js';
 	import Icon_Sizes from '$routes/library/typography/Icon_Sizes.svelte';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import {line_height_names, size_names} from '$lib/variable_data.js';
+	import {line_height_names, size_names, text_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'typography';
 
@@ -113,12 +113,12 @@
 	<section>
 		<Tome_Subheading text="Text colors" slug="text-colors">Text colors</Tome_Subheading>
 		<aside>TODO needs work</aside>
-		<div>
-			{#each {length: 3} as _, i}
-				{@const name = 'text_' + (i + 1)}
+		<div class="panel">
+			{#each text_variants as text_variant}
+				{@const name = 'text_color_' + text_variant}
 				<div class="row">
 					<Style_Variable_Button {name}
-						><span style:color="var(--{name})">
+						><span class="font_mono" style:color="var(--{name})">
 							{name}
 						</span></Style_Variable_Button
 					> = <code>{computed_styles?.getPropertyValue('--' + name)}</code>
@@ -134,10 +134,10 @@
 			{#each line_height_names as name}
 				<div class="spaced">
 					<Style_Variable_Button {name}
-						><div style:line-height="var(--{name})" class="button_contents">
+						><div style:line-height="var(--{name})" class="button_contents font_mono">
 							<div>
 								{name} =
-								<code class="font_mono">{computed_styles?.getPropertyValue('--' + name)}</code>
+								<code>{computed_styles?.getPropertyValue('--' + name)}</code>
 							</div>
 							<div>{name}</div>
 							<div>{name}</div>

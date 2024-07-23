@@ -124,6 +124,7 @@ export const src_json = {
 			declarations: [
 				{name: 'size_variants', kind: 'variable'},
 				{name: 'size_names', kind: 'variable'},
+				{name: 'text_variants', kind: 'variable'},
 				{name: 'space_variants', kind: 'variable'},
 				{name: 'radius_variants', kind: 'variable'},
 				{name: 'line_height_variants', kind: 'variable'},
