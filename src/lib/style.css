@@ -209,7 +209,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-left-width: var(--border_width_3);
 	border-radius: var(--radius_xs);
 	padding: var(--space_md);
-	color: var(--text_color, var(--text_2));
+	color: var(--text_color, var(--text_color_2));
 	background-color: var(--fg_1);
 }
 :where(aside:not(.unstyled):hover) {
@@ -219,7 +219,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 :where(blockquote:not(.unstyled)) {
 	border-radius: var(--radius_xs);
 	padding: var(--space_md);
-	color: var(--text_color, var(--text_2));
+	color: var(--text_color, var(--text_color_2));
 	background-color: var(--fg_1);
 }
 
@@ -228,7 +228,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	font-weight: 600;
 	-webkit-hyphens: none;
 	hyphens: none;
-	color: var(--text_color, var(--text_2));
+	color: var(--text_color, var(--text_color_2));
 	background-color: var(--fg_1);
 	padding: 0 var(--space_xs2);
 	border-radius: var(--radius_xs);
@@ -238,7 +238,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
 	/* TODO check for `Code` before adding this - white-space: break-spaces; */
 	font-family: var(--font_mono);
-	color: var(--text_color, var(--text_2));
+	color: var(--text_color, var(--text_color_2));
 	overflow: auto;
 	max-width: 100%;
 }
@@ -363,7 +363,7 @@ so for consistent visuals we opt to include no active state */
 /* TODO @many figure these variables out so they're easily customized (similar pattern in a lot of places) */
 :where(input[type='range']) {
 	--thumb_size: var(--space_xl);
-	--thumb_background_color: var(--text_2);
+	--thumb_background_color: var(--text_color_2);
 	cursor: pointer;
 }
 :where(input[type='range']:hover:not(:disabled)) {
@@ -441,12 +441,20 @@ see https://caniuse.com/css-has
 	--outline_width: var(--outline_width_3);
 }
 
+:where(:where(input, textarea, select):disabled) {
+	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
+	--input_fill: transparent;
+	--border_style: solid dashed;
+	opacity: var(--disabled_opacity);
+	outline: none;
+}
+
 :where(button) {
 	--min_height: var(--input_height);
-	--text_color: var(--text_2);
+	--text_color: var(--text_color_2);
 	--button_text_color: var(--text_color);
 	--button_text_color_hover: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
-	--button_text_color_selected_hover: var(--fg_0);
+	--button_text_color_selected_hover: var(--text_color_6);
 	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
@@ -472,11 +480,9 @@ see https://caniuse.com/css-has
 }
 
 /* TODO try to rearrange some of this to go after the colored variants */
-/* TODO maybe shouldn't mix button in with these */
-:where(:where(input, textarea, select, button):disabled) {
+:where(button:disabled) {
 	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
 	--button_fill: transparent;
-	--input_fill: transparent;
 	--border_style: solid dashed;
 	cursor: default;
 	box-shadow: none;
@@ -484,7 +490,7 @@ see https://caniuse.com/css-has
 	outline: none;
 }
 :where(button.selected) {
-	--button_text_color: var(--text_5);
+	--text_color: var(--text_color_5);
 	--border_color: var(--border_color_2);
 	--button_fill: var(--fill);
 	--button_fill_hover: var(--fill);
@@ -608,7 +614,7 @@ for disabled colors without needing a wrapper .disabled class */
 }
 /* TODO is there a cleaner way to override these through vars? */
 :where(button.selected:disabled:active) {
-	--text_color: var(--text_5);
+	--text_color: var(--text_color_5);
 	--fill: var(--fill_c);
 }
 :where(button:not(.selected):disabled:active) {
@@ -817,7 +823,7 @@ By default it's opaque, resetting the background to the initial depth. */
 	display: block;
 	content: '';
 	border: 4px solid transparent;
-	border-left-color: var(--text_2);
+	border-left-color: var(--text_color_2);
 }
 
 .chip {
@@ -1241,14 +1247,26 @@ colors
 
 */
 
-.text_1 {
-	color: var(--text_1);
+.text_color_0 {
+	color: var(--text_color_0);
 }
-.text_2 {
-	color: var(--text_2);
+.text_color_1 {
+	color: var(--text_color_1);
 }
-.text_3 {
-	color: var(--text_3);
+.text_color_2 {
+	color: var(--text_color_2);
+}
+.text_color_3 {
+	color: var(--text_color_3);
+}
+.text_color_4 {
+	color: var(--text_color_4);
+}
+.text_color_5 {
+	color: var(--text_color_5);
+}
+.text_color_6 {
+	color: var(--text_color_6);
 }
 
 .darken_1 {

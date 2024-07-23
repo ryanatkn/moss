@@ -162,7 +162,7 @@ By default it's opaque, resetting the background to the initial depth. */
 	display: block;
 	content: '';
 	border: 4px solid transparent;
-	border-left-color: var(--text_2);
+	border-left-color: var(--text_color_2);
 }
 
 .chip {

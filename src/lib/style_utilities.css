@@ -391,14 +391,26 @@ colors
 
 */
 
-.text_1 {
-	color: var(--text_1);
+.text_color_0 {
+	color: var(--text_color_0);
 }
-.text_2 {
-	color: var(--text_2);
+.text_color_1 {
+	color: var(--text_color_1);
 }
-.text_3 {
-	color: var(--text_3);
+.text_color_2 {
+	color: var(--text_color_2);
+}
+.text_color_3 {
+	color: var(--text_color_3);
+}
+.text_color_4 {
+	color: var(--text_color_4);
+}
+.text_color_5 {
+	color: var(--text_color_5);
+}
+.text_color_6 {
+	color: var(--text_color_6);
 }
 
 .darken_1 {
