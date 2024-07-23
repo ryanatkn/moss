@@ -16,6 +16,8 @@ export const size_variants = [
 
 export const size_names = size_variants.map((s) => 'size_' + s);
 
+export const text_variants = [0, 1, 2, 3, 4, 5, 6];
+
 export const space_variants = [
 	'xs5',
 	'xs4',

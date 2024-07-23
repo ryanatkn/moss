@@ -5,6 +5,9 @@ export const DEFAULT_THEME: Theme = {
 	variables: [], // inherits base
 };
 
+/**
+ * These are super basic proof-of-concept themes.
+ */
 export const default_themes: Theme[] = [
 	DEFAULT_THEME,
 	{
@@ -27,17 +30,17 @@ export const default_themes: Theme[] = [
 				dark: '#000',
 			},
 			{
-				name: 'text_1',
+				name: 'text_color_2',
 				light: 'hsl(var(--tint_hue) var(--tint_saturation) 8%)',
 				dark: 'hsl(var(--tint_hue) var(--tint_saturation) 90%)',
 			},
 			{
-				name: 'text_2',
+				name: 'text_color_3',
 				light: 'hsl(var(--tint_hue) var(--tint_saturation) 16%)',
 				dark: 'hsl(var(--tint_hue) var(--tint_saturation) 83%)',
 			},
 			{
-				name: 'text_3',
+				name: 'text_color_5',
 				light: 'hsl(var(--tint_hue) var(--tint_saturation) 24%)',
 				dark: 'hsl(var(--tint_hue) var(--tint_saturation) 75%)',
 			},

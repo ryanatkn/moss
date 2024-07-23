@@ -32,8 +32,8 @@
 	max-width: var(--width_sm);
 }
 
+/* TODO delete? */
 .selectable {
-	/* TODO these are duplicated from buttons, needs refactoring, maybe make them vars? selected variants too? */
 	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
@@ -162,7 +162,7 @@ By default it's opaque, resetting the background to the initial depth. */
 	display: block;
 	content: '';
 	border: 4px solid transparent;
-	border-left-color: var(--text_2);
+	border-left-color: var(--text_color_3);
 }
 
 .chip {

@@ -471,7 +471,7 @@ export const fg: Style_Variable = {
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
 };
 /* these are light or dark with a low alpha, so they nest/stack arbitrarily */
-// TODO these inconsistently don't use tint, unlike bg/fg
+// TODO these inconsistently don't use tint, unlike bg/fg, and if they did they would be roughly equal to text_color_0-10
 export const bg_0: Style_Variable = {
 	name: 'bg_0',
 	light: '#000',
@@ -641,35 +641,63 @@ text colors
 
 // TODO is this shorthand a good idea? change to `text_color_N`?
 /* text colors don't use alpha because it affects performance too much */
-export const text_color: Style_Variable = {name: 'text_color', light: 'var(--text_1)'};
-export const text_1: Style_Variable = {
-	name: 'text_1',
+export const text_color: Style_Variable = {name: 'text_color', light: 'var(--text_color_2)'};
+export const text_color_0: Style_Variable = {
+	name: 'text_color_0',
+	light: 'var(--fg_10)',
+};
+// TODO the problem with this is that saturation doesn't make sense on colored backgrounds, we probably either want no saturation (in which case, just use `fg` variables for text but not transparent?), or a hue variant per color (could set a variable on buttons for example? `--hue: var(--hue_g)` for `.color_g`)
+export const text_color_1: Style_Variable = {
+	name: 'text_color_1',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 8%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 90%)',
+};
+export const text_color_2: Style_Variable = {
+	name: 'text_color_2',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 16%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 80%)',
 };
-export const text_2: Style_Variable = {
-	name: 'text_2',
+export const text_color_3: Style_Variable = {
+	name: 'text_color_3',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 32%)',
-	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 65%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 69%)',
 };
-export const text_3: Style_Variable = {
-	name: 'text_3',
-	light: 'hsl(var(--tint_hue) var(--tint_saturation) 48%)',
-	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 50%)',
+export const text_color_4: Style_Variable = {
+	name: 'text_color_4',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 41%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 58%)',
 };
-export const text_4: Style_Variable = {
-	name: 'text_4',
+export const text_color_5: Style_Variable = {
+	name: 'text_color_5',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 50%)',
+};
+export const text_color_6: Style_Variable = {
+	name: 'text_color_6',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 59%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 40%)',
+};
+export const text_color_7: Style_Variable = {
+	name: 'text_color_7',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 68%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 30%)',
 };
-export const text_5: Style_Variable = {
-	name: 'text_5',
+export const text_color_8: Style_Variable = {
+	name: 'text_color_8',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 22%)',
+};
+export const text_color_9: Style_Variable = {
+	name: 'text_color_9',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 12%)',
 };
+export const text_color_10: Style_Variable = {
+	name: 'text_color_10',
+	light: 'var(--fg_0)',
+};
 export const text_color_disabled: Style_Variable = {
 	name: 'text_color_disabled',
-	light: 'var(--text_3)',
+	light: 'var(--text_color_5)',
 };
 export const text_active: Style_Variable = {
 	name: 'text_active',
@@ -1551,11 +1579,17 @@ export const default_variables: Style_Variable[] = [
 	// TODO probably need more variants, 5 total?
 	/* text colors don't use alpha because it affects performance too much */
 	text_color,
-	text_1,
-	text_2,
-	text_3,
-	text_4,
-	text_5,
+	text_color_0,
+	text_color_1,
+	text_color_2,
+	text_color_3,
+	text_color_4,
+	text_color_5,
+	text_color_6,
+	text_color_7,
+	text_color_8,
+	text_color_9,
+	text_color_10,
 	text_color_disabled,
 	text_active,
 
