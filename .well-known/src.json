@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.10.1",
+  "version": "0.11.1",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -516,6 +516,14 @@
           "kind": "variable"
         },
         {
+          "name": "tint_hue",
+          "kind": "variable"
+        },
+        {
+          "name": "tint_saturation",
+          "kind": "variable"
+        },
+        {
           "name": "darken_1",
           "kind": "variable"
         },
@@ -585,14 +593,6 @@
         },
         {
           "name": "lighten_9",
-          "kind": "variable"
-        },
-        {
-          "name": "tint_hue",
-          "kind": "variable"
-        },
-        {
-          "name": "tint_saturation",
           "kind": "variable"
         },
         {
@@ -692,6 +692,10 @@
           "kind": "variable"
         },
         {
+          "name": "fill",
+          "kind": "variable"
+        },
+        {
           "name": "fill_a",
           "kind": "variable"
         },
@@ -744,7 +748,15 @@
           "kind": "variable"
         },
         {
-          "name": "text_disabled",
+          "name": "text_4",
+          "kind": "variable"
+        },
+        {
+          "name": "text_5",
+          "kind": "variable"
+        },
+        {
+          "name": "text_color_disabled",
           "kind": "variable"
         },
         {
@@ -1100,26 +1112,6 @@
           "kind": "variable"
         },
         {
-          "name": "button_fill",
-          "kind": "variable"
-        },
-        {
-          "name": "button_fill_hover",
-          "kind": "variable"
-        },
-        {
-          "name": "button_fill_active",
-          "kind": "variable"
-        },
-        {
-          "name": "button_fill_selected",
-          "kind": "variable"
-        },
-        {
-          "name": "button_fill_disabled",
-          "kind": "variable"
-        },
-        {
           "name": "button_shadow",
           "kind": "variable"
         },
@@ -1160,15 +1152,19 @@
           "kind": "variable"
         },
         {
-          "name": "Create_Shadow_Options",
-          "kind": "type"
+          "name": "shadow_color",
+          "kind": "variable"
+        },
+        {
+          "name": "highlight_color",
+          "kind": "variable"
         },
         {
           "name": "glow_color",
           "kind": "variable"
         },
         {
-          "name": "shadow_color",
+          "name": "shroud_color",
           "kind": "variable"
         },
         {
@@ -1208,63 +1204,63 @@
           "kind": "variable"
         },
         {
-          "name": "shadow_values_xs",
+          "name": "shadow_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_inset_xs",
+          "name": "shadow_inset_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_outset_xs",
+          "name": "shadow_outset_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_sm",
+          "name": "shadow_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_inset_sm",
+          "name": "shadow_inset_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_outset_sm",
+          "name": "shadow_outset_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_md",
+          "name": "shadow_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_inset_md",
+          "name": "shadow_inset_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_outset_md",
+          "name": "shadow_outset_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_lg",
+          "name": "shadow_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_inset_lg",
+          "name": "shadow_inset_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_outset_lg",
+          "name": "shadow_outset_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_xl",
+          "name": "shadow_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_inset_xl",
+          "name": "shadow_inset_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_values_outset_xl",
+          "name": "shadow_outset_xl",
           "kind": "variable"
         },
         {
@@ -1288,663 +1284,283 @@
           "kind": "variable"
         },
         {
-          "name": "glow_xs",
+          "name": "highlight_alpha_xs",
           "kind": "variable"
         },
         {
-          "name": "glow_sm",
+          "name": "highlight_alpha_sm",
           "kind": "variable"
         },
         {
-          "name": "glow_md",
+          "name": "highlight_alpha_md",
           "kind": "variable"
         },
         {
-          "name": "glow_lg",
+          "name": "highlight_alpha_lg",
           "kind": "variable"
         },
         {
-          "name": "glow_xl",
+          "name": "highlight_alpha_xl",
           "kind": "variable"
         },
         {
-          "name": "glow_inset_xs",
+          "name": "shadow_color_xs",
           "kind": "variable"
         },
         {
-          "name": "glow_inset_sm",
+          "name": "shadow_color_sm",
           "kind": "variable"
         },
         {
-          "name": "glow_inset_md",
+          "name": "shadow_color_md",
           "kind": "variable"
         },
         {
-          "name": "glow_inset_lg",
+          "name": "shadow_color_lg",
           "kind": "variable"
         },
         {
-          "name": "glow_inset_xl",
+          "name": "shadow_color_xl",
           "kind": "variable"
         },
         {
-          "name": "glow_outset_xs",
+          "name": "highlight_color_xs",
           "kind": "variable"
         },
         {
-          "name": "glow_outset_sm",
+          "name": "highlight_color_sm",
           "kind": "variable"
         },
         {
-          "name": "glow_outset_md",
+          "name": "highlight_color_md",
           "kind": "variable"
         },
         {
-          "name": "glow_outset_lg",
+          "name": "highlight_color_lg",
           "kind": "variable"
         },
         {
-          "name": "glow_outset_xl",
+          "name": "highlight_color_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_xs",
+          "name": "glow_color_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_sm",
+          "name": "glow_color_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_md",
+          "name": "glow_color_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_lg",
+          "name": "glow_color_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_xl",
+          "name": "glow_color_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_inset_xs",
+          "name": "shroud_color_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_inset_sm",
+          "name": "shroud_color_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_inset_md",
+          "name": "shroud_color_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_inset_lg",
+          "name": "shroud_color_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_inset_xl",
+          "name": "shroud_color_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_outset_xs",
+          "name": "shadow_color_a_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_outset_sm",
+          "name": "shadow_color_a_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_outset_md",
+          "name": "shadow_color_a_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_outset_lg",
+          "name": "shadow_color_a_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_outset_xl",
+          "name": "shadow_color_a_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_xs",
+          "name": "shadow_color_b_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_sm",
+          "name": "shadow_color_b_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_md",
+          "name": "shadow_color_b_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_lg",
+          "name": "shadow_color_b_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_xl",
+          "name": "shadow_color_b_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_inset_xs",
+          "name": "shadow_color_c_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_inset_sm",
+          "name": "shadow_color_c_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_inset_md",
+          "name": "shadow_color_c_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_inset_lg",
+          "name": "shadow_color_c_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_inset_xl",
+          "name": "shadow_color_c_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_outset_xs",
+          "name": "shadow_color_d_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_outset_sm",
+          "name": "shadow_color_d_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_outset_md",
+          "name": "shadow_color_d_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_outset_lg",
+          "name": "shadow_color_d_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_a_outset_xl",
+          "name": "shadow_color_d_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_xs",
+          "name": "shadow_color_e_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_sm",
+          "name": "shadow_color_e_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_md",
+          "name": "shadow_color_e_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_lg",
+          "name": "shadow_color_e_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_xl",
+          "name": "shadow_color_e_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_inset_xs",
+          "name": "shadow_color_f_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_inset_sm",
+          "name": "shadow_color_f_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_inset_md",
+          "name": "shadow_color_f_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_inset_lg",
+          "name": "shadow_color_f_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_inset_xl",
+          "name": "shadow_color_f_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_outset_xs",
+          "name": "shadow_color_g_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_outset_sm",
+          "name": "shadow_color_g_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_outset_md",
+          "name": "shadow_color_g_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_outset_lg",
+          "name": "shadow_color_g_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_b_outset_xl",
+          "name": "shadow_color_g_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_xs",
+          "name": "shadow_color_h_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_sm",
+          "name": "shadow_color_h_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_md",
+          "name": "shadow_color_h_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_lg",
+          "name": "shadow_color_h_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_xl",
+          "name": "shadow_color_h_xl",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_inset_xs",
+          "name": "shadow_color_i_xs",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_inset_sm",
+          "name": "shadow_color_i_sm",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_inset_md",
+          "name": "shadow_color_i_md",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_inset_lg",
+          "name": "shadow_color_i_lg",
           "kind": "variable"
         },
         {
-          "name": "shadow_c_inset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_c_outset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_c_outset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_c_outset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_c_outset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_c_outset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_inset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_inset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_inset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_inset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_inset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_outset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_outset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_outset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_outset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_d_outset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_inset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_inset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_inset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_inset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_inset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_outset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_outset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_outset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_outset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_e_outset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_inset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_inset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_inset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_inset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_inset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_outset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_outset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_outset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_outset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_f_outset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_inset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_inset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_inset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_inset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_inset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_outset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_outset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_outset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_outset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_g_outset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_inset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_inset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_inset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_inset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_inset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_outset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_outset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_outset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_outset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_h_outset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_inset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_inset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_inset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_inset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_inset_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_outset_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_outset_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_outset_md",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_outset_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "shadow_i_outset_xl",
+          "name": "shadow_color_i_xl",
           "kind": "variable"
         },
         {
