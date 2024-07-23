@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.12.0
+
+### Minor Changes
+
+- rename `text_color_0-10` from `text_1-5` ([#32](https://github.com/ryanatkn/moss/pull/32))
+
 ## 0.11.1
 
 ### Patch Changes
