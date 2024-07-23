@@ -428,14 +428,6 @@ see https://caniuse.com/css-has
 	--border_color: var(--color_a_5);
 	--outline_width: var(--outline_width_2);
 }
-:where([contenteditable]:focus-visible) {
-	--outline_width: var(--outline_width_2);
-	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-}
-
-:where(:where(input, textarea, select, [contenteditable]):active) {
-	--outline_width: var(--outline_width_3);
-}
 
 :where(:where(input, textarea, select):disabled) {
 	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
@@ -443,6 +435,14 @@ see https://caniuse.com/css-has
 	--border_style: solid dashed;
 	opacity: var(--disabled_opacity);
 	outline: none;
+}
+
+:where([contenteditable]:focus-visible) {
+	--outline_width: var(--outline_width_2);
+	outline: var(--outline_width) var(--outline_style) var(--outline_color);
+}
+:where(:where(input, textarea, select, [contenteditable]):active) {
+	--outline_width: var(--outline_width_3);
 }
 
 :where(button) {
