@@ -449,6 +449,42 @@ see https://caniuse.com/css-has
 	--outline_width: var(--outline_width_3);
 }
 
+/* TODO could improve this with the coming `:has` selector
+for disabled colors without needing a wrapper .disabled class */
+:where(label) {
+	color: var(--text_color);
+	cursor: pointer;
+}
+:where(:where(label .title)) {
+	font-weight: 600;
+	margin-bottom: var(--space_xs2);
+}
+:where(label.selected) {
+	cursor: default;
+	--text_color: var(--text_active);
+}
+:where(label.disabled) {
+	cursor: default;
+	--text_color: var(--text_color_disabled);
+}
+:where(label.row) {
+	justify-content: flex-start;
+	align-items: center;
+}
+:where(label.row :where(input[type='checkbox'], input[type='radio'])) {
+	margin-right: var(--space_md);
+}
+
+/*
+
+TODO think through these patterns to get somewhere consistent
+
+- declaring variables with variants like `_hover` enables simpler theming, so you don't have to write complex selectors and can just change a variable
+- should the variants therefore be changed to style variables or inlined here?
+- inlining them here avoids the overhead of variables, but is that optimizable anyway? are there added costs in theory that aren't avoidable?
+- but these need to be resolved locally to get overrides, couldn't set `fill` for example - can you use a variable still though, just also locally declare it?
+
+*/
 :where(button) {
 	--min_height: var(--input_height);
 	--text_color: var(--text_color_2);
@@ -456,6 +492,10 @@ see https://caniuse.com/css-has
 	--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
 	--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
 	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
+	--button_border_color: var(--border_color);
+	/* TODO give real values, 90%? */
+	--button_border_color_hover: color-mix(in hsl, var(--border_color) 90%, var(--fg_10));
+	--button_border_color_active: color-mix(in hsl, var(--border_color) 80%, var(--fg_10));
 	color: var(--button_text_color);
 	background-color: var(--button_fill);
 	cursor: pointer;
@@ -472,49 +512,9 @@ see https://caniuse.com/css-has
 	box-shadow: var(--shadow, var(--button_shadow));
 	border-width: var(--border_width);
 	border-style: var(--border_style);
-	border-color: var(--border_color);
+	border-color: var(--button_border_color);
 	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
-}
-
-/* TODO try to rearrange some of this to go after the colored variants */
-:where(button:disabled) {
-	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
-	--button_fill: transparent;
-	--border_style: solid dashed;
-	cursor: default;
-	box-shadow: none;
-	opacity: var(--disabled_opacity);
-	outline: none;
-}
-:where(button.selected) {
-	--button_text_color: var(--text_color_5);
-	--border_color: var(--border_color_2);
-	--button_fill: var(--fill);
-	--button_fill_hover: var(--fill);
-	--button_fill_active: var(--fill);
-}
-:where(button.selected:not(.deselectable)) {
-	cursor: default;
-	box-shadow: none;
-}
-/* TODO this is weird because we're overriding for colored variants */
-:where(button:not(:disabled):hover, button:focus) {
-	--button_fill: var(--button_fill_hover);
-	--border_color: var(--border_color_2);
-	--shadow: var(--button_shadow_hover);
-}
-:where(button:not(.selected):not(:disabled):hover) {
-	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
-}
-:where(button.selected.deselectable:not(:disabled):hover) {
-	--button_text_color: var(--text_color_6);
-}
-:where(button:active) {
-	--button_fill: var(--button_fill_active);
-	--border_color: var(--border_color_5);
-	--outline_width: var(--outline_width_3);
-	--shadow: var(--button_shadow_active);
 }
 
 /* TODO maybe gradients? or at least use a text_color */
@@ -575,37 +575,50 @@ see https://caniuse.com/css-has
 	--outline_color: var(--border_color_i);
 }
 
-:where(button.inline, p button) {
-	display: inline-block;
-	--min_height: var(--input_height_sm); /* TODO this increases paragraph line spacing */
-}
-
-/* TODO could improve this with the coming `:has` selector
-for disabled colors without needing a wrapper .disabled class */
-:where(label) {
-	color: var(--text_color);
-	cursor: pointer;
-}
-:where(:where(label .title)) {
-	font-weight: 600;
-	margin-bottom: var(--space_xs2);
-}
-:where(label.selected) {
+/* TODO try to rearrange some of this to go after the colored variants */
+:where(button:disabled) {
+	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
+	--button_fill: transparent;
+	--border_style: solid dashed;
 	cursor: default;
-	--text_color: var(--text_active);
+	box-shadow: none;
+	opacity: var(--disabled_opacity);
+	outline: none;
 }
-:where(label.disabled) {
+:where(button.selected) {
+	--button_text_color: var(--text_color_5);
+	--button_fill: var(--fill);
+	--button_fill_hover: var(--fill);
+	--button_fill_active: var(--fill);
+	--button_border_color: var(--border_color);
+}
+:where(button.selected:not(.deselectable)) {
+	--button_border_color_hover: var(--border_color);
+	--button_border_color_active: var(--border_color);
 	cursor: default;
-	--text_color: var(--text_color_disabled);
+	box-shadow: none;
 }
-:where(label.row) {
-	justify-content: flex-start;
-	align-items: center;
+:where(button:not(:disabled):hover, button:focus) {
+	--button_fill: var(--button_fill_hover);
+	--button_border_color: var(--button_border_color_hover);
+	--shadow: var(--button_shadow_hover);
 }
-:where(label.row :where(input[type='checkbox'], input[type='radio'])) {
-	margin-right: var(--space_md);
+:where(button:not(.selected):not(:disabled):hover) {
+	/* TODO or set a hover var? make consistent with fill */
+	--button_border_color: var(--button_border_color_hover);
+	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
 }
-
+:where(button.selected.deselectable:not(:disabled):hover) {
+	--button_text_color: var(--text_color_6);
+}
+:where(button:active) {
+	--button_fill: var(--button_fill_active);
+	/* TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+	looks fixed if `--border_color` but then breaks for .selected */
+	--button_border_color: var(--button_border_color_active);
+	--outline_width: var(--outline_width_3);
+	--shadow: var(--button_shadow_active);
+}
 :where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
 	--text_color: var(--color_c_5);
 	--border_color: var(--color_c_5);
@@ -620,6 +633,11 @@ for disabled colors without needing a wrapper .disabled class */
 }
 :where(button.selected:not(.deselectable):active) {
 	--outline_width: var(--outline_width_2);
+}
+
+:where(button.inline, p button) {
+	display: inline-block;
+	--min_height: var(--input_height_sm); /* TODO this increases paragraph line spacing */
 }
 
 :where(small) {

@@ -471,7 +471,7 @@ export const fg: Style_Variable = {
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
 };
 /* these are light or dark with a low alpha, so they nest/stack arbitrarily */
-// TODO these inconsistently don't use tint, unlike bg/fg
+// TODO BLOCK these inconsistently don't use tint, unlike bg/fg, and if they did they would be roughly equal to text_color_0-10
 export const bg_0: Style_Variable = {
 	name: 'bg_0',
 	light: '#000',
@@ -646,31 +646,41 @@ export const text_color_0: Style_Variable = {
 	name: 'text_color_0',
 	light: 'var(--fg_10)',
 };
+// TODO BLOCK insert 1
+// TODO BLOCK 1 becomes 2
 export const text_color_1: Style_Variable = {
 	name: 'text_color_1',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 16%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 80%)',
 };
+// TODO BLOCK 2 becomes 3
 export const text_color_2: Style_Variable = {
 	name: 'text_color_2',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 32%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 65%)',
 };
+// TODO BLOCK insert 4
+// TODO BLOCK 3 becomes 5
 export const text_color_3: Style_Variable = {
 	name: 'text_color_3',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 48%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 50%)',
 };
+// TODO BLOCK insert 6
+// TODO BLOCK 4 becomes 7
 export const text_color_4: Style_Variable = {
 	name: 'text_color_4',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 68%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 30%)',
 };
+// TODO BLOCK insert 8
+// TODO BLOCK 5 becomes 9
 export const text_color_5: Style_Variable = {
 	name: 'text_color_5',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 12%)',
 };
+// TODO BLOCK 6 becomes 10
 export const text_color_6: Style_Variable = {
 	name: 'text_color_6',
 	light: 'var(--fg_0)',
