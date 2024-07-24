@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.12.1
+
+### Patch Changes
+
+- add margin auto variants ([f684712](https://github.com/ryanatkn/moss/commit/f684712))
+
 ## 0.12.0
 
 ### Minor Changes
