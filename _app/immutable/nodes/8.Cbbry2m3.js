@@ -1,4 +1,4 @@
-import{f as w,a as l,s as n,c as t,t as e,A as M,r as a}from"../chunks/disclose-version.C18h83_w.js";import{p as V,a as K,t as j,J as A}from"../chunks/runtime.C2zfFJJN.js";import{s as U}from"../chunks/render.DoF8UeDv.js";import{e as I,i as L}from"../chunks/class.pTPFZAyC.js";import{C as b}from"../chunks/Code.DTj2vom3.js";import{T as Q}from"../chunks/Tome_Detail.BOLhYIfm.js";import{T as Z}from"../chunks/Tome_Link.CKZvxK1m.js";import{G as P}from"../chunks/Github_Logo.DUAOTyqZ.js";import{a as nn}from"../chunks/tome.CUyVYEB6.js";import{D as R}from"../chunks/Details.DZVYVCv7.js";import{T as g}from"../chunks/Tome_Subheading.DuS42Qxg.js";import{U as on}from"../chunks/Unfinished_Implementation_Warning.CK0zMplK.js";const an=`/* @ryanatkn/moss/style_utilities.css */
+import{f as w,a as l,s as n,c as t,t as e,A as M,r as a}from"../chunks/disclose-version.C18h83_w.js";import{p as V,a as K,t as j,J as A}from"../chunks/runtime.C2zfFJJN.js";import{s as U}from"../chunks/render.DoF8UeDv.js";import{e as I,i as L}from"../chunks/class.pTPFZAyC.js";import{C as b}from"../chunks/Code.DTj2vom3.js";import{T as Q}from"../chunks/Tome_Detail.BGm7MNaj.js";import{T as Z}from"../chunks/Tome_Link.DxIq0Zdl.js";import{G as P}from"../chunks/Github_Logo.DUAOTyqZ.js";import{a as nn}from"../chunks/tome.CUyVYEB6.js";import{D as R}from"../chunks/Details.DZVYVCv7.js";import{T as g}from"../chunks/Tome_Subheading.Cv8J7VWX.js";import{U as on}from"../chunks/Unfinished_Implementation_Warning.CK0zMplK.js";const an=`/* @ryanatkn/moss/style_utilities.css */
 
 /* TODO @many docs in library */
 
@@ -16,6 +16,8 @@ The utility classes not based on style variables are in \`style_utilities.css\`.
 /* TODO vite plugin for removing unused */
 
 /* TODO display_flex? more predictable+verbose or shorthand? */
+
+/* TODO include inherit, even initial? after optimizing, sure */
 
 .relative {
 	position: relative;
@@ -2675,6 +2677,18 @@ layout
 	margin-top: auto;
 	margin-bottom: auto;
 }
+.mt_auto {
+	margin-top: auto;
+}
+.mr_auto {
+	margin-right: auto;
+}
+.mb_auto {
+	margin-bottom: auto;
+}
+.ml_auto {
+	margin-left: auto;
+}
 
 .m_0 {
 	margin: 0;
@@ -3629,7 +3643,7 @@ a.chip {
 }
 `;var rn=e("Both the docs and implementation of these need a lot more work.",1),tn=e('<li class="svelte-1gekuvc"> </li>'),sn=e('<li class="svelte-1gekuvc"> </li>'),ln=e('<span class="font_mono">@ryanatkn/moss/style_utilities.css</span>'),en=e('<p class="source_link svelte-1gekuvc"><a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_utilities.css" class="svelte-1gekuvc"><!> <span class="ml_xs">source</span></a></p> <!>',1),dn=e('<span class="font_mono">@ryanatkn/moss/style_components.css</span>'),cn=e('<p class="source_link svelte-1gekuvc"><a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_components.css" class="svelte-1gekuvc"><!> <span class="ml_xs">source</span></a></p> <!>',1),gn=e(`<!> <section><!> <p>Moss has three optional CSS files with different kinds of classes:</p> <!> <p>Utility classes use plain CSS for convenient HTML authoring. Many are based on Moss style <!>.</p> <p>Component classes are semantic groupings of styles.</p> <aside>Unused clases can be removed with build tooling, which is out of scope for Moss, and with a
 			more sophisticated architecture these classes could potentially be generated on demand instead
-			of distributed as static files.</aside></section> <section><!> <ul class="classes unstyled svelte-1gekuvc"></ul></section> <section><!> <aside>These are like utility classes but don't map as cleanly to a single style property.</aside> <ul class="classes unstyled svelte-1gekuvc"></ul></section> <section><!> <!> <!></section>`,1);function Dn(B,E){V(E,!0);const W=nn("classes"),Y=["relative|absolute|fixed|sticky|static","overflow_auto|hidden|scroll|clip|visible","overflow_x|y_auto|hidden|scroll|clip|visible","display_none|contents","inline|inline_block|inline_flex|inline_grid","block","flex","flex_1","flex_wrap|wrap_reverse","grid","float_none|left|right|inline_start|inline_end","flip_x|y|xy","font_sans|mono","line_height_xs-xl","size_xs-xl9","icon_size_xs-xl3","text_align_start|end|left|right|center|justify|justify_all|match_parent","vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom","white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces","white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces","text_wrap_wrap|nowrap|balance|pretty|stable","ellipsis","font_weight_100-900","text_color_0-10","darken|lighten_1-9","bg|fg","bg|fg_1-9","color_darken|lighten_1-9","color_bg|fg","color_bg|fg_1-9","hue_a-i","color_a-i_1 -9","bg_a-i_1-9","border_color_1-5","border_color_a-i","border_color_transparent","border_width_0-6","outline_width_0-3","border_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset","radius_0|50|100","radius_xs3-xl","fade_0|100","fade_1-6","glow_xs-xl","glow_inset|outset_xs-xl","shadow_xs-xl","shadow_inset|outset_xs-xl","highlight_xs-xl","highlight_inset|outset_xs-xl","glow_xs-xl","glow_inset|outset_xs-xl","shroud_xs-xl","shroud_inset|outset_xs-xl","shadow_a-i_xs-xl","shadow_a-i_inset|outset_xs-xl","shadow_inherit|none","w|h_0|100","w|h_xs-xl15","p|pt|pr|pb|pl|px|py_0","p|pt|pr|pb|pl|px|py_xs5-xl15","m|mx|my_auto","m|mt|mr|mb|ml|mx|my_0","m|mt|mr|mb|ml|mx|my_xs5-xl15","gap_xs5-xl15","column|row_gap_xs5-xl15","pixelated"],N=["box","row","wrap|nowrap","formatted","width_xs-md","selectable","clickable","pane","panel","icon_button","plain","menu_item","chevron","chip"];Q(B,{tome:W,children:(X,pn)=>{var u=gn(),f=w(u);on(f,{children:(d,_)=>{M();var s=rn();l(d,s)},$$slots:{default:!0}});var x=n(n(f,!0)),k=t(x);g(k,{text:"Optional CSS classes",slug:"css-classes"});var q=n(n(k,!0)),y=n(n(q,!0));b(y,{content:`<!-- +layout.svelte -->
+			of distributed as static files.</aside></section> <section><!> <ul class="classes unstyled svelte-1gekuvc"></ul></section> <section><!> <aside>These are like utility classes but don't map as cleanly to a single style property.</aside> <ul class="classes unstyled svelte-1gekuvc"></ul></section> <section><!> <!> <!></section>`,1);function Dn(B,E){V(E,!0);const W=nn("classes"),Y=["relative|absolute|fixed|sticky|static","overflow_auto|hidden|scroll|clip|visible","overflow_x|y_auto|hidden|scroll|clip|visible","display_none|contents","inline|inline_block|inline_flex|inline_grid","block","flex","flex_1","flex_wrap|wrap_reverse","grid","float_none|left|right|inline_start|inline_end","flip_x|y|xy","font_sans|mono","line_height_xs-xl","size_xs-xl9","icon_size_xs-xl3","text_align_start|end|left|right|center|justify|justify_all|match_parent","vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom","white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces","white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces","text_wrap_wrap|nowrap|balance|pretty|stable","ellipsis","font_weight_100-900","text_color_0-10","darken|lighten_1-9","bg|fg","bg|fg_1-9","color_darken|lighten_1-9","color_bg|fg","color_bg|fg_1-9","hue_a-i","color_a-i_1 -9","bg_a-i_1-9","border_color_1-5","border_color_a-i","border_color_transparent","border_width_0-6","outline_width_0-3","border_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset","radius_0|50|100","radius_xs3-xl","fade_0|100","fade_1-6","glow_xs-xl","glow_inset|outset_xs-xl","shadow_xs-xl","shadow_inset|outset_xs-xl","highlight_xs-xl","highlight_inset|outset_xs-xl","glow_xs-xl","glow_inset|outset_xs-xl","shroud_xs-xl","shroud_inset|outset_xs-xl","shadow_a-i_xs-xl","shadow_a-i_inset|outset_xs-xl","shadow_inherit|none","w|h_0|100","w|h_xs-xl15","p|pt|pr|pb|pl|px|py_0","p|pt|pr|pb|pl|px|py_xs5-xl15","m|mt|mr|mb|ml|mx|my_auto","m|mt|mr|mb|ml|mx|my_0","m|mt|mr|mb|ml|mx|my_xs5-xl15","gap_xs5-xl15","column|row_gap_xs5-xl15","pixelated"],N=["box","row","wrap|nowrap","formatted","width_xs-md","selectable","clickable","pane","panel","icon_button","plain","menu_item","chevron","chip"];Q(B,{tome:W,children:(X,pn)=>{var u=gn(),f=w(u);on(f,{children:(d,_)=>{M();var s=rn();l(d,s)},$$slots:{default:!0}});var x=n(n(f,!0)),k=t(x);g(k,{text:"Optional CSS classes",slug:"css-classes"});var q=n(n(k,!0)),y=n(n(q,!0));b(y,{content:`<!-- +layout.svelte -->
 <script>
 	import '@ryanatkn/moss/style.css';
 	import '@ryanatkn/moss/theme.css'; // or bring your own
