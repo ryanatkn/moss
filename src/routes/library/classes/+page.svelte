@@ -77,7 +77,7 @@
 		'w|h_xs-xl15',
 		'p|pt|pr|pb|pl|px|py_0',
 		'p|pt|pr|pb|pl|px|py_xs5-xl15',
-		'm|mx|my_auto',
+		'm|mt|mr|mb|ml|mx|my_auto',
 		'm|mt|mr|mb|ml|mx|my_0',
 		'm|mt|mr|mb|ml|mx|my_xs5-xl15',
 		'gap_xs5-xl15',

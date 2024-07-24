@@ -17,6 +17,8 @@ The utility classes not based on style variables are in `style_utilities.css`.
 
 /* TODO display_flex? more predictable+verbose or shorthand? */
 
+/* TODO include inherit, even initial? after optimizing, sure */
+
 .relative {
 	position: relative;
 }
@@ -2674,6 +2676,18 @@ layout
 .my_auto {
 	margin-top: auto;
 	margin-bottom: auto;
+}
+.mt_auto {
+	margin-top: auto;
+}
+.mr_auto {
+	margin-right: auto;
+}
+.mb_auto {
+	margin-bottom: auto;
+}
+.ml_auto {
+	margin-left: auto;
 }
 
 .m_0 {
