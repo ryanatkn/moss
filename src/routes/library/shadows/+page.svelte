@@ -12,7 +12,7 @@
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
-	// TODO BLOCK some colors are incorrect
+	// TODO BLOCK fg/bg instead? 1-5?
 </script>
 
 <Tome_Detail {tome}>
@@ -31,7 +31,7 @@
 					<Style_Variable_Button name="shadow_{shadow_variant}" />
 					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant)}
+				{@render shadow_variant_examples(null, shadow_variant, 'shadow')}
 			</div>
 		{/each}
 		{#each shadow_variants as shadow_variant}
@@ -43,7 +43,7 @@
 					<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant)}
+				{@render shadow_variant_examples(null, shadow_variant, 'shadow')}
 			</div>
 		{/each}
 		{#each shadow_variants as shadow_variant}
@@ -55,7 +55,7 @@
 					<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant)}
+				{@render shadow_variant_examples(null, shadow_variant, 'shadow')}
 			</div>
 		{/each}
 	</section>
@@ -75,7 +75,7 @@
 						<Style_Variable_Button name="shadow_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'highlight')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -87,7 +87,7 @@
 						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'highlight')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -99,7 +99,7 @@
 						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'highlight')}
 				</div>
 			{/each}
 		</div>
@@ -120,7 +120,7 @@
 						<Style_Variable_Button name="shadow_{shadow_variant}" />
 						<Style_Variable_Button name="glow_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'glow')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -132,7 +132,7 @@
 						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 						<Style_Variable_Button name="glow_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'glow')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -144,7 +144,7 @@
 						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 						<Style_Variable_Button name="glow_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'glow')}
 				</div>
 			{/each}
 		</div>
@@ -165,7 +165,7 @@
 						<Style_Variable_Button name="shadow_{shadow_variant}" />
 						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'shroud')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -177,7 +177,7 @@
 						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'shroud')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -189,7 +189,7 @@
 						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant)}
+					{@render shadow_variant_examples(null, shadow_variant, 'shroud')}
 				</div>
 			{/each}
 		</div>
@@ -215,7 +215,7 @@
 								{classes}
 							/>
 						</div>
-						{@render shadow_variant_examples(color_variant, shadow_variant)}
+						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow')}
 					</div>
 				{/each}
 				{#each shadow_variants as shadow_variant}
@@ -230,7 +230,7 @@
 								{classes}
 							/>
 						</div>
-						{@render shadow_variant_examples(color_variant, shadow_variant)}
+						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow')}
 					</div>
 				{/each}
 				{#each shadow_variants as shadow_variant}
@@ -245,7 +245,7 @@
 								{classes}
 							/>
 						</div>
-						{@render shadow_variant_examples(color_variant, shadow_variant)}
+						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow')}
 					</div>
 				{/each}
 			</section>
@@ -256,11 +256,15 @@
 	</section>
 </Tome_Detail>
 
-{#snippet shadow_variant_examples(color_variant: string | null, shadow_variant: string)}
+{#snippet shadow_variant_examples(
+	color_variant: string | null,
+	shadow_variant: string,
+	shadow_type: string,
+)}
 	{#each shadow_variants as v (v)}
 		<div
 			class="shadow_variant_example"
-			style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--shadow_color_{color_variant
+			style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--{shadow_type}_color_{color_variant
 				? color_variant + '_' + v
 				: v}"
 		></div>
