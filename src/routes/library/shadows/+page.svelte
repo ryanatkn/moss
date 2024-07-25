@@ -75,8 +75,8 @@
 						<Style_Variable_Button name="shadow_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant)}
 			{/each}
 			{#each shadow_variants as shadow_variant}
 				<div class="shadow_example">
@@ -87,8 +87,8 @@
 						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant)}
 			{/each}
 			{#each shadow_variants as shadow_variant}
 				<div class="shadow_example">
@@ -99,8 +99,8 @@
 						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant)}
 			{/each}
 		</div>
 	</section>
