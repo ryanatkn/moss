@@ -83,6 +83,7 @@ By default it's opaque, resetting the background to the initial depth. */
 	box-shadow: var(--pane_shadow, var(--shadow_md) var(--shadow_color_md));
 	border-radius: var(--radius_xs);
 }
+
 /* A panel is a box embedded into the page, useful for visually isolating content. */
 .panel {
 	border-radius: var(--radius_xs);
@@ -103,6 +104,7 @@ By default it's opaque, resetting the background to the initial depth. */
 	font-weight: 900;
 	padding: 0;
 }
+
 /* TODO maybe this belongs with the reset, like `selected`? or does `selected` belong here? */
 .plain:not(:hover) {
 	border-color: transparent;

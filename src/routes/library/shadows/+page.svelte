@@ -165,31 +165,49 @@
 		{#each color_variants as color_variant}
 			{@const classes = 'color_' + color_variant}
 			<section>
-				{#each shadow_variants as variant}
-					<div
-						class="shadow_example"
-						style:box-shadow="var(--shadow_{variant}) var(--shadow_color_{color_variant}_{variant})"
-					>
-						<Style_Variable_Button name="shadow_{variant}" {classes} />
-						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" {classes} />
+				{#each shadow_variants as shadow_variant}
+					<div class="shadow_example">
+						<div
+							class="shadow_main_example"
+							style:box-shadow="var(--shadow_{shadow_variant}) var(--shadow_color_{color_variant}_{shadow_variant})"
+						>
+							<Style_Variable_Button name="shadow_{shadow_variant}" {classes} />
+							<Style_Variable_Button
+								name="shadow_color_{color_variant}_{shadow_variant}"
+								{classes}
+							/>
+						</div>
+						{@render shadow_variant_examples(color_variant, shadow_variant)}
 					</div>
 				{/each}
-				{#each shadow_variants as variant}
-					<div
-						class="shadow_example"
-						style:box-shadow="var(--shadow_inset_{variant}) var(--shadow_color_{color_variant}_{variant})"
-					>
-						<Style_Variable_Button name="shadow_inset_{variant}" {classes} />
-						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" {classes} />
+				{#each shadow_variants as shadow_variant}
+					<div class="shadow_example">
+						<div
+							class="shadow_main_example"
+							style:box-shadow="var(--shadow_inset_{shadow_variant}) var(--shadow_color_{color_variant}_{shadow_variant})"
+						>
+							<Style_Variable_Button name="shadow_inset_{shadow_variant}" {classes} />
+							<Style_Variable_Button
+								name="shadow_color_{color_variant}_{shadow_variant}"
+								{classes}
+							/>
+						</div>
+						{@render shadow_variant_examples(color_variant, shadow_variant)}
 					</div>
 				{/each}
-				{#each shadow_variants as variant}
-					<div
-						class="shadow_example"
-						style:box-shadow="var(--shadow_outset_{variant}) var(--shadow_color_{color_variant}_{variant})"
-					>
-						<Style_Variable_Button name="shadow_outset_{variant}" {classes} />
-						<Style_Variable_Button name="shadow_color_{color_variant}_{variant}" {classes} />
+				{#each shadow_variants as shadow_variant}
+					<div class="shadow_example">
+						<div
+							class="shadow_main_example"
+							style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--shadow_color_{color_variant}_{shadow_variant})"
+						>
+							<Style_Variable_Button name="shadow_outset_{shadow_variant}" {classes} />
+							<Style_Variable_Button
+								name="shadow_color_{color_variant}_{shadow_variant}"
+								{classes}
+							/>
+						</div>
+						{@render shadow_variant_examples(color_variant, shadow_variant)}
 					</div>
 				{/each}
 			</section>
@@ -200,15 +218,40 @@
 	</section>
 </Tome_Detail>
 
+{#snippet shadow_variant_examples(color_variant, shadow_variant)}
+	{#each shadow_variants as v (v)}
+		<div
+			class="shadow_variant_example"
+			style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--shadow_color_{color_variant}_{v})"
+		></div>
+	{/each}
+{/snippet}
+
 <style>
+	.color_variant_example {
+		/*  */
+	}
 	.shadow_example {
 		position: relative;
 		padding: var(--space_md);
 		font-family: var(--font_mono);
 		border-radius: var(--radius_xs3);
 		display: flex;
+		align-items: center;
+		gap: var(--space_lg);
+	}
+	.shadow_main_example {
+		flex: 1;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space_lg);
 	}
 	.shadow_example:not(:last-child) {
 		margin-bottom: var(--space_lg);
+	}
+	.shadow_variant_example {
+		width: var(--input_height);
+		min-width: var(--input_height);
+		height: var(--input_height);
 	}
 </style>
