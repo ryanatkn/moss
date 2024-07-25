@@ -12,7 +12,7 @@
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
-	// TODO BLOCK fg/bg instead? 1-5?
+	// TODO BLOCK fg/bg instead? 1-5? or shadow_color_1-5? shadow_alpha_1-5? or the existing `--fade`?
 </script>
 
 <Tome_Detail {tome}>
