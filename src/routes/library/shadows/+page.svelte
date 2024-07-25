@@ -11,6 +11,8 @@
 	const LIBRARY_ITEM_NAME = 'shadows';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
+
+	// TODO BLOCK some colors are incorrect
 </script>
 
 <Tome_Detail {tome}>
@@ -20,31 +22,40 @@
 		<Unfinished_Implementation_Warning
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
 		>
-		{#each shadow_variants as variant}
-			<div
-				class="shadow_example"
-				style:box-shadow="var(--shadow_{variant}) var(--shadow_color_{variant})"
-			>
-				<Style_Variable_Button name="shadow_{variant}" />
-				<Style_Variable_Button name="shadow_color_{variant}" />
+		{#each shadow_variants as shadow_variant}
+			<div class="shadow_example">
+				<div
+					class="shadow_main_example"
+					style:box-shadow="var(--shadow_{shadow_variant}) var(--shadow_color_{shadow_variant})"
+				>
+					<Style_Variable_Button name="shadow_{shadow_variant}" />
+					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
+				</div>
+				{@render shadow_variant_examples(null, shadow_variant)}
 			</div>
 		{/each}
-		{#each shadow_variants as variant}
-			<div
-				class="shadow_example"
-				style:box-shadow="var(--shadow_inset_{variant}) var(--shadow_color_{variant})"
-			>
-				<Style_Variable_Button name="shadow_inset_{variant}" />
-				<Style_Variable_Button name="shadow_color_{variant}" />
+		{#each shadow_variants as shadow_variant}
+			<div class="shadow_example">
+				<div
+					class="shadow_main_example"
+					style:box-shadow="var(--shadow_inset_{shadow_variant}) var(--shadow_color_{shadow_variant})"
+				>
+					<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
+					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
+				</div>
+				{@render shadow_variant_examples(null, shadow_variant)}
 			</div>
 		{/each}
-		{#each shadow_variants as variant}
-			<div
-				class="shadow_example"
-				style:box-shadow="var(--shadow_outset_{variant}) var(--shadow_color_{variant})"
-			>
-				<Style_Variable_Button name="shadow_outset_{variant}" />
-				<Style_Variable_Button name="shadow_color_{variant}" />
+		{#each shadow_variants as shadow_variant}
+			<div class="shadow_example">
+				<div
+					class="shadow_main_example"
+					style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--shadow_color_{shadow_variant})"
+				>
+					<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
+					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
+				</div>
+				{@render shadow_variant_examples(null, shadow_variant)}
 			</div>
 		{/each}
 	</section>
@@ -55,32 +66,41 @@
 		<Tome_Subheading text="Highlights" slug="highlights" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_{variant}) var(--highlight_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_{variant}" />
-					<Style_Variable_Button name="highlight_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_{shadow_variant}) var(--highlight_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_{shadow_variant}" />
+						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
+					</div>
 				</div>
+				{@render shadow_variant_examples(null, shadow_variant)}
 			{/each}
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_inset_{variant}) var(--highlight_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_inset_{variant}" />
-					<Style_Variable_Button name="highlight_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_inset_{shadow_variant}) var(--highlight_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
+						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
+					</div>
 				</div>
+				{@render shadow_variant_examples(null, shadow_variant)}
 			{/each}
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_outset_{variant}) var(--highlight_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_outset_{variant}" />
-					<Style_Variable_Button name="highlight_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--highlight_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
+						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
+					</div>
 				</div>
+				{@render shadow_variant_examples(null, shadow_variant)}
 			{/each}
 		</div>
 	</section>
@@ -91,31 +111,40 @@
 		<Tome_Subheading text="Glows" slug="glows" />
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_{variant}) var(--glow_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_{variant}" />
-					<Style_Variable_Button name="glow_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_{shadow_variant}) var(--glow_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_{shadow_variant}" />
+						<Style_Variable_Button name="glow_color_{shadow_variant}" />
+					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
 			{/each}
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_inset_{variant}) var(--glow_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_inset_{variant}" />
-					<Style_Variable_Button name="glow_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_inset_{shadow_variant}) var(--glow_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
+						<Style_Variable_Button name="glow_color_{shadow_variant}" />
+					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
 			{/each}
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_outset_{variant}) var(--glow_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_outset_{variant}" />
-					<Style_Variable_Button name="glow_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--glow_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
+						<Style_Variable_Button name="glow_color_{shadow_variant}" />
+					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
 			{/each}
 		</div>
@@ -127,31 +156,40 @@
 		<Tome_Subheading text="Shrouds" slug="shrouds" />
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_{variant}) var(--shroud_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_{variant}" />
-					<Style_Variable_Button name="shroud_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_{shadow_variant}) var(--shroud_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_{shadow_variant}" />
+						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
+					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
 			{/each}
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_inset_{variant}) var(--shroud_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_inset_{variant}" />
-					<Style_Variable_Button name="shroud_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_inset_{shadow_variant}) var(--shroud_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
+						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
+					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
 			{/each}
-			{#each shadow_variants as variant}
-				<div
-					class="shadow_example"
-					style:box-shadow="var(--shadow_outset_{variant}) var(--shroud_color_{variant})"
-				>
-					<Style_Variable_Button name="shadow_outset_{variant}" />
-					<Style_Variable_Button name="shroud_color_{variant}" />
+			{#each shadow_variants as shadow_variant}
+				<div class="shadow_example">
+					<div
+						class="shadow_main_example"
+						style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--shroud_color_{shadow_variant})"
+					>
+						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
+						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
+					</div>
+					{@render shadow_variant_examples(null, shadow_variant)}
 				</div>
 			{/each}
 		</div>
@@ -218,11 +256,13 @@
 	</section>
 </Tome_Detail>
 
-{#snippet shadow_variant_examples(color_variant, shadow_variant)}
+{#snippet shadow_variant_examples(color_variant: string | null, shadow_variant: string)}
 	{#each shadow_variants as v (v)}
 		<div
 			class="shadow_variant_example"
-			style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--shadow_color_{color_variant}_{v})"
+			style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--shadow_color_{color_variant
+				? color_variant + '_' + v
+				: v}"
 		></div>
 	{/each}
 {/snippet}
@@ -244,6 +284,7 @@
 		flex: 1;
 		display: flex;
 		flex-wrap: wrap;
+		padding: var(--space_sm);
 		gap: var(--space_lg);
 	}
 	.shadow_example:not(:last-child) {
