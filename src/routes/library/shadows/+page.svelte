@@ -31,7 +31,7 @@
 					<Style_Variable_Button name="shadow_{shadow_variant}" />
 					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant, 'shadow')}
+				{@render shadow_variant_examples(null, shadow_variant, 'shadow', '')}
 			</div>
 		{/each}
 		{#each shadow_variants as shadow_variant}
@@ -43,7 +43,7 @@
 					<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant, 'shadow')}
+				{@render shadow_variant_examples(null, shadow_variant, 'shadow', '_inset')}
 			</div>
 		{/each}
 		{#each shadow_variants as shadow_variant}
@@ -55,7 +55,7 @@
 					<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 					<Style_Variable_Button name="shadow_color_{shadow_variant}" />
 				</div>
-				{@render shadow_variant_examples(null, shadow_variant, 'shadow')}
+				{@render shadow_variant_examples(null, shadow_variant, 'shadow', '_outset')}
 			</div>
 		{/each}
 	</section>
@@ -75,7 +75,7 @@
 						<Style_Variable_Button name="shadow_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'highlight')}
+					{@render shadow_variant_examples(null, shadow_variant, 'highlight', '')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -87,7 +87,7 @@
 						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'highlight')}
+					{@render shadow_variant_examples(null, shadow_variant, 'highlight', '_inset')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -99,7 +99,7 @@
 						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 						<Style_Variable_Button name="highlight_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'highlight')}
+					{@render shadow_variant_examples(null, shadow_variant, 'highlight', '_outset')}
 				</div>
 			{/each}
 		</div>
@@ -120,7 +120,7 @@
 						<Style_Variable_Button name="shadow_{shadow_variant}" />
 						<Style_Variable_Button name="glow_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'glow')}
+					{@render shadow_variant_examples(null, shadow_variant, 'glow', '')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -132,7 +132,7 @@
 						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 						<Style_Variable_Button name="glow_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'glow')}
+					{@render shadow_variant_examples(null, shadow_variant, 'glow', '_inset')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -144,7 +144,7 @@
 						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 						<Style_Variable_Button name="glow_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'glow')}
+					{@render shadow_variant_examples(null, shadow_variant, 'glow', '_outset')}
 				</div>
 			{/each}
 		</div>
@@ -165,7 +165,7 @@
 						<Style_Variable_Button name="shadow_{shadow_variant}" />
 						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'shroud')}
+					{@render shadow_variant_examples(null, shadow_variant, 'shroud', '')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -177,7 +177,7 @@
 						<Style_Variable_Button name="shadow_inset_{shadow_variant}" />
 						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'shroud')}
+					{@render shadow_variant_examples(null, shadow_variant, 'shroud', '_inset')}
 				</div>
 			{/each}
 			{#each shadow_variants as shadow_variant}
@@ -189,7 +189,7 @@
 						<Style_Variable_Button name="shadow_outset_{shadow_variant}" />
 						<Style_Variable_Button name="shroud_color_{shadow_variant}" />
 					</div>
-					{@render shadow_variant_examples(null, shadow_variant, 'shroud')}
+					{@render shadow_variant_examples(null, shadow_variant, 'shroud', '_outset')}
 				</div>
 			{/each}
 		</div>
@@ -215,7 +215,7 @@
 								{classes}
 							/>
 						</div>
-						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow')}
+						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow', '')}
 					</div>
 				{/each}
 				{#each shadow_variants as shadow_variant}
@@ -230,7 +230,7 @@
 								{classes}
 							/>
 						</div>
-						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow')}
+						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow', '_inset')}
 					</div>
 				{/each}
 				{#each shadow_variants as shadow_variant}
@@ -245,7 +245,7 @@
 								{classes}
 							/>
 						</div>
-						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow')}
+						{@render shadow_variant_examples(color_variant, shadow_variant, 'shadow', '_outset')}
 					</div>
 				{/each}
 			</section>
@@ -260,15 +260,18 @@
 	color_variant: string | null,
 	shadow_variant: string,
 	shadow_type: string,
+	shadow_position: string, // TODO name?
 )}
-	{#each shadow_variants as v (v)}
-		<div
-			class="shadow_variant_example"
-			style:box-shadow="var(--shadow_outset_{shadow_variant}) var(--{shadow_type}_color_{color_variant
-				? color_variant + '_' + v
-				: v}"
-		></div>
-	{/each}
+	<div class="row gap_lg">
+		{#each shadow_variants as v (v)}
+			<div
+				class="shadow_variant_example"
+				style:box-shadow="var(--shadow{shadow_position}_{shadow_variant}) var(--{shadow_type}_color_{color_variant
+					? color_variant + '_' + v
+					: v}"
+			></div>
+		{/each}
+	</div>
 {/snippet}
 
 <style>
@@ -282,14 +285,16 @@
 		border-radius: var(--radius_xs3);
 		display: flex;
 		align-items: center;
-		gap: var(--space_lg);
+		flex-wrap: wrap;
+		gap: var(--space_md);
 	}
 	.shadow_main_example {
 		flex: 1;
 		display: flex;
 		flex-wrap: wrap;
 		padding: var(--space_sm);
-		gap: var(--space_lg);
+		gap: var(--space_md);
+		min-width: 260px;
 	}
 	.shadow_example:not(:last-child) {
 		margin-bottom: var(--space_lg);
