@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.12.2
+
+### Patch Changes
+
+- add flex direction classes ([fb99dd8](https://github.com/ryanatkn/moss/commit/fb99dd8))
+
 ## 0.12.1
 
 ### Patch Changes

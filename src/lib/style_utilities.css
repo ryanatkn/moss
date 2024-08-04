@@ -128,6 +128,19 @@ The utility classes not based on style variables are in `style_utilities.css`.
 	flex-wrap: nowrap;
 }
 
+.flex_row {
+	flex-direction: row;
+}
+.flex_row_reverse {
+	flex-direction: row-reverse;
+}
+.flex_column {
+	flex-direction: column;
+}
+.flex_column_reverse {
+	flex-direction: column-reverse;
+}
+
 .grid {
 	display: grid;
 }
