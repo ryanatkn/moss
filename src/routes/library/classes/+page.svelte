@@ -25,7 +25,7 @@
 		'block',
 		'flex',
 		'flex_1',
-		'flex_wrap|wrap_reverse',
+		'flex_wrap|wrap_reverse|nowrap',
 		'grid',
 		'float_none|left|right|inline_start|inline_end',
 		'flip_x|y|xy',
