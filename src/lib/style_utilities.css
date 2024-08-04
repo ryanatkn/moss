@@ -118,12 +118,14 @@ The utility classes not based on style variables are in `style_utilities.css`.
 .flex_1 {
 	flex: 1;
 }
-/* not including `.flex_nowrap` because it's the initial value and it's not inherited */
 .flex_wrap {
 	flex-wrap: wrap;
 }
 .flex_wrap_reverse {
 	flex-wrap: wrap-reverse;
+}
+.flex_nowrap {
+	flex-wrap: nowrap;
 }
 
 .grid {
