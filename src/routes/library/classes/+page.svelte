@@ -26,6 +26,7 @@
 		'flex',
 		'flex_1',
 		'flex_wrap|wrap_reverse',
+		'flex_row|column|row_reverse|column_reverse',
 		'grid',
 		'float_none|left|right|inline_start|inline_end',
 		'flip_x|y|xy',
