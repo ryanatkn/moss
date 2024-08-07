@@ -684,6 +684,12 @@ TODO think through these patterns to get somewhere consistent
 	justify-content: center;
 }
 
+/* like `.box` but uncentered */
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
 /* can be used to override the direction of a `.box` */
 .row {
 	display: flex;
@@ -1011,6 +1017,19 @@ The utility classes not based on style variables are in `style_utilities.css`.
 }
 .flex_column_reverse {
 	flex-direction: column-reverse;
+}
+
+.grow {
+	flex-grow: 1;
+}
+.grow_0 {
+	flex-grow: 0;
+}
+.shrink {
+	flex-shrink: 1;
+}
+.shrink_0 {
+	flex-shrink: 0;
 }
 
 .grid {
