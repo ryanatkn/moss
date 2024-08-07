@@ -50,7 +50,8 @@ export const line_height_variants = ['xs', 'sm', 'md', 'lg', 'xl'];
 
 export const line_height_names = line_height_variants.map((s) => 'line_height_' + s);
 
-export const shadow_variants = ['xs', 'sm', 'md', 'lg', 'xl'];
+export const shadow_size_variants = ['xs', 'sm', 'md', 'lg', 'xl'];
+export const shadow_weight_variants = [1, 2, 3, 4, 5];
 
 // TODO maybe put this inline? factor out the pieces with `icon_size_variants`?
 export const icon_sizes = {
