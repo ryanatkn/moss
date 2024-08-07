@@ -25,7 +25,7 @@
 		'block',
 		'flex',
 		'flex_1',
-		'flex_wrap|wrap_reverse',
+		'flex_wrap|wrap_reverse|nowrap',
 		'flex_row|column|row_reverse|column_reverse',
 		'grid',
 		'float_none|left|right|inline_start|inline_end',
@@ -88,9 +88,9 @@
 	const style_components_items = [
 		'box',
 		'row',
-		'wrap|nowrap',
 		'formatted',
 		'width_xs-md',
+		'selected',
 		'selectable',
 		'clickable',
 		'pane',
@@ -148,7 +148,12 @@ ${'<' as string}script>
 	<section>
 		<Tome_Subheading text="Component classes" slug="semantic-classes" />
 		<aside>
-			These are like utility classes but don't map as cleanly to a single style property.
+			<p>
+				These are like utility classes but don't map as cleanly to a single style property. I don't
+				like using the word "component" here but I can't decide on a better name - "semantic" is too
+				vague and general IMO.
+			</p>
+			<p>They're like higher order utilities. They're not components in the JS framework sense.</p>
 		</aside>
 		<ul class="classes unstyled">
 			{#each style_components_items as c}

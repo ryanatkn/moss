@@ -36,8 +36,9 @@
 		<p>
 			Light mode's starting point is plain white documents (like paper) where we can think of UI
 			construction as assembling elements that contrast against the white background, replacing some
-			of the white blankness with darkened values/color/shape. Black shadows on the white background
-			make natural sense, and white glows against a white background are invisible.
+			of the white blankness with darkened values/color/shape. In other words, we start with full
+			lightness and subtract light to make visuals. Black shadows on the white background make
+			natural sense, and white glows against a white background are invisible.
 		</p>
 		<p>
 			In contrast, dark mode's starting point is a lightless void where we add light. We add

@@ -897,20 +897,20 @@ export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
 	light:
-		'var(--shadow_outset_xs) var(--shadow_color_xs), var(--shadow_inset_xs) var(--highlight_color_xs)',
-	dark: 'var(--shadow_inset_xs) var(--shadow_color_xs), var(--shadow_outset_xs) var(--highlight_color_xs)',
+		'var(--shadow_outset_xs) var(--shadow_color_1), var(--shadow_inset_xs) var(--highlight_color_1)',
+	dark: 'var(--shadow_inset_xs) var(--shadow_color_1), var(--shadow_outset_xs) var(--highlight_color_1)',
 };
 export const button_shadow_hover: Style_Variable = {
 	name: 'button_shadow_hover',
 	light:
-		'var(--shadow_outset_sm) var(--shadow_color_sm), var(--shadow_inset_sm) var(--highlight_color_sm)',
-	dark: 'var(--shadow_inset_sm) var(--shadow_color_sm), var(--shadow_outset_sm) var(--highlight_color_sm)',
+		'var(--shadow_outset_sm) var(--shadow_color_2), var(--shadow_inset_sm) var(--highlight_color_2)',
+	dark: 'var(--shadow_inset_sm) var(--shadow_color_2), var(--shadow_outset_sm) var(--highlight_color_2)',
 };
 export const button_shadow_active: Style_Variable = {
 	name: 'button_shadow_active',
 	light:
-		'var(--shadow_inset_sm) var(--shadow_color_sm), var(--shadow_outset_sm) var(--highlight_color_sm)',
-	dark: 'var(--shadow_outset_sm) var(--shadow_color_sm), var(--shadow_inset_sm) var(--highlight_color_sm), ',
+		'var(--shadow_inset_sm) var(--shadow_color_2), var(--shadow_outset_sm) var(--highlight_color_2)',
+	dark: 'var(--shadow_outset_sm) var(--shadow_color_2), var(--shadow_inset_sm) var(--highlight_color_2), ',
 };
 
 /* inputs */
@@ -1070,308 +1070,309 @@ export const shadow_outset_xl: Style_Variable = {
 	light: 'inset -3px -5px 20px 0px',
 };
 
-export const shadow_alpha_xs: Style_Variable = {
-	name: 'shadow_alpha_xs',
+export const shadow_alpha_1: Style_Variable = {
+	name: 'shadow_alpha_1',
 	light: '20%',
 };
-export const shadow_alpha_sm: Style_Variable = {
-	name: 'shadow_alpha_sm',
+export const shadow_alpha_2: Style_Variable = {
+	name: 'shadow_alpha_2',
 	light: '30%',
 };
-export const shadow_alpha_md: Style_Variable = {
-	name: 'shadow_alpha_md',
+export const shadow_alpha_3: Style_Variable = {
+	name: 'shadow_alpha_3',
 	light: '40%',
 };
-export const shadow_alpha_lg: Style_Variable = {
-	name: 'shadow_alpha_lg',
+export const shadow_alpha_4: Style_Variable = {
+	name: 'shadow_alpha_4',
 	light: '60%',
 };
-export const shadow_alpha_xl: Style_Variable = {
-	name: 'shadow_alpha_xl',
+export const shadow_alpha_5: Style_Variable = {
+	name: 'shadow_alpha_5',
 	light: '80%',
 };
-export const highlight_alpha_xs: Style_Variable = {
-	name: 'highlight_alpha_xs',
+// TODO doesn't seem like these are justified, but the `shadow_alpha` variables do seem useful, so currently including these for consistency, but maybe delete these or both?
+export const highlight_alpha_1: Style_Variable = {
+	name: 'highlight_alpha_1',
 	light: '40%',
 };
-export const highlight_alpha_sm: Style_Variable = {
-	name: 'highlight_alpha_sm',
+export const highlight_alpha_2: Style_Variable = {
+	name: 'highlight_alpha_2',
 	light: '50%',
 };
-export const highlight_alpha_md: Style_Variable = {
-	name: 'highlight_alpha_md',
+export const highlight_alpha_3: Style_Variable = {
+	name: 'highlight_alpha_3',
 	light: '60%',
 };
-export const highlight_alpha_lg: Style_Variable = {
-	name: 'highlight_alpha_lg',
+export const highlight_alpha_4: Style_Variable = {
+	name: 'highlight_alpha_4',
 	light: '70%',
 };
-export const highlight_alpha_xl: Style_Variable = {
-	name: 'highlight_alpha_xl',
+export const highlight_alpha_5: Style_Variable = {
+	name: 'highlight_alpha_5',
 	light: '80%',
 };
 
-export const shadow_color_xs: Style_Variable = {
-	name: 'shadow_color_xs',
-	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xs), transparent)',
+export const shadow_color_1: Style_Variable = {
+	name: 'shadow_color_1',
+	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_sm: Style_Variable = {
-	name: 'shadow_color_sm',
-	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_sm), transparent)',
+export const shadow_color_2: Style_Variable = {
+	name: 'shadow_color_2',
+	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_md: Style_Variable = {
-	name: 'shadow_color_md',
-	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_md), transparent)',
+export const shadow_color_3: Style_Variable = {
+	name: 'shadow_color_3',
+	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_lg: Style_Variable = {
-	name: 'shadow_color_lg',
-	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_lg), transparent)',
+export const shadow_color_4: Style_Variable = {
+	name: 'shadow_color_4',
+	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_xl: Style_Variable = {
-	name: 'shadow_color_xl',
-	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_xl), transparent)',
+export const shadow_color_5: Style_Variable = {
+	name: 'shadow_color_5',
+	light: 'color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_5), transparent)',
 };
-export const highlight_color_xs: Style_Variable = {
-	name: 'highlight_color_xs',
-	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_xs), transparent)',
+export const highlight_color_1: Style_Variable = {
+	name: 'highlight_color_1',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_1), transparent)',
 };
-export const highlight_color_sm: Style_Variable = {
-	name: 'highlight_color_sm',
-	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_sm), transparent)',
+export const highlight_color_2: Style_Variable = {
+	name: 'highlight_color_2',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_2), transparent)',
 };
-export const highlight_color_md: Style_Variable = {
-	name: 'highlight_color_md',
-	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_md), transparent)',
+export const highlight_color_3: Style_Variable = {
+	name: 'highlight_color_3',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_3), transparent)',
 };
-export const highlight_color_lg: Style_Variable = {
-	name: 'highlight_color_lg',
-	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_lg), transparent)',
+export const highlight_color_4: Style_Variable = {
+	name: 'highlight_color_4',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_4), transparent)',
 };
-export const highlight_color_xl: Style_Variable = {
-	name: 'highlight_color_xl',
-	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_xl), transparent)',
-};
-
-export const glow_color_xs: Style_Variable = {
-	name: 'glow_color_xs',
-	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xs), transparent)',
-};
-export const glow_color_sm: Style_Variable = {
-	name: 'glow_color_sm',
-	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_sm), transparent)',
-};
-export const glow_color_md: Style_Variable = {
-	name: 'glow_color_md',
-	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_md), transparent)',
-};
-export const glow_color_lg: Style_Variable = {
-	name: 'glow_color_lg',
-	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_lg), transparent)',
-};
-export const glow_color_xl: Style_Variable = {
-	name: 'glow_color_xl',
-	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_xl), transparent)',
-};
-export const shroud_color_xs: Style_Variable = {
-	name: 'shroud_color_xs',
-	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_xs), transparent)',
-};
-export const shroud_color_sm: Style_Variable = {
-	name: 'shroud_color_sm',
-	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_sm), transparent)',
-};
-export const shroud_color_md: Style_Variable = {
-	name: 'shroud_color_md',
-	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_md), transparent)',
-};
-export const shroud_color_lg: Style_Variable = {
-	name: 'shroud_color_lg',
-	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_lg), transparent)',
-};
-export const shroud_color_xl: Style_Variable = {
-	name: 'shroud_color_xl',
-	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_xl), transparent)',
+export const highlight_color_5: Style_Variable = {
+	name: 'highlight_color_5',
+	light: 'color-mix(in hsl, var(--highlight_color) var(--highlight_alpha_5), transparent)',
 };
 
-export const shadow_color_a_xs: Style_Variable = {
-	name: 'shadow_color_a_xs',
-	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_xs), transparent)',
+export const glow_color_1: Style_Variable = {
+	name: 'glow_color_1',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_a_sm: Style_Variable = {
-	name: 'shadow_color_a_sm',
-	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_sm), transparent)',
+export const glow_color_2: Style_Variable = {
+	name: 'glow_color_2',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_a_md: Style_Variable = {
-	name: 'shadow_color_a_md',
-	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_md), transparent)',
+export const glow_color_3: Style_Variable = {
+	name: 'glow_color_3',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_a_lg: Style_Variable = {
-	name: 'shadow_color_a_lg',
-	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_lg), transparent)',
+export const glow_color_4: Style_Variable = {
+	name: 'glow_color_4',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_a_xl: Style_Variable = {
-	name: 'shadow_color_a_xl',
-	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_xl), transparent)',
+export const glow_color_5: Style_Variable = {
+	name: 'glow_color_5',
+	light: 'color-mix(in hsl, var(--glow_color) var(--shadow_alpha_5), transparent)',
 };
-export const shadow_color_b_xs: Style_Variable = {
-	name: 'shadow_color_b_xs',
-	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_xs), transparent)',
+export const shroud_color_1: Style_Variable = {
+	name: 'shroud_color_1',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_b_sm: Style_Variable = {
-	name: 'shadow_color_b_sm',
-	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_sm), transparent)',
+export const shroud_color_2: Style_Variable = {
+	name: 'shroud_color_2',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_b_md: Style_Variable = {
-	name: 'shadow_color_b_md',
-	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_md), transparent)',
+export const shroud_color_3: Style_Variable = {
+	name: 'shroud_color_3',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_b_lg: Style_Variable = {
-	name: 'shadow_color_b_lg',
-	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_lg), transparent)',
+export const shroud_color_4: Style_Variable = {
+	name: 'shroud_color_4',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_b_xl: Style_Variable = {
-	name: 'shadow_color_b_xl',
-	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_xl), transparent)',
+export const shroud_color_5: Style_Variable = {
+	name: 'shroud_color_5',
+	light: 'color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_5), transparent)',
 };
-export const shadow_color_c_xs: Style_Variable = {
-	name: 'shadow_color_c_xs',
-	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_xs), transparent)',
+
+export const shadow_color_a_1: Style_Variable = {
+	name: 'shadow_color_a_1',
+	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_c_sm: Style_Variable = {
-	name: 'shadow_color_c_sm',
-	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_sm), transparent)',
+export const shadow_color_a_2: Style_Variable = {
+	name: 'shadow_color_a_2',
+	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_c_md: Style_Variable = {
-	name: 'shadow_color_c_md',
-	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_md), transparent)',
+export const shadow_color_a_3: Style_Variable = {
+	name: 'shadow_color_a_3',
+	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_c_lg: Style_Variable = {
-	name: 'shadow_color_c_lg',
-	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_lg), transparent)',
+export const shadow_color_a_4: Style_Variable = {
+	name: 'shadow_color_a_4',
+	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_c_xl: Style_Variable = {
-	name: 'shadow_color_c_xl',
-	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_xl), transparent)',
+export const shadow_color_a_5: Style_Variable = {
+	name: 'shadow_color_a_5',
+	light: 'color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_5), transparent)',
 };
-export const shadow_color_d_xs: Style_Variable = {
-	name: 'shadow_color_d_xs',
-	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_xs), transparent)',
+export const shadow_color_b_1: Style_Variable = {
+	name: 'shadow_color_b_1',
+	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_d_sm: Style_Variable = {
-	name: 'shadow_color_d_sm',
-	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_sm), transparent)',
+export const shadow_color_b_2: Style_Variable = {
+	name: 'shadow_color_b_2',
+	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_d_md: Style_Variable = {
-	name: 'shadow_color_d_md',
-	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_md), transparent)',
+export const shadow_color_b_3: Style_Variable = {
+	name: 'shadow_color_b_3',
+	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_d_lg: Style_Variable = {
-	name: 'shadow_color_d_lg',
-	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_lg), transparent)',
+export const shadow_color_b_4: Style_Variable = {
+	name: 'shadow_color_b_4',
+	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_d_xl: Style_Variable = {
-	name: 'shadow_color_d_xl',
-	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_xl), transparent)',
+export const shadow_color_b_5: Style_Variable = {
+	name: 'shadow_color_b_5',
+	light: 'color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_5), transparent)',
 };
-export const shadow_color_e_xs: Style_Variable = {
-	name: 'shadow_color_e_xs',
-	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_xs), transparent)',
+export const shadow_color_c_1: Style_Variable = {
+	name: 'shadow_color_c_1',
+	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_e_sm: Style_Variable = {
-	name: 'shadow_color_e_sm',
-	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_sm), transparent)',
+export const shadow_color_c_2: Style_Variable = {
+	name: 'shadow_color_c_2',
+	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_e_md: Style_Variable = {
-	name: 'shadow_color_e_md',
-	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_md), transparent)',
+export const shadow_color_c_3: Style_Variable = {
+	name: 'shadow_color_c_3',
+	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_e_lg: Style_Variable = {
-	name: 'shadow_color_e_lg',
-	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_lg), transparent)',
+export const shadow_color_c_4: Style_Variable = {
+	name: 'shadow_color_c_4',
+	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_e_xl: Style_Variable = {
-	name: 'shadow_color_e_xl',
-	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_xl), transparent)',
+export const shadow_color_c_5: Style_Variable = {
+	name: 'shadow_color_c_5',
+	light: 'color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_5), transparent)',
 };
-export const shadow_color_f_xs: Style_Variable = {
-	name: 'shadow_color_f_xs',
-	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_xs), transparent)',
+export const shadow_color_d_1: Style_Variable = {
+	name: 'shadow_color_d_1',
+	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_f_sm: Style_Variable = {
-	name: 'shadow_color_f_sm',
-	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_sm), transparent)',
+export const shadow_color_d_2: Style_Variable = {
+	name: 'shadow_color_d_2',
+	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_f_md: Style_Variable = {
-	name: 'shadow_color_f_md',
-	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_md), transparent)',
+export const shadow_color_d_3: Style_Variable = {
+	name: 'shadow_color_d_3',
+	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_f_lg: Style_Variable = {
-	name: 'shadow_color_f_lg',
-	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_lg), transparent)',
+export const shadow_color_d_4: Style_Variable = {
+	name: 'shadow_color_d_4',
+	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_f_xl: Style_Variable = {
-	name: 'shadow_color_f_xl',
-	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_xl), transparent)',
+export const shadow_color_d_5: Style_Variable = {
+	name: 'shadow_color_d_5',
+	light: 'color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_5), transparent)',
 };
-export const shadow_color_g_xs: Style_Variable = {
-	name: 'shadow_color_g_xs',
-	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_xs), transparent)',
+export const shadow_color_e_1: Style_Variable = {
+	name: 'shadow_color_e_1',
+	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_g_sm: Style_Variable = {
-	name: 'shadow_color_g_sm',
-	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_sm), transparent)',
+export const shadow_color_e_2: Style_Variable = {
+	name: 'shadow_color_e_2',
+	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_g_md: Style_Variable = {
-	name: 'shadow_color_g_md',
-	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_md), transparent)',
+export const shadow_color_e_3: Style_Variable = {
+	name: 'shadow_color_e_3',
+	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_g_lg: Style_Variable = {
-	name: 'shadow_color_g_lg',
-	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_lg), transparent)',
+export const shadow_color_e_4: Style_Variable = {
+	name: 'shadow_color_e_4',
+	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_g_xl: Style_Variable = {
-	name: 'shadow_color_g_xl',
-	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_xl), transparent)',
+export const shadow_color_e_5: Style_Variable = {
+	name: 'shadow_color_e_5',
+	light: 'color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_5), transparent)',
 };
-export const shadow_color_h_xs: Style_Variable = {
-	name: 'shadow_color_h_xs',
-	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_xs), transparent)',
+export const shadow_color_f_1: Style_Variable = {
+	name: 'shadow_color_f_1',
+	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_h_sm: Style_Variable = {
-	name: 'shadow_color_h_sm',
-	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_sm), transparent)',
+export const shadow_color_f_2: Style_Variable = {
+	name: 'shadow_color_f_2',
+	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_h_md: Style_Variable = {
-	name: 'shadow_color_h_md',
-	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_md), transparent)',
+export const shadow_color_f_3: Style_Variable = {
+	name: 'shadow_color_f_3',
+	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_h_lg: Style_Variable = {
-	name: 'shadow_color_h_lg',
-	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_lg), transparent)',
+export const shadow_color_f_4: Style_Variable = {
+	name: 'shadow_color_f_4',
+	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_h_xl: Style_Variable = {
-	name: 'shadow_color_h_xl',
-	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_xl), transparent)',
+export const shadow_color_f_5: Style_Variable = {
+	name: 'shadow_color_f_5',
+	light: 'color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_5), transparent)',
 };
-export const shadow_color_i_xs: Style_Variable = {
-	name: 'shadow_color_i_xs',
-	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_xs), transparent)',
+export const shadow_color_g_1: Style_Variable = {
+	name: 'shadow_color_g_1',
+	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_1), transparent)',
 };
-export const shadow_color_i_sm: Style_Variable = {
-	name: 'shadow_color_i_sm',
-	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_sm), transparent)',
+export const shadow_color_g_2: Style_Variable = {
+	name: 'shadow_color_g_2',
+	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_2), transparent)',
 };
-export const shadow_color_i_md: Style_Variable = {
-	name: 'shadow_color_i_md',
-	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_md), transparent)',
+export const shadow_color_g_3: Style_Variable = {
+	name: 'shadow_color_g_3',
+	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_3), transparent)',
 };
-export const shadow_color_i_lg: Style_Variable = {
-	name: 'shadow_color_i_lg',
-	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_lg), transparent)',
+export const shadow_color_g_4: Style_Variable = {
+	name: 'shadow_color_g_4',
+	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_4), transparent)',
 };
-export const shadow_color_i_xl: Style_Variable = {
-	name: 'shadow_color_i_xl',
-	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_xl), transparent)',
+export const shadow_color_g_5: Style_Variable = {
+	name: 'shadow_color_g_5',
+	light: 'color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_5), transparent)',
+};
+export const shadow_color_h_1: Style_Variable = {
+	name: 'shadow_color_h_1',
+	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_1), transparent)',
+};
+export const shadow_color_h_2: Style_Variable = {
+	name: 'shadow_color_h_2',
+	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_2), transparent)',
+};
+export const shadow_color_h_3: Style_Variable = {
+	name: 'shadow_color_h_3',
+	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_3), transparent)',
+};
+export const shadow_color_h_4: Style_Variable = {
+	name: 'shadow_color_h_4',
+	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_4), transparent)',
+};
+export const shadow_color_h_5: Style_Variable = {
+	name: 'shadow_color_h_5',
+	light: 'color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_5), transparent)',
+};
+export const shadow_color_i_1: Style_Variable = {
+	name: 'shadow_color_i_1',
+	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_1), transparent)',
+};
+export const shadow_color_i_2: Style_Variable = {
+	name: 'shadow_color_i_2',
+	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_2), transparent)',
+};
+export const shadow_color_i_3: Style_Variable = {
+	name: 'shadow_color_i_3',
+	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_3), transparent)',
+};
+export const shadow_color_i_4: Style_Variable = {
+	name: 'shadow_color_i_4',
+	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_4), transparent)',
+};
+export const shadow_color_i_5: Style_Variable = {
+	name: 'shadow_color_i_5',
+	light: 'color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_5), transparent)',
 };
 
 /* icons */
@@ -1400,6 +1401,7 @@ export const duration_4: Style_Variable = {name: 'duration_4', light: '1s'};
 export const duration_5: Style_Variable = {name: 'duration_5', light: '1.5s'};
 export const duration_6: Style_Variable = {name: 'duration_6', light: '3s'};
 
+// TODO `fade_0-10`
 /* transparencies */
 // TODO add one for 7 total?
 /* TODO maybe delete these? they do help with standardizing/consistency */
@@ -1736,81 +1738,81 @@ export const default_variables: Style_Variable[] = [
 	shadow_outset_md,
 	shadow_outset_lg,
 	shadow_outset_xl,
-	shadow_alpha_xs,
-	shadow_alpha_sm,
-	shadow_alpha_md,
-	shadow_alpha_lg,
-	shadow_alpha_xl,
-	highlight_alpha_xs,
-	highlight_alpha_sm,
-	highlight_alpha_md,
-	highlight_alpha_lg,
-	highlight_alpha_xl,
-	shadow_color_xs,
-	shadow_color_sm,
-	shadow_color_md,
-	shadow_color_lg,
-	shadow_color_xl,
-	highlight_color_xs,
-	highlight_color_sm,
-	highlight_color_md,
-	highlight_color_lg,
-	highlight_color_xl,
-	glow_color_xs,
-	glow_color_sm,
-	glow_color_md,
-	glow_color_lg,
-	glow_color_xl,
-	shroud_color_xs,
-	shroud_color_sm,
-	shroud_color_md,
-	shroud_color_lg,
-	shroud_color_xl,
-	shadow_color_a_xs,
-	shadow_color_a_sm,
-	shadow_color_a_md,
-	shadow_color_a_lg,
-	shadow_color_a_xl,
-	shadow_color_b_xs,
-	shadow_color_b_sm,
-	shadow_color_b_md,
-	shadow_color_b_lg,
-	shadow_color_b_xl,
-	shadow_color_c_xs,
-	shadow_color_c_sm,
-	shadow_color_c_md,
-	shadow_color_c_lg,
-	shadow_color_c_xl,
-	shadow_color_d_xs,
-	shadow_color_d_sm,
-	shadow_color_d_md,
-	shadow_color_d_lg,
-	shadow_color_d_xl,
-	shadow_color_e_xs,
-	shadow_color_e_sm,
-	shadow_color_e_md,
-	shadow_color_e_lg,
-	shadow_color_e_xl,
-	shadow_color_f_xs,
-	shadow_color_f_sm,
-	shadow_color_f_md,
-	shadow_color_f_lg,
-	shadow_color_f_xl,
-	shadow_color_g_xs,
-	shadow_color_g_sm,
-	shadow_color_g_md,
-	shadow_color_g_lg,
-	shadow_color_g_xl,
-	shadow_color_h_xs,
-	shadow_color_h_sm,
-	shadow_color_h_md,
-	shadow_color_h_lg,
-	shadow_color_h_xl,
-	shadow_color_i_xs,
-	shadow_color_i_sm,
-	shadow_color_i_md,
-	shadow_color_i_lg,
-	shadow_color_i_xl,
+	shadow_alpha_1,
+	shadow_alpha_2,
+	shadow_alpha_3,
+	shadow_alpha_4,
+	shadow_alpha_5,
+	highlight_alpha_1,
+	highlight_alpha_2,
+	highlight_alpha_3,
+	highlight_alpha_4,
+	highlight_alpha_5,
+	shadow_color_1,
+	shadow_color_2,
+	shadow_color_3,
+	shadow_color_4,
+	shadow_color_5,
+	highlight_color_1,
+	highlight_color_2,
+	highlight_color_3,
+	highlight_color_4,
+	highlight_color_5,
+	glow_color_1,
+	glow_color_2,
+	glow_color_3,
+	glow_color_4,
+	glow_color_5,
+	shroud_color_1,
+	shroud_color_2,
+	shroud_color_3,
+	shroud_color_4,
+	shroud_color_5,
+	shadow_color_a_1,
+	shadow_color_a_2,
+	shadow_color_a_3,
+	shadow_color_a_4,
+	shadow_color_a_5,
+	shadow_color_b_1,
+	shadow_color_b_2,
+	shadow_color_b_3,
+	shadow_color_b_4,
+	shadow_color_b_5,
+	shadow_color_c_1,
+	shadow_color_c_2,
+	shadow_color_c_3,
+	shadow_color_c_4,
+	shadow_color_c_5,
+	shadow_color_d_1,
+	shadow_color_d_2,
+	shadow_color_d_3,
+	shadow_color_d_4,
+	shadow_color_d_5,
+	shadow_color_e_1,
+	shadow_color_e_2,
+	shadow_color_e_3,
+	shadow_color_e_4,
+	shadow_color_e_5,
+	shadow_color_f_1,
+	shadow_color_f_2,
+	shadow_color_f_3,
+	shadow_color_f_4,
+	shadow_color_f_5,
+	shadow_color_g_1,
+	shadow_color_g_2,
+	shadow_color_g_3,
+	shadow_color_g_4,
+	shadow_color_g_5,
+	shadow_color_h_1,
+	shadow_color_h_2,
+	shadow_color_h_3,
+	shadow_color_h_4,
+	shadow_color_h_5,
+	shadow_color_i_1,
+	shadow_color_i_2,
+	shadow_color_i_3,
+	shadow_color_i_4,
+	shadow_color_i_5,
 
 	/* icons */
 	icon_size_xs,

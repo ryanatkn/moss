@@ -92,7 +92,7 @@
 		<!-- TODO add a slider for the font size here -->
 		<Tome_Subheading text="Font weights" slug="font-weight" />
 		<aside>
-			There are no variables for <Mdn_Link path="Web/CSS/font-weight" /> but there are utility
+			There are no variables for <Mdn_Link path="Web/CSS/font-weight" /> but there are
 			<Tome_Link name="classes" hash="utility-classes">utility classes</Tome_Link>.
 		</aside>
 		<form>
