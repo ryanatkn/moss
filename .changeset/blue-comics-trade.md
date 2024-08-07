@@ -2,4 +2,7 @@
 '@ryanatkn/moss': minor
 ---
 
-remove `fade_N` variables and add `opacity_` classes
+utility class changes
+
+- add `.grow`, `.grow_0`, `.shrink`, and `.shrink_1`
+- add `.column`

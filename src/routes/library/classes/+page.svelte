@@ -27,6 +27,8 @@
 		'flex_1',
 		'flex_wrap|wrap_reverse|nowrap',
 		'flex_row|column|row_reverse|column_reverse',
+		'grow|shrink',
+		'grow|shrink_0',
 		'grid',
 		'float_none|left|right|inline_start|inline_end',
 		'flip_x|y|xy',
@@ -87,6 +89,7 @@
 	];
 	const style_components_items = [
 		'box',
+		'column',
 		'row',
 		'formatted',
 		'width_xs-md',

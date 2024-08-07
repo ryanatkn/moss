@@ -141,6 +141,19 @@ The utility classes not based on style variables are in `style_utilities.css`.
 	flex-direction: column-reverse;
 }
 
+.grow {
+	flex-grow: 1;
+}
+.grow_0 {
+	flex-grow: 0;
+}
+.shrink {
+	flex-shrink: 1;
+}
+.shrink_0 {
+	flex-shrink: 0;
+}
+
 .grid {
 	display: grid;
 }
