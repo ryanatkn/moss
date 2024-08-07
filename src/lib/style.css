@@ -1058,6 +1058,12 @@ text
 	font-family: var(--font_mono);
 }
 
+.line_height_0 {
+	line-height: 0;
+}
+.line_height_1 {
+	line-height: 1;
+}
 .line_height_xs {
 	line-height: var(--line_height_xs);
 }
