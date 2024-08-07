@@ -1401,7 +1401,7 @@ export const duration_4: Style_Variable = {name: 'duration_4', light: '1s'};
 export const duration_5: Style_Variable = {name: 'duration_5', light: '1.5s'};
 export const duration_6: Style_Variable = {name: 'duration_6', light: '3s'};
 
-// TODO BLOCK `fade_0-10`
+// TODO `fade_0-10`
 /* transparencies */
 // TODO add one for 7 total?
 /* TODO maybe delete these? they do help with standardizing/consistency */
