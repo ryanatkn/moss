@@ -15,7 +15,7 @@
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
 
-	// TODO BLOCK add `border_style_` variables from data
+	// TODO add `border_style_` variables from data
 </script>
 
 <Tome_Detail {tome}>
