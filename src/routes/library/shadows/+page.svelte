@@ -5,12 +5,25 @@
 	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import {color_variants, shadow_size_variants} from '$lib/variable_data.js';
+	import {
+		color_variants,
+		shadow_size_variants,
+		shadow_weight_variants,
+	} from '$lib/variable_data.js';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'shadows';
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
+
+	// simply map the sizes to the weights for docs, although any combination is valid
+	const weight_by_size = {
+		xs: 1,
+		sm: 2,
+		md: 3,
+		lg: 4,
+		xl: 5,
+	};
 </script>
 
 <Tome_Detail {tome}>
@@ -24,10 +37,12 @@
 			<div class="shadow_example">
 				<div
 					class="shadow_main_example"
-					style:box-shadow="var(--shadow_{shadow_size_variant}) var(--shadow_color_{shadow_size_variant})"
+					style:box-shadow="var(--shadow_{shadow_size_variant}) var(--shadow_color_{weight_by_size[
+						shadow_size_variant
+					]})"
 				>
 					<Style_Variable_Button name="shadow_{shadow_size_variant}" />
-					<Style_Variable_Button name="shadow_color_{shadow_size_variant}" />
+					<Style_Variable_Button name="shadow_color_{weight_by_size[shadow_size_variant]}" />
 				</div>
 				{@render shadow_variant_examples(null, shadow_size_variant, 'shadow', '')}
 			</div>
@@ -36,10 +51,12 @@
 			<div class="shadow_example">
 				<div
 					class="shadow_main_example"
-					style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--shadow_color_{shadow_size_variant})"
+					style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--shadow_color_{weight_by_size[
+						shadow_size_variant
+					]})"
 				>
 					<Style_Variable_Button name="shadow_inset_{shadow_size_variant}" />
-					<Style_Variable_Button name="shadow_color_{shadow_size_variant}" />
+					<Style_Variable_Button name="shadow_color_{weight_by_size[shadow_size_variant]}" />
 				</div>
 				{@render shadow_variant_examples(null, shadow_size_variant, 'shadow', '_inset')}
 			</div>
@@ -48,10 +65,12 @@
 			<div class="shadow_example">
 				<div
 					class="shadow_main_example"
-					style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--shadow_color_{shadow_size_variant})"
+					style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--shadow_color_{weight_by_size[
+						shadow_size_variant
+					]})"
 				>
 					<Style_Variable_Button name="shadow_outset_{shadow_size_variant}" />
-					<Style_Variable_Button name="shadow_color_{shadow_size_variant}" />
+					<Style_Variable_Button name="shadow_color_{weight_by_size[shadow_size_variant]}" />
 				</div>
 				{@render shadow_variant_examples(null, shadow_size_variant, 'shadow', '_outset')}
 			</div>
@@ -68,10 +87,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_{shadow_size_variant}) var(--highlight_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_{shadow_size_variant}) var(--highlight_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_{shadow_size_variant}" />
-						<Style_Variable_Button name="highlight_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="highlight_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'highlight', '')}
 				</div>
@@ -80,10 +101,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--highlight_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--highlight_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_inset_{shadow_size_variant}" />
-						<Style_Variable_Button name="highlight_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="highlight_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'highlight', '_inset')}
 				</div>
@@ -92,10 +115,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--highlight_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--highlight_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_outset_{shadow_size_variant}" />
-						<Style_Variable_Button name="highlight_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="highlight_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'highlight', '_outset')}
 				</div>
@@ -113,10 +138,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_{shadow_size_variant}) var(--glow_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_{shadow_size_variant}) var(--glow_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_{shadow_size_variant}" />
-						<Style_Variable_Button name="glow_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="glow_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'glow', '')}
 				</div>
@@ -125,10 +152,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--glow_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--glow_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_inset_{shadow_size_variant}" />
-						<Style_Variable_Button name="glow_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="glow_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'glow', '_inset')}
 				</div>
@@ -137,10 +166,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--glow_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--glow_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_outset_{shadow_size_variant}" />
-						<Style_Variable_Button name="glow_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="glow_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'glow', '_outset')}
 				</div>
@@ -158,10 +189,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_{shadow_size_variant}) var(--shroud_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_{shadow_size_variant}) var(--shroud_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_{shadow_size_variant}" />
-						<Style_Variable_Button name="shroud_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="shroud_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'shroud', '')}
 				</div>
@@ -170,10 +203,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--shroud_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--shroud_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_inset_{shadow_size_variant}" />
-						<Style_Variable_Button name="shroud_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="shroud_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'shroud', '_inset')}
 				</div>
@@ -182,10 +217,12 @@
 				<div class="shadow_example">
 					<div
 						class="shadow_main_example"
-						style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--shroud_color_{shadow_size_variant})"
+						style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--shroud_color_{weight_by_size[
+							shadow_size_variant
+						]})"
 					>
 						<Style_Variable_Button name="shadow_outset_{shadow_size_variant}" />
-						<Style_Variable_Button name="shroud_color_{shadow_size_variant}" />
+						<Style_Variable_Button name="shroud_color_{weight_by_size[shadow_size_variant]}" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_size_variant, 'shroud', '_outset')}
 				</div>
@@ -205,11 +242,13 @@
 					<div class="shadow_example">
 						<div
 							class="shadow_main_example"
-							style:box-shadow="var(--shadow_{shadow_size_variant}) var(--shadow_color_{color_variant}_{shadow_size_variant})"
+							style:box-shadow="var(--shadow_{shadow_size_variant}) var(--shadow_color_{color_variant}_{weight_by_size[
+								shadow_size_variant
+							]})"
 						>
 							<Style_Variable_Button name="shadow_{shadow_size_variant}" {classes} />
 							<Style_Variable_Button
-								name="shadow_color_{color_variant}_{shadow_size_variant}"
+								name="shadow_color_{color_variant}_{weight_by_size[shadow_size_variant]}"
 								{classes}
 							/>
 						</div>
@@ -220,11 +259,13 @@
 					<div class="shadow_example">
 						<div
 							class="shadow_main_example"
-							style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--shadow_color_{color_variant}_{shadow_size_variant})"
+							style:box-shadow="var(--shadow_inset_{shadow_size_variant}) var(--shadow_color_{color_variant}_{weight_by_size[
+								shadow_size_variant
+							]})"
 						>
 							<Style_Variable_Button name="shadow_inset_{shadow_size_variant}" {classes} />
 							<Style_Variable_Button
-								name="shadow_color_{color_variant}_{shadow_size_variant}"
+								name="shadow_color_{color_variant}_{weight_by_size[shadow_size_variant]}"
 								{classes}
 							/>
 						</div>
@@ -240,11 +281,13 @@
 					<div class="shadow_example">
 						<div
 							class="shadow_main_example"
-							style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--shadow_color_{color_variant}_{shadow_size_variant})"
+							style:box-shadow="var(--shadow_outset_{shadow_size_variant}) var(--shadow_color_{color_variant}_{weight_by_size[
+								shadow_size_variant
+							]})"
 						>
 							<Style_Variable_Button name="shadow_outset_{shadow_size_variant}" {classes} />
 							<Style_Variable_Button
-								name="shadow_color_{color_variant}_{shadow_size_variant}"
+								name="shadow_color_{color_variant}_{weight_by_size[shadow_size_variant]}"
 								{classes}
 							/>
 						</div>
@@ -271,12 +314,13 @@
 	shadow_position: string, // TODO name?
 )}
 	<div class="row gap_lg">
-		{#each shadow_size_variants as v (v)}
+		{#each shadow_weight_variants as w (w)}
+			{@const shadow_size = `shadow${shadow_position}_${shadow_size_variant}`}
+			{@const shadow_color = `${shadow_type}_color_${color_variant ? color_variant + '_' + w : w}`}
 			<div
+				title="{shadow_size} with {shadow_color}"
 				class="shadow_variant_example"
-				style:box-shadow="var(--shadow{shadow_position}_{shadow_size_variant}) var(--{shadow_type}_color_{color_variant
-					? color_variant + '_' + v
-					: v}"
+				style:box-shadow="var(--{shadow_size}) var(--{shadow_color})"
 			></div>
 		{/each}
 	</div>
