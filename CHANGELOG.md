@@ -1,5 +1,15 @@
 # @ryanatkn/moss
 
+## 0.13.0
+
+### Minor Changes
+
+- rename shadow color variables to numbered weights ([#33](https://github.com/ryanatkn/moss/pull/33))
+
+### Patch Changes
+
+- add `flex_nowrap` class ([#33](https://github.com/ryanatkn/moss/pull/33))
+
 ## 0.12.2
 
 ### Patch Changes
