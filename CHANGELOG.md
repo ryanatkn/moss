@@ -1,5 +1,15 @@
 # @ryanatkn/moss
 
+## 0.13.1
+
+### Patch Changes
+
+- add some flex utility classes ([#34](https://github.com/ryanatkn/moss/pull/34))
+
+  - add variants for `.align|justify_items|content|self_`
+  - add `.grow`, `.grow_0`, `.shrink`, and `.shrink_1`
+  - add `.column`
+
 ## 0.13.0
 
 ### Minor Changes
