@@ -1,4 +1,4 @@
-import{f as b,a as l,s as n,c as r,t as e,A as I,r as o}from"../chunks/disclose-version.Cmho9P4e.js";import{p as K,a as Q,t as j,I as A}from"../chunks/runtime.DuKekwsY.js";import{s as U}from"../chunks/render.Cb2nao7p.js";import{e as L,i as P}from"../chunks/class.B8v9gKBt.js";import{C as u}from"../chunks/Code.BFR8Z_jD.js";import{T as Z}from"../chunks/Tome_Detail.BFscG95t.js";import{T as nn}from"../chunks/Tome_Link.qZt7ScmI.js";import{G as R}from"../chunks/Github_Logo.CKNxriIO.js";import{a as on}from"../chunks/tome.DloDQlTQ.js";import{D as B}from"../chunks/Details.CqEbaBWc.js";import{T as g}from"../chunks/Tome_Subheading.BDGLGbCD.js";import{U as an}from"../chunks/Unfinished_Implementation_Warning.yg570mXG.js";const _n=`/* @ryanatkn/moss/style_utilities.css */
+import{f as b,a as l,s as n,c as t,t as e,A as M,r as a}from"../chunks/disclose-version.Cmho9P4e.js";import{p as K,a as Q,t as I,I as A}from"../chunks/runtime.DuKekwsY.js";import{s as U}from"../chunks/render.Cb2nao7p.js";import{e as L,i as P}from"../chunks/class.B8v9gKBt.js";import{C as u}from"../chunks/Code.BFR8Z_jD.js";import{T as Z}from"../chunks/Tome_Detail.DH7NHiR9.js";import{T as nn}from"../chunks/Tome_Link.BCDyebye.js";import{G as R}from"../chunks/Github_Logo.CKNxriIO.js";import{a as an}from"../chunks/tome.DloDQlTQ.js";import{D as B}from"../chunks/Details.CqEbaBWc.js";import{T as g}from"../chunks/Tome_Subheading.CbozFtPM.js";import{U as on}from"../chunks/Unfinished_Implementation_Warning.yg570mXG.js";const _n=`/* @ryanatkn/moss/style_utilities.css */
 
 /* TODO @many docs in library */
 
@@ -139,6 +139,150 @@ The utility classes not based on style variables are in \`style_utilities.css\`.
 }
 .flex_column_reverse {
 	flex-direction: column-reverse;
+}
+
+.grow {
+	flex-grow: 1;
+}
+.grow_0 {
+	flex-grow: 0;
+}
+.shrink {
+	flex-shrink: 1;
+}
+.shrink_0 {
+	flex-shrink: 0;
+}
+
+/* TODO omitting some values, generating on demand will fill in the gaps */
+.align_items_center {
+	align-items: center;
+}
+.align_items_start {
+	align-items: start;
+}
+.align_items_end {
+	align-items: end;
+}
+.align_items_baseline {
+	align-items: baseline;
+}
+.align_items_stretch {
+	align-items: stretch;
+}
+/* TODO omitting some values, generating on demand will fill in the gaps */
+.align_content_center {
+	align-content: center;
+}
+.align_content_start {
+	align-content: start;
+}
+.align_content_end {
+	align-content: end;
+}
+.align_content_baseline {
+	align-content: baseline;
+}
+.align_content_space_between {
+	align-content: space-between;
+}
+.align_content_space_around {
+	align-content: space-around;
+}
+.align_content_space_evenly {
+	align-content: space-evenly;
+}
+.align_content_stretch {
+	align-content: stretch;
+}
+/* TODO omitting some values, generating on demand will fill in the gaps */
+.align_self_center {
+	align-self: center;
+}
+.align_self_start {
+	align-self: start;
+}
+.align_self_end {
+	align-self: end;
+}
+.align_self_baseline {
+	align-self: baseline;
+}
+.align_self_stretch {
+	align-self: stretch;
+}
+/* TODO omitting some values, generating on demand will fill in the gaps */
+.justify_content_center {
+	justify-content: center;
+}
+.justify_content_start {
+	justify-content: start;
+}
+.justify_content_end {
+	justify-content: end;
+}
+.justify_content_left {
+	justify-content: left;
+}
+.justify_content_right {
+	justify-content: right;
+}
+.justify_content_space_between {
+	justify-content: space-between;
+}
+.justify_content_space_around {
+	justify-content: space-around;
+}
+.justify_content_space_evenly {
+	justify-content: space-evenly;
+}
+.justify_content_stretch {
+	justify-content: stretch;
+}
+/* TODO omitting some values, generating on demand will fill in the gaps */
+
+.justify_items_center {
+	justify-items: center;
+}
+.justify_items_start {
+	justify-items: start;
+}
+.justify_items_end {
+	justify-items: end;
+}
+.justify_items_left {
+	justify-items: left;
+}
+.justify_items_right {
+	justify-items: right;
+}
+.justify_items_baseline {
+	justify-items: baseline;
+}
+.justify_items_stretch {
+	justify-items: stretch;
+}
+/* TODO omitting some values, generating on demand will fill in the gaps */
+.justify_self_center {
+	justify-self: center;
+}
+.justify_self_start {
+	justify-self: start;
+}
+.justify_self_end {
+	justify-self: end;
+}
+.justify_self_left {
+	justify-self: left;
+}
+.justify_self_right {
+	justify-self: right;
+}
+.justify_self_baseline {
+	justify-self: baseline;
+}
+.justify_self_stretch {
+	justify-self: stretch;
 }
 
 .grid {
@@ -3486,7 +3630,7 @@ layout
 	image-rendering: pixelated; /* in case crisp-edges isn't supported */
 	image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
 }
-`,rn=`/* @ryanatkn/moss/style_components.css */
+`,tn=`/* @ryanatkn/moss/style_components.css */
 
 /* TODO rename to not conflict with JS components */
 
@@ -3495,6 +3639,12 @@ layout
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+
+/* like \`.box\` but uncentered */
+.column {
+	display: flex;
+	flex-direction: column;
 }
 
 /* can be used to override the direction of a \`.box\` */
@@ -3664,11 +3814,11 @@ By default it's opaque, resetting the background to the initial depth. */
 a.chip {
 	font-weight: 700;
 }
-`;var tn=e("Both the docs and implementation of these need a lot more work.",1),sn=e('<li class="svelte-1gekuvc"> </li>'),ln=e('<li class="svelte-1gekuvc"> </li>'),en=e('<span class="font_mono">@ryanatkn/moss/style_utilities.css</span>'),dn=e('<p class="source_link svelte-1gekuvc"><a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_utilities.css" class="svelte-1gekuvc"><!> <span class="ml_xs">source</span></a></p> <!>',1),cn=e('<span class="font_mono">@ryanatkn/moss/style_components.css</span>'),gn=e('<p class="source_link svelte-1gekuvc"><a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_components.css" class="svelte-1gekuvc"><!> <span class="ml_xs">source</span></a></p> <!>',1),pn=e(`<!> <section><!> <p>Moss has three optional CSS files with different kinds of classes:</p> <!> <p>Utility classes use plain CSS for convenient HTML authoring. Many are based on Moss style <!>.</p> <p>Component classes are semantic groupings of styles.</p> <aside>Unused clases can be removed with build tooling, which is out of scope for Moss, and with a
+`;var rn=e("Both the docs and implementation of these need a lot more work.",1),sn=e('<li class="svelte-1gekuvc"> </li>'),ln=e('<li class="svelte-1gekuvc"> </li>'),en=e('<span class="font_mono">@ryanatkn/moss/style_utilities.css</span>'),cn=e('<p class="source_link svelte-1gekuvc"><a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_utilities.css" class="svelte-1gekuvc"><!> <span class="ml_xs">source</span></a></p> <!>',1),dn=e('<span class="font_mono">@ryanatkn/moss/style_components.css</span>'),gn=e('<p class="source_link svelte-1gekuvc"><a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_components.css" class="svelte-1gekuvc"><!> <span class="ml_xs">source</span></a></p> <!>',1),pn=e(`<!> <section><!> <p>Moss has three optional CSS files with different kinds of classes:</p> <!> <p>Utility classes use plain CSS for convenient HTML authoring. Many are based on Moss style <!>.</p> <p>Component classes are semantic groupings of styles.</p> <aside>Unused clases can be removed with build tooling, which is out of scope for Moss, and with a
 			more sophisticated architecture these classes could potentially be generated on demand instead
 			of distributed as static files.</aside></section> <section><!> <ul class="classes unstyled svelte-1gekuvc"></ul></section> <section><!> <aside><p>These are like utility classes but don't map as cleanly to a single style property. I don't
 				like using the word "component" here but I can't decide on a better name - "semantic" is too
-				vague and general IMO.</p> <p>They're like higher order utilities. They're not components in the JS framework sense.</p></aside> <ul class="classes unstyled svelte-1gekuvc"></ul></section> <section><!> <!> <!></section>`,1);function $n(E,W){K(W,!0);const Y=on("classes"),N=["relative|absolute|fixed|sticky|static","overflow_auto|hidden|scroll|clip|visible","overflow_x|y_auto|hidden|scroll|clip|visible","display_none|contents","inline|inline_block|inline_flex|inline_grid","block","flex","flex_1","flex_wrap|wrap_reverse|nowrap","flex_row|column|row_reverse|column_reverse","grid","float_none|left|right|inline_start|inline_end","flip_x|y|xy","font_sans|mono","line_height_xs-xl","size_xs-xl9","icon_size_xs-xl3","text_align_start|end|left|right|center|justify|justify_all|match_parent","vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom","white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces","white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces","text_wrap_wrap|nowrap|balance|pretty|stable","ellipsis","font_weight_100-900","text_color_0-10","darken|lighten_1-9","bg|fg","bg|fg_1-9","color_darken|lighten_1-9","color_bg|fg","color_bg|fg_1-9","hue_a-i","color_a-i_1 -9","bg_a-i_1-9","border_color_1-5","border_color_a-i","border_color_transparent","border_width_0-6","outline_width_0-3","border_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset","radius_0|50|100","radius_xs3-xl","fade_0|100","fade_1-6","glow_xs-xl","glow_inset|outset_xs-xl","shadow_xs-xl","shadow_inset|outset_xs-xl","highlight_xs-xl","highlight_inset|outset_xs-xl","glow_xs-xl","glow_inset|outset_xs-xl","shroud_xs-xl","shroud_inset|outset_xs-xl","shadow_a-i_xs-xl","shadow_a-i_inset|outset_xs-xl","shadow_inherit|none","w|h_0|100","w|h_xs-xl15","p|pt|pr|pb|pl|px|py_0","p|pt|pr|pb|pl|px|py_xs5-xl15","m|mt|mr|mb|ml|mx|my_auto","m|mt|mr|mb|ml|mx|my_0","m|mt|mr|mb|ml|mx|my_xs5-xl15","gap_xs5-xl15","column|row_gap_xs5-xl15","pixelated"],X=["box","row","formatted","width_xs-md","selected","selectable","clickable","pane","panel","icon_button","plain","menu_item","chevron","chip"];Z(E,{tome:Y,children:(q,vn)=>{var f=pn(),k=b(f);an(k,{children:(d,_)=>{I();var s=tn();l(d,s)},$$slots:{default:!0}});var p=n(n(k,!0)),y=r(p);g(y,{text:"Optional CSS classes",slug:"css-classes"});var G=n(n(y,!0)),z=n(n(G,!0));u(z,{content:`<!-- +layout.svelte -->
+				vague and general IMO.</p> <p>They're like higher order utilities. They're not components in the JS framework sense.</p></aside> <ul class="classes unstyled svelte-1gekuvc"></ul></section> <section><!> <!> <!></section>`,1);function Dn(E,W){K(W,!0);const Y=an("classes"),N=["relative|absolute|fixed|sticky|static","overflow_auto|hidden|scroll|clip|visible","overflow_x|y_auto|hidden|scroll|clip|visible","display_none|contents","inline|inline_block|inline_flex|inline_grid","block","flex","flex_1","flex_wrap|wrap_reverse|nowrap","flex_row|column|row_reverse|column_reverse","grow|shrink","grow|shrink_0","align_items_center|start|end|baseline|stretch","align_content_center|start|end|baseline|space_between|space_around|space_evenly|stretch","align_self_center|start|end|baseline|stretch","justify_content_center|start|end|left|right|space_between|space_around|space_evenly|stretch","justify_items_center|start|end|left|right|baseline|stretch","justify_self_center|start|end|left|right|baseline|stretch","grid","float_none|left|right|inline_start|inline_end","flip_x|y|xy","font_sans|mono","line_height_xs-xl","size_xs-xl9","icon_size_xs-xl3","text_align_start|end|left|right|center|justify|justify_all|match_parent","vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom","white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces","white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces","text_wrap_wrap|nowrap|balance|pretty|stable","ellipsis","font_weight_100-900","text_color_0-10","darken|lighten_1-9","bg|fg","bg|fg_1-9","color_darken|lighten_1-9","color_bg|fg","color_bg|fg_1-9","hue_a-i","color_a-i_1 -9","bg_a-i_1-9","border_color_1-5","border_color_a-i","border_color_transparent","border_width_0-6","outline_width_0-3","border_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset","radius_0|50|100","radius_xs3-xl","fade_0|100","fade_1-6","glow_xs-xl","glow_inset|outset_xs-xl","shadow_xs-xl","shadow_inset|outset_xs-xl","highlight_xs-xl","highlight_inset|outset_xs-xl","glow_xs-xl","glow_inset|outset_xs-xl","shroud_xs-xl","shroud_inset|outset_xs-xl","shadow_a-i_xs-xl","shadow_a-i_inset|outset_xs-xl","shadow_inherit|none","w|h_0|100","w|h_xs-xl15","p|pt|pr|pb|pl|px|py_0","p|pt|pr|pb|pl|px|py_xs5-xl15","m|mt|mr|mb|ml|mx|my_auto","m|mt|mr|mb|ml|mx|my_0","m|mt|mr|mb|ml|mx|my_xs5-xl15","gap_xs5-xl15","column|row_gap_xs5-xl15","pixelated"],X=["box","column","row","formatted","width_xs-md","selected","selectable","clickable","pane","panel","icon_button","plain","menu_item","chevron","chip"];Z(E,{tome:Y,children:(q,vn)=>{var f=pn(),y=b(f);on(y,{children:(c,_)=>{M();var s=rn();l(c,s)},$$slots:{default:!0}});var p=n(n(y,!0)),k=t(p);g(k,{text:"Optional CSS classes",slug:"css-classes"});var G=n(n(k,!0)),z=n(n(G,!0));u(z,{content:`<!-- +layout.svelte -->
 <script>
 	import '@ryanatkn/moss/style.css';
 	import '@ryanatkn/moss/theme.css'; // or bring your own
@@ -3678,4 +3828,4 @@ a.chip {
 	import '@ryanatkn/moss/style_components.css'; // optional
 	import '@ryanatkn/moss/style_animations.css'; // optional
 	// ...
-<\/script>`});var x=n(n(z,!0)),J=n(r(x));nn(J,{name:"variables"}),I(),o(x);var F=n(n(x,!0));n(n(F,!0)),o(p);var v=n(n(p,!0)),O=r(v);g(O,{text:"Utility classes",slug:"utility-classes"});var T=n(n(O,!0));L(T,73,()=>N,P,(d,_,s)=>{var a=sn(),t=r(a);o(a),j(()=>U(t,`.${A(_)??""}`)),l(d,a)}),o(T),o(v);var h=n(n(v,!0)),D=r(h);g(D,{text:"Component classes",slug:"semantic-classes"});var w=n(n(D,!0)),H=r(w);n(n(H,!0)),o(w);var $=n(n(w,!0));L($,73,()=>X,P,(d,_,s)=>{var a=ln(),t=r(a);o(a),j(()=>U(t,`.${A(_)??""}`)),l(d,a)}),o($),o(h);var S=n(n(h,!0)),C=r(S);g(C,{text:"Raw CSS",slug:"raw-css"});var M=n(n(C,!0));B(M,{summary:_=>{var s=en();l(_,s)},children:(_,s)=>{var a=dn(),t=b(a),c=r(t),i=r(c);R(i,{size:"var(--icon_size_xs)"}),n(n(i,!0)),o(c),o(t);var m=n(n(t,!0));u(m,{content:_n,lang:"css"}),l(_,a)},$$slots:{default:!0}});var V=n(n(M,!0));B(V,{summary:_=>{var s=cn();l(_,s)},children:(_,s)=>{var a=gn(),t=b(a),c=r(t),i=r(c);R(i,{size:"var(--icon_size_xs)"}),n(n(i,!0)),o(c),o(t);var m=n(n(t,!0));u(m,{content:rn,lang:"css"}),l(_,a)},$$slots:{default:!0}}),o(S),l(q,f)},$$slots:{default:!0}}),Q()}export{$n as component};
+<\/script>`});var h=n(n(z,!0)),J=n(t(h));nn(J,{name:"variables"}),M(),a(h);var F=n(n(h,!0));n(n(F,!0)),a(p);var v=n(n(p,!0)),j=t(v);g(j,{text:"Utility classes",slug:"utility-classes"});var O=n(n(j,!0));L(O,73,()=>N,P,(c,_,s)=>{var o=sn(),r=t(o);a(o),I(()=>U(r,`.${A(_)??""}`)),l(c,o)}),a(O),a(v);var x=n(n(v,!0)),T=t(x);g(T,{text:"Component classes",slug:"semantic-classes"});var m=n(n(T,!0)),H=t(m);n(n(H,!0)),a(m);var D=n(n(m,!0));L(D,73,()=>X,P,(c,_,s)=>{var o=ln(),r=t(o);a(o),I(()=>U(r,`.${A(_)??""}`)),l(c,o)}),a(D),a(x);var $=n(n(x,!0)),S=t($);g(S,{text:"Raw CSS",slug:"raw-css"});var C=n(n(S,!0));B(C,{summary:_=>{var s=en();l(_,s)},children:(_,s)=>{var o=cn(),r=b(o),d=t(r),i=t(d);R(i,{size:"var(--icon_size_xs)"}),n(n(i,!0)),a(d),a(r);var w=n(n(r,!0));u(w,{content:_n,lang:"css"}),l(_,o)},$$slots:{default:!0}});var V=n(n(C,!0));B(V,{summary:_=>{var s=dn();l(_,s)},children:(_,s)=>{var o=gn(),r=b(o),d=t(r),i=t(d);R(i,{size:"var(--icon_size_xs)"}),n(n(i,!0)),a(d),a(r);var w=n(n(r,!0));u(w,{content:tn,lang:"css"}),l(_,o)},$$slots:{default:!0}}),a($),l(q,f)},$$slots:{default:!0}}),Q()}export{Dn as component};
