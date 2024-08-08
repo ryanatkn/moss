@@ -1033,22 +1033,6 @@ The utility classes not based on style variables are in `style_utilities.css`.
 }
 
 /* TODO omitting some values, generating on demand will fill in the gaps */
-.align_self_center {
-	align-self: center;
-}
-.align_self_start {
-	align-self: start;
-}
-.align_self_end {
-	align-self: end;
-}
-.align_self_baseline {
-	align-self: baseline;
-}
-.align_self_stretch {
-	align-self: stretch;
-}
-/* TODO omitting some values, generating on demand will fill in the gaps */
 .align_items_center {
 	align-items: center;
 }
@@ -1088,6 +1072,22 @@ The utility classes not based on style variables are in `style_utilities.css`.
 }
 .align_content_stretch {
 	align-content: stretch;
+}
+/* TODO omitting some values, generating on demand will fill in the gaps */
+.align_self_center {
+	align-self: center;
+}
+.align_self_start {
+	align-self: start;
+}
+.align_self_end {
+	align-self: end;
+}
+.align_self_baseline {
+	align-self: baseline;
+}
+.align_self_stretch {
+	align-self: stretch;
 }
 /* TODO omitting some values, generating on demand will fill in the gaps */
 .justify_content_center {
