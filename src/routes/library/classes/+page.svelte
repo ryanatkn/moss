@@ -27,6 +27,14 @@
 		'flex_1',
 		'flex_wrap|wrap_reverse|nowrap',
 		'flex_row|column|row_reverse|column_reverse',
+		'grow|shrink',
+		'grow|shrink_0',
+		'align_items_center|start|end|baseline|stretch',
+		'align_content_center|start|end|baseline|space_between|space_around|space_evenly|stretch',
+		'align_self_center|start|end|baseline|stretch',
+		'justify_content_center|start|end|left|right|space_between|space_around|space_evenly|stretch',
+		'justify_items_center|start|end|left|right|baseline|stretch',
+		'justify_self_center|start|end|left|right|baseline|stretch',
 		'grid',
 		'float_none|left|right|inline_start|inline_end',
 		'flip_x|y|xy',
@@ -87,6 +95,7 @@
 	];
 	const style_components_items = [
 		'box',
+		'column',
 		'row',
 		'formatted',
 		'width_xs-md',
