@@ -194,10 +194,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 :where(section:not(:last-child)) {
 	margin-bottom: var(--space_xl7);
 }
-:where(summary) {
-	/* TODO maybe change API to like `--margin_bottom`? */
-	margin-bottom: var(--space_xs);
-}
 
 :where(aside:not(.unstyled)) {
 	border-left-color: var(--border_color);
@@ -658,6 +654,9 @@ TODO think through these patterns to get somewhere consistent
 }
 :where(summary:active) {
 	background-color: var(--fg_2);
+}
+:where(details[open] summary) {
+	margin-bottom: var(--space_sm);
 }
 
 /* TODO more  table styles */
