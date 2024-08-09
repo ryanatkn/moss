@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.13.2
+
+### Patch Changes
+
+- fix summary margin ([d65d160](https://github.com/ryanatkn/moss/commit/d65d160))
+
 ## 0.13.1
 
 ### Patch Changes
