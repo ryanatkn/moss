@@ -83,6 +83,13 @@ The utility classes not based on style variables are in `style_utilities.css`.
 	overflow-y: visible;
 }
 
+.overflow_wrap_anywhere {
+	overflow-wrap: anywhere;
+}
+.overflow_wrap_break_word {
+	overflow-wrap: break-word;
+}
+
 /* these include the longhand `display_` because they're less common and would be more ambiguous */
 .display_none {
 	display: none;

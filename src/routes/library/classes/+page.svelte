@@ -20,6 +20,7 @@
 		'relative|absolute|fixed|sticky|static',
 		'overflow_auto|hidden|scroll|clip|visible',
 		'overflow_x|y_auto|hidden|scroll|clip|visible',
+		'overflow_wrap_anywhere|break_word',
 		'display_none|contents',
 		'inline|inline_block|inline_flex|inline_grid',
 		'block',

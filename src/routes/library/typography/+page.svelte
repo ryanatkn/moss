@@ -131,7 +131,7 @@
 		<aside>Learn more about <Mdn_Link path="Web/CSS/line-height" />.</aside>
 		<div>
 			{#each line_height_names as name}
-				<div class="spaced">
+				<div>
 					<Style_Variable_Button {name}
 						><div style:line-height="var(--{name})" class="button_contents font_mono">
 							<div>
