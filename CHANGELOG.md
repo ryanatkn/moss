@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.13.3
+
+### Patch Changes
+
+- add utility classes for `overflow-wrap` ([#35](https://github.com/ryanatkn/moss/pull/35))
+
 ## 0.13.2
 
 ### Patch Changes
