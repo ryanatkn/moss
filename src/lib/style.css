@@ -125,7 +125,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	/* TODO use this pattern elsewhere? provides API to components like `Mdn_Logo` */
 	font-size: var(--size, var(--size_md));
 	font-weight: var(--font_weight);
-	overflow-wrap: break-word;
+	overflow-wrap: break-word; /* TODO @many is this best? what about adding elsewhere? */
 }
 
 :where(h1) {
@@ -168,10 +168,10 @@ The `!important` makes this `hidden` behavior much higher specificity.
 }
 
 :where(p) {
-	overflow-wrap: break-word;
+	overflow-wrap: break-word; /* TODO @many is this best? what about adding elsewhere? */
 }
 
-/* TODO maybe do the `:not(:last-child)` more generically instead of this selector? */
+/* TODO maybe do the `:not(:last-child)` more generically instead of this selector? problem is it has many corner cases where it doesn't apply but we want it to */
 /* TODO other elements */
 /* checkboxes and radios are expected to be nested inside a `label`, thus no bottom margin */
 :where(
