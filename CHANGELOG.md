@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.13.4
+
+### Patch Changes
+
+- change `input`, `select`, and `textarea` to be blocks by default ([07274c8](https://github.com/ryanatkn/moss/commit/07274c8))
+
 ## 0.13.3
 
 ### Patch Changes
