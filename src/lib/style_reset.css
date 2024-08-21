@@ -266,6 +266,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	appearance: none;
 	font: inherit;
 	line-height: normal;
+	display: block;
 	color: var(--text_color);
 	background-color: var(--input_fill);
 	border-color: var(--border_color);
