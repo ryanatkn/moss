@@ -24,6 +24,9 @@
 		lg: 4,
 		xl: 5,
 	};
+
+	// TODO BLOCK made them clickable
+	// TODO BLOCK snippet and use in each heading spot
 </script>
 
 <Tome_Detail {tome}>
@@ -83,7 +86,16 @@
 		<Tome_Subheading text="Highlights" slug="highlights" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
-			<div class="row gap_lg justify_content_end shadow_example">
+			<!-- TODO think about
+				{@render header_label('highlight_color_')}
+				{#snippet header_label(text)}
+					<code>{text}</code>
+				{/snippet}
+				{#snippet variant_content()}
+					<code>highlight_color_</code>
+				{/snippet}
+			-->
+			<div class="shadow_example justify_content_end">
 				<code>highlight_color_</code>
 				{#each shadow_weight_variants as w (w)}
 					<code class="shadow_variant_example box">{w}</code>
@@ -341,14 +353,14 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: var(--space_md);
+		gap: var(--space_lg);
 	}
 	.shadow_main_example {
 		flex: 1;
 		display: flex;
 		flex-wrap: wrap;
 		padding: var(--space_sm);
-		gap: var(--space_md);
+		gap: var(--space_lg);
 		min-width: 260px;
 	}
 	.shadow_example:not(:last-child) {
