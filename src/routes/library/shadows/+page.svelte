@@ -83,11 +83,11 @@
 		<Tome_Subheading text="Highlights" slug="highlights" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
-			<div class="row gap_lg">
+			<div class="row gap_lg justify_content_end shadow_example">
+				<code>highlight_color_</code>
 				{#each shadow_weight_variants as w (w)}
-					<div>{w}</div>
+					<code class="shadow_variant_example box">{w}</code>
 				{/each}
-				<div>1</div>
 			</div>
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
