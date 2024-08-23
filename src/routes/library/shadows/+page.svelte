@@ -24,6 +24,8 @@
 		lg: 4,
 		xl: 5,
 	};
+
+	// TODO duplicate shadows links
 </script>
 
 <Tome_Detail {tome}>
@@ -33,6 +35,7 @@
 		<Unfinished_Implementation_Warning
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
 		>
+		{@render shadow_example_header('shadow_color_')}
 		{#each shadow_size_variants as shadow_size_variant}
 			<div class="shadow_example">
 				<div
@@ -83,6 +86,8 @@
 		<Tome_Subheading text="Highlights" slug="highlights" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
+			<!-- TODO think about this or something less verbose: `{@render shadow_example_header(shadow_example_header_highlight_color_snippet)}` -->
+			{@render shadow_example_header('highlight_color_')}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
 					<div
@@ -134,6 +139,7 @@
 		<Tome_Subheading text="Glows" slug="glows" />
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
+			{@render shadow_example_header('glow_color_')}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
 					<div
@@ -185,6 +191,7 @@
 		<Tome_Subheading text="Shrouds" slug="shrouds" />
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
+			{@render shadow_example_header('shroud_color_')}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
 					<div
@@ -235,6 +242,7 @@
 	<section>
 		<Tome_Subheading text="Colorful glows" slug="colorful-glows" />
 		<p>These are darker in light mode than in dark mode.</p>
+		{@render shadow_example_header('shadow_color_')}
 		{#each color_variants as color_variant}
 			{@const classes = 'color_' + color_variant}
 			<section>
@@ -307,6 +315,17 @@
 	</section>
 </Tome_Detail>
 
+{#snippet shadow_example_header(text: string)}
+	<div class="shadow_example justify_content_end">
+		<code>{text}</code>
+		{#each shadow_weight_variants as w (w)}
+			<code class="shadow_variant_example box">
+				<Style_Variable_Button name="{text}{w}">{w}</Style_Variable_Button>
+			</code>
+		{/each}
+	</div>
+{/snippet}
+
 {#snippet shadow_variant_examples(
 	color_variant: string | null,
 	shadow_size_variant: string,
@@ -335,14 +354,14 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: var(--space_md);
+		gap: var(--space_lg);
 	}
 	.shadow_main_example {
 		flex: 1;
 		display: flex;
 		flex-wrap: wrap;
 		padding: var(--space_sm);
-		gap: var(--space_md);
+		gap: var(--space_lg);
 		min-width: 260px;
 	}
 	.shadow_example:not(:last-child) {
