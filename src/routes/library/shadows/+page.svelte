@@ -25,7 +25,7 @@
 		xl: 5,
 	};
 
-	// TODO BLOCK made them clickable
+	// TODO BLOCK made them clickable in `shadow_example_header`
 	// TODO BLOCK snippet and use in each heading spot
 </script>
 
@@ -86,21 +86,8 @@
 		<Tome_Subheading text="Highlights" slug="highlights" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
-			<!-- TODO think about
-				{@render header_label('highlight_color_')}
-				{#snippet header_label(text)}
-					<code>{text}</code>
-				{/snippet}
-				{#snippet variant_content()}
-					<code>highlight_color_</code>
-				{/snippet}
-			-->
-			<div class="shadow_example justify_content_end">
-				<code>highlight_color_</code>
-				{#each shadow_weight_variants as w (w)}
-					<code class="shadow_variant_example box">{w}</code>
-				{/each}
-			</div>
+			<!-- TODO think about this or something less verbose: `{@render shadow_example_header(shadow_example_header_highlight_color_snippet)}` -->
+			{@render shadow_example_header('highlight_color_')}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
 					<div
@@ -324,6 +311,15 @@
 		<Color_Scheme_Input />
 	</section>
 </Tome_Detail>
+
+{#snippet shadow_example_header(text: string)}
+	<div class="shadow_example justify_content_end">
+		<code>{text}</code>
+		{#each shadow_weight_variants as w (w)}
+			<code class="shadow_variant_example box">{w}</code>
+		{/each}
+	</div>
+{/snippet}
 
 {#snippet shadow_variant_examples(
 	color_variant: string | null,
