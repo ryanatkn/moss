@@ -25,8 +25,6 @@
 		xl: 5,
 	};
 
-	// TODO BLOCK made them clickable in `shadow_example_header`
-	// TODO BLOCK snippet and use in each heading spot
 	// TODO duplicate shadows links
 </script>
 
@@ -321,7 +319,9 @@
 	<div class="shadow_example justify_content_end">
 		<code>{text}</code>
 		{#each shadow_weight_variants as w (w)}
-			<code class="shadow_variant_example box">{w}</code>
+			<code class="shadow_variant_example box">
+				<Style_Variable_Button name="{text}{w}">{w}</Style_Variable_Button>
+			</code>
 		{/each}
 	</div>
 {/snippet}
