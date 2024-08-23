@@ -27,6 +27,7 @@
 
 	// TODO BLOCK made them clickable in `shadow_example_header`
 	// TODO BLOCK snippet and use in each heading spot
+	// TODO duplicate shadows links
 </script>
 
 <Tome_Detail {tome}>
@@ -36,6 +37,7 @@
 		<Unfinished_Implementation_Warning
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
 		>
+		{@render shadow_example_header('shadow_color_')}
 		{#each shadow_size_variants as shadow_size_variant}
 			<div class="shadow_example">
 				<div
@@ -139,6 +141,7 @@
 		<Tome_Subheading text="Glows" slug="glows" />
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
+			{@render shadow_example_header('glow_color_')}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
 					<div
@@ -190,6 +193,7 @@
 		<Tome_Subheading text="Shrouds" slug="shrouds" />
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
+			{@render shadow_example_header('shroud_color_')}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
 					<div
@@ -240,6 +244,7 @@
 	<section>
 		<Tome_Subheading text="Colorful glows" slug="colorful-glows" />
 		<p>These are darker in light mode than in dark mode.</p>
+		{@render shadow_example_header('shadow_color_')}
 		{#each color_variants as color_variant}
 			{@const classes = 'color_' + color_variant}
 			<section>
