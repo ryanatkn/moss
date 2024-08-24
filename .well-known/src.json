@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.13.4",
+  "version": "0.14.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -119,6 +119,10 @@
         },
         {
           "name": "line_height_names",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_variant_prefixes",
           "kind": "variable"
         },
         {
@@ -1248,6 +1252,14 @@
           "kind": "variable"
         },
         {
+          "name": "shadow_inner_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_outer_xs",
+          "kind": "variable"
+        },
+        {
           "name": "shadow_sm",
           "kind": "variable"
         },
@@ -1257,6 +1269,14 @@
         },
         {
           "name": "shadow_outset_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_inner_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_outer_sm",
           "kind": "variable"
         },
         {
@@ -1272,6 +1292,14 @@
           "kind": "variable"
         },
         {
+          "name": "shadow_inner_md",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_outer_md",
+          "kind": "variable"
+        },
+        {
           "name": "shadow_lg",
           "kind": "variable"
         },
@@ -1284,6 +1312,14 @@
           "kind": "variable"
         },
         {
+          "name": "shadow_inner_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_outer_lg",
+          "kind": "variable"
+        },
+        {
           "name": "shadow_xl",
           "kind": "variable"
         },
@@ -1293,6 +1329,14 @@
         },
         {
           "name": "shadow_outset_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_inner_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_outer_xl",
           "kind": "variable"
         },
         {
