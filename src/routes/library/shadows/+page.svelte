@@ -31,7 +31,7 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<Tome_Subheading text="Shadows" slug="shadows" />
+		<Tome_Subheading text="Shadow" slug="shadow" />
 		<p>Shadows darken in light mode and lighten in dark mode.</p>
 		<Unfinished_Implementation_Warning
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
@@ -62,7 +62,7 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
-		<Tome_Subheading text="Highlights" slug="highlights" />
+		<Tome_Subheading text="Highlight" slug="highlight" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
 			<!-- TODO think about this or something less verbose: `{@render shadow_example_header(shadow_example_header_highlight_color_snippet)}` -->
@@ -93,7 +93,7 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
-		<Tome_Subheading text="Glows" slug="glows" />
+		<Tome_Subheading text="Glow" slug="glow" />
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
 			{@render shadow_example_header('glow_color_')}
@@ -123,7 +123,7 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
-		<Tome_Subheading text="Shrouds" slug="shrouds" />
+		<Tome_Subheading text="Shroud" slug="shroud" />
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
 			{@render shadow_example_header('shroud_color_')}
