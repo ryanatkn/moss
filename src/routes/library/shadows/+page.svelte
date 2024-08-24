@@ -194,13 +194,15 @@
 </Tome_Detail>
 
 {#snippet shadow_example_header(text: string)}
-	<div class="shadow_example justify_content_end">
+	<div class="shadow_example">
 		<code>{text}</code>
-		{#each shadow_weight_variants as w (w)}
-			<code class="shadow_variant_example box">
-				<Style_Variable_Button name="{text}{w}">{w}</Style_Variable_Button>
-			</code>
-		{/each}
+		<div class="row gap_lg">
+			{#each shadow_weight_variants as w (w)}
+				<code class="shadow_variant_example box">
+					<Style_Variable_Button name="{text}{w}">{w}</Style_Variable_Button>
+				</code>
+			{/each}
+		</div>
 	</div>
 {/snippet}
 
@@ -231,6 +233,7 @@
 		border-radius: var(--radius_xs3);
 		display: flex;
 		align-items: center;
+		justify-content: end;
 		flex-wrap: wrap;
 		gap: var(--space_lg);
 	}
