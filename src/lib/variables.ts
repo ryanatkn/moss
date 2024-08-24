@@ -1021,6 +1021,14 @@ export const shadow_outset_xs: Style_Variable = {
 	name: 'shadow_outset_xs',
 	light: 'inset 0 -1px 3px 0px',
 };
+export const shadow_inner_xs: Style_Variable = {
+	name: 'shadow_inner_xs',
+	light: 'inset 0 0 3px 0px',
+};
+export const shadow_outer_xs: Style_Variable = {
+	name: 'shadow_outer_xs',
+	light: '0 0 3px 0px',
+};
 export const shadow_sm: Style_Variable = {
 	name: 'shadow_sm',
 	light: '0 1.5px 4px 0px',
@@ -1032,6 +1040,14 @@ export const shadow_inset_sm: Style_Variable = {
 export const shadow_outset_sm: Style_Variable = {
 	name: 'shadow_outset_sm',
 	light: 'inset 0 -1.5px 4px 0px',
+};
+export const shadow_inner_sm: Style_Variable = {
+	name: 'shadow_inner_sm',
+	light: 'inset 0 0 4px 0px',
+};
+export const shadow_outer_sm: Style_Variable = {
+	name: 'shadow_outer_sm',
+	light: '0 0 4px 0px',
 };
 export const shadow_md: Style_Variable = {
 	name: 'shadow_md',
@@ -1045,6 +1061,14 @@ export const shadow_outset_md: Style_Variable = {
 	name: 'shadow_outset_md',
 	light: 'inset 0 -2.5px 6px 0px',
 };
+export const shadow_inner_md: Style_Variable = {
+	name: 'shadow_inner_md',
+	light: 'inset 0 0 6px 0px',
+};
+export const shadow_outer_md: Style_Variable = {
+	name: 'shadow_outer_md',
+	light: '0 0 6px 0px',
+};
 export const shadow_lg: Style_Variable = {
 	name: 'shadow_lg',
 	light: '0 4px 10px 0px',
@@ -1057,6 +1081,14 @@ export const shadow_outset_lg: Style_Variable = {
 	name: 'shadow_outset_lg',
 	light: 'inset 0 -4px 10px 0px',
 };
+export const shadow_inner_lg: Style_Variable = {
+	name: 'shadow_inner_lg',
+	light: 'inset 0 0 10px 0px',
+};
+export const shadow_outer_lg: Style_Variable = {
+	name: 'shadow_outer_lg',
+	light: '0 0 10px 0px',
+};
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
 	light: '0 5px 20px 0px',
@@ -1068,6 +1100,14 @@ export const shadow_inset_xl: Style_Variable = {
 export const shadow_outset_xl: Style_Variable = {
 	name: 'shadow_outset_xl',
 	light: 'inset 0 -5px 20px 0px',
+};
+export const shadow_inner_xl: Style_Variable = {
+	name: 'shadow_inner_xl',
+	light: 'inset 0 0 20px 0px',
+};
+export const shadow_outer_xl: Style_Variable = {
+	name: 'shadow_outer_xl',
+	light: '0 0 20px 0px',
 };
 
 export const shadow_alpha_1: Style_Variable = {
@@ -1738,6 +1778,16 @@ export const default_variables: Style_Variable[] = [
 	shadow_outset_md,
 	shadow_outset_lg,
 	shadow_outset_xl,
+	shadow_inner_xs,
+	shadow_inner_sm,
+	shadow_inner_md,
+	shadow_inner_lg,
+	shadow_inner_xl,
+	shadow_outer_xs,
+	shadow_outer_sm,
+	shadow_outer_md,
+	shadow_outer_lg,
+	shadow_outer_xl,
 	shadow_alpha_1,
 	shadow_alpha_2,
 	shadow_alpha_3,

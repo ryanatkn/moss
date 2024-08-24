@@ -291,6 +291,16 @@
 	--shadow_outset_md: inset 0 -2.5px 6px 0px;
 	--shadow_outset_lg: inset 0 -4px 10px 0px;
 	--shadow_outset_xl: inset 0 -5px 20px 0px;
+	--shadow_inner_xs: inset 0 0 3px 0px;
+	--shadow_inner_sm: inset 0 0 4px 0px;
+	--shadow_inner_md: inset 0 0 6px 0px;
+	--shadow_inner_lg: inset 0 0 10px 0px;
+	--shadow_inner_xl: inset 0 0 20px 0px;
+	--shadow_outer_xs: 0 0 3px 0px;
+	--shadow_outer_sm: 0 0 4px 0px;
+	--shadow_outer_md: 0 0 6px 0px;
+	--shadow_outer_lg: 0 0 10px 0px;
+	--shadow_outer_xl: 0 0 20px 0px;
 	--shadow_alpha_1: 20%;
 	--shadow_alpha_2: 30%;
 	--shadow_alpha_3: 40%;
