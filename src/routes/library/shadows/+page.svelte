@@ -240,7 +240,7 @@
 		<Color_Scheme_Input />
 	</section>
 	<section>
-		<Tome_Subheading text="Colorful glows" slug="colorful-glows" />
+		<Tome_Subheading text="Colorful shadows" slug="colorful-shadows" />
 		<p>These are darker in light mode than in dark mode.</p>
 		{@render shadow_example_header('shadow_color_')}
 		{#each color_variants as color_variant}
