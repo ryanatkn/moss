@@ -1,5 +1,14 @@
 # @ryanatkn/moss
 
+## 0.14.0
+
+### Minor Changes
+
+- improve shadows ([#37](https://github.com/ryanatkn/moss/pull/37))
+
+  - add `inner` and `outer` shadow variants
+  - remove `x` offset from all shadows
+
 ## 0.13.4
 
 ### Patch Changes
