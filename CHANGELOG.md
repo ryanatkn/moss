@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.14.1
+
+### Patch Changes
+
+- add more layout classes ([#39](https://github.com/ryanatkn/moss/pull/39))
+
 ## 0.14.0
 
 ### Minor Changes
