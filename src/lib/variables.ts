@@ -1011,103 +1011,123 @@ export const shadow_i_color: Style_Variable = {
 // TODO Are these variables useful enough to be extracted? Is there a significant performance implication to using these variables instead of inlining in the shadow variables?
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
+	light: '0 0 3px 0px',
+};
+export const shadow_t_xs: Style_Variable = {
+	name: 'shadow_t_xs',
 	light: '0 1px 3px 0px',
+};
+export const shadow_b_xs: Style_Variable = {
+	name: 'shadow_b_xs',
+	light: '0 -1px 3px 0px',
 };
 export const shadow_inset_xs: Style_Variable = {
 	name: 'shadow_inset_xs',
-	light: 'inset 0 1px 3px 0px',
-};
-export const shadow_outset_xs: Style_Variable = {
-	name: 'shadow_outset_xs',
-	light: 'inset 0 -1px 3px 0px',
-};
-export const shadow_inner_xs: Style_Variable = {
-	name: 'shadow_inner_xs',
 	light: 'inset 0 0 3px 0px',
 };
-export const shadow_outer_xs: Style_Variable = {
-	name: 'shadow_outer_xs',
-	light: '0 0 3px 0px',
+export const shadow_inset_t_xs: Style_Variable = {
+	name: 'shadow_inset_t_xs',
+	light: 'inset 0 1px 3px 0px',
+};
+export const shadow_inset_b_xs: Style_Variable = {
+	name: 'shadow_inset_b_xs',
+	light: 'inset 0 -1px 3px 0px',
 };
 export const shadow_sm: Style_Variable = {
 	name: 'shadow_sm',
+	light: '0 0 4px 0px',
+};
+export const shadow_t_sm: Style_Variable = {
+	name: 'shadow_t_sm',
 	light: '0 1.5px 4px 0px',
+};
+export const shadow_b_sm: Style_Variable = {
+	name: 'shadow_b_sm',
+	light: '0 -1.5px 4px 0px',
 };
 export const shadow_inset_sm: Style_Variable = {
 	name: 'shadow_inset_sm',
-	light: 'inset 0 1.5px 4px 0px',
-};
-export const shadow_outset_sm: Style_Variable = {
-	name: 'shadow_outset_sm',
-	light: 'inset 0 -1.5px 4px 0px',
-};
-export const shadow_inner_sm: Style_Variable = {
-	name: 'shadow_inner_sm',
 	light: 'inset 0 0 4px 0px',
 };
-export const shadow_outer_sm: Style_Variable = {
-	name: 'shadow_outer_sm',
-	light: '0 0 4px 0px',
+export const shadow_inset_t_sm: Style_Variable = {
+	name: 'shadow_inset_t_sm',
+	light: 'inset 0 1.5px 4px 0px',
+};
+export const shadow_inset_b_sm: Style_Variable = {
+	name: 'shadow_inset_b_sm',
+	light: 'inset 0 -1.5px 4px 0px',
 };
 export const shadow_md: Style_Variable = {
 	name: 'shadow_md',
+	light: '0 0 6px 0px',
+};
+export const shadow_t_md: Style_Variable = {
+	name: 'shadow_t_md',
 	light: '0 2.5px 6px 0px',
+};
+export const shadow_b_md: Style_Variable = {
+	name: 'shadow_b_md',
+	light: '0 -2.5px 6px 0px',
 };
 export const shadow_inset_md: Style_Variable = {
 	name: 'shadow_inset_md',
-	light: 'inset 0 2.5px 6px 0px',
-};
-export const shadow_outset_md: Style_Variable = {
-	name: 'shadow_outset_md',
-	light: 'inset 0 -2.5px 6px 0px',
-};
-export const shadow_inner_md: Style_Variable = {
-	name: 'shadow_inner_md',
 	light: 'inset 0 0 6px 0px',
 };
-export const shadow_outer_md: Style_Variable = {
-	name: 'shadow_outer_md',
-	light: '0 0 6px 0px',
+export const shadow_inset_t_md: Style_Variable = {
+	name: 'shadow_inset_t_md',
+	light: 'inset 0 2.5px 6px 0px',
+};
+export const shadow_inset_b_md: Style_Variable = {
+	name: 'shadow_inset_b_md',
+	light: 'inset 0 -2.5px 6px 0px',
 };
 export const shadow_lg: Style_Variable = {
 	name: 'shadow_lg',
+	light: '0 0 10px 0px',
+};
+export const shadow_t_lg: Style_Variable = {
+	name: 'shadow_t_lg',
 	light: '0 4px 10px 0px',
+};
+export const shadow_b_lg: Style_Variable = {
+	name: 'shadow_b_lg',
+	light: '0 -4px 10px 0px',
 };
 export const shadow_inset_lg: Style_Variable = {
 	name: 'shadow_inset_lg',
-	light: 'inset 0 4px 10px 0px',
-};
-export const shadow_outset_lg: Style_Variable = {
-	name: 'shadow_outset_lg',
-	light: 'inset 0 -4px 10px 0px',
-};
-export const shadow_inner_lg: Style_Variable = {
-	name: 'shadow_inner_lg',
 	light: 'inset 0 0 10px 0px',
 };
-export const shadow_outer_lg: Style_Variable = {
-	name: 'shadow_outer_lg',
-	light: '0 0 10px 0px',
+export const shadow_inset_t_lg: Style_Variable = {
+	name: 'shadow_inset_t_lg',
+	light: 'inset 0 4px 10px 0px',
+};
+export const shadow_inset_b_lg: Style_Variable = {
+	name: 'shadow_inset_b_lg',
+	light: 'inset 0 -4px 10px 0px',
 };
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
+	light: '0 0 20px 3px', // TODO BLOCK @many spread (lg too?)
+};
+export const shadow_t_xl: Style_Variable = {
+	name: 'shadow_t_xl',
 	light: '0 5px 20px 3px', // TODO BLOCK @many spread (lg too?)
+};
+export const shadow_b_xl: Style_Variable = {
+	name: 'shadow_b_xl',
+	light: '0 -5px 20px 3px', // TODO BLOCK @many spread (lg too?)
 };
 export const shadow_inset_xl: Style_Variable = {
 	name: 'shadow_inset_xl',
-	light: 'inset 0 5px 20px 3px', // TODO BLOCK @many spread (lg too?)
-};
-export const shadow_outset_xl: Style_Variable = {
-	name: 'shadow_outset_xl',
-	light: 'inset 0 -5px 20px 3px', // TODO BLOCK @many spread (lg too?)
-};
-export const shadow_inner_xl: Style_Variable = {
-	name: 'shadow_inner_xl',
 	light: 'inset 0 0 20px 3px', // TODO BLOCK @many spread (lg too?)
 };
-export const shadow_outer_xl: Style_Variable = {
-	name: 'shadow_outer_xl',
-	light: '0 0 20px 3px', // TODO BLOCK @many spread (lg too?)
+export const shadow_inset_t_xl: Style_Variable = {
+	name: 'shadow_inset_t_xl',
+	light: 'inset 0 5px 20px 3px', // TODO BLOCK @many spread (lg too?)
+};
+export const shadow_inset_b_xl: Style_Variable = {
+	name: 'shadow_inset_b_xl',
+	light: 'inset 0 -5px 20px 3px', // TODO BLOCK @many spread (lg too?)
 };
 
 export const shadow_alpha_1: Style_Variable = {
