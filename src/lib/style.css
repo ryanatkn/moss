@@ -3425,6 +3425,21 @@ layout
 .w_100 {
 	width: 100%;
 }
+.w_auto {
+	width: auto;
+}
+.w_max_content {
+	width: max-content;
+}
+.w_min_content {
+	width: min-content;
+}
+.w_fit_content {
+	width: fit-content;
+}
+.w_stretch {
+	width: stretch;
+}
 .w_xs {
 	width: var(--space_xs);
 }
@@ -3488,6 +3503,21 @@ layout
 }
 .h_100 {
 	height: 100%;
+}
+.h_auto {
+	height: auto;
+}
+.h_max_content {
+	height: max-content;
+}
+.h_min_content {
+	height: min-content;
+}
+.h_fit_content {
+	height: fit-content;
+}
+.h_stretch {
+	height: stretch;
 }
 .h_xs {
 	height: var(--space_xs);
