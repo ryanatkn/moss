@@ -1107,27 +1107,27 @@ export const shadow_inset_b_lg: Style_Variable = {
 };
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
-	light: '0 0 20px 3px', // TODO BLOCK @many spread (lg too?)
+	light: '0 0 20px 1px',
 };
 export const shadow_t_xl: Style_Variable = {
 	name: 'shadow_t_xl',
-	light: '0 5px 20px 3px', // TODO BLOCK @many spread (lg too?)
+	light: '0 5px 20px 1px',
 };
 export const shadow_b_xl: Style_Variable = {
 	name: 'shadow_b_xl',
-	light: '0 -5px 20px 3px', // TODO BLOCK @many spread (lg too?)
+	light: '0 -5px 20px 1px',
 };
 export const shadow_inset_xl: Style_Variable = {
 	name: 'shadow_inset_xl',
-	light: 'inset 0 0 20px 3px', // TODO BLOCK @many spread (lg too?)
+	light: 'inset 0 0 20px 1px',
 };
 export const shadow_inset_t_xl: Style_Variable = {
 	name: 'shadow_inset_t_xl',
-	light: 'inset 0 5px 20px 3px', // TODO BLOCK @many spread (lg too?)
+	light: 'inset 0 5px 20px 1px',
 };
 export const shadow_inset_b_xl: Style_Variable = {
 	name: 'shadow_inset_b_xl',
-	light: 'inset 0 -5px 20px 3px', // TODO BLOCK @many spread (lg too?)
+	light: 'inset 0 -5px 20px 1px',
 };
 
 export const shadow_alpha_1: Style_Variable = {
