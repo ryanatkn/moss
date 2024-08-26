@@ -1087,11 +1087,11 @@ export const shadow_lg: Style_Variable = {
 };
 export const shadow_t_lg: Style_Variable = {
 	name: 'shadow_t_lg',
-	light: '0 4px 10px 0px',
+	light: '0 3.5px 10px 0px',
 };
 export const shadow_b_lg: Style_Variable = {
 	name: 'shadow_b_lg',
-	light: '0 -4px 10px 0px',
+	light: '0 -3.5px 10px 0px',
 };
 export const shadow_inset_lg: Style_Variable = {
 	name: 'shadow_inset_lg',
@@ -1099,11 +1099,11 @@ export const shadow_inset_lg: Style_Variable = {
 };
 export const shadow_inset_t_lg: Style_Variable = {
 	name: 'shadow_inset_t_lg',
-	light: 'inset 0 4px 10px 0px',
+	light: 'inset 0 3.5px 10px 0px',
 };
 export const shadow_inset_b_lg: Style_Variable = {
 	name: 'shadow_inset_b_lg',
-	light: 'inset 0 -4px 10px 0px',
+	light: 'inset 0 -3.5px 10px 0px',
 };
 export const shadow_xl: Style_Variable = {
 	name: 'shadow_xl',
