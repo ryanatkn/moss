@@ -73,3 +73,7 @@ export const icon_sizes = {
 };
 
 export const color_variants = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] as const;
+
+// TODO single source of truth
+// 0.08s 0.2s 0.5s 1s 1.5s 3s
+//export const durations = []
