@@ -6,6 +6,7 @@
 	import Hidden_Personal_Links from '@ryanatkn/fuz/Hidden_Personal_Links.svelte';
 
 	import {get_pkg} from '$routes/pkg.js';
+	import Introduction from '$routes/Introduction.svelte';
 
 	const pkg = get_pkg();
 </script>
@@ -20,22 +21,13 @@
 	</section>
 	<section class="width_sm p_sm radius_md shadow_sm">
 		<div class="panel p_lg bg shadow_md">
+			<Introduction />
 			<p>
-				Moss is a CSS framework that can be used with any website or JS framework. It exports
-				<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-					>one main stylesheet</a
-				>
-				and
-				<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css">a theme stylesheet</a
-				>, and it also
-				<a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS partials, types, helpers,
-				and data for more complex usage.
-			</p>
-			<p>
-				Moss is in early alpha and will have many breaking changes to get to 1.0. To follow along or
-				lend some help, see <a href="https://discord.gg/YU5tyeK72X">the Discord</a>
-				and
-				<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>.
+				To learn more see <a href="{base}/library">the docs</a>
+				and <a href="https://github.com/ryanatkn/moss#readme">the readme</a>. See also my Svelte UI
+				library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss. Feel free to take the
+				ideas and
+				<a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.
 			</p>
 			<p>
 				Moss is being made to support <a href="https://zzz.ryanatkn.com/">Zzz</a> and
@@ -43,13 +35,6 @@
 				that focus on end-users. It's grown slowly over 5 years, adding new features when I feel they're
 				sufficiently generalizable or merit experimentation, and my goal for 2024 is to fill out its
 				APIs so it's more coherent and complete.
-			</p>
-			<p>
-				To learn more see <a href="{base}/library">the docs</a>
-				and <a href="https://github.com/ryanatkn/moss#readme">the readme</a>. See also my Svelte UI
-				library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss. Feel free to take the
-				ideas and
-				<a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.
 			</p>
 		</div>
 	</section>
