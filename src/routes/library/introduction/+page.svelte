@@ -4,7 +4,7 @@
 	import {get_tome} from '@ryanatkn/fuz/tome.js';
 
 	import Module_Link from '$routes/Module_Link.svelte';
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Introduction from '$routes/Introduction.svelte';
 
 	const LIBRARY_ITEM_NAME = 'introduction';
 
@@ -13,15 +13,7 @@
 
 <Tome_Detail {tome}>
 	<section>
-		<p>
-			Moss is a CSS framework and design system that can be used with any website and JS framework.
-			It's built around <em>style variables</em>, which are
-			<Mdn_Link path="Web/CSS/--*">CSS custom properties</Mdn_Link> and design tokens with additional
-			capabilities and conventions.
-		</p>
-		<Unfinished_Implementation_Warning>
-			Moss is in early alpha and there will be many breaking changes.
-		</Unfinished_Implementation_Warning>
+		<Introduction />
 		<p>About Moss:</p>
 		<ul>
 			<li>plain CSS</li>
