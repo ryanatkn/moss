@@ -19,8 +19,8 @@
 			<blockquote class="shadow_inset_xs">magical organic stylesheets 🌿</blockquote>
 		</div>
 	</section>
-	<section class="width_sm p_sm radius_md shadow_sm">
-		<div class="panel p_lg bg shadow_md">
+	<section class="width_sm p_sm radius_md shadow_xs">
+		<div class="panel p_lg bg shadow_sm">
 			<Introduction />
 			<p>
 				To learn more see <a href="{base}/library">the docs</a>
