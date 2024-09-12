@@ -71,7 +71,7 @@
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
-							class="shadow_main_example"
+							class="shadow_main_example shadow_{shadow_size_variant} shadow_color_highlight"
 							style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
 							var(--highlight_color_{weight_by_size[shadow_size_variant]})"
 						>
@@ -101,7 +101,7 @@
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
-							class="shadow_main_example"
+							class="shadow_main_example shadow_{shadow_size_variant} shadow_color_glow"
 							style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
 							var(--glow_color_{weight_by_size[shadow_size_variant]})"
 						>
@@ -131,7 +131,7 @@
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
-							class="shadow_main_example"
+							class="shadow_main_example shadow_{shadow_size_variant} shadow_color_shroud"
 							style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
 							var(--shroud_color_{weight_by_size[shadow_size_variant]})"
 						>
@@ -163,9 +163,7 @@
 					{#each shadow_size_variants as shadow_size_variant}
 						<div class="shadow_example">
 							<div
-								class="shadow_main_example"
-								style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
-								var(--shadow_color_{color_variant}_{weight_by_size[shadow_size_variant]})"
+								class="shadow_main_example shadow_{shadow_size_variant} shadow_color_{color_variant}"
 							>
 								<Style_Variable_Button
 									name="{shadow_variant_prefix}{shadow_size_variant}"
