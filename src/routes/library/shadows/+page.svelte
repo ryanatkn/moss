@@ -64,7 +64,7 @@
 							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_highlight"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="highlight_color" />
+							<Style_Variable_Button name="shadow_color_highlight" />
 						</div>
 						{@render shadow_variant_examples(
 							null,
@@ -92,7 +92,7 @@
 							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_glow"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="glow_color" />
+							<Style_Variable_Button name="shadow_color_glow" />
 						</div>
 						{@render shadow_variant_examples(
 							null,
@@ -120,7 +120,7 @@
 							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_shroud"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="shroud_color" />
+							<Style_Variable_Button name="shadow_color_shroud" />
 						</div>
 						{@render shadow_variant_examples(
 							null,

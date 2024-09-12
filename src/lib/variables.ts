@@ -947,19 +947,18 @@ export const shadow_color: Style_Variable = {
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
 };
-// TODO BLOCK probably rename to `shadow_color_highlight|glow|shroud`?
-export const highlight_color: Style_Variable = {
-	name: 'highlight_color',
+export const shadow_color_highlight: Style_Variable = {
+	name: 'shadow_color_highlight',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
 };
-export const glow_color: Style_Variable = {
-	name: 'glow_color',
+export const shadow_color_glow: Style_Variable = {
+	name: 'shadow_color_glow',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
 };
-export const shroud_color: Style_Variable = {
-	name: 'shroud_color',
+export const shadow_color_shroud: Style_Variable = {
+	name: 'shadow_color_shroud',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
 };
 export const shadow_color_a: Style_Variable = {
@@ -1491,9 +1490,9 @@ export const default_variables: Style_Variable[] = [
 
 	/* shadows and glows */
 	shadow_color,
-	highlight_color,
-	glow_color,
-	shroud_color,
+	shadow_color_highlight,
+	shadow_color_glow,
+	shadow_color_shroud,
 	shadow_color_a,
 	shadow_color_b,
 	shadow_color_c,
@@ -1539,9 +1538,9 @@ export const default_variables: Style_Variable[] = [
 	shadow_alpha_4,
 	shadow_alpha_5,
 	shadow_color,
-	highlight_color,
-	glow_color,
-	shroud_color,
+	shadow_color_highlight,
+	shadow_color_glow,
+	shadow_color_shroud,
 	shadow_color_a,
 	shadow_color_b,
 	shadow_color_c,
