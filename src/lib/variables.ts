@@ -896,7 +896,6 @@ export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
 /* button styles */
-// TODO BLOCK fix (rename across all projects)
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
 	light:
