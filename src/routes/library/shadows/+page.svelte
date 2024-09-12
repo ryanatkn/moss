@@ -10,6 +10,8 @@
 		shadow_size_variants,
 		shadow_variant_prefixes,
 		shadow_alpha_variants,
+		type Shadow_Size_Variant,
+		type Color_Variant,
 	} from '$lib/variable_data.js';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
@@ -39,12 +41,7 @@
 						<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
 						<Style_Variable_Button name="shadow_color" />
 					</div>
-					{@render shadow_variant_examples(
-						null,
-						shadow_size_variant,
-						'shadow',
-						shadow_variant_prefix,
-					)}
+					{@render shadow_variant_examples(null, shadow_size_variant, shadow_variant_prefix)}
 				</div>
 			{/each}
 		{/each}
@@ -67,9 +64,8 @@
 							<Style_Variable_Button name="shadow_color_highlight" />
 						</div>
 						{@render shadow_variant_examples(
-							null,
-							shadow_size_variant,
 							'highlight',
+							shadow_size_variant,
 							shadow_variant_prefix,
 						)}
 					</div>
@@ -94,12 +90,7 @@
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
 							<Style_Variable_Button name="shadow_color_glow" />
 						</div>
-						{@render shadow_variant_examples(
-							null,
-							shadow_size_variant,
-							'glow',
-							shadow_variant_prefix,
-						)}
+						{@render shadow_variant_examples('glow', shadow_size_variant, shadow_variant_prefix)}
 					</div>
 				{/each}
 			{/each}
@@ -122,12 +113,7 @@
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
 							<Style_Variable_Button name="shadow_color_shroud" />
 						</div>
-						{@render shadow_variant_examples(
-							null,
-							shadow_size_variant,
-							'shroud',
-							shadow_variant_prefix,
-						)}
+						{@render shadow_variant_examples('shroud', shadow_size_variant, shadow_variant_prefix)}
 					</div>
 				{/each}
 			{/each}
@@ -158,7 +144,6 @@
 							{@render shadow_variant_examples(
 								color_variant,
 								shadow_size_variant,
-								'shadow',
 								shadow_variant_prefix,
 							)}
 						</div>
@@ -186,15 +171,14 @@
 {/snippet}
 
 {#snippet shadow_variant_examples(
-	color_variant: string | null,
-	shadow_size_variant: string,
-	shadow_type: string,
+	color_variant: Color_Variant | 'highlight' | 'glow' | 'shroud' | null,
+	shadow_size_variant: Shadow_Size_Variant,
 	shadow_variant_prefix: string,
 )}
 	<div class="row gap_lg">
 		{#each shadow_alpha_variants as alpha (alpha)}
 			{@const shadow_size = shadow_variant_prefix + shadow_size_variant}
-			{@const shadow_color = `${shadow_type}_color${color_variant ? '_' + color_variant : ''}`}
+			{@const shadow_color = `shadow_color${color_variant ? '_' + color_variant : ''}`}
 			<div
 				title="{shadow_size} with {shadow_color}"
 				class="shadow_variant_example {shadow_size} {shadow_color} shadow_alpha_{alpha}"
@@ -219,7 +203,8 @@
 		flex: 1;
 		display: flex;
 		flex-wrap: wrap;
-		padding: var(--space_sm);
+		padding: 0 var(--space_xs);
+		min-height: var(--input_height);
 		gap: var(--space_lg);
 		min-width: 260px;
 	}
