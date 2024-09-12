@@ -895,24 +895,23 @@ export const radius_xs: Style_Variable = {name: 'radius_xs', light: '0.8rem'};
 export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
-/* button styles */
+/* button shadows */
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
 	light:
-		'var(--shadow_inset_bottom_xs) var(--shadow_color), var(--shadow_inset_top_xs) var(--shadow_color_highlight)',
-	dark: 'var(--shadow_inset_top_xs) var(--shadow_color), var(--shadow_inset_bottom_xs) var(--shadow_color_highlight)',
+		'var(--shadow_inset_bottom_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent), var(--shadow_inset_top_xs) color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_1), transparent)',
+	dark: 'var(--shadow_inset_top_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent), var(--shadow_inset_bottom_xs) color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_1), transparent)',
 };
 export const button_shadow_hover: Style_Variable = {
 	name: 'button_shadow_hover',
 	light:
-		'var(--shadow_inset_bottom_sm) var(--shadow_color), var(--shadow_inset_top_sm) var(--shadow_color_highlight)',
-	dark: 'var(--shadow_inset_top_sm) var(--shadow_color), var(--shadow_inset_bottom_sm) var(--shadow_color_highlight)',
+		'var(--shadow_inset_bottom_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent), var(--shadow_inset_top_sm) color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent)',
+	dark: 'var(--shadow_inset_top_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent), var(--shadow_inset_bottom_sm) color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent)',
 };
 export const button_shadow_active: Style_Variable = {
 	name: 'button_shadow_active',
-	light:
-		'var(--shadow_inset_top_sm) var(--shadow_color), var(--shadow_inset_bottom_sm) var(--shadow_color_highlight)',
-	dark: 'var(--shadow_inset_bottom_sm) var(--shadow_color), var(--shadow_inset_top_sm) var(--shadow_color_highlight), ',
+	light: button_shadow_hover.dark,
+	dark: button_shadow_hover.light,
 };
 
 /* inputs */
