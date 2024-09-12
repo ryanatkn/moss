@@ -131,6 +131,31 @@
 				different because of the context.
 			</p>
 		</aside>
+		<Tome_Subheading text="Stacking opacity" slug="stacking-opacity" tag="h4" />
+		<Code
+			content={`<div class="fg_1 p_sm">
+	<div class="fg_1 p_sm">
+		<div class="fg_1 p_sm">
+			<div class="fg_1 p_sm">
+				<div class="bg p_sm">
+					...
+				</div>
+			</div>
+		</div>
+</div>`}
+		/>
+		<div class="fg_1 p_sm">
+			<div class="fg_1 p_sm">
+				<div class="fg_1 p_sm">
+					<div class="fg_1 p_sm">
+						<div class="bg p_sm">
+							these shades use opacity, but notice how contrast changes with depth, creating
+							limitations
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 	<section>
 		<Tome_Subheading text="Fading opacity" slug="fading-opacity" />
@@ -147,34 +172,6 @@
 					<small><Style_Variable_Button {name} /></small>
 				</div>
 			{/each}
-		</div>
-	</section>
-	<section>
-		<Tome_Subheading text="Stacking opacity" slug="stacking-opacity" />
-		<Code
-			content={`<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
-	<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
-		<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
-			<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
-				<div style:background-color="var(--bg_4)" class="p_sm radius_xs3">
-					...
-				</div>
-			</div>
-		</div>
-	</div>
-</div>`}
-		/>
-		<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
-			<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
-				<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
-					<div style:background-color="var(--fg_1)" class="p_sm radius_xs3">
-						<div style:background-color="var(--bg_4)" class="p_sm radius_xs3">
-							these variables have opacity, but notice how contrast changes with depth, creating
-							limitations
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</section>
 </Tome_Detail>

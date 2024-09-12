@@ -1453,7 +1453,8 @@ export const icon_size_xl3: Style_Variable = {
 };
 
 /* durations */
-// TODO maybe change the scale from xs-xl, and add an xs here around 0.04s or 0.03s
+// TODO maybe change the scale from xs-xl, and add an xs here around 0.04s or 0.03s (2 frames at 60fps)
+// TODO docs
 export const duration_1: Style_Variable = {name: 'duration_1', light: '0.08s'};
 export const duration_2: Style_Variable = {name: 'duration_2', light: '0.2s'};
 export const duration_3: Style_Variable = {name: 'duration_3', light: '0.5s'};
