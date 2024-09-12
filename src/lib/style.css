@@ -2421,7 +2421,7 @@ shadows
 */
 
 .shadow_xs {
-	/* TODO ? downside would be that you couldn't set `--shadow_alpha` on an ancestor,
+	/* TODO ? downside would be that you couldn't set `--shadow_alpha` on an ancestor (unless we make a second variable?),
 	upside would be that the value could be used by descendants and the element in other ways
 	--shadow_alpha: var(--shadow_alpha_1) */
 	box-shadow: var(--shadow_xs)
