@@ -41,14 +41,10 @@
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
 		>
 		{@render shadow_example_header()}
-		{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+		{#each shadow_variant_prefixes as shadow_variant_prefix}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
-					<div
-						class="shadow_main_example"
-						style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
-						var(--shadow_color_{weight_by_size[shadow_size_variant]})"
-					>
+					<div class="shadow_main_example shadow_{shadow_size_variant}">
 						<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
 						<Style_Variable_Button name="shadow_color" />
 					</div>
@@ -71,7 +67,7 @@
 		<div class="panel fg_3 p_md">
 			<!-- TODO think about this or something less verbose: `{@render shadow_example_header(shadow_example_header_highlight_color_snippet)}` -->
 			{@render shadow_example_header()}
-			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+			{#each shadow_variant_prefixes as shadow_variant_prefix}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
@@ -101,7 +97,7 @@
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
 			{@render shadow_example_header()}
-			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+			{#each shadow_variant_prefixes as shadow_variant_prefix}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
@@ -131,7 +127,7 @@
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
 			{@render shadow_example_header()}
-			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+			{#each shadow_variant_prefixes as shadow_variant_prefix}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
@@ -163,7 +159,7 @@
 		{#each color_variants as color_variant}
 			{@const classes = 'color_' + color_variant}
 			<section>
-				{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+				{#each shadow_variant_prefixes as shadow_variant_prefix}
 					{#each shadow_size_variants as shadow_size_variant}
 						<div class="shadow_example">
 							<div
@@ -216,11 +212,10 @@
 	<div class="row gap_lg">
 		{#each shadow_weight_variants as w (w)}
 			{@const shadow_size = shadow_variant_prefix + shadow_size_variant}
-			{@const shadow_color = `${shadow_type}_color_${color_variant ? color_variant + '_' + w : w}`}
+			{@const shadow_color = `${shadow_type}_color${color_variant ? '_' + color_variant : ''}`}
 			<div
 				title="{shadow_size} with {shadow_color}"
-				class="shadow_variant_example"
-				style:box-shadow="var(--{shadow_size}) var(--{shadow_color})"
+				class="shadow_variant_example {shadow_size} {shadow_color} shadow_alpha_{w}"
 			></div>
 		{/each}
 	</div>

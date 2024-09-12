@@ -2428,19 +2428,19 @@ shadows
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);
 }
 .shadow_sm {
-	box-shadow: var(--shadow_xs)
+	box-shadow: var(--shadow_sm)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);
 }
 .shadow_md {
-	box-shadow: var(--shadow_xs)
+	box-shadow: var(--shadow_md)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);
 }
 .shadow_lg {
-	box-shadow: var(--shadow_xs)
+	box-shadow: var(--shadow_lg)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);
 }
 .shadow_xl {
-	box-shadow: var(--shadow_xs)
+	box-shadow: var(--shadow_xl)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);
 }
 .shadow_top_xs {

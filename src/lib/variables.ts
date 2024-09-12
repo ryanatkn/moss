@@ -947,6 +947,7 @@ export const shadow_color: Style_Variable = {
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
 	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
 };
+// TODO BLOCK probably rename to `shadow_color_highlight|glow|shroud`?
 export const highlight_color: Style_Variable = {
 	name: 'highlight_color',
 	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
