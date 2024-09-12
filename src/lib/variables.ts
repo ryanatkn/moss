@@ -786,10 +786,12 @@ export const width_sm: Style_Variable = {name: 'width_sm', light: '320px'};
 export const width_xs: Style_Variable = {name: 'width_xs', light: '200px'};
 
 /* borders and outlines */
-// TODO remove these two generics? composability doesn't work like I wanted
+// TODO remove these two generics? composability doesn't work like I wanted, maybe `--border_color_1-5` should be calculated from alpha instead?
 export const border_color: Style_Variable = {
 	name: 'border_color',
 	light: 'var(--border_color_3)',
+	// light: 'hsl(var(--tint_hue) 60% 20%)',
+	// dark: 'hsl(var(--tint_hue) 60% 80%)',
 };
 export const border_style: Style_Variable = {
 	name: 'border_style',

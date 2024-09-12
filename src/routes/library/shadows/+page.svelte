@@ -40,7 +40,7 @@
 		<Unfinished_Implementation_Warning
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
 		>
-		{@render shadow_example_header('shadow_color_')}
+		{@render shadow_example_header()}
 		{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
@@ -50,7 +50,7 @@
 						var(--shadow_color_{weight_by_size[shadow_size_variant]})"
 					>
 						<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-						<Style_Variable_Button name="shadow_color_{weight_by_size[shadow_size_variant]}" />
+						<Style_Variable_Button name="shadow_color" />
 					</div>
 					{@render shadow_variant_examples(
 						null,
@@ -70,7 +70,7 @@
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
 			<!-- TODO think about this or something less verbose: `{@render shadow_example_header(shadow_example_header_highlight_color_snippet)}` -->
-			{@render shadow_example_header('highlight_color_')}
+			{@render shadow_example_header()}
 			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
@@ -80,7 +80,7 @@
 							var(--highlight_color_{weight_by_size[shadow_size_variant]})"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="highlight_color_{weight_by_size[shadow_size_variant]}" />
+							<Style_Variable_Button name="highlight_color" />
 						</div>
 						{@render shadow_variant_examples(
 							null,
@@ -100,7 +100,7 @@
 		<Tome_Subheading text="Glow" slug="glow" />
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
-			{@render shadow_example_header('glow_color_')}
+			{@render shadow_example_header()}
 			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
@@ -110,7 +110,7 @@
 							var(--glow_color_{weight_by_size[shadow_size_variant]})"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="glow_color_{weight_by_size[shadow_size_variant]}" />
+							<Style_Variable_Button name="glow_color" />
 						</div>
 						{@render shadow_variant_examples(
 							null,
@@ -130,7 +130,7 @@
 		<Tome_Subheading text="Shroud" slug="shroud" />
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
-			{@render shadow_example_header('shroud_color_')}
+			{@render shadow_example_header()}
 			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
@@ -140,7 +140,7 @@
 							var(--shroud_color_{weight_by_size[shadow_size_variant]})"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="shroud_color_{weight_by_size[shadow_size_variant]}" />
+							<Style_Variable_Button name="shroud_color" />
 						</div>
 						{@render shadow_variant_examples(
 							null,
@@ -159,7 +159,7 @@
 	<section>
 		<Tome_Subheading text="Colorful shadows" slug="colorful-shadows" />
 		<p>These are darker in light mode than in dark mode.</p>
-		{@render shadow_example_header('shadow_color_')}
+		{@render shadow_example_header()}
 		{#each color_variants as color_variant}
 			{@const classes = 'color_' + color_variant}
 			<section>
@@ -175,10 +175,7 @@
 									name="{shadow_variant_prefix}{shadow_size_variant}"
 									{classes}
 								/>
-								<Style_Variable_Button
-									name="shadow_color_{color_variant}_{weight_by_size[shadow_size_variant]}"
-									{classes}
-								/>
+								<Style_Variable_Button name="shadow_color_{color_variant}" {classes} />
 							</div>
 							{@render shadow_variant_examples(
 								color_variant,
@@ -197,13 +194,13 @@
 	</section>
 </Tome_Detail>
 
-{#snippet shadow_example_header(text: string)}
+{#snippet shadow_example_header()}
 	<div class="shadow_example">
-		<code>{text}</code>
+		<code>shadow_alpha_</code>
 		<div class="row gap_lg">
 			{#each shadow_weight_variants as w (w)}
 				<code class="shadow_variant_example box">
-					<Style_Variable_Button name="{text}{w}">{w}</Style_Variable_Button>
+					<Style_Variable_Button name="shadow_alpha_{w}">{w}</Style_Variable_Button>
 				</code>
 			{/each}
 		</div>

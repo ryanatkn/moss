@@ -52,11 +52,11 @@ export const line_height_names = line_height_variants.map((s) => 'line_height_' 
 
 export const shadow_variant_prefixes = [
 	'shadow_',
-	'shadow_t_',
-	'shadow_b_',
+	'shadow_top_',
+	'shadow_bottom_',
 	'shadow_inset_',
-	'shadow_inset_t_',
-	'shadow_inset_b_',
+	'shadow_inset_top_',
+	'shadow_inset_bottom_',
 ] as const;
 export const shadow_size_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 export const shadow_weight_variants = [1, 2, 3, 4, 5] as const;

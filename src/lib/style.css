@@ -2581,6 +2581,22 @@ shadows
 	--shadow_color: var(--shadow_color_i);
 }
 
+.shadow_alpha_1 {
+	--shadow_alpha: var(--shadow_alpha_1);
+}
+.shadow_alpha_2 {
+	--shadow_alpha: var(--shadow_alpha_2);
+}
+.shadow_alpha_3 {
+	--shadow_alpha: var(--shadow_alpha_3);
+}
+.shadow_alpha_4 {
+	--shadow_alpha: var(--shadow_alpha_4);
+}
+.shadow_alpha_5 {
+	--shadow_alpha: var(--shadow_alpha_5);
+}
+
 /* higher specificity */
 /* TODO which order should these be in? */
 .shadow_inherit {
