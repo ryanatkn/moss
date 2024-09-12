@@ -521,63 +521,54 @@ TODO think through these patterns to get somewhere consistent
 	--text_color: var(--color_a_5);
 	--fill: var(--fill_a);
 	--border_color: var(--border_color_a);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_a);  */
 	--outline_color: var(--border_color_a);
 }
 :where(button.color_b) {
 	--text_color: var(--color_b_5);
 	--fill: var(--fill_b);
 	--border_color: var(--border_color_b);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_b);  */
 	--outline_color: var(--border_color_b);
 }
 :where(button.color_c) {
 	--text_color: var(--color_c_5);
 	--fill: var(--fill_c);
 	--border_color: var(--border_color_c);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_c);  */
 	--outline_color: var(--border_color_c);
 }
 :where(button.color_d) {
 	--text_color: var(--color_d_5);
 	--fill: var(--fill_d);
 	--border_color: var(--border_color_d);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_d);  */
 	--outline_color: var(--border_color_d);
 }
 :where(button.color_e) {
 	--text_color: var(--color_e_5);
 	--fill: var(--fill_e);
 	--border_color: var(--border_color_e);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_e);  */
 	--outline_color: var(--border_color_e);
 }
 :where(button.color_f) {
 	--text_color: var(--color_f_5);
 	--fill: var(--fill_f);
 	--border_color: var(--border_color_f);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_f);  */
 	--outline_color: var(--border_color_f);
 }
 :where(button.color_g) {
 	--text_color: var(--color_g_5);
 	--fill: var(--fill_g);
 	--border_color: var(--border_color_g);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_g);  */
 	--outline_color: var(--border_color_g);
 }
 :where(button.color_h) {
 	--text_color: var(--color_h_5);
 	--fill: var(--fill_h);
 	--border_color: var(--border_color_h);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_h);  */
 	--outline_color: var(--border_color_h);
 }
 :where(button.color_i) {
 	--text_color: var(--color_i_5);
 	--fill: var(--fill_i);
 	--border_color: var(--border_color_i);
-	/* TODO @many why doesn't this work? will need to darken --shadow_color: var(--shadow_color_i);  */
 	--outline_color: var(--border_color_i);
 }
 
