@@ -17,15 +17,6 @@
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
-	// simply map the sizes to the weights for docs, although any combination is valid
-	const weight_by_size = {
-		xs: 1,
-		sm: 2,
-		md: 3,
-		lg: 4,
-		xl: 5,
-	};
-
 	// TODO duplicate shadows links
 </script>
 
