@@ -216,7 +216,7 @@
 
 ### Minor Changes
 
-- break: rename `shadow_outset_md` from `shadow_inset_md` and `shadow_inset_md` from `shadow_inset_inverse_md` ([#2](https://github.com/ryanatkn/moss/pull/2))
+- break: rename `shadow_inset_bottom_md` from `shadow_inset_md` and `shadow_inset_md` from `shadow_inset_inverse_md` ([#2](https://github.com/ryanatkn/moss/pull/2))
 
 ### Patch Changes
 

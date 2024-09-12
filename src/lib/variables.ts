@@ -899,20 +899,20 @@ export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
 	light:
-		'var(--shadow_outset_xs) var(--shadow_color), var(--shadow_inset_xs) var(--shadow_color_highlight)',
-	dark: 'var(--shadow_inset_xs) var(--shadow_color), var(--shadow_outset_xs) var(--shadow_color_highlight)',
+		'var(--shadow_inset_bottom_xs) var(--shadow_color), var(--shadow_inset_top_xs) var(--shadow_color_highlight)',
+	dark: 'var(--shadow_inset_top_xs) var(--shadow_color), var(--shadow_inset_bottom_xs) var(--shadow_color_highlight)',
 };
 export const button_shadow_hover: Style_Variable = {
 	name: 'button_shadow_hover',
 	light:
-		'var(--shadow_outset_sm) var(--shadow_color), var(--shadow_inset_sm) var(--shadow_color_highlight)',
-	dark: 'var(--shadow_inset_sm) var(--shadow_color), var(--shadow_outset_sm) var(--shadow_color_highlight)',
+		'var(--shadow_inset_bottom_sm) var(--shadow_color), var(--shadow_inset_top_sm) var(--shadow_color_highlight)',
+	dark: 'var(--shadow_inset_top_sm) var(--shadow_color), var(--shadow_inset_bottom_sm) var(--shadow_color_highlight)',
 };
 export const button_shadow_active: Style_Variable = {
 	name: 'button_shadow_active',
 	light:
-		'var(--shadow_inset_sm) var(--shadow_color), var(--shadow_outset_sm) var(--shadow_color_highlight)',
-	dark: 'var(--shadow_outset_sm) var(--shadow_color), var(--shadow_inset_sm) var(--shadow_color_highlight), ',
+		'var(--shadow_inset_top_sm) var(--shadow_color), var(--shadow_inset_bottom_sm) var(--shadow_color_highlight)',
+	dark: 'var(--shadow_inset_bottom_sm) var(--shadow_color), var(--shadow_inset_top_sm) var(--shadow_color_highlight), ',
 };
 
 /* inputs */
