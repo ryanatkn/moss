@@ -1675,16 +1675,7 @@ shadows
 .shadow_color_shroud {
 	--shadow_color: var(--shadow_color_shroud);
 }
-/* TODO delete these */
-.shadow_color_highlight {
-	--shadow_color: var(--shadow_color_highlight);
-}
-.shadow_color_glow {
-	--shadow_color: var(--shadow_color_glow);
-}
-.shadow_color_shroud {
-	--shadow_color: var(--shadow_color_shroud);
-}
+
 .shadow_color_a {
 	--shadow_color: var(--shadow_color_a);
 }
