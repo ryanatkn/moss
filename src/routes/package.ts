@@ -131,7 +131,7 @@ export const src_json = {
 				{name: 'line_height_names', kind: 'variable'},
 				{name: 'shadow_variant_prefixes', kind: 'variable'},
 				{name: 'shadow_size_variants', kind: 'variable'},
-				{name: 'shadow_weight_variants', kind: 'variable'},
+				{name: 'shadow_alpha_variants', kind: 'variable'},
 				{name: 'icon_sizes', kind: 'variable'},
 				{name: 'color_variants', kind: 'variable'},
 			],

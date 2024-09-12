@@ -9,7 +9,7 @@
 		color_variants,
 		shadow_size_variants,
 		shadow_variant_prefixes,
-		shadow_weight_variants,
+		shadow_alpha_variants,
 	} from '$lib/variable_data.js';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
@@ -176,9 +176,9 @@
 	<div class="shadow_example">
 		<code>shadow_alpha_</code>
 		<div class="row gap_lg">
-			{#each shadow_weight_variants as w (w)}
+			{#each shadow_alpha_variants as alpha (alpha)}
 				<code class="shadow_variant_example box">
-					<Style_Variable_Button name="shadow_alpha_{w}">{w}</Style_Variable_Button>
+					<Style_Variable_Button name="shadow_alpha_{alpha}">{alpha}</Style_Variable_Button>
 				</code>
 			{/each}
 		</div>
@@ -192,12 +192,12 @@
 	shadow_variant_prefix: string,
 )}
 	<div class="row gap_lg">
-		{#each shadow_weight_variants as w (w)}
+		{#each shadow_alpha_variants as alpha (alpha)}
 			{@const shadow_size = shadow_variant_prefix + shadow_size_variant}
 			{@const shadow_color = `${shadow_type}_color${color_variant ? '_' + color_variant : ''}`}
 			<div
 				title="{shadow_size} with {shadow_color}"
-				class="shadow_variant_example {shadow_size} {shadow_color} shadow_alpha_{w}"
+				class="shadow_variant_example {shadow_size} {shadow_color} shadow_alpha_{alpha}"
 			></div>
 		{/each}
 	</div>

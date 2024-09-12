@@ -59,8 +59,7 @@ export const shadow_variant_prefixes = [
 	'shadow_inset_bottom_',
 ] as const;
 export const shadow_size_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
-// TODO BLOCK is called `alpha` elsewhere, but maybe weight is better?
-export const shadow_weight_variants = [1, 2, 3, 4, 5] as const;
+export const shadow_alpha_variants = [1, 2, 3, 4, 5] as const;
 
 // TODO maybe put this inline? factor out the pieces with `icon_size_variants`?
 export const icon_sizes = {
