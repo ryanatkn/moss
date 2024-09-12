@@ -48,7 +48,7 @@ export const package_json = {
 		'prism-svelte': '^0.5.0',
 		prismjs: '^1.29.0',
 		svelte: '^5.0.0-next.245',
-		'svelte-check': '^4.0.1',
+		'svelte-check': '^4.0.2',
 		tslib: '^2.7.0',
 		typescript: '^5.6.2',
 		'typescript-eslint': '^8.5.0',
