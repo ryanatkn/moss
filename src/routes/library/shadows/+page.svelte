@@ -30,6 +30,10 @@
 </script>
 
 <Tome_Detail {tome}>
+	<Unfinished_Implementation_Warning
+		>This is unfinished and will change. It feels simultaneously limiting in usage and bloated in
+		the implementation.</Unfinished_Implementation_Warning
+	>
 	<section>
 		<Tome_Subheading text="Shadow" slug="shadow" />
 		<p>Shadows darken in light mode and lighten in dark mode.</p>
