@@ -927,12 +927,12 @@ export const input_height_inner: Style_Variable = {
 	light: 'calc(var(--input_height) - 2 * var(--border_width) - 2 * var(--input_padding_y))',
 };
 
-// TODO think about more API surface area like colors, `shadow_xs_a-i` or use a variable `--shadow_color`
-// rewrite this with helpers so we get the color variants declared here statically, without repeating things like the px values
-// if we have a generic form for those variables, we could make it work with fg/bg/border colors, etc,
-// thus giving us the idea of "glows" (bg color) as the base, and keeping the current tinted versions as the default.
+/*
 
-/* shadows */
+shadows
+
+*/
+
 // TODO these shouldn't use tint, use lighten/darken instead,
 // but ideally we'd have a blend mode make the colors right,
 // which would require a pseduo-element,
@@ -942,75 +942,6 @@ export const input_height_inner: Style_Variable = {
 // - make shadow and glow color-scheme-agnostic?
 // - lift and depth that have both shadow and glow, color-scheme-aware
 
-export const shadow_color: Style_Variable = {
-	name: 'shadow_color',
-	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
-	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
-};
-export const shadow_color_highlight: Style_Variable = {
-	name: 'shadow_color_highlight',
-	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
-	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
-};
-export const shadow_color_glow: Style_Variable = {
-	name: 'shadow_color_glow',
-	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
-	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
-};
-export const shadow_color_shroud: Style_Variable = {
-	name: 'shadow_color_shroud',
-	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
-};
-export const shadow_color_a: Style_Variable = {
-	name: 'shadow_color_a',
-	light: 'var(--color_a_6)',
-	dark: 'var(--color_a_4)',
-};
-export const shadow_color_b: Style_Variable = {
-	name: 'shadow_color_b',
-	light: 'var(--color_b_6)',
-	dark: 'var(--color_b_4)',
-};
-export const shadow_color_c: Style_Variable = {
-	name: 'shadow_color_c',
-	light: 'var(--color_c_6)',
-	dark: 'var(--color_c_4)',
-};
-export const shadow_color_d: Style_Variable = {
-	name: 'shadow_color_d',
-	light: 'var(--color_d_6)',
-	dark: 'var(--color_d_4)',
-};
-export const shadow_color_e: Style_Variable = {
-	name: 'shadow_color_e',
-	light: 'var(--color_e_6)',
-	dark: 'var(--color_e_4)',
-};
-export const shadow_color_f: Style_Variable = {
-	name: 'shadow_color_f',
-	light: 'var(--color_f_6)',
-	dark: 'var(--color_f_4)',
-};
-export const shadow_color_g: Style_Variable = {
-	name: 'shadow_color_g',
-	light: 'var(--color_g_6)',
-	dark: 'var(--color_g_4)',
-};
-export const shadow_color_h: Style_Variable = {
-	name: 'shadow_color_h',
-	light: 'var(--color_h_6)',
-	dark: 'var(--color_h_4)',
-};
-export const shadow_color_i: Style_Variable = {
-	name: 'shadow_color_i',
-	light: 'var(--color_i_6)',
-	dark: 'var(--color_i_4)',
-};
-
-// These are grouped differently than the normal convention (xs-xl)
-// because the `outset` variants have negative positions, but otherwise match.
-// TODO is this the best granularity? combines x/y offsets with blur and spread
-// TODO Are these variables useful enough to be extracted? Is there a significant performance implication to using these variables instead of inlining in the shadow variables?
 export const shadow_xs: Style_Variable = {
 	name: 'shadow_xs',
 	light: '0 0 3px 0px',
@@ -1130,6 +1061,71 @@ export const shadow_inset_top_xl: Style_Variable = {
 export const shadow_inset_bottom_xl: Style_Variable = {
 	name: 'shadow_inset_bottom_xl',
 	light: 'inset 0 -5px 20px 1px',
+};
+
+export const shadow_color: Style_Variable = {
+	name: 'shadow_color',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
+};
+export const shadow_color_highlight: Style_Variable = {
+	name: 'shadow_color_highlight',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
+};
+export const shadow_color_glow: Style_Variable = {
+	name: 'shadow_color_glow',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 82%)',
+};
+export const shadow_color_shroud: Style_Variable = {
+	name: 'shadow_color_shroud',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 0%)',
+};
+export const shadow_color_a: Style_Variable = {
+	name: 'shadow_color_a',
+	light: 'var(--color_a_6)',
+	dark: 'var(--color_a_4)',
+};
+export const shadow_color_b: Style_Variable = {
+	name: 'shadow_color_b',
+	light: 'var(--color_b_6)',
+	dark: 'var(--color_b_4)',
+};
+export const shadow_color_c: Style_Variable = {
+	name: 'shadow_color_c',
+	light: 'var(--color_c_6)',
+	dark: 'var(--color_c_4)',
+};
+export const shadow_color_d: Style_Variable = {
+	name: 'shadow_color_d',
+	light: 'var(--color_d_6)',
+	dark: 'var(--color_d_4)',
+};
+export const shadow_color_e: Style_Variable = {
+	name: 'shadow_color_e',
+	light: 'var(--color_e_6)',
+	dark: 'var(--color_e_4)',
+};
+export const shadow_color_f: Style_Variable = {
+	name: 'shadow_color_f',
+	light: 'var(--color_f_6)',
+	dark: 'var(--color_f_4)',
+};
+export const shadow_color_g: Style_Variable = {
+	name: 'shadow_color_g',
+	light: 'var(--color_g_6)',
+	dark: 'var(--color_g_4)',
+};
+export const shadow_color_h: Style_Variable = {
+	name: 'shadow_color_h',
+	light: 'var(--color_h_6)',
+	dark: 'var(--color_h_4)',
+};
+export const shadow_color_i: Style_Variable = {
+	name: 'shadow_color_i',
+	light: 'var(--color_i_6)',
+	dark: 'var(--color_i_4)',
 };
 
 export const shadow_alpha_1: Style_Variable = {
