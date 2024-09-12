@@ -2550,7 +2550,7 @@ shadows
 .shadow_color_glow {
 	--shadow_color: var(--glow_color);
 }
-.shadow_color_shroud_5 {
+.shadow_color_shroud {
 	--shadow_color: var(--shroud_color);
 }
 .shadow_color_a {
