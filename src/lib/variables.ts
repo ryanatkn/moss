@@ -964,48 +964,48 @@ export const shroud_color: Style_Variable = {
 };
 export const shadow_color_a: Style_Variable = {
 	name: 'shadow_color_a',
-	light: 'var(--color_a_7)',
-	dark: 'var(--color_a_3)',
+	light: 'var(--color_a_6)',
+	dark: 'var(--color_a_4)',
 };
 export const shadow_color_b: Style_Variable = {
 	name: 'shadow_color_b',
-	light: 'var(--color_b_7)',
-	dark: 'var(--color_b_3)',
+	light: 'var(--color_b_6)',
+	dark: 'var(--color_b_4)',
 };
 export const shadow_color_c: Style_Variable = {
 	name: 'shadow_color_c',
-	light: 'var(--color_c_7)',
-	dark: 'var(--color_c_3)',
+	light: 'var(--color_c_6)',
+	dark: 'var(--color_c_4)',
 };
 export const shadow_color_d: Style_Variable = {
 	name: 'shadow_color_d',
-	light: 'var(--color_d_7)',
-	dark: 'var(--color_d_3)',
+	light: 'var(--color_d_6)',
+	dark: 'var(--color_d_4)',
 };
 export const shadow_color_e: Style_Variable = {
 	name: 'shadow_color_e',
-	light: 'var(--color_e_7)',
-	dark: 'var(--color_e_3)',
+	light: 'var(--color_e_6)',
+	dark: 'var(--color_e_4)',
 };
 export const shadow_color_f: Style_Variable = {
 	name: 'shadow_color_f',
-	light: 'var(--color_f_7)',
-	dark: 'var(--color_f_3)',
+	light: 'var(--color_f_6)',
+	dark: 'var(--color_f_4)',
 };
 export const shadow_color_g: Style_Variable = {
 	name: 'shadow_color_g',
-	light: 'var(--color_g_7)',
-	dark: 'var(--color_g_3)',
+	light: 'var(--color_g_6)',
+	dark: 'var(--color_g_4)',
 };
 export const shadow_color_h: Style_Variable = {
 	name: 'shadow_color_h',
-	light: 'var(--color_h_7)',
-	dark: 'var(--color_h_3)',
+	light: 'var(--color_h_6)',
+	dark: 'var(--color_h_4)',
 };
 export const shadow_color_i: Style_Variable = {
 	name: 'shadow_color_i',
-	light: 'var(--color_i_7)',
-	dark: 'var(--color_i_3)',
+	light: 'var(--color_i_6)',
+	dark: 'var(--color_i_4)',
 };
 
 // These are grouped differently than the normal convention (xs-xl)
