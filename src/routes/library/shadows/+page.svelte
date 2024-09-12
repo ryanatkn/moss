@@ -203,9 +203,9 @@
 		flex: 1;
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0 var(--space_xs);
+		padding: var(--space_xs);
 		min-height: var(--input_height);
-		gap: var(--space_lg);
+		gap: var(--space_xs);
 		min-width: 260px;
 	}
 	.shadow_example:not(:last-child) {
