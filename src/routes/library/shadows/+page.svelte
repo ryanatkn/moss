@@ -56,7 +56,6 @@
 		<Tome_Subheading text="Highlight" slug="highlight" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
-			<!-- TODO think about this or something less verbose: `{@render shadow_example_header(shadow_example_header_highlight_color_snippet)}` -->
 			{@render shadow_example_header()}
 			{#each shadow_variant_prefixes as shadow_variant_prefix}
 				{#each shadow_size_variants as shadow_size_variant}

@@ -896,23 +896,24 @@ export const radius_xs2: Style_Variable = {name: 'radius_xs2', light: '0.5rem'};
 export const radius_xs3: Style_Variable = {name: 'radius_xs3', light: '0.3rem'};
 
 /* button styles */
+// TODO BLOCK fix (rename across all projects)
 export const button_shadow: Style_Variable = {
 	name: 'button_shadow',
 	light:
-		'var(--shadow_outset_xs) var(--shadow_color_1), var(--shadow_inset_xs) var(--highlight_color_1)',
-	dark: 'var(--shadow_inset_xs) var(--shadow_color_1), var(--shadow_outset_xs) var(--highlight_color_1)',
+		'var(--shadow_outset_xs) var(--shadow_color), var(--shadow_inset_xs) var(--shadow_color_highlight)',
+	dark: 'var(--shadow_inset_xs) var(--shadow_color), var(--shadow_outset_xs) var(--shadow_color_highlight)',
 };
 export const button_shadow_hover: Style_Variable = {
 	name: 'button_shadow_hover',
 	light:
-		'var(--shadow_outset_sm) var(--shadow_color_2), var(--shadow_inset_sm) var(--highlight_color_2)',
-	dark: 'var(--shadow_inset_sm) var(--shadow_color_2), var(--shadow_outset_sm) var(--highlight_color_2)',
+		'var(--shadow_outset_sm) var(--shadow_color), var(--shadow_inset_sm) var(--shadow_color_highlight)',
+	dark: 'var(--shadow_inset_sm) var(--shadow_color), var(--shadow_outset_sm) var(--shadow_color_highlight)',
 };
 export const button_shadow_active: Style_Variable = {
 	name: 'button_shadow_active',
 	light:
-		'var(--shadow_inset_sm) var(--shadow_color_2), var(--shadow_outset_sm) var(--highlight_color_2)',
-	dark: 'var(--shadow_outset_sm) var(--shadow_color_2), var(--shadow_inset_sm) var(--highlight_color_2), ',
+		'var(--shadow_inset_sm) var(--shadow_color), var(--shadow_outset_sm) var(--shadow_color_highlight)',
+	dark: 'var(--shadow_outset_sm) var(--shadow_color), var(--shadow_inset_sm) var(--shadow_color_highlight), ',
 };
 
 /* inputs */
