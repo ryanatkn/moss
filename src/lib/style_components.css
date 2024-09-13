@@ -86,7 +86,7 @@
 By default it's opaque, resetting the background to the initial depth. */
 .pane {
 	background-color: var(--pane_bg, var(--bg));
-	box-shadow: var(--pane_shadow, var(--shadow_md) var(--shadow_color_3));
+	box-shadow: var(--pane_shadow, var(--shadow_md) var(--shadow_color));
 	border-radius: var(--radius_xs);
 }
 

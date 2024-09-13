@@ -248,12 +248,18 @@
 	--radius_xs: 0.8rem;
 	--radius_xs2: 0.5rem;
 	--radius_xs3: 0.3rem;
-	--button_shadow: var(--shadow_outset_xs) var(--shadow_color_1),
-		var(--shadow_inset_xs) var(--highlight_color_1);
-	--button_shadow_hover: var(--shadow_outset_sm) var(--shadow_color_2),
-		var(--shadow_inset_sm) var(--highlight_color_2);
-	--button_shadow_active: var(--shadow_inset_sm) var(--shadow_color_2),
-		var(--shadow_outset_sm) var(--highlight_color_2);
+	--button_shadow: var(--shadow_inset_bottom_xs)
+			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent),
+		var(--shadow_inset_top_xs)
+			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_1), transparent);
+	--button_shadow_hover: var(--shadow_inset_bottom_sm)
+			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent),
+		var(--shadow_inset_top_sm)
+			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent);
+	--button_shadow_active: var(--shadow_inset_top_sm)
+			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent),
+		var(--shadow_inset_bottom_sm)
+			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent);
 	--input_fill: var(--bg_10);
 	--input_padding_y: 0;
 	--input_padding_x: var(--space_lg);
@@ -263,139 +269,54 @@
 	--input_height_inner: calc(
 		var(--input_height) - 2 * var(--border_width) - 2 * var(--input_padding_y)
 	);
+	--shadow_xs: 0 0 3px 0px;
+	--shadow_sm: 0 0 4px 0px;
+	--shadow_md: 0 0 6px 0px;
+	--shadow_lg: 0 0 10px 0px;
+	--shadow_xl: 0 0 20px 1px;
+	--shadow_top_xs: 0 -1px 3px 0px;
+	--shadow_top_sm: 0 -1.5px 4px 0px;
+	--shadow_top_md: 0 -2.5px 6px 0px;
+	--shadow_top_lg: 0 -3.5px 10px 0px;
+	--shadow_top_xl: 0 -5px 20px 1px;
+	--shadow_bottom_xs: 0 1px 3px 0px;
+	--shadow_bottom_sm: 0 1.5px 4px 0px;
+	--shadow_bottom_md: 0 2.5px 6px 0px;
+	--shadow_bottom_lg: 0 3.5px 10px 0px;
+	--shadow_bottom_xl: 0 5px 20px 1px;
+	--shadow_inset_xs: inset 0 0 3px 0px;
+	--shadow_inset_sm: inset 0 0 4px 0px;
+	--shadow_inset_md: inset 0 0 6px 0px;
+	--shadow_inset_lg: inset 0 0 10px 0px;
+	--shadow_inset_xl: inset 0 0 20px 1px;
+	--shadow_inset_top_xs: inset 0 1px 3px 0px;
+	--shadow_inset_top_sm: inset 0 1.5px 4px 0px;
+	--shadow_inset_top_md: inset 0 2.5px 6px 0px;
+	--shadow_inset_top_lg: inset 0 3.5px 10px 0px;
+	--shadow_inset_top_xl: inset 0 5px 20px 1px;
+	--shadow_inset_bottom_xs: inset 0 -1px 3px 0px;
+	--shadow_inset_bottom_sm: inset 0 -1.5px 4px 0px;
+	--shadow_inset_bottom_md: inset 0 -2.5px 6px 0px;
+	--shadow_inset_bottom_lg: inset 0 -3.5px 10px 0px;
+	--shadow_inset_bottom_xl: inset 0 -5px 20px 1px;
 	--shadow_color: hsl(var(--tint_hue) var(--tint_saturation) 0%);
-	--highlight_color: hsl(var(--tint_hue) var(--tint_saturation) 94%);
-	--glow_color: hsl(var(--tint_hue) var(--tint_saturation) 94%);
-	--shroud_color: hsl(var(--tint_hue) var(--tint_saturation) 0%);
-	--shadow_a_color: var(--color_a_7);
-	--shadow_b_color: var(--color_b_7);
-	--shadow_c_color: var(--color_c_7);
-	--shadow_d_color: var(--color_d_7);
-	--shadow_e_color: var(--color_e_7);
-	--shadow_f_color: var(--color_f_7);
-	--shadow_g_color: var(--color_g_7);
-	--shadow_h_color: var(--color_h_7);
-	--shadow_i_color: var(--color_i_7);
-	--shadow_xs: 0 1px 3px 0px;
-	--shadow_sm: 0 1.5px 4px 0px;
-	--shadow_md: 0 2.5px 6px 0px;
-	--shadow_lg: 0 4px 10px 0px;
-	--shadow_xl: 0 5px 20px 0px;
-	--shadow_inset_xs: inset 0 1px 3px 0px;
-	--shadow_inset_sm: inset 0 1.5px 4px 0px;
-	--shadow_inset_md: inset 0 2.5px 6px 0px;
-	--shadow_inset_lg: inset 0 4px 10px 0px;
-	--shadow_inset_xl: inset 0 5px 20px 0px;
-	--shadow_outset_xs: inset 0 -1px 3px 0px;
-	--shadow_outset_sm: inset 0 -1.5px 4px 0px;
-	--shadow_outset_md: inset 0 -2.5px 6px 0px;
-	--shadow_outset_lg: inset 0 -4px 10px 0px;
-	--shadow_outset_xl: inset 0 -5px 20px 0px;
-	--shadow_inner_xs: inset 0 0 3px 0px;
-	--shadow_inner_sm: inset 0 0 4px 0px;
-	--shadow_inner_md: inset 0 0 6px 0px;
-	--shadow_inner_lg: inset 0 0 10px 0px;
-	--shadow_inner_xl: inset 0 0 20px 0px;
-	--shadow_outer_xs: 0 0 3px 0px;
-	--shadow_outer_sm: 0 0 4px 0px;
-	--shadow_outer_md: 0 0 6px 0px;
-	--shadow_outer_lg: 0 0 10px 0px;
-	--shadow_outer_xl: 0 0 20px 0px;
+	--shadow_color_highlight: hsl(var(--tint_hue) var(--tint_saturation) 94%);
+	--shadow_color_glow: hsl(var(--tint_hue) var(--tint_saturation) 94%);
+	--shadow_color_shroud: hsl(var(--tint_hue) var(--tint_saturation) 0%);
+	--shadow_color_a: var(--color_a_6);
+	--shadow_color_b: var(--color_b_6);
+	--shadow_color_c: var(--color_c_6);
+	--shadow_color_d: var(--color_d_6);
+	--shadow_color_e: var(--color_e_6);
+	--shadow_color_f: var(--color_f_6);
+	--shadow_color_g: var(--color_g_6);
+	--shadow_color_h: var(--color_h_6);
+	--shadow_color_i: var(--color_i_6);
 	--shadow_alpha_1: 20%;
 	--shadow_alpha_2: 30%;
 	--shadow_alpha_3: 40%;
 	--shadow_alpha_4: 60%;
 	--shadow_alpha_5: 80%;
-	--highlight_alpha_1: 40%;
-	--highlight_alpha_2: 50%;
-	--highlight_alpha_3: 60%;
-	--highlight_alpha_4: 70%;
-	--highlight_alpha_5: 80%;
-	--shadow_color_1: color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_2: color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_3: color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_4: color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_5: color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_5), transparent);
-	--highlight_color_1: color-mix(
-		in hsl,
-		var(--highlight_color) var(--highlight_alpha_1),
-		transparent
-	);
-	--highlight_color_2: color-mix(
-		in hsl,
-		var(--highlight_color) var(--highlight_alpha_2),
-		transparent
-	);
-	--highlight_color_3: color-mix(
-		in hsl,
-		var(--highlight_color) var(--highlight_alpha_3),
-		transparent
-	);
-	--highlight_color_4: color-mix(
-		in hsl,
-		var(--highlight_color) var(--highlight_alpha_4),
-		transparent
-	);
-	--highlight_color_5: color-mix(
-		in hsl,
-		var(--highlight_color) var(--highlight_alpha_5),
-		transparent
-	);
-	--glow_color_1: color-mix(in hsl, var(--glow_color) var(--shadow_alpha_1), transparent);
-	--glow_color_2: color-mix(in hsl, var(--glow_color) var(--shadow_alpha_2), transparent);
-	--glow_color_3: color-mix(in hsl, var(--glow_color) var(--shadow_alpha_3), transparent);
-	--glow_color_4: color-mix(in hsl, var(--glow_color) var(--shadow_alpha_4), transparent);
-	--glow_color_5: color-mix(in hsl, var(--glow_color) var(--shadow_alpha_5), transparent);
-	--shroud_color_1: color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_1), transparent);
-	--shroud_color_2: color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_2), transparent);
-	--shroud_color_3: color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_3), transparent);
-	--shroud_color_4: color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_4), transparent);
-	--shroud_color_5: color-mix(in hsl, var(--shroud_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_a_1: color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_a_2: color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_a_3: color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_a_4: color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_a_5: color-mix(in hsl, var(--shadow_a_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_b_1: color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_b_2: color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_b_3: color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_b_4: color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_b_5: color-mix(in hsl, var(--shadow_b_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_c_1: color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_c_2: color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_c_3: color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_c_4: color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_c_5: color-mix(in hsl, var(--shadow_c_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_d_1: color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_d_2: color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_d_3: color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_d_4: color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_d_5: color-mix(in hsl, var(--shadow_d_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_e_1: color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_e_2: color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_e_3: color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_e_4: color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_e_5: color-mix(in hsl, var(--shadow_e_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_f_1: color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_f_2: color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_f_3: color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_f_4: color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_f_5: color-mix(in hsl, var(--shadow_f_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_g_1: color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_g_2: color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_g_3: color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_g_4: color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_g_5: color-mix(in hsl, var(--shadow_g_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_h_1: color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_h_2: color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_h_3: color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_h_4: color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_h_5: color-mix(in hsl, var(--shadow_h_color) var(--shadow_alpha_5), transparent);
-	--shadow_color_i_1: color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_1), transparent);
-	--shadow_color_i_2: color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_2), transparent);
-	--shadow_color_i_3: color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_3), transparent);
-	--shadow_color_i_4: color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_4), transparent);
-	--shadow_color_i_5: color-mix(in hsl, var(--shadow_i_color) var(--shadow_alpha_5), transparent);
 	--icon_size_xs: 18px;
 	--icon_size_sm: 32px;
 	--icon_size_md: 48px;
@@ -529,24 +450,30 @@
 	--border_color_3: hsl(var(--tint_hue) 60% 80% / 50%);
 	--border_color_4: hsl(var(--tint_hue) 60% 80% / 40%);
 	--border_color_5: hsl(var(--tint_hue) 60% 80% / 25%);
-	--button_shadow: var(--shadow_inset_xs) var(--shadow_color_1),
-		var(--shadow_outset_xs) var(--highlight_color_1);
-	--button_shadow_hover: var(--shadow_inset_sm) var(--shadow_color_2),
-		var(--shadow_outset_sm) var(--highlight_color_2);
-	--button_shadow_active: var(--shadow_outset_sm) var(--shadow_color_2),
-		var(--shadow_inset_sm) var(--highlight_color_2);
+	--button_shadow: var(--shadow_inset_top_xs)
+			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent),
+		var(--shadow_inset_bottom_xs)
+			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_1), transparent);
+	--button_shadow_hover: var(--shadow_inset_top_sm)
+			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent),
+		var(--shadow_inset_bottom_sm)
+			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent);
+	--button_shadow_active: var(--shadow_inset_bottom_sm)
+			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent),
+		var(--shadow_inset_top_sm)
+			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent);
 	--shadow_color: hsl(var(--tint_hue) var(--tint_saturation) 82%);
-	--highlight_color: hsl(var(--tint_hue) var(--tint_saturation) 0%);
-	--glow_color: hsl(var(--tint_hue) var(--tint_saturation) 82%);
-	--shadow_a_color: var(--color_a_3);
-	--shadow_b_color: var(--color_b_3);
-	--shadow_c_color: var(--color_c_3);
-	--shadow_d_color: var(--color_d_3);
-	--shadow_e_color: var(--color_e_3);
-	--shadow_f_color: var(--color_f_3);
-	--shadow_g_color: var(--color_g_3);
-	--shadow_h_color: var(--color_h_3);
-	--shadow_i_color: var(--color_i_3);
+	--shadow_color_highlight: hsl(var(--tint_hue) var(--tint_saturation) 0%);
+	--shadow_color_glow: hsl(var(--tint_hue) var(--tint_saturation) 82%);
+	--shadow_color_a: var(--color_a_4);
+	--shadow_color_b: var(--color_b_4);
+	--shadow_color_c: var(--color_c_4);
+	--shadow_color_d: var(--color_d_4);
+	--shadow_color_e: var(--color_e_4);
+	--shadow_color_f: var(--color_f_4);
+	--shadow_color_g: var(--color_g_4);
+	--shadow_color_h: var(--color_h_4);
+	--shadow_color_i: var(--color_i_4);
 }
 
 /* generated by src/lib/theme.gen.css.ts */

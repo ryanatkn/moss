@@ -15,12 +15,12 @@
 	<section class="box">
 		<h1 class="mt_xl4 mb_lg">moss</h1>
 		<div class="box mb_xl"><Moss_Logo size="var(--icon_size_xl2)" /></div>
-		<div class="p_xl radius_lg shadow_outset_xs">
-			<blockquote class="shadow_inset_xs">magical organic stylesheets 🌿</blockquote>
+		<div class="p_xl radius_lg shadow_inset_bottom_xs">
+			<blockquote class="shadow_inset_top_xs">magical organic stylesheets 🌿</blockquote>
 		</div>
 	</section>
-	<section class="width_sm p_sm radius_md shadow_sm">
-		<div class="panel p_lg bg shadow_md">
+	<section class="width_sm p_sm radius_md shadow_xs">
+		<div class="panel p_lg bg shadow_sm">
 			<Introduction />
 			<p>
 				To learn more see <a href="{base}/library">the docs</a>
@@ -41,7 +41,7 @@
 	<section>
 		<Card href="{base}/library">library{#snippet icon()}🌿{/snippet}</Card>
 	</section>
-	<section class="p_xl radius_lg shadow_outset_xs">
+	<section class="p_xl radius_lg shadow_inset_bottom_xs">
 		<Library_Footer {pkg}>
 			{#snippet logo_header()}
 				<a href="{base}/about" class="mb_xs">about</a>

@@ -9,7 +9,9 @@
 		color_variants,
 		shadow_size_variants,
 		shadow_variant_prefixes,
-		shadow_weight_variants,
+		shadow_alpha_variants,
+		type Shadow_Size_Variant,
+		type Color_Variant,
 	} from '$lib/variable_data.js';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
@@ -17,43 +19,29 @@
 
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
-	// simply map the sizes to the weights for docs, although any combination is valid
-	const weight_by_size = {
-		xs: 1,
-		sm: 2,
-		md: 3,
-		lg: 4,
-		xl: 5,
-	};
-
 	// TODO duplicate shadows links
 </script>
 
 <Tome_Detail {tome}>
+	<Unfinished_Implementation_Warning
+		>This is unfinished and will change. It feels simultaneously limiting in usage and bloated in
+		the implementation.</Unfinished_Implementation_Warning
+	>
 	<section>
 		<Tome_Subheading text="Shadow" slug="shadow" />
 		<p>Shadows darken in light mode and lighten in dark mode.</p>
 		<Unfinished_Implementation_Warning
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
 		>
-		{@render shadow_example_header('shadow_color_')}
-		{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+		{@render shadow_example_header()}
+		{#each shadow_variant_prefixes as shadow_variant_prefix}
 			{#each shadow_size_variants as shadow_size_variant}
 				<div class="shadow_example">
-					<div
-						class="shadow_main_example"
-						style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
-						var(--shadow_color_{weight_by_size[shadow_size_variant]})"
-					>
+					<div class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant}">
 						<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-						<Style_Variable_Button name="shadow_color_{weight_by_size[shadow_size_variant]}" />
+						<Style_Variable_Button name="shadow_color" />
 					</div>
-					{@render shadow_variant_examples(
-						null,
-						shadow_size_variant,
-						'shadow',
-						shadow_variant_prefix,
-					)}
+					{@render shadow_variant_examples(null, shadow_size_variant, shadow_variant_prefix)}
 				</div>
 			{/each}
 		{/each}
@@ -65,23 +53,19 @@
 		<Tome_Subheading text="Highlight" slug="highlight" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
-			<!-- TODO think about this or something less verbose: `{@render shadow_example_header(shadow_example_header_highlight_color_snippet)}` -->
-			{@render shadow_example_header('highlight_color_')}
-			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+			{@render shadow_example_header()}
+			{#each shadow_variant_prefixes as shadow_variant_prefix}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
-							class="shadow_main_example"
-							style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
-							var(--highlight_color_{weight_by_size[shadow_size_variant]})"
+							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_highlight"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="highlight_color_{weight_by_size[shadow_size_variant]}" />
+							<Style_Variable_Button name="shadow_color_highlight" />
 						</div>
 						{@render shadow_variant_examples(
-							null,
-							shadow_size_variant,
 							'highlight',
+							shadow_size_variant,
 							shadow_variant_prefix,
 						)}
 					</div>
@@ -96,24 +80,17 @@
 		<Tome_Subheading text="Glow" slug="glow" />
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
-			{@render shadow_example_header('glow_color_')}
-			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+			{@render shadow_example_header()}
+			{#each shadow_variant_prefixes as shadow_variant_prefix}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
-							class="shadow_main_example"
-							style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
-							var(--glow_color_{weight_by_size[shadow_size_variant]})"
+							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_glow"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="glow_color_{weight_by_size[shadow_size_variant]}" />
+							<Style_Variable_Button name="shadow_color_glow" />
 						</div>
-						{@render shadow_variant_examples(
-							null,
-							shadow_size_variant,
-							'glow',
-							shadow_variant_prefix,
-						)}
+						{@render shadow_variant_examples('glow', shadow_size_variant, shadow_variant_prefix)}
 					</div>
 				{/each}
 			{/each}
@@ -126,24 +103,17 @@
 		<Tome_Subheading text="Shroud" slug="shroud" />
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
-			{@render shadow_example_header('shroud_color_')}
-			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+			{@render shadow_example_header()}
+			{#each shadow_variant_prefixes as shadow_variant_prefix}
 				{#each shadow_size_variants as shadow_size_variant}
 					<div class="shadow_example">
 						<div
-							class="shadow_main_example"
-							style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
-							var(--shroud_color_{weight_by_size[shadow_size_variant]})"
+							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_shroud"
 						>
 							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
-							<Style_Variable_Button name="shroud_color_{weight_by_size[shadow_size_variant]}" />
+							<Style_Variable_Button name="shadow_color_shroud" />
 						</div>
-						{@render shadow_variant_examples(
-							null,
-							shadow_size_variant,
-							'shroud',
-							shadow_variant_prefix,
-						)}
+						{@render shadow_variant_examples('shroud', shadow_size_variant, shadow_variant_prefix)}
 					</div>
 				{/each}
 			{/each}
@@ -155,31 +125,25 @@
 	<section>
 		<Tome_Subheading text="Colorful shadows" slug="colorful-shadows" />
 		<p>These are darker in light mode than in dark mode.</p>
-		{@render shadow_example_header('shadow_color_')}
+		{@render shadow_example_header()}
 		{#each color_variants as color_variant}
 			{@const classes = 'color_' + color_variant}
 			<section>
-				{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+				{#each shadow_variant_prefixes as shadow_variant_prefix}
 					{#each shadow_size_variants as shadow_size_variant}
 						<div class="shadow_example">
 							<div
-								class="shadow_main_example"
-								style:box-shadow="var(--{shadow_variant_prefix}{shadow_size_variant})
-								var(--shadow_color_{color_variant}_{weight_by_size[shadow_size_variant]})"
+								class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_{color_variant}"
 							>
 								<Style_Variable_Button
 									name="{shadow_variant_prefix}{shadow_size_variant}"
 									{classes}
 								/>
-								<Style_Variable_Button
-									name="shadow_color_{color_variant}_{weight_by_size[shadow_size_variant]}"
-									{classes}
-								/>
+								<Style_Variable_Button name="shadow_color_{color_variant}" {classes} />
 							</div>
 							{@render shadow_variant_examples(
 								color_variant,
 								shadow_size_variant,
-								'shadow',
 								shadow_variant_prefix,
 							)}
 						</div>
@@ -193,13 +157,13 @@
 	</section>
 </Tome_Detail>
 
-{#snippet shadow_example_header(text: string)}
+{#snippet shadow_example_header()}
 	<div class="shadow_example">
-		<code>{text}</code>
+		<code>shadow_alpha_</code>
 		<div class="row gap_lg">
-			{#each shadow_weight_variants as w (w)}
+			{#each shadow_alpha_variants as alpha (alpha)}
 				<code class="shadow_variant_example box">
-					<Style_Variable_Button name="{text}{w}">{w}</Style_Variable_Button>
+					<Style_Variable_Button name="shadow_alpha_{alpha}">{alpha}</Style_Variable_Button>
 				</code>
 			{/each}
 		</div>
@@ -207,19 +171,17 @@
 {/snippet}
 
 {#snippet shadow_variant_examples(
-	color_variant: string | null,
-	shadow_size_variant: string,
-	shadow_type: string,
+	color_variant: Color_Variant | 'highlight' | 'glow' | 'shroud' | null,
+	shadow_size_variant: Shadow_Size_Variant,
 	shadow_variant_prefix: string,
 )}
 	<div class="row gap_lg">
-		{#each shadow_weight_variants as w (w)}
+		{#each shadow_alpha_variants as alpha (alpha)}
 			{@const shadow_size = shadow_variant_prefix + shadow_size_variant}
-			{@const shadow_color = `${shadow_type}_color_${color_variant ? color_variant + '_' + w : w}`}
+			{@const shadow_color = `shadow_color${color_variant ? '_' + color_variant : ''}`}
 			<div
 				title="{shadow_size} with {shadow_color}"
-				class="shadow_variant_example"
-				style:box-shadow="var(--{shadow_size}) var(--{shadow_color})"
+				class="shadow_variant_example {shadow_size} {shadow_color} shadow_alpha_{alpha}"
 			></div>
 		{/each}
 	</div>
@@ -241,8 +203,9 @@
 		flex: 1;
 		display: flex;
 		flex-wrap: wrap;
-		padding: var(--space_sm);
-		gap: var(--space_lg);
+		padding: var(--space_xs);
+		min-height: var(--input_height);
+		gap: var(--space_xs);
 		min-width: 260px;
 	}
 	.shadow_example:not(:last-child) {
