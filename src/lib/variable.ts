@@ -13,10 +13,5 @@ export interface Style_Variable {
 
 export const STYLE_VARIABLE_NAME_MATCHER = /^[a-z][a-z0-9_]*(?<!_)$/;
 
-/**
- * Same as `STYLE_VARIABLE_NAME_MATCHER` but includes the leading `--` for CSS custom properties.
- */
-export const STYLE_VARIABLE_PROPERTY_MATCHER = /^--[a-z][a-z0-9_]*(?<!_)$/;
-
 export const is_style_variable_name = (name: string): name is Style_Variable_Name =>
 	STYLE_VARIABLE_NAME_MATCHER.test(name);

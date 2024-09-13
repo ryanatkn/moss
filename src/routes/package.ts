@@ -150,7 +150,6 @@ export const src_json = {
 				{name: 'Style_Variable_Name', kind: 'type'},
 				{name: 'Style_Variable', kind: 'type'},
 				{name: 'STYLE_VARIABLE_NAME_MATCHER', kind: 'variable'},
-				{name: 'STYLE_VARIABLE_PROPERTY_MATCHER', kind: 'variable'},
 				{name: 'is_style_variable_name', kind: 'function'},
 			],
 		},
