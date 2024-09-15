@@ -28,7 +28,7 @@ export const package_json = {
 		deploy: 'gro deploy',
 	},
 	type: 'module',
-	engines: {node: '>=20.12'},
+	engines: {node: '>=20.17'},
 	devDependencies: {
 		'@changesets/changelog-git': '^0.2.0',
 		'@ryanatkn/belt': '^0.24.12',
