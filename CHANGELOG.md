@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.16.0
+
+### Minor Changes
+
+- bump required node version to `20.17` ([0bce067](https://github.com/ryanatkn/moss/commit/0bce067))
+
 ## 0.15.0
 
 ### Minor Changes
