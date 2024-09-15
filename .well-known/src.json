@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -188,10 +188,6 @@
         },
         {
           "name": "STYLE_VARIABLE_NAME_MATCHER",
-          "kind": "variable"
-        },
-        {
-          "name": "STYLE_VARIABLE_PROPERTY_MATCHER",
           "kind": "variable"
         },
         {
