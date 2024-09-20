@@ -1,4 +1,4 @@
-import {init_tome, type Tome} from '@ryanatkn/fuz/tome.js';
+import type {Tome} from '@ryanatkn/fuz/tome.js';
 
 import introduction from '$routes/library/introduction/+page.svelte';
 import themes from '$routes/library/themes/+page.svelte';
@@ -20,104 +20,78 @@ import borders from '$routes/library/borders/+page.svelte';
 export const tomes: Tome[] = [
 	{
 		name: 'introduction',
-		slug: 'introduction',
-		pathname: '',
 		category: 'guide',
 		component: introduction,
 		related: [],
 	},
 	{
 		name: 'themes',
-		slug: 'themes',
-		pathname: '',
 		category: 'systems',
 		component: themes,
 		related: ['variables', 'colors', 'typography'],
 	},
 	{
 		name: 'variables',
-		slug: 'variables',
-		pathname: '',
 		category: 'systems',
 		component: variables,
 		related: ['themes'],
 	},
 	{
 		name: 'classes',
-		slug: 'classes',
-		pathname: '',
 		category: 'systems',
 		component: classes,
 		related: ['elements'],
 	},
 	{
 		name: 'colors',
-		slug: 'colors',
-		pathname: '',
 		category: 'styles',
 		component: colors,
 		related: ['themes', 'buttons', 'borders', 'shading', 'shadows'],
 	},
 	{
 		name: 'buttons',
-		slug: 'buttons',
-		pathname: '',
 		category: 'styles',
 		component: buttons,
 		related: ['colors', 'elements', 'forms', 'borders'],
 	},
 	{
 		name: 'elements',
-		slug: 'elements',
-		pathname: '',
 		category: 'styles',
 		component: elements,
 		related: ['buttons', 'forms', 'classes', 'typography', 'borders', 'layout'],
 	},
 	{
 		name: 'forms',
-		slug: 'forms',
-		pathname: '',
 		category: 'styles',
 		component: forms,
 		related: ['buttons', 'elements', 'borders'],
 	},
 	{
 		name: 'typography',
-		slug: 'typography',
-		pathname: '',
 		category: 'styles',
 		component: typography,
 		related: ['themes', 'elements'],
 	},
 	{
 		name: 'borders',
-		slug: 'borders',
-		pathname: '',
 		category: 'styles',
 		component: borders,
 		related: ['colors', 'buttons', 'elements', 'forms', 'shading', 'shadows'],
 	},
 	{
 		name: 'shading',
-		slug: 'shading',
-		pathname: '',
 		category: 'styles',
 		component: shading,
 		related: ['colors', 'borders', 'shadows'],
 	},
 	{
 		name: 'shadows',
-		slug: 'shadows',
-		pathname: '',
 		category: 'styles',
 		component: shadows,
 		related: ['colors', 'borders', 'shading'],
 	},
 	{
 		name: 'layout',
-		slug: 'layout',
-		pathname: '',
 		category: 'styles',
 		component: layout,
 		related: ['elements'],
@@ -125,12 +99,8 @@ export const tomes: Tome[] = [
 	// TODO maybe? or do styles like this belong elsewhere? classes? problem is we'll have a classes page for the variables
 	// {
 	// 	name: 'menu item',
-	// 	slug: 'menu_item',
-	// 	pathname: '',
 	// 	category: 'styles',
 	// component: menu_item,
 	// 	related: [],
 	// },
 ];
-
-for (const t of tomes) init_tome(t);
