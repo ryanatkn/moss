@@ -9,8 +9,6 @@
 	const LIBRARY_ITEM_NAME = 'introduction';
 
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
-
-	// TODO BLOCK header?
 </script>
 
 <Tome_Content {tome}>
