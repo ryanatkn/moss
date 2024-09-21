@@ -2,16 +2,17 @@
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {fly} from 'svelte/transition';
 	import Alert from '@ryanatkn/fuz/Alert.svelte';
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'forms';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	// TODO extract this to where? (where is it used in the css? check all @keyframe)
 	const ANIMATION_DURATION_FAST = 91; // ms
@@ -31,13 +32,13 @@
 	let checked2 = $state(true);
 </script>
 
-<Tome_Detail {tome}>
+<Tome_Content {tome}>
 	<Unfinished_Implementation_Warning>Forms need more work.</Unfinished_Implementation_Warning>
 
-	<section>
-		<Tome_Subheading text="form with a fieldset" slug="form-with-a-fieldset">
+	<Tome_Section>
+		<Tome_Section_Header text="form with a fieldset">
 			<Mdn_Link path="Web/HTML/Element/form" /> with a <Mdn_Link path="Web/HTML/Element/fieldset" />
-		</Tome_Subheading>
+		</Tome_Section_Header>
 		<Code
 			content={`<form>
 	<fieldset>
@@ -109,12 +110,12 @@
 				</form>
 			{/if}
 		</div>
-	</section>
+	</Tome_Section>
 
-	<section>
-		<Tome_Subheading text="form with range input" slug="form-with-range-input">
+	<Tome_Section>
+		<Tome_Section_Header text="form with range input">
 			<code>form</code> with range input
-		</Tome_Subheading>
+		</Tome_Section_Header>
 		<form>
 			<fieldset>
 				<Code content={`<input type="range" />`} />
@@ -125,12 +126,12 @@
 				<input type="range" step={1} min={0} max={100} disabled />
 			</fieldset>
 		</form>
-	</section>
+	</Tome_Section>
 
-	<section>
-		<Tome_Subheading text="form with checkboxes" slug="form-with-checkboxes">
+	<Tome_Section>
+		<Tome_Section_Header text="form with checkboxes">
 			<code>form</code> with checkboxes
-		</Tome_Subheading>
+		</Tome_Section_Header>
 		<Unfinished_Implementation_Warning
 			>This will change, probably to toggles.</Unfinished_Implementation_Warning
 		>
@@ -159,12 +160,12 @@
 			The above are wrapped with: <Code content={`<label class="row">`} />
 			with <code>.disabled</code> as needed: <Code content={`<label class="row disabled">`} />
 		</aside>
-	</section>
+	</Tome_Section>
 
-	<section>
-		<Tome_Subheading text="form with radio inputs" slug="form-with-radio-inputs">
+	<Tome_Section>
+		<Tome_Section_Header text="form with radio inputs">
 			<code>form</code> with radio inputs
-		</Tome_Subheading>
+		</Tome_Section_Header>
 		<form>
 			<fieldset>
 				{#each radio_items as radioItem}
@@ -190,5 +191,5 @@
 				</label>
 			</fieldset>
 		</form>
-	</section>
-</Tome_Detail>
+	</Tome_Section>
+</Tome_Content>

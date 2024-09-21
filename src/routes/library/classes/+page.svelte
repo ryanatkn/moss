@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 	import Github_Logo from '@ryanatkn/fuz/Github_Logo.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Details from '@ryanatkn/fuz/Details.svelte';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import style_utilities_text from '$lib/style_utilities.css?raw';
 	import style_components_text from '$lib/style_components.css?raw';
@@ -13,7 +14,7 @@
 
 	const LIBRARY_ITEM_NAME = 'classes';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	// TODO show these with `Details` hiding their expanded set of values (interpolated using this shorthand as the source of truth? isn't that complex)
 	const style_utilities_items = [
@@ -112,12 +113,12 @@
 	// TODO extract a `Github_Link` like `Mdn_Link`
 </script>
 
-<Tome_Detail {tome}>
+<Tome_Content {tome}>
 	<Unfinished_Implementation_Warning
 		>Both the docs and implementation of these need a lot more work.</Unfinished_Implementation_Warning
 	>
-	<section>
-		<Tome_Subheading text="Optional CSS classes" slug="css-classes" />
+	<Tome_Section>
+		<Tome_Section_Header text="Optional CSS classes" />
 		<p>Moss has three optional CSS files with different kinds of classes:</p>
 		<Code
 			content={`<!-- +layout.svelte -->
@@ -143,17 +144,17 @@ ${'<' as string}script>
 			more sophisticated architecture these classes could potentially be generated on demand instead
 			of distributed as static files.
 		</aside>
-	</section>
-	<section>
-		<Tome_Subheading text="Utility classes" slug="utility-classes" />
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Utility classes" />
 		<ul class="classes unstyled">
 			{#each style_utilities_items as c}
 				<li>.{c}</li>
 			{/each}
 		</ul>
-	</section>
-	<section>
-		<Tome_Subheading text="Component classes" slug="semantic-classes" />
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Component classes" />
 		<aside>
 			<p>
 				These are like utility classes but don't map as cleanly to a single style property. I don't
@@ -167,9 +168,9 @@ ${'<' as string}script>
 				<li>.{c}</li>
 			{/each}
 		</ul>
-	</section>
-	<section>
-		<Tome_Subheading text="Raw CSS" slug="raw-css" />
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Raw CSS" />
 		<!-- TODO maybe add a github source link? -->
 		<Details>
 			{#snippet summary()}
@@ -193,8 +194,8 @@ ${'<' as string}script>
 			</p>
 			<Code content={style_components_text} lang="css" />
 		</Details>
-	</section>
-</Tome_Detail>
+	</Tome_Section>
+</Tome_Content>
 
 <style>
 	.classes {

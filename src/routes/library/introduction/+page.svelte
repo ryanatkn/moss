@@ -1,17 +1,19 @@
 <script lang="ts">
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 
 	import Module_Link from '$routes/Module_Link.svelte';
 	import Introduction from '$routes/Introduction.svelte';
 
 	const LIBRARY_ITEM_NAME = 'introduction';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
+
+	// TODO BLOCK header?
 </script>
 
-<Tome_Detail {tome}>
+<Tome_Content {tome}>
 	<section>
 		<Introduction />
 		<p>About Moss:</p>
@@ -107,4 +109,4 @@
 			🌿
 		</p>
 	</section>
-</Tome_Detail>
+</Tome_Content>

@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import {default_variables} from '$lib/variables.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
@@ -13,14 +14,14 @@
 
 	const LIBRARY_ITEM_NAME = 'variables';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	const variables = default_variables.slice().sort((a, b) => a.name.localeCompare(b.name));
 
 	// TODO maybe FAQ? need a standardized pattern -- first add the "on this page" menu functionality
 </script>
 
-<Tome_Detail {tome}>
+<Tome_Content {tome}>
 	<section>
 		<p>
 			Style variables, or just "variables" in Moss, are <Mdn_Link
@@ -75,8 +76,8 @@ export interface Style_Variable {
 }`}
 		/>
 	</section>
-	<section>
-		<Tome_Subheading text={`All ${variables.length} style variables`} slug="all-style-variables" />
+	<Tome_Section>
+		<Tome_Section_Header text={`All ${variables.length} style variables`} />
 		<Unfinished_Implementation_Warning>Many of these will change.</Unfinished_Implementation_Warning
 		>
 		<!-- TODO add info through the contextmenu or dialog -->
@@ -85,8 +86,8 @@ export interface Style_Variable {
 				<Style_Variable_Button name={variable.name} classes="menu_item" />
 			{/each}
 		</div>
-	</section>
-</Tome_Detail>
+	</Tome_Section>
+</Tome_Content>
 
 <style>
 	.variables {
