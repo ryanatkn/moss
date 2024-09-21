@@ -1,22 +1,23 @@
 <script lang="ts">
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import {space_variants} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 
 	const LIBRARY_ITEM_NAME = 'layout';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
 </script>
 
-<Tome_Detail {tome}>
-	<section>
-		<Tome_Subheading text="Space variables" slug="space-variables" />
+<Tome_Content {tome}>
+	<Tome_Section>
+		<Tome_Section_Header text="Space variables" />
 		<div>
 			{#each space_variants as space_size}
 				{@const name = 'space_' + space_size}
@@ -28,9 +29,9 @@
 				</div>
 			{/each}
 		</div>
-	</section>
-	<section>
-		<Tome_Subheading text="Width variables" slug="width-variables" />
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Width variables" />
 		<div>
 			{#each ['xs', 'sm', 'md'] as radius}
 				{@const name = 'width_' + radius}
@@ -42,8 +43,8 @@
 				</div>
 			{/each}
 		</div>
-	</section>
-</Tome_Detail>
+	</Tome_Section>
+</Tome_Content>
 
 <style>
 	.layout_example {

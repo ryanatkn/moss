@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Details from '@ryanatkn/fuz/Details.svelte';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import Font_Weight_Control from '$routes/Font_Weight_Control.svelte';
 	import Font_Size_Control from '$routes/Font_Size_Control.svelte';
@@ -17,7 +18,7 @@
 
 	const LIBRARY_ITEM_NAME = 'typography';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	// TODO refactor
 	const font_weights = [100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -32,7 +33,7 @@
 	let selected_size = $state(3);
 </script>
 
-<Tome_Detail {tome}>
+<Tome_Content {tome}>
 	<section>
 		<h1 title="--size_xl3">h1</h1>
 		<h2 title="--size_xl2">h2</h2>
@@ -68,8 +69,8 @@
 			/>
 		</Details>
 	</section>
-	<section>
-		<Tome_Subheading text="Font sizes" slug="font-sizes" />
+	<Tome_Section>
+		<Tome_Section_Header text="Font sizes" />
 		<form class="width_sm">
 			<Font_Weight_Control bind:selected_font_weight></Font_Weight_Control>
 		</form>
@@ -88,10 +89,10 @@
 				</div>
 			</div>
 		{/each}
-	</section>
-	<section>
+	</Tome_Section>
+	<Tome_Section>
 		<!-- TODO add a slider for the font size here -->
-		<Tome_Subheading text="Font weights" slug="font-weight" />
+		<Tome_Section_Header text="Font weights" />
 		<aside>
 			There are no variables for <Mdn_Link path="Web/CSS/font-weight" /> but there are
 			<Tome_Link name="classes" hash="utility-classes">utility classes</Tome_Link>.
@@ -110,9 +111,9 @@
 				</div>
 			{/each}
 		</div>
-	</section>
-	<section>
-		<Tome_Subheading text="Text colors" slug="text-colors">Text colors</Tome_Subheading>
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Text colors">Text colors</Tome_Section_Header>
 		<Unfinished_Implementation_Warning>
 			Add color-scheme-adaptive versions?
 		</Unfinished_Implementation_Warning>
@@ -128,10 +129,10 @@
 				</div>
 			{/each}
 		</div>
-	</section>
+	</Tome_Section>
 	<!-- <section> 'text_color_disabled' 'text_active'</section> -->
-	<section>
-		<Tome_Subheading text="Line heights" slug="line-height" />
+	<Tome_Section>
+		<Tome_Section_Header text="Line heights" />
 		<aside>Learn more about <Mdn_Link path="Web/CSS/line-height" />.</aside>
 		<div>
 			{#each line_height_names as name}
@@ -149,9 +150,9 @@
 				</div>
 			{/each}
 		</div>
-	</section>
+	</Tome_Section>
 	<Icon_Sizes />
-</Tome_Detail>
+</Tome_Content>
 
 <style>
 	.button_contents {

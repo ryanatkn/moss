@@ -1,10 +1,11 @@
 <script lang="ts">
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import Hue_Swatch from '$routes/library/colors/Hue_Swatch.svelte';
 	import Color_Swatch from '$routes/library/colors/Color_Swatch.svelte';
@@ -13,7 +14,7 @@
 
 	const LIBRARY_ITEM_NAME = 'colors';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
@@ -34,9 +35,9 @@
 	];
 </script>
 
-<Tome_Detail {tome}>
-	<section>
-		<Tome_Subheading text="Color semantics" slug="color-semantics" />
+<Tome_Content {tome}>
+	<Tome_Section>
+		<Tome_Section_Header text="Color semantics" />
 		<p>
 			Moss provides a palette of color and hue <Tome_Link name="variables" /> designed to support concise
 			authoring in light and dark modes, as well as straightforward <Tome_Link name="themes"
@@ -68,9 +69,9 @@
 			most libraries, Moss provides fewer handles for granular color customizations, but the
 			benefits include consistency, efficiency, DRY authoring, and ease of app-wide theming.
 		</p>
-	</section>
-	<section>
-		<Tome_Subheading text="Caveats" slug="caveats" />
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Caveats" />
 		<p>
 			For performance reasons, Moss does not currently have an extensive set of variants, like
 			specialized states for elements or color values like "blue". Each of the 7 hues has 9 HSL
@@ -86,9 +87,9 @@
 			end-users at runtime. We'll probably end up with an interpreted language like Tailwind's
 			just-in-time compiler.
 		</p>
-	</section>
-	<section>
-		<Tome_Subheading text="Hue variables" slug="hue-variables" />
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Hue variables" />
 		<Unfinished_Implementation_Warning>
 			Colors are unfinished. I'm thinking of adding orange and cyan for a total of 9 hues. Moss may
 			also change from HSL to <Mdn_Link
@@ -116,9 +117,9 @@
 				<Hue_Swatch {color_name} {computed_styles} description={descriptions[i]} />
 			{/each}
 		</ul>
-	</section>
-	<section>
-		<Tome_Subheading text="Color variables" slug="color-variables" />
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Color variables" />
 		<p>
 			There are 9 variables per color, numbered 1 to 9, lightest to darkest. The 5th variable of
 			each color is used as the base for things like <Tome_Link name="buttons" />.
@@ -132,11 +133,11 @@
 				<Color_Swatch {color_name} {computed_styles} />
 			{/each}
 		</ul>
-	</section>
+	</Tome_Section>
 	<div class="box w_100 mb_lg">
 		<Color_Scheme_Input />
 	</div>
-</Tome_Detail>
+</Tome_Content>
 
 <style>
 	.palette {

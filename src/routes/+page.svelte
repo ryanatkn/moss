@@ -24,7 +24,7 @@
 			<Introduction />
 			<p>
 				To learn more see <a href="{base}/library">the docs</a>
-				and <a href="https://github.com/ryanatkn/moss#readme">the readme</a>. See also my Svelte UI
+				and <a href="https://github.com/ryanatkn/moss#readme">readme</a>. See also my Svelte UI
 				library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss. Feel free to take the
 				ideas and
 				<a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.

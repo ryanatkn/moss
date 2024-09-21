@@ -1,8 +1,9 @@
 <script lang="ts">
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import {
@@ -17,18 +18,18 @@
 
 	const LIBRARY_ITEM_NAME = 'shadows';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	// TODO duplicate shadows links
 </script>
 
-<Tome_Detail {tome}>
+<Tome_Content {tome}>
 	<Unfinished_Implementation_Warning
 		>This is unfinished and will change. It feels simultaneously limiting in usage and bloated in
 		the implementation.</Unfinished_Implementation_Warning
 	>
-	<section>
-		<Tome_Subheading text="Shadow" slug="shadow" />
+	<Tome_Section>
+		<Tome_Section_Header text="Shadow" />
 		<p>Shadows darken in light mode and lighten in dark mode.</p>
 		<Unfinished_Implementation_Warning
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
@@ -45,12 +46,12 @@
 				</div>
 			{/each}
 		{/each}
-	</section>
+	</Tome_Section>
 	<section>
 		<Color_Scheme_Input />
 	</section>
-	<section>
-		<Tome_Subheading text="Highlight" slug="highlight" />
+	<Tome_Section>
+		<Tome_Section_Header text="Highlight" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
 			{@render shadow_example_header()}
@@ -72,12 +73,12 @@
 				{/each}
 			{/each}
 		</div>
-	</section>
+	</Tome_Section>
 	<section>
 		<Color_Scheme_Input />
 	</section>
-	<section>
-		<Tome_Subheading text="Glow" slug="glow" />
+	<Tome_Section>
+		<Tome_Section_Header text="Glow" />
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
 			{@render shadow_example_header()}
@@ -95,12 +96,12 @@
 				{/each}
 			{/each}
 		</div>
-	</section>
+	</Tome_Section>
 	<section>
 		<Color_Scheme_Input />
 	</section>
-	<section>
-		<Tome_Subheading text="Shroud" slug="shroud" />
+	<Tome_Section>
+		<Tome_Section_Header text="Shroud" />
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
 			{@render shadow_example_header()}
@@ -118,12 +119,12 @@
 				{/each}
 			{/each}
 		</div>
-	</section>
+	</Tome_Section>
 	<section>
 		<Color_Scheme_Input />
 	</section>
-	<section>
-		<Tome_Subheading text="Colorful shadows" slug="colorful-shadows" />
+	<Tome_Section>
+		<Tome_Section_Header text="Colorful shadows" />
 		<p>These are darker in light mode than in dark mode.</p>
 		{@render shadow_example_header()}
 		{#each color_variants as color_variant}
@@ -151,11 +152,11 @@
 				{/each}
 			</section>
 		{/each}
-	</section>
+	</Tome_Section>
 	<section>
 		<Color_Scheme_Input />
 	</section>
-</Tome_Detail>
+</Tome_Content>
 
 {#snippet shadow_example_header()}
 	<div class="shadow_example">

@@ -1,10 +1,11 @@
 <script lang="ts">
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 	import Theme_Input from '@ryanatkn/fuz/Theme_Input.svelte';
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 
@@ -16,7 +17,7 @@
 
 	const LIBRARY_ITEM_NAME = 'themes';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	const themes = default_themes.slice();
 
@@ -24,8 +25,8 @@
 	let editing_theme: null | Theme = $state(null);
 </script>
 
-<Tome_Detail {tome}>
-	<section class="theme">
+<Tome_Content {tome}>
+	<section>
 		<p>
 			Moss supports both the browser's
 			<Mdn_Link path="Web/CSS/color-scheme" />
@@ -38,8 +39,8 @@
 			to provide the UI below to control the Moss color scheme and themes.
 		</p>
 	</section>
-	<section class="theme">
-		<Tome_Subheading text="Color scheme" slug="color-scheme" />
+	<Tome_Section>
+		<Tome_Section_Header text="Color scheme" />
 		<p>
 			Moss supports
 			<Mdn_Link path="Web/CSS/color-scheme" /> with dark and light modes. To apply dark mode manually,
@@ -61,9 +62,9 @@
 			The builtin themes support both dark and light color schemes. Custom themes may support one or
 			both color schemes.
 		</p>
-	</section>
-	<section class="theme">
-		<Tome_Subheading text="Builtin themes" slug="builtin-themes" />
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Builtin themes" />
 		<p>
 			A theme is a simple JSON collection of <Tome_Link name="variables" /> that can be transformed into
 			CSS that set custom properties. Each variable can have values for light and/or dark color schemes.
@@ -84,8 +85,8 @@
 		<Unfinished_Implementation_Warning
 			>The builtin themes need more work, but the proof of concept is ready!</Unfinished_Implementation_Warning
 		>
-	</section>
-</Tome_Detail>
+	</Tome_Section>
+</Tome_Content>
 
 <!-- TODO enable creating themes -->
 <!-- {#if show_create_theme_dialog}

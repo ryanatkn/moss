@@ -1,16 +1,17 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {slide} from 'svelte/transition';
-	import Tome_Detail from '@ryanatkn/fuz/Tome_Detail.svelte';
-	import {get_tome} from '@ryanatkn/fuz/tome.js';
+	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
+	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
-	import Tome_Subheading from '@ryanatkn/fuz/Tome_Subheading.svelte';
+	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import {color_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'buttons';
 
-	const tome = get_tome(LIBRARY_ITEM_NAME);
+	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	let clicked_button = $state(false);
 
@@ -22,7 +23,7 @@
 	const mb_xs = true;
 </script>
 
-<Tome_Detail {tome}>
+<Tome_Content {tome}>
 	<section>
 		<p>
 			Buttons have a <code>.selected</code> state that can be used for various UI purposes, like
@@ -58,8 +59,8 @@
 		</div>
 	</section>
 
-	<section>
-		<Tome_Subheading text="Colorful buttons" slug="colorful-buttons" />
+	<Tome_Section>
+		<Tome_Section_Header text="Colorful buttons" />
 		{#each color_variants as c}
 			{@const color_name = `color_${c}`}
 			<section>
@@ -88,19 +89,19 @@
 		<div class="box w_100 mb_lg">
 			<Color_Scheme_Input />
 		</div>
-	</section>
+	</Tome_Section>
 
-	<Tome_Subheading text="With disabled attribute" slug="disabled-attribute" />
-	<section>
+	<Tome_Section>
+		<Tome_Section_Header text="With disabled attribute" />
 		<Code content={`<button disabled>\n\t:|\n</button>`} />
 		<button type="button" disabled class:mb_xs>:|</button>
 		<button type="button" disabled>a bigger disabled button</button>
-	</section>
+	</Tome_Section>
 
-	<section>
-		<Tome_Subheading text="With .selected" slug="selected-class">
+	<Tome_Section>
+		<Tome_Section_Header text="With .selected">
 			With <code>.selected</code>
-		</Tome_Subheading>
+		</Tome_Section_Header>
 		<nav>
 			<button
 				type="button"
@@ -127,35 +128,36 @@
 				button 2
 			</button>
 		</nav>
-	</section>
-	<section>
-		<Code content={`<button class="selected">...</button>`} />
-		<button type="button" class="w_100 selected">a button with <code>.selected</code></button>
-	</section>
-	<section>
-		<p>
-			<code>.selected</code> buttons with <code>.deselectable</code> continue to be clickable when selected:
-		</p>
-		<Code content={`<button class="selected deselectable">\n\t...\n</button>`} />
-	</section>
-	<section>
-		<button
-			type="button"
-			class="w_100 deselectable"
-			class:selected={selected_deselectable_button}
-			onclick={() => (selected_deselectable_button = !selected_deselectable_button)}
-			>a <code>.deselectable</code>
-			{#if selected_deselectable_button}<code>.selected</code>{:else}unselected{/if} button</button
-		>
-		<button type="button" class="w_100 selected deselectable" disabled
-			>disabled <code>.deselectable</code> <code>.selected</code></button
-		>
-	</section>
+		<section>
+			<Code content={`<button class="selected">...</button>`} />
+			<button type="button" class="w_100 selected">a button with <code>.selected</code></button>
+		</section>
+		<section>
+			<p>
+				<code>.selected</code> buttons with <code>.deselectable</code> continue to be clickable when
+				selected:
+			</p>
+			<Code content={`<button class="selected deselectable">\n\t...\n</button>`} />
+		</section>
+		<section>
+			<button
+				type="button"
+				class="w_100 deselectable"
+				class:selected={selected_deselectable_button}
+				onclick={() => (selected_deselectable_button = !selected_deselectable_button)}
+				>a <code>.deselectable</code>
+				{#if selected_deselectable_button}<code>.selected</code>{:else}unselected{/if} button</button
+			>
+			<button type="button" class="w_100 selected deselectable" disabled
+				>disabled <code>.deselectable</code> <code>.selected</code></button
+			>
+		</section>
+	</Tome_Section>
 
-	<section>
-		<Tome_Subheading text="With .plain and .icon_button" slug="plain-and-icon_button">
+	<Tome_Section>
+		<Tome_Section_Header text="With .plain and .icon_button">
 			With <code>.plain</code> and <code>.icon_button</code>
-		</Tome_Subheading>
+		</Tome_Section_Header>
 		<Code
 			content={`<button class="plain">
 	+
@@ -215,5 +217,5 @@
 </button>`}
 		/>
 		<button type="button" class="plain icon_button selected deselectable">+</button>
-	</section>
-</Tome_Detail>
+	</Tome_Section>
+</Tome_Content>
