@@ -19,8 +19,6 @@
 	const toggle_color_scheme = () => {
 		themer.color_scheme = themer.color_scheme === 'light' ? 'dark' : 'light';
 	};
-
-	// TODO BLOCK see `Shades and highlights` below
 </script>
 
 <Tome_Content {tome}>
