@@ -6,6 +6,7 @@
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import {get_themer} from '@ryanatkn/fuz/theme.svelte.js';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
@@ -69,62 +70,64 @@
 			opacity on text. (assuming this is still a thing?)
 		</p>
 	</section>
-	<section>
+	<Tome_Section>
 		<Tome_Section_Header text="Shades and highlights" />
-		<Tome_Section_Header text="darken and lighten" tag="h4"
-			><code>darken</code> and <code>lighten</code></Tome_Section_Header
-		>
-		<Unfinished_Implementation_Warning />
-		<div class="swatch">
-			{#each {length: 9} as _, i}
-				{@const name = 'darken_' + (i + 1)}
-				<div>
-					<div class="color" style:background-color="var(--{name})"></div>
-					<small><Style_Variable_Button {name} /></small>
-				</div>
-			{/each}
-		</div>
-		<div class="swatch">
-			{#each {length: 9} as _, i}
-				{@const name = 'lighten_' + (i + 1)}
-				<div>
-					<div class="color" style:background-color="var(--{name})"></div>
-					<small><Style_Variable_Button {name} /></small>
-				</div>
-			{/each}
-		</div>
-	</section>
-	<section>
-		<Tome_Section_Header text="bg and fg" tag="h4"
-			><code>bg</code> and <code>fg</code></Tome_Section_Header
-		>
-		<p>
-			In light mode, <code>bg</code> is the same as <code>lighten</code> and <code>fg</code> is the
-			same as <code>darken</code>. In dark mode, they're swapped.
-		</p>
-		<div class="swatch">
-			{#each {length: 9} as _, i}
-				{@const name = 'bg_' + (i + 1)}
-				<div>
-					<div class="color" style:background-color="var(--{name})"></div>
-					<small><Style_Variable_Button {name} /></small>
-				</div>
-			{/each}
-		</div>
-		<div class="swatch">
-			{#each {length: 9} as _, i}
-				{@const name = 'fg_' + (i + 1)}
-				<div>
-					<div class="color" style:background-color="var(--{name})"></div>
-					<small><Style_Variable_Button {name} /></small>
-				</div>
-			{/each}
-		</div>
-	</section>
+		<Tome_Section>
+			<Tome_Section_Header text="darken and lighten" tag="h4"
+				><code>darken</code> and <code>lighten</code></Tome_Section_Header
+			>
+			<Unfinished_Implementation_Warning />
+			<div class="swatch">
+				{#each {length: 9} as _, i}
+					{@const name = 'darken_' + (i + 1)}
+					<div>
+						<div class="color" style:background-color="var(--{name})"></div>
+						<small><Style_Variable_Button {name} /></small>
+					</div>
+				{/each}
+			</div>
+			<div class="swatch">
+				{#each {length: 9} as _, i}
+					{@const name = 'lighten_' + (i + 1)}
+					<div>
+						<div class="color" style:background-color="var(--{name})"></div>
+						<small><Style_Variable_Button {name} /></small>
+					</div>
+				{/each}
+			</div>
+		</Tome_Section>
+		<Tome_Section>
+			<Tome_Section_Header text="bg and fg" tag="h4"
+				><code>bg</code> and <code>fg</code></Tome_Section_Header
+			>
+			<p>
+				In light mode, <code>bg</code> is the same as <code>lighten</code> and <code>fg</code> is
+				the same as <code>darken</code>. In dark mode, they're swapped.
+			</p>
+			<div class="swatch">
+				{#each {length: 9} as _, i}
+					{@const name = 'bg_' + (i + 1)}
+					<div>
+						<div class="color" style:background-color="var(--{name})"></div>
+						<small><Style_Variable_Button {name} /></small>
+					</div>
+				{/each}
+			</div>
+			<div class="swatch">
+				{#each {length: 9} as _, i}
+					{@const name = 'fg_' + (i + 1)}
+					<div>
+						<div class="color" style:background-color="var(--{name})"></div>
+						<small><Style_Variable_Button {name} /></small>
+					</div>
+				{/each}
+			</div>
+		</Tome_Section>
+	</Tome_Section>
 	<section>
 		<Color_Scheme_Input />
 	</section>
-	<section>
+	<Tome_Section>
 		<aside>
 			<p>
 				tip: Try <button type="button" onclick={toggle_color_scheme}>toggling</button> between light
@@ -133,7 +136,7 @@
 				different because of the context.
 			</p>
 		</aside>
-		<Tome_Section_Header text="Stacking opacity" tag="h4" />
+		<Tome_Section_Header text="Stacking opacity" />
 		<Code
 			content={`<div class="fg_1 p_sm">
 	<div class="fg_1 p_sm">
@@ -158,8 +161,8 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<section>
+	</Tome_Section>
+	<Tome_Section>
 		<Tome_Section_Header text="Fading opacity" />
 		<Unfinished_Implementation_Warning />
 		<div class="swatch">
@@ -175,7 +178,7 @@
 				</div>
 			{/each}
 		</div>
-	</section>
+	</Tome_Section>
 </Tome_Content>
 
 <style>
