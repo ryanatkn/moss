@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.16.1
+
+### Patch Changes
+
+- fix pane shadow ([#42](https://github.com/ryanatkn/moss/pull/42))
+
 ## 0.16.0
 
 ### Minor Changes
