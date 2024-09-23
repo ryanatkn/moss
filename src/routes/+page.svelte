@@ -12,7 +12,7 @@
 	const pkg = get_pkg();
 </script>
 
-<main class="box">
+<main class="box mb_xl7">
 	<section class="box">
 		<h1 class="mt_xl4 mb_lg">moss</h1>
 		<div class="box mb_xl"><Svg data={moss_logo} size="var(--icon_size_xl2)" /></div>
