@@ -2,7 +2,8 @@
 	import type {Snippet} from 'svelte';
 	import Library from '@ryanatkn/fuz/Library.svelte';
 	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
-	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
+	import Svg from '@ryanatkn/fuz/Svg.svelte';
+	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 
 	import {tomes} from '$routes/library/tomes.js';
 	import {set_selected_variable} from '$routes/style_variable_helpers.svelte.js';
@@ -25,10 +26,10 @@
 	{#snippet breadcrumb_children(is_primary_nav)}
 		{#if is_primary_nav}
 			<div class="icon row">
-				<Moss_Logo size="32px" /> <span class="ml_sm">moss</span>
+				<Svg data={moss_logo} size="var(--icon_size_sm)" /> <span class="ml_sm">moss</span>
 			</div>
 		{:else}
-			<Moss_Logo size="32px" />
+			<Svg data={moss_logo} size="var(--icon_size_sm)" />
 		{/if}
 	{/snippet}
 	{@render children()}

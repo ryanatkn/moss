@@ -3,7 +3,8 @@
 	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
 	import Community_Links_Panel from '@ryanatkn/fuz/Community_Links_Panel.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
-	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
+	import Svg from '@ryanatkn/fuz/Svg.svelte';
+	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 
 	import {get_pkg} from '$routes/pkg.js';
 
@@ -17,7 +18,7 @@
 		<header class="box">
 			<h1 class="mt_xl4">{pkg.repo_name}</h1>
 		</header>
-		<Breadcrumb><Moss_Logo size="32px" /></Breadcrumb>
+		<Breadcrumb><Svg data={moss_logo} size="var(--icon_size_sm)" /></Breadcrumb>
 	</section>
 	<Community_Links_Panel />
 	<section>
@@ -28,7 +29,7 @@
 	<section class="box mb_xl7">
 		<Library_Footer {pkg}>
 			<div class="mb_xl5">
-				<Breadcrumb><Moss_Logo size="32px" /></Breadcrumb>
+				<Breadcrumb><Svg data={moss_logo} size="var(--icon_size_sm)" /></Breadcrumb>
 			</div>
 		</Library_Footer>
 	</section>

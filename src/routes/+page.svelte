@@ -2,7 +2,8 @@
 	import {base} from '$app/paths';
 	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
 	import Card from '@ryanatkn/fuz/Card.svelte';
-	import Moss_Logo from '@ryanatkn/fuz/Moss_Logo.svelte';
+	import Svg from '@ryanatkn/fuz/Svg.svelte';
+	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 	import Hidden_Personal_Links from '@ryanatkn/fuz/Hidden_Personal_Links.svelte';
 
 	import {get_pkg} from '$routes/pkg.js';
@@ -14,7 +15,7 @@
 <main class="box">
 	<section class="box">
 		<h1 class="mt_xl4 mb_lg">moss</h1>
-		<div class="box mb_xl"><Moss_Logo size="var(--icon_size_xl2)" /></div>
+		<div class="box mb_xl"><Svg data={moss_logo} size="var(--icon_size_xl2)" /></div>
 		<div class="p_xl radius_lg shadow_inset_bottom_xs">
 			<blockquote class="shadow_inset_top_xs">magical organic stylesheets 🌿</blockquote>
 		</div>

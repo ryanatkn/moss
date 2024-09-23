@@ -2,7 +2,8 @@
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import Github_Logo from '@ryanatkn/fuz/Github_Logo.svelte';
+	import Svg from '@ryanatkn/fuz/Svg.svelte';
+	import {github_logo} from '@ryanatkn/fuz/logos.js';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Details from '@ryanatkn/fuz/Details.svelte';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
@@ -178,7 +179,8 @@ ${'<' as string}script>
 			{/snippet}
 			<p class="source_link">
 				<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_utilities.css"
-					><Github_Logo size="var(--icon_size_xs)" /> <span class="ml_xs">source</span></a
+					><Svg data={github_logo} size="var(--icon_size_xs)" />
+					<span class="ml_xs">source</span></a
 				>
 			</p>
 			<Code content={style_utilities_text} lang="css" />
@@ -189,7 +191,8 @@ ${'<' as string}script>
 			{/snippet}
 			<p class="source_link">
 				<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_components.css"
-					><Github_Logo size="var(--icon_size_xs)" /> <span class="ml_xs">source</span></a
+					><Svg data={github_logo} size="var(--icon_size_xs)" />
+					<span class="ml_xs">source</span></a
 				>
 			</p>
 			<Code content={style_components_text} lang="css" />

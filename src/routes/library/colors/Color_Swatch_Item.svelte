@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {hsl_to_hex_string, hsl_to_rgb, parse_hsl_string} from '@ryanatkn/belt/colors.js';
-	import {get_themer} from '@ryanatkn/fuz/theme.svelte.js';
+	import {themer_context} from '@ryanatkn/fuz/theme.svelte.js';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 
@@ -12,7 +12,7 @@
 
 	const {index, color_name, computed_styles}: Props = $props();
 
-	const themer = get_themer();
+	const themer = themer_context.get();
 
 	const num = $derived(index + 1);
 	const name = $derived(`color_${color_name}_${num}`);
@@ -30,7 +30,7 @@
 	<div class="text">
 		<Style_Variable_Button {name} />
 		<div class="hex">{hsl && hsl_to_hex_string(...hsl)}</div>
-		<div class="hsl">hsl({value})</div>
+		<div class="hsl">{value}</div>
 		<div class="rgb">rgb({hsl && hsl_to_rgb(...hsl).join(' ')})</div>
 	</div>
 </li>

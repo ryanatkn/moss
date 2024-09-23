@@ -4,7 +4,7 @@
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import {get_themer} from '@ryanatkn/fuz/theme.svelte.js';
+	import {themer_context} from '@ryanatkn/fuz/theme.svelte.js';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
@@ -15,7 +15,7 @@
 
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
-	const themer = get_themer();
+	const themer = themer_context.get();
 	const toggle_color_scheme = () => {
 		themer.color_scheme = themer.color_scheme === 'light' ? 'dark' : 'light';
 	};
