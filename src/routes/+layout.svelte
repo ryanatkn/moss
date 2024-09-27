@@ -9,7 +9,7 @@
 	import Spiders from '@ryanatkn/fuz/Spiders.svelte';
 	import 'prismjs'; // TODO why needed? shouldn't fuz_code handle this? Vite config problem?
 
-	import {set_pkg} from '$routes/pkg.js';
+	import {pkg_context} from '$routes/pkg.js';
 	import {package_json, src_json} from '$routes/package.js';
 	// TODO re-enable this, see comment below
 	// import Contextmenu_Root from '$lib/Contextmenu_Root.svelte';
@@ -23,7 +23,7 @@
 
 	const {children}: Props = $props();
 
-	set_pkg(parse_package_meta(package_json, src_json));
+	pkg_context.set(parse_package_meta(package_json, src_json));
 
 	// let show_settings = $state(false);
 </script>

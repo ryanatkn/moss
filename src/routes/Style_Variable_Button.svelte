@@ -3,7 +3,7 @@
 	import type {Snippet} from 'svelte';
 
 	import {default_variables} from '$lib/variables.js';
-	import {get_selected_variable} from '$routes/style_variable_helpers.svelte.js';
+	import {selected_variable_context} from '$routes/style_variable_helpers.svelte.js';
 
 	interface Props {
 		name: string; // TODO type? generate from `tomes`? or keep extensible?
@@ -26,7 +26,7 @@
 		return v;
 	});
 
-	const selected_variable = get_selected_variable();
+	const selected_variable = selected_variable_context.get();
 </script>
 
 <button

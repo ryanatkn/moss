@@ -1,8 +1,4 @@
 import type {Package_Meta} from '@ryanatkn/gro/package_meta.js';
-import {getContext, setContext} from 'svelte';
+import {create_context} from '@ryanatkn/fuz/context_helpers.js';
 
-const KEY = Symbol('pkg');
-
-export const set_pkg = (pkg: Package_Meta): Package_Meta => setContext(KEY, pkg);
-
-export const get_pkg = (): Package_Meta => getContext(KEY);
+export const pkg_context = create_context<Package_Meta>();

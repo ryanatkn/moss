@@ -6,9 +6,9 @@
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 
-	import {get_pkg} from '$routes/pkg.js';
+	import {pkg_context} from '$routes/pkg.js';
 
-	const pkg = get_pkg();
+	const pkg = pkg_context.get();
 
 	// TODO standardize
 </script>

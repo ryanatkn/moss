@@ -6,10 +6,10 @@
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 	import Hidden_Personal_Links from '@ryanatkn/fuz/Hidden_Personal_Links.svelte';
 
-	import {get_pkg} from '$routes/pkg.js';
+	import {pkg_context} from '$routes/pkg.js';
 	import Introduction from '$routes/Introduction.svelte';
 
-	const pkg = get_pkg();
+	const pkg = pkg_context.get();
 </script>
 
 <main class="box mb_xl7">

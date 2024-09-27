@@ -1,4 +1,4 @@
-import {getContext, setContext} from 'svelte';
+import {create_context} from '@ryanatkn/fuz/context_helpers.js';
 
 import type {Style_Variable} from '$lib/variable.js';
 
@@ -12,11 +12,4 @@ export class Selected_Style_Variable {
 	}
 }
 
-const SELECTED_VARIABLE_KEY = Symbol('selected_variable');
-
-export const set_selected_variable = (
-	value = new Selected_Style_Variable(null),
-): Selected_Style_Variable => setContext(SELECTED_VARIABLE_KEY, value);
-
-export const get_selected_variable = (): Selected_Style_Variable =>
-	getContext(SELECTED_VARIABLE_KEY);
+export const selected_variable_context = create_context(() => new Selected_Style_Variable(null));

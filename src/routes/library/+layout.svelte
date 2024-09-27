@@ -6,9 +6,9 @@
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 
 	import {tomes} from '$routes/library/tomes.js';
-	import {set_selected_variable} from '$routes/style_variable_helpers.svelte.js';
+	import {selected_variable_context} from '$routes/style_variable_helpers.svelte.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
-	import {get_pkg} from '$routes/pkg.js';
+	import {pkg_context} from '$routes/pkg.js';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
 	interface Props {
@@ -17,9 +17,9 @@
 
 	const {children}: Props = $props();
 
-	const selected_variable = set_selected_variable();
+	const selected_variable = selected_variable_context.set();
 
-	const pkg = get_pkg();
+	const pkg = pkg_context.get();
 </script>
 
 <Library {tomes} {pkg}>
