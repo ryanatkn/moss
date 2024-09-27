@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Library_Content from '@ryanatkn/fuz/Library_Content.svelte';
-	import {get_tomes} from '@ryanatkn/fuz/tome.js';
+	import {tomes_context} from '@ryanatkn/fuz/tome.js';
 
 	import {pkg_context} from '$routes/pkg.js';
 
-	const tomes_by_name = get_tomes();
+	const tomes_by_name = tomes_context.get();
 
 	const tomes = Array.from(tomes_by_name.values());
 
