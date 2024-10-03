@@ -19,7 +19,7 @@ export interface Options {
 }
 
 export const gro_plugin_moss_css = ({
-	classes_outfile = 'src/routes/moss_classes.css',
+	classes_outfile = 'src/routes/moss_classes.css', // TODO BLOCK maybe just `moss.css` and `outfile`? what about multiple files using file filters to check where to collect them?
 	flush_debounce_delay = FLUSH_DEBOUNCE_DELAY,
 }: Options = EMPTY_OBJECT): Plugin => {
 	let generating = false;
