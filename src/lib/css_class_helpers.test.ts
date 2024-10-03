@@ -22,15 +22,30 @@ const values: Array<[contents: string, expected: string[]]> = [
 	["classes = 'a'", ['a']],
 	["classes = 'a b'", ['a', 'b']],
 	["classes = 'a b c'", ['a', 'b', 'c']],
-	["classes = 'a b c'", ['a', 'b', 'c']],
 	['classes = "a"', ['a']],
 	['classes = "a b"', ['a', 'b']],
 	['classes = "a b c"', ['a', 'b', 'c']],
-	["classes = 'a b c'", ['a', 'b', 'c']],
 	['classes = `a`', ['a']],
 	['classes = `a b`', ['a', 'b']],
 	['classes = `a b c`', ['a', 'b', 'c']],
-	['classes = `a b c`', ['a', 'b', 'c']],
+	["CLASSES = 'a'", ['a']],
+	["CLASSES = 'a b'", ['a', 'b']],
+	["CLASSES = 'a b c'", ['a', 'b', 'c']],
+	["classes =\n'a'", ['a']],
+	["classes =\n'a b'", ['a', 'b']],
+	["classes =\n'a b c'", ['a', 'b', 'c']],
+	["classes =\n\t'a'", ['a']],
+	["classes =\n\t'a b'", ['a', 'b']],
+	["classes =\n\t'a b c'", ['a', 'b', 'c']],
+	["classes =\n  \t 'a'", ['a']],
+	["classes =\n  \t 'a b'", ['a', 'b']],
+	["classes =\n  \t 'a b c'", ['a', 'b', 'c']],
+	// `classes = ` variable declaration with different prefixes
+	["aclasses = 'a'", ['a']],
+	["Aclasses = 'a'", ['a']],
+	["_classes = 'a'", ['a']],
+	["dcLaSses = 'a'", ['a']],
+	// TODO BLOCK support array of strings?
 ];
 
 test('collects CSS classes from a string of Svelte or TS', () => {
