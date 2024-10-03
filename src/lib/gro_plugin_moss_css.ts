@@ -115,8 +115,6 @@ export const gro_plugin_moss_css = ({
 			});
 			console.log('inited'); // TODO BLOCK should this re-enable generation now?
 			queue_gen();
-			queue_gen();
-			queue_gen();
 		},
 		teardown: async () => {
 			if (cleanup !== undefined) {
