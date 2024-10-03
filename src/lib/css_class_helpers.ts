@@ -22,14 +22,17 @@ const CLASSES_STRING_LITERAL_MATCHER = /classes\s*=\s*["'`]([^["'`]]+)["'`]/gi;
  * These are inferred in a variety of ways, including normal Svelte contructs
  * and some custom heuristics.
  */
-export const collect_css_classes = (contents: string): string[] => {
+export const collect_css_classes = (contents: string): Set<string> => {
 	// TODO BLOCK some false positives
 	// TODO BLOCK ensure no overlap in regexps
-	const classes: string[] = [];
+	const classes: Set<string> = new Set();
 	const add_classes = (match: string, class_list: string) => {
-		classes.push(...class_list.split(/\s+/).filter(Boolean));
+		for (const c of class_list.split(/\s+/).filter(Boolean)) {
+			classes.add(c);
+		}
 		return match;
 	};
+	// TODO BLOCK the `replace` is wasted work, we just want to extract classes
 	contents.replace(CLASS_ATTR_MATCHER, add_classes);
 	contents.replace(CLASS_DIRECTIVE_MATCHER, add_classes);
 	contents.replace(CLASSES_PROP_MATCHER, add_classes);

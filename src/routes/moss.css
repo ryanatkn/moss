@@ -28,7 +28,7 @@
 	padding: var(--space_sm);
 }
 .radius_md {
-	border-radius: var(--radius_md); /* foo*/
+	border-radius: var(--radius_md);
 }
 .shadow_xs {
 	--shadow_alpha: var(--shadow_alpha_1) box-shadow: var(--shadow_xs)

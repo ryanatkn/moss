@@ -52,7 +52,11 @@ const values: Array<[contents: string, expected: string[]]> = [
 test('collects CSS classes from a string of Svelte or TS', () => {
 	for (const [contents, expected] of values) {
 		const found = collect_css_classes(contents);
-		assert.equal(found, expected, `failed to collect classes for input \`${contents}\``);
+		assert.equal(
+			Array.from(found),
+			expected,
+			`failed to collect classes for input \`${contents}\``,
+		);
 	}
 });
 

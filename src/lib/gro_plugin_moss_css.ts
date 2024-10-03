@@ -39,8 +39,8 @@ export const gro_plugin_moss_css = ({
 	outfile = 'src/routes/moss.css', // TODO BLOCK what about multiple files using file filters to check where to collect them?
 	flush_debounce_delay = FLUSH_DEBOUNCE_DELAY,
 }: Options = EMPTY_OBJECT): Plugin => {
-	let generating = false;
-	let regen = false;
+	// let generating = false;
+	// let regen = false;
 	let flushing_timeout: NodeJS.Timeout | undefined;
 	const all_classes: Set<string> = new Set(); // TODO BLOCK better data structure that preserves where each is from
 	const queue_gen = () => {
@@ -52,23 +52,28 @@ export const gro_plugin_moss_css = ({
 			}); // the timeout batches synchronously
 		}
 	};
-	const flush_gen_queue = throttle(async () => {
-		// hacky way to avoid concurrent `gro gen` calls
-		if (generating) {
-			regen = true;
-			return;
-		}
-		generating = true;
-		const css = generate_classes_css(all_classes);
-		console.log('WRITING FILE', css.length);
-		const formatted = await format_file(css, {filepath: outfile});
-		writeFileSync(outfile, formatted); // TODO BLOCK what if this was implemented using gen?
-		generating = false;
-		if (regen) {
-			regen = false;
-			void flush_gen_queue();
-		}
-	}, flush_debounce_delay);
+	const flush_gen_queue = throttle(
+		async () => {
+			// TODO BLOCK this is taken care of by the throttle function, right?
+			// hacky way to avoid concurrent `gro gen` calls
+			// if (generating) {
+			// 	regen = true;
+			// 	return;
+			// }
+			// generating = true;
+			const css = generate_classes_css(all_classes);
+			console.log('WRITING FILE', css.length);
+			const formatted = await format_file(css, {filepath: outfile});
+			writeFileSync(outfile, formatted); // TODO BLOCK what if this was implemented using gen?
+			// generating = false;
+			// if (regen) {
+			// 	regen = false;
+			// 	void flush_gen_queue();
+			// }
+		},
+		flush_debounce_delay,
+		false,
+	);
 
 	let cleanup: Cleanup_Watch | undefined;
 
@@ -76,10 +81,10 @@ export const gro_plugin_moss_css = ({
 		name: 'gro_plugin_gen',
 		setup: async ({watch, filer}) => {
 			// Do we need to just generate everything once and exit?
-			if (!watch) {
-				// TODO BLOCK ?
-				return;
-			}
+			// if (!watch) {
+			// TODO BLOCK ?
+			// 	return;
+			// }
 
 			// When a file builds, check it and its tree of dependents
 			// for any `.gen.` files that need to run.
@@ -109,6 +114,8 @@ export const gro_plugin_moss_css = ({
 				}
 			});
 			console.log('inited'); // TODO BLOCK should this re-enable generation now?
+			queue_gen();
+			queue_gen();
 			queue_gen();
 		},
 		teardown: async () => {
