@@ -1,0 +1,43 @@
+import {test} from 'uvu';
+import * as assert from 'uvu/assert';
+
+import {collect_css_classes} from './css_class_helpers.js';
+
+const values: Array<[contents: string, expected: string[]]> = [
+	// `class=` attribute
+	['class="a"', ['a']],
+	['class="a b"', ['a', 'b']],
+	['class="a b c"', ['a', 'b', 'c']],
+	["class='a b c'", ['a', 'b', 'c']],
+	// `class:` directive
+	['class:a', ['a']],
+	['class:a "', ['a']],
+	['class:a="', ['a']],
+	// `classes=` prop
+	['classes="a"', ['a']],
+	['classes="a b"', ['a', 'b']],
+	['classes="a b c"', ['a', 'b', 'c']],
+	["classes='a b c'", ['a', 'b', 'c']],
+	// `classes = ` variable declaration
+	["classes = 'a'", ['a']],
+	["classes = 'a b'", ['a', 'b']],
+	["classes = 'a b c'", ['a', 'b', 'c']],
+	["classes = 'a b c'", ['a', 'b', 'c']],
+	['classes = "a"', ['a']],
+	['classes = "a b"', ['a', 'b']],
+	['classes = "a b c"', ['a', 'b', 'c']],
+	["classes = 'a b c'", ['a', 'b', 'c']],
+	['classes = `a`', ['a']],
+	['classes = `a b`', ['a', 'b']],
+	['classes = `a b c`', ['a', 'b', 'c']],
+	['classes = `a b c`', ['a', 'b', 'c']],
+];
+
+test('collects CSS classes from a string of Svelte or TS', () => {
+	for (const [contents, expected] of values) {
+		const found = collect_css_classes(contents);
+		assert.equal(found, expected, `failed to collect classes for input \`${contents}\``);
+	}
+});
+
+test.run();
