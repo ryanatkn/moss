@@ -13,7 +13,6 @@ const CLASS_MATCHERS = [
 	/classes\s*=\s*\[((?:["'`][^"'`]*["'`]\s*,?\s*)+)\]/gi,
 
 	// *classes = 'a b'
-	// TODO BLOCK `'"
 	/classes\s*=\s*["'`]([^"'`]+)["'`]/gi,
 
 	// class: 'a b'
