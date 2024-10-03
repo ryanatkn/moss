@@ -19,9 +19,6 @@ const CLASS_MATCHERS = [
 	/class:\s*["'`]([^"'`]+)["'`]/gi,
 ];
 
-// TODO BLOCK tests with all forms, including multiline
-
-// Unified helper function to extract class lists
 const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
 	const classes: Set<string> = new Set();
 	let match;
@@ -42,8 +39,9 @@ export const collect_css_classes = (contents: string): Set<string> => {
 	const all_classes: Set<string> = new Set();
 
 	for (const matcher of CLASS_MATCHERS) {
-		const extracted = extract_classes(contents, matcher);
-		extracted.forEach((cls) => all_classes.add(cls)); // Merge all into one set
+		for (const c of extract_classes(contents, matcher)) {
+			all_classes.add(c);
+		}
 	}
 
 	return all_classes;
