@@ -66,6 +66,10 @@ export const package_json = {
 	files: ['dist', 'src/lib/**/*.ts', '!src/lib/**/*.test.*', '!dist/**/*.test.*'],
 	exports: {
 		'./package.json': './package.json',
+		'./css_class_helpers.js': {
+			types: './dist/css_class_helpers.d.ts',
+			default: './dist/css_class_helpers.js',
+		},
 		'./gro_plugin_moss_css.js': {
 			types: './dist/gro_plugin_moss_css.d.ts',
 			default: './dist/gro_plugin_moss_css.js',
@@ -91,6 +95,10 @@ export const src_json = {
 	version: '0.16.1',
 	modules: {
 		'./package.json': {path: 'package.json', declarations: []},
+		'./css_class_helpers.js': {
+			path: 'css_class_helpers.ts',
+			declarations: [{name: 'collect_css_classes', kind: 'function'}],
+		},
 		'./gro_plugin_moss_css.js': {
 			path: 'gro_plugin_moss_css.ts',
 			declarations: [

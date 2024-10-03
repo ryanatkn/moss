@@ -1,4 +1,3 @@
-//
 import {EMPTY_OBJECT} from '@ryanatkn/belt/object.js';
 import type {Plugin} from '@ryanatkn/gro/plugin.js';
 import type {Args} from '@ryanatkn/gro/args.js';
@@ -6,6 +5,7 @@ import {throttle} from '@ryanatkn/gro/throttle.js';
 import {spawn_cli} from '@ryanatkn/gro/cli.js';
 import type {Cleanup_Watch} from '@ryanatkn/gro/filer.js';
 import {Unreachable_Error} from '@ryanatkn/belt/error.js';
+import {collect_css_classes} from './css_class_helpers.js';
 
 const FLUSH_DEBOUNCE_DELAY = 500;
 
@@ -73,7 +73,7 @@ export const gro_plugin_moss_css = ({
 						// TODO BLOCK
 						if (source_file.contents !== null) {
 							const classes = collect_css_classes(source_file.contents);
-							console.log(`classes`, classes);
+							console.log(`classes`, classes); // TODO need to store classes per file, and then update a main set based on additions/removals (efficient data structure, incremental changes)
 						}
 						break;
 					}
@@ -93,13 +93,4 @@ export const gro_plugin_moss_css = ({
 			}
 		},
 	};
-};
-
-const collect_css_classes = (contents: string): string[] => {
-	// TODO BLOCK
-	// class="..."
-	// class:...
-	// classes="..."
-	// *classes = ['...']
-	// *classes = '...'
 };

@@ -83,6 +83,10 @@
   ],
   "exports": {
     "./package.json": "./package.json",
+    "./css_class_helpers.js": {
+      "types": "./dist/css_class_helpers.d.ts",
+      "default": "./dist/css_class_helpers.js"
+    },
     "./gro_plugin_moss_css.js": {
       "types": "./dist/gro_plugin_moss_css.d.ts",
       "default": "./dist/gro_plugin_moss_css.js"
