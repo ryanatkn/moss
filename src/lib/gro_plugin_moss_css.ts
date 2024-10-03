@@ -15,7 +15,9 @@ export const generate_classes_css = (classes: Iterable<string>): string => {
 	for (const c of classes) {
 		const v = css_classes_by_name[c];
 		if (!v) {
-			console.log('unknown class', c);
+			if (!/^[a-z_0-9]+$/.test(c)) {
+				console.error('invalid class detected, fix the regexps', c);
+			}
 			continue;
 		}
 		css += `.${c} { ${v.value} }\n`;
