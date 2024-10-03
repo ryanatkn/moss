@@ -71,6 +71,10 @@ export const gro_plugin_moss_css = ({
 					case 'add':
 					case 'update': {
 						// TODO BLOCK
+						if (source_file.contents !== null) {
+							const classes = collect_css_classes(source_file.contents);
+							console.log(`classes`, classes);
+						}
 						break;
 					}
 					case 'delete': {
