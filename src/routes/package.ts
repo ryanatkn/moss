@@ -32,12 +32,12 @@ export const package_json = {
 	devDependencies: {
 		'@changesets/changelog-git': '^0.2.0',
 		'@ryanatkn/belt': '^0.25.0',
-		'@ryanatkn/eslint-config': '^0.5.3',
-		'@ryanatkn/fuz': '^0.128.0',
+		'@ryanatkn/eslint-config': '^0.5.5',
+		'@ryanatkn/fuz': '^0.129.0',
 		'@ryanatkn/fuz_code': '^0.19.0',
-		'@ryanatkn/gro': '^0.135.2',
+		'@ryanatkn/gro': '^0.137.0',
 		'@sveltejs/adapter-static': '^3.0.5',
-		'@sveltejs/kit': '^2.6.0',
+		'@sveltejs/kit': '^2.6.1',
 		'@sveltejs/package': '^2.3.5',
 		'@sveltejs/vite-plugin-svelte': '^3.1.2',
 		'@types/node': '^22.7.4',
@@ -48,10 +48,10 @@ export const package_json = {
 		'prism-svelte': '^0.5.0',
 		prismjs: '^1.29.0',
 		svelte: '^5.0.0-next.260',
-		'svelte-check': '^4.0.3',
+		'svelte-check': '^4.0.4',
 		tslib: '^2.7.0',
 		typescript: '^5.6.2',
-		'typescript-eslint': '^8.7.0',
+		'typescript-eslint': '^8.8.0',
 		uvu: '^0.5.6',
 	},
 	prettier: {
@@ -66,6 +66,10 @@ export const package_json = {
 	files: ['dist', 'src/lib/**/*.ts', '!src/lib/**/*.test.*', '!dist/**/*.test.*'],
 	exports: {
 		'./package.json': './package.json',
+		'./gro_plugin_moss_css.js': {
+			types: './dist/gro_plugin_moss_css.d.ts',
+			default: './dist/gro_plugin_moss_css.js',
+		},
 		'./style_animations.css': {default: './dist/style_animations.css'},
 		'./style_components.css': {default: './dist/style_components.css'},
 		'./style_reset.css': {default: './dist/style_reset.css'},
@@ -87,6 +91,14 @@ export const src_json = {
 	version: '0.16.1',
 	modules: {
 		'./package.json': {path: 'package.json', declarations: []},
+		'./gro_plugin_moss_css.js': {
+			path: 'gro_plugin_moss_css.ts',
+			declarations: [
+				{name: 'Task_Args', kind: 'type'},
+				{name: 'Options', kind: 'type'},
+				{name: 'gro_plugin_moss_css', kind: 'function'},
+			],
+		},
 		'./style_animations.css': {path: 'style_animations.css', declarations: []},
 		'./style_components.css': {path: 'style_components.css', declarations: []},
 		'./style_reset.css': {path: 'style_reset.css', declarations: []},
