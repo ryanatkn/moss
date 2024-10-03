@@ -8,6 +8,7 @@ const CLASS_DIRECTIVE_MATCHER = /class:([^=]+)=["'`]([^"'`]+)["'`]/g;
 const CLASSES_PROP_MATCHER = /classes=["'`]([^"'`]+)["'`]/g;
 
 // *classes = ['a', 'b']
+// extracts the contents of one or more string literals in an array
 const CLASSES_ARRAY_LITERAL_MATCHER = /classes\s*=\s*\[([^\]]+)\]/gi;
 
 // *classes = 'a b'
@@ -23,6 +24,7 @@ const CLASSES_STRING_LITERAL_MATCHER = /classes\s*=\s*["'`]([^["'`]]+)["'`]/gi;
  */
 export const collect_css_classes = (contents: string): string[] => {
 	// TODO BLOCK some false positives
+	// TODO BLOCK ensure no overlap in regexps
 	const classes: string[] = [];
 	const add_classes = (match: string, class_list: string) => {
 		classes.push(...class_list.split(/\s+/).filter(Boolean));
