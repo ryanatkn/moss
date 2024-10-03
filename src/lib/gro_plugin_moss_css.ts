@@ -79,13 +79,7 @@ export const gro_plugin_moss_css = ({
 
 	return {
 		name: 'gro_plugin_gen',
-		setup: async ({watch, filer}) => {
-			// Do we need to just generate everything once and exit?
-			// if (!watch) {
-			// TODO BLOCK ?
-			// 	return;
-			// }
-
+		setup: async ({filer}) => {
 			// When a file builds, check it and its tree of dependents
 			// for any `.gen.` files that need to run.
 			cleanup = await filer.watch((change, source_file) => {
@@ -100,6 +94,7 @@ export const gro_plugin_moss_css = ({
 								all_classes.add(c);
 							}
 							console.log(`classes`, classes);
+							queue_gen();
 							// TODO BLOCK need to store classes per file, and then update a main set based on additions/removals
 							// (efficient data structure, incremental changes, and generate only new classes, maybe caching them)
 						}
