@@ -73,7 +73,9 @@ export const gro_plugin_moss_css = ({
 						// TODO BLOCK
 						if (source_file.contents !== null) {
 							const classes = collect_css_classes(source_file.contents);
-							console.log(`classes`, classes); // TODO need to store classes per file, and then update a main set based on additions/removals (efficient data structure, incremental changes)
+							console.log(`classes`, classes);
+							// TODO BLOCK need to store classes per file, and then update a main set based on additions/removals
+							// (efficient data structure, incremental changes, and generate only new classes, maybe caching them)
 						}
 						break;
 					}
