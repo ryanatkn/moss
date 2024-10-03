@@ -2,11 +2,9 @@
 import {EMPTY_OBJECT} from '@ryanatkn/belt/object.js';
 import type {Plugin} from '@ryanatkn/gro/plugin.js';
 import type {Args} from '@ryanatkn/gro/args.js';
-import {paths} from '@ryanatkn/gro/paths.js';
-import {find_genfiles, is_gen_path} from '@ryanatkn/gro/gen.js';
 import {throttle} from '@ryanatkn/gro/throttle.js';
 import {spawn_cli} from '@ryanatkn/gro/cli.js';
-import type {Cleanup_Watch, Source_File} from '@ryanatkn/gro/filer.js';
+import type {Cleanup_Watch} from '@ryanatkn/gro/filer.js';
 import {Unreachable_Error} from '@ryanatkn/belt/error.js';
 
 const FLUSH_DEBOUNCE_DELAY = 500;
@@ -22,12 +20,12 @@ export interface Options {
 export const gro_plugin_moss_css = ({
 	flush_debounce_delay = FLUSH_DEBOUNCE_DELAY,
 }: Options = EMPTY_OBJECT): Plugin => {
-	const input_path = paths.source; // TODO option?
 	let generating = false;
 	let regen = false;
 	let flushing_timeout: NodeJS.Timeout | undefined;
 	const queued_files: Set<string> = new Set();
 	const queue_gen = (gen_file_id: string) => {
+		console.log(`queue_gen gen_file_id`, gen_file_id);
 		queued_files.add(gen_file_id);
 		if (flushing_timeout === undefined) {
 			flushing_timeout = setTimeout(() => {
@@ -68,7 +66,7 @@ export const gro_plugin_moss_css = ({
 			// When a file builds, check it and its tree of dependents
 			// for any `.gen.` files that need to run.
 			cleanup = await filer.watch((change, source_file) => {
-				console.log(`change, source_file.id`, change, source_file.id);
+				console.log(`change, source_file.id`, change.type, source_file.id);
 				switch (change.type) {
 					case 'add':
 					case 'update': {
