@@ -2,10 +2,27 @@ import {EMPTY_OBJECT} from '@ryanatkn/belt/object.js';
 import type {Plugin} from '@ryanatkn/gro/plugin.js';
 import type {Args} from '@ryanatkn/gro/args.js';
 import {throttle} from '@ryanatkn/gro/throttle.js';
-import {spawn_cli} from '@ryanatkn/gro/cli.js';
 import type {Cleanup_Watch} from '@ryanatkn/gro/filer.js';
 import {Unreachable_Error} from '@ryanatkn/belt/error.js';
-import {collect_css_classes} from './css_class_helpers.js';
+import {format_file} from '@ryanatkn/gro/format_file.js';
+
+import {collect_css_classes} from '$lib/css_class_helpers.js';
+import {css_classes_by_name} from '$lib/css_classes.js';
+import {writeFileSync} from 'fs';
+
+export const generate_classes_css = (classes: Set<string>): string => {
+	let css = '';
+	for (const c of classes) {
+		const v = css_classes_by_name[c];
+		if (!v) {
+			console.log('unknown class', c);
+			continue;
+		}
+		css += `.${c} { ${v.value} }\n`;
+	}
+
+	return css;
+};
 
 const FLUSH_DEBOUNCE_DELAY = 500;
 
@@ -14,21 +31,20 @@ export interface Task_Args extends Args {
 }
 
 export interface Options {
-	classes_outfile?: string;
+	outfile?: string;
 	flush_debounce_delay?: number;
 }
 
 export const gro_plugin_moss_css = ({
-	classes_outfile = 'src/routes/moss_classes.css', // TODO BLOCK maybe just `moss.css` and `outfile`? what about multiple files using file filters to check where to collect them?
+	outfile = 'src/routes/moss.css', // TODO BLOCK what about multiple files using file filters to check where to collect them?
 	flush_debounce_delay = FLUSH_DEBOUNCE_DELAY,
 }: Options = EMPTY_OBJECT): Plugin => {
 	let generating = false;
 	let regen = false;
 	let flushing_timeout: NodeJS.Timeout | undefined;
-	const queued_files: Set<string> = new Set();
-	const queue_gen = (gen_file_id: string) => {
-		console.log(`queue_gen gen_file_id`, gen_file_id);
-		queued_files.add(gen_file_id);
+	const all_classes: Set<string> = new Set(); // TODO BLOCK better data structure that preserves where each is from
+	const queue_gen = () => {
+		console.log(`queue_gen`);
 		if (flushing_timeout === undefined) {
 			flushing_timeout = setTimeout(() => {
 				flushing_timeout = undefined;
@@ -43,16 +59,16 @@ export const gro_plugin_moss_css = ({
 			return;
 		}
 		generating = true;
-		const files = Array.from(queued_files);
-		queued_files.clear();
-		await gen(files);
+		const css = generate_classes_css(all_classes);
+		console.log('WRITING FILE', css.length);
+		const formatted = await format_file(css, {filepath: outfile});
+		writeFileSync(outfile, formatted); // TODO BLOCK what if this was implemented using gen?
 		generating = false;
 		if (regen) {
 			regen = false;
 			void flush_gen_queue();
 		}
 	}, flush_debounce_delay);
-	const gen = (files: string[] = []) => spawn_cli('gro', ['gen', ...files]);
 
 	let cleanup: Cleanup_Watch | undefined;
 
@@ -75,6 +91,9 @@ export const gro_plugin_moss_css = ({
 						// TODO BLOCK
 						if (source_file.contents !== null) {
 							const classes = collect_css_classes(source_file.contents);
+							for (const c of classes) {
+								all_classes.add(c);
+							}
 							console.log(`classes`, classes);
 							// TODO BLOCK need to store classes per file, and then update a main set based on additions/removals
 							// (efficient data structure, incremental changes, and generate only new classes, maybe caching them)
@@ -89,6 +108,8 @@ export const gro_plugin_moss_css = ({
 						throw new Unreachable_Error(change.type);
 				}
 			});
+			console.log('inited'); // TODO BLOCK should this re-enable generation now?
+			queue_gen();
 		},
 		teardown: async () => {
 			if (cleanup !== undefined) {

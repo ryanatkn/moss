@@ -4,10 +4,9 @@ import * as assert from 'uvu/assert';
 import style_animations from '$lib/style_animations.css?raw';
 import style_components from '$lib/style_components.css?raw';
 import style_reset from '$lib/style_reset.css?raw';
-import style_utilities from '$lib/style_utilities.css?raw';
 import * as exported_variables from '$lib/variables.js';
 
-const css_files = [style_animations, style_components, style_reset, style_utilities];
+const css_files = [style_animations, style_components, style_reset];
 
 const extract_custom_properties = (css: string) =>
 	Array.from(css.matchAll(/--([a-z][a-z0-9_]*(?<!_))/g)).map((m) => m[1]);

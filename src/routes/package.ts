@@ -70,6 +70,7 @@ export const package_json = {
 			types: './dist/css_class_helpers.d.ts',
 			default: './dist/css_class_helpers.js',
 		},
+		'./css_classes.js': {types: './dist/css_classes.d.ts', default: './dist/css_classes.js'},
 		'./gro_plugin_moss_css.js': {
 			types: './dist/gro_plugin_moss_css.d.ts',
 			default: './dist/gro_plugin_moss_css.js',
@@ -77,7 +78,6 @@ export const package_json = {
 		'./style_animations.css': {default: './dist/style_animations.css'},
 		'./style_components.css': {default: './dist/style_components.css'},
 		'./style_reset.css': {default: './dist/style_reset.css'},
-		'./style_utilities.css': {default: './dist/style_utilities.css'},
 		'./style.css': {default: './dist/style.css'},
 		'./style.gen.css.js': {types: './dist/style.gen.css.d.ts', default: './dist/style.gen.css.js'},
 		'./theme.css': {default: './dist/theme.css'},
@@ -99,9 +99,17 @@ export const src_json = {
 			path: 'css_class_helpers.ts',
 			declarations: [{name: 'collect_css_classes', kind: 'function'}],
 		},
+		'./css_classes.js': {
+			path: 'css_classes.ts',
+			declarations: [
+				{name: 'Css_Class_Declaration', kind: 'type'},
+				{name: 'css_classes_by_name', kind: 'variable'},
+			],
+		},
 		'./gro_plugin_moss_css.js': {
 			path: 'gro_plugin_moss_css.ts',
 			declarations: [
+				{name: 'generate_classes_css', kind: 'function'},
 				{name: 'Task_Args', kind: 'type'},
 				{name: 'Options', kind: 'type'},
 				{name: 'gro_plugin_moss_css', kind: 'function'},
@@ -110,7 +118,6 @@ export const src_json = {
 		'./style_animations.css': {path: 'style_animations.css', declarations: []},
 		'./style_components.css': {path: 'style_components.css', declarations: []},
 		'./style_reset.css': {path: 'style_reset.css', declarations: []},
-		'./style_utilities.css': {path: 'style_utilities.css', declarations: []},
 		'./style.css': {path: 'style.css', declarations: []},
 		'./style.gen.css.js': {
 			path: 'style.gen.css.ts',

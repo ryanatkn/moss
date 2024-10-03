@@ -16,8 +16,6 @@ export const gen: Gen = async ({origin_path}) => {
 		concat_stylesheet('./src/lib/style_components.css'),
 
 		concat_stylesheet('./src/lib/style_animations.css'),
-
-		concat_stylesheet('./src/lib/style_utilities.css'),
 	]);
 
 	return `${banner}

@@ -9,7 +9,6 @@
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
-	import style_utilities_text from '$lib/style_utilities.css?raw';
 	import style_components_text from '$lib/style_components.css?raw';
 	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
 
@@ -128,7 +127,6 @@ ${'<' as string}script>
 	import '@ryanatkn/moss/theme.css'; // or bring your own
 	// or import individual parts of \`@ryanatkn/moss/style.css\`:
 	import '@ryanatkn/moss/style_reset.css'; // required
-	import '@ryanatkn/moss/style_utilities.css'; // optional
 	import '@ryanatkn/moss/style_components.css'; // optional
 	import '@ryanatkn/moss/style_animations.css'; // optional
 	// ...
@@ -173,18 +171,6 @@ ${'<' as string}script>
 	<Tome_Section>
 		<Tome_Section_Header text="Raw CSS" />
 		<!-- TODO maybe add a github source link? -->
-		<Details>
-			{#snippet summary()}
-				<span class="font_mono">@ryanatkn/moss/style_utilities.css</span>
-			{/snippet}
-			<p class="source_link">
-				<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/style_utilities.css"
-					><Svg data={github_logo} size="var(--icon_size_xs)" />
-					<span class="ml_xs">source</span></a
-				>
-			</p>
-			<Code content={style_utilities_text} lang="css" />
-		</Details>
 		<Details>
 			{#snippet summary()}
 				<span class="font_mono">@ryanatkn/moss/style_components.css</span>
