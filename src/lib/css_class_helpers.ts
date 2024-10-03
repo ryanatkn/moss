@@ -41,6 +41,8 @@ export class Css_Classes {
 
 	#dirty = true;
 
+	constructor(public include_classes: Set<string> | null = null) {}
+
 	add(id: string, classes: Set<string>): void {
 		this.#dirty = true;
 		this.#by_id.set(id, classes);
@@ -61,6 +63,11 @@ export class Css_Classes {
 
 	#recalculate(): void {
 		this.#all.clear();
+		if (this.include_classes) {
+			for (const c of this.include_classes) {
+				this.#all.add(c);
+			}
+		}
 		for (const classes of this.#by_id.values()) {
 			for (const c of classes) {
 				this.#all.add(c);

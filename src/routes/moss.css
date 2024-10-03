@@ -1,20 +1,113 @@
-.mb_xl7 {
-	margin-bottom: var(--space_xl7);
+.bg {
+	background-color: var(--bg);
 }
-.mt_xl4 {
-	margin-top: var(--space_xl4);
+.bg_a_5 {
+	background-color: var(--color_a_5);
+}
+.color_a_5 {
+	color: var(--color_a_5);
+}
+.darken_3 {
+	background-color: var(--darken_3);
+}
+.fg_1 {
+	background-color: var(--fg_1);
+}
+.fg_3 {
+	background-color: var(--fg_3);
+}
+.flex {
+	display: flex;
+}
+.flex_1 {
+	flex: 1;
+}
+.flex_wrap {
+	flex-wrap: wrap;
+}
+.font_mono {
+	font-family: var(--font_mono);
+}
+.font_sans {
+	font-family: var(--font_sans);
+}
+.gap_lg {
+	gap: var(--space_lg);
+}
+.inline {
+	display: inline;
+}
+.lighten_3 {
+	background-color: var(--lighten_3);
+}
+.mb_0 {
+	margin-bottom: 0;
 }
 .mb_lg {
 	margin-bottom: var(--space_lg);
 }
+.mb_md {
+	margin-bottom: var(--space_md);
+}
+.mb_sm {
+	margin-bottom: var(--space_sm);
+}
 .mb_xl {
 	margin-bottom: var(--space_xl);
+}
+.mb_xl5 {
+	margin-bottom: var(--space_xl5);
+}
+.mb_xl7 {
+	margin-bottom: var(--space_xl7);
+}
+.mb_xs {
+	margin-bottom: var(--space_xs);
+}
+.ml_sm {
+	margin-left: var(--space_sm);
+}
+.ml_xs {
+	margin-left: var(--space_xs);
+}
+.mt_xl4 {
+	margin-top: var(--space_xl4);
+}
+.p_lg {
+	padding: var(--space_lg);
+}
+.p_md {
+	padding: var(--space_md);
+}
+.p_sm {
+	padding: var(--space_sm);
 }
 .p_xl {
 	padding: var(--space_xl);
 }
+.pl_sm {
+	padding-left: var(--space_sm);
+}
+.pr_sm {
+	padding-right: var(--space_sm);
+}
+.pt_xl2 {
+	padding-top: var(--space_xl2);
+}
 .radius_lg {
 	border-radius: var(--radius_lg);
+}
+.radius_md {
+	border-radius: var(--radius_md);
+}
+.shadow_color_glow {
+	--shadow_color: var(--shadow_color_glow);
+}
+.shadow_color_highlight {
+	--shadow_color: var(--shadow_color_highlight);
+}
+.shadow_color_shroud {
+	--shadow_color: var(--shadow_color_shroud);
 }
 .shadow_inset_bottom_xs {
 	box-shadow: var(--shadow_inset_bottom_xs)
@@ -24,122 +117,26 @@
 	box-shadow: var(--shadow_inset_top_xs)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);
 }
-.p_sm {
-	padding: var(--space_sm);
-}
-.radius_md {
-	border-radius: var(--radius_md);
+.shadow_sm {
+	box-shadow: var(--shadow_sm)
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);
 }
 .shadow_xs {
 	--shadow_alpha: var(--shadow_alpha_1) box-shadow: var(--shadow_xs)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);
 }
-.pt_xl8 {
-	padding-top: var(--space_xl8);
-}
-.p_lg {
-	padding: var(--space_lg);
-}
-.bg {
-	background-color: var(--bg);
-}
-.shadow_sm {
-	box-shadow: var(--shadow_sm)
-		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);
-}
-.mb_xs {
-	margin-bottom: var(--space_xs);
-}
-.w_100 {
-	width: 100%;
-}
-.flex_wrap {
-	flex-wrap: wrap;
-}
-.inline {
-	display: inline;
-}
-.font_mono {
-	font-family: var(--font_mono);
-}
-.flex_1 {
-	flex: 1;
-}
-.mb_0 {
-	margin-bottom: 0;
-}
-.text_align_center {
-	text-align: center;
-}
-.p_md {
-	padding: var(--space_md);
-}
-.mb_xl5 {
-	margin-bottom: var(--space_xl5);
-}
-.ml_sm {
-	margin-left: var(--space_sm);
-}
-.mb_sm {
-	margin-bottom: var(--space_sm);
-}
-.flex {
-	display: flex;
-}
-.color_a_5 {
-	color: var(--color_a_5);
-}
-.pt_xl2 {
-	padding-top: var(--space_xl2);
+.size_xl3 {
+	font-size: var(--size_xl3);
 }
 .size_xl5 {
 	font-size: var(--size_xl5);
 }
-.size_xl3 {
-	font-size: var(--size_xl3);
+.text_align_center {
+	text-align: center;
 }
-.ml_xs {
-	margin-left: var(--space_xs);
-}
-.font_sans {
-	font-family: var(--font_sans);
-}
-.pr_sm {
-	padding-right: var(--space_sm);
+.w_100 {
+	width: 100%;
 }
 .white_space_nowrap {
 	white-space: nowrap;
-}
-.mb_md {
-	margin-bottom: var(--space_md);
-}
-.fg_1 {
-	background-color: var(--fg_1);
-}
-.bg_a_5 {
-	background-color: var(--color_a_5);
-}
-.fg_3 {
-	background-color: var(--fg_3);
-}
-.shadow_color_highlight {
-	--shadow_color: var(--shadow_color_highlight);
-}
-.darken_3 {
-	background-color: var(--darken_3);
-}
-.shadow_color_glow {
-	--shadow_color: var(--shadow_color_glow);
-}
-.lighten_3 {
-	background-color: var(--lighten_3);
-}
-.shadow_color_shroud {
-	--shadow_color: var(--shadow_color_shroud);
-}
-.gap_lg {
-	gap: var(--space_lg);
-}
-.pl_sm {
-	padding-left: var(--space_sm);
 }

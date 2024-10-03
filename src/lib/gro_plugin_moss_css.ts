@@ -10,7 +10,7 @@ import {collect_css_classes, Css_Classes} from '$lib/css_class_helpers.js';
 import {css_classes_by_name} from '$lib/css_classes.js';
 import {writeFileSync} from 'fs';
 
-export const generate_classes_css = (classes: Set<string>): string => {
+export const generate_classes_css = (classes: Iterable<string>): string => {
 	let css = '';
 	for (const c of classes) {
 		const v = css_classes_by_name[c];
@@ -31,15 +31,19 @@ export interface Task_Args extends Args {
 }
 
 export interface Options {
+	include_classes?: string[] | Set<string> | null;
 	outfile?: string;
 	flush_debounce_delay?: number;
 }
 
 export const gro_plugin_moss_css = ({
+	include_classes = null,
 	outfile = 'src/routes/moss.css', // TODO BLOCK what about multiple files using file filters to check where to collect them?
 	flush_debounce_delay = FLUSH_DEBOUNCE_DELAY,
 }: Options = EMPTY_OBJECT): Plugin => {
-	const css_classes = new Css_Classes();
+	const css_classes = new Css_Classes(
+		Array.isArray(include_classes) ? new Set(include_classes) : include_classes,
+	);
 
 	let flushing_timeout: NodeJS.Timeout | undefined;
 	const queue_gen = () => {
@@ -60,7 +64,8 @@ export const gro_plugin_moss_css = ({
 			// 	return;
 			// }
 			// generating = true;
-			const css = generate_classes_css(css_classes.get());
+			const sorted = Array.from(css_classes.get()).sort((a, b) => a.localeCompare(b));
+			const css = generate_classes_css(sorted);
 			console.log('WRITING FILE', css.length);
 			const formatted = await format_file(css, {filepath: outfile});
 			writeFileSync(outfile, formatted); // TODO BLOCK what if this was implemented using gen?
