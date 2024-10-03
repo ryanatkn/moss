@@ -84,6 +84,7 @@ const values: Array<[contents: string, expected: string[]]> = [
 	["classes:\n  \t \n 'a'", ['a']],
 	["classes:\n  \t \n 'a b'", ['a', 'b']],
 	["classes:\n  \t \n 'a b c'", ['a', 'b', 'c']],
+	["classes\n \n:\n  \t \n 'a b c'", ['a', 'b', 'c']],
 	["aclasses: 'a b c'", ['a', 'b', 'c']],
 	["Aclasses: 'a b c'", ['a', 'b', 'c']],
 	["_classes: 'a b c'", ['a', 'b', 'c']],
