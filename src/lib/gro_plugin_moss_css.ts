@@ -90,3 +90,12 @@ export const gro_plugin_moss_css = ({
 		},
 	};
 };
+
+const collect_css_classes = (contents: string): string[] => {
+	// TODO BLOCK
+	// class="..."
+	// class:...
+	// classes="..."
+	// *classes = ['...']
+	// *classes = '...'
+};
