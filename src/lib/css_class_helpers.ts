@@ -33,3 +33,38 @@ const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
 	}
 	return classes;
 };
+
+export class Css_Classes {
+	#all: Set<string> = new Set();
+
+	#by_id: Map<string, Set<string>> = new Map();
+
+	#dirty = true;
+
+	add(id: string, classes: Set<string>): void {
+		this.#dirty = true;
+		this.#by_id.set(id, classes);
+	}
+
+	delete(id: string): void {
+		this.#dirty = true;
+		this.#by_id.delete(id);
+	}
+
+	get(): Set<string> {
+		if (this.#dirty) {
+			this.#dirty = false;
+			this.#recalculate();
+		}
+		return this.#all;
+	}
+
+	#recalculate(): void {
+		this.#all.clear();
+		for (const classes of this.#by_id.values()) {
+			for (const c of classes) {
+				this.#all.add(c);
+			}
+		}
+	}
+}

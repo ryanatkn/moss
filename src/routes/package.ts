@@ -97,7 +97,10 @@ export const src_json = {
 		'./package.json': {path: 'package.json', declarations: []},
 		'./css_class_helpers.js': {
 			path: 'css_class_helpers.ts',
-			declarations: [{name: 'collect_css_classes', kind: 'function'}],
+			declarations: [
+				{name: 'collect_css_classes', kind: 'function'},
+				{name: 'Css_Classes', kind: 'class'},
+			],
 		},
 		'./css_classes.js': {
 			path: 'css_classes.ts',

@@ -34,6 +34,9 @@
 	--shadow_alpha: var(--shadow_alpha_1) box-shadow: var(--shadow_xs)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);
 }
+.pt_xl8 {
+	padding-top: var(--space_xl8);
+}
 .p_lg {
 	padding: var(--space_lg);
 }

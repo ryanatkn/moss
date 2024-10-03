@@ -6,7 +6,7 @@ import type {Cleanup_Watch} from '@ryanatkn/gro/filer.js';
 import {Unreachable_Error} from '@ryanatkn/belt/error.js';
 import {format_file} from '@ryanatkn/gro/format_file.js';
 
-import {collect_css_classes} from '$lib/css_class_helpers.js';
+import {collect_css_classes, Css_Classes} from '$lib/css_class_helpers.js';
 import {css_classes_by_name} from '$lib/css_classes.js';
 import {writeFileSync} from 'fs';
 
@@ -39,10 +39,9 @@ export const gro_plugin_moss_css = ({
 	outfile = 'src/routes/moss.css', // TODO BLOCK what about multiple files using file filters to check where to collect them?
 	flush_debounce_delay = FLUSH_DEBOUNCE_DELAY,
 }: Options = EMPTY_OBJECT): Plugin => {
-	// let generating = false;
-	// let regen = false;
+	const css_classes = new Css_Classes();
+
 	let flushing_timeout: NodeJS.Timeout | undefined;
-	const all_classes: Set<string> = new Set(); // TODO BLOCK better data structure that preserves where each is from
 	const queue_gen = () => {
 		console.log(`queue_gen`);
 		if (flushing_timeout === undefined) {
@@ -61,7 +60,7 @@ export const gro_plugin_moss_css = ({
 			// 	return;
 			// }
 			// generating = true;
-			const css = generate_classes_css(all_classes);
+			const css = generate_classes_css(css_classes.get());
 			console.log('WRITING FILE', css.length);
 			const formatted = await format_file(css, {filepath: outfile});
 			writeFileSync(outfile, formatted); // TODO BLOCK what if this was implemented using gen?
@@ -87,21 +86,16 @@ export const gro_plugin_moss_css = ({
 				switch (change.type) {
 					case 'add':
 					case 'update': {
-						// TODO BLOCK
 						if (source_file.contents !== null) {
 							const classes = collect_css_classes(source_file.contents);
-							for (const c of classes) {
-								all_classes.add(c);
-							}
-							console.log(`classes`, classes);
+							console.log(`COLLECTED classes`, classes);
+							css_classes.add(source_file.id, classes);
 							queue_gen();
-							// TODO BLOCK need to store classes per file, and then update a main set based on additions/removals
-							// (efficient data structure, incremental changes, and generate only new classes, maybe caching them)
 						}
 						break;
 					}
 					case 'delete': {
-						// TODO BLOCK
+						css_classes.delete(source_file.id);
 						break;
 					}
 					default:
