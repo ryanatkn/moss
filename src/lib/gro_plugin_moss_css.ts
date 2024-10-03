@@ -14,10 +14,12 @@ export interface Task_Args extends Args {
 }
 
 export interface Options {
+	classes_outfile?: string;
 	flush_debounce_delay?: number;
 }
 
 export const gro_plugin_moss_css = ({
+	classes_outfile = 'src/routes/moss_classes.css',
 	flush_debounce_delay = FLUSH_DEBOUNCE_DELAY,
 }: Options = EMPTY_OBJECT): Plugin => {
 	let generating = false;
