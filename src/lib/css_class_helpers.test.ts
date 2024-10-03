@@ -40,11 +40,12 @@ const values: Array<[contents: string, expected: string[]]> = [
 	["classes =\n  \t 'a'", ['a']],
 	["classes =\n  \t 'a b'", ['a', 'b']],
 	["classes =\n  \t 'a b c'", ['a', 'b', 'c']],
-	// `classes = ` variable declaration with different prefixes
-	["aclasses = 'a'", ['a']],
-	["Aclasses = 'a'", ['a']],
-	["_classes = 'a'", ['a']],
-	["dcLaSses = 'a'", ['a']],
+	["aclasses = 'a b c'", ['a', 'b', 'c']],
+	["Aclasses = 'a b c'", ['a', 'b', 'c']],
+	["_classes = 'a b c'", ['a', 'b', 'c']],
+	["dcLaSses = 'a b c'", ['a', 'b', 'c']],
+	// TODO BLOCK unify regexp so it doesn't care if it's a `=` or `:`, handles any whitespace and quotes?
+	// TODO BLOCK `class: 'a'` and `classes: 'a'` and `Xclasses: 'a'` object properties
 	// TODO BLOCK support array of strings?
 ];
 
