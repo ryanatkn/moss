@@ -44,7 +44,7 @@ const values: Array<[contents: string, expected: string[]]> = [
 	["Aclasses = 'a b c'", ['a', 'b', 'c']],
 	["_classes = 'a b c'", ['a', 'b', 'c']],
 	["dcLaSses = 'a b c'", ['a', 'b', 'c']],
-	// TODO BLOCK unify regexp so it doesn't care if it's a `=` or `:`, handles any whitespace and quotes? or maybe enforce formatted code?
+	// TODO BLOCK unify regexp so it doesn't care if it's a `=` or `:`, handles any whitespace and quotes? or maybe enforce formatted code and do several more targetted regexps?
 	// TODO BLOCK `class: 'a'` and `classes: 'a'` and `Xclasses: 'a'` object properties
 	// TODO BLOCK support array of strings?
 ];
