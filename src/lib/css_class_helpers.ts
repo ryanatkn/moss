@@ -1,22 +1,20 @@
 const CLASS_MATCHERS = [
-	// class="a b"
-	/class=["'`]([^"'`]+)["'`]/g,
+	// `class="a b"` and `class: 'a b'`
+	/class[=:]["'`]([^"'`]+)["'`]/g,
 
-	// class:a
-	/class:([a-zA-Z0-9_-]+)(?:=\{([^}]+)\})?/g,
+	// `class:a`
+	/class:([^\s={]+)/gi,
 
-	// classes="a b"
-	/classes=["'`]([^"'`]+)["'`]/g,
-
-	// *classes = ['a', 'b']
-	// extracts the contents of one or more string literals in an array
-	/classes\s*=\s*\[((?:["'`][^"'`]*["'`]\s*,?\s*)+)\]/gi,
-
-	// *classes = 'a b'
-	/classes\s*=\s*["'`]([^"'`]+)["'`]/gi,
+	// `classes = 'a b'` and `classes: 'a b'`
+	/classes\s*[=:]\s*["'`]([^"'`]+)["'`]/gi,
 
 	// class: 'a b'
 	/class:\s*["'`]([^"'`]+)["'`]/gi,
+
+	// TODO maybe support this?
+	// *classes = ['a', 'b']
+	// extracts the contents of one or more string literals in an array
+	// /classes\s*[=:]\s*\[((?:["'`][^"'`]*["'`]\s*,?\s*)+)\]/gi,
 ];
 
 const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
