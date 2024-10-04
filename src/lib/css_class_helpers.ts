@@ -40,29 +40,27 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 		matcher: /(?<!['"`])class(?:es)?\s*[=:]\s*\[([\s\S]*?)\]/g,
 		mapper: (matched: RegExpExecArray): string[] => {
 			const content = matched[1];
+			const items = content.split(',').map((item) => item.trim());
 
-			// Match string literals only, excluding concatenated or dynamic parts
-			const string_literals = content.match(/(['"`])((?:(?!\1)[^\\]|\\.)*?)\1/g);
-			if (!string_literals) return [];
+			return items
+				.reduce((classes: string[], item: string) => {
+					// Match string literals within each item
+					const string_literals = item.match(/(['"`])((?:(?!\1)[^\\]|\\.)*?)\1/g);
+					if (!string_literals) return classes;
 
-			return (
-				string_literals
-					// Filter out dynamic parts, e.g., string concatenation or template literals with `${}`
-					.filter((literal) => {
-						const content = literal.slice(1, -1); // remove quotes
-						// Ignore if the array content contains concatenation ('+'), or interpolation ('${}')
-						const is_dynamic = content.includes('${') || /\s*\+\s*/.test(content);
-						return !is_dynamic;
-					})
-					// Remove escaped characters and trim
-					.map((literal) =>
-						literal
-							.slice(1, -1)
-							.replace(/\\(['"`])/g, '$1')
-							.trim(),
-					)
-					.filter(Boolean)
-			); // Filter out empty strings
+					// Check if the item contains concatenation
+					const has_concatenation = /\s*\+\s*/.test(item);
+
+					if (!has_concatenation && string_literals.length === 1) {
+						const content = string_literals[0].slice(1, -1); // remove quotes
+						if (!content.includes('${')) {
+							classes.push(content.replace(/\\(['"`])/g, '$1').trim());
+						}
+					}
+
+					return classes;
+				}, [])
+				.filter(Boolean); // Filter out empty strings
 		},
 	},
 ];

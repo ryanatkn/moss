@@ -120,11 +120,14 @@ const values: Array<[contents: string, expected: string[]]> = [
 	// arrays with escaped quotes
 	[`classes = ['a\\'s', "b\\"s", \`c\\\`s\`]`, ["a's", 'b"s', 'c`s']],
 	// arrays with template literals containing expressions
-	['classes = [`a${x}`, `b${y}`, `c`]', ['c']], // TODO BLOCK FAILING
-	['classes = [`a`, `b${y}c`, `d`]', ['a', 'd']], // TODO BLOCK FAILING
+	['classes = [`a${x}`, `b${y}`, `c`]', ['c']],
+	['classes = [`a`, `b${y}c`, `d`]', ['a', 'd']],
+	['classes = [`a`, `a${x}`, `b${y}`]', ['a']],
 	// arrays with string concatenation
-	["classes = ['a' + 'b', 'c' + 'd']", []], // TODO BLOCK FAILING
-	["classes = ['a', 'b' + 'c', 'd']", ['a', 'd']], // TODO BLOCK FAILING
+	["classes = ['a' + 'b', 'c' + 'd']", []],
+	["classes = ['a' + 'b', 'c', 'd']", ['c', 'd']],
+	["classes = ['a', 'b' + 'c', 'd']", ['a', 'd']],
+	["classes = ['a', 'b', 'c' + 'd']", ['a', 'b']],
 	// array edge cases
 	['classes = []', []],
 	['classes = [""]', []],
