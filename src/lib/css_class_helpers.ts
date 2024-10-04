@@ -47,7 +47,16 @@ const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
 	while ((match = matcher.exec(contents)) !== null) {
 		const class_list = match[2]; // we have a fake capture group in the first regexp to satisfy the second one
 		for (const c of class_list
-			.replace(/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g, '') // omit all expressions (best-effort, not perfect especially around double quote strings in JS in Svelte expressions, but using single quotes is better)
+			.replace(
+				// omit all expressions with best-effort - it's not perfect especially
+				// around double quote strings in JS in Svelte expressions, but using single quotes is better
+				/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g,
+				// same failures:
+				// /\S*{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`|{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`)*})*}\S*/g,
+				// more failures:
+				// /\S*{(?:[^{}`'"]*|[`'"]((?:[^\\`'"]|\\.|\$\{[^}]*\})*)[`'"]|{[^{}]*})*}\S*/g,
+				'',
+			)
 			.split(/\s+/)
 			.filter(Boolean)) {
 			classes.add(c);
