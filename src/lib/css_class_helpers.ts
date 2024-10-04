@@ -39,10 +39,10 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 	{
 		matcher: /(?<!['"`])class(?:es)?\s*[=:]\s*\[([\s\S]*?)\]/g,
 		mapper: (matched: RegExpExecArray): string[] => {
-			const arrayContent = matched[1];
+			const content = matched[1];
 
 			// Match string literals only, excluding concatenated or dynamic parts
-			const string_literals = arrayContent.match(/(['"`])((?:(?!\1)[^\\]|\\.)*?)\1/g);
+			const string_literals = content.match(/(['"`])((?:(?!\1)[^\\]|\\.)*?)\1/g);
 			if (!string_literals) return [];
 
 			return (
@@ -51,7 +51,7 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 					.filter((literal) => {
 						const content = literal.slice(1, -1); // remove quotes
 						// Ignore if the array content contains concatenation ('+'), or interpolation ('${}')
-						const is_dynamic = content.includes('${') || /\s*\+\s*/.test(arrayContent);
+						const is_dynamic = content.includes('${') || /\s*\+\s*/.test(content);
 						return !is_dynamic;
 					})
 					// Remove escaped characters and trim
