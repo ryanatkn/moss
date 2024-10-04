@@ -8,11 +8,7 @@ export interface Css_Extractor {
 const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 	// `class:a`
 	{
-		// This uses `a-zA-Z-_0-9` because we're generating the classes
-		// and can therefore Moss controls the allowed characters.
-		// Turns out almost any character is allowed in CSS class names,
-		// but that makes parsing have a ton of edge cases.
-		matcher: /class:([a-zA-Z-_0-9]+)/gi,
+		matcher: /(?<!['"`])class:([^\s=]+)/gi,
 		mapper: (matched) => [matched[1]],
 	}, // initial capture group is fake just because the second regexp uses a capture group for its back reference
 
