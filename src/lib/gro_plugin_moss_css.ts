@@ -6,10 +6,10 @@ import type {Cleanup_Watch} from '@ryanatkn/gro/filer.js';
 import {Unreachable_Error} from '@ryanatkn/belt/error.js';
 import {format_file} from '@ryanatkn/gro/format_file.js';
 import type {File_Filter} from '@ryanatkn/gro/path.js';
+import {writeFileSync} from 'node:fs';
 
 import {collect_css_classes, Css_Classes} from '$lib/css_class_helpers.js';
 import {css_classes_by_name} from '$lib/css_classes.js';
-import {writeFileSync} from 'fs';
 
 export const generate_classes_css = (classes: Iterable<string>): string => {
 	let css = '';
