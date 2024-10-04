@@ -68,6 +68,8 @@ const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
 export class Css_Classes {
 	#all: Set<string> = new Set();
 
+	#all_sorted: string[] | null = null;
+
 	#by_id: Map<string, Set<string>> = new Map();
 
 	#dirty = true;
@@ -92,8 +94,14 @@ export class Css_Classes {
 		return this.#all;
 	}
 
+	get_sorted_array(): string[] {
+		if (!this.#dirty && this.#all_sorted !== null) {
+			return this.#all_sorted;
+		}
+		return (this.#all_sorted = Array.from(this.get()).sort((a, b) => a.localeCompare(b)));
+	}
+
 	#recalculate(): void {
-		console.log('RECALCULATING STYLES THIS IS EXPENSIVE');
 		this.#all.clear();
 		if (this.include_classes) {
 			for (const c of this.include_classes) {
@@ -105,5 +113,6 @@ export class Css_Classes {
 				this.#all.add(c);
 			}
 		}
+		this.#all_sorted = null;
 	}
 }

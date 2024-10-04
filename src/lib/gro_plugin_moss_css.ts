@@ -62,23 +62,10 @@ export const gro_plugin_moss_css = ({
 	};
 	const flush_gen_queue = throttle(
 		async () => {
-			// TODO BLOCK this is taken care of by the throttle function, right?
-			// hacky way to avoid concurrent `gro gen` calls
-			// if (generating) {
-			// 	regen = true;
-			// 	return;
-			// }
-			// generating = true;
-			const sorted = Array.from(css_classes.get()).sort((a, b) => a.localeCompare(b));
-			const css = generate_classes_css(sorted);
+			const css = generate_classes_css(css_classes.get_sorted_array());
 			console.log('WRITING FILE', css.length);
 			const formatted = await format_file(css, {filepath: outfile});
 			writeFileSync(outfile, formatted); // TODO BLOCK what if this was implemented using gen?
-			// generating = false;
-			// if (regen) {
-			// 	regen = false;
-			// 	void flush_gen_queue();
-			// }
 		},
 		flush_debounce_delay,
 		false,
