@@ -35,7 +35,7 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 	},
 	// arrays like `class: ['a', 'b']`, `classes = ['a', 'b']`
 	{
-		matcher: /\b(?:class|classes)\s*(?:=|:)\s*\[([\s\S]*?)\]/g,
+		matcher: /(?<!['"`])class(?:es)?\s*(?:=|:)\s*\[([\s\S]*?)\]/g,
 		mapper: (matched: RegExpExecArray): string[] => {
 			const string_literals = matched[1].match(/(['"`])((?:(?!\1)[^\\]|\\.)*)\1/g);
 			if (!string_literals) return [];
