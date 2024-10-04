@@ -54,9 +54,16 @@ const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
 	while ((match = matcher.exec(contents)) !== null) {
 		const class_list = match[2]; // Only extract the relevant class string
 		for (const c of class_list
-			// Remove all Svelte expressions and adjacent characters that are NOT separated by whitespace, e.g. `{a}b` matches nothing
 			.replace(
-				/\S*{(?:[^{}'"]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|{(?:[^{}'"]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")*})*}\S*/g,
+				// 3 failures
+				// /\S*{[^{}]*?(?:['"][^'"]*['"]|{[^{}]*?})*?}\S*/g,
+				/\S*{(?:[^{}`'"]*|[`'"]((?:[^\\`'"]|\\.|\$\{[^}]*\})*)[`'"]|{[^{}]*})*}\S*/g,
+				// 2 failures
+				// /\S*{(?:[^{}`'"]|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{[^}]*\})*`|{[^{}]*})*}\S*/g, // slightly shorter than the other
+				// 2 failures
+				// /\S*{(?:[^{}'"]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|{(?:[^{}'"]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")*})*}\S*/g,
+				// 2 failures
+				// /\S*{(?:[^{}'"]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{[^}]*\})*`|{(?:[^{}'"]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{[^}]*\})*`)*})*}\S*/g,
 				'',
 			) // omit all expressions
 			.split(/\s+/)

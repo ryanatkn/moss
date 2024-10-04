@@ -105,7 +105,7 @@ const values: Array<[contents: string, expected: string[]]> = [
 	['classes="a b{b}"', ['a']],
 	['classes="a b{b}b"', ['a']],
 	[`classes="{0} a {'b' + 'c'} d {'e'}"`, ['a', 'd']],
-	[`classes="{0} a {'b' + 'ccc\${c}cc'} d {e}e f {fn(g, h)} i"`, ['a', 'd', 'f', 'i']],
+	[`classes="{0} a {'b' + 'ccc{c}cc'} d {e}e f {fn(g, '}}')} h"`, ['a', 'd', 'f', 'h']],
 	// same as above but JS template strings
 	['classes="${a}"', []],
 	['classes="${a}a"', []],
@@ -121,7 +121,13 @@ const values: Array<[contents: string, expected: string[]]> = [
 	['classes="a b${b}"', ['a']],
 	['classes="a b${b}b"', ['a']],
 	[`classes="\${0} a \${'b' + 'c'} d \${'e'}"`, ['a', 'd']],
-	[`classes="\${0} a \${'b' + 'ccc\${c}cc'} d \${e}e f \${fn(g, h)} i"`, ['a', 'd', 'f', 'i']],
+	[`classes="\${0} a \${'b' + 'ccc\${c}cc'} d \${e}e f \${fn(g, '}}')} h"`, ['a', 'd', 'f', 'h']],
+	// more expression corner cases
+	[`classes="a {func({nested: 'object'})} b"`, ['a', 'b']],
+	[`classes="a {\`string with \"escaped\" quotes\`} b"`, ['a', 'b']], // eslint-disable-line no-useless-escape
+	['classes="a {func(\'string with {braces}\')} b"', ['a', 'b']],
+	['classes="a {func(\'unbalanced)} b"', ['a', 'b']],
+	['classes="a {`template ${with.expression}`} b"', ['a', 'b']],
 	// putting it all together
 	[
 		`foo;
