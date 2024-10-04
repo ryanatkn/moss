@@ -1,9 +1,33 @@
+// TODO BLOCK problem is text with interpolation like `class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_shroud"`
+
+/*
+
+Please rewrite the JS regexp:
+
+```ts
+/class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s]+)["'`]/gi
+```
+
+So that it matches the classes `a` and `c` in `'classes="a {b} c"'` but ignores the `{b}` and any other Svelte expressions inside curly braces `{}`. 
+
+
+*/
+
+// These use `a-zA-Z-_0-9` because we're generating the classes
+// and can therefore control the allowed characters.
+// Turns out almost any character is allowed in CSS class names,
+// but that makes parsing have a ton of edge cases.
 const CSS_CLASS_MATCHERS = [
 	// `class:a`
-	/class:([^\s={]+)/gi,
+	/class:([a-zA-Z-_0-9]+)/gi,
 
 	// `class="a"`, `classes="a"`, `classes = 'a b'`, `classes: 'a b'` with any whitespace around the `=`/`:`
-	/class(?:es)?\s*[=:]\s*["'`]([^"'`]+)["'`]/gi,
+	/class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s]+)["'`]/gi,
+	// /class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s{}]+)["'`]/gi,
+	// /class(?:es)?\s*[=:]\s*["'`]([^"'`{]*)(?:(?:\s*\{[^}]*\}\s*)+([^"'`{]*))?/gi,
+	// /class(?:es)?\s*[=:]\s*["'`]([^"'`{]*)(?:\s*\{[^}]*\}\s*[^"'`{]*)*["'`]/gi,
+	// /class(?:es)?\s*[=:]\s*["'`]((?:[a-zA-Z0-9_-]+\s*(?!{))*(?:{[^}]*})*(?:[a-zA-Z0-9_-]+\s*(?!{))*)+["'`]/gi,
+	// /class(?:es)?\s*[=:]\s*["'`]([^"'`]+)["'`]/gi,
 ];
 
 /**
@@ -27,6 +51,8 @@ const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
 	let match;
 	while ((match = matcher.exec(contents)) !== null) {
 		const class_list = match[1]; // Only extract the relevant class string
+		// TODO BLOCK probably want to first remove everything between balanced {}, then split by whitespace
+		// ensure that all of `{'a' + 'b'}` is omitted
 		for (const c of class_list.split(/\s+/).filter(Boolean)) {
 			classes.add(c);
 		}
@@ -62,6 +88,7 @@ export class Css_Classes {
 	}
 
 	#recalculate(): void {
+		console.log('RECALCULATING STYLES THIS IS EXPENSIVE');
 		this.#all.clear();
 		if (this.include_classes) {
 			for (const c of this.include_classes) {
