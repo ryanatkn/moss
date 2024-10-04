@@ -130,6 +130,7 @@ const values: Array<[contents: string, expected: string[]]> = [
 	['classes = [""]', []],
 	['classes = ["", ""]', []],
 	['classes = [,,,]', []],
+	["classes = ['a'", []],
 	['classes = ["a",,"b",,,"c",]', ['a', 'b', 'c']],
 	// nested arrays
 	['classes = [["a", "b"], "c", ["d"]]', ['c']],
