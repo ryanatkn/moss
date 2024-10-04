@@ -1,60 +1,70 @@
-// TODO BLOCK problem is text with interpolation like `class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_shroud"`
+export interface Css_Extractor {
+	matcher: RegExp;
+	mapper: (matches: RegExpExecArray) => string[];
+}
 
-/*
+const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
+	// `class:a`
+	{
+		// This uses `a-zA-Z-_0-9` because we're generating the classes
+		// and can therefore Moss controls the allowed characters.
+		// Turns out almost any character is allowed in CSS class names,
+		// but that makes parsing have a ton of edge cases.
+		matcher: /class:([a-zA-Z-_0-9]+)/gi,
+		mapper: (matches) => [matches[1]],
+	}, // initial capture group is fake just because the second regexp uses a capture group for its back reference
 
-Please rewrite the JS regexp:
+	// `class="a"`, `classes="a"`, `classes = 'a b'`, `classes: 'a b'` with any whitespace around the `=`/`:`
+	{
+		matcher: /(?<!['"`])class(?:es)?\s*[=:]\s*(["'`])([\s\S]+?)\1/gi, // omit leading quotes in case it's obviously a string, like in tests (even though tests are separately filtered by default in the plugin)
+		mapper: (matches) =>
+			matches[2]
+				.replace(
+					// TODO BLOCK technically this is only needed for the second match, restructure the code to have a function that includes the split/filter steps too, probably a `capture` helper too
+					// omit all expressions with best-effort - it's not perfect especially
+					// around double quote strings in JS in Svelte expressions, but using single quotes is better
+					/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g,
+					// same failures:
+					// /\S*{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`|{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`)*})*}\S*/g,
+					// 3 failures:
+					// /\S*{(?:[^{}`'"]*|[`'"]((?:[^\\`'"]|\\.|\$\{[^}]*\})*)[`'"]|{[^{}]*})*}\S*/g,
+					'',
+				)
+				.split(/\s+/)
+				.filter(Boolean),
+	},
+	// TODO implement `classes = ['a', 'b']`
+	{
+		matcher: /\b(?:class|classes)\s*(?:=|:)\s*\[([\s\S]*?)\]/g,
+		mapper: (matches: RegExpExecArray): string[] => {
+			const arrayContent = matches[1];
+			const stringLiterals = arrayContent.match(/(['"`])((?:(?!\1)[^\\]|\\.)*)\1/g) || [];
 
-```ts
-/class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s]+)["'`]/gi
-```
-
-So that it matches the classes `a` and `c` in `'classes="a {b} c"'` but ignores the `{b}` and any other Svelte expressions inside curly braces `{}`. 
-
-
-*/
-
-// These use `a-zA-Z-_0-9` because we're generating the classes
-// and can therefore control the allowed characters.
-// Turns out almost any character is allowed in CSS class names,
-// but that makes parsing have a ton of edge cases.
-const CSS_CLASS_MATCHERS: Array<{matcher: RegExp; mapper: (matches: RegExpExecArray) => string[]}> =
-	[
-		// `class:a`
-		{
-			matcher: /class:([a-zA-Z-_0-9]+)/gi,
-			mapper: (matches) => [matches[1]],
-		}, // initial capture group is fake just because the second regexp uses a capture group for its back reference
-
-		// `class="a"`, `classes="a"`, `classes = 'a b'`, `classes: 'a b'` with any whitespace around the `=`/`:`
-		{
-			matcher: /(?<!['"`])class(?:es)?\s*[=:]\s*(["'`])([\s\S]+?)\1/gi, // omit leading quotes in case it's obviously a string, like in tests (even though tests are separately filtered by default in the plugin)
-			mapper: (matches) =>
-				matches[2]
-					.replace(
-						// TODO BLOCK technically this is only needed for the second match, restructure the code to have a function that includes the split/filter steps too, probably a `capture` helper too
-						// omit all expressions with best-effort - it's not perfect especially
-						// around double quote strings in JS in Svelte expressions, but using single quotes is better
-						/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g,
-						// same failures:
-						// /\S*{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`|{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`)*})*}\S*/g,
-						// 3 failures:
-						// /\S*{(?:[^{}`'"]*|[`'"]((?:[^\\`'"]|\\.|\$\{[^}]*\})*)[`'"]|{[^{}]*})*}\S*/g,
-						'',
-					)
-					.split(/\s+/)
-					.filter(Boolean),
+			return stringLiterals
+				.map((literal) => {
+					// Remove quotes and handle escaped quotes
+					return literal
+						.slice(1, -1)
+						.replace(/\\(['"`])/g, '$1')
+						.trim();
+				})
+				.filter(Boolean);
 		},
-	];
+	},
+];
 
 /**
  * Returns a Set of CSS classes from a string of HTML/Svelte/JS/TS content.
  * Handles class attributes, directives, and various forms of CSS class declarations.
  */
-export const collect_css_classes = (contents: string): Set<string> => {
+export const collect_css_classes = (
+	contents: string,
+	extractors: Css_Extractor[] = CSS_CLASS_EXTRACTORS,
+): Set<string> => {
 	const all_classes: Set<string> = new Set();
 
-	for (const {matcher, mapper} of CSS_CLASS_MATCHERS) {
-		for (const c of extract_classes(contents, matcher, mapper)) {
+	for (const extractor of extractors) {
+		for (const c of extract_classes(contents, extractor)) {
 			all_classes.add(c);
 		}
 	}
@@ -62,11 +72,7 @@ export const collect_css_classes = (contents: string): Set<string> => {
 	return all_classes;
 };
 
-const extract_classes = (
-	contents: string,
-	matcher: RegExp,
-	mapper: (matches: RegExpExecArray) => string[],
-): Set<string> => {
+const extract_classes = (contents: string, {matcher, mapper}: Css_Extractor): Set<string> => {
 	const classes: Set<string> = new Set();
 	let matched: RegExpExecArray | null;
 	while ((matched = matcher.exec(contents)) !== null) {

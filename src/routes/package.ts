@@ -98,6 +98,7 @@ export const src_json = {
 		'./css_class_helpers.js': {
 			path: 'css_class_helpers.ts',
 			declarations: [
+				{name: 'Css_Extractor', kind: 'type'},
 				{name: 'collect_css_classes', kind: 'function'},
 				{name: 'Css_Classes', kind: 'class'},
 			],
