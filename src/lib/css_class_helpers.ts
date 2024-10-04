@@ -19,10 +19,12 @@ So that it matches the classes `a` and `c` in `'classes="a {b} c"'` but ignores 
 // but that makes parsing have a ton of edge cases.
 const CSS_CLASS_MATCHERS = [
 	// `class:a`
-	/class:([a-zA-Z-_0-9]+)/gi,
+	/(class):([a-zA-Z-_0-9]+)/gi, // initial capture group is fake just because the second regexp uses a capture group for its back reference
 
 	// `class="a"`, `classes="a"`, `classes = 'a b'`, `classes: 'a b'` with any whitespace around the `=`/`:`
-	/class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s]+)["'`]/gi,
+	// /class(?:es)?\s*[=:]\s*["'`](.+)["'`]/gi
+	/class(?:es)?\s*[=:]\s*(["'`])([\s\S]+?)\1/gi,
+	// /class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s]+)["'`]/gi,
 	// /class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s{}]+)["'`]/gi,
 	// /class(?:es)?\s*[=:]\s*["'`]([^"'`{]*)(?:(?:\s*\{[^}]*\}\s*)+([^"'`{]*))?/gi,
 	// /class(?:es)?\s*[=:]\s*["'`]([^"'`{]*)(?:\s*\{[^}]*\}\s*[^"'`{]*)*["'`]/gi,
@@ -50,10 +52,15 @@ const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
 	const classes: Set<string> = new Set();
 	let match;
 	while ((match = matcher.exec(contents)) !== null) {
-		const class_list = match[1]; // Only extract the relevant class string
-		// TODO BLOCK probably want to first remove everything between balanced {}, then split by whitespace
-		// ensure that all of `{'a' + 'b'}` is omitted
-		for (const c of class_list.split(/\s+/).filter(Boolean)) {
+		const class_list = match[2]; // Only extract the relevant class string
+		for (const c of class_list
+			// Remove all Svelte expressions and adjacent characters that are NOT separated by whitespace, e.g. `{a}b` matches nothing
+			.replace(
+				/\S*{(?:[^{}'"]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|{(?:[^{}'"]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")*})*}\S*/g,
+				'',
+			) // omit all expressions
+			.split(/\s+/)
+			.filter(Boolean)) {
 			classes.add(c);
 		}
 	}

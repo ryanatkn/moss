@@ -91,16 +91,38 @@ const values: Array<[contents: string, expected: string[]]> = [
 	["_classes: 'a b c'", ['a', 'b', 'c']],
 	["dcLaSses: 'a b c'", ['a', 'b', 'c']],
 	// ignore optional Svelte expressions
+	['classes="{a}"', []],
+	['classes="{a}a"', []],
+	['classes="a{a}"', []],
+	['classes="a{a}a"', []],
 	['classes="a {b} c"', ['a', 'c']],
+	['classes="a {b}b c"', ['a', 'c']],
+	['classes="a b{b} c"', ['a', 'c']],
+	['classes="{b}b c"', ['c']],
+	['classes="b{b} c"', ['c']],
+	['classes="b{b}b c"', ['c']],
+	['classes="a {b}b"', ['a']],
+	['classes="a b{b}"', ['a']],
+	['classes="a b{b}b"', ['a']],
 	[`classes="{0} a {'b' + 'c'} d {'e'}"`, ['a', 'd']],
-	// TODO BLOCK unify regexp so it doesn't care if it's a `=` or `:`, handles any whitespace and quotes? or maybe enforce formatted code and do several more targetted regexps?
-	// TODO BLOCK `class: 'a'` and `classes: 'a'` and `Xclasses: 'a'` object properties
-	// TODO BLOCK support array of strings?
+	[`classes="{0} a {'b' + 'ccc\${c}cc'} d {e}e f {fn(g, h)} i"`, ['a', 'd', 'f', 'i']],
+	// putting it all together
+	[
+		`foo;
+const classes = 'a b';
+const more_classes = 'c d';
+<C class="e f" classes="g {g2} h" />
+{classes: 'i j', class: 'k l'}
+bar;
+		`,
+		['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'],
+	],
 ];
 
 for (const [contents, expected] of values) {
 	test(`collects CSS classes from a string of Svelte or TS with expression \`${contents}\``, () => {
 		const found = collect_css_classes(contents);
+		console.log(`found`, found);
 		assert.equal(
 			Array.from(found),
 			expected,
