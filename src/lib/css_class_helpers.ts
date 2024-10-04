@@ -22,7 +22,7 @@ const CSS_CLASS_MATCHERS = [
 	/(class):([a-zA-Z-_0-9]+)/gi, // initial capture group is fake just because the second regexp uses a capture group for its back reference
 
 	// `class="a"`, `classes="a"`, `classes = 'a b'`, `classes: 'a b'` with any whitespace around the `=`/`:`
-	/class(?:es)?\s*[=:]\s*(["'`])([\s\S]+?)\1/gi,
+	/(?<!['"`])class(?:es)?\s*[=:]\s*(["'`])([\s\S]+?)\1/gi,
 ];
 
 /**
