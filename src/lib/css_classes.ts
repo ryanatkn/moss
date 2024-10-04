@@ -1221,4 +1221,12 @@ layout
 	row_gap_xl13: {value: 'row-gap: var(--space_xl13);'},
 	row_gap_xl14: {value: 'row-gap: var(--space_xl14);'},
 	row_gap_xl15: {value: 'row-gap: var(--space_xl15);'},
+	pixelated: {
+		value: `
+			image-rendering: -webkit-optimize-contrast; /* Safari */
+			image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+			image-rendering: pixelated; /* in case crisp-edges isn't supported */
+			image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
+		`,
+	},
 };

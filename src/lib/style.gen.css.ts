@@ -1,6 +1,13 @@
 import type {Gen} from '@ryanatkn/gro';
 import {readFile} from 'node:fs/promises';
 
+// TODO BLOCK ensure this works with the watcher
+// TODO BLOCK Module import ./src/lib/style.gen.css.ts failed from input ./src/lib/style.gen.css.ts: Error: ENOENT: no such file or directory, open '/home/desk/dev/moss/src/lib/src/lib/style_reset.css.ts'
+// TODO BLOCK needs to handle ?raw in the watcher (just strip anything after `?`?)
+import style_reset from './src/lib/style_reset.css?raw';
+import style_components from './src/lib/style_components.css?raw';
+import style_animations from './src/lib/style_animations.css?raw';
+
 /**
  * Concatenates the `.css` files into `style.css` as a convenience.
  */
@@ -11,11 +18,11 @@ export const gen: Gen = async ({origin_path}) => {
 	// and some selectors in previous files may need to lower specificity with `:where`.
 
 	const sheets = await Promise.all([
-		concat_stylesheet('./src/lib/style_reset.css'),
+		concat_stylesheet('./src/lib/style_reset.css', style_reset),
 
-		concat_stylesheet('./src/lib/style_components.css'),
+		concat_stylesheet('./src/lib/style_components.css', style_components),
 
-		concat_stylesheet('./src/lib/style_animations.css'),
+		concat_stylesheet('./src/lib/style_animations.css', style_animations),
 	]);
 
 	return `${banner}
@@ -26,7 +33,7 @@ ${sheets.join('\n\n')}
   `;
 };
 
-const concat_stylesheet = async (path: string): Promise<string> => {
+const concat_stylesheet = async (path: string, text: string): Promise<string> => {
 	const contents = await readFile(path, 'utf8');
 
 	return `
