@@ -124,10 +124,52 @@ const values: Array<[contents: string, expected: string[]]> = [
 	[`classes="\${0} a \${'b' + 'ccc\${c}cc'} d \${e}e f \${fn(g, '}}')} h"`, ['a', 'd', 'f', 'h']],
 	// more expression corner cases
 	[`classes="a {func({nested: 'object'})} b"`, ['a', 'b']],
-	[`classes="a {\`string with \"escaped\" quotes\`} b"`, ['a', 'b']], // eslint-disable-line no-useless-escape
+	[`classes="a {\`string with \'escaped\' quotes\`} b"`, ['a', 'b']], // eslint-disable-line no-useless-escape
 	['classes="a {func(\'string with {braces}\')} b"', ['a', 'b']],
 	['classes="a {func(\'unbalanced)} b"', ['a', 'b']],
 	['classes="a {`template ${with.expression}`} b"', ['a', 'b']],
+	// nested objects
+	[`classes="a {func({nested: 'object'})} b"`, ['a', 'b']],
+	[`classes="a {func({nested: {deeper: 'object'}})} b"`, ['a', 'b']],
+	[`classes="a {obj.prop} b"`, ['a', 'b']],
+	[`classes="a {obj['prop']} b"`, ['a', 'b']],
+	[`classes="a {obj[\`prop\`]} b"`, ['a', 'b']],
+	// escaped quotes
+	[`classes="a {'string with \\'escaped\\' quotes'} b"`, ['a', 'b']],
+	// strings with braces
+	['classes="a {func(\'string with {braces}\')} b"', ['a', 'b']],
+	['classes="a {func(`string with {braces}`)} b"', ['a', 'b']],
+	// unbalanced quotes (error cases, but should still be handled)
+	['classes="a {func(\'unbalanced)} b"', ['a', 'b']],
+	['classes="a {func(`unbalanced)} b"', ['a', 'b']],
+	// template literals
+	['classes="a {`template ${with.expression}`} b"', ['a', 'b']],
+	['classes="a {`template ${with.nested.expression}`} b"', ['a', 'b']],
+	['classes="a {`template ${1 + 2}`} b"', ['a', 'b']],
+	// multiple expressions
+	[`classes="a {expr1} b {expr2} c"`, ['a', 'b', 'c']],
+	[`classes="{expr1} a {expr2} b {expr3} c"`, ['a', 'b', 'c']],
+	// edge cases
+	[`classes="a {/* comment */} b"`, ['a', 'b']],
+	[`classes="a {// comment\\n} b"`, ['a', 'b']],
+	[
+		`classes="a {\`multi
+	line
+	template\`} b"`,
+		['a', 'b'],
+	],
+	[`classes="a {10 > 5 ? 'greater' : 'lesser'} b"`, ['a', 'b']],
+	[`classes="a {arr.map(item => item.name).join(' ')} b"`, ['a', 'b']],
+	// complex nested structures
+	[`classes="a {func({nested: ['array', 'with', {object: 'inside'}]})} b"`, ['a', 'b']],
+	[`classes="a {\`template ${{key: 'value'}}\`} b"`, ['a', 'b']], // eslint-disable-line @typescript-eslint/no-base-to-string
+	[`classes="a {\`outer ${'nested'} template\`} b"`, ['a', 'b']], // eslint-disable-line @typescript-eslint/no-unnecessary-template-expression
+	// empty expressions
+	[`classes="a {} b"`, ['a', 'b']],
+	[`classes="{} a {} b {}"`, ['a', 'b']],
+	// expressions at start/end
+	[`classes="{expr} a b"`, ['a', 'b']],
+	[`classes="a b {expr}"`, ['a', 'b']],
 	// putting it all together
 	[
 		`foo;
@@ -144,7 +186,6 @@ bar;
 for (const [contents, expected] of values) {
 	test(`collects CSS classes from a string of Svelte or TS with expression \`${contents}\``, () => {
 		const found = collect_css_classes(contents);
-		console.log(`found`, found);
 		assert.equal(
 			Array.from(found),
 			expected,
