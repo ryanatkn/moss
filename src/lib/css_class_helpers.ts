@@ -22,14 +22,7 @@ const CSS_CLASS_MATCHERS = [
 	/(class):([a-zA-Z-_0-9]+)/gi, // initial capture group is fake just because the second regexp uses a capture group for its back reference
 
 	// `class="a"`, `classes="a"`, `classes = 'a b'`, `classes: 'a b'` with any whitespace around the `=`/`:`
-	// /class(?:es)?\s*[=:]\s*["'`](.+)["'`]/gi
 	/class(?:es)?\s*[=:]\s*(["'`])([\s\S]+?)\1/gi,
-	// /class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s]+)["'`]/gi,
-	// /class(?:es)?\s*[=:]\s*["'`]([a-zA-Z-_0-9\s{}]+)["'`]/gi,
-	// /class(?:es)?\s*[=:]\s*["'`]([^"'`{]*)(?:(?:\s*\{[^}]*\}\s*)+([^"'`{]*))?/gi,
-	// /class(?:es)?\s*[=:]\s*["'`]([^"'`{]*)(?:\s*\{[^}]*\}\s*[^"'`{]*)*["'`]/gi,
-	// /class(?:es)?\s*[=:]\s*["'`]((?:[a-zA-Z0-9_-]+\s*(?!{))*(?:{[^}]*})*(?:[a-zA-Z0-9_-]+\s*(?!{))*)+["'`]/gi,
-	// /class(?:es)?\s*[=:]\s*["'`]([^"'`]+)["'`]/gi,
 ];
 
 /**
@@ -52,16 +45,9 @@ const extract_classes = (contents: string, matcher: RegExp): Set<string> => {
 	const classes: Set<string> = new Set();
 	let match;
 	while ((match = matcher.exec(contents)) !== null) {
-		const class_list = match[2]; // Only extract the relevant class string
+		const class_list = match[2]; // we have a fake capture group in the first regexp to satisfy the second one
 		for (const c of class_list
-			.replace(
-				// 9 failures
-				/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g,
-				// /\S*{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`|{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`)*})*}\S*/g,
-				// 12 failures
-				// /\S*{(?:[^{}`'"]*|[`'"]((?:[^\\`'"]|\\.|\$\{[^}]*\})*)[`'"]|{[^{}]*})*}\S*/g,
-				'',
-			) // omit all expressions
+			.replace(/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g, '') // omit all expressions (best-effort, not perfect especially around double quote strings in JS in Svelte expressions, but using single quotes is better)
 			.split(/\s+/)
 			.filter(Boolean)) {
 			classes.add(c);
