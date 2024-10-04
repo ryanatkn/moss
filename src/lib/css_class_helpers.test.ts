@@ -122,10 +122,11 @@ const values: Array<[contents: string, expected: string[]]> = [
 	['classes="a b${b}b"', ['a']],
 	[`classes="\${0} a \${'b' + 'c'} d \${'e'}"`, ['a', 'd']],
 	[`classes="\${0} a \${'b' + 'ccc\${c}cc'} d \${e}e f \${fn(g, '}}')} h"`, ['a', 'd', 'f', 'h']],
-	// more expression corner cases
+	// unclosed quotes
 	[`classes="a`, []],
 	[`classes='a`, []],
 	[`classes="a'`, []],
+	// more expression corner cases
 	[`classes="a {func({nested: 'object'})} b"`, ['a', 'b']],
 	[`classes="a {\`string with \'escaped\' quotes\`} b"`, ['a', 'b']], // eslint-disable-line no-useless-escape
 	['classes="a {func(\'string with {braces}\')} b"', ['a', 'b']],
