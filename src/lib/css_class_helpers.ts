@@ -22,7 +22,6 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 		mapper: (matched) =>
 			matched[2]
 				.replace(
-					// TODO BLOCK technically this is only needed for the second match, restructure the code to have a function that includes the split/filter steps too, probably a `capture` helper too
 					// omit all expressions with best-effort - it's not perfect especially
 					// around double quote strings in JS in Svelte expressions, but using single quotes is better
 					/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g,
@@ -35,9 +34,9 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 				.split(/\s+/)
 				.filter(Boolean),
 	},
-	// arrays like `class: ['a', 'b']`, `classes = ['a', 'b']`
+	// arrays like `class: ['a', 'b']`, `classes = ['a', 'b']`, `classes={['a', 'b']`
 	{
-		matcher: /(?<!['"`])class(?:es)?\s*[=:]\s*\[([\s\S]*?)\]/g,
+		matcher: /(?<!['"`])class(?:es)?\s*[=:]\{?\s*\[([\s\S]*?)\]/g,
 		mapper: (matched: RegExpExecArray): string[] => {
 			const content = matched[1];
 			const items = content.split(',').map((item) => item.trim());
