@@ -136,8 +136,8 @@ const values: Array<[contents: string, expected: string[]]> = [
 	["classes = ['a'", []],
 	['classes = ["a",,"b",,,"c",]', ['a', 'b', 'c']],
 	// nested arrays
-	['classes = [["a", "b"], "c", ["d"]]', ['c']], // TODO BLOCK FAILING
-	['classes = ["a", ["b", "c"], "d"]', ['a', 'd']], // TODO BLOCK FAILING
+	['classes = [["a", "b"], "c", ["d"]]', []], // TODO @many ideally fix instead of bailing, but maybe we need a real JS parser?
+	['classes = ["a", ["b", "c"], "d"]', []], // TODO @many ideally fix instead of bailing, but maybe we need a real JS parser?
 	// arrays in component prop
 	['<Component classes={["a", "b", "c"]} />', ['a', 'b', 'c']],
 	['<Component class={["a", "b", "c"]} />', ['a', 'b', 'c']],

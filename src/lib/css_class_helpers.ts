@@ -39,6 +39,7 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 		matcher: /(?<!['"`])class(?:es)?\s*[=:]\{?\s*\[([\s\S]*?)\]/g,
 		mapper: (matched: RegExpExecArray): string[] => {
 			const content = matched[1];
+			if (content.includes('[')) return []; // TODO @many ideally fix instead of bailing, but maybe we need a real JS parser?
 			const items = content.split(',').map((item) => item.trim());
 
 			return items
