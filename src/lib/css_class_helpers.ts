@@ -1,6 +1,6 @@
 export interface Css_Extractor {
 	matcher: RegExp;
-	mapper: (matches: RegExpExecArray) => string[];
+	mapper: (matched: RegExpExecArray) => string[];
 }
 
 const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
@@ -11,14 +11,14 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 		// Turns out almost any character is allowed in CSS class names,
 		// but that makes parsing have a ton of edge cases.
 		matcher: /class:([a-zA-Z-_0-9]+)/gi,
-		mapper: (matches) => [matches[1]],
+		mapper: (matched) => [matched[1]],
 	}, // initial capture group is fake just because the second regexp uses a capture group for its back reference
 
 	// `class="a"`, `classes="a"`, `classes = 'a b'`, `classes: 'a b'` with any whitespace around the `=`/`:`
 	{
 		matcher: /(?<!['"`])class(?:es)?\s*[=:]\s*(["'`])([\s\S]+?)\1/gi, // omit leading quotes in case it's obviously a string, like in tests (even though tests are separately filtered by default in the plugin)
-		mapper: (matches) =>
-			matches[2]
+		mapper: (matched) =>
+			matched[2]
 				.replace(
 					// TODO BLOCK technically this is only needed for the second match, restructure the code to have a function that includes the split/filter steps too, probably a `capture` helper too
 					// omit all expressions with best-effort - it's not perfect especially
@@ -33,22 +33,23 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 				.split(/\s+/)
 				.filter(Boolean),
 	},
-	// TODO implement `classes = ['a', 'b']`
+	// arrays like `class: ['a', 'b']`, `classes = ['a', 'b']`
 	{
 		matcher: /\b(?:class|classes)\s*(?:=|:)\s*\[([\s\S]*?)\]/g,
-		mapper: (matches: RegExpExecArray): string[] => {
-			const arrayContent = matches[1];
-			const stringLiterals = arrayContent.match(/(['"`])((?:(?!\1)[^\\]|\\.)*)\1/g) || [];
-
-			return stringLiterals
-				.map((literal) => {
-					// Remove quotes and handle escaped quotes
-					return literal
-						.slice(1, -1)
-						.replace(/\\(['"`])/g, '$1')
-						.trim();
-				})
-				.filter(Boolean);
+		mapper: (matched: RegExpExecArray): string[] => {
+			const string_literals = matched[1].match(/(['"`])((?:(?!\1)[^\\]|\\.)*)\1/g);
+			if (!string_literals) return [];
+			return (
+				string_literals
+					// remove quotes and handle escaped quotes
+					.map((literal) =>
+						literal
+							.slice(1, -1)
+							.replace(/\\(['"`])/g, '$1')
+							.trim(),
+					)
+					.filter(Boolean)
+			);
 		},
 	},
 ];

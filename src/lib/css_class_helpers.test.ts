@@ -72,6 +72,71 @@ const values: Array<[contents: string, expected: string[]]> = [
 	["classes = [a, b, 'c']", ['c']],
 	["classes = ['a', b, 'c']", ['a', 'c']],
 	["classes = [a, 'b', 'c']", ['b', 'c']],
+	["classes: ['a', 'b', 'c']", ['a', 'b', 'c']],
+	["classes:['a', 'b', 'c']", ['a', 'b', 'c']],
+	["classes:[\n'a', 'b', 'c']", ['a', 'b', 'c']],
+	// multi-line array declarations
+	[
+		`classes = [
+		 'a',
+		 'b',
+		 'c'
+	 ]`,
+		['a', 'b', 'c'],
+	],
+	[
+		`classes = [
+		 "a",
+		 "b",
+		 "c"
+	 ]`,
+		['a', 'b', 'c'],
+	],
+	// arrays with extra whitespace
+	['classes = [ "a" , "b" , "c" ]', ['a', 'b', 'c']],
+	['classes = [\n  "a",\n  "b",\n  "c"\n]', ['a', 'b', 'c']],
+	// arrays with comments
+	[
+		`classes = [
+		 'a', // first class
+		 'b', // second class
+		 'c'  // third class
+	 ]`,
+		['a', 'b', 'c'],
+	],
+	[
+		`classes = [
+		 'a', /* first class */
+		 'b', /* second class */
+		 'c'  /* third class */
+	 ]`,
+		['a', 'b', 'c'],
+	],
+	// arrays with mixed valid and invalid elements
+	["classes = ['a', b, 'c']", ['a', 'c']],
+	["classes = [a, 'b', c, 'd']", ['b', 'd']],
+	["classes = ['a', 2, 'c', true, 'd']", ['a', 'c', 'd']],
+	["Sclasses = ['a', 2, 'c', true, 'd']", ['a', 'c', 'd']],
+	// arrays with escaped quotes
+	[`classes = ['a\\'s', "b\\"s", \`c\\\`s\`]`, ["a's", 'b"s', 'c`s']],
+	// arrays with template literals containing expressions
+	['classes = [`a${x}`, `b${y}`, `c`]', ['c']],
+	['classes = [`a`, `b${y}c`, `d`]', ['a', 'd']],
+	// arrays with string concatenation
+	["classes = ['a' + 'b', 'c' + 'd']", []],
+	["classes = ['a', 'b' + 'c', 'd']", ['a', 'd']],
+	// array edge cases
+	['classes = []', []],
+	['classes = [""]', []],
+	['classes = ["", ""]', []],
+	['classes = [,,,]', []],
+	['classes = ["a",,"b",,,"c",]', ['a', 'b', 'c']],
+	// nested arrays
+	['classes = [["a", "b"], "c", ["d"]]', ['c']],
+	['classes = ["a", ["b", "c"], "d"]', ['a', 'd']],
+	// arrays in component prop
+	['<Component classes={["a", "b", "c"]} />', ['a', 'b', 'c']],
+	['<Component class={["a", "b", "c"]} />', ['a', 'b', 'c']],
 	// `classes:` object property
 	['classes: "a"', ['a']],
 	['classes: "a b"', ['a', 'b']],
