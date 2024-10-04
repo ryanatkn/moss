@@ -139,8 +139,10 @@ const values: Array<[contents: string, expected: string[]]> = [
 	['classes = [["a", "b"], "c", ["d"]]', ['c']], // TODO BLOCK FAILING
 	['classes = ["a", ["b", "c"], "d"]', ['a', 'd']], // TODO BLOCK FAILING
 	// arrays in component prop
-	['<Component classes={["a", "b", "c"]} />', ['a', 'b', 'c']], // TODO BLOCK FAILING
-	['<Component class={["a", "b", "c"]} />', ['a', 'b', 'c']], // TODO BLOCK FAILING
+	['<Component classes={["a", "b", "c"]} />', ['a', 'b', 'c']],
+	['<Component class={["a", "b", "c"]} />', ['a', 'b', 'c']],
+	['<Component classes={ \n["a", "b", "c"]} />', ['a', 'b', 'c']],
+	['<Component class={ \n["a", "b", "c"]} />', ['a', 'b', 'c']],
 	// `classes:` object property
 	['classes: "a"', ['a']],
 	['classes: "a b"', ['a', 'b']],
