@@ -120,11 +120,11 @@ const values: Array<[contents: string, expected: string[]]> = [
 	// arrays with escaped quotes
 	[`classes = ['a\\'s', "b\\"s", \`c\\\`s\`]`, ["a's", 'b"s', 'c`s']],
 	// arrays with template literals containing expressions
-	['classes = [`a${x}`, `b${y}`, `c`]', ['c']],
-	['classes = [`a`, `b${y}c`, `d`]', ['a', 'd']],
+	['classes = [`a${x}`, `b${y}`, `c`]', ['c']], // TODO BLOCK FAILING
+	['classes = [`a`, `b${y}c`, `d`]', ['a', 'd']], // TODO BLOCK FAILING
 	// arrays with string concatenation
-	["classes = ['a' + 'b', 'c' + 'd']", []],
-	["classes = ['a', 'b' + 'c', 'd']", ['a', 'd']],
+	["classes = ['a' + 'b', 'c' + 'd']", []], // TODO BLOCK FAILING
+	["classes = ['a', 'b' + 'c', 'd']", ['a', 'd']], // TODO BLOCK FAILING
 	// array edge cases
 	['classes = []', []],
 	['classes = [""]', []],
@@ -133,11 +133,11 @@ const values: Array<[contents: string, expected: string[]]> = [
 	["classes = ['a'", []],
 	['classes = ["a",,"b",,,"c",]', ['a', 'b', 'c']],
 	// nested arrays
-	['classes = [["a", "b"], "c", ["d"]]', ['c']],
-	['classes = ["a", ["b", "c"], "d"]', ['a', 'd']],
+	['classes = [["a", "b"], "c", ["d"]]', ['c']], // TODO BLOCK FAILING
+	['classes = ["a", ["b", "c"], "d"]', ['a', 'd']], // TODO BLOCK FAILING
 	// arrays in component prop
-	['<Component classes={["a", "b", "c"]} />', ['a', 'b', 'c']],
-	['<Component class={["a", "b", "c"]} />', ['a', 'b', 'c']],
+	['<Component classes={["a", "b", "c"]} />', ['a', 'b', 'c']], // TODO BLOCK FAILING
+	['<Component class={["a", "b", "c"]} />', ['a', 'b', 'c']], // TODO BLOCK FAILING
 	// `classes:` object property
 	['classes: "a"', ['a']],
 	['classes: "a b"', ['a', 'b']],
