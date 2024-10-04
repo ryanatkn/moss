@@ -5,6 +5,7 @@ import {throttle} from '@ryanatkn/gro/throttle.js';
 import type {Cleanup_Watch} from '@ryanatkn/gro/filer.js';
 import {Unreachable_Error} from '@ryanatkn/belt/error.js';
 import {format_file} from '@ryanatkn/gro/format_file.js';
+import type {File_Filter} from '@ryanatkn/gro/path.js';
 
 import {collect_css_classes, Css_Classes} from '$lib/css_class_helpers.js';
 import {css_classes_by_name} from '$lib/css_classes.js';
@@ -35,12 +36,14 @@ export interface Task_Args extends Args {
 export interface Options {
 	include_classes?: string[] | Set<string> | null;
 	outfile?: string;
+	filter_file?: File_Filter | null;
 	flush_debounce_delay?: number;
 }
 
 export const gro_plugin_moss_css = ({
 	include_classes = null,
 	outfile = 'src/routes/moss.css', // TODO BLOCK what about multiple files using file filters to check where to collect them?
+	filter_file = null, //(p) => !p.includes('.test.'),
 	flush_debounce_delay = FLUSH_DEBOUNCE_DELAY,
 }: Options = EMPTY_OBJECT): Plugin => {
 	const css_classes = new Css_Classes(
@@ -89,6 +92,9 @@ export const gro_plugin_moss_css = ({
 			// When a file builds, check it and its tree of dependents
 			// for any `.gen.` files that need to run.
 			cleanup = await filer.watch((change, source_file) => {
+				if (filter_file && !filter_file(source_file.id)) {
+					return;
+				}
 				console.log(`change, source_file.id`, change.type, source_file.id);
 				switch (change.type) {
 					case 'add':
