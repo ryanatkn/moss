@@ -106,6 +106,22 @@ const values: Array<[contents: string, expected: string[]]> = [
 	['classes="a b{b}b"', ['a']],
 	[`classes="{0} a {'b' + 'c'} d {'e'}"`, ['a', 'd']],
 	[`classes="{0} a {'b' + 'ccc\${c}cc'} d {e}e f {fn(g, h)} i"`, ['a', 'd', 'f', 'i']],
+	// same as above but JS template strings
+	['classes="${a}"', []],
+	['classes="${a}a"', []],
+	['classes="a${a}"', []],
+	['classes="a${a}a"', []],
+	['classes="a ${b} c"', ['a', 'c']],
+	['classes="a ${b}b c"', ['a', 'c']],
+	['classes="a b${b} c"', ['a', 'c']],
+	['classes="${b}b c"', ['c']],
+	['classes="b${b} c"', ['c']],
+	['classes="b${b}b c"', ['c']],
+	['classes="a ${b}b"', ['a']],
+	['classes="a b${b}"', ['a']],
+	['classes="a b${b}b"', ['a']],
+	[`classes="\${0} a \${'b' + 'c'} d \${'e'}"`, ['a', 'd']],
+	[`classes="\${0} a \${'b' + 'ccc\${c}cc'} d \${e}e f \${fn(g, h)} i"`, ['a', 'd', 'f', 'i']],
 	// putting it all together
 	[
 		`foo;
