@@ -1,4 +1,4 @@
-// TODO maybe just use the Oxc parser?
+// TODO maybe just use the Oxc parser instead of this regexp madness?
 
 export interface Css_Extractor {
 	matcher: RegExp;
