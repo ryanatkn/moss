@@ -40,7 +40,7 @@ export interface Options {
 	flush_debounce_delay?: number;
 }
 
-export const gro_plugin_moss_css = ({
+export const gro_plugin_moss = ({
 	include_classes = null,
 	outfile = 'src/routes/moss.css', // TODO maybe support multiple files using file filters to check where to collect them?
 	filter_file = (p) => !p.includes('.test.') && !p.includes('/test/'),

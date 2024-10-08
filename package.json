@@ -91,9 +91,9 @@
       "types": "./dist/css_classes.d.ts",
       "default": "./dist/css_classes.js"
     },
-    "./gro_plugin_moss_css.js": {
-      "types": "./dist/gro_plugin_moss_css.d.ts",
-      "default": "./dist/gro_plugin_moss_css.js"
+    "./gro_plugin_moss.js": {
+      "types": "./dist/gro_plugin_moss.d.ts",
+      "default": "./dist/gro_plugin_moss.js"
     },
     "./style_animations.css": {
       "default": "./dist/style_animations.css"
