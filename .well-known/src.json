@@ -1,39 +1,73 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.16.1",
+  "version": "0.17.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
       "declarations": []
     },
-    "./style_animations.css": {
-      "path": "style_animations.css",
-      "declarations": []
+    "./css_class_helpers.js": {
+      "path": "css_class_helpers.ts",
+      "declarations": [
+        {
+          "name": "Css_Extractor",
+          "kind": "type"
+        },
+        {
+          "name": "collect_css_classes",
+          "kind": "function"
+        },
+        {
+          "name": "Css_Classes",
+          "kind": "class"
+        }
+      ]
     },
-    "./style_components.css": {
-      "path": "style_components.css",
-      "declarations": []
+    "./css_classes.js": {
+      "path": "css_classes.ts",
+      "declarations": [
+        {
+          "name": "Css_Class_Declaration",
+          "kind": "type"
+        },
+        {
+          "name": "Css_Class_Declaration_Item",
+          "kind": "type"
+        },
+        {
+          "name": "Css_Class_Declaration_Group",
+          "kind": "type"
+        },
+        {
+          "name": "css_classes_by_name",
+          "kind": "variable"
+        }
+      ]
     },
-    "./style_reset.css": {
-      "path": "style_reset.css",
-      "declarations": []
-    },
-    "./style_utilities.css": {
-      "path": "style_utilities.css",
-      "declarations": []
+    "./gro_plugin_moss.js": {
+      "path": "gro_plugin_moss.ts",
+      "declarations": [
+        {
+          "name": "generate_classes_css",
+          "kind": "function"
+        },
+        {
+          "name": "Task_Args",
+          "kind": "type"
+        },
+        {
+          "name": "Options",
+          "kind": "type"
+        },
+        {
+          "name": "gro_plugin_moss",
+          "kind": "function"
+        }
+      ]
     },
     "./style.css": {
       "path": "style.css",
       "declarations": []
-    },
-    "./style.gen.css.js": {
-      "path": "style.gen.css.ts",
-      "declarations": [
-        {
-          "name": "gen",
-          "kind": "variable"
-        }
-      ]
     },
     "./theme.css": {
       "path": "theme.css",
