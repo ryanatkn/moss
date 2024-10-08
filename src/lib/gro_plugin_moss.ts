@@ -54,9 +54,10 @@ export const gro_plugin_moss = ({
 		Array.isArray(include_classes) ? new Set(include_classes) : include_classes,
 	);
 
+	let previous_output: string | undefined;
+
 	let flushing_timeout: NodeJS.Timeout | undefined;
 	const queue_gen = () => {
-		console.log(`queue_gen`);
 		if (flushing_timeout === undefined) {
 			flushing_timeout = setTimeout(() => {
 				flushing_timeout = undefined;
@@ -67,9 +68,11 @@ export const gro_plugin_moss = ({
 	const flush_gen_queue = throttle(
 		async () => {
 			const css = generate_classes_css(css_classes.get_sorted_array());
-			console.log('WRITING FILE', css.length);
-			const formatted = await format_file(css, {filepath: outfile});
-			writeFileSync(outfile, formatted); // TODO BLOCK what if this was implemented using gen?
+			const output = await format_file(css, {filepath: outfile});
+			// TODO think about using gen to implement this, would have some nice benefits like automatic change detection
+			if (output === previous_output) return;
+			previous_output = output;
+			writeFileSync(outfile, output);
 		},
 		flush_debounce_delay,
 		false,
@@ -86,13 +89,11 @@ export const gro_plugin_moss = ({
 				if (filter_file && !filter_file(source_file.id)) {
 					return;
 				}
-				console.log(`change, source_file.id`, change.type, source_file.id);
 				switch (change.type) {
 					case 'add':
 					case 'update': {
 						if (source_file.contents !== null) {
 							const classes = collect_css_classes(source_file.contents);
-							console.log(`COLLECTED classes`, classes);
 							css_classes.add(source_file.id, classes);
 							queue_gen();
 						}
@@ -106,7 +107,6 @@ export const gro_plugin_moss = ({
 						throw new Unreachable_Error(change.type);
 				}
 			});
-			console.log('inited'); // TODO BLOCK should this re-enable generation now?
 			queue_gen();
 		},
 		teardown: async () => {
