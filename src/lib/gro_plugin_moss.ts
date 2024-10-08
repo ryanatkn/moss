@@ -1,7 +1,7 @@
 import {EMPTY_OBJECT} from '@ryanatkn/belt/object.js';
 import type {Plugin} from '@ryanatkn/gro/plugin.js';
 import type {Args} from '@ryanatkn/gro/args.js';
-import {throttle} from '@ryanatkn/gro/throttle.js';
+import {throttle} from '@ryanatkn/belt/throttle.js';
 import type {Cleanup_Watch} from '@ryanatkn/gro/filer.js';
 import {Unreachable_Error} from '@ryanatkn/belt/error.js';
 import {format_file} from '@ryanatkn/gro/format_file.js';
@@ -75,8 +75,7 @@ export const gro_plugin_moss = ({
 			previous_output = output;
 			writeFileSync(outfile, output);
 		},
-		flush_debounce_delay,
-		false,
+		{delay: flush_debounce_delay, when: 'trailing'},
 	);
 
 	let cleanup: Cleanup_Watch | undefined;
