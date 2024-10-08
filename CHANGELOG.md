@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.17.0
+
+### Minor Changes
+
+- add `gro_plugin_moss` ([#43](https://github.com/ryanatkn/moss/pull/43))
+
 ## 0.16.1
 
 ### Patch Changes
