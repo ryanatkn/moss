@@ -21,7 +21,11 @@ export const generate_classes_css = (classes: Iterable<string>): string => {
 			}
 			continue;
 		}
-		css += `.${c} { ${v.value} }\n`;
+		if ('declaration' in v) {
+			css += `.${c} { ${v.declaration} }\n`;
+		} else {
+			css += v.ruleset + '\n';
+		}
 	}
 
 	return css;
