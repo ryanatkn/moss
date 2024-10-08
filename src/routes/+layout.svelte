@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '$lib/style.css';
 	import '$lib/theme.css';
+	import '$routes/moss.css';
 	import '@ryanatkn/fuz_code/prism.css';
 
 	import {parse_package_meta} from '@ryanatkn/gro/package_meta.js';
