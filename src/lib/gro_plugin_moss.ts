@@ -74,7 +74,7 @@ export const gro_plugin_moss = ({
 	let cleanup: Cleanup_Watch | undefined;
 
 	return {
-		name: 'gro_plugin_gen',
+		name: 'gro_plugin_moss',
 		setup: async ({filer}) => {
 			// When a file builds, check it and its tree of dependents
 			// for any `.gen.` files that need to run.
