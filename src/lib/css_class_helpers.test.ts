@@ -19,6 +19,7 @@ const values: Array<[contents: string, expected: string[]]> = [
 	['class:a', ['a']],
 	['class:a ', ['a']],
 	['class:a=', ['a']],
+	['class:a>', ['a']],
 	// `classes=` prop
 	['classes="a"', ['a']],
 	['classes="a b"', ['a', 'b']],

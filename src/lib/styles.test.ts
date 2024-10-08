@@ -1,11 +1,11 @@
 import {test} from 'uvu';
 import * as assert from 'uvu/assert';
 
-import styles from '$lib/styles.css?raw';
+import main_stylesheet from '$lib/style.css?raw';
 import * as exported_variables from '$lib/variables.js';
 
 // TODO BLOCK generate all styles here? only in memory? // style_animations, style_components,
-const css_files = [styles];
+const css_files = [main_stylesheet];
 
 const extract_custom_properties = (css: string) =>
 	Array.from(css.matchAll(/--([a-z][a-z0-9_]*(?<!_))/g)).map((m) => m[1]);

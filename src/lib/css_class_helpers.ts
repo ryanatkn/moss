@@ -8,7 +8,7 @@ export interface Css_Extractor {
 const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 	// `class:a`
 	{
-		matcher: /(?<!['"`])class:([^\s=]+)/gi,
+		matcher: /(?<!['"`])class:([^\s=>]+)/gi,
 		mapper: (matched) => [matched[1]],
 	}, // initial capture group is fake just because the second regexp uses a capture group for its back reference
 
