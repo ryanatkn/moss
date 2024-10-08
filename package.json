@@ -95,21 +95,8 @@
       "types": "./dist/gro_plugin_moss.d.ts",
       "default": "./dist/gro_plugin_moss.js"
     },
-    "./style_animations.css": {
-      "default": "./dist/style_animations.css"
-    },
-    "./style_components.css": {
-      "default": "./dist/style_components.css"
-    },
-    "./style_reset.css": {
-      "default": "./dist/style_reset.css"
-    },
     "./style.css": {
       "default": "./dist/style.css"
-    },
-    "./style.gen.css.js": {
-      "types": "./dist/style.gen.css.d.ts",
-      "default": "./dist/style.gen.css.js"
     },
     "./theme.css": {
       "default": "./dist/theme.css"
