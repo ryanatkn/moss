@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.18.0
+
+### Minor Changes
+
+- upgrade gro ([99f61de](https://github.com/ryanatkn/moss/commit/99f61de))
+
 ## 0.17.0
 
 ### Minor Changes
