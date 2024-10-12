@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.18.1
+
+### Patch Changes
+
+- add `banner` option to `gro_plugin_moss` ([55cab52](https://github.com/ryanatkn/moss/commit/55cab52))
+
 ## 0.18.0
 
 ### Minor Changes
