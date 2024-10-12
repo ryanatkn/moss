@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.18.2
+
+### Patch Changes
+
+- fix `gro_plugin_moss` banner ([044430c](https://github.com/ryanatkn/moss/commit/044430c))
+
 ## 0.18.1
 
 ### Patch Changes
