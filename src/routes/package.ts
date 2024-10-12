@@ -5,7 +5,7 @@ import type {Src_Json} from '@ryanatkn/gro/src_json.js';
 
 export const package_json = {
 	name: '@ryanatkn/moss',
-	version: '0.18.1',
+	version: '0.18.2',
 	description: 'CSS framework',
 	motto: 'magical organic stylesheets',
 	glyph: '🌿',
@@ -33,11 +33,11 @@ export const package_json = {
 		'@changesets/changelog-git': '^0.2.0',
 		'@ryanatkn/belt': '^0.25.3',
 		'@ryanatkn/eslint-config': '^0.5.5',
-		'@ryanatkn/fuz': '^0.129.1',
+		'@ryanatkn/fuz': '^0.129.3',
 		'@ryanatkn/fuz_code': '^0.19.0',
-		'@ryanatkn/gro': '^0.139.1',
+		'@ryanatkn/gro': '^0.140.0',
 		'@sveltejs/adapter-static': '^3.0.5',
-		'@sveltejs/kit': '^2.6.3',
+		'@sveltejs/kit': '^2.7.0',
 		'@sveltejs/package': '^2.3.5',
 		'@sveltejs/vite-plugin-svelte': '^3.1.2',
 		'@types/node': '^22.7.5',
@@ -47,10 +47,10 @@ export const package_json = {
 		'prettier-plugin-svelte': '^3.2.7',
 		'prism-svelte': '^0.5.0',
 		prismjs: '^1.29.0',
-		svelte: '^5.0.0-next.263',
-		'svelte-check': '^4.0.4',
+		svelte: '^5.0.0-next.264',
+		'svelte-check': '^4.0.5',
 		tslib: '^2.7.0',
-		typescript: '^5.6.2',
+		typescript: '^5.6.3',
 		'typescript-eslint': '^8.8.1',
 		uvu: '^0.5.6',
 	},
@@ -88,7 +88,7 @@ export const package_json = {
 
 export const src_json = {
 	name: '@ryanatkn/moss',
-	version: '0.18.1',
+	version: '0.18.2',
 	modules: {
 		'./package.json': {path: 'package.json', declarations: []},
 		'./css_class_helpers.js': {
