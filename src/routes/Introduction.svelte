@@ -19,8 +19,6 @@
 	and data for more complex usage.
 </p>
 <Unfinished_Implementation_Warning>
-	Moss is in early alpha and will have many breaking changes to get to 1.0. To follow along or lend
-	some help, see <a href="https://discord.gg/YU5tyeK72X">the Discord</a>
-	and
+	Moss is in early alpha and will have many breaking changes to get to 1.0. Help is welcome, see
 	<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>.
 </Unfinished_Implementation_Warning>

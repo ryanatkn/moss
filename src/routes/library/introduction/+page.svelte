@@ -81,9 +81,7 @@
 		</p>
 		<p>
 			In the docs, you'll see I'm writing asides using "⚠️" with open questions and other discussion
-			of uncertainties. Your input is appreciated in the <a href="https://discord.gg/YU5tyeK72X"
-				>Discord</a
-			>, the
+			of uncertainties. Your input is appreciated in the
 			<a href="https://github.com/ryanatkn/moss/issues">GitHub issues</a>, or
 			<a href="https://www.webdevladder.net/">other social media</a>, on these and other topics, see
 			<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a> for more

@@ -18,30 +18,11 @@ but a goal is to let both developers and end-users shape it for their needs.
 
 If this sounds interesting to you,
 I'm welcoming help to iterate on APIs to get Moss to 1.0 and beyond.
-Let's chat publicly on [Discord](https://discord.gg/YU5tyeK72X)
-or here in the [Github issues](https://github.com/ryanatkn/moss).
+See the [Github issues](https://github.com/ryanatkn/moss).
 
 I've been growing Moss slowly over 5+ years
 to support [Zzz](https://zzz.ryanatkn.com/) and [my other projects](http://www.ryanatkn.com/)
 that focus on end users, with regular breaking changes and experimental patterns.
-
-## Community
-
-I run community spaces for my projects, including Moss,
-on [Discord](https://discord.gg/YU5tyeK72X)
-and [spiderspace.org](https://www.spiderspace.org/).
-
-Please [open issues](https://github.com/ryanatkn/Moss/issues) with any bugs
-or other things you would like to discuss.
-Prefer the Discord for most questions and discussions.
-
-You can also find me as @webdevladder on
-[YouTube](https://www.youtube.com/@webdevladder),
-[Mastodon](https://fosstodon.org/@webdevladder),
-[Twitter](https://twitter.com/webdevladder),
-and [Hacker News](https://news.ycombinator.com/user?id=webdevladder).
-I don't run any other communities like Reddit or Fediverse things
-but don't let that stop you from making your own.
 
 ## Developers
 
@@ -51,8 +32,7 @@ with the major caveat that there will be a lot of breaking changes ahead.
 The code is significantly incomplete but I think it's stable enough to use
 if you're willing to keep up with the relatively fast-moving changelog.
 Your feedback is welcome to help it improve.
-See the dev channels in [Discord](https://discord.gg/YU5tyeK72X)
-and [Github issues](https://github.com/ryanatkn/Moss/issues).
+See the [Github issues](https://github.com/ryanatkn/moss/issues).
 
 I'm open to PRs when they fit the project's design goals, which can be subtle and arbitrary.
 Feel free to open PRs for straightforward changes, but start with an issue for most PRs.
