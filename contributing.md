@@ -21,7 +21,7 @@ I'm welcoming help to iterate on APIs to get Moss to 1.0 and beyond.
 See the [Github issues](https://github.com/ryanatkn/moss).
 
 I've been growing Moss slowly over 5+ years
-to support [Zzz](https://zzz.ryanatkn.com/) and [my other projects](http://www.ryanatkn.com/)
+to support [Zzz](https://www.zzzbot.dev/) and [my other projects](http://www.ryanatkn.com/)
 that focus on end users, with regular breaking changes and experimental patterns.
 
 ## Developers

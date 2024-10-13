@@ -74,7 +74,7 @@
 			</li>
 		</ul>
 		<p>
-			Moss is being made to support <a href="https://zzz.ryanatkn.com/">Zzz</a> and
+			Moss is being made to support <a href="https://www.zzzbot.dev/">Zzz</a> and
 			<a href="https://www.ryanatkn.com/">my other projects</a> that focus on end-users, so it'll grow
 			relatively slowly as I encounter more usecases. It's hobby-ready but expect a lot of breaking changes.
 			Feel free to take the code and ideas for your own purposes.
