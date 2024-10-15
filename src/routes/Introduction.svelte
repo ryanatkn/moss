@@ -15,8 +15,8 @@
 	and
 	<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.css">a theme stylesheet</a>, and
 	it also
-	<a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS partials, types, helpers,
-	and data for more complex usage.
+	<a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS data, types, and helpers for
+	more complex usage.
 </p>
 <Unfinished_Implementation_Warning>
 	Moss is in early alpha and will have many breaking changes to get to 1.0. Help is welcome, see
