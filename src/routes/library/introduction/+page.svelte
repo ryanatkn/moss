@@ -19,7 +19,11 @@
 			<li>plain CSS</li>
 			<li>zero dependencies</li>
 			<li>exports one main stylesheet that can be optimized by other tools</li>
-			<li>also exports the underlying CSS partials, helpers, types, and data</li>
+			<li>
+				with the default Gro plugin, generates an optimized stylesheet with the utility classes
+				you're using
+			</li>
+			<li>also exports the underlying CSS data, helpers, and types</li>
 			<li>
 				uses its own concept of style variables, a specialization of CSS custom properties and
 				design tokens
