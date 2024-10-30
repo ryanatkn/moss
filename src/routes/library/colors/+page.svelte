@@ -107,7 +107,7 @@
 		</p>
 		<p>
 			Hue variables are also useful to construct custom colors not covered by the color variables.
-			For example, Moss's base stylesheet uses <code>hue_a</code> for the semi-transparent
+			For example, Moss' base stylesheet uses <code>hue_a</code> for the semi-transparent
 			<code>::selection</code>. (try selecting some text -
 			<span class="color_a_5">same hue!</span>)
 		</p>
