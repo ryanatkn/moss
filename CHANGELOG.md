@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.19.0
+
+### Minor Changes
+
+- move gro plugin to gro ([#45](https://github.com/ryanatkn/moss/pull/45))
+
 ## 0.18.2
 
 ### Patch Changes
