@@ -18,18 +18,8 @@
 		<ul>
 			<li>plain CSS</li>
 			<li>zero dependencies</li>
-			<li>
-				exports one main stylesheet, <a
-					href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-					><code>@ryanatkn/moss/style.css</code></a
-				>, that doubles as a reset with basic HTML tag styles
-			</li>
-			<li>
-				exports a basic theme, <a
-					href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.css"
-					><code>@ryanatkn/moss/theme.css</code></a
-				>
-			</li>
+			<li>exports one main stylesheet that doubles as a reset with basic HTML tag styles</li>
+			<li>exports a basic theme that can be replaced with your own</li>
 			<li>
 				also exports the underlying CSS data, helpers, and types, which can be used in many ways,
 				including outputting an optimized utilities class file
