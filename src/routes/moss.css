@@ -14,11 +14,33 @@
 	justify-content: center;
 }
 
+.chip {
+	font-weight: 600;
+	padding: var(--space_xs5) var(--space_sm); /* maybe different inside `p`? using `calc` with `--size`? */
+	background-color: var(--fg_1);
+	border-radius: var(--radius_xs);
+}
+a.chip {
+	font-weight: 700;
+}
+
 .color_a_5 {
 	color: var(--color_a_5);
 }
+.color_b_5 {
+	color: var(--color_b_5);
+}
+.color_c_5 {
+	color: var(--color_c_5);
+}
 .darken_3 {
 	background-color: var(--darken_3);
+}
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .fg_1 {
 	background-color: var(--fg_1);
@@ -64,6 +86,12 @@
 .lighten_3 {
 	background-color: var(--lighten_3);
 }
+.line_height_lg {
+	line-height: var(--line_height_lg);
+}
+.line_height_sm {
+	line-height: var(--line_height_sm);
+}
 .mb_0 {
 	margin-bottom: 0;
 }
@@ -79,11 +107,17 @@
 .mb_xl {
 	margin-bottom: var(--space_xl);
 }
+.mb_xl3 {
+	margin-bottom: var(--space_xl3);
+}
 .mb_xl5 {
 	margin-bottom: var(--space_xl5);
 }
 .mb_xl7 {
 	margin-bottom: var(--space_xl7);
+}
+.mb_xl9 {
+	margin-bottom: var(--space_xl9);
 }
 .mb_xs {
 	margin-bottom: var(--space_xs);
@@ -136,8 +170,18 @@
 .ml_sm {
 	margin-left: var(--space_sm);
 }
+.mt_0 {
+	margin-top: 0;
+}
 .mt_xl4 {
 	margin-top: var(--space_xl4);
+}
+.mx_xs3 {
+	margin-left: var(--space_xs3);
+	margin-right: var(--space_xs3);
+}
+.overflow_wrap_anywhere {
+	overflow-wrap: anywhere;
 }
 .p_lg {
 	padding: var(--space_lg);
@@ -171,8 +215,17 @@
 	background-color: var(--panel_bg, var(--fg_1));
 }
 
+.pb_0 {
+	padding-bottom: 0;
+}
+.pb_xl {
+	padding-bottom: var(--space_xl);
+}
 .pl_sm {
 	padding-left: var(--space_sm);
+}
+.pl_xl4 {
+	padding-left: var(--space_xl4);
 }
 
 /* TODO maybe this belongs with the reset, like `selected`? or does `selected` belong here? */
@@ -187,6 +240,10 @@
 }
 .pt_xl2 {
 	padding-top: var(--space_xl2);
+}
+.px_lg {
+	padding-left: var(--space_lg);
+	padding-right: var(--space_lg);
 }
 .radius_lg {
 	border-radius: var(--radius_lg);
@@ -243,6 +300,10 @@
 }
 .shadow_inset_top_xs {
 	box-shadow: var(--shadow_inset_top_xs)
+		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);
+}
+.shadow_inset_xs {
+	box-shadow: var(--shadow_inset_xs)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);
 }
 .shadow_sm {
