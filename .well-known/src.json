@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -20,12 +20,7 @@
         {
           "name": "Css_Classes",
           "kind": "class"
-        }
-      ]
-    },
-    "./css_classes.js": {
-      "path": "css_classes.ts",
-      "declarations": [
+        },
         {
           "name": "Css_Class_Declaration",
           "kind": "type"
@@ -38,6 +33,15 @@
           "name": "Css_Class_Declaration_Group",
           "kind": "type"
         },
+        {
+          "name": "generate_classes_css",
+          "kind": "function"
+        }
+      ]
+    },
+    "./css_classes.js": {
+      "path": "css_classes.ts",
+      "declarations": [
         {
           "name": "css_classes_by_name",
           "kind": "variable"
