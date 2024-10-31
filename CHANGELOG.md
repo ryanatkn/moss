@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.20.0
+
+### Minor Changes
+
+- move some css class helpers ([470472b](https://github.com/ryanatkn/moss/commit/470472b))
+
 ## 0.19.0
 
 ### Minor Changes
