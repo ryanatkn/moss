@@ -1,13 +1,7 @@
-export type Css_Class_Declaration = Css_Class_Declaration_Item | Css_Class_Declaration_Group;
-
-export interface Css_Class_Declaration_Item {
-	declaration: string;
-}
-export interface Css_Class_Declaration_Group {
-	ruleset: string;
-}
+import type {Css_Class_Declaration} from './css_class_helpers.js';
 
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
+
 // TODO think about variable support (much harder problem, need dependency graph)
 export const css_classes_by_name: Record<string, Css_Class_Declaration | undefined> = {
 	relative: {declaration: 'position: relative;'},

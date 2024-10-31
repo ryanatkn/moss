@@ -142,3 +142,36 @@ export class Css_Classes {
 		this.#all_sorted = null;
 	}
 }
+
+export type Css_Class_Declaration = Css_Class_Declaration_Item | Css_Class_Declaration_Group;
+
+export interface Css_Class_Declaration_Item {
+	declaration: string;
+}
+export interface Css_Class_Declaration_Group {
+	ruleset: string;
+}
+
+export const generate_classes_css = (
+	classes: Iterable<string>,
+	css_classes_by_name: Record<string, Css_Class_Declaration | undefined>,
+): string => {
+	let css = '';
+	for (const c of classes) {
+		const v = css_classes_by_name[c];
+		if (!v) {
+			// diagnostic
+			// if (!/^[a-z_0-9]+$/.test(c)) {
+			// 	console.error('invalid class detected, fix the regexps', c);
+			// }
+			continue;
+		}
+		if ('declaration' in v) {
+			css += `.${c} { ${v.declaration} }\n`;
+		} else {
+			css += v.ruleset + '\n';
+		}
+	}
+
+	return css;
+};
