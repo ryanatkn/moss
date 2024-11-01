@@ -1364,7 +1364,7 @@ layout
 		ruleset: `
 			/* TODO other button variants? */
 			/* TODO this is slightly strange that it doesn't use --icon_size */
-			/* These are used as modifiers to buttons, and so they use \`:where\` so they cascade.  */
+			/* These are used as modifiers to buttons, and so they use \`:where\` so they cascade. */
 			.icon_button {
 				width: var(--input_height);
 				height: var(--input_height);
@@ -1469,10 +1469,12 @@ layout
 				overflow: auto;
 				max-width: 100%;
 			}
-			.pre:not(.inline) > code {
-				display: block;
+			.pre > code {
 				font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic \`--size\`? */
 				font-weight: 500;
+			}
+			.pre:not(.inline) > code {
+				display: block;
 			}
 		`,
 	},
