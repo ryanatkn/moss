@@ -1463,13 +1463,13 @@ layout
 	pre: {
 		// keep in sync with `pre` styling in `style.css`, except the `.inline` exception
 		ruleset: `
-			:where(.pre) {
+			.pre {
 				font-family: var(--font_mono);
 				color: var(--text_color, var(--text_color_3));
 				overflow: auto;
 				max-width: 100%;
 			}
-			:where(.pre:not(.inline) > code) {
+			.pre:not(.inline) > code {
 				display: block;
 				font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic \`--size\`? */
 				font-weight: 500;
