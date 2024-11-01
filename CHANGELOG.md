@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.20.2
+
+### Patch Changes
+
+- fix `.pre` with `.inline` ([96c90bd](https://github.com/ryanatkn/moss/commit/96c90bd))
+
 ## 0.20.1
 
 ### Patch Changes
