@@ -226,18 +226,17 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	border-radius: var(--radius_xs);
 }
 
+/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
+/* keep in sync with `.pre` styling in `css_classes.ts` */
 :where(pre) {
-	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
-	/* TODO check for `Code` before adding this - white-space: break-spaces; */
 	font-family: var(--font_mono);
 	color: var(--text_color, var(--text_color_3));
 	overflow: auto;
 	max-width: 100%;
 }
-
 :where(pre > code) {
-	display: block; /* TODO maybe invert and change to inline in `p`? */
-	font-size: var(--size_sm); /* TODO maybe computed from generic `--size` using a multiplier var? */
+	display: block;
+	font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic `--size`? */
 	font-weight: 500;
 }
 
