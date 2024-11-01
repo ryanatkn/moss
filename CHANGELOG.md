@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.20.1
+
+### Patch Changes
+
+- add `.pre` utility class ([b901812](https://github.com/ryanatkn/moss/commit/b901812))
+
 ## 0.20.0
 
 ### Minor Changes
