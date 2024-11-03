@@ -2,13 +2,12 @@
 	import '$lib/style.css';
 	import '$lib/theme.css';
 	import '$routes/moss.css';
-	import '@ryanatkn/fuz_code/prism.css';
+	import '@ryanatkn/fuz_code/theme.css';
 
 	import {parse_package_meta} from '@ryanatkn/gro/package_meta.js';
 	import type {Snippet} from 'svelte';
 	import Themed from '@ryanatkn/fuz/Themed.svelte';
 	import Spiders from '@ryanatkn/fuz/Spiders.svelte';
-	import 'prismjs'; // TODO why needed? shouldn't fuz_code handle this? Vite config problem?
 
 	import {pkg_context} from '$routes/pkg.js';
 	import {package_json, src_json} from '$routes/package.js';
