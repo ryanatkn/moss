@@ -8,8 +8,10 @@ which is generated from the default values in `@ryanatkn/moss/variables.js`.
 
 Some notes:
 
+- acts as a CSS reset and also sets minimal defaults for elements with themable variables
 - uses `:where` on all selectors with more specificity than a single tag/class
 	to lower specificity so utility classes override them
+- needs more variables
 
 */
 
