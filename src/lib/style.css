@@ -10,7 +10,8 @@ Some notes:
 
 - acts as a CSS reset and also sets minimal defaults for elements with themable variables
 - uses `:where` on all selectors with more specificity than a single tag/class
-	to lower specificity so utility classes override them
+	to lower specificity so utility classes override them -
+	but `:where` around simple non-compound selectors should maybe be removed
 - needs more variables
 
 */
