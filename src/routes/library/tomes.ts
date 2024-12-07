@@ -17,7 +17,7 @@ import borders from '$routes/library/borders/+page.svelte';
 
 // TODO maybe decouple `related` from `Tome` to get bidirectionality for free
 
-export const tomes: Tome[] = [
+export const tomes: Array<Tome> = [
 	{
 		name: 'introduction',
 		category: 'guide',

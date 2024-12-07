@@ -1191,7 +1191,7 @@ export const disabled_opacity: Style_Variable = {name: 'disabled_opacity', light
  * These are implicitly the variables for the `base` theme.
  * See also the empty `variables` array of the `base` theme above.
  */
-export const default_variables: Style_Variable[] = [
+export const default_variables: Array<Style_Variable> = [
 	/*
 		colors - eyeballed and intepolated with a spreadsheet,
 		a professional designer will have opinions

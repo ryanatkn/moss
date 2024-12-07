@@ -7,11 +7,11 @@ import type {Style_Variable} from '$lib/variable.js';
  */
 export type Color_Scheme = 'dark' | 'light' | 'auto';
 
-export const color_schemes: Color_Scheme[] = ['light', 'auto', 'dark'];
+export const color_schemes: Array<Color_Scheme> = ['light', 'auto', 'dark'];
 
 export interface Theme {
 	name: string;
-	variables: Style_Variable[];
+	variables: Array<Style_Variable>;
 }
 
 export interface Render_Theme_Style_Options {

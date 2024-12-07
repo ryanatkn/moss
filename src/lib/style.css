@@ -174,24 +174,24 @@ The `!important` makes this `hidden` behavior much higher specificity.
 /* TODO other elements */
 /* checkboxes and radios are expected to be nested inside a `label`, thus no bottom margin */
 :where(
-		:where(
-				p,
-				ul,
-				ol,
-				menu,
-				form,
-				fieldset,
-				table,
-				details,
-				textarea,
-				select,
-				label,
-				pre,
-				blockquote,
-				aside,
-				nav
-			):not(:last-child)
-	) {
+	:where(
+			p,
+			ul,
+			ol,
+			menu,
+			form,
+			fieldset,
+			table,
+			details,
+			textarea,
+			select,
+			label,
+			pre,
+			blockquote,
+			aside,
+			nav
+		):not(:last-child)
+) {
 	margin-bottom: var(--space_lg);
 }
 :where(section:not(:last-child)) {
