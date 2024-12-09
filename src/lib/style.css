@@ -11,7 +11,8 @@ Some notes:
 - acts as a CSS reset and also sets minimal defaults for elements with themable variables
 - uses `:where` on all selectors with more specificity than a single tag/class
 	to lower specificity so utility classes override them -
-	but `:where` around simple non-compound selectors should maybe be removed
+	this also means the Moss stylesheet is is less likely to
+	interfere with the page's styles regardless of where it's imported
 - needs more variables
 
 */
