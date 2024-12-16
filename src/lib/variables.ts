@@ -801,27 +801,27 @@ export const border_style: Style_Variable = {
 export const border_color_1: Style_Variable = {
 	name: 'border_color_1',
 	light: 'hsl(var(--tint_hue) 60% 20% / 15%)',
-	dark: 'hsl(var(--tint_hue) 60% 80% / 85%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 25%)',
 };
 export const border_color_2: Style_Variable = {
 	name: 'border_color_2',
 	light: 'hsl(var(--tint_hue) 60% 20% / 25%)',
-	dark: 'hsl(var(--tint_hue) 60% 80% / 70%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 40%)',
 };
 export const border_color_3: Style_Variable = {
 	name: 'border_color_3',
 	light: 'hsl(var(--tint_hue) 60% 20% / 35%)',
-	dark: 'hsl(var(--tint_hue) 60% 80% / 50%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 55%)',
 };
 export const border_color_4: Style_Variable = {
 	name: 'border_color_4',
 	light: 'hsl(var(--tint_hue) 60% 20% / 50%)',
-	dark: 'hsl(var(--tint_hue) 60% 80% / 40%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 70%)',
 };
 export const border_color_5: Style_Variable = {
 	name: 'border_color_5',
 	light: 'hsl(var(--tint_hue) 60% 20% / 70%)',
-	dark: 'hsl(var(--tint_hue) 60% 80% / 25%)',
+	dark: 'hsl(var(--tint_hue) 60% 80% / 85%)',
 };
 // TODO having these for theming seems wise, right? but then we'd want variants, like 1-3 or 1-5?
 export const border_color_a: Style_Variable = {
