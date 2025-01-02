@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.21.1
+
+### Patch Changes
+
+- update description ([35c0195](https://github.com/ryanatkn/moss/commit/35c0195))
+
 ## 0.21.0
 
 ### Minor Changes
