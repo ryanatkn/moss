@@ -2,10 +2,10 @@
 
 export interface Css_Extractor {
 	matcher: RegExp;
-	mapper: (matched: RegExpExecArray) => string[];
+	mapper: (matched: RegExpExecArray) => Array<string>;
 }
 
-const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
+const CSS_CLASS_EXTRACTORS: Array<Css_Extractor> = [
 	// `class:a`
 	{
 		matcher: /(?<!['"`])class:([^\s=>]+)/gi,
@@ -33,13 +33,13 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
 	// arrays like `class: ['a', 'b']`, `classes = ['a', 'b']`, `classes={['a', 'b']`
 	{
 		matcher: /(?<!['"`])class(?:es)?\s*[=:]\{?\s*\[([\s\S]*?)\]/g,
-		mapper: (matched: RegExpExecArray): string[] => {
+		mapper: (matched: RegExpExecArray): Array<string> => {
 			const content = matched[1];
 			if (content.includes('[')) return []; // TODO @many ideally fix instead of bailing, but maybe we need a real JS parser?
 			const items = content.split(',').map((item) => item.trim());
 
 			return items
-				.reduce((classes: string[], item: string) => {
+				.reduce((classes: Array<string>, item: string) => {
 					// Match string literals within each item
 					const string_literals = item.match(/(['"`])((?:(?!\1)[^\\]|\\.)*?)\1/g);
 					if (!string_literals) return classes;
@@ -67,7 +67,7 @@ const CSS_CLASS_EXTRACTORS: Css_Extractor[] = [
  */
 export const collect_css_classes = (
 	contents: string,
-	extractors: Css_Extractor[] = CSS_CLASS_EXTRACTORS,
+	extractors: Array<Css_Extractor> = CSS_CLASS_EXTRACTORS,
 ): Set<string> => {
 	const all_classes: Set<string> = new Set();
 
@@ -94,7 +94,7 @@ const extract_classes = (contents: string, {matcher, mapper}: Css_Extractor): Se
 export class Css_Classes {
 	#all: Set<string> = new Set();
 
-	#all_sorted: string[] | null = null;
+	#all_sorted: Array<string> | null = null;
 
 	#by_id: Map<string, Set<string>> = new Map();
 
@@ -120,7 +120,7 @@ export class Css_Classes {
 		return this.#all;
 	}
 
-	get_sorted_array(): string[] {
+	get_sorted_array(): Array<string> {
 		if (!this.#dirty && this.#all_sorted !== null) {
 			return this.#all_sorted;
 		}

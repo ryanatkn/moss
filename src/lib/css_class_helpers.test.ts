@@ -1,9 +1,9 @@
 import {test} from 'uvu';
 import * as assert from 'uvu/assert';
 
-import {collect_css_classes} from './css_class_helpers.js';
+import {collect_css_classes} from '$lib/css_class_helpers.js';
 
-const values: Array<[contents: string, expected: string[]]> = [
+const values: Array<[contents: string, expected: Array<string>]> = [
 	// `class=` attribute
 	['class="a"', ['a']],
 	['class="a b"', ['a', 'b']],

@@ -8,7 +8,7 @@ export const DEFAULT_THEME: Theme = {
 /**
  * These are super basic proof-of-concept themes.
  */
-export const default_themes: Theme[] = [
+export const default_themes: Array<Theme> = [
 	DEFAULT_THEME,
 	{
 		name: 'low contrast',
