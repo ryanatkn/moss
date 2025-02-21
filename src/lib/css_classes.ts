@@ -53,6 +53,14 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			}
 		`,
 	},
+	width_xl: {
+		ruleset: `
+			.width_xl {
+				width: 100%;
+				max-width: var(--width_xl);
+			}
+		`,
+	},
 	width_lg: {
 		ruleset: `
 			.width_lg {
@@ -82,6 +90,14 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			.width_xs {
 				width: 100%;
 				max-width: var(--width_xs);
+			}
+		`,
+	},
+	min_width_xl: {
+		ruleset: `
+			.min_width_xl {
+				width: 100%;
+				min-width: var(--width_xl);
 			}
 		`,
 	},
