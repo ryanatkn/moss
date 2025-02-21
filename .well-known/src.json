@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.22.0",
+  "version": "0.22.1",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -1038,6 +1038,14 @@
         },
         {
           "name": "space_xl15",
+          "kind": "variable"
+        },
+        {
+          "name": "width_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "width_lg",
           "kind": "variable"
         },
         {
