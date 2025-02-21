@@ -533,7 +533,7 @@ shadows
 */
 	shadow_xs: {
 		declaration:
-			'--shadow_alpha: var(--shadow_alpha_1) box-shadow: var(--shadow_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
+			'box-shadow: var(--shadow_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
 	},
 	shadow_sm: {
 		declaration:
