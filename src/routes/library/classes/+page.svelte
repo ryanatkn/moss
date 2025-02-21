@@ -92,6 +92,7 @@
 		'row',
 		'formatted',
 		'width_xs-md',
+		'min_width_xs-md',
 		'selected',
 		'selectable',
 		'clickable',
