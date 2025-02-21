@@ -41,6 +41,7 @@
 		'icon_size_xs-xl3',
 		'text_align_start|end|left|right|center|justify|justify_all|match_parent',
 		'vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom',
+		'word_break_normal|break_all|keep_all|inherit|initial|revert|revert_layer|unset', // TODO add `inherit/initial/etc` to the others now that we have on-demand building
 		'white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces',
 		'white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces',
 		'text_wrap_wrap|nowrap|balance|pretty|stable',
