@@ -370,6 +370,7 @@ export const src_json = {
 				{name: 'space_xl13', kind: 'variable'},
 				{name: 'space_xl14', kind: 'variable'},
 				{name: 'space_xl15', kind: 'variable'},
+				{name: 'width_lg', kind: 'variable'},
 				{name: 'width_md', kind: 'variable'},
 				{name: 'width_sm', kind: 'variable'},
 				{name: 'width_xs', kind: 'variable'},
