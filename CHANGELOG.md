@@ -1,5 +1,16 @@
 # @ryanatkn/moss
 
+## 0.22.0
+
+### Minor Changes
+
+- fix css class order, giving simpler utility classes higher priority ([#46](https://github.com/ryanatkn/moss/pull/46))
+
+### Patch Changes
+
+- add word_break classes ([#47](https://github.com/ryanatkn/moss/pull/47))
+- fix `shadow_xs` CSS class ([#47](https://github.com/ryanatkn/moss/pull/47))
+
 ## 0.21.1
 
 ### Patch Changes
