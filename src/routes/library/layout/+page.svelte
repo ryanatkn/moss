@@ -3,8 +3,9 @@
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import {base} from '$app/paths';
 
-	import {space_variants} from '$lib/variable_data.js';
+	import {space_variants, width_variants} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 
 	const LIBRARY_ITEM_NAME = 'layout';
@@ -18,31 +19,40 @@
 <Tome_Content {tome}>
 	<Tome_Section>
 		<Tome_Section_Header text="Space variables" />
-		<div>
+		<ul class="unstyled">
 			{#each space_variants as space_size}
 				{@const name = 'space_' + space_size}
-				<div class="layout_example">
+				<li class="layout_example">
 					<div class="fill" style:width="var(--{name})"></div>
 					<div class="variable_wrapper"><Style_Variable_Button {name} /></div>
 					<span class="pr_sm">=</span>
 					<div class="computed_value">{computed_styles?.getPropertyValue('--' + name)}</div>
-				</div>
+				</li>
 			{/each}
-		</div>
+		</ul>
+		<p>
+			Space variants are used in <a href="{base}/library/classes">classes</a> like <code>p_md</code>
+			for padding, margin, other forms of spacing like gap, positioning, dimensions, etc.
+		</p>
 	</Tome_Section>
 	<Tome_Section>
 		<Tome_Section_Header text="Width variables" />
-		<div>
-			{#each ['xs', 'sm', 'md'] as radius}
-				{@const name = 'width_' + radius}
-				<div class="layout_example">
+		<aside>⚠️ Maybe instead of "width" this should be "distance" or "length" something.</aside>
+		<ul class="unstyled">
+			{#each width_variants as width_size}
+				{@const name = 'width_' + width_size}
+				<li class="layout_example">
 					<div class="fill" style:width="var(--{name})"></div>
 					<div class="variable_wrapper"><Style_Variable_Button {name} /></div>
 					<span class="pr_sm">=</span>
 					<div class="computed_value">{computed_styles?.getPropertyValue('--' + name)}</div>
-				</div>
+				</li>
 			{/each}
-		</div>
+		</ul>
+		<p>
+			Width variants have <a href="{base}/library/classes">classes</a> like <code>.width_sm</code>
+			and <code>.min_width_md</code>.
+		</p>
 	</Tome_Section>
 </Tome_Content>
 

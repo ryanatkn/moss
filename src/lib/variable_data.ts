@@ -49,6 +49,9 @@ export const space_variants = [
 	'xl15',
 ] as const;
 
+export type Width_Variant = Array_Element<typeof width_variants>;
+export const width_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
+
 export type Radius_Variant = Array_Element<typeof radius_variants>;
 export const radius_variants = ['xs3', 'xs2', 'xs', 'sm', 'md', 'lg', 'xl'] as const;
 

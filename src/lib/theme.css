@@ -165,8 +165,8 @@
 	--line_height_md: 1.4;
 	--line_height_lg: 1.6;
 	--line_height_xl: 2;
-	--font_sans: system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji'; /* @source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+	--font_sans:
+		system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* @source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 	--font_mono: ui-monospace, 'Fira Mono', monospace;
 	--size_xs: 1rem;
 	--size_sm: 1.3rem;
@@ -250,15 +250,18 @@
 	--radius_xs: 0.8rem;
 	--radius_xs2: 0.5rem;
 	--radius_xs3: 0.3rem;
-	--button_shadow: var(--shadow_inset_bottom_xs)
+	--button_shadow:
+		var(--shadow_inset_bottom_xs)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent),
 		var(--shadow_inset_top_xs)
 			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_1), transparent);
-	--button_shadow_hover: var(--shadow_inset_bottom_sm)
+	--button_shadow_hover:
+		var(--shadow_inset_bottom_sm)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent),
 		var(--shadow_inset_top_sm)
 			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent);
-	--button_shadow_active: var(--shadow_inset_top_sm)
+	--button_shadow_active:
+		var(--shadow_inset_top_sm)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent),
 		var(--shadow_inset_bottom_sm)
 			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent);
@@ -452,15 +455,18 @@
 	--border_color_3: hsl(var(--tint_hue) 60% 80% / 55%);
 	--border_color_4: hsl(var(--tint_hue) 60% 80% / 70%);
 	--border_color_5: hsl(var(--tint_hue) 60% 80% / 85%);
-	--button_shadow: var(--shadow_inset_top_xs)
+	--button_shadow:
+		var(--shadow_inset_top_xs)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent),
 		var(--shadow_inset_bottom_xs)
 			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_1), transparent);
-	--button_shadow_hover: var(--shadow_inset_top_sm)
+	--button_shadow_hover:
+		var(--shadow_inset_top_sm)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent),
 		var(--shadow_inset_bottom_sm)
 			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent);
-	--button_shadow_active: var(--shadow_inset_bottom_sm)
+	--button_shadow_active:
+		var(--shadow_inset_bottom_sm)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_2), transparent),
 		var(--shadow_inset_top_sm)
 			color-mix(in hsl, var(--shadow_color_highlight) var(--shadow_alpha_2), transparent);
