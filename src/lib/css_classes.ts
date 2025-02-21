@@ -53,9 +53,24 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			}
 		`,
 	},
+	width_xl: {
+		ruleset: `
+			.width_xl {
+				width: 100%;
+				max-width: var(--width_xl);
+			}
+		`,
+	},
+	width_lg: {
+		ruleset: `
+			.width_lg {
+				width: 100%;
+				max-width: var(--width_lg);
+			}
+		`,
+	},
 	width_md: {
 		ruleset: `
-			/* TODO rename these? use to be columns, maybe should be? */
 			.width_md {
 				width: 100%;
 				max-width: var(--width_md);
@@ -67,6 +82,54 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			.width_sm {
 				width: 100%;
 				max-width: var(--width_sm);
+			}
+		`,
+	},
+	width_xs: {
+		ruleset: `
+			.width_xs {
+				width: 100%;
+				max-width: var(--width_xs);
+			}
+		`,
+	},
+	min_width_xl: {
+		ruleset: `
+			.min_width_xl {
+				width: 100%;
+				min-width: var(--width_xl);
+			}
+		`,
+	},
+	min_width_lg: {
+		ruleset: `
+			.min_width_lg {
+				width: 100%;
+				min-width: var(--width_lg);
+			}
+		`,
+	},
+	min_width_md: {
+		ruleset: `
+			.min_width_md {
+				width: 100%;
+				min-width: var(--width_md);
+			}
+		`,
+	},
+	min_width_sm: {
+		ruleset: `
+			.min_width_sm {
+				width: 100%;
+				min-width: var(--width_sm);
+			}
+		`,
+	},
+	min_width_xs: {
+		ruleset: `
+			.min_width_xs {
+				width: 100%;
+				min-width: var(--width_xs);
 			}
 		`,
 	},
