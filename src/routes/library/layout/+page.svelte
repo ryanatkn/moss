@@ -31,13 +31,14 @@
 			{/each}
 		</ul>
 		<p>
-			Space variants are used in <a href="{base}/library/classes">classes</a> like <code>p_md</code>
+			Space variants are used in <a href="{base}/library/classes">classes</a> like
+			<code>.p_md</code>
 			for padding, margin, other forms of spacing like gap, positioning, dimensions, etc.
 		</p>
 	</Tome_Section>
 	<Tome_Section>
 		<Tome_Section_Header text="Width variables" />
-		<aside>⚠️ Maybe instead of "width" this should be "distance" or "length" something.</aside>
+		<aside>⚠️ maybe instead of "width" this should be "distance" or "length" something?</aside>
 		<ul class="unstyled">
 			{#each width_variants as width_size}
 				{@const name = 'width_' + width_size}
