@@ -158,6 +158,14 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	vertical_align_middle: {declaration: 'vertical-align: middle;'},
 	vertical_align_top: {declaration: 'vertical-align: top;'},
 	vertical_align_bottom: {declaration: 'vertical-align: bottom;'},
+	word_break_normal: {declaration: 'word-break: normal;'},
+	word_break_break_all: {declaration: 'word-break: break-all;'},
+	word_break_keep_all: {declaration: 'word-break: keep-all;'},
+	word_break_inherit: {declaration: 'word-break: inherit;'},
+	word_break_initial: {declaration: 'word-break: initial;'},
+	word_break_revert: {declaration: 'word-break: revert;'},
+	word_break_revert_layer: {declaration: 'word-break: revert-layer;'},
+	word_break_unset: {declaration: 'word-break: unset;'},
 	white_space_normal: {declaration: 'white-space: normal;'},
 	white_space_nowrap: {declaration: 'white-space: nowrap;'},
 	white_space_pre: {declaration: 'white-space: pre;'},
@@ -525,7 +533,7 @@ shadows
 */
 	shadow_xs: {
 		declaration:
-			'--shadow_alpha: var(--shadow_alpha_1) box-shadow: var(--shadow_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
+			'box-shadow: var(--shadow_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
 	},
 	shadow_sm: {
 		declaration:
