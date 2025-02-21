@@ -1,5 +1,12 @@
 # @ryanatkn/moss
 
+## 0.22.1
+
+### Patch Changes
+
+- add `width_xl`, `width_lg`, and `width_xs` classes ([#48](https://github.com/ryanatkn/moss/pull/48))
+- add `min_width` class variants ([#48](https://github.com/ryanatkn/moss/pull/48))
+
 ## 0.22.0
 
 ### Minor Changes
