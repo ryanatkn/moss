@@ -6,6 +6,263 @@ import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
 
 // TODO think about variable support (much harder problem, need dependency graph)
 export const css_classes_by_name: Record<string, Css_Class_Declaration | undefined> = {
+	// Composite classes go first, so they can be overridden by the more specific classes.
+	pixelated: {
+		declaration: `
+			image-rendering: -webkit-optimize-contrast; /* Safari */
+			image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
+			image-rendering: pixelated; /* in case crisp-edges isn't supported */
+			image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
+		`,
+	},
+	box: {
+		ruleset: `
+			.box {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+		`,
+	},
+	column: {
+		ruleset: `
+			/* like \`.box\` but uncentered */
+			.column {
+				display: flex;
+				flex-direction: column;
+			}
+		`,
+	},
+	row: {
+		ruleset: `
+			/* can be used to override the direction of a \`.box\` */
+			.row {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+		`,
+	},
+	formatted: {
+		ruleset: `
+			/* Formats content to wrap long strings and preserve displayed whitespace. */
+			.formatted {
+				overflow: hidden;
+				white-space: break-spaces;
+			}
+		`,
+	},
+	width_md: {
+		ruleset: `
+			/* TODO rename these? use to be columns, maybe should be? */
+			.width_md {
+				width: 100%;
+				max-width: var(--width_md);
+			}
+		`,
+	},
+	width_sm: {
+		ruleset: `
+			.width_sm {
+				width: 100%;
+				max-width: var(--width_sm);
+			}
+		`,
+	},
+	selectable: {
+		ruleset: `
+			.selectable {
+				--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
+				--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
+				--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
+				cursor: pointer;
+				background-color: var(--button_fill);
+				border-color: var(--border_color_3);
+				border-style: var(--border_style);
+				border-width: var(--border_width);
+			}
+			.selectable:hover {
+				background-color: var(--button_fill_hover);
+				border-color: var(--border_color_2);
+			}
+			.selectable.selected,
+			.selectable:active {
+				background-color: var(--button_fill_active);
+				border-color: var(--color_a_5);
+			}
+			.selectable.selected {
+				cursor: default;
+			}
+			.selectable.selected.deselectable:not(:disabled) {
+				cursor: pointer;
+			}
+		`,
+	},
+	clickable: {
+		ruleset: `
+			.clickable {
+				cursor: pointer;
+				transform: var(--clickable_transform, scale3d(1, 1, 1));
+				transform-origin: var(--clickable_transform_origin);
+				transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
+			}
+			.clickable:focus {
+				transform: var(--clickable_transform_focus, scale3d(1.07, 1.07, 1.07));
+			}
+			.clickable:hover {
+				transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
+			}
+			.clickable:active,
+			.clickable.active {
+				transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
+			}
+		`,
+	},
+	pane: {
+		ruleset: `
+			/* A pane is a box floating over the page, like for dialogs.
+			By default it's opaque, resetting the background to the initial depth. */
+			.pane {
+				background-color: var(--pane_bg, var(--bg));
+				box-shadow: var(
+					--pane_shadow,
+					/* TODO this is terrible, maybe add all the variables? should be culled anyway? */
+						var(--shadow_bottom_md)
+						color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_3), transparent)
+				);
+				border-radius: var(--radius_xs);
+			}
+		`,
+	},
+	panel: {
+		ruleset: `
+			/* A panel is a box embedded into the page, useful for visually isolating content. */
+			.panel {
+				border-radius: var(--radius_xs);
+				background-color: var(--panel_bg, var(--fg_1));
+			}
+		`,
+	},
+	icon_button: {
+		ruleset: `
+			/* TODO other button variants? */
+			/* TODO this is slightly strange that it doesn't use --icon_size */
+			/* These are used as modifiers to buttons, and so they use \`:where\` so they cascade. */
+			.icon_button {
+				width: var(--input_height);
+				height: var(--input_height);
+				min-width: var(--input_height);
+				min-height: var(--input_height);
+				flex-shrink: 0;
+				font-weight: 900;
+				padding: 0;
+			}
+		`,
+	},
+	plain: {
+		ruleset: `
+			/* TODO maybe this belongs with the reset, like \`selected\`? or does \`selected\` belong here? */
+			.plain:not(:hover) {
+				border-color: transparent;
+				box-shadow: none;
+				--button_fill: transparent;
+			}
+		`,
+	},
+	menu_item: {
+		ruleset: `
+			.menu_item {
+				--border_radius: 0;
+				--border_color: var(--border_color_3);
+				position: relative;
+				z-index: 2;
+				width: 100%;
+				min-height: var(--min_height, var(--icon_size_sm));
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: var(--menu_item_padding, var(--space_xs3) var(--space_xs));
+			}
+			.menu_item.selected {
+				/* TODO different patterns for border and bg? */
+				--border_color: var(--color_a_5);
+				background-color: var(--fg_1);
+				z-index: 1;
+			}
+			.menu_item.plain {
+				border: none;
+			}
+			.menu_item .content {
+				display: flex;
+				align-items: center;
+				flex: 1;
+				/* allows the flex children to shrink */
+				min-width: 0;
+			}
+			.menu_item .icon {
+				width: var(--icon_size, var(--icon_size_md));
+				margin-right: var(--space_sm);
+				flex-shrink: 0;
+				text-align: center;
+				font-weight: 900;
+			}
+			.menu_item .title {
+				margin-right: var(--space_lg);
+				flex-shrink: 1;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				line-height: var(--line_height_lg); /* prevents the bottom of g's and others from being cut off */
+			}
+		`,
+	},
+	chevron: {
+		ruleset: `
+			.chevron {
+				position: relative;
+				height: 8px;
+			}
+			.chevron::before {
+				display: block;
+				content: '';
+				border: 4px solid transparent;
+				border-left-color: var(--text_color_3);
+			}
+		`,
+	},
+	chip: {
+		ruleset: `
+			.chip {
+				font-weight: 600;
+				padding: var(--space_xs5) var(--space_sm); /* maybe different inside \`p\`? using \`calc\` with \`--size\`? */
+				background-color: var(--fg_1);
+				border-radius: var(--radius_xs);
+			}
+			a.chip {
+				font-weight: 700;
+			}
+		`,
+	},
+	pre: {
+		// keep in sync with `pre` styling in `style.css`, except the `.inline` exception
+		ruleset: `
+			.pre {
+				font-family: var(--font_mono);
+				color: var(--text_color, var(--text_color_3));
+				overflow: auto;
+				max-width: 100%;
+			}
+			.pre > code {
+				font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic \`--size\`? */
+				font-weight: 500;
+			}
+			.pre:not(.inline) > code {
+				display: block;
+			}
+		`,
+	},
+
 	relative: {declaration: 'position: relative;'},
 	absolute: {declaration: 'position: absolute;'},
 	fixed: {declaration: 'position: fixed;'},
@@ -1233,259 +1490,4 @@ layout
 	row_gap_xl13: {declaration: 'row-gap: var(--space_xl13);'},
 	row_gap_xl14: {declaration: 'row-gap: var(--space_xl14);'},
 	row_gap_xl15: {declaration: 'row-gap: var(--space_xl15);'},
-	pixelated: {
-		declaration: `
-			image-rendering: -webkit-optimize-contrast; /* Safari */
-			image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
-			image-rendering: pixelated; /* in case crisp-edges isn't supported */
-			image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
-		`,
-	},
-	box: {
-		ruleset: `
-			.box {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
-		`,
-	},
-	column: {
-		ruleset: `
-			/* like \`.box\` but uncentered */
-			.column {
-				display: flex;
-				flex-direction: column;
-			}
-		`,
-	},
-	row: {
-		ruleset: `
-			/* can be used to override the direction of a \`.box\` */
-			.row {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-			}
-		`,
-	},
-	formatted: {
-		ruleset: `
-			/* Formats content to wrap long strings and preserve displayed whitespace. */
-			.formatted {
-				overflow: hidden;
-				white-space: break-spaces;
-			}
-		`,
-	},
-	width_md: {
-		ruleset: `
-			/* TODO rename these? use to be columns, maybe should be? */
-			.width_md {
-				width: 100%;
-				max-width: var(--width_md);
-			}
-		`,
-	},
-	width_sm: {
-		ruleset: `
-			.width_sm {
-				width: 100%;
-				max-width: var(--width_sm);
-			}
-		`,
-	},
-	selectable: {
-		ruleset: `
-			.selectable {
-				--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
-				--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
-				--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
-				cursor: pointer;
-				background-color: var(--button_fill);
-				border-color: var(--border_color_3);
-				border-style: var(--border_style);
-				border-width: var(--border_width);
-			}
-			.selectable:hover {
-				background-color: var(--button_fill_hover);
-				border-color: var(--border_color_2);
-			}
-			.selectable.selected,
-			.selectable:active {
-				background-color: var(--button_fill_active);
-				border-color: var(--color_a_5);
-			}
-			.selectable.selected {
-				cursor: default;
-			}
-			.selectable.selected.deselectable:not(:disabled) {
-				cursor: pointer;
-			}
-		`,
-	},
-	clickable: {
-		ruleset: `
-			.clickable {
-				cursor: pointer;
-				transform: var(--clickable_transform, scale3d(1, 1, 1));
-				transform-origin: var(--clickable_transform_origin);
-				transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
-			}
-			.clickable:focus {
-				transform: var(--clickable_transform_focus, scale3d(1.07, 1.07, 1.07));
-			}
-			.clickable:hover {
-				transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
-			}
-			.clickable:active,
-			.clickable.active {
-				transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
-			}
-		`,
-	},
-	pane: {
-		ruleset: `
-			/* A pane is a box floating over the page, like for dialogs.
-			By default it's opaque, resetting the background to the initial depth. */
-			.pane {
-				background-color: var(--pane_bg, var(--bg));
-				box-shadow: var(
-					--pane_shadow,
-					/* TODO this is terrible, maybe add all the variables? should be culled anyway? */
-						var(--shadow_bottom_md)
-						color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_3), transparent)
-				);
-				border-radius: var(--radius_xs);
-			}
-		`,
-	},
-	panel: {
-		ruleset: `
-			/* A panel is a box embedded into the page, useful for visually isolating content. */
-			.panel {
-				border-radius: var(--radius_xs);
-				background-color: var(--panel_bg, var(--fg_1));
-			}
-		`,
-	},
-	icon_button: {
-		ruleset: `
-			/* TODO other button variants? */
-			/* TODO this is slightly strange that it doesn't use --icon_size */
-			/* These are used as modifiers to buttons, and so they use \`:where\` so they cascade. */
-			.icon_button {
-				width: var(--input_height);
-				height: var(--input_height);
-				min-width: var(--input_height);
-				min-height: var(--input_height);
-				flex-shrink: 0;
-				font-weight: 900;
-				padding: 0;
-			}
-		`,
-	},
-	plain: {
-		ruleset: `
-			/* TODO maybe this belongs with the reset, like \`selected\`? or does \`selected\` belong here? */
-			.plain:not(:hover) {
-				border-color: transparent;
-				box-shadow: none;
-				--button_fill: transparent;
-			}
-		`,
-	},
-	menu_item: {
-		ruleset: `
-			.menu_item {
-				--border_radius: 0;
-				--border_color: var(--border_color_3);
-				position: relative;
-				z-index: 2;
-				width: 100%;
-				min-height: var(--min_height, var(--icon_size_sm));
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: var(--menu_item_padding, var(--space_xs3) var(--space_xs));
-			}
-			.menu_item.selected {
-				/* TODO different patterns for border and bg? */
-				--border_color: var(--color_a_5);
-				background-color: var(--fg_1);
-				z-index: 1;
-			}
-			.menu_item.plain {
-				border: none;
-			}
-			.menu_item .content {
-				display: flex;
-				align-items: center;
-				flex: 1;
-				/* allows the flex children to shrink */
-				min-width: 0;
-			}
-			.menu_item .icon {
-				width: var(--icon_size, var(--icon_size_md));
-				margin-right: var(--space_sm);
-				flex-shrink: 0;
-				text-align: center;
-				font-weight: 900;
-			}
-			.menu_item .title {
-				margin-right: var(--space_lg);
-				flex-shrink: 1;
-				overflow: hidden;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				line-height: var(--line_height_lg); /* prevents the bottom of g's and others from being cut off */
-			}
-		`,
-	},
-	chevron: {
-		ruleset: `
-			.chevron {
-				position: relative;
-				height: 8px;
-			}
-			.chevron::before {
-				display: block;
-				content: '';
-				border: 4px solid transparent;
-				border-left-color: var(--text_color_3);
-			}
-		`,
-	},
-	chip: {
-		ruleset: `
-			.chip {
-				font-weight: 600;
-				padding: var(--space_xs5) var(--space_sm); /* maybe different inside \`p\`? using \`calc\` with \`--size\`? */
-				background-color: var(--fg_1);
-				border-radius: var(--radius_xs);
-			}
-			a.chip {
-				font-weight: 700;
-			}
-		`,
-	},
-	pre: {
-		// keep in sync with `pre` styling in `style.css`, except the `.inline` exception
-		ruleset: `
-			.pre {
-				font-family: var(--font_mono);
-				color: var(--text_color, var(--text_color_3));
-				overflow: auto;
-				max-width: 100%;
-			}
-			.pre > code {
-				font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic \`--size\`? */
-				font-weight: 500;
-			}
-			.pre:not(.inline) > code {
-				display: block;
-			}
-		`,
-	},
 };
