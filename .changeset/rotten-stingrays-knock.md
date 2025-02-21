@@ -2,4 +2,4 @@
 '@ryanatkn/moss': patch
 ---
 
-add `width_lg` and `width_xs` class
+add `width_xl`, `width_lg`, and `width_xs` classes
