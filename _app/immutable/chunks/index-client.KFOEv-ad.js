@@ -1,1 +1,0 @@
-import{a1 as t,a2 as e,a3 as c,u as a}from"./runtime.q7tUB77H.js";function u(n){t===null&&e(),c(()=>{const o=a(n);if(typeof o=="function")return o})}function s(n){t===null&&e(),u(()=>()=>a(n))}export{u as a,s as o};

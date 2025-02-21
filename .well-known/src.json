@@ -139,6 +139,14 @@
           "kind": "variable"
         },
         {
+          "name": "Width_Variant",
+          "kind": "type"
+        },
+        {
+          "name": "width_variants",
+          "kind": "variable"
+        },
+        {
           "name": "Radius_Variant",
           "kind": "type"
         },

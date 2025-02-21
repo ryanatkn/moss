@@ -1,0 +1,1 @@
+import{_ as t,$ as e,a0 as u,u as c}from"./BBqbn4le.js";function f(n){t===null&&e(),u(()=>{const o=c(n);if(typeof o=="function")return o})}function s(n){t===null&&e(),f(()=>()=>c(n))}export{f as a,s as o};
