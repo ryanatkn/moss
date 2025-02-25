@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.22.2
+
+### Patch Changes
+
+- add line-height 1 to `.icon_button` ([caf4e3e](https://github.com/ryanatkn/moss/commit/caf4e3e))
+
 ## 0.22.1
 
 ### Patch Changes
