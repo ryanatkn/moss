@@ -222,6 +222,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				min-width: var(--input_height);
 				min-height: var(--input_height);
 				flex-shrink: 0;
+				line-height: 1;
 				font-weight: 900;
 				padding: 0;
 			}
