@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.22.3
+
+### Patch Changes
+
+- make `.plain` have a transparent border on hover ([04f711a](https://github.com/ryanatkn/moss/commit/04f711a))
+
 ## 0.22.2
 
 ### Patch Changes
