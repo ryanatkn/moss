@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.22.4
+
+### Patch Changes
+
+- make active state behave the same as hover for plain borders ([7f6cda1](https://github.com/ryanatkn/moss/commit/7f6cda1))
+
 ## 0.22.3
 
 ### Patch Changes
