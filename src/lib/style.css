@@ -424,11 +424,6 @@ see https://caniuse.com/css-has
 	width: var(--input_width_min);
 }
 
-:where(:where(button, input, textarea, select):focus) {
-	--border_color: var(--color_a_5);
-	--outline_width: var(--outline_width_2);
-}
-
 :where(:where(input, textarea, select):disabled) {
 	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
 	--input_fill: transparent;
@@ -511,6 +506,11 @@ TODO think through these patterns to get somewhere consistent
 	border-color: var(--button_border_color);
 	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
+}
+
+:where(:where(button, input, textarea, select):focus) {
+	--border_color: var(--color_a_5);
+	--outline_width: var(--outline_width_2);
 }
 
 /* TODO maybe gradients? or at least use a text_color */
