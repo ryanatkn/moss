@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.22.5
+
+### Patch Changes
+
+- set border color variable instead of property on `.plain` ([e6efe3e](https://github.com/ryanatkn/moss/commit/e6efe3e))
+
 ## 0.22.4
 
 ### Patch Changes
