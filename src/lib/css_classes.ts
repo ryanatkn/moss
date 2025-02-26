@@ -232,6 +232,9 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				box-shadow: none;
 				--button_fill: transparent;
 			}
+			.plain:hover {
+				border-color: transparent;
+			}
 		`,
 	},
 	menu_item: {
