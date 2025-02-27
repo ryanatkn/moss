@@ -5,6 +5,10 @@ import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
 
 // TODO think about variable support (much harder problem, need dependency graph)
+
+/**
+ * @see `generate_classes_css`
+ */
 export const css_classes_by_name: Record<string, Css_Class_Declaration | undefined> = {
 	// Composite classes go first, so they can be overridden by the more specific classes.
 	pixelated: {
