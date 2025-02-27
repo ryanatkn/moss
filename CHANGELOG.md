@@ -1,5 +1,16 @@
 # @ryanatkn/moss
 
+## 0.23.0
+
+### Minor Changes
+
+- add `font_serif` and make it the default for headings ([#50](https://github.com/ryanatkn/moss/pull/50))
+
+### Patch Changes
+
+- add `--size` for `.size_*` classes and `--font_weight` for `.font_weight_*` classes ([#50](https://github.com/ryanatkn/moss/pull/50))
+- add `.heading` for h1-6-like behavior ([#50](https://github.com/ryanatkn/moss/pull/50))
+
 ## 0.22.5
 
 ### Patch Changes
