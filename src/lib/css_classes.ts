@@ -514,15 +514,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	ellipsis: {
 		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
 	},
-	font_weight_100: {declaration: 'font-weight: 100;'},
-	font_weight_200: {declaration: 'font-weight: 200;'},
-	font_weight_300: {declaration: 'font-weight: 300;'},
-	font_weight_400: {declaration: 'font-weight: 400;'},
-	font_weight_500: {declaration: 'font-weight: 500;'},
-	font_weight_600: {declaration: 'font-weight: 600;'},
-	font_weight_700: {declaration: 'font-weight: 700;'},
-	font_weight_800: {declaration: 'font-weight: 800;'},
-	font_weight_900: {declaration: 'font-weight: 900;'},
+	font_weight_100: {declaration: 'font-weight: 100; --font_weight: 100;'},
+	font_weight_200: {declaration: 'font-weight: 200; --font_weight: 200;'},
+	font_weight_300: {declaration: 'font-weight: 300; --font_weight: 300;'},
+	font_weight_400: {declaration: 'font-weight: 400; --font_weight: 400;'},
+	font_weight_500: {declaration: 'font-weight: 500; --font_weight: 500;'},
+	font_weight_600: {declaration: 'font-weight: 600; --font_weight: 600;'},
+	font_weight_700: {declaration: 'font-weight: 700; --font_weight: 700;'},
+	font_weight_800: {declaration: 'font-weight: 800; --font_weight: 800;'},
+	font_weight_900: {declaration: 'font-weight: 900; --font_weight: 900;'},
 
 	/*/
 
