@@ -35,7 +35,7 @@
 		'grid',
 		'float_none|left|right|inline_start|inline_end',
 		'flip_x|y|xy',
-		'font_sans|mono',
+		'font_sans|serif|mono',
 		'line_height_xs-xl',
 		'size_xs-xl9',
 		'icon_size_xs-xl3',

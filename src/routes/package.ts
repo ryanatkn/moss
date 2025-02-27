@@ -330,6 +330,7 @@ export const src_json = {
 				{name: 'line_height_lg', kind: 'variable'},
 				{name: 'line_height_xl', kind: 'variable'},
 				{name: 'font_sans', kind: 'variable'},
+				{name: 'font_serif', kind: 'variable'},
 				{name: 'font_mono', kind: 'variable'},
 				{name: 'size_xs', kind: 'variable'},
 				{name: 'size_sm', kind: 'variable'},

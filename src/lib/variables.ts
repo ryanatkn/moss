@@ -717,6 +717,11 @@ export const font_sans: Style_Variable = {
 	summary:
 		'@source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/',
 };
+export const font_serif: Style_Variable = {
+	name: 'font_serif',
+	light: "'DM Serif Display', Georgia, serif",
+	summary: '@source https://svelte.dev/',
+};
 export const font_mono: Style_Variable = {
 	name: 'font_mono',
 	light: "ui-monospace, 'Fira Mono', monospace",
@@ -1378,6 +1383,7 @@ export const default_variables: Array<Style_Variable> = [
 	line_height_lg,
 	line_height_xl,
 	font_sans,
+	font_serif,
 	font_mono,
 
 	/* sizes like font-size */
