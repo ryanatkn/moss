@@ -119,12 +119,13 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	list-style: none;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
+:where(h1, h2, h3, h4, h5, h6, .heading) {
+	font-family: var(--font_serif);
+	font-size: var(--size, var(--size_md));
+	font-weight: var(--font_weight);
 	line-height: var(--line_height_sm);
 	text-wrap: balance; /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#balance */
 	/* TODO use this pattern elsewhere? provides API to components like `Mdn_Logo` */
-	font-size: var(--size, var(--size_md));
-	font-weight: var(--font_weight);
 	overflow-wrap: break-word; /* TODO @many is this best? `anywhere` instead? what about adding elsewhere? */
 }
 
