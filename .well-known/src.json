@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.22.5",
+  "version": "0.23.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -878,6 +878,10 @@
         },
         {
           "name": "font_sans",
+          "kind": "variable"
+        },
+        {
+          "name": "font_serif",
           "kind": "variable"
         },
         {
