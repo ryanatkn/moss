@@ -342,6 +342,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	fixed: {declaration: 'position: fixed;'},
 	sticky: {declaration: 'position: sticky;'},
 	static: {declaration: 'position: static;'},
+
 	overflow_auto: {declaration: 'overflow: auto;'},
 	overflow_hidden: {declaration: 'overflow: hidden;'},
 	overflow_scroll: {declaration: 'overflow: scroll;'},
@@ -359,6 +360,24 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	overflow_y_visible: {declaration: 'overflow-y: visible;'},
 	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
 	overflow_wrap_break_word: {declaration: 'overflow-wrap: break-word;'},
+
+	scrollbar_width_auto: {declaration: 'scrollbar-width: auto;'},
+	scrollbar_width_thin: {declaration: 'scrollbar-width: thin;'},
+	scrollbar_width_none: {declaration: 'scrollbar-width: none;'},
+	scrollbar_width_inherit: {declaration: 'scrollbar-width: inherit;'},
+	scrollbar_width_initial: {declaration: 'scrollbar-width: initial;'},
+	scrollbar_width_revert: {declaration: 'scrollbar-width: revert;'},
+	scrollbar_width_revert_layer: {declaration: 'scrollbar-width: revert-layer;'},
+	scrollbar_width_unset: {declaration: 'scrollbar-width: unset;'},
+
+	scrollbar_gutter_auto: {declaration: 'scrollbar-gutter: auto;'},
+	scrollbar_gutter_stable: {declaration: 'scrollbar-gutter: stable;'},
+	scrollbar_gutter_stable_both_edges: {declaration: 'scrollbar-gutter: stable both-edges;'},
+	scrollbar_gutter_inherit: {declaration: 'scrollbar-gutter: inherit;'},
+	scrollbar_gutter_initial: {declaration: 'scrollbar-gutter: initial;'},
+	scrollbar_gutter_revert: {declaration: 'scrollbar-gutter: revert;'},
+	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
+	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
 
 	/* these include the longhand `display_` because they're less common and would be more ambiguous */
 	display_none: {declaration: 'display: none;'},

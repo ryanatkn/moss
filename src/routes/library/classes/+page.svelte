@@ -11,12 +11,16 @@
 
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
+	const style_global_values = 'inherit|initial|revert|revert_layer|unset';
+
 	// TODO show these with `Details` hiding their expanded set of values (interpolated using this shorthand as the source of truth? isn't that complex)
 	const style_utilities_items = [
 		'relative|absolute|fixed|sticky|static',
 		'overflow_auto|hidden|scroll|clip|visible',
 		'overflow_x|y_auto|hidden|scroll|clip|visible',
 		'overflow_wrap_anywhere|break_word',
+		`scrollbar_width_auto|thin|none|${style_global_values}`,
+		`scrollbar_gutter_auto|stable|stable_both_edges|${style_global_values}`,
 		'display_none|contents',
 		'inline|inline_block|inline_flex|inline_grid',
 		'block',
@@ -41,11 +45,11 @@
 		'icon_size_xs-xl3',
 		'text_align_start|end|left|right|center|justify|justify_all|match_parent',
 		'vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom',
-		'word_break_normal|break_all|keep_all|inherit|initial|revert|revert_layer|unset', // TODO add `inherit/initial/etc` to the others now that we have on-demand building
+		`word_break_normal|break_all|keep_all|${style_global_values}`, // TODO add `inherit/initial/etc` to the others now that we have on-demand building
 		'white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces',
 		'white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces',
 		'text_wrap_wrap|nowrap|balance|pretty|stable',
-		'user_select_none|auto|text|all|inherit|initial|revert|revert_layer|unset',
+		`user_select_none|auto|text|all|${style_global_values}`,
 		'font_weight_100-900',
 		'text_color_0-10',
 		'darken|lighten_1-9',
