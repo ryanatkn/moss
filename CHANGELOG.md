@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.23.2
+
+### Patch Changes
+
+- add scrollbar-width and scrollbar-gutter css classes ([9d6866d](https://github.com/ryanatkn/moss/commit/9d6866d))
+
 ## 0.23.1
 
 ### Patch Changes
