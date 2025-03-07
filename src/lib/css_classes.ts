@@ -57,6 +57,9 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			}
 		`,
 	},
+	ellipsis: {
+		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
+	},
 	width_xl: {
 		ruleset: `
 			.width_xl {
@@ -515,9 +518,17 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	text_wrap_balance: {declaration: 'text-wrap: balance;'},
 	text_wrap_pretty: {declaration: 'text-wrap: pretty;'},
 	text_wrap_stable: {declaration: 'text-wrap: stable;'},
-	ellipsis: {
-		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
-	},
+
+	user_select_none: {declaration: 'user-select: none;'},
+	user_select_auto: {declaration: 'user-select: auto;'},
+	user_select_text: {declaration: 'user-select: text;'},
+	user_select_all: {declaration: 'user-select: all;'},
+	user_select_inherit: {declaration: 'user-select: inherit;'},
+	user_select_initial: {declaration: 'user-select: initial;'},
+	user_select_revert: {declaration: 'user-select: revert;'},
+	user_select_revert_layer: {declaration: 'user-select: revert-layer;'},
+	user_select_unset: {declaration: 'user-select: unset;'},
+
 	font_weight_100: {declaration: 'font-weight: 100; --font_weight: 100;'},
 	font_weight_200: {declaration: 'font-weight: 200; --font_weight: 200;'},
 	font_weight_300: {declaration: 'font-weight: 300; --font_weight: 300;'},
