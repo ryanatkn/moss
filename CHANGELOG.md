@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.23.1
+
+### Patch Changes
+
+- add `user-select` css classes ([cc4865b](https://github.com/ryanatkn/moss/commit/cc4865b))
+
 ## 0.23.0
 
 ### Minor Changes
