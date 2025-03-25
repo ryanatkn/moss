@@ -34,8 +34,8 @@
 				Moss is being made to support <a href="https://www.zzzbot.dev/">Zzz</a> and
 				<a href="https://www.ryanatkn.com/">my other projects</a>
 				that focus on end-users. It's grown slowly over 5 years, adding new features when I feel they're
-				sufficiently generalizable or merit experimentation, and my goal for 2024 is to fill out its
-				APIs so it's more coherent and complete.
+				sufficiently generalizable or merit experimentation, and in 2025 I'm excited to explore themes!
+				And then I'll think about announcing it.
 			</p>
 		</div>
 	</section>
