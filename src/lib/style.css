@@ -114,10 +114,6 @@ The `!important` makes this `hidden` behavior much higher specificity.
 :where(ol) {
 	list-style: decimal;
 }
-:where(.unstyled:where(ul, ol, menu)) {
-	padding-left: 0; /* TODO test specificity with utility classes, maybe change to set --padding_left */
-	list-style: none;
-}
 
 :where(h1, h2, h3, h4, h5, h6, .heading) {
 	font-family: var(--font_serif);
@@ -198,6 +194,12 @@ The `!important` makes this `hidden` behavior much higher specificity.
 }
 :where(section:not(:last-child)) {
 	margin-bottom: var(--space_xl7);
+}
+
+:where(.unstyled:where(ul, ol, menu)) {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
 }
 
 :where(aside:not(.unstyled)) {
