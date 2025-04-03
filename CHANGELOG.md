@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.24.0
+
+### Minor Changes
+
+- break: change `.unstyled` lists to have no `margin-bottom` ([c27315e](https://github.com/ryanatkn/moss/commit/c27315e))
+
 ## 0.23.2
 
 ### Patch Changes
