@@ -14,7 +14,7 @@
 <Tome_Content {tome}>
 	<section>
 		<Introduction />
-		<p>About Moss:</p>
+		<p>Details:</p>
 		<ul>
 			<li>plain CSS</li>
 			<li>zero dependencies</li>

@@ -264,6 +264,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				background-color: var(--fg_1);
 				z-index: 1;
 			}
+			.menu_item:hover {
+				--border_color: var(--border_color_3);
+				background-color: var(--fg_0);
+			}
+			.menu_item:active,
+			.menu_item.selected:hover {
+				--border_color: var(--border_color_3);
+				background-color: var(--fg_2);
+			}
 			.menu_item.plain {
 				border: none;
 			}
