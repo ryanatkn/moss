@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.24.1
+
+### Patch Changes
+
+- add `.menu_item` styles ([455199c](https://github.com/ryanatkn/moss/commit/455199c))
+
 ## 0.24.0
 
 ### Minor Changes
