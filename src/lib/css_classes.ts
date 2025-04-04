@@ -251,6 +251,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				--border_color: var(--border_color_3);
 				position: relative;
 				z-index: 2;
+				cursor: pointer;
 				width: 100%;
 				min-height: var(--min_height, var(--icon_size_sm));
 				display: flex;
@@ -263,6 +264,10 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				--border_color: var(--color_a_5);
 				background-color: var(--fg_1);
 				z-index: 1;
+				cursor: default;
+			}
+			.menu_item.selected.deselectable:not(:disabled) {
+				cursor: pointer;
 			}
 			.menu_item:hover {
 				--border_color: var(--border_color_3);

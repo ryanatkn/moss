@@ -120,6 +120,7 @@ export class Css_Classes {
 		return this.#all;
 	}
 
+	/** @deprecated sorting is bad right? */
 	get_sorted_array(): Array<string> {
 		if (!this.#dirty && this.#all_sorted !== null) {
 			return this.#all_sorted;
