@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.24.2
+
+### Patch Changes
+
+- add cursor styles to `.menu_item` ([c1e71ea](https://github.com/ryanatkn/moss/commit/c1e71ea))
+
 ## 0.24.1
 
 ### Patch Changes
