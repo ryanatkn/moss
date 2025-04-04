@@ -18,7 +18,8 @@ but a goal is to let both developers and end-users shape it for their needs.
 
 If this sounds interesting to you,
 I'm welcoming help to iterate on APIs to get Moss to 1.0 and beyond.
-See the [Github issues](https://github.com/ryanatkn/moss).
+See the [issues](https://github.com/ryanatkn/moss/issues)
+and [discussions](https://github.com/ryanatkn/moss/discussions).
 
 I've been growing Moss slowly over 5+ years
 to support [Zzz](https://www.zzzbot.dev/) and [my other projects](http://www.ryanatkn.com/)
@@ -30,14 +31,15 @@ If you feel comfortable looking at the source code,
 Moss is ready to use in non-criticial and hobby projects,
 with the major caveat that there will be a lot of breaking changes ahead.
 The code is significantly incomplete but I think it's stable enough to use
-if you're willing to keep up with the relatively fast-moving changelog.
-Your feedback is welcome to help it improve.
-See the [Github issues](https://github.com/ryanatkn/moss/issues).
+if you're willing to keep up with a chaotic changelog (usually quiet, sometimes very breaking).
+Feedback of all kinds if welcome.
 
-I'm open to PRs when they fit the project's design goals, which can be subtle and arbitrary.
+I'm open to PRs when they fit the project's design goals, which can be subtle and arbitrary
+and ill-communicated (:(),
+but I generally want to reduce any quirkiness.
 Feel free to open PRs for straightforward changes, but start with an issue for most PRs.
 
-The code is permissively licensed, feel free to fork for your own needs.
+The code is permissively licensed so no CLA.
 
 ## Funding
 
