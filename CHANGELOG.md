@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.24.3
+
+### Patch Changes
+
+- fix CSS class generation sort order ([#51](https://github.com/ryanatkn/moss/pull/51))
+
 ## 0.24.2
 
 ### Patch Changes
