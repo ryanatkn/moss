@@ -24,6 +24,8 @@
 	};
 </script>
 
+<!-- eslint-disable svelte/no-useless-mustaches -->
+
 <Tome_Content {tome}>
 	<Tome_Section>
 		<section>

@@ -23,6 +23,8 @@
 	const mb_xs = true;
 </script>
 
+<!-- eslint-disable svelte/no-useless-mustaches -->
+
 <Tome_Content {tome}>
 	<section>
 		<p>
@@ -61,7 +63,7 @@
 
 	<Tome_Section>
 		<Tome_Section_Header text="Colorful buttons" />
-		{#each color_variants as c}
+		{#each color_variants as c (c)}
 			{@const color_name = `color_${c}`}
 			<section>
 				<Code content={`<button class="${color_name}">`} />

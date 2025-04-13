@@ -133,7 +133,7 @@ ${'<' as string}script>
 	<Tome_Section>
 		<Tome_Section_Header text="Utility classes" />
 		<ul class="classes unstyled">
-			{#each style_utilities_items as c}
+			{#each style_utilities_items as c (c)}
 				<li>.{c}</li>
 			{/each}
 		</ul>

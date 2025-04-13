@@ -15,7 +15,7 @@
 	</aside>
 </Tome_Section>
 <div class="icon_sizes">
-	{#each Object.entries(icon_sizes) as [name, value]}
+	{#each Object.entries(icon_sizes) as [name, value] (name)}
 		<figure>
 			<figcaption>
 				<Style_Variable_Button {name} /> =

@@ -76,7 +76,7 @@
 			>
 			<Unfinished_Implementation_Warning />
 			<div class="swatch">
-				{#each {length: 9} as _, i}
+				{#each {length: 9} as _, i (i)}
 					{@const name = 'darken_' + (i + 1)}
 					<div>
 						<div class="color" style:background-color="var(--{name})"></div>
@@ -85,7 +85,7 @@
 				{/each}
 			</div>
 			<div class="swatch">
-				{#each {length: 9} as _, i}
+				{#each {length: 9} as _, i (i)}
 					{@const name = 'lighten_' + (i + 1)}
 					<div>
 						<div class="color" style:background-color="var(--{name})"></div>
@@ -103,7 +103,7 @@
 				the same as <code>darken</code>. In dark mode, they're swapped.
 			</p>
 			<div class="swatch">
-				{#each {length: 9} as _, i}
+				{#each {length: 9} as _, i (i)}
 					{@const name = 'bg_' + (i + 1)}
 					<div>
 						<div class="color" style:background-color="var(--{name})"></div>
@@ -112,7 +112,7 @@
 				{/each}
 			</div>
 			<div class="swatch">
-				{#each {length: 9} as _, i}
+				{#each {length: 9} as _, i (i)}
 					{@const name = 'fg_' + (i + 1)}
 					<div>
 						<div class="color" style:background-color="var(--{name})"></div>
@@ -168,7 +168,7 @@
 				<div class="color bg_a_5"></div>
 				<small style:font-family="var(--font_sans)">full opacity</small>
 			</div>
-			{#each {length: 6} as _, i}
+			{#each {length: 6} as _, i (i)}
 				{@const name = 'fade_' + (i + 1)}
 				<div>
 					<div class="color bg_a_5" style:opacity="var(--{name})"></div>

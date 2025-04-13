@@ -32,14 +32,14 @@
 		<Tome_Section_Header text="Border colors" />
 		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_colors">
-			{#each {length: 5} as _, i}
+			{#each {length: 5} as _, i (i)}
 				{@const name = 'border_color_' + (i + 1)}
 				<div class="border_color_outer">
 					<div class="border_color_inner">
 						<div class="border_example border_color" style:border-color="var(--{name})">
 							<Style_Variable_Button {name} />
 						</div>
-						{#each {length: 5} as _, i}
+						{#each {length: 5} as _, i (i)}
 							<div
 								class="border_color_width"
 								style:border-color="var(--{name})"
@@ -63,14 +63,14 @@
 		<Tome_Section_Header text="Colorful border variants" />
 		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_colors">
-			{#each color_variants as color_variant}
+			{#each color_variants as color_variant (color_variant)}
 				{@const name = 'border_color_' + color_variant}
 				<div class="border_color_outer">
 					<div class="border_color_inner">
 						<div class="border_example border_color" style:border-color="var(--{name})">
 							<Style_Variable_Button {name} />
 						</div>
-						{#each {length: 5} as _, i}
+						{#each {length: 5} as _, i (i)}
 							<div
 								class="border_color_width"
 								style:border-color="var(--{name})"
@@ -91,7 +91,7 @@
 		<Tome_Section_Header text="Border widths" />
 		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_widths">
-			{#each {length: 6} as _, i}
+			{#each {length: 6} as _, i (i)}
 				{@const name = 'border_width_' + (i + 1)}
 				<div class="row">
 					<div class="border_example border_width" style:border-width="var(--{name})">
@@ -107,7 +107,7 @@
 	<Tome_Section>
 		<Tome_Section_Header text="Outline widths" />
 		<div class="border_examples outline_widths">
-			{#each {length: 3} as _, i}
+			{#each {length: 3} as _, i (i)}
 				{@const name = 'outline_width_' + (i + 1)}
 				<div class="row">
 					<div class="border_example outline_width" style:outline-width="var(--{name})">
@@ -123,7 +123,7 @@
 	<Tome_Section>
 		<Tome_Section_Header text="Border radius" />
 		<div class="border_examples border_radii">
-			{#each radius_variants as radius}
+			{#each radius_variants as radius (radius)}
 				{@const name = 'radius_' + radius}
 				<div class="row">
 					<div class="border_example border_radius" style:border-radius="var(--{name})">

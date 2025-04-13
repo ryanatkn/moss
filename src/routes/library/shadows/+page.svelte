@@ -42,8 +42,8 @@
 			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
 		>
 		{@render shadow_example_header()}
-		{#each shadow_variant_prefixes as shadow_variant_prefix}
-			{#each shadow_size_variants as shadow_size_variant}
+		{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+			{#each shadow_size_variants as shadow_size_variant (shadow_size_variant)}
 				<div class="shadow_example">
 					<div class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant}">
 						<Style_Variable_Button name="{shadow_variant_prefix}{shadow_size_variant}" />
@@ -62,8 +62,8 @@
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
 			{@render shadow_example_header()}
-			{#each shadow_variant_prefixes as shadow_variant_prefix}
-				{#each shadow_size_variants as shadow_size_variant}
+			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+				{#each shadow_size_variants as shadow_size_variant (shadow_size_variant)}
 					<div class="shadow_example">
 						<div
 							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_highlight"
@@ -89,8 +89,8 @@
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
 			{@render shadow_example_header()}
-			{#each shadow_variant_prefixes as shadow_variant_prefix}
-				{#each shadow_size_variants as shadow_size_variant}
+			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+				{#each shadow_size_variants as shadow_size_variant (shadow_size_variant)}
 					<div class="shadow_example">
 						<div
 							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_glow"
@@ -112,8 +112,8 @@
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
 			{@render shadow_example_header()}
-			{#each shadow_variant_prefixes as shadow_variant_prefix}
-				{#each shadow_size_variants as shadow_size_variant}
+			{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+				{#each shadow_size_variants as shadow_size_variant (shadow_size_variant)}
 					<div class="shadow_example">
 						<div
 							class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_shroud"
@@ -134,11 +134,11 @@
 		<Tome_Section_Header text="Colorful shadows" />
 		<p>These are darker in light mode than in dark mode.</p>
 		{@render shadow_example_header()}
-		{#each color_variants as color_variant}
+		{#each color_variants as color_variant (color_variant)}
 			{@const classes = 'color_' + color_variant}
 			<section>
-				{#each shadow_variant_prefixes as shadow_variant_prefix}
-					{#each shadow_size_variants as shadow_size_variant}
+				{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
+					{#each shadow_size_variants as shadow_size_variant (shadow_size_variant)}
 						<div class="shadow_example">
 							<div
 								class="shadow_main_example {shadow_variant_prefix}{shadow_size_variant} shadow_color_{color_variant}"

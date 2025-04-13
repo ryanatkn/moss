@@ -20,7 +20,7 @@
 	<Tome_Section>
 		<Tome_Section_Header text="Space variables" />
 		<ul class="unstyled">
-			{#each space_variants as space_size}
+			{#each space_variants as space_size (space_size)}
 				{@const name = 'space_' + space_size}
 				<li class="layout_example">
 					<div class="fill" style:width="var(--{name})"></div>
@@ -40,7 +40,7 @@
 		<Tome_Section_Header text="Width variables" />
 		<aside>⚠️ maybe instead of "width" this should be "distance" or "length" something?</aside>
 		<ul class="unstyled">
-			{#each width_variants as width_size}
+			{#each width_variants as width_size (width_size)}
 				{@const name = 'width_' + width_size}
 				<li class="layout_example">
 					<div class="fill" style:width="var(--{name})"></div>
