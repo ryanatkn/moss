@@ -101,7 +101,7 @@
 			<Font_Size_Control bind:selected_size />
 		</form>
 		<div>
-			{#each font_weights as font_weight}
+			{#each font_weights as font_weight (font_weight)}
 				<div
 					class="white_space_nowrap"
 					style:font-weight={font_weight}
@@ -118,7 +118,7 @@
 			Add color-scheme-adaptive versions?
 		</Unfinished_Implementation_Warning>
 		<div class="panel">
-			{#each text_variants as text_variant}
+			{#each text_variants as text_variant (text_variant)}
 				{@const name = 'text_color_' + text_variant}
 				<div class="row">
 					<Style_Variable_Button {name}
@@ -135,7 +135,7 @@
 		<Tome_Section_Header text="Line heights" />
 		<aside>Learn more about <Mdn_Link path="Web/CSS/line-height" />.</aside>
 		<div>
-			{#each line_height_names as name}
+			{#each line_height_names as name (name)}
 				<div>
 					<Style_Variable_Button {name}
 						><div style:line-height="var(--{name})" class="button_contents font_mono">

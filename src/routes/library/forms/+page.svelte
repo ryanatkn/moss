@@ -32,6 +32,8 @@
 	let checked2 = $state(true);
 </script>
 
+<!-- eslint-disable svelte/no-useless-mustaches -->
+
 <Tome_Content {tome}>
 	<Unfinished_Implementation_Warning>Forms need more work.</Unfinished_Implementation_Warning>
 
@@ -168,10 +170,10 @@
 		</Tome_Section_Header>
 		<form>
 			<fieldset>
-				{#each radio_items as radioItem}
-					{@const selected = radioItem === selected_radio_item}
+				{#each radio_items as radio_item (radio_item)}
+					{@const selected = radio_item === selected_radio_item}
 					<label class="row" class:selected
-						><input type="radio" bind:group={selected_radio_item} value={radioItem} />
+						><input type="radio" bind:group={selected_radio_item} value={radio_item} />
 						<Code
 							content={`<label class="row${selected ? ' selected' : ''}">\n\t<input type="radio" ${
 								selected ? 'checked' : ''

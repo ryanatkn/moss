@@ -10,7 +10,7 @@
 </script>
 
 <ul class="unstyled">
-	{#each {length: 9} as _, index}
+	{#each {length: 9} as _, index (index)}
 		<Color_Swatch_Item {index} {color_name} {computed_styles} />
 	{/each}
 </ul>

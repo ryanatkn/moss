@@ -19,6 +19,8 @@
 	// TODO think about the best way to show the raw code (and how to get it, how much structure to apply to library authors)
 </script>
 
+<!-- eslint-disable svelte/no-useless-mustaches -->
+
 <Tome_Content {tome}>
 	<Unfinished_Implementation_Warning
 		>Element styles are incomplete. Any requests?</Unfinished_Implementation_Warning
