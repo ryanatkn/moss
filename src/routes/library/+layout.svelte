@@ -38,7 +38,7 @@
 {#if selected_variable.value}
 	<Dialog onclose={() => (selected_variable.value = null)}>
 		{#snippet children(close)}
-			<div class="pane">
+			<div class="pane p_md width_md mx_auto">
 				<div class="panel p_lg box">
 					<Style_Variable_Detail variable={selected_variable.value} />
 					<Unfinished_Implementation_Warning />

@@ -91,7 +91,7 @@
 <!-- TODO enable creating themes -->
 <!-- {#if show_create_theme_dialog}
 	<Dialog onclose={() => (show_create_theme_dialog = false)} let:close>
-		<div class="pane">
+		<div class="pane p_md width_md mx_auto">
 			<div class="theme_editor_wrapper panel">
 				<Theme_Form
 					oncreate={(theme) => {
@@ -105,7 +105,7 @@
 {/if} -->
 {#if editing_theme}
 	<Dialog onclose={() => (editing_theme = null)}>
-		<div class="pane">
+		<div class="pane p_md width_md mx_auto">
 			<div class="theme_editor_wrapper panel">
 				<Theme_Form
 					theme={editing_theme}
