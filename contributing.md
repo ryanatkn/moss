@@ -10,7 +10,7 @@ The guiding principles of Moss:
 
 - build around CSS custom properties, primarily for runtime theming
 - expose APIs to end-users for last-mile theming, customization, and content creation
-- make the DX flexible and ergonomic
+- make the DX flexible and ergonomic while prioritizing performance
 
 Moss differs from Tailwind in that it starts from CSS custom properties and uses them everywhere.
 It also has more opinions than most frameworks,
