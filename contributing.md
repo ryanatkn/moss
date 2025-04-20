@@ -39,7 +39,7 @@ and ill-communicated (:(),
 but I generally want to reduce any quirkiness.
 Feel free to open PRs for straightforward changes, but start with an issue for most PRs.
 
-The code is permissively licensed so no CLA.
+The code is permissively licensed so no CLA, forking is encouraged.
 
 ## Funding
 
