@@ -19,7 +19,7 @@ const CSS_CLASS_EXTRACTORS: Array<Css_Extractor> = [
 			matched[2]
 				.replace(
 					// omit all expressions with best-effort - it's not perfect especially
-					// around double quote strings in JS in Svelte expressions, but using single quotes is better
+					// around double quote strings in JS in Svelte expressions, but using single quotes is better imo
 					/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g,
 					// same failures:
 					// /\S*{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`|{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`)*})*}\S*/g,
@@ -118,14 +118,6 @@ export class Css_Classes {
 			this.#recalculate();
 		}
 		return this.#all;
-	}
-
-	/** @deprecated sorting is bad right? */
-	get_sorted_array(): Array<string> {
-		if (!this.#dirty && this.#all_sorted !== null) {
-			return this.#all_sorted;
-		}
-		return (this.#all_sorted = Array.from(this.get()).sort((a, b) => a.localeCompare(b)));
 	}
 
 	#recalculate(): void {
