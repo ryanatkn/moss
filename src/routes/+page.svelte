@@ -31,7 +31,7 @@
 				<a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.
 			</p>
 			<p>
-				Moss is being made to support <a href="https://www.zzzbot.dev/">Zzz</a> and
+				Moss is being made to support <a href="https://www.zzz.software/">Zzz</a> and
 				<a href="https://www.ryanatkn.com/">my other projects</a>
 				that focus on end-users. It's grown slowly over 5 years, adding new features when I feel they're
 				sufficiently generalizable or merit experimentation, and in 2025 I'm excited to explore themes!
