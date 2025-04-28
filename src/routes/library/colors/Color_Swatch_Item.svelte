@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {hsl_to_hex_string, hsl_to_rgb, parse_hsl_string} from '@ryanatkn/belt/colors.js';
-	import {themer_context} from '@ryanatkn/fuz/theme.svelte.js';
+	import {themer_context} from '@ryanatkn/fuz/themer.svelte.js';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 
