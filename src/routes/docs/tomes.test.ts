@@ -3,7 +3,7 @@
 // import {test} from 'uvu';
 // import * as assert from 'uvu/assert';
 
-// import {tomes} from '$routes/library/tomes.js';
+// import {tomes} from '$routes/docs/tomes.js';
 
 // // Slug `related` data is denormalized but probably shouldn't be - delete if the data structure no longer needs the check.
 // // This also ensures we don't accidentally use

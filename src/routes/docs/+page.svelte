@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Library_Content from '@ryanatkn/fuz/Library_Content.svelte';
+	import Docs_Content from '@ryanatkn/fuz/Docs_Content.svelte';
 	import {tomes_context} from '@ryanatkn/fuz/tome.js';
 
 	import {pkg_context} from '$routes/pkg.js';
@@ -11,8 +11,8 @@
 	const pkg = pkg_context.get();
 </script>
 
-<Library_Content {tomes} {pkg}>
+<Docs_Content {tomes} {pkg}>
 	{#snippet repo_name()}
 		<h1 class="mb_sm">moss</h1>
 	{/snippet}
-</Library_Content>
+</Docs_Content>

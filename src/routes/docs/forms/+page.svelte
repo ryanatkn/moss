@@ -8,7 +8,7 @@
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'forms';
 
@@ -105,7 +105,7 @@
 					in:fly={{y: -100, duration: ANIMATION_DURATION_FAST}}
 					out:fly={{y: 100, duration: ANIMATION_DURATION_FAST}}
 				>
-					<Alert status="error">cannot create account because this library is fake</Alert>
+					<Alert status="error">cannot create account because the docs are fake</Alert>
 					<button type="button" class="w_100" onclick={() => (created_account = false)}>
 						undo undo!
 					</button>

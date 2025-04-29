@@ -8,7 +8,7 @@
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'elements';
 

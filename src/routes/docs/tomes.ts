@@ -1,19 +1,19 @@
 import type {Tome} from '@ryanatkn/fuz/tome.js';
 
-import introduction from '$routes/library/introduction/+page.svelte';
-import themes from '$routes/library/themes/+page.svelte';
-import colors from '$routes/library/colors/+page.svelte';
-import buttons from '$routes/library/buttons/+page.svelte';
-import forms from '$routes/library/forms/+page.svelte';
-import elements from '$routes/library/elements/+page.svelte';
-import classes from '$routes/library/classes/+page.svelte';
-import typography from '$routes/library/typography/+page.svelte';
-import variables from '$routes/library/variables/+page.svelte';
-import layout from '$routes/library/layout/+page.svelte';
-import shading from '$routes/library/shading/+page.svelte';
-import shadows from '$routes/library/shadows/+page.svelte';
-import borders from '$routes/library/borders/+page.svelte';
-// import menu_item from '$routes/library/menu_item/+page.svelte';
+import introduction from '$routes/docs/introduction/+page.svelte';
+import themes from '$routes/docs/themes/+page.svelte';
+import colors from '$routes/docs/colors/+page.svelte';
+import buttons from '$routes/docs/buttons/+page.svelte';
+import forms from '$routes/docs/forms/+page.svelte';
+import elements from '$routes/docs/elements/+page.svelte';
+import classes from '$routes/docs/classes/+page.svelte';
+import typography from '$routes/docs/typography/+page.svelte';
+import variables from '$routes/docs/variables/+page.svelte';
+import layout from '$routes/docs/layout/+page.svelte';
+import shading from '$routes/docs/shading/+page.svelte';
+import shadows from '$routes/docs/shadows/+page.svelte';
+import borders from '$routes/docs/borders/+page.svelte';
+// import menu_item from '$routes/docs/menu_item/+page.svelte';
 
 // TODO maybe decouple `related` from `Tome` to get bidirectionality for free
 

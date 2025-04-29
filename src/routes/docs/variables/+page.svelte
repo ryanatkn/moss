@@ -10,7 +10,7 @@
 	import {default_variables} from '$lib/variables.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import Module_Link from '$routes/Module_Link.svelte';
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'variables';
 

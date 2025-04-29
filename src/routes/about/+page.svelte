@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
+	import Docs_Footer from '@ryanatkn/fuz/Docs_Footer.svelte';
 	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
 	import Community_Links_Panel from '@ryanatkn/fuz/Community_Links_Panel.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
@@ -27,11 +27,11 @@
 		</div>
 	</section>
 	<section class="box mb_xl7">
-		<Library_Footer {pkg}>
+		<Docs_Footer {pkg}>
 			<div class="mb_xl5">
 				<Breadcrumb><Svg data={moss_logo} size="var(--icon_size_sm)" /></Breadcrumb>
 			</div>
-		</Library_Footer>
+		</Docs_Footer>
 	</section>
 </main>
 

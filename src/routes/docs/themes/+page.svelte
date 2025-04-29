@@ -13,7 +13,7 @@
 	import {default_themes} from '$lib/themes.js';
 	import type {Theme} from '$lib/theme.js';
 	import Theme_Form from '$routes/Theme_Form.svelte';
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'themes';
 

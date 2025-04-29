@@ -40,7 +40,7 @@
 			</li>
 			<li>
 				is agnostic to JS frameworks, for example usage see <a
-					href="https://www.fuz.dev/library/Themed"><code>Themed</code></a
+					href="https://www.fuz.dev/docs/Themed"><code>Themed</code></a
 				>
 				in my Svelte UI library <a href="https://www.fuz.dev/">Fuz</a>
 			</li>

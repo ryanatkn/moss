@@ -7,9 +7,9 @@
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
-	import Hue_Swatch from '$routes/library/colors/Hue_Swatch.svelte';
-	import Color_Swatch from '$routes/library/colors/Color_Swatch.svelte';
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Hue_Swatch from '$routes/docs/colors/Hue_Swatch.svelte';
+	import Color_Swatch from '$routes/docs/colors/Color_Swatch.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 	import {color_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'colors';
