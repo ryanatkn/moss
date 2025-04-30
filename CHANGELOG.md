@@ -1,5 +1,12 @@
 # @ryanatkn/moss
 
+## 0.26.0
+
+### Minor Changes
+
+- change some base styles to be entirely wrapped in `:where`, reducing specificity, breaking by causing potentially unintended overrides in existing code ([#54](https://github.com/ryanatkn/moss/pull/54))
+- remove deprecated `get_sorted_array` in `css_class_helpers.ts` ([#54](https://github.com/ryanatkn/moss/pull/54))
+
 ## 0.25.0
 
 ### Minor Changes
