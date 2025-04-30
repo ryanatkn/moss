@@ -94,8 +94,6 @@ const extract_classes = (contents: string, {matcher, mapper}: Css_Extractor): Se
 export class Css_Classes {
 	#all: Set<string> = new Set();
 
-	#all_sorted: Array<string> | null = null;
-
 	#by_id: Map<string, Set<string>> = new Map();
 
 	#dirty = true;
@@ -132,7 +130,6 @@ export class Css_Classes {
 				this.#all.add(c);
 			}
 		}
-		this.#all_sorted = null;
 	}
 }
 
