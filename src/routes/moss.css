@@ -420,9 +420,6 @@ a.chip {
 .mt_0 {
 	margin-top: 0;
 }
-.mt_xl4 {
-	margin-top: var(--space_xl4);
-}
 .mb_0 {
 	margin-bottom: 0;
 }
