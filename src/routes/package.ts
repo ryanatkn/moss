@@ -71,6 +71,10 @@ export const package_json = {
 			default: './dist/css_class_helpers.js',
 		},
 		'./css_classes.js': {types: './dist/css_classes.d.ts', default: './dist/css_classes.js'},
+		'./gro_plugin_moss.js': {
+			types: './dist/gro_plugin_moss.d.ts',
+			default: './dist/gro_plugin_moss.js',
+		},
 		'./style.css': {default: './dist/style.css'},
 		'./theme.css': {default: './dist/theme.css'},
 		'./theme.gen.css.js': {types: './dist/theme.gen.css.d.ts', default: './dist/theme.gen.css.js'},
@@ -102,6 +106,14 @@ export const src_json = {
 		'./css_classes.js': {
 			path: 'css_classes.ts',
 			declarations: [{name: 'css_classes_by_name', kind: 'variable'}],
+		},
+		'./gro_plugin_moss.js': {
+			path: 'gro_plugin_moss.ts',
+			declarations: [
+				{name: 'Task_Args', kind: 'type'},
+				{name: 'Gro_Plugin_Moss_Options', kind: 'type'},
+				{name: 'gro_plugin_moss', kind: 'function'},
+			],
 		},
 		'./style.css': {path: 'style.css', declarations: []},
 		'./theme.css': {path: 'theme.css', declarations: []},
