@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {base} from '$app/paths';
-	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
+	import Docs_Footer from '@ryanatkn/fuz/Docs_Footer.svelte';
 	import Card from '@ryanatkn/fuz/Card.svelte';
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
@@ -24,7 +24,7 @@
 		<div class="panel p_lg bg shadow_sm">
 			<Introduction />
 			<p>
-				To learn more see <a href="{base}/library">the docs</a>
+				To learn more see <a href="{base}/docs">the docs</a>
 				and <a href="https://github.com/ryanatkn/moss#readme">readme</a>. See also my Svelte UI
 				library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss. Feel free to take the
 				ideas and
@@ -40,14 +40,14 @@
 		</div>
 	</section>
 	<section>
-		<Card href="{base}/library">library{#snippet icon()}🌿{/snippet}</Card>
+		<Card href="{base}/docs">docs{#snippet icon()}🌿{/snippet}</Card>
 	</section>
 	<section class="p_xl radius_lg shadow_inset_bottom_xs">
-		<Library_Footer {pkg}>
+		<Docs_Footer {pkg}>
 			{#snippet logo_header()}
 				<a href="{base}/about" class="mb_xs">about</a>
 			{/snippet}
 			<Hidden_Personal_Links />
-		</Library_Footer>
+		</Docs_Footer>
 	</section>
 </main>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 </script>
 
 <p>

@@ -14,7 +14,7 @@
 		type Shadow_Size_Variant,
 		type Color_Variant,
 	} from '$lib/variable_data.js';
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'shadows';
 

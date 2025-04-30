@@ -4,12 +4,12 @@
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import {themer_context} from '@ryanatkn/fuz/theme.svelte.js';
+	import {themer_context} from '@ryanatkn/fuz/themer.svelte.js';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'shading';
 

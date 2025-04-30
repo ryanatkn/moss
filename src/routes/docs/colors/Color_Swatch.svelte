@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Color_Swatch_Item from '$routes/library/colors/Color_Swatch_Item.svelte';
+	import Color_Swatch_Item from '$routes/docs/colors/Color_Swatch_Item.svelte';
 
 	interface Props {
 		color_name: string;

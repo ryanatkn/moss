@@ -11,8 +11,8 @@
 	import Font_Weight_Control from '$routes/Font_Weight_Control.svelte';
 	import Font_Size_Control from '$routes/Font_Size_Control.svelte';
 	import {default_variables} from '$lib/variables.js';
-	import Icon_Sizes from '$routes/library/typography/Icon_Sizes.svelte';
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Icon_Sizes from '$routes/docs/typography/Icon_Sizes.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import {line_height_names, size_names, text_variants} from '$lib/variable_data.js';
 

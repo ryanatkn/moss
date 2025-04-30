@@ -33,8 +33,8 @@
 </svelte:head>
 
 <Themed>
-	<!-- TODO add all of this and fixed scoped, so the library examples work as expected,
-		or maybe disable this main contextmenu when in the library -->
+	<!-- TODO add all of this and fixed scoped, so the docs examples work as expected,
+		or maybe disable this main contextmenu when in the docs -->
 	<!-- <Contextmenu_Root> -->
 	{@render children()}
 	<Spiders />

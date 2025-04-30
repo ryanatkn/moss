@@ -31,7 +31,7 @@
 			{/each}
 		</ul>
 		<p>
-			Space variants are used in <a href="{base}/library/classes">classes</a> like
+			Space variants are used in <a href="{base}/docs/classes">classes</a> like
 			<code>.p_md</code>
 			for padding, margin, other forms of spacing like gap, positioning, dimensions, etc.
 		</p>
@@ -51,7 +51,7 @@
 			{/each}
 		</ul>
 		<p>
-			Width variants have <a href="{base}/library/classes">classes</a> like <code>.width_sm</code>
+			Width variants have <a href="{base}/docs/classes">classes</a> like <code>.width_sm</code>
 			and <code>.min_width_md</code>.
 		</p>
 	</Tome_Section>
