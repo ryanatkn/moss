@@ -380,6 +380,48 @@ a.chip {
 .shadow_color_shroud {
 	--shadow_color: var(--shadow_color_shroud);
 }
+.shadow_color_a {
+	--shadow_color: var(--shadow_color_a);
+}
+.shadow_color_b {
+	--shadow_color: var(--shadow_color_b);
+}
+.shadow_color_c {
+	--shadow_color: var(--shadow_color_c);
+}
+.shadow_color_d {
+	--shadow_color: var(--shadow_color_d);
+}
+.shadow_color_e {
+	--shadow_color: var(--shadow_color_e);
+}
+.shadow_color_f {
+	--shadow_color: var(--shadow_color_f);
+}
+.shadow_color_g {
+	--shadow_color: var(--shadow_color_g);
+}
+.shadow_color_h {
+	--shadow_color: var(--shadow_color_h);
+}
+.shadow_color_i {
+	--shadow_color: var(--shadow_color_i);
+}
+.shadow_alpha_1 {
+	--shadow_alpha: var(--shadow_alpha_1);
+}
+.shadow_alpha_2 {
+	--shadow_alpha: var(--shadow_alpha_2);
+}
+.shadow_alpha_3 {
+	--shadow_alpha: var(--shadow_alpha_3);
+}
+.shadow_alpha_4 {
+	--shadow_alpha: var(--shadow_alpha_4);
+}
+.shadow_alpha_5 {
+	--shadow_alpha: var(--shadow_alpha_5);
+}
 .w_100 {
 	width: 100%;
 }
