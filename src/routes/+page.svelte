@@ -8,14 +8,15 @@
 
 	import {pkg_context} from '$routes/pkg.js';
 	import Introduction from '$routes/Introduction.svelte';
+	import {MAIN_HEADER_MARGIN_TOP} from '$routes/constants.js';
 
 	const pkg = pkg_context.get();
 </script>
 
 <main class="box mb_xl7">
-	<section class="box">
-		<h1 class="mt_xl4 mb_lg">moss</h1>
-		<div class="box mb_xl"><Svg data={moss_logo} size="var(--icon_size_xl2)" /></div>
+	<section class="box width_sm">
+		<h1 class="mb_sm" style:margin-top={MAIN_HEADER_MARGIN_TOP}>moss</h1>
+		<div class="mb_xl"><Svg data={moss_logo} size="var(--icon_size_xl2)" /></div>
 		<div class="p_xl radius_lg shadow_inset_bottom_xs">
 			<blockquote class="shadow_inset_top_xs">magical organic stylesheets 🌿</blockquote>
 		</div>

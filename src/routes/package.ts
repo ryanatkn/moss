@@ -35,9 +35,9 @@ export const package_json = {
 		'@ryanatkn/eslint-config': '^0.8.0',
 		'@ryanatkn/fuz': '^0.139.0',
 		'@ryanatkn/fuz_code': '^0.22.0',
-		'@ryanatkn/gro': '^0.151.0',
+		'@ryanatkn/gro': 'file:../gro',
 		'@sveltejs/adapter-static': '^3.0.8',
-		'@sveltejs/kit': '^2.20.7',
+		'@sveltejs/kit': '^2.20.8',
 		'@sveltejs/package': '^2.3.11',
 		'@sveltejs/vite-plugin-svelte': '^5.0.3',
 		'@types/node': '^22.15.3',
@@ -53,6 +53,7 @@ export const package_json = {
 		typescript: '^5.8.3',
 		'typescript-eslint': '^8.31.1',
 		uvu: '^0.5.6',
+		zod: '^3.24.3',
 	},
 	prettier: {
 		plugins: ['prettier-plugin-svelte'],
@@ -71,6 +72,10 @@ export const package_json = {
 			default: './dist/css_class_helpers.js',
 		},
 		'./css_classes.js': {types: './dist/css_classes.d.ts', default: './dist/css_classes.js'},
+		'./gro_plugin_moss.js': {
+			types: './dist/gro_plugin_moss.d.ts',
+			default: './dist/gro_plugin_moss.js',
+		},
 		'./style.css': {default: './dist/style.css'},
 		'./theme.css': {default: './dist/theme.css'},
 		'./theme.gen.css.js': {types: './dist/theme.gen.css.d.ts', default: './dist/theme.gen.css.js'},
@@ -102,6 +107,14 @@ export const src_json = {
 		'./css_classes.js': {
 			path: 'css_classes.ts',
 			declarations: [{name: 'css_classes_by_name', kind: 'variable'}],
+		},
+		'./gro_plugin_moss.js': {
+			path: 'gro_plugin_moss.ts',
+			declarations: [
+				{name: 'Task_Args', kind: 'type'},
+				{name: 'Gro_Plugin_Moss_Options', kind: 'type'},
+				{name: 'gro_plugin_moss', kind: 'function'},
+			],
 		},
 		'./style.css': {path: 'style.css', declarations: []},
 		'./theme.css': {path: 'theme.css', declarations: []},
