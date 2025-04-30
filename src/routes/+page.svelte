@@ -16,7 +16,7 @@
 	<section class="box">
 		<h1 class="mt_xl4 mb_lg">moss</h1>
 		<div class="box mb_xl"><Svg data={moss_logo} size="var(--icon_size_xl2)" /></div>
-		<div class="p_xl radius_lg shadow_inset_bottom_xs">
+		<div class="p_xl radius_lg shadow_inset_bottom_xs shadow_inset_bottom_lg">
 			<blockquote class="shadow_inset_top_xs">magical organic stylesheets 🌿</blockquote>
 		</div>
 	</section>

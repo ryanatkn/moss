@@ -36,7 +36,7 @@
     "@ryanatkn/eslint-config": "^0.8.0",
     "@ryanatkn/fuz": "^0.139.0",
     "@ryanatkn/fuz_code": "^0.22.0",
-    "@ryanatkn/gro": "^0.151.0",
+    "@ryanatkn/gro": "file:../gro",
     "@sveltejs/adapter-static": "^3.0.8",
     "@sveltejs/kit": "^2.20.7",
     "@sveltejs/package": "^2.3.11",
