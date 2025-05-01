@@ -23,12 +23,12 @@
 
 .width_md {
 	width: 100%;
-	max-width: var(--width_md);
+	max-width: var(--distance_md);
 }
 
 .width_sm {
 	width: 100%;
-	max-width: var(--width_sm);
+	max-width: var(--distance_sm);
 }
 
 .selectable {

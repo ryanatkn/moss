@@ -66,7 +66,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.width_xs {
 				width: 100%;
-				max-width: var(--width_xs);
+				max-width: var(--distance_xs);
 			}
 		`,
 	},
@@ -74,7 +74,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.width_sm {
 				width: 100%;
-				max-width: var(--width_sm);
+				max-width: var(--distance_sm);
 			}
 		`,
 	},
@@ -82,7 +82,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.width_md {
 				width: 100%;
-				max-width: var(--width_md);
+				max-width: var(--distance_md);
 			}
 		`,
 	},
@@ -90,7 +90,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.width_lg {
 				width: 100%;
-				max-width: var(--width_lg);
+				max-width: var(--distance_lg);
 			}
 		`,
 	},
@@ -98,7 +98,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.width_xl {
 				width: 100%;
-				max-width: var(--width_xl);
+				max-width: var(--distance_xl);
 			}
 		`,
 	},
@@ -106,7 +106,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_width_xs {
 				width: 100%;
-				min-width: var(--width_xs);
+				min-width: var(--distance_xs);
 			}
 		`,
 	},
@@ -114,7 +114,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_width_sm {
 				width: 100%;
-				min-width: var(--width_sm);
+				min-width: var(--distance_sm);
 			}
 		`,
 	},
@@ -122,7 +122,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_width_md {
 				width: 100%;
-				min-width: var(--width_md);
+				min-width: var(--distance_md);
 			}
 		`,
 	},
@@ -130,7 +130,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_width_lg {
 				width: 100%;
-				min-width: var(--width_lg);
+				min-width: var(--distance_lg);
 			}
 		`,
 	},
@@ -138,7 +138,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_width_xl {
 				width: 100%;
-				min-width: var(--width_xl);
+				min-width: var(--distance_xl);
 			}
 		`,
 	},
@@ -147,7 +147,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.height_xs {
 				height: 100%;
-				max-height: var(--width_xs);
+				max-height: var(--distance_xs);
 			}
 		`,
 	},
@@ -155,7 +155,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.height_sm {
 				height: 100%;
-				max-height: var(--width_sm);
+				max-height: var(--distance_sm);
 			}
 		`,
 	},
@@ -163,7 +163,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.height_md {
 				height: 100%;
-				max-height: var(--width_md);
+				max-height: var(--distance_md);
 			}
 		`,
 	},
@@ -171,7 +171,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.height_lg {
 				height: 100%;
-				max-height: var(--width_lg);
+				max-height: var(--distance_lg);
 			}
 		`,
 	},
@@ -179,7 +179,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.height_xl {
 				height: 100%;
-				max-height: var(--width_xl);
+				max-height: var(--distance_xl);
 			}
 		`,
 	},
@@ -187,7 +187,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_height_xs {
 				height: 100%;
-				min-height: var(--width_xs);
+				min-height: var(--distance_xs);
 			}
 		`,
 	},
@@ -195,7 +195,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_height_sm {
 				height: 100%;
-				min-height: var(--width_sm);
+				min-height: var(--distance_sm);
 			}
 		`,
 	},
@@ -203,7 +203,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_height_md {
 				height: 100%;
-				min-height: var(--width_md);
+				min-height: var(--distance_md);
 			}
 		`,
 	},
@@ -211,7 +211,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_height_lg {
 				height: 100%;
-				min-height: var(--width_lg);
+				min-height: var(--distance_lg);
 			}
 		`,
 	},
@@ -219,7 +219,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_height_xl {
 				height: 100%;
-				min-height: var(--width_xl);
+				min-height: var(--distance_xl);
 			}
 		`,
 	},

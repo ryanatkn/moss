@@ -786,11 +786,11 @@ export const space_xl12: Style_Variable = {name: 'space_xl12', light: '22.8rem'}
 export const space_xl13: Style_Variable = {name: 'space_xl13', light: '29rem'};
 export const space_xl14: Style_Variable = {name: 'space_xl14', light: '36.9rem'};
 export const space_xl15: Style_Variable = {name: 'space_xl15', light: '47rem'};
-export const width_xl: Style_Variable = {name: 'width_xl', light: '1600px'};
-export const width_lg: Style_Variable = {name: 'width_lg', light: '1200px'};
-export const width_md: Style_Variable = {name: 'width_md', light: '800px'};
-export const width_sm: Style_Variable = {name: 'width_sm', light: '320px'};
-export const width_xs: Style_Variable = {name: 'width_xs', light: '200px'};
+export const distance_xs: Style_Variable = {name: 'distance_xs', light: '200px'};
+export const distance_sm: Style_Variable = {name: 'distance_sm', light: '320px'};
+export const distance_md: Style_Variable = {name: 'distance_md', light: '800px'};
+export const distance_lg: Style_Variable = {name: 'distance_lg', light: '1200px'};
+export const distance_xl: Style_Variable = {name: 'distance_xl', light: '1600px'};
 
 /* borders and outlines */
 // TODO remove these two generics? composability doesn't work like I wanted, maybe `--border_color_1-5` should be calculated from alpha instead?
@@ -1432,11 +1432,11 @@ export const default_variables: Array<Style_Variable> = [
 	space_xl13,
 	space_xl14,
 	space_xl15,
-	width_xl,
-	width_lg,
-	width_md,
-	width_sm,
-	width_xs,
+	distance_xl,
+	distance_lg,
+	distance_md,
+	distance_sm,
+	distance_xs,
 
 	/* borders and outlines */
 	border_color,

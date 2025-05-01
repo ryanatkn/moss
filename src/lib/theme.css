@@ -210,11 +210,11 @@
 	--space_xl13: 29rem;
 	--space_xl14: 36.9rem;
 	--space_xl15: 47rem;
-	--width_xl: 1600px;
-	--width_lg: 1200px;
-	--width_md: 800px;
-	--width_sm: 320px;
-	--width_xs: 200px;
+	--distance_xl: 1600px;
+	--distance_lg: 1200px;
+	--distance_md: 800px;
+	--distance_sm: 320px;
+	--distance_xs: 200px;
 	--border_color: var(--border_color_3);
 	--border_style: solid;
 	--border_color_1: hsl(var(--tint_hue) 60% 20% / 15%);
