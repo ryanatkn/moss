@@ -1,5 +1,7 @@
 import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
 
+// TODO BLOCK fix the plugin when it's available locally in `$lib/gro_plugin_moss.ts`
+
 // TODO support iterpretable class names, for e.g. arbitrary numbers - lots here, UnoCSS is similar
 
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
