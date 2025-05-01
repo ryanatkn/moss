@@ -1,9 +1,5 @@
 import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
 
-// TODO BLOCK
-// .min_height_0 etc
-// style:min-height="0"
-
 // TODO support iterpretable class names, for e.g. arbitrary numbers - lots here, UnoCSS is similar
 
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
@@ -1224,6 +1220,7 @@ layout
 	p_xl14: {declaration: 'padding: var(--space_xl14);'},
 	p_xl15: {declaration: 'padding: var(--space_xl15);'},
 	pt_0: {declaration: 'padding-top: 0;'},
+	pt_100: {declaration: 'padding-top: 100%;'},
 	pt_xs5: {declaration: 'padding-top: var(--space_xs5);'},
 	pt_xs4: {declaration: 'padding-top: var(--space_xs4);'},
 	pt_xs3: {declaration: 'padding-top: var(--space_xs3);'},
@@ -1248,6 +1245,7 @@ layout
 	pt_xl14: {declaration: 'padding-top: var(--space_xl14);'},
 	pt_xl15: {declaration: 'padding-top: var(--space_xl15);'},
 	pr_0: {declaration: 'padding-right: 0;'},
+	pr_100: {declaration: 'padding-right: 100%;'},
 	pr_xs5: {declaration: 'padding-right: var(--space_xs5);'},
 	pr_xs4: {declaration: 'padding-right: var(--space_xs4);'},
 	pr_xs3: {declaration: 'padding-right: var(--space_xs3);'},
@@ -1272,6 +1270,7 @@ layout
 	pr_xl14: {declaration: 'padding-right: var(--space_xl14);'},
 	pr_xl15: {declaration: 'padding-right: var(--space_xl15);'},
 	pb_0: {declaration: 'padding-bottom: 0;'},
+	pb_100: {declaration: 'padding-bottom: 100%;'},
 	pb_xs5: {declaration: 'padding-bottom: var(--space_xs5);'},
 	pb_xs4: {declaration: 'padding-bottom: var(--space_xs4);'},
 	pb_xs3: {declaration: 'padding-bottom: var(--space_xs3);'},
@@ -1296,6 +1295,7 @@ layout
 	pb_xl14: {declaration: 'padding-bottom: var(--space_xl14);'},
 	pb_xl15: {declaration: 'padding-bottom: var(--space_xl15);'},
 	pl_0: {declaration: 'padding-left: 0;'},
+	pl_100: {declaration: 'padding-left: 100%;'},
 	pl_xs5: {declaration: 'padding-left: var(--space_xs5);'},
 	pl_xs4: {declaration: 'padding-left: var(--space_xs4);'},
 	pl_xs3: {declaration: 'padding-left: var(--space_xs3);'},
@@ -1393,6 +1393,7 @@ layout
 	m_xl14: {declaration: 'margin: var(--space_xl14);'},
 	m_xl15: {declaration: 'margin: var(--space_xl15);'},
 	mt_0: {declaration: 'margin-top: 0;'},
+	mt_100: {declaration: 'margin-top: 100%;'},
 	mt_auto: {declaration: 'margin-top: auto;'},
 	mt_xs5: {declaration: 'margin-top: var(--space_xs5);'},
 	mt_xs4: {declaration: 'margin-top: var(--space_xs4);'},
@@ -1418,6 +1419,7 @@ layout
 	mt_xl14: {declaration: 'margin-top: var(--space_xl14);'},
 	mt_xl15: {declaration: 'margin-top: var(--space_xl15);'},
 	mr_0: {declaration: 'margin-right: 0;'},
+	mr_100: {declaration: 'margin-right: 100%;'},
 	mr_auto: {declaration: 'margin-right: auto;'},
 	mr_xs5: {declaration: 'margin-right: var(--space_xs5);'},
 	mr_xs4: {declaration: 'margin-right: var(--space_xs4);'},
@@ -1443,6 +1445,7 @@ layout
 	mr_xl14: {declaration: 'margin-right: var(--space_xl14);'},
 	mr_xl15: {declaration: 'margin-right: var(--space_xl15);'},
 	mb_0: {declaration: 'margin-bottom: 0;'},
+	mb_100: {declaration: 'margin-bottom: 100%;'},
 	mb_auto: {declaration: 'margin-bottom: auto;'},
 	mb_xs5: {declaration: 'margin-bottom: var(--space_xs5);'},
 	mb_xs4: {declaration: 'margin-bottom: var(--space_xs4);'},
@@ -1468,6 +1471,7 @@ layout
 	mb_xl14: {declaration: 'margin-bottom: var(--space_xl14);'},
 	mb_xl15: {declaration: 'margin-bottom: var(--space_xl15);'},
 	ml_0: {declaration: 'margin-left: 0;'},
+	ml_100: {declaration: 'margin-left: 100%;'},
 	ml_auto: {declaration: 'margin-left: auto;'},
 	ml_xs5: {declaration: 'margin-left: var(--space_xs5);'},
 	ml_xs4: {declaration: 'margin-left: var(--space_xs4);'},
