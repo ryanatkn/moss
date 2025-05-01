@@ -106,7 +106,7 @@
 {#if editing_theme}
 	<Dialog onclose={() => (editing_theme = null)}>
 		<div class="pane p_md width_md mx_auto">
-			<div class="theme_editor_wrapper panel">
+			<div class="theme_editor_wrapper">
 				<Theme_Form
 					theme={editing_theme}
 					onsave={(theme) => {
@@ -121,7 +121,6 @@
 
 <style>
 	.theme_editor_wrapper {
-		width: var(--width_md);
 		padding: var(--space_lg);
 	}
 </style>
