@@ -142,6 +142,87 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			}
 		`,
 	},
+	// TODO rethink if this breaks too often or confusingly, `height: 100%` depends on the parent and often won't take effect
+	height_xs: {
+		ruleset: `
+			.height_xs {
+				height: 100%;
+				max-height: var(--width_xs);
+			}
+		`,
+	},
+	height_sm: {
+		ruleset: `
+			.height_sm {
+				height: 100%;
+				max-height: var(--width_sm);
+			}
+		`,
+	},
+	height_md: {
+		ruleset: `
+			.height_md {
+				height: 100%;
+				max-height: var(--width_md);
+			}
+		`,
+	},
+	height_lg: {
+		ruleset: `
+			.height_lg {
+				height: 100%;
+				max-height: var(--width_lg);
+			}
+		`,
+	},
+	height_xl: {
+		ruleset: `
+			.height_xl {
+				height: 100%;
+				max-height: var(--width_xl);
+			}
+		`,
+	},
+	min_height_xs: {
+		ruleset: `
+			.min_height_xs {
+				height: 100%;
+				min-height: var(--width_xs);
+			}
+		`,
+	},
+	min_height_sm: {
+		ruleset: `
+			.min_height_sm {
+				height: 100%;
+				min-height: var(--width_sm);
+			}
+		`,
+	},
+	min_height_md: {
+		ruleset: `
+			.min_height_md {
+				height: 100%;
+				min-height: var(--width_md);
+			}
+		`,
+	},
+	min_height_lg: {
+		ruleset: `
+			.min_height_lg {
+				height: 100%;
+				min-height: var(--width_lg);
+			}
+		`,
+	},
+	min_height_xl: {
+		ruleset: `
+			.min_height_xl {
+				height: 100%;
+				min-height: var(--width_xl);
+			}
+		`,
+	},
 	selectable: {
 		ruleset: `
 			.selectable {

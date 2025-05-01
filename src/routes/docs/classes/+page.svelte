@@ -99,6 +99,8 @@
 		'ellipsis',
 		'width_xs-xl',
 		'min_width_xs-xl',
+		'height_xs-xl',
+		'min_height_xs-xl',
 		'selected',
 		'selectable',
 		'clickable',
