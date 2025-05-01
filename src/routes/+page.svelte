@@ -14,10 +14,10 @@
 </script>
 
 <main class="box mb_xl7">
-	<section class="box width_sm">
+	<section class="box">
 		<h1 class="mb_sm" style:margin-top={MAIN_HEADER_MARGIN_TOP}>moss</h1>
-		<div class="mb_xl"><Svg data={moss_logo} size="var(--icon_size_xl2)" /></div>
-		<div class="p_xl radius_lg shadow_inset_bottom_xs">
+		<Svg data={moss_logo} size="var(--icon_size_xl2)" />
+		<div class="p_xl mt_lg radius_lg shadow_inset_bottom_xs">
 			<blockquote class="shadow_inset_top_xs">magical organic stylesheets 🌿</blockquote>
 		</div>
 	</section>
