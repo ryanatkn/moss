@@ -663,7 +663,21 @@ TODO think through these patterns to get somewhere consistent
 	margin-bottom: var(--space_sm);
 }
 
-/* TODO more  table styles */
+:where(table) {
+	border-collapse: collapse;
+}
 :where(thead) {
 	text-align: left;
+}
+:where(th) {
+	font-weight: bold;
+}
+:where(th, td) {
+	padding: var(--space_xs3) var(--space_sm);
+}
+:where(tr) {
+	border-bottom: 1px solid var(--border_color_1);
+}
+:where(tr:hover) {
+	background-color: var(--fg_1);
 }
