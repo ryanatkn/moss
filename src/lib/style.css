@@ -219,7 +219,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	background-color: var(--fg_1);
 }
 
-:where(code) {
+:where(code:not(.unstyled)) {
 	font-family: var(--font_mono);
 	font-weight: 600;
 	-webkit-hyphens: none;
@@ -232,13 +232,13 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 
 /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
 /* keep in sync with `.pre` styling in `css_classes.ts` */
-:where(pre) {
+:where(pre:not(.unstyled)) {
 	font-family: var(--font_mono);
 	color: var(--text_color, var(--text_color_3));
 	overflow: auto;
 	max-width: 100%;
 }
-:where(pre > code) {
+:where(pre:not(.unstyled) > code) {
 	display: block;
 	font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic `--size`? */
 	font-weight: 500;
@@ -254,16 +254,18 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	margin: var(--space_xl7) 0;
 }
 
-:where(fieldset) {
+:where(fieldset:not(.unstyled)) {
 	display: flex;
 	flex-direction: column;
 	border: 0;
 }
 
-:where(legend) {
+:where(legend:not(.unstyled)) {
 	font-size: var(--size_xl);
 	margin-bottom: var(--space_lg);
 }
+
+/* TODO probably continue with the `.unstyled` pattern for more elements */
 
 :where(input, textarea, select) {
 	appearance: none;
