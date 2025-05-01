@@ -21,6 +21,7 @@
 		'overflow_wrap_anywhere|break_word',
 		`scrollbar_width_auto|thin|none|${style_global_values}`,
 		`scrollbar_gutter_auto|stable|stable_both_edges|${style_global_values}`,
+		`visibility_visible|hidden|collapse|${style_global_values}`,
 		'display_none|contents',
 		'inline|inline_block|inline_flex|inline_grid',
 		'block',

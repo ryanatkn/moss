@@ -477,6 +477,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
 	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
 
+	visibility_visible: {declaration: 'visibility: visible;'},
+	visibility_hidden: {declaration: 'visibility: hidden;'},
+	visibility_collapse: {declaration: 'visibility: collapse;'},
+	visibility_inherit: {declaration: 'visibility: inherit;'},
+	visibility_initial: {declaration: 'visibility: initial;'},
+	visibility_revert: {declaration: 'visibility: revert;'},
+	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
+	visibility_unset: {declaration: 'visibility: unset;'},
+
 	/* these include the longhand `display_` because they're less common and would be more ambiguous */
 	display_none: {declaration: 'display: none;'},
 	display_contents: {declaration: 'display: contents;'},
@@ -487,9 +496,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	inline_grid: {declaration: 'display: inline-grid;'},
 	block: {declaration: 'display: block;'},
 
-	/* TODO lots of these, but optimize first? .display_table {
-	display: table;
-} */
 	flex: {declaration: 'display: flex;'},
 	flex_1: {declaration: 'flex: 1;'},
 	flex_wrap: {declaration: 'flex-wrap: wrap;'},
@@ -656,11 +662,11 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	font_weight_800: {declaration: 'font-weight: 800; --font_weight: 800;'},
 	font_weight_900: {declaration: 'font-weight: 900; --font_weight: 900;'},
 
-	/*/
+	/*
 
-colors
+	colors
 
-*/
+	*/
 	text_color_0: {declaration: 'color: var(--text_color_0);'},
 	text_color_1: {declaration: 'color: var(--text_color_1);'},
 	text_color_2: {declaration: 'color: var(--text_color_2);'},
@@ -971,9 +977,9 @@ colors
 
 	/*
 
-shading
+	shading
 
-*/
+	*/
 	fade_0: {declaration: 'opacity: 0;'},
 	fade_100: {declaration: 'opacity: 1;'},
 	fade_1: {declaration: 'opacity: var(--fade_1);'},
@@ -983,11 +989,11 @@ shading
 	fade_5: {declaration: 'opacity: var(--fade_5);'},
 	fade_6: {declaration: 'opacity: var(--fade_6);'},
 
-	/*/
+	/*
 
-shadows
+	shadows
 
-*/
+	*/
 	shadow_xs: {
 		declaration:
 			'box-shadow: var(--shadow_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
@@ -1131,11 +1137,11 @@ shadows
 	shadow_inherit: {declaration: 'box-shadow: inherit;'},
 	shadow_none: {declaration: 'box-shadow: none;'},
 
-	/*/
+	/*
 
-layout
+	layout
 
-*/
+	*/
 	w_0: {declaration: 'width: 0;'},
 	w_100: {declaration: 'width: 100%;'},
 	w_auto: {declaration: 'width: auto;'},
