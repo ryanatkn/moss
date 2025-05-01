@@ -290,7 +290,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	height: 100px;
 }
 
-:where(select, option, input[type='color']) {
+:where(:is(select, option, input[type='color']):not(:disabled)) {
 	cursor: pointer;
 }
 
