@@ -62,27 +62,11 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	ellipsis: {
 		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
 	},
-	width_xl: {
+	width_xs: {
 		ruleset: `
-			.width_xl {
+			.width_xs {
 				width: 100%;
-				max-width: var(--width_xl);
-			}
-		`,
-	},
-	width_lg: {
-		ruleset: `
-			.width_lg {
-				width: 100%;
-				max-width: var(--width_lg);
-			}
-		`,
-	},
-	width_md: {
-		ruleset: `
-			.width_md {
-				width: 100%;
-				max-width: var(--width_md);
+				max-width: var(--width_xs);
 			}
 		`,
 	},
@@ -94,35 +78,35 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			}
 		`,
 	},
-	width_xs: {
+	width_md: {
 		ruleset: `
-			.width_xs {
+			.width_md {
 				width: 100%;
-				max-width: var(--width_xs);
+				max-width: var(--width_md);
 			}
 		`,
 	},
-	min_width_xl: {
+	width_lg: {
 		ruleset: `
-			.min_width_xl {
+			.width_lg {
 				width: 100%;
-				min-width: var(--width_xl);
+				max-width: var(--width_lg);
 			}
 		`,
 	},
-	min_width_lg: {
+	width_xl: {
 		ruleset: `
-			.min_width_lg {
+			.width_xl {
 				width: 100%;
-				min-width: var(--width_lg);
+				max-width: var(--width_xl);
 			}
 		`,
 	},
-	min_width_md: {
+	min_width_xs: {
 		ruleset: `
-			.min_width_md {
+			.min_width_xs {
 				width: 100%;
-				min-width: var(--width_md);
+				min-width: var(--width_xs);
 			}
 		`,
 	},
@@ -134,11 +118,27 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			}
 		`,
 	},
-	min_width_xs: {
+	min_width_md: {
 		ruleset: `
-			.min_width_xs {
+			.min_width_md {
 				width: 100%;
-				min-width: var(--width_xs);
+				min-width: var(--width_md);
+			}
+		`,
+	},
+	min_width_lg: {
+		ruleset: `
+			.min_width_lg {
+				width: 100%;
+				min-width: var(--width_lg);
+			}
+		`,
+	},
+	min_width_xl: {
+		ruleset: `
+			.min_width_xl {
+				width: 100%;
+				min-width: var(--width_xl);
 			}
 		`,
 	},
