@@ -7,7 +7,7 @@
 	import {render_theme_style, type Theme} from '$lib/theme.js';
 	import type {Style_Variable} from '$lib/variable.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
-	import Unfinished_Implementation_Warning from '$routes/library/Unfinished_Implementation_Warning.svelte';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	// TODO @many add to $lib?
 
@@ -107,7 +107,7 @@
 {#if selected_variable}
 	<Dialog onclose={() => (selected_variable = null)}>
 		{#snippet children(close)}
-			<div class="pane">
+			<div class="pane p_md width_md mx_auto">
 				<div class="panel p_lg box">
 					<Style_Variable_Detail variable={selected_variable} />
 					<Unfinished_Implementation_Warning />

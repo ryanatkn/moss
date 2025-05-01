@@ -19,7 +19,7 @@ const CSS_CLASS_EXTRACTORS: Array<Css_Extractor> = [
 			matched[2]
 				.replace(
 					// omit all expressions with best-effort - it's not perfect especially
-					// around double quote strings in JS in Svelte expressions, but using single quotes is better
+					// around double quote strings in JS in Svelte expressions, but using single quotes is better imo
 					/\S*{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*}\S*/g,
 					// same failures:
 					// /\S*{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`|{(?:[^{}]*|'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.|\$\{(?:[^{}]*|{[^{}]*})*\})*`)*})*}\S*/g,
@@ -94,8 +94,6 @@ const extract_classes = (contents: string, {matcher, mapper}: Css_Extractor): Se
 export class Css_Classes {
 	#all: Set<string> = new Set();
 
-	#all_sorted: Array<string> | null = null;
-
 	#by_id: Map<string, Set<string>> = new Map();
 
 	#dirty = true;
@@ -120,13 +118,6 @@ export class Css_Classes {
 		return this.#all;
 	}
 
-	get_sorted_array(): Array<string> {
-		if (!this.#dirty && this.#all_sorted !== null) {
-			return this.#all_sorted;
-		}
-		return (this.#all_sorted = Array.from(this.get()).sort((a, b) => a.localeCompare(b)));
-	}
-
 	#recalculate(): void {
 		this.#all.clear();
 		if (this.include_classes) {
@@ -139,7 +130,6 @@ export class Css_Classes {
 				this.#all.add(c);
 			}
 		}
-		this.#all_sorted = null;
 	}
 }
 
@@ -152,12 +142,26 @@ export interface Css_Class_Declaration_Group {
 	ruleset: string;
 }
 
+// TODO this API is going to change to allow non-static classes that get interpreted like a language at buildtime
 export const generate_classes_css = (
 	classes: Iterable<string>,
 	css_classes_by_name: Record<string, Css_Class_Declaration | undefined>,
 ): string => {
+	// TODO when the API is redesigned this kind of thing should be cached
+	// Create a map that has the index of each class name as the key
+	const indexes: Map<string, number> = new Map();
+	const keys = Object.keys(css_classes_by_name);
+	for (let i = 0; i < keys.length; i++) {
+		indexes.set(keys[i], i);
+	}
+
+	// If any classes are unknown, just put them at the end
+	const sorted_classes = (Array.isArray(classes) ? classes : Array.from(classes)).sort(
+		(a, b) => (indexes.get(a) ?? Number.MAX_VALUE) - (indexes.get(b) ?? Number.MAX_VALUE),
+	);
+
 	let css = '';
-	for (const c of classes) {
+	for (const c of sorted_classes) {
 		const v = css_classes_by_name[c];
 		if (!v) {
 			// diagnostic

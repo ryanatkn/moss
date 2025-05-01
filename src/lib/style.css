@@ -26,7 +26,7 @@ Some notes:
 }
 
 :root {
-	color-scheme: light dark;
+	color-scheme: light dark; /* overridden by `:root.dark` and `:root.light` added in the `head` */
 	background-color: var(--bg);
 	color: var(--text_color);
 	accent-color: var(--color_a_5);
@@ -90,13 +90,13 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 /* TODO should these be customizable with utility classes? */
-:where(a):hover {
+:where(a:hover) {
 	text-decoration: var(--text_decoration_hover);
 }
-:where(a):focus {
+:where(a:focus) {
 	--outline_width: var(--outline_width_2);
 }
-:where(a):active {
+:where(a:active) {
 	--outline_width: var(--outline_width_3);
 }
 :where(a.selected) {
@@ -104,27 +104,24 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	--outline_color: var(--border_color);
 	text-decoration: var(--text_decoration_selected);
 }
-:where(a.selected):active {
+:where(a.selected:active) {
 	--outline_color: var(--border_color);
 }
 
-:where(ul, ol, menu) {
+:where(:is(ul, ol, menu):not(.unstyled)) {
 	padding-left: var(--space_xl4);
 }
-:where(ol) {
-	list-style: decimal;
-}
-:where(.unstyled:where(ul, ol, menu)) {
-	padding-left: 0; /* TODO test specificity with utility classes, maybe change to set --padding_left */
+:where(.unstyled:is(ul, ol, menu)) {
 	list-style: none;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
+:where(h1, h2, h3, h4, h5, h6, .heading) {
+	font-family: var(--font_serif);
+	font-size: var(--size, var(--size_md));
+	font-weight: var(--font_weight);
 	line-height: var(--line_height_sm);
 	text-wrap: balance; /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#balance */
 	/* TODO use this pattern elsewhere? provides API to components like `Mdn_Logo` */
-	font-size: var(--size, var(--size_md));
-	font-weight: var(--font_weight);
 	overflow-wrap: break-word; /* TODO @many is this best? `anywhere` instead? what about adding elsewhere? */
 }
 
@@ -175,7 +172,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 /* TODO other elements */
 /* checkboxes and radios are expected to be nested inside a `label`, thus no bottom margin */
 :where(
-	:where(
+	:is(
 			p,
 			ul,
 			ol,
@@ -191,7 +188,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 			blockquote,
 			aside,
 			nav
-		):not(:last-child)
+		):not(:last-child):not(.unstyled)
 ) {
 	margin-bottom: var(--space_lg);
 }
@@ -297,7 +294,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	background-color: var(--bg);
 }
 
-:where(:where(input, textarea, select):hover) {
+:where(:is(input, textarea, select):hover) {
 	--border_color: var(--border_color_2);
 }
 
@@ -415,7 +412,7 @@ see https://caniuse.com/css-has
 	cursor: default;
 }
 
-:where(:where(input, textarea, select).inline, p :where(input, textarea, select)) {
+:where(:is(input, textarea, select).inline, p :is(input, textarea, select)) {
 	display: inline-block;
 	margin-left: var(--space_lg);
 	/* TODO ideally `width` here would be set to a minimum and have an API to increase size --
@@ -424,12 +421,7 @@ see https://caniuse.com/css-has
 	width: var(--input_width_min);
 }
 
-:where(:where(button, input, textarea, select):focus) {
-	--border_color: var(--color_a_5);
-	--outline_width: var(--outline_width_2);
-}
-
-:where(:where(input, textarea, select):disabled) {
+:where(:is(input, textarea, select):disabled) {
 	/* TODO ideally these would just set `fill`, but they'd have to go after the button variants, and then duplicate selectors? */
 	--input_fill: transparent;
 	--border_style: solid dashed;
@@ -441,7 +433,7 @@ see https://caniuse.com/css-has
 	--outline_width: var(--outline_width_2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
-:where(:where(input, textarea, select, [contenteditable]):active) {
+:where(:is(input, textarea, select, [contenteditable]):active) {
 	--outline_width: var(--outline_width_3);
 }
 
@@ -451,7 +443,7 @@ for disabled colors without needing a wrapper .disabled class */
 	color: var(--text_color);
 	cursor: pointer;
 }
-:where(:where(label .title)) {
+:where(:is(label .title)) {
 	font-weight: 600;
 	margin-bottom: var(--space_xs2);
 }
@@ -467,7 +459,7 @@ for disabled colors without needing a wrapper .disabled class */
 	justify-content: flex-start;
 	align-items: center;
 }
-:where(label.row :where(input[type='checkbox'], input[type='radio'])) {
+:where(label.row :is(input[type='checkbox'], input[type='radio'])) {
 	margin-right: var(--space_md);
 }
 
@@ -511,6 +503,11 @@ TODO think through these patterns to get somewhere consistent
 	border-color: var(--button_border_color);
 	border-radius: var(--border_radius, var(--radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
+}
+
+:where(:is(button, input, textarea, select):focus) {
+	--border_color: var(--color_a_5);
+	--outline_width: var(--outline_width_2);
 }
 
 /* TODO maybe gradients? or at least use a text_color */
@@ -613,7 +610,7 @@ TODO think through these patterns to get somewhere consistent
 	--outline_width: var(--outline_width_3);
 	--shadow: var(--button_shadow_active);
 }
-:where(:where(input, textarea, select, button):disabled:active, label.disabled:active) {
+:where(:is(input, textarea, select, button):disabled:active, label.disabled:active) {
 	--text_color: var(--color_c_5);
 	--border_color: var(--color_c_5);
 }

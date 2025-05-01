@@ -33,15 +33,15 @@
 </svelte:head>
 
 <Themed>
-	<!-- TODO add all of this and fixed scoped, so the library examples work as expected,
-		or maybe disable this main contextmenu when in the library -->
+	<!-- TODO add all of this and fixed scoped, so the docs examples work as expected,
+		or maybe disable this main contextmenu when in the docs -->
 	<!-- <Contextmenu_Root> -->
 	{@render children()}
 	<Spiders />
 	<!-- </Contextmenu_Root> -->
 	<!-- {#if show_settings}
 		<Dialog onclose={() => (show_settings = false)}>
-			<div class="pane">
+			<div class="pane p_md width_md mx_auto">
 				<Settings />
 			</div>
 		</Dialog>

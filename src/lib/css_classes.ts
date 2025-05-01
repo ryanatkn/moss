@@ -9,6 +9,10 @@ import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
 
 // TODO think about variable support (much harder problem, need dependency graph)
+
+/**
+ * @see `generate_classes_css`
+ */
 export const css_classes_by_name: Record<string, Css_Class_Declaration | undefined> = {
 	// Composite classes go first, so they can be overridden by the more specific classes.
 	pixelated: {
@@ -56,6 +60,9 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				white-space: break-spaces;
 			}
 		`,
+	},
+	ellipsis: {
+		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
 	},
 	width_xl: {
 		ruleset: `
@@ -232,9 +239,12 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			/* TODO maybe this belongs with the reset, like \`selected\`? or does \`selected\` belong here? */
 			.plain:not(:hover) {
-				border-color: transparent;
+				--border_color: transparent;
 				box-shadow: none;
 				--button_fill: transparent;
+			}
+			.plain:hover, .plain:active {
+				--border_color: transparent;
 			}
 		`,
 	},
@@ -245,6 +255,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				--border_color: var(--border_color_3);
 				position: relative;
 				z-index: 2;
+				cursor: pointer;
 				width: 100%;
 				min-height: var(--min_height, var(--icon_size_sm));
 				display: flex;
@@ -257,6 +268,19 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				--border_color: var(--color_a_5);
 				background-color: var(--fg_1);
 				z-index: 1;
+				cursor: default;
+			}
+			.menu_item.selected.deselectable:not(:disabled) {
+				cursor: pointer;
+			}
+			.menu_item:hover {
+				--border_color: var(--border_color_3);
+				background-color: var(--fg_0);
+			}
+			.menu_item:active,
+			.menu_item.selected:hover {
+				--border_color: var(--border_color_3);
+				background-color: var(--fg_2);
 			}
 			.menu_item.plain {
 				border: none;
@@ -336,6 +360,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	fixed: {declaration: 'position: fixed;'},
 	sticky: {declaration: 'position: sticky;'},
 	static: {declaration: 'position: static;'},
+
 	overflow_auto: {declaration: 'overflow: auto;'},
 	overflow_hidden: {declaration: 'overflow: hidden;'},
 	overflow_scroll: {declaration: 'overflow: scroll;'},
@@ -353,6 +378,24 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	overflow_y_visible: {declaration: 'overflow-y: visible;'},
 	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
 	overflow_wrap_break_word: {declaration: 'overflow-wrap: break-word;'},
+
+	scrollbar_width_auto: {declaration: 'scrollbar-width: auto;'},
+	scrollbar_width_thin: {declaration: 'scrollbar-width: thin;'},
+	scrollbar_width_none: {declaration: 'scrollbar-width: none;'},
+	scrollbar_width_inherit: {declaration: 'scrollbar-width: inherit;'},
+	scrollbar_width_initial: {declaration: 'scrollbar-width: initial;'},
+	scrollbar_width_revert: {declaration: 'scrollbar-width: revert;'},
+	scrollbar_width_revert_layer: {declaration: 'scrollbar-width: revert-layer;'},
+	scrollbar_width_unset: {declaration: 'scrollbar-width: unset;'},
+
+	scrollbar_gutter_auto: {declaration: 'scrollbar-gutter: auto;'},
+	scrollbar_gutter_stable: {declaration: 'scrollbar-gutter: stable;'},
+	scrollbar_gutter_stable_both_edges: {declaration: 'scrollbar-gutter: stable both-edges;'},
+	scrollbar_gutter_inherit: {declaration: 'scrollbar-gutter: inherit;'},
+	scrollbar_gutter_initial: {declaration: 'scrollbar-gutter: initial;'},
+	scrollbar_gutter_revert: {declaration: 'scrollbar-gutter: revert;'},
+	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
+	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
 
 	/* these include the longhand `display_` because they're less common and would be more ambiguous */
 	display_none: {declaration: 'display: none;'},
@@ -439,6 +482,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	flip_xy: {declaration: 'transform: scaleX(-1) scaleY(-1);'},
 
 	font_sans: {declaration: 'font-family: var(--font_sans);'},
+	font_serif: {declaration: 'font-family: var(--font_serif);'},
 	font_mono: {declaration: 'font-family: var(--font_mono);'},
 	line_height_0: {declaration: 'line-height: 0;'},
 	line_height_1: {declaration: 'line-height: 1;'},
@@ -447,26 +491,26 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	line_height_md: {declaration: 'line-height: var(--line_height_md);'},
 	line_height_lg: {declaration: 'line-height: var(--line_height_lg);'},
 	line_height_xl: {declaration: 'line-height: var(--line_height_xl);'},
-	size_xs: {declaration: 'font-size: var(--size_xs);'},
-	size_sm: {declaration: 'font-size: var(--size_sm);'},
-	size_md: {declaration: 'font-size: var(--size_md);'},
-	size_lg: {declaration: 'font-size: var(--size_lg);'},
-	size_xl: {declaration: 'font-size: var(--size_xl);'},
-	size_xl2: {declaration: 'font-size: var(--size_xl2);'},
-	size_xl3: {declaration: 'font-size: var(--size_xl3);'},
-	size_xl4: {declaration: 'font-size: var(--size_xl4);'},
-	size_xl5: {declaration: 'font-size: var(--size_xl5);'},
-	size_xl6: {declaration: 'font-size: var(--size_xl6);'},
-	size_xl7: {declaration: 'font-size: var(--size_xl7);'},
-	size_xl8: {declaration: 'font-size: var(--size_xl8);'},
-	size_xl9: {declaration: 'font-size: var(--size_xl9);'},
-	icon_size_xs: {declaration: 'font-size: var(--icon_size_xs);'},
-	icon_size_sm: {declaration: 'font-size: var(--icon_size_sm);'},
-	icon_size_md: {declaration: 'font-size: var(--icon_size_md);'},
-	icon_size_lg: {declaration: 'font-size: var(--icon_size_lg);'},
-	icon_size_xl: {declaration: 'font-size: var(--icon_size_xl);'},
-	icon_size_xl2: {declaration: 'font-size: var(--icon_size_xl2);'},
-	icon_size_xl3: {declaration: 'font-size: var(--icon_size_xl3);'},
+	size_xs: {declaration: 'font-size: var(--size_xs); --size: var(--size_xs);'},
+	size_sm: {declaration: 'font-size: var(--size_sm); --size: var(--size_sm);'},
+	size_md: {declaration: 'font-size: var(--size_md); --size: var(--size_md);'},
+	size_lg: {declaration: 'font-size: var(--size_lg); --size: var(--size_lg);'},
+	size_xl: {declaration: 'font-size: var(--size_xl); --size: var(--size_xl);'},
+	size_xl2: {declaration: 'font-size: var(--size_xl2); --size: var(--size_xl2);'},
+	size_xl3: {declaration: 'font-size: var(--size_xl3); --size: var(--size_xl3);'},
+	size_xl4: {declaration: 'font-size: var(--size_xl4); --size: var(--size_xl4);'},
+	size_xl5: {declaration: 'font-size: var(--size_xl5); --size: var(--size_xl5);'},
+	size_xl6: {declaration: 'font-size: var(--size_xl6); --size: var(--size_xl6);'},
+	size_xl7: {declaration: 'font-size: var(--size_xl7); --size: var(--size_xl7);'},
+	size_xl8: {declaration: 'font-size: var(--size_xl8); --size: var(--size_xl8);'},
+	size_xl9: {declaration: 'font-size: var(--size_xl9); --size: var(--size_xl9);'},
+	icon_size_xs: {declaration: 'font-size: var(--icon_size_xs); --size: var(--icon_size_xs);'},
+	icon_size_sm: {declaration: 'font-size: var(--icon_size_sm); --size: var(--icon_size_sm);'},
+	icon_size_md: {declaration: 'font-size: var(--icon_size_md); --size: var(--icon_size_md);'},
+	icon_size_lg: {declaration: 'font-size: var(--icon_size_lg); --size: var(--icon_size_lg);'},
+	icon_size_xl: {declaration: 'font-size: var(--icon_size_xl); --size: var(--icon_size_xl);'},
+	icon_size_xl2: {declaration: 'font-size: var(--icon_size_xl2); --size: var(--icon_size_xl2);'},
+	icon_size_xl3: {declaration: 'font-size: var(--icon_size_xl3); --size: var(--icon_size_xl3);'},
 	text_align_start: {declaration: 'text-align: start;'},
 	text_align_end: {declaration: 'text-align: end;'},
 	text_align_left: {declaration: 'text-align: left;'},
@@ -511,18 +555,26 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	text_wrap_balance: {declaration: 'text-wrap: balance;'},
 	text_wrap_pretty: {declaration: 'text-wrap: pretty;'},
 	text_wrap_stable: {declaration: 'text-wrap: stable;'},
-	ellipsis: {
-		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
-	},
-	font_weight_100: {declaration: 'font-weight: 100;'},
-	font_weight_200: {declaration: 'font-weight: 200;'},
-	font_weight_300: {declaration: 'font-weight: 300;'},
-	font_weight_400: {declaration: 'font-weight: 400;'},
-	font_weight_500: {declaration: 'font-weight: 500;'},
-	font_weight_600: {declaration: 'font-weight: 600;'},
-	font_weight_700: {declaration: 'font-weight: 700;'},
-	font_weight_800: {declaration: 'font-weight: 800;'},
-	font_weight_900: {declaration: 'font-weight: 900;'},
+
+	user_select_none: {declaration: 'user-select: none;'},
+	user_select_auto: {declaration: 'user-select: auto;'},
+	user_select_text: {declaration: 'user-select: text;'},
+	user_select_all: {declaration: 'user-select: all;'},
+	user_select_inherit: {declaration: 'user-select: inherit;'},
+	user_select_initial: {declaration: 'user-select: initial;'},
+	user_select_revert: {declaration: 'user-select: revert;'},
+	user_select_revert_layer: {declaration: 'user-select: revert-layer;'},
+	user_select_unset: {declaration: 'user-select: unset;'},
+
+	font_weight_100: {declaration: 'font-weight: 100; --font_weight: 100;'},
+	font_weight_200: {declaration: 'font-weight: 200; --font_weight: 200;'},
+	font_weight_300: {declaration: 'font-weight: 300; --font_weight: 300;'},
+	font_weight_400: {declaration: 'font-weight: 400; --font_weight: 400;'},
+	font_weight_500: {declaration: 'font-weight: 500; --font_weight: 500;'},
+	font_weight_600: {declaration: 'font-weight: 600; --font_weight: 600;'},
+	font_weight_700: {declaration: 'font-weight: 700; --font_weight: 700;'},
+	font_weight_800: {declaration: 'font-weight: 800; --font_weight: 800;'},
+	font_weight_900: {declaration: 'font-weight: 900; --font_weight: 900;'},
 
 	/*/
 

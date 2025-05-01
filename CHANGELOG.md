@@ -1,5 +1,83 @@
 # @ryanatkn/moss
 
+## 0.26.0
+
+### Minor Changes
+
+- change some base styles to be entirely wrapped in `:where`, reducing specificity, breaking by causing potentially unintended overrides in existing code ([#54](https://github.com/ryanatkn/moss/pull/54))
+- remove deprecated `get_sorted_array` in `css_class_helpers.ts` ([#54](https://github.com/ryanatkn/moss/pull/54))
+
+## 0.25.0
+
+### Minor Changes
+
+- bump node@22.11 ([4eec6d6](https://github.com/ryanatkn/moss/commit/4eec6d6))
+
+## 0.24.3
+
+### Patch Changes
+
+- fix CSS class generation sort order ([#51](https://github.com/ryanatkn/moss/pull/51))
+
+## 0.24.2
+
+### Patch Changes
+
+- add cursor styles to `.menu_item` ([c1e71ea](https://github.com/ryanatkn/moss/commit/c1e71ea))
+
+## 0.24.1
+
+### Patch Changes
+
+- add `.menu_item` styles ([455199c](https://github.com/ryanatkn/moss/commit/455199c))
+
+## 0.24.0
+
+### Minor Changes
+
+- break: change `.unstyled` lists to have no `margin-bottom` ([c27315e](https://github.com/ryanatkn/moss/commit/c27315e))
+
+## 0.23.2
+
+### Patch Changes
+
+- add scrollbar-width and scrollbar-gutter css classes ([9d6866d](https://github.com/ryanatkn/moss/commit/9d6866d))
+
+## 0.23.1
+
+### Patch Changes
+
+- add `user-select` css classes ([cc4865b](https://github.com/ryanatkn/moss/commit/cc4865b))
+
+## 0.23.0
+
+### Minor Changes
+
+- add `font_serif` and make it the default for headings ([#50](https://github.com/ryanatkn/moss/pull/50))
+
+### Patch Changes
+
+- add `--size` for `.size_*` classes and `--font_weight` for `.font_weight_*` classes ([#50](https://github.com/ryanatkn/moss/pull/50))
+- add `.heading` for h1-6-like behavior ([#50](https://github.com/ryanatkn/moss/pull/50))
+
+## 0.22.5
+
+### Patch Changes
+
+- set border color variable instead of property on `.plain` ([e6efe3e](https://github.com/ryanatkn/moss/commit/e6efe3e))
+
+## 0.22.4
+
+### Patch Changes
+
+- make active state behave the same as hover for plain borders ([7f6cda1](https://github.com/ryanatkn/moss/commit/7f6cda1))
+
+## 0.22.3
+
+### Patch Changes
+
+- make `.plain` have a transparent border on hover ([04f711a](https://github.com/ryanatkn/moss/commit/04f711a))
+
 ## 0.22.2
 
 ### Patch Changes

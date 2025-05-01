@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Library_Footer from '@ryanatkn/fuz/Library_Footer.svelte';
+	import Docs_Footer from '@ryanatkn/fuz/Docs_Footer.svelte';
 	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
 	import Community_Links_Panel from '@ryanatkn/fuz/Community_Links_Panel.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
@@ -7,6 +7,7 @@
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 
 	import {pkg_context} from '$routes/pkg.js';
+	import {MAIN_HEADER_MARGIN_TOP} from '$routes/constants.js';
 
 	const pkg = pkg_context.get();
 
@@ -15,8 +16,10 @@
 
 <main class="width_md">
 	<section>
-		<header class="box">
-			<h1 class="mt_xl4">{pkg.repo_name}</h1>
+		<header class="box width_sm">
+			<h1 class="mb_xl5" style:margin-top={MAIN_HEADER_MARGIN_TOP}>
+				{pkg.repo_name}
+			</h1>
 		</header>
 		<Breadcrumb><Svg data={moss_logo} size="var(--icon_size_sm)" /></Breadcrumb>
 	</section>
@@ -27,11 +30,11 @@
 		</div>
 	</section>
 	<section class="box mb_xl7">
-		<Library_Footer {pkg}>
+		<Docs_Footer {pkg}>
 			<div class="mb_xl5">
 				<Breadcrumb><Svg data={moss_logo} size="var(--icon_size_sm)" /></Breadcrumb>
 			</div>
-		</Library_Footer>
+		</Docs_Footer>
 	</section>
 </main>
 
