@@ -327,7 +327,8 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.chip {
 				font-weight: 600;
-				padding: var(--space_xs5) var(--space_sm); /* maybe different inside \`p\`? using \`calc\` with \`--size\`? */
+				padding-left: var(--space_xs);
+				padding-right: var(--space_xs);
 				background-color: var(--fg_1);
 				border-radius: var(--radius_xs);
 			}

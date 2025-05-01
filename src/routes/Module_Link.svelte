@@ -1,28 +1,19 @@
 <script lang="ts">
-	import type {Snippet} from 'svelte';
-	import type {SvelteHTMLElements} from 'svelte/elements';
+	import type {ComponentProps} from 'svelte';
 
 	import File_Link from '$routes/File_Link.svelte';
 
 	// TODO upstream?
 
-	interface Props {
-		path: string;
-		base_path?: string;
-		attrs?: SvelteHTMLElements['a'];
-		icon?: Snippet | string;
-		children?: Snippet;
-	}
+	type Props = ComponentProps<typeof File_Link>;
 
 	const {
-		path,
 		base_path = 'https://github.com/ryanatkn/moss/blob/main/src/lib/',
-		attrs,
-		icon = '🗎',
 		children = fallback_children,
+		...rest
 	}: Props = $props();
 </script>
 
-<File_Link {path} {base_path} {attrs} {icon} {children} />
+<File_Link {...rest} {base_path} {children} />
 
-{#snippet fallback_children()}@ryanatkn/moss/{path}{/snippet}
+{#snippet fallback_children()}@ryanatkn/moss/{rest.path}{/snippet}
