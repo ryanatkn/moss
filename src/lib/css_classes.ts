@@ -60,27 +60,11 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	ellipsis: {
 		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
 	},
-	width_xl: {
+	width_xs: {
 		ruleset: `
-			.width_xl {
+			.width_xs {
 				width: 100%;
-				max-width: var(--width_xl);
-			}
-		`,
-	},
-	width_lg: {
-		ruleset: `
-			.width_lg {
-				width: 100%;
-				max-width: var(--width_lg);
-			}
-		`,
-	},
-	width_md: {
-		ruleset: `
-			.width_md {
-				width: 100%;
-				max-width: var(--width_md);
+				max-width: var(--distance_xs);
 			}
 		`,
 	},
@@ -88,47 +72,31 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.width_sm {
 				width: 100%;
-				max-width: var(--width_sm);
+				max-width: var(--distance_sm);
 			}
 		`,
 	},
-	width_xs: {
+	width_md: {
 		ruleset: `
-			.width_xs {
+			.width_md {
 				width: 100%;
-				max-width: var(--width_xs);
+				max-width: var(--distance_md);
 			}
 		`,
 	},
-	min_width_xl: {
+	width_lg: {
 		ruleset: `
-			.min_width_xl {
+			.width_lg {
 				width: 100%;
-				min-width: var(--width_xl);
+				max-width: var(--distance_lg);
 			}
 		`,
 	},
-	min_width_lg: {
+	width_xl: {
 		ruleset: `
-			.min_width_lg {
+			.width_xl {
 				width: 100%;
-				min-width: var(--width_lg);
-			}
-		`,
-	},
-	min_width_md: {
-		ruleset: `
-			.min_width_md {
-				width: 100%;
-				min-width: var(--width_md);
-			}
-		`,
-	},
-	min_width_sm: {
-		ruleset: `
-			.min_width_sm {
-				width: 100%;
-				min-width: var(--width_sm);
+				max-width: var(--distance_xl);
 			}
 		`,
 	},
@@ -136,7 +104,120 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.min_width_xs {
 				width: 100%;
-				min-width: var(--width_xs);
+				min-width: var(--distance_xs);
+			}
+		`,
+	},
+	min_width_sm: {
+		ruleset: `
+			.min_width_sm {
+				width: 100%;
+				min-width: var(--distance_sm);
+			}
+		`,
+	},
+	min_width_md: {
+		ruleset: `
+			.min_width_md {
+				width: 100%;
+				min-width: var(--distance_md);
+			}
+		`,
+	},
+	min_width_lg: {
+		ruleset: `
+			.min_width_lg {
+				width: 100%;
+				min-width: var(--distance_lg);
+			}
+		`,
+	},
+	min_width_xl: {
+		ruleset: `
+			.min_width_xl {
+				width: 100%;
+				min-width: var(--distance_xl);
+			}
+		`,
+	},
+	// TODO rethink if this breaks too often or confusingly, `height: 100%` depends on the parent and often won't take effect
+	height_xs: {
+		ruleset: `
+			.height_xs {
+				height: 100%;
+				max-height: var(--distance_xs);
+			}
+		`,
+	},
+	height_sm: {
+		ruleset: `
+			.height_sm {
+				height: 100%;
+				max-height: var(--distance_sm);
+			}
+		`,
+	},
+	height_md: {
+		ruleset: `
+			.height_md {
+				height: 100%;
+				max-height: var(--distance_md);
+			}
+		`,
+	},
+	height_lg: {
+		ruleset: `
+			.height_lg {
+				height: 100%;
+				max-height: var(--distance_lg);
+			}
+		`,
+	},
+	height_xl: {
+		ruleset: `
+			.height_xl {
+				height: 100%;
+				max-height: var(--distance_xl);
+			}
+		`,
+	},
+	min_height_xs: {
+		ruleset: `
+			.min_height_xs {
+				height: 100%;
+				min-height: var(--distance_xs);
+			}
+		`,
+	},
+	min_height_sm: {
+		ruleset: `
+			.min_height_sm {
+				height: 100%;
+				min-height: var(--distance_sm);
+			}
+		`,
+	},
+	min_height_md: {
+		ruleset: `
+			.min_height_md {
+				height: 100%;
+				min-height: var(--distance_md);
+			}
+		`,
+	},
+	min_height_lg: {
+		ruleset: `
+			.min_height_lg {
+				height: 100%;
+				min-height: var(--distance_lg);
+			}
+		`,
+	},
+	min_height_xl: {
+		ruleset: `
+			.min_height_xl {
+				height: 100%;
+				min-height: var(--distance_xl);
 			}
 		`,
 	},
@@ -323,7 +404,8 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			.chip {
 				font-weight: 600;
-				padding: var(--space_xs5) var(--space_sm); /* maybe different inside \`p\`? using \`calc\` with \`--size\`? */
+				padding-left: var(--space_xs);
+				padding-right: var(--space_xs);
 				background-color: var(--fg_1);
 				border-radius: var(--radius_xs);
 			}
@@ -393,6 +475,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
 	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
 
+	visibility_visible: {declaration: 'visibility: visible;'},
+	visibility_hidden: {declaration: 'visibility: hidden;'},
+	visibility_collapse: {declaration: 'visibility: collapse;'},
+	visibility_inherit: {declaration: 'visibility: inherit;'},
+	visibility_initial: {declaration: 'visibility: initial;'},
+	visibility_revert: {declaration: 'visibility: revert;'},
+	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
+	visibility_unset: {declaration: 'visibility: unset;'},
+
 	/* these include the longhand `display_` because they're less common and would be more ambiguous */
 	display_none: {declaration: 'display: none;'},
 	display_contents: {declaration: 'display: contents;'},
@@ -403,9 +494,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	inline_grid: {declaration: 'display: inline-grid;'},
 	block: {declaration: 'display: block;'},
 
-	/* TODO lots of these, but optimize first? .display_table {
-	display: table;
-} */
 	flex: {declaration: 'display: flex;'},
 	flex_1: {declaration: 'flex: 1;'},
 	flex_wrap: {declaration: 'flex-wrap: wrap;'},
@@ -572,11 +660,11 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	font_weight_800: {declaration: 'font-weight: 800; --font_weight: 800;'},
 	font_weight_900: {declaration: 'font-weight: 900; --font_weight: 900;'},
 
-	/*/
+	/*
 
-colors
+	colors
 
-*/
+	*/
 	text_color_0: {declaration: 'color: var(--text_color_0);'},
 	text_color_1: {declaration: 'color: var(--text_color_1);'},
 	text_color_2: {declaration: 'color: var(--text_color_2);'},
@@ -857,10 +945,12 @@ colors
 	border_width_4: {declaration: 'border-width: var(--border_width_4);'},
 	border_width_5: {declaration: 'border-width: var(--border_width_5);'},
 	border_width_6: {declaration: 'border-width: var(--border_width_6);'},
-	outline_width_0: {declaration: 'outline-width: 0;'},
-	outline_width_1: {declaration: 'outline-width: var(--outline_width_1);'},
-	outline_width_2: {declaration: 'outline-width: var(--outline_width_2);'},
-	outline_width_3: {declaration: 'outline-width: var(--outline_width_3);'},
+	border_width_7: {declaration: 'border-width: var(--border_width_7);'},
+	border_width_8: {declaration: 'border-width: var(--border_width_8);'},
+	border_width_9: {declaration: 'border-width: var(--border_width_9);'},
+	outline_width_0: {declaration: 'outline-width: 0;'}, // TODO has no corresponding CSS variable, how to encode this?
+	outline_width_focus: {declaration: 'outline-width: var(--outline_width_focus);'},
+	outline_width_active: {declaration: 'outline-width: var(--outline_width_active);'},
 
 	/* TODO add the top/right/bottom/left variants */
 	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
@@ -887,9 +977,9 @@ colors
 
 	/*
 
-shading
+	shading
 
-*/
+	*/
 	fade_0: {declaration: 'opacity: 0;'},
 	fade_100: {declaration: 'opacity: 1;'},
 	fade_1: {declaration: 'opacity: var(--fade_1);'},
@@ -899,11 +989,11 @@ shading
 	fade_5: {declaration: 'opacity: var(--fade_5);'},
 	fade_6: {declaration: 'opacity: var(--fade_6);'},
 
-	/*/
+	/*
 
-shadows
+	shadows
 
-*/
+	*/
 	shadow_xs: {
 		declaration:
 			'box-shadow: var(--shadow_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
@@ -1047,18 +1137,25 @@ shadows
 	shadow_inherit: {declaration: 'box-shadow: inherit;'},
 	shadow_none: {declaration: 'box-shadow: none;'},
 
-	/*/
+	/*
 
-layout
+	layout
 
-*/
+	*/
 	w_0: {declaration: 'width: 0;'},
 	w_100: {declaration: 'width: 100%;'},
+	w_1px: {declaration: 'width: 1px;'}, // TODO maybe 🔢 to specify replacement? and/or regexps?
+	w_2px: {declaration: 'width: 2px;'},
+	w_3px: {declaration: 'width: 3px;'},
 	w_auto: {declaration: 'width: auto;'},
 	w_max_content: {declaration: 'width: max-content;'},
 	w_min_content: {declaration: 'width: min-content;'},
 	w_fit_content: {declaration: 'width: fit-content;'},
 	w_stretch: {declaration: 'width: stretch;'},
+	w_xs5: {declaration: 'width: var(--space_xs5);'},
+	w_xs4: {declaration: 'width: var(--space_xs4);'},
+	w_xs3: {declaration: 'width: var(--space_xs3);'},
+	w_xs2: {declaration: 'width: var(--space_xs2);'},
 	w_xs: {declaration: 'width: var(--space_xs);'},
 	w_sm: {declaration: 'width: var(--space_sm);'},
 	w_md: {declaration: 'width: var(--space_md);'},
@@ -1080,11 +1177,18 @@ layout
 	w_xl15: {declaration: 'width: var(--space_xl15);'},
 	h_0: {declaration: 'height: 0;'},
 	h_100: {declaration: 'height: 100%;'},
+	h_1px: {declaration: 'height: 1px;'},
+	h_2px: {declaration: 'height: 2px;'},
+	h_3px: {declaration: 'height: 3px;'},
 	h_auto: {declaration: 'height: auto;'},
 	h_max_content: {declaration: 'height: max-content;'},
 	h_min_content: {declaration: 'height: min-content;'},
 	h_fit_content: {declaration: 'height: fit-content;'},
 	h_stretch: {declaration: 'height: stretch;'},
+	h_xs5: {declaration: 'height: var(--space_xs5);'},
+	h_xs4: {declaration: 'height: var(--space_xs4);'},
+	h_xs3: {declaration: 'height: var(--space_xs3);'},
+	h_xs2: {declaration: 'height: var(--space_xs2);'},
 	h_xs: {declaration: 'height: var(--space_xs);'},
 	h_sm: {declaration: 'height: var(--space_sm);'},
 	h_md: {declaration: 'height: var(--space_md);'},
@@ -1108,7 +1212,14 @@ layout
 	/* TODO % variants? */
 	t_0: {declaration: 'top: 0;'},
 	t_100: {declaration: 'top: 100%;'},
+	t_1px: {declaration: 'top: 1px;'},
+	t_2px: {declaration: 'top: 2px;'},
+	t_3px: {declaration: 'top: 3px;'},
 	t_auto: {declaration: 'top: auto;'},
+	t_xs5: {declaration: 'top: var(--space_xs5);'},
+	t_xs4: {declaration: 'top: var(--space_xs4);'},
+	t_xs3: {declaration: 'top: var(--space_xs3);'},
+	t_xs2: {declaration: 'top: var(--space_xs2);'},
 	t_xs: {declaration: 'top: var(--space_xs);'},
 	t_sm: {declaration: 'top: var(--space_sm);'},
 	t_md: {declaration: 'top: var(--space_md);'},
@@ -1130,7 +1241,14 @@ layout
 	t_xl15: {declaration: 'top: var(--space_xl15);'},
 	b_0: {declaration: 'bottom: 0;'},
 	b_100: {declaration: 'bottom: 100%;'},
+	b_1px: {declaration: 'bottom: 1px;'},
+	b_2px: {declaration: 'bottom: 2px;'},
+	b_3px: {declaration: 'bottom: 3px;'},
 	b_auto: {declaration: 'bottom: auto;'},
+	b_xs5: {declaration: 'bottom: var(--space_xs5);'},
+	b_xs4: {declaration: 'bottom: var(--space_xs4);'},
+	b_xs3: {declaration: 'bottom: var(--space_xs3);'},
+	b_xs2: {declaration: 'bottom: var(--space_xs2);'},
 	b_xs: {declaration: 'bottom: var(--space_xs);'},
 	b_sm: {declaration: 'bottom: var(--space_sm);'},
 	b_md: {declaration: 'bottom: var(--space_md);'},
@@ -1152,7 +1270,14 @@ layout
 	b_xl15: {declaration: 'bottom: var(--space_xl15);'},
 	l_0: {declaration: 'left: 0;'},
 	l_100: {declaration: 'left: 100%;'},
+	l_1px: {declaration: 'left: 1px;'},
+	l_2px: {declaration: 'left: 2px;'},
+	l_3px: {declaration: 'left: 3px;'},
 	l_auto: {declaration: 'left: auto;'},
+	l_xs5: {declaration: 'left: var(--space_xs5);'},
+	l_xs4: {declaration: 'left: var(--space_xs4);'},
+	l_xs3: {declaration: 'left: var(--space_xs3);'},
+	l_xs2: {declaration: 'left: var(--space_xs2);'},
 	l_xs: {declaration: 'left: var(--space_xs);'},
 	l_sm: {declaration: 'left: var(--space_sm);'},
 	l_md: {declaration: 'left: var(--space_md);'},
@@ -1174,7 +1299,14 @@ layout
 	l_xl15: {declaration: 'left: var(--space_xl15);'},
 	r_0: {declaration: 'right: 0;'},
 	r_100: {declaration: 'right: 100%;'},
+	r_1px: {declaration: 'right: 1px;'},
+	r_2px: {declaration: 'right: 2px;'},
+	r_3px: {declaration: 'right: 3px;'},
 	r_auto: {declaration: 'right: auto;'},
+	r_xs5: {declaration: 'right: var(--space_xs5);'},
+	r_xs4: {declaration: 'right: var(--space_xs4);'},
+	r_xs3: {declaration: 'right: var(--space_xs3);'},
+	r_xs2: {declaration: 'right: var(--space_xs2);'},
 	r_xs: {declaration: 'right: var(--space_xs);'},
 	r_sm: {declaration: 'right: var(--space_sm);'},
 	r_md: {declaration: 'right: var(--space_md);'},
@@ -1194,7 +1326,39 @@ layout
 	r_xl13: {declaration: 'right: var(--space_xl13);'},
 	r_xl14: {declaration: 'right: var(--space_xl14);'},
 	r_xl15: {declaration: 'right: var(--space_xl15);'},
+
+	inset_0: {declaration: 'inset: 0;'},
+	inset_1px: {declaration: 'inset: 1px;'},
+	inset_2px: {declaration: 'inset: 2px;'},
+	inset_3px: {declaration: 'inset: 3px;'},
+	inset_xs5: {declaration: 'inset: var(--space_xs5);'},
+	inset_xs4: {declaration: 'inset: var(--space_xs4);'},
+	inset_xs3: {declaration: 'inset: var(--space_xs3);'},
+	inset_xs2: {declaration: 'inset: var(--space_xs2);'},
+	inset_xs: {declaration: 'inset: var(--space_xs);'},
+	inset_sm: {declaration: 'inset: var(--space_sm);'},
+	inset_md: {declaration: 'inset: var(--space_md);'},
+	inset_lg: {declaration: 'inset: var(--space_lg);'},
+	inset_xl: {declaration: 'inset: var(--space_xl);'},
+	inset_xl2: {declaration: 'inset: var(--space_xl2);'},
+	inset_xl3: {declaration: 'inset: var(--space_xl3);'},
+	inset_xl4: {declaration: 'inset: var(--space_xl4);'},
+	inset_xl5: {declaration: 'inset: var(--space_xl5);'},
+	inset_xl6: {declaration: 'inset: var(--space_xl6);'},
+	inset_xl7: {declaration: 'inset: var(--space_xl7);'},
+	inset_xl8: {declaration: 'inset: var(--space_xl8);'},
+	inset_xl9: {declaration: 'inset: var(--space_xl9);'},
+	inset_xl10: {declaration: 'inset: var(--space_xl10);'},
+	inset_xl11: {declaration: 'inset: var(--space_xl11);'},
+	inset_xl12: {declaration: 'inset: var(--space_xl12);'},
+	inset_xl13: {declaration: 'inset: var(--space_xl13);'},
+	inset_xl14: {declaration: 'inset: var(--space_xl14);'},
+	inset_xl15: {declaration: 'inset: var(--space_xl15);'},
+
 	p_0: {declaration: 'padding: 0;'},
+	p_1px: {declaration: 'padding: 1px;'},
+	p_2px: {declaration: 'padding: 2px;'},
+	p_3px: {declaration: 'padding: 3px;'},
 	p_xs5: {declaration: 'padding: var(--space_xs5);'},
 	p_xs4: {declaration: 'padding: var(--space_xs4);'},
 	p_xs3: {declaration: 'padding: var(--space_xs3);'},
@@ -1219,6 +1383,10 @@ layout
 	p_xl14: {declaration: 'padding: var(--space_xl14);'},
 	p_xl15: {declaration: 'padding: var(--space_xl15);'},
 	pt_0: {declaration: 'padding-top: 0;'},
+	pt_100: {declaration: 'padding-top: 100%;'},
+	pt_1px: {declaration: 'padding-top: 1px;'},
+	pt_2px: {declaration: 'padding-top: 2px;'},
+	pt_3px: {declaration: 'padding-top: 3px;'},
 	pt_xs5: {declaration: 'padding-top: var(--space_xs5);'},
 	pt_xs4: {declaration: 'padding-top: var(--space_xs4);'},
 	pt_xs3: {declaration: 'padding-top: var(--space_xs3);'},
@@ -1243,6 +1411,10 @@ layout
 	pt_xl14: {declaration: 'padding-top: var(--space_xl14);'},
 	pt_xl15: {declaration: 'padding-top: var(--space_xl15);'},
 	pr_0: {declaration: 'padding-right: 0;'},
+	pr_100: {declaration: 'padding-right: 100%;'},
+	pr_1px: {declaration: 'padding-right: 1px;'},
+	pr_2px: {declaration: 'padding-right: 2px;'},
+	pr_3px: {declaration: 'padding-right: 3px;'},
 	pr_xs5: {declaration: 'padding-right: var(--space_xs5);'},
 	pr_xs4: {declaration: 'padding-right: var(--space_xs4);'},
 	pr_xs3: {declaration: 'padding-right: var(--space_xs3);'},
@@ -1267,6 +1439,10 @@ layout
 	pr_xl14: {declaration: 'padding-right: var(--space_xl14);'},
 	pr_xl15: {declaration: 'padding-right: var(--space_xl15);'},
 	pb_0: {declaration: 'padding-bottom: 0;'},
+	pb_100: {declaration: 'padding-bottom: 100%;'},
+	pb_1px: {declaration: 'padding-bottom: 1px;'},
+	pb_2px: {declaration: 'padding-bottom: 2px;'},
+	pb_3px: {declaration: 'padding-bottom: 3px;'},
 	pb_xs5: {declaration: 'padding-bottom: var(--space_xs5);'},
 	pb_xs4: {declaration: 'padding-bottom: var(--space_xs4);'},
 	pb_xs3: {declaration: 'padding-bottom: var(--space_xs3);'},
@@ -1291,6 +1467,10 @@ layout
 	pb_xl14: {declaration: 'padding-bottom: var(--space_xl14);'},
 	pb_xl15: {declaration: 'padding-bottom: var(--space_xl15);'},
 	pl_0: {declaration: 'padding-left: 0;'},
+	pl_100: {declaration: 'padding-left: 100%;'},
+	pl_1px: {declaration: 'padding-left: 1px;'},
+	pl_2px: {declaration: 'padding-left: 2px;'},
+	pl_3px: {declaration: 'padding-left: 3px;'},
 	pl_xs5: {declaration: 'padding-left: var(--space_xs5);'},
 	pl_xs4: {declaration: 'padding-left: var(--space_xs4);'},
 	pl_xs3: {declaration: 'padding-left: var(--space_xs3);'},
@@ -1315,6 +1495,9 @@ layout
 	pl_xl14: {declaration: 'padding-left: var(--space_xl14);'},
 	pl_xl15: {declaration: 'padding-left: var(--space_xl15);'},
 	px_0: {declaration: 'padding-left: 0;	padding-right: 0;'},
+	px_1px: {declaration: 'padding-left: 1px;	padding-right: 1px;'},
+	px_2px: {declaration: 'padding-left: 2px;	padding-right: 2px;'},
+	px_3px: {declaration: 'padding-left: 3px;	padding-right: 3px;'},
 	px_xs5: {declaration: 'padding-left: var(--space_xs5);	padding-right: var(--space_xs5);'},
 	px_xs4: {declaration: 'padding-left: var(--space_xs4);	padding-right: var(--space_xs4);'},
 	px_xs3: {declaration: 'padding-left: var(--space_xs3);	padding-right: var(--space_xs3);'},
@@ -1339,6 +1522,9 @@ layout
 	px_xl14: {declaration: 'padding-left: var(--space_xl14);	padding-right: var(--space_xl14);'},
 	px_xl15: {declaration: 'padding-left: var(--space_xl15);	padding-right: var(--space_xl15);'},
 	py_0: {declaration: 'padding-top: 0;	padding-bottom: 0;'},
+	py_1px: {declaration: 'padding-top: 1px;	padding-bottom: 1px;'},
+	py_2px: {declaration: 'padding-top: 2px;	padding-bottom: 2px;'},
+	py_3px: {declaration: 'padding-top: 3px;	padding-bottom: 3px;'},
 	py_xs5: {declaration: 'padding-top: var(--space_xs5);	padding-bottom: var(--space_xs5);'},
 	py_xs4: {declaration: 'padding-top: var(--space_xs4);	padding-bottom: var(--space_xs4);'},
 	py_xs3: {declaration: 'padding-top: var(--space_xs3);	padding-bottom: var(--space_xs3);'},
@@ -1362,7 +1548,11 @@ layout
 	py_xl13: {declaration: 'padding-top: var(--space_xl13);	padding-bottom: var(--space_xl13);'},
 	py_xl14: {declaration: 'padding-top: var(--space_xl14);	padding-bottom: var(--space_xl14);'},
 	py_xl15: {declaration: 'padding-top: var(--space_xl15);	padding-bottom: var(--space_xl15);'},
+
 	m_0: {declaration: 'margin: 0;'},
+	m_1px: {declaration: 'margin: 1px;'},
+	m_2px: {declaration: 'margin: 2px;'},
+	m_3px: {declaration: 'margin: 3px;'},
 	m_auto: {declaration: 'margin: auto;'},
 	m_xs5: {declaration: 'margin: var(--space_xs5);'},
 	m_xs4: {declaration: 'margin: var(--space_xs4);'},
@@ -1388,6 +1578,10 @@ layout
 	m_xl14: {declaration: 'margin: var(--space_xl14);'},
 	m_xl15: {declaration: 'margin: var(--space_xl15);'},
 	mt_0: {declaration: 'margin-top: 0;'},
+	mt_100: {declaration: 'margin-top: 100%;'},
+	mt_1px: {declaration: 'margin-top: 1px;'},
+	mt_2px: {declaration: 'margin-top: 2px;'},
+	mt_3px: {declaration: 'margin-top: 3px;'},
 	mt_auto: {declaration: 'margin-top: auto;'},
 	mt_xs5: {declaration: 'margin-top: var(--space_xs5);'},
 	mt_xs4: {declaration: 'margin-top: var(--space_xs4);'},
@@ -1413,6 +1607,10 @@ layout
 	mt_xl14: {declaration: 'margin-top: var(--space_xl14);'},
 	mt_xl15: {declaration: 'margin-top: var(--space_xl15);'},
 	mr_0: {declaration: 'margin-right: 0;'},
+	mr_100: {declaration: 'margin-right: 100%;'},
+	mr_1px: {declaration: 'margin-right: 1px;'},
+	mr_2px: {declaration: 'margin-right: 2px;'},
+	mr_3px: {declaration: 'margin-right: 3px;'},
 	mr_auto: {declaration: 'margin-right: auto;'},
 	mr_xs5: {declaration: 'margin-right: var(--space_xs5);'},
 	mr_xs4: {declaration: 'margin-right: var(--space_xs4);'},
@@ -1438,6 +1636,10 @@ layout
 	mr_xl14: {declaration: 'margin-right: var(--space_xl14);'},
 	mr_xl15: {declaration: 'margin-right: var(--space_xl15);'},
 	mb_0: {declaration: 'margin-bottom: 0;'},
+	mb_100: {declaration: 'margin-bottom: 100%;'},
+	mb_1px: {declaration: 'margin-bottom: 1px;'},
+	mb_2px: {declaration: 'margin-bottom: 2px;'},
+	mb_3px: {declaration: 'margin-bottom: 3px;'},
 	mb_auto: {declaration: 'margin-bottom: auto;'},
 	mb_xs5: {declaration: 'margin-bottom: var(--space_xs5);'},
 	mb_xs4: {declaration: 'margin-bottom: var(--space_xs4);'},
@@ -1463,6 +1665,10 @@ layout
 	mb_xl14: {declaration: 'margin-bottom: var(--space_xl14);'},
 	mb_xl15: {declaration: 'margin-bottom: var(--space_xl15);'},
 	ml_0: {declaration: 'margin-left: 0;'},
+	ml_100: {declaration: 'margin-left: 100%;'},
+	ml_1px: {declaration: 'margin-left: 1px;'},
+	ml_2px: {declaration: 'margin-left: 2px;'},
+	ml_3px: {declaration: 'margin-left: 3px;'},
 	ml_auto: {declaration: 'margin-left: auto;'},
 	ml_xs5: {declaration: 'margin-left: var(--space_xs5);'},
 	ml_xs4: {declaration: 'margin-left: var(--space_xs4);'},
@@ -1488,6 +1694,9 @@ layout
 	ml_xl14: {declaration: 'margin-left: var(--space_xl14);'},
 	ml_xl15: {declaration: 'margin-left: var(--space_xl15);'},
 	mx_0: {declaration: 'margin-left: 0;	margin-right: 0;'},
+	mx_1px: {declaration: 'margin-left: 1px;	margin-right: 1px;'},
+	mx_2px: {declaration: 'margin-left: 2px;	margin-right: 2px;'},
+	mx_3px: {declaration: 'margin-left: 3px;	margin-right: 3px;'},
 	mx_auto: {declaration: 'margin-left: auto;	margin-right: auto;'},
 	mx_xs5: {declaration: 'margin-left: var(--space_xs5);	margin-right: var(--space_xs5);'},
 	mx_xs4: {declaration: 'margin-left: var(--space_xs4);	margin-right: var(--space_xs4);'},
@@ -1513,6 +1722,9 @@ layout
 	mx_xl14: {declaration: 'margin-left: var(--space_xl14);	margin-right: var(--space_xl14);'},
 	mx_xl15: {declaration: 'margin-left: var(--space_xl15);	margin-right: var(--space_xl15);'},
 	my_0: {declaration: 'margin-top: 0;	margin-bottom: 0;'},
+	my_1px: {declaration: 'margin-top: 1px;	margin-bottom: 1px;'},
+	my_2px: {declaration: 'margin-top: 2px;	margin-bottom: 2px;'},
+	my_3px: {declaration: 'margin-top: 3px;	margin-bottom: 3px;'},
 	my_auto: {declaration: 'margin-top: auto;	margin-bottom: auto;'},
 	my_xs5: {declaration: 'margin-top: var(--space_xs5);	margin-bottom: var(--space_xs5);'},
 	my_xs4: {declaration: 'margin-top: var(--space_xs4);	margin-bottom: var(--space_xs4);'},
@@ -1537,6 +1749,7 @@ layout
 	my_xl13: {declaration: 'margin-top: var(--space_xl13);	margin-bottom: var(--space_xl13);'},
 	my_xl14: {declaration: 'margin-top: var(--space_xl14);	margin-bottom: var(--space_xl14);'},
 	my_xl15: {declaration: 'margin-top: var(--space_xl15);	margin-bottom: var(--space_xl15);'},
+
 	gap_xs5: {declaration: 'gap: var(--space_xs5);'},
 	gap_xs4: {declaration: 'gap: var(--space_xs4);'},
 	gap_xs3: {declaration: 'gap: var(--space_xs3);'},

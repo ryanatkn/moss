@@ -19,7 +19,8 @@ but a goal is to let both developers and end-users shape it for their needs.
 If this sounds interesting to you,
 I'm welcoming help to iterate on APIs to get Moss to 1.0 and beyond.
 See the [issues](https://github.com/ryanatkn/moss/issues)
-and [discussions](https://github.com/ryanatkn/moss/discussions).
+and [discussions](https://github.com/ryanatkn/moss/discussions)
+or find me on [Bluesky](https://bsky.app/profile/ryanatkn.com).
 
 I've been growing Moss slowly over 5+ years
 to support [Zzz](https://www.zzz.software/) and [my other projects](http://www.ryanatkn.com/)
@@ -28,18 +29,16 @@ that focus on end users, with regular breaking changes and experimental patterns
 ## Developers
 
 If you feel comfortable looking at the source code,
-Moss is ready to use in non-criticial and hobby projects,
-with the major caveat that there will be a lot of breaking changes ahead.
-The code is significantly incomplete but I think it's stable enough to use
+Moss is ready to use, with the major caveat that there may be significant breaking changes ahead.
+The code is incomplete but I think it's stable enough to use
 if you're willing to keep up with a chaotic changelog (usually quiet, sometimes very breaking).
-Feedback of all kinds if welcome.
+Feedback of all kinds is welcome.
 
 I'm open to PRs when they fit the project's design goals, which can be subtle and arbitrary
-and ill-communicated (:(),
-but I generally want to reduce any quirkiness.
+and ill-communicated (:(), but I generally want to reduce any quirkiness.
 Feel free to open PRs for straightforward changes, but start with an issue for most PRs.
 
-The code is permissively licensed so no CLA, forking is encouraged.
+The code is permissively licensed so no CLA, and forking is encouraged.
 
 ## Funding
 

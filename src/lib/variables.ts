@@ -786,11 +786,11 @@ export const space_xl12: Style_Variable = {name: 'space_xl12', light: '22.8rem'}
 export const space_xl13: Style_Variable = {name: 'space_xl13', light: '29rem'};
 export const space_xl14: Style_Variable = {name: 'space_xl14', light: '36.9rem'};
 export const space_xl15: Style_Variable = {name: 'space_xl15', light: '47rem'};
-export const width_xl: Style_Variable = {name: 'width_xl', light: '1600px'};
-export const width_lg: Style_Variable = {name: 'width_lg', light: '1200px'};
-export const width_md: Style_Variable = {name: 'width_md', light: '800px'};
-export const width_sm: Style_Variable = {name: 'width_sm', light: '320px'};
-export const width_xs: Style_Variable = {name: 'width_xs', light: '200px'};
+export const distance_xs: Style_Variable = {name: 'distance_xs', light: '200px'};
+export const distance_sm: Style_Variable = {name: 'distance_sm', light: '320px'};
+export const distance_md: Style_Variable = {name: 'distance_md', light: '800px'};
+export const distance_lg: Style_Variable = {name: 'distance_lg', light: '1200px'};
+export const distance_xl: Style_Variable = {name: 'distance_xl', light: '1600px'};
 
 /* borders and outlines */
 // TODO remove these two generics? composability doesn't work like I wanted, maybe `--border_color_1-5` should be calculated from alpha instead?
@@ -872,19 +872,23 @@ export const border_width_1: Style_Variable = {name: 'border_width_1', light: '1
 export const border_width_2: Style_Variable = {name: 'border_width_2', light: '2px'};
 export const border_width_3: Style_Variable = {name: 'border_width_3', light: '3px'};
 export const border_width_4: Style_Variable = {name: 'border_width_4', light: '4px'};
-export const border_width_5: Style_Variable = {name: 'border_width_5', light: '6px'};
-export const border_width_6: Style_Variable = {name: 'border_width_6', light: '8px'};
+export const border_width_5: Style_Variable = {name: 'border_width_5', light: '5px'};
+export const border_width_6: Style_Variable = {name: 'border_width_6', light: '6px'};
+export const border_width_7: Style_Variable = {name: 'border_width_7', light: '7px'};
+export const border_width_8: Style_Variable = {name: 'border_width_8', light: '8px'};
+export const border_width_9: Style_Variable = {name: 'border_width_9', light: '9px'};
 export const outline_width: Style_Variable = {
 	name: 'outline_width',
-	light: 'var(--outline_width_1)',
+	light: '0',
 };
-export const outline_width_1: Style_Variable = {name: 'outline_width_1', light: '0'};
-export const outline_width_2: Style_Variable = {
-	name: 'outline_width_2',
+export const outline_width_focus: Style_Variable = {
+	// TODO maybe rename _2 to `focus`
+	name: 'outline_width_focus',
 	light: 'var(--border_width_2)',
 };
-export const outline_width_3: Style_Variable = {
-	name: 'outline_width_3',
+export const outline_width_active: Style_Variable = {
+	// TODO maybe rename _3 to `active`
+	name: 'outline_width_active',
 	light: 'var(--border_width_1)',
 };
 export const outline_style: Style_Variable = {name: 'outline_style', light: 'solid'};
@@ -1432,11 +1436,11 @@ export const default_variables: Array<Style_Variable> = [
 	space_xl13,
 	space_xl14,
 	space_xl15,
-	width_xl,
-	width_lg,
-	width_md,
-	width_sm,
-	width_xs,
+	distance_xl,
+	distance_lg,
+	distance_md,
+	distance_sm,
+	distance_xs,
 
 	/* borders and outlines */
 	border_color,
@@ -1463,10 +1467,12 @@ export const default_variables: Array<Style_Variable> = [
 	border_width_4,
 	border_width_5,
 	border_width_6,
+	border_width_7,
+	border_width_8,
+	border_width_9,
 	outline_width,
-	outline_width_1,
-	outline_width_2,
-	outline_width_3,
+	outline_width_focus,
+	outline_width_active,
 	outline_style,
 	outline_color,
 

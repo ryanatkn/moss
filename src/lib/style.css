@@ -94,10 +94,10 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	text-decoration: var(--text_decoration_hover);
 }
 :where(a:focus) {
-	--outline_width: var(--outline_width_2);
+	--outline_width: var(--outline_width_focus);
 }
 :where(a:active) {
-	--outline_width: var(--outline_width_3);
+	--outline_width: var(--outline_width_active);
 }
 :where(a.selected) {
 	--text_color: var(--link_color_selected);
@@ -168,7 +168,10 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	overflow-wrap: break-word; /* TODO @many is this best? `anywhere` instead? what about adding elsewhere? */
 }
 
-/* TODO maybe do the `:not(:last-child)` more generically instead of this selector? problem is it has many corner cases where it doesn't apply but we want it to */
+/*
+TODO remove the :last-child here and elsewhere when margin-trim is fully supported,
+currently can break based on DOM structure - https://developer.mozilla.org/en-US/docs/Web/CSS/margin-trim
+*/
 /* TODO other elements */
 /* checkboxes and radios are expected to be nested inside a `label`, thus no bottom margin */
 :where(
@@ -216,7 +219,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	background-color: var(--fg_1);
 }
 
-:where(code) {
+:where(code:not(.unstyled)) {
 	font-family: var(--font_mono);
 	font-weight: 600;
 	-webkit-hyphens: none;
@@ -229,13 +232,13 @@ The `!important` makes this `hidden` behavior much higher specificity.
 
 /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
 /* keep in sync with `.pre` styling in `css_classes.ts` */
-:where(pre) {
+:where(pre:not(.unstyled)) {
 	font-family: var(--font_mono);
 	color: var(--text_color, var(--text_color_3));
 	overflow: auto;
 	max-width: 100%;
 }
-:where(pre > code) {
+:where(pre:not(.unstyled) > code) {
 	display: block;
 	font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic `--size`? */
 	font-weight: 500;
@@ -251,16 +254,18 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	margin: var(--space_xl7) 0;
 }
 
-:where(fieldset) {
+:where(fieldset:not(.unstyled)) {
 	display: flex;
 	flex-direction: column;
 	border: 0;
 }
 
-:where(legend) {
+:where(legend:not(.unstyled)) {
 	font-size: var(--size_xl);
 	margin-bottom: var(--space_lg);
 }
+
+/* TODO probably continue with the `.unstyled` pattern for more elements */
 
 :where(input, textarea, select) {
 	appearance: none;
@@ -285,7 +290,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	height: 100px;
 }
 
-:where(select, option, input[type='color']) {
+:where(:is(select, option, input[type='color']):not(:disabled)) {
 	cursor: pointer;
 }
 
@@ -430,11 +435,11 @@ see https://caniuse.com/css-has
 }
 
 :where([contenteditable]:focus-visible) {
-	--outline_width: var(--outline_width_2);
+	--outline_width: var(--outline_width_focus);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 :where(:is(input, textarea, select, [contenteditable]):active) {
-	--outline_width: var(--outline_width_3);
+	--outline_width: var(--outline_width_active);
 }
 
 /* TODO could improve this with the coming `:has` selector
@@ -507,7 +512,7 @@ TODO think through these patterns to get somewhere consistent
 
 :where(:is(button, input, textarea, select):focus) {
 	--border_color: var(--color_a_5);
-	--outline_width: var(--outline_width_2);
+	--outline_width: var(--outline_width_focus);
 }
 
 /* TODO maybe gradients? or at least use a text_color */
@@ -607,7 +612,7 @@ TODO think through these patterns to get somewhere consistent
 :where(button:not(:disabled):active) {
 	--button_fill: var(--button_fill_active);
 	--button_border_color: var(--button_border_color_active);
-	--outline_width: var(--outline_width_3);
+	--outline_width: var(--outline_width_active);
 	--shadow: var(--button_shadow_active);
 }
 :where(:is(input, textarea, select, button):disabled:active, label.disabled:active) {
@@ -623,7 +628,7 @@ TODO think through these patterns to get somewhere consistent
 	--fill: transparent;
 }
 :where(button.selected:not(.deselectable):active) {
-	--outline_width: var(--outline_width_2);
+	--outline_width: var(--outline_width_focus);
 }
 
 :where(button.inline, p button) {
@@ -660,7 +665,21 @@ TODO think through these patterns to get somewhere consistent
 	margin-bottom: var(--space_sm);
 }
 
-/* TODO more  table styles */
+:where(table) {
+	border-collapse: collapse;
+}
 :where(thead) {
 	text-align: left;
+}
+:where(th) {
+	font-weight: bold;
+}
+:where(th, td) {
+	padding: var(--space_xs3) var(--space_sm);
+}
+:where(tr) {
+	border-bottom: 1px solid var(--border_color_1);
+}
+:where(tr:hover) {
+	background-color: var(--fg_1);
 }
