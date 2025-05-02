@@ -1,5 +1,21 @@
 # @ryanatkn/moss
 
+## 0.27.0
+
+### Minor Changes
+
+- rework some styles and classes ([#49](https://github.com/ryanatkn/moss/pull/49))
+
+  - rename `--distance_` vars from `--width_`
+  - add `border_width_7-9` and change them to default to 1px increments
+  - replace `outline_width_1` with `outline_width_0` and remove its variable,
+    replace `outline_width_2` with `outline_width_focus`,
+    and `outline_width_3` with `outline_width_active`
+
+### Patch Changes
+
+- add basic table styles ([#49](https://github.com/ryanatkn/moss/pull/49))
+
 ## 0.26.0
 
 ### Minor Changes
