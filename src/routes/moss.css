@@ -204,6 +204,9 @@ a.chip {
 .font_family_sans {
 	font-family: var(--font_family_sans);
 }
+.font_family_serif {
+	font-family: var(--font_family_serif);
+}
 .font_family_mono {
 	font-family: var(--font_family_mono);
 }
@@ -515,6 +518,10 @@ a.chip {
 .mx_xs3 {
 	margin-left: var(--space_xs3);
 	margin-right: var(--space_xs3);
+}
+.my_md {
+	margin-top: var(--space_md);
+	margin-bottom: var(--space_md);
 }
 .gap_lg {
 	gap: var(--space_lg);

@@ -146,6 +146,8 @@ export const src_json = {
 				{name: 'Size_Variant', kind: 'type'},
 				{name: 'font_size_variants', kind: 'variable'},
 				{name: 'font_size_names', kind: 'variable'},
+				{name: 'Font_Family_Variant', kind: 'type'},
+				{name: 'font_family_variants', kind: 'variable'},
 				{name: 'Text_Color_Variant', kind: 'type'},
 				{name: 'text_color_variants', kind: 'variable'},
 				{name: 'Space_Variant', kind: 'type'},

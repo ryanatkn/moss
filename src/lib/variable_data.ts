@@ -19,6 +19,13 @@ export const font_size_variants = [
 
 export const font_size_names = font_size_variants.map((s) => 'font_size_' + s);
 
+export type Font_Family_Variant = Array_Element<typeof font_family_variants>;
+export const font_family_variants = [
+	'font_family_sans',
+	'font_family_serif',
+	'font_family_mono',
+] as const;
+
 export type Text_Color_Variant = Array_Element<typeof text_color_variants>;
 export const text_color_variants = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
