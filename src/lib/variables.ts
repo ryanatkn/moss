@@ -898,13 +898,13 @@ export const outline_color: Style_Variable = {
 };
 
 /* border radii */
-export const border_radius_xl: Style_Variable = {name: 'border_radius_xl', light: '5.5rem'};
-export const border_radius_lg: Style_Variable = {name: 'border_radius_lg', light: '3.4rem'};
-export const border_radius_md: Style_Variable = {name: 'border_radius_md', light: '2.1rem'};
-export const border_radius_sm: Style_Variable = {name: 'border_radius_sm', light: '1.3rem'};
-export const border_radius_xs: Style_Variable = {name: 'border_radius_xs', light: '0.8rem'};
-export const border_radius_xs2: Style_Variable = {name: 'border_radius_xs2', light: '0.5rem'};
 export const border_radius_xs3: Style_Variable = {name: 'border_radius_xs3', light: '0.3rem'};
+export const border_radius_xs2: Style_Variable = {name: 'border_radius_xs2', light: '0.5rem'};
+export const border_radius_xs: Style_Variable = {name: 'border_radius_xs', light: '0.8rem'};
+export const border_radius_sm: Style_Variable = {name: 'border_radius_sm', light: '1.3rem'};
+export const border_radius_md: Style_Variable = {name: 'border_radius_md', light: '2.1rem'};
+export const border_radius_lg: Style_Variable = {name: 'border_radius_lg', light: '3.4rem'};
+export const border_radius_xl: Style_Variable = {name: 'border_radius_xl', light: '5.5rem'};
 
 /* button shadows */
 export const button_shadow: Style_Variable = {
@@ -1477,13 +1477,13 @@ export const default_variables: Array<Style_Variable> = [
 	outline_color,
 
 	/* border radii */
-	border_radius_xl,
-	border_radius_lg,
-	border_radius_md,
-	border_radius_sm,
-	border_radius_xs,
-	border_radius_xs2,
 	border_radius_xs3,
+	border_radius_xs2,
+	border_radius_xs,
+	border_radius_sm,
+	border_radius_md,
+	border_radius_lg,
+	border_radius_xl,
 
 	/* button styles */
 	button_shadow,
