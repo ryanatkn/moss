@@ -67,7 +67,7 @@
 		'border_color_transparent',
 		'border_width_0-9',
 		'outline_width_0|focused|active', // `outline_width_0` isn't a variable, need to encode that information somewhere
-		'border_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset',
+		`border_style_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|${style_global_values}`,
 		'radius_0|50|100', // TODO probably add 25/75 or 10-90
 		'radius_xs3-xl', // TODO change to 1-9
 		'fade_0|100',
