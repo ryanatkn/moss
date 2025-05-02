@@ -246,13 +246,13 @@
 	--outline_width_active: var(--border_width_1);
 	--outline_style: solid;
 	--outline_color: var(--border_color_a);
-	--border_radius_xl: 5.5rem;
-	--border_radius_lg: 3.4rem;
-	--border_radius_md: 2.1rem;
-	--border_radius_sm: 1.3rem;
-	--border_radius_xs: 0.8rem;
-	--border_radius_xs2: 0.5rem;
 	--border_radius_xs3: 0.3rem;
+	--border_radius_xs2: 0.5rem;
+	--border_radius_xs: 0.8rem;
+	--border_radius_sm: 1.3rem;
+	--border_radius_md: 2.1rem;
+	--border_radius_lg: 3.4rem;
+	--border_radius_xl: 5.5rem;
 	--button_shadow:
 		var(--shadow_inset_bottom_xs)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent),

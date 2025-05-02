@@ -68,8 +68,10 @@
 		'border_width_0-9',
 		'outline_width_0|focused|active', // `outline_width_0` isn't a variable, need to encode that information somewhere
 		`border_style_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|${style_global_values}`,
-		'border_radius_0|50|100', // TODO probably add 25/75 or 10-90
-		'border_radius_xs3-xl', // TODO change to 1-9
+		'border_radius_0|10|20|30|40|50|60|70|80|90|100',
+		'border_radius_xs3-xl',
+		'border_top|bottom_left|right_radius_0|10|20|30|40|50|60|70|80|90|100',
+		'border_top|bottom_left|right_radius_xs3-xl',
 		'fade_0|100',
 		'fade_1-6',
 		'shadow_xs-xl',
