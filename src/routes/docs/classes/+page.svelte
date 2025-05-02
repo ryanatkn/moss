@@ -66,7 +66,7 @@
 		'border_color_a-i',
 		'border_color_transparent',
 		'border_width_0-6',
-		'outline_width_0-3',
+		'outline_width_0|focused|active', // `outline_width_0` isn't a variable, need to encode that information somewhere
 		'border_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset',
 		'radius_0|50|100', // TODO probably add 25/75 or 10-90
 		'radius_xs3-xl',

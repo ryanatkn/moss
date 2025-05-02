@@ -872,19 +872,23 @@ export const border_width_1: Style_Variable = {name: 'border_width_1', light: '1
 export const border_width_2: Style_Variable = {name: 'border_width_2', light: '2px'};
 export const border_width_3: Style_Variable = {name: 'border_width_3', light: '3px'};
 export const border_width_4: Style_Variable = {name: 'border_width_4', light: '4px'};
-export const border_width_5: Style_Variable = {name: 'border_width_5', light: '6px'};
-export const border_width_6: Style_Variable = {name: 'border_width_6', light: '8px'};
+export const border_width_5: Style_Variable = {name: 'border_width_5', light: '5px'};
+export const border_width_6: Style_Variable = {name: 'border_width_6', light: '6px'};
+export const border_width_7: Style_Variable = {name: 'border_width_7', light: '7px'};
+export const border_width_8: Style_Variable = {name: 'border_width_8', light: '8px'};
+export const border_width_9: Style_Variable = {name: 'border_width_9', light: '9px'};
 export const outline_width: Style_Variable = {
 	name: 'outline_width',
-	light: 'var(--outline_width_1)',
+	light: '0',
 };
-export const outline_width_1: Style_Variable = {name: 'outline_width_1', light: '0'};
-export const outline_width_2: Style_Variable = {
-	name: 'outline_width_2',
+export const outline_width_focus: Style_Variable = {
+	// TODO maybe rename _2 to `focus`
+	name: 'outline_width_focus',
 	light: 'var(--border_width_2)',
 };
-export const outline_width_3: Style_Variable = {
-	name: 'outline_width_3',
+export const outline_width_active: Style_Variable = {
+	// TODO maybe rename _3 to `active`
+	name: 'outline_width_active',
 	light: 'var(--border_width_1)',
 };
 export const outline_style: Style_Variable = {name: 'outline_style', light: 'solid'};
@@ -1463,10 +1467,12 @@ export const default_variables: Array<Style_Variable> = [
 	border_width_4,
 	border_width_5,
 	border_width_6,
+	border_width_7,
+	border_width_8,
+	border_width_9,
 	outline_width,
-	outline_width_1,
-	outline_width_2,
-	outline_width_3,
+	outline_width_focus,
+	outline_width_active,
 	outline_style,
 	outline_color,
 

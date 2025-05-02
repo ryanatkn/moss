@@ -94,10 +94,10 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	text-decoration: var(--text_decoration_hover);
 }
 :where(a:focus) {
-	--outline_width: var(--outline_width_2);
+	--outline_width: var(--outline_width_focus);
 }
 :where(a:active) {
-	--outline_width: var(--outline_width_3);
+	--outline_width: var(--outline_width_active);
 }
 :where(a.selected) {
 	--text_color: var(--link_color_selected);
@@ -435,11 +435,11 @@ see https://caniuse.com/css-has
 }
 
 :where([contenteditable]:focus-visible) {
-	--outline_width: var(--outline_width_2);
+	--outline_width: var(--outline_width_focus);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 :where(:is(input, textarea, select, [contenteditable]):active) {
-	--outline_width: var(--outline_width_3);
+	--outline_width: var(--outline_width_active);
 }
 
 /* TODO could improve this with the coming `:has` selector
@@ -512,7 +512,7 @@ TODO think through these patterns to get somewhere consistent
 
 :where(:is(button, input, textarea, select):focus) {
 	--border_color: var(--color_a_5);
-	--outline_width: var(--outline_width_2);
+	--outline_width: var(--outline_width_focus);
 }
 
 /* TODO maybe gradients? or at least use a text_color */
@@ -612,7 +612,7 @@ TODO think through these patterns to get somewhere consistent
 :where(button:not(:disabled):active) {
 	--button_fill: var(--button_fill_active);
 	--button_border_color: var(--button_border_color_active);
-	--outline_width: var(--outline_width_3);
+	--outline_width: var(--outline_width_active);
 	--shadow: var(--button_shadow_active);
 }
 :where(:is(input, textarea, select, button):disabled:active, label.disabled:active) {
@@ -628,7 +628,7 @@ TODO think through these patterns to get somewhere consistent
 	--fill: transparent;
 }
 :where(button.selected:not(.deselectable):active) {
-	--outline_width: var(--outline_width_2);
+	--outline_width: var(--outline_width_focus);
 }
 
 :where(button.inline, p button) {

@@ -5,7 +5,12 @@
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 
-	import {color_variants, radius_variants} from '$lib/variable_data.js';
+	import {
+		border_distance_variants,
+		color_variants,
+		outline_distance_variants,
+		radius_variants,
+	} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
@@ -91,8 +96,8 @@
 		<Tome_Section_Header text="Border widths" />
 		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_widths">
-			{#each {length: 6} as _, i (i)}
-				{@const name = 'border_width_' + (i + 1)}
+			{#each border_distance_variants as border_width_variant (border_width_variant)}
+				{@const name = 'border_width_' + border_width_variant}
 				<div class="row">
 					<div class="border_example border_width" style:border-width="var(--{name})">
 						<Style_Variable_Button {name} />
@@ -107,10 +112,10 @@
 	<Tome_Section>
 		<Tome_Section_Header text="Outline widths" />
 		<div class="border_examples outline_widths">
-			{#each {length: 3} as _, i (i)}
-				{@const name = 'outline_width_' + (i + 1)}
+			{#each outline_distance_variants as outline_width_variant (outline_width_variant)}
+				{@const name = 'outline_width_' + outline_width_variant}
 				<div class="row">
-					<div class="border_example outline_width" style:outline-width="var(--{name})">
+					<div class="border_example {name}">
 						<Style_Variable_Button {name} />
 					</div>
 					<span class="pl_sm pr_sm">=</span><code

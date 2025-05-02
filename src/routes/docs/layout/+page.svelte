@@ -5,7 +5,7 @@
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 	import {base} from '$app/paths';
 
-	import {space_variants, width_variants} from '$lib/variable_data.js';
+	import {space_variants, distance_variants} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 
 	const LIBRARY_ITEM_NAME = 'layout';
@@ -40,8 +40,8 @@
 		<Tome_Section_Header text="Width variables" />
 		<aside>⚠️ maybe instead of "width" this should be "distance" or "length" something?</aside>
 		<ul class="unstyled">
-			{#each width_variants as width_size (width_size)}
-				{@const name = 'width_' + width_size}
+			{#each distance_variants as distance_variant (distance_variant)}
+				{@const name = 'distance_' + distance_variant}
 				<li class="layout_example">
 					<div class="fill" style:width="var(--{name})"></div>
 					<div class="variable_wrapper"><Style_Variable_Button {name} /></div>
