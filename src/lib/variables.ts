@@ -868,6 +868,9 @@ export const border_color_i: Style_Variable = {
 	light: 'var(--color_i_5)',
 };
 export const border_width: Style_Variable = {name: 'border_width', light: 'var(--border_width_1)'};
+// These use numbers instead of named size variants because
+// they more directly map to how I think about border widths.
+// But maye this could be expanded/rethought.
 export const border_width_1: Style_Variable = {name: 'border_width_1', light: '1px'};
 export const border_width_2: Style_Variable = {name: 'border_width_2', light: '2px'};
 export const border_width_3: Style_Variable = {name: 'border_width_3', light: '3px'};
