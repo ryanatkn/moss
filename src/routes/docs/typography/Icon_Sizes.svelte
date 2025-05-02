@@ -9,7 +9,7 @@
 <Tome_Section>
 	<Tome_Section_Header text="Icon sizes" />
 	<aside>
-		unlike <code>--size_</code> variables, <code>--icon_</code> variables are in
+		unlike <code>--font_size_</code> variables, <code>--icon_</code> variables are in
 		<code>px</code>
 		not <code>rem</code>, so they're insensitive to browser font size
 	</aside>
@@ -21,7 +21,11 @@
 				<Style_Variable_Button {name} /> =
 				<code>{value}</code>
 			</figcaption>
-			<div style:font-size="var(--{name})" style:--size="var(--{name})" title="--{name} is {value}">
+			<div
+				style:font-size="var(--{name})"
+				style:--font_size="var(--{name})"
+				title="--{name} is {value}"
+			>
 				🐢
 			</div>
 		</figure>
@@ -45,8 +49,8 @@
 		display: flex;
 	}
 	.icon_sizes figure > div {
-		width: var(--size, var(--size_md));
-		height: var(--size, var(--size_md));
+		width: var(--font_size, var(--font_size_md));
+		height: var(--font_size, var(--font_size_md));
 		border: var(--border_width) var(--border_style) var(--border_color);
 		display: flex;
 		align-items: center;

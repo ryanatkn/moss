@@ -42,8 +42,8 @@
 		'flip_x|y|xy',
 		'font_family_sans|serif|mono',
 		'line_height_xs-xl',
-		'size_xs-xl9',
-		'icon_size_xs-xl3',
+		'font_size_xs-xl9',
+		'icon_font_size_xs-xl3',
 		'text_align_start|end|left|right|center|justify|justify_all|match_parent',
 		'vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom',
 		`word_break_normal|break_all|keep_all|${style_global_values}`, // TODO add `inherit/initial/etc` to the others now that we have on-demand building

@@ -108,7 +108,7 @@
 	z-index: 2;
 	cursor: pointer;
 	width: 100%;
-	min-height: var(--min_height, var(--icon_size_sm));
+	min-height: var(--min_height, var(--icon_font_size_sm));
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -144,7 +144,7 @@
 	min-width: 0;
 }
 .menu_item .icon {
-	width: var(--icon_size, var(--icon_size_md));
+	width: var(--icon_size, var(--icon_font_size_md));
 	margin-right: var(--space_sm);
 	flex-shrink: 0;
 	text-align: center;
@@ -177,7 +177,9 @@ a.chip {
 	max-width: 100%;
 }
 .pre > code {
-	font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic `--size`? */
+	font-size: var(
+		--font_size_sm
+	); /* TODO @many use a var? maybe computed from generic `--font_size`? */
 	font-weight: 500;
 }
 .pre:not(.inline) > code {
@@ -211,13 +213,13 @@ a.chip {
 .line_height_lg {
 	line-height: var(--line_height_lg);
 }
-.size_xl3 {
-	font-size: var(--size_xl3);
-	--size: var(--size_xl3);
+.font_size_xl3 {
+	font-size: var(--font_size_xl3);
+	--font_size: var(--font_size_xl3);
 }
-.size_xl5 {
-	font-size: var(--size_xl5);
-	--size: var(--size_xl5);
+.font_size_xl5 {
+	font-size: var(--font_size_xl5);
+	--font_size: var(--font_size_xl5);
 }
 .text_align_center {
 	text-align: center;

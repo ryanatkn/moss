@@ -36,7 +36,7 @@
 		padding: var(--space_xs) 0;
 	}
 	.usage {
-		font-size: var(--size_xl);
+		font-size: var(--font_size_xl);
 		display: grid;
 		/* 2 columns of width 1:2 */
 		grid-template-columns: 1fr 2fr;

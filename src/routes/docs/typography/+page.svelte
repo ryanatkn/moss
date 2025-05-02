@@ -14,7 +14,7 @@
 	import Icon_Sizes from '$routes/docs/typography/Icon_Sizes.svelte';
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import {line_height_names, size_names, text_color_variants} from '$lib/variable_data.js';
+	import {line_height_names, font_size_names, text_color_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'typography';
 
@@ -23,7 +23,7 @@
 	// TODO refactor
 	const font_weights = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-	const size_variants = default_variables.filter((p) => size_names.includes(p.name));
+	const font_size_variants = default_variables.filter((p) => font_size_names.includes(p.name));
 
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
@@ -35,12 +35,12 @@
 
 <Tome_Content {tome}>
 	<section>
-		<h1 title="--size_xl3">h1</h1>
-		<h2 title="--size_xl2">h2</h2>
-		<h3 title="--size_xl">h3</h3>
-		<h4 title="--size_lg">h4</h4>
-		<h5 title="--size_md">h5</h5>
-		<h6 title="--size_sm">h6</h6>
+		<h1 title="--font_size_xl3">h1</h1>
+		<h2 title="--font_size_xl2">h2</h2>
+		<h3 title="--font_size_xl">h3</h3>
+		<h4 title="--font_size_lg">h4</h4>
+		<h5 title="--font_size_md">h5</h5>
+		<h6 title="--font_size_sm">h6</h6>
 		<p>paragraphs</p>
 		<p>paragraphs</p>
 		<p>paragraphs</p>
@@ -50,12 +50,12 @@
 			{#snippet summary()}show code{/snippet}
 			<Code
 				content={`<section>
-	<h1 title="--size_xl3">h1</h1>
-	<h2 title="--size_xl2">h2</h2>
-	<h3 title="--size_xl">h3</h3>
-	<h4 title="--size_lg">h4</h4>
-	<h5 title="--size_md">h5</h5>
-	<h6 title="--size_sm">h6</h6>
+	<h1 title="--font_size_xl3">h1</h1>
+	<h2 title="--font_size_xl2">h2</h2>
+	<h3 title="--font_size_xl">h3</h3>
+	<h4 title="--font_size_lg">h4</h4>
+	<h5 title="--font_size_md">h5</h5>
+	<h6 title="--font_size_sm">h6</h6>
 	<p>paragraphs</p>
 	<p>paragraphs</p>
 	<p>paragraphs</p>
@@ -74,7 +74,7 @@
 		<form class="width_sm">
 			<Font_Weight_Control bind:selected_font_weight></Font_Weight_Control>
 		</form>
-		{#each size_variants as size (size.name)}
+		{#each font_size_variants as size (size.name)}
 			<div class="row flex_wrap">
 				<Style_Variable_Button attrs={{title: size.light}} name={size.name}
 					><span
@@ -105,7 +105,7 @@
 				<div
 					class="white_space_nowrap"
 					style:font-weight={font_weight}
-					style:font-size="var(--{size_names[selected_size - 1]})"
+					style:font-size="var(--{font_size_names[selected_size - 1]})"
 				>
 					font-weight: {font_weight}
 				</div>

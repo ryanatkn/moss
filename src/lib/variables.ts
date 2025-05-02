@@ -728,19 +728,19 @@ export const font_family_mono: Style_Variable = {
 };
 
 /* sizes like font-size */
-export const size_xs: Style_Variable = {name: 'size_xs', light: '1rem'};
-export const size_sm: Style_Variable = {name: 'size_sm', light: '1.3rem'};
-export const size_md: Style_Variable = {name: 'size_md', light: '1.6rem'};
-export const size_lg: Style_Variable = {name: 'size_lg', light: '2.04rem'};
-export const size_xl: Style_Variable = {name: 'size_xl', light: '2.59rem'};
-export const size_xl2: Style_Variable = {name: 'size_xl2', light: '3.29rem'};
-export const size_xl3: Style_Variable = {name: 'size_xl3', light: '4.19rem'};
-export const size_xl4: Style_Variable = {name: 'size_xl4', light: '5.33rem'};
-export const size_xl5: Style_Variable = {name: 'size_xl5', light: '6.78rem'};
-export const size_xl6: Style_Variable = {name: 'size_xl6', light: '8.62rem'};
-export const size_xl7: Style_Variable = {name: 'size_xl7', light: '10.97rem'};
-export const size_xl8: Style_Variable = {name: 'size_xl8', light: '13.95rem'};
-export const size_xl9: Style_Variable = {name: 'size_xl9', light: '17.74rem'};
+export const font_size_xs: Style_Variable = {name: 'font_size_xs', light: '1rem'};
+export const font_size_sm: Style_Variable = {name: 'font_size_sm', light: '1.3rem'};
+export const font_size_md: Style_Variable = {name: 'font_size_md', light: '1.6rem'};
+export const font_size_lg: Style_Variable = {name: 'font_size_lg', light: '2.04rem'};
+export const font_size_xl: Style_Variable = {name: 'font_size_xl', light: '2.59rem'};
+export const font_size_xl2: Style_Variable = {name: 'font_size_xl2', light: '3.29rem'};
+export const font_size_xl3: Style_Variable = {name: 'font_size_xl3', light: '4.19rem'};
+export const font_size_xl4: Style_Variable = {name: 'font_size_xl4', light: '5.33rem'};
+export const font_size_xl5: Style_Variable = {name: 'font_size_xl5', light: '6.78rem'};
+export const font_size_xl6: Style_Variable = {name: 'font_size_xl6', light: '8.62rem'};
+export const font_size_xl7: Style_Variable = {name: 'font_size_xl7', light: '10.97rem'};
+export const font_size_xl8: Style_Variable = {name: 'font_size_xl8', light: '13.95rem'};
+export const font_size_xl9: Style_Variable = {name: 'font_size_xl9', light: '17.74rem'};
 
 /* links */
 export const link_color: Style_Variable = {
@@ -1165,18 +1165,33 @@ export const shadow_alpha_5: Style_Variable = {
 /* icons */
 /* these decrease by the golden ratio, rounded to the nearest pixel,
 	and they're insensitive to font size (`px` not `rem`) */
-export const icon_size_xs: Style_Variable = {name: 'icon_size_xs', light: icon_sizes.icon_size_xs};
-export const icon_size_sm: Style_Variable = {name: 'icon_size_sm', light: icon_sizes.icon_size_sm};
-export const icon_size_md: Style_Variable = {name: 'icon_size_md', light: icon_sizes.icon_size_md};
-export const icon_size_lg: Style_Variable = {name: 'icon_size_lg', light: icon_sizes.icon_size_lg};
-export const icon_size_xl: Style_Variable = {name: 'icon_size_xl', light: icon_sizes.icon_size_xl};
-export const icon_size_xl2: Style_Variable = {
-	name: 'icon_size_xl2',
-	light: icon_sizes.icon_size_xl2,
+export const icon_font_size_xs: Style_Variable = {
+	name: 'icon_font_size_xs',
+	light: icon_sizes.icon_font_size_xs,
 };
-export const icon_size_xl3: Style_Variable = {
-	name: 'icon_size_xl3',
-	light: icon_sizes.icon_size_xl3,
+export const icon_font_size_sm: Style_Variable = {
+	name: 'icon_font_size_sm',
+	light: icon_sizes.icon_font_size_sm,
+};
+export const icon_font_size_md: Style_Variable = {
+	name: 'icon_font_size_md',
+	light: icon_sizes.icon_font_size_md,
+};
+export const icon_font_size_lg: Style_Variable = {
+	name: 'icon_font_size_lg',
+	light: icon_sizes.icon_font_size_lg,
+};
+export const icon_font_size_xl: Style_Variable = {
+	name: 'icon_font_size_xl',
+	light: icon_sizes.icon_font_size_xl,
+};
+export const icon_font_size_xl2: Style_Variable = {
+	name: 'icon_font_size_xl2',
+	light: icon_sizes.icon_font_size_xl2,
+};
+export const icon_font_size_xl3: Style_Variable = {
+	name: 'icon_font_size_xl3',
+	light: icon_sizes.icon_font_size_xl3,
 };
 
 /* durations */
@@ -1393,20 +1408,20 @@ export const default_variables: Array<Style_Variable> = [
 	font_family_serif,
 	font_family_mono,
 
-	/* sizes like font-size */
-	size_xs,
-	size_sm,
-	size_md,
-	size_lg,
-	size_xl,
-	size_xl2,
-	size_xl3,
-	size_xl4,
-	size_xl5,
-	size_xl6,
-	size_xl7,
-	size_xl8,
-	size_xl9,
+	/* font size */
+	font_size_xs,
+	font_size_sm,
+	font_size_md,
+	font_size_lg,
+	font_size_xl,
+	font_size_xl2,
+	font_size_xl3,
+	font_size_xl4,
+	font_size_xl5,
+	font_size_xl6,
+	font_size_xl7,
+	font_size_xl8,
+	font_size_xl9,
 
 	/* links */
 	link_color,
@@ -1553,13 +1568,13 @@ export const default_variables: Array<Style_Variable> = [
 	shadow_alpha_5,
 
 	/* icons */
-	icon_size_xs,
-	icon_size_sm,
-	icon_size_md,
-	icon_size_lg,
-	icon_size_xl,
-	icon_size_xl2,
-	icon_size_xl3,
+	icon_font_size_xs,
+	icon_font_size_sm,
+	icon_font_size_md,
+	icon_font_size_lg,
+	icon_font_size_xl,
+	icon_font_size_xl2,
+	icon_font_size_xl3,
 
 	/* durations */
 	duration_1,

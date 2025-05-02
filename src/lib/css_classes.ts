@@ -334,7 +334,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				z-index: 2;
 				cursor: pointer;
 				width: 100%;
-				min-height: var(--min_height, var(--icon_size_sm));
+				min-height: var(--min_height, var(--icon_font_size_sm));
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -370,7 +370,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				min-width: 0;
 			}
 			.menu_item .icon {
-				width: var(--icon_size, var(--icon_size_md));
+				width: var(--icon_size, var(--icon_font_size_md));
 				margin-right: var(--space_sm);
 				flex-shrink: 0;
 				text-align: center;
@@ -424,7 +424,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				max-width: 100%;
 			}
 			.pre > code {
-				font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic \`--size\`? */
+				font-size: var(--font_size_sm); /* TODO @many use a var? maybe computed from generic \`--font_size\`? */
 				font-weight: 500;
 			}
 			.pre:not(.inline) > code {
@@ -575,26 +575,56 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	line_height_md: {declaration: 'line-height: var(--line_height_md);'},
 	line_height_lg: {declaration: 'line-height: var(--line_height_lg);'},
 	line_height_xl: {declaration: 'line-height: var(--line_height_xl);'},
-	size_xs: {declaration: 'font-size: var(--size_xs); --size: var(--size_xs);'},
-	size_sm: {declaration: 'font-size: var(--size_sm); --size: var(--size_sm);'},
-	size_md: {declaration: 'font-size: var(--size_md); --size: var(--size_md);'},
-	size_lg: {declaration: 'font-size: var(--size_lg); --size: var(--size_lg);'},
-	size_xl: {declaration: 'font-size: var(--size_xl); --size: var(--size_xl);'},
-	size_xl2: {declaration: 'font-size: var(--size_xl2); --size: var(--size_xl2);'},
-	size_xl3: {declaration: 'font-size: var(--size_xl3); --size: var(--size_xl3);'},
-	size_xl4: {declaration: 'font-size: var(--size_xl4); --size: var(--size_xl4);'},
-	size_xl5: {declaration: 'font-size: var(--size_xl5); --size: var(--size_xl5);'},
-	size_xl6: {declaration: 'font-size: var(--size_xl6); --size: var(--size_xl6);'},
-	size_xl7: {declaration: 'font-size: var(--size_xl7); --size: var(--size_xl7);'},
-	size_xl8: {declaration: 'font-size: var(--size_xl8); --size: var(--size_xl8);'},
-	size_xl9: {declaration: 'font-size: var(--size_xl9); --size: var(--size_xl9);'},
-	icon_size_xs: {declaration: 'font-size: var(--icon_size_xs); --size: var(--icon_size_xs);'},
-	icon_size_sm: {declaration: 'font-size: var(--icon_size_sm); --size: var(--icon_size_sm);'},
-	icon_size_md: {declaration: 'font-size: var(--icon_size_md); --size: var(--icon_size_md);'},
-	icon_size_lg: {declaration: 'font-size: var(--icon_size_lg); --size: var(--icon_size_lg);'},
-	icon_size_xl: {declaration: 'font-size: var(--icon_size_xl); --size: var(--icon_size_xl);'},
-	icon_size_xl2: {declaration: 'font-size: var(--icon_size_xl2); --size: var(--icon_size_xl2);'},
-	icon_size_xl3: {declaration: 'font-size: var(--icon_size_xl3); --size: var(--icon_size_xl3);'},
+	font_size_xs: {declaration: 'font-size: var(--font_size_xs); --font_size: var(--font_size_xs);'},
+	font_size_sm: {declaration: 'font-size: var(--font_size_sm); --font_size: var(--font_size_sm);'},
+	font_size_md: {declaration: 'font-size: var(--font_size_md); --font_size: var(--font_size_md);'},
+	font_size_lg: {declaration: 'font-size: var(--font_size_lg); --font_size: var(--font_size_lg);'},
+	font_size_xl: {declaration: 'font-size: var(--font_size_xl); --font_size: var(--font_size_xl);'},
+	font_size_xl2: {
+		declaration: 'font-size: var(--font_size_xl2); --font_size: var(--font_size_xl2);',
+	},
+	font_size_xl3: {
+		declaration: 'font-size: var(--font_size_xl3); --font_size: var(--font_size_xl3);',
+	},
+	font_size_xl4: {
+		declaration: 'font-size: var(--font_size_xl4); --font_size: var(--font_size_xl4);',
+	},
+	font_size_xl5: {
+		declaration: 'font-size: var(--font_size_xl5); --font_size: var(--font_size_xl5);',
+	},
+	font_size_xl6: {
+		declaration: 'font-size: var(--font_size_xl6); --font_size: var(--font_size_xl6);',
+	},
+	font_size_xl7: {
+		declaration: 'font-size: var(--font_size_xl7); --font_size: var(--font_size_xl7);',
+	},
+	font_size_xl8: {
+		declaration: 'font-size: var(--font_size_xl8); --font_size: var(--font_size_xl8);',
+	},
+	font_size_xl9: {
+		declaration: 'font-size: var(--font_size_xl9); --font_size: var(--font_size_xl9);',
+	},
+	icon_font_size_xs: {
+		declaration: 'font-size: var(--icon_font_size_xs); --font_size: var(--icon_font_size_xs);',
+	},
+	icon_font_size_sm: {
+		declaration: 'font-size: var(--icon_font_size_sm); --font_size: var(--icon_font_size_sm);',
+	},
+	icon_font_size_md: {
+		declaration: 'font-size: var(--icon_font_size_md); --font_size: var(--icon_font_size_md);',
+	},
+	icon_font_size_lg: {
+		declaration: 'font-size: var(--icon_font_size_lg); --font_size: var(--icon_font_size_lg);',
+	},
+	icon_font_size_xl: {
+		declaration: 'font-size: var(--icon_font_size_xl); --font_size: var(--icon_font_size_xl);',
+	},
+	icon_font_size_xl2: {
+		declaration: 'font-size: var(--icon_font_size_xl2); --font_size: var(--icon_font_size_xl2);',
+	},
+	icon_font_size_xl3: {
+		declaration: 'font-size: var(--icon_font_size_xl3); --font_size: var(--icon_font_size_xl3);',
+	},
 	text_align_start: {declaration: 'text-align: start;'},
 	text_align_end: {declaration: 'text-align: end;'},
 	text_align_left: {declaration: 'text-align: left;'},

@@ -46,7 +46,7 @@ Some notes:
 
 body {
 	min-height: 100vh;
-	font-size: 1.6rem; /* matched to `font-size: 62.5%` and same value as the default `--size_md`, but this one shouldn't vary */
+	font-size: 1.6rem; /* matched to `font-size: 62.5%` and same value as the default `--font_size_md`, but this one shouldn't vary */
 	font-family: var(--font_family_sans);
 	tab-size: 2; /* TODO var */
 }
@@ -117,7 +117,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 
 :where(h1, h2, h3, h4, h5, h6, .heading) {
 	font-family: var(--font_family_serif);
-	font-size: var(--size, var(--size_md));
+	font-size: var(--font_size, var(--font_size_md));
 	font-weight: var(--font_weight);
 	line-height: var(--line_height_sm);
 	text-wrap: balance; /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#balance */
@@ -126,38 +126,38 @@ The `!important` makes this `hidden` behavior much higher specificity.
 }
 
 :where(h1) {
-	--size: var(--size_xl3);
+	--font_size: var(--font_size_xl3);
 	--font_weight: 300;
 	margin-bottom: var(--space_xl5);
 	/* TODO strange to omit only this one, but seems to be generally my desired behavior */
 	/* margin-top: var(--space_xl7); */
 }
 :where(h2) {
-	--size: var(--size_xl2);
+	--font_size: var(--font_size_xl2);
 	--font_weight: 400;
 	margin-bottom: var(--space_xl4);
 	margin-top: var(--space_xl6);
 }
 :where(h3) {
-	--size: var(--size_xl);
+	--font_size: var(--font_size_xl);
 	--font_weight: 500;
 	margin-bottom: var(--space_xl3);
 	margin-top: var(--space_xl5);
 }
 :where(h4) {
-	--size: var(--size_lg);
+	--font_size: var(--font_size_lg);
 	--font_weight: 700;
 	margin-bottom: var(--space_xl2);
 	margin-top: var(--space_xl4);
 }
 :where(h5) {
-	--size: var(--size_md);
+	--font_size: var(--font_size_md);
 	--font_weight: 900;
 	margin-bottom: var(--space_xl);
 	margin-top: var(--space_xl3);
 }
 :where(h6) {
-	--size: var(--size_sm);
+	--font_size: var(--font_size_sm);
 	--font_weight: 600;
 	margin-bottom: var(--space_lg);
 	margin-top: var(--space_xl2);
@@ -240,7 +240,9 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 }
 :where(pre:not(.unstyled) > code) {
 	display: block;
-	font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic `--size`? */
+	font-size: var(
+		--font_size_sm
+	); /* TODO @many use a var? maybe computed from generic `--font_size`? */
 	font-weight: 500;
 }
 
@@ -261,7 +263,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 }
 
 :where(legend:not(.unstyled)) {
-	font-size: var(--size_xl);
+	font-size: var(--font_size_xl);
 	margin-bottom: var(--space_lg);
 }
 
@@ -333,7 +335,7 @@ so for consistent visuals we opt to include no active state */
 	align-items: center;
 	justify-content: center;
 	overflow: var(--overflow, visible);
-	font-size: var(--size, var(--size_xl3));
+	font-size: var(--font_size, var(--font_size_xl3));
 	color: var(--text_color);
 }
 
@@ -498,6 +500,7 @@ TODO think through these patterns to get somewhere consistent
 	align-items: center;
 	justify-content: center;
 	font: inherit;
+	font-size: var(--font_size, inherit);
 	font-weight: 700;
 	line-height: normal;
 	min-height: var(--min_height);
@@ -637,7 +640,7 @@ TODO think through these patterns to get somewhere consistent
 }
 
 :where(small) {
-	font-size: var(--size_sm);
+	font-size: var(--font_size_sm);
 }
 
 :where(img, picture, canvas, svg, video) {

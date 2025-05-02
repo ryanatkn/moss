@@ -138,7 +138,7 @@
 		padding-right: var(--space_sm);
 	}
 	.variable {
-		min-height: var(--icon_size_sm);
+		min-height: var(--icon_font_size_sm);
 		width: var(--style_variable_name_width, 240px);
 	}
 	.rendered {

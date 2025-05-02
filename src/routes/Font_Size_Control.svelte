@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type {Snippet} from 'svelte';
 
-	import {size_variants} from '$lib/variable_data.js';
+	import {font_size_variants} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 
 	interface Props {
@@ -16,9 +16,9 @@
 	// TODO @many publish in $lib when ready
 
 	const min = 1;
-	const max = size_variants.length;
+	const max = font_size_variants.length;
 
-	const selected_name = $derived(size_variants[selected_size - 1]);
+	const selected_name = $derived(font_size_variants[selected_size - 1]);
 </script>
 
 <label
@@ -38,8 +38,8 @@
 			step={1}
 			{max}
 		/>
-		= var(<Style_Variable_Button name="size_{selected_name}"
-			>--size_{selected_name}</Style_Variable_Button
+		= var(<Style_Variable_Button name="font_size_{selected_name}"
+			>--font_size_{selected_name}</Style_Variable_Button
 		>)
 	</div>
 	<input type="range" bind:value={selected_size} {min} step={1} {max} />

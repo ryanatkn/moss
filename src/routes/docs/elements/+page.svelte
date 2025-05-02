@@ -32,11 +32,11 @@
 	</blockquote>
 	<Tome_Section>
 		<Tome_Section_Header text="blockquote">
-			<span class="size_xl3">👆</span>
+			<span class="font_size_xl3">👆</span>
 			<Mdn_Link path="Web/HTML/Element/blockquote" />
 		</Tome_Section_Header>
 		<Tome_Section_Header text="hr">
-			<span class="size_xl3">👇</span>
+			<span class="font_size_xl3">👇</span>
 			<Mdn_Link path="Web/HTML/Element/hr" />
 		</Tome_Section_Header>
 		<hr />
