@@ -244,7 +244,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	font-weight: 500;
 }
 
-:where(hr) {
+:where(hr:not(.unstyled)) {
 	border-top: 1px solid var(--border_color_3);
 	border-bottom: 2px solid var(--border_color_3);
 	border-left: none;
@@ -294,7 +294,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	cursor: pointer;
 }
 
-:where(option) {
+:where(option:not(.unstyled)) {
 	color: var(--text_color);
 	background-color: var(--bg);
 }
@@ -444,27 +444,27 @@ see https://caniuse.com/css-has
 
 /* TODO could improve this with the coming `:has` selector
 for disabled colors without needing a wrapper .disabled class */
-:where(label) {
+:where(label:not(.unstyled)) {
 	color: var(--text_color);
 	cursor: pointer;
 }
-:where(:is(label .title)) {
+:where(:is(label:not(.unstyled) .title)) {
 	font-weight: 600;
 	margin-bottom: var(--space_xs2);
 }
-:where(label.selected) {
+:where(label.selected:not(.unstyled)) {
 	cursor: default;
 	--text_color: var(--text_active);
 }
-:where(label.disabled) {
+:where(label.disabled:not(.unstyled)) {
 	cursor: default;
 	--text_color: var(--text_color_disabled);
 }
-:where(label.row) {
+:where(label.row:not(.unstyled)) {
 	justify-content: flex-start;
 	align-items: center;
 }
-:where(label.row :is(input[type='checkbox'], input[type='radio'])) {
+:where(label.row:not(.unstyled) :is(input[type='checkbox'], input[type='radio'])) {
 	margin-right: var(--space_md);
 }
 
@@ -650,18 +650,18 @@ TODO think through these patterns to get somewhere consistent
 	width: 100%;
 }
 
-:where(summary) {
+:where(summary:not(.unstyled)) {
 	cursor: pointer;
 	padding: var(--space_md);
 	border-radius: var(--border_radius, var(--border_radius_xs));
 }
-:where(summary:hover) {
+:where(summary:hover:not(.unstyled)) {
 	background-color: var(--fg_1);
 }
-:where(summary:active) {
+:where(summary:active:not(.unstyled)) {
 	background-color: var(--fg_2);
 }
-:where(details[open] summary) {
+:where(details[open] summary:not(.unstyled)) {
 	margin-bottom: var(--space_sm);
 }
 
