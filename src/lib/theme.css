@@ -160,11 +160,6 @@
 	--text_color_10: var(--fg_0);
 	--text_color_disabled: var(--text_color_5);
 	--text_active: hsl(var(--hue_a) 55% 40%);
-	--line_height_xs: 1;
-	--line_height_sm: 1.2;
-	--line_height_md: 1.4;
-	--line_height_lg: 1.6;
-	--line_height_xl: 2;
 	--font_family_sans:
 		system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* @source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
 	--font_family_serif: 'DM Serif Display', Georgia, serif; /* @source https://svelte.dev/ */
@@ -182,6 +177,11 @@
 	--font_size_xl7: 10.97rem;
 	--font_size_xl8: 13.95rem;
 	--font_size_xl9: 17.74rem;
+	--line_height_xs: 1;
+	--line_height_sm: 1.2;
+	--line_height_md: 1.4;
+	--line_height_lg: 1.6;
+	--line_height_xl: 2;
 	--link_color: hsl(var(--hue_a) 61% 35%);
 	--text_decoration: none;
 	--text_decoration_hover: underline;

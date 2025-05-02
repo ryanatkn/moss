@@ -706,11 +706,6 @@ export const text_active: Style_Variable = {
 };
 
 /* fonts */
-export const line_height_xs: Style_Variable = {name: 'line_height_xs', light: '1'};
-export const line_height_sm: Style_Variable = {name: 'line_height_sm', light: '1.2'};
-export const line_height_md: Style_Variable = {name: 'line_height_md', light: '1.4'};
-export const line_height_lg: Style_Variable = {name: 'line_height_lg', light: '1.6'};
-export const line_height_xl: Style_Variable = {name: 'line_height_xl', light: '2'};
 export const font_family_sans: Style_Variable = {
 	name: 'font_family_sans',
 	light: "system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
@@ -741,6 +736,12 @@ export const font_size_xl6: Style_Variable = {name: 'font_size_xl6', light: '8.6
 export const font_size_xl7: Style_Variable = {name: 'font_size_xl7', light: '10.97rem'};
 export const font_size_xl8: Style_Variable = {name: 'font_size_xl8', light: '13.95rem'};
 export const font_size_xl9: Style_Variable = {name: 'font_size_xl9', light: '17.74rem'};
+
+export const line_height_xs: Style_Variable = {name: 'line_height_xs', light: '1'};
+export const line_height_sm: Style_Variable = {name: 'line_height_sm', light: '1.2'};
+export const line_height_md: Style_Variable = {name: 'line_height_md', light: '1.4'};
+export const line_height_lg: Style_Variable = {name: 'line_height_lg', light: '1.6'};
+export const line_height_xl: Style_Variable = {name: 'line_height_xl', light: '2'};
 
 /* links */
 export const link_color: Style_Variable = {
@@ -1399,11 +1400,6 @@ export const default_variables: Array<Style_Variable> = [
 	text_active,
 
 	/* fonts */
-	line_height_xs,
-	line_height_sm,
-	line_height_md,
-	line_height_lg,
-	line_height_xl,
 	font_family_sans,
 	font_family_serif,
 	font_family_mono,
@@ -1422,6 +1418,12 @@ export const default_variables: Array<Style_Variable> = [
 	font_size_xl7,
 	font_size_xl8,
 	font_size_xl9,
+
+	line_height_xs,
+	line_height_sm,
+	line_height_md,
+	line_height_lg,
+	line_height_xl,
 
 	/* links */
 	link_color,
