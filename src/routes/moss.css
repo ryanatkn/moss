@@ -67,12 +67,12 @@
 			var(--shadow_bottom_md)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_3), transparent)
 	);
-	border-radius: var(--radius_xs);
+	border-radius: var(--border_radius_xs);
 }
 
 /* A panel is a box embedded into the page, useful for visually isolating content. */
 .panel {
-	border-radius: var(--radius_xs);
+	border-radius: var(--border_radius_xs);
 	background-color: var(--panel_bg, var(--fg_1));
 }
 
@@ -164,7 +164,7 @@
 	padding-left: var(--space_xs);
 	padding-right: var(--space_xs);
 	background-color: var(--fg_1);
-	border-radius: var(--radius_xs);
+	border-radius: var(--border_radius_xs);
 }
 a.chip {
 	font-weight: 700;
@@ -246,11 +246,11 @@ a.chip {
 .bg_a_5 {
 	background-color: var(--color_a_5);
 }
-.radius_md {
-	border-radius: var(--radius_md);
+.border_radius_md {
+	border-radius: var(--border_radius_md);
 }
-.radius_lg {
-	border-radius: var(--radius_lg);
+.border_radius_lg {
+	border-radius: var(--border_radius_lg);
 }
 .shadow_xs {
 	box-shadow: var(--shadow_xs)

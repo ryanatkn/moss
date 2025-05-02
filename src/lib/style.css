@@ -86,7 +86,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	color: var(--text_color);
 	font-weight: 700;
 	text-decoration: var(--text_decoration);
-	border-radius: var(--radius_xs2);
+	border-radius: var(--border_radius_xs2);
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 /* TODO should these be customizable with utility classes? */
@@ -203,7 +203,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	border-left-color: var(--border_color);
 	border-left-style: var(--border_style);
 	border-left-width: var(--border_width_3);
-	border-radius: var(--radius_xs);
+	border-radius: var(--border_radius_xs);
 	padding: var(--space_md);
 	color: var(--text_color, var(--text_color_3));
 	background-color: var(--fg_1);
@@ -213,7 +213,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 }
 
 :where(blockquote:not(.unstyled)) {
-	border-radius: var(--radius_xs);
+	border-radius: var(--border_radius_xs);
 	padding: var(--space_md);
 	color: var(--text_color, var(--text_color_3));
 	background-color: var(--fg_1);
@@ -227,7 +227,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	color: var(--text_color, var(--text_color_3));
 	background-color: var(--fg_1);
 	padding: 0 var(--space_xs2);
-	border-radius: var(--radius_xs);
+	border-radius: var(--border_radius_xs);
 }
 
 /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
@@ -277,7 +277,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	border-color: var(--border_color);
 	border-style: var(--border_style);
 	border-width: var(--border_width);
-	border-radius: var(--border_radius, var(--radius_sm));
+	border-radius: var(--border_radius, var(--border_radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 	padding: var(--input_padding_y) var(--input_padding_x);
 	width: 100%;
@@ -313,7 +313,7 @@ so for consistent visuals we opt to include no active state */
 	height: var(--input_height_sm);
 	min-width: var(--input_height_sm);
 	min-height: var(--input_height_sm);
-	--border_radius: var(--radius_xs);
+	--border_radius: var(--border_radius_xs);
 	--input_padding_x: 0;
 	--checkbox_content: var(--checkbox_content_empty, '');
 }
@@ -506,7 +506,7 @@ TODO think through these patterns to get somewhere consistent
 	border-width: var(--border_width);
 	border-style: var(--border_style);
 	border-color: var(--button_border_color);
-	border-radius: var(--border_radius, var(--radius_sm));
+	border-radius: var(--border_radius, var(--border_radius_sm));
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 }
 
@@ -653,7 +653,7 @@ TODO think through these patterns to get somewhere consistent
 :where(summary) {
 	cursor: pointer;
 	padding: var(--space_md);
-	border-radius: var(--radius_xs);
+	border-radius: var(--border_radius_xs);
 }
 :where(summary:hover) {
 	background-color: var(--fg_1);

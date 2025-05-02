@@ -52,8 +52,8 @@ export const space_variants = [
 export type Distance_Variant = Array_Element<typeof distance_variants>;
 export const distance_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
-export type Radius_Variant = Array_Element<typeof radius_variants>;
-export const radius_variants = ['xs3', 'xs2', 'xs', 'sm', 'md', 'lg', 'xl'] as const;
+export type Border_Radius_Variant = Array_Element<typeof border_radius_variants>;
+export const border_radius_variants = ['xs3', 'xs2', 'xs', 'sm', 'md', 'lg', 'xl'] as const;
 
 export type Line_Height_Variant = Array_Element<typeof line_height_variants>;
 export const line_height_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const;

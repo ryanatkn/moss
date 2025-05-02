@@ -198,7 +198,7 @@
 		position: relative;
 		padding: var(--space_md);
 		font-family: var(--font_mono);
-		border-radius: var(--radius_xs3);
+		border-radius: var(--border_radius_xs3);
 		display: flex;
 		align-items: center;
 		justify-content: end;

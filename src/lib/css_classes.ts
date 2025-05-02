@@ -282,7 +282,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 						var(--shadow_bottom_md)
 						color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_3), transparent)
 				);
-				border-radius: var(--radius_xs);
+				border-radius: var(--border_radius_xs);
 			}
 		`,
 	},
@@ -290,7 +290,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			/* A panel is a box embedded into the page, useful for visually isolating content. */
 			.panel {
-				border-radius: var(--radius_xs);
+				border-radius: var(--border_radius_xs);
 				background-color: var(--panel_bg, var(--fg_1));
 			}
 		`,
@@ -407,7 +407,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				padding-left: var(--space_xs);
 				padding-right: var(--space_xs);
 				background-color: var(--fg_1);
-				border-radius: var(--radius_xs);
+				border-radius: var(--border_radius_xs);
 			}
 			a.chip {
 				font-weight: 700;
@@ -952,7 +952,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	outline_width_focus: {declaration: 'outline-width: var(--outline_width_focus);'},
 	outline_width_active: {declaration: 'outline-width: var(--outline_width_active);'},
 
-	/* TODO add the top/right/bottom/left border-style variants */
+	/* TODO add the top/right/bottom/left border-style multi-argument variants */
 	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
 	// TODO think about an API using data+helpers, e.g. `...create_declarations({property_name: 'border-style', property_value: ['none', 'hidden', [...], css_global_values])`
 	border_style_none: {declaration: 'border-style: none;'},
@@ -970,17 +970,18 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	border_style_revert: {declaration: 'border-style: revert;'},
 	border_style_revert_layer: {declaration: 'border-style: revert-layer;'},
 	border_style_unset: {declaration: 'border-style: unset;'},
-	radius_100: {declaration: 'border-radius: 100%;'},
-	radius_50: {declaration: 'border-radius: 50%;'},
-	radius_0: {declaration: 'border-radius: 0;'},
-	radius_xs3: {declaration: 'border-radius: var(--radius_xs3);'},
-	radius_xs2: {declaration: 'border-radius: var(--radius_xs2);'},
-	radius_xs: {declaration: 'border-radius: var(--radius_xs);'},
-	radius_sm: {declaration: 'border-radius: var(--radius_sm);'},
-	radius_md: {declaration: 'border-radius: var(--radius_md);'},
-	radius_lg: {declaration: 'border-radius: var(--radius_lg);'},
-	radius_xl: {declaration: 'border-radius: var(--radius_xl);'},
+	border_radius_100: {declaration: 'border-radius: 100%;'},
+	border_radius_50: {declaration: 'border-radius: 50%;'},
+	border_radius_0: {declaration: 'border-radius: 0;'},
+	border_radius_xs3: {declaration: 'border-radius: var(--border_radius_xs3);'},
+	border_radius_xs2: {declaration: 'border-radius: var(--border_radius_xs2);'},
+	border_radius_xs: {declaration: 'border-radius: var(--border_radius_xs);'},
+	border_radius_sm: {declaration: 'border-radius: var(--border_radius_sm);'},
+	border_radius_md: {declaration: 'border-radius: var(--border_radius_md);'},
+	border_radius_lg: {declaration: 'border-radius: var(--border_radius_lg);'},
+	border_radius_xl: {declaration: 'border-radius: var(--border_radius_xl);'},
 
+	// TODO is incomplete
 	/*
 
 	shading
