@@ -418,7 +418,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		// keep in sync with `pre` styling in `style.css`, except the `.inline` exception
 		ruleset: `
 			.pre {
-				font-family: var(--font_mono);
+				font-family: var(--font_family_mono);
 				color: var(--text_color, var(--text_color_3));
 				overflow: auto;
 				max-width: 100%;
@@ -565,9 +565,9 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	flip_y: {declaration: 'transform: scaleY(-1);'},
 	flip_xy: {declaration: 'transform: scaleX(-1) scaleY(-1);'},
 
-	font_sans: {declaration: 'font-family: var(--font_sans);'},
-	font_serif: {declaration: 'font-family: var(--font_serif);'},
-	font_mono: {declaration: 'font-family: var(--font_mono);'},
+	font_family_sans: {declaration: 'font-family: var(--font_family_sans);'},
+	font_family_serif: {declaration: 'font-family: var(--font_family_serif);'},
+	font_family_mono: {declaration: 'font-family: var(--font_family_mono);'},
 	line_height_0: {declaration: 'line-height: 0;'},
 	line_height_1: {declaration: 'line-height: 1;'},
 	line_height_xs: {declaration: 'line-height: var(--line_height_xs);'},

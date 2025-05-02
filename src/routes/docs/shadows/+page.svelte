@@ -197,7 +197,7 @@
 	.shadow_example {
 		position: relative;
 		padding: var(--space_md);
-		font-family: var(--font_mono);
+		font-family: var(--font_family_mono);
 		border-radius: var(--border_radius_xs3);
 		display: flex;
 		align-items: center;

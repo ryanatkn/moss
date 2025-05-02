@@ -19,8 +19,8 @@ export const size_variants = [
 
 export const size_names = size_variants.map((s) => 'size_' + s);
 
-export type Text_Variant = Array_Element<typeof text_variants>;
-export const text_variants = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+export type Text_Color_Variant = Array_Element<typeof text_color_variants>;
+export const text_color_variants = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
 export type Space_Variant = Array_Element<typeof space_variants>;
 export const space_variants = [

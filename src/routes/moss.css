@@ -171,7 +171,7 @@ a.chip {
 }
 
 .pre {
-	font-family: var(--font_mono);
+	font-family: var(--font_family_mono);
 	color: var(--text_color, var(--text_color_3));
 	overflow: auto;
 	max-width: 100%;
@@ -199,11 +199,11 @@ a.chip {
 .flex_wrap {
 	flex-wrap: wrap;
 }
-.font_sans {
-	font-family: var(--font_sans);
+.font_family_sans {
+	font-family: var(--font_family_sans);
 }
-.font_mono {
-	font-family: var(--font_mono);
+.font_family_mono {
+	font-family: var(--font_family_mono);
 }
 .line_height_sm {
 	line-height: var(--line_height_sm);

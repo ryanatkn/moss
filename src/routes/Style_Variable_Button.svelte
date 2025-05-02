@@ -36,7 +36,7 @@
 	class:inline
 	class:plain
 	onclick={() => (selected_variable.value = variable)}
-	>{#if children}{@render children()}{:else}<span class="font_mono">{name}</span>{/if}</button
+	>{#if children}{@render children()}{:else}<span class="font_family_mono">{name}</span>{/if}</button
 >
 
 <style>

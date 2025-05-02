@@ -166,7 +166,7 @@
 		<div class="swatch">
 			<div>
 				<div class="color bg_a_5"></div>
-				<small style:font-family="var(--font_sans)">full opacity</small>
+				<small style:font-family="var(--font_family_sans)">full opacity</small>
 			</div>
 			{#each {length: 6} as _, i (i)}
 				{@const name = 'fade_' + (i + 1)}
@@ -181,7 +181,7 @@
 
 <style>
 	.swatch {
-		font-family: var(--font_mono);
+		font-family: var(--font_family_mono);
 		margin-bottom: var(--space_md);
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));

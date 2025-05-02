@@ -69,7 +69,7 @@
 
 ### Minor Changes
 
-- add `font_serif` and make it the default for headings ([#50](https://github.com/ryanatkn/moss/pull/50))
+- add `font_family_serif` and make it the default for headings ([#50](https://github.com/ryanatkn/moss/pull/50))
 
 ### Patch Changes
 

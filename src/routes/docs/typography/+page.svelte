@@ -14,7 +14,7 @@
 	import Icon_Sizes from '$routes/docs/typography/Icon_Sizes.svelte';
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import {line_height_names, size_names, text_variants} from '$lib/variable_data.js';
+	import {line_height_names, size_names, text_color_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'typography';
 
@@ -80,7 +80,7 @@
 					><span
 						style:font-size="var(--{size.name})"
 						style:font-weight={selected_font_weight}
-						class="font_sans">{size.name}</span
+						class="font_family_sans">{size.name}</span
 					></Style_Variable_Button
 				>
 				<div class="row">
@@ -118,11 +118,11 @@
 			Add color-scheme-adaptive versions?
 		</Unfinished_Implementation_Warning>
 		<div class="panel">
-			{#each text_variants as text_variant (text_variant)}
+			{#each text_color_variants as text_variant (text_variant)}
 				{@const name = 'text_color_' + text_variant}
 				<div class="row">
 					<Style_Variable_Button {name}
-						><span class="font_mono" style:color="var(--{name})">
+						><span class="font_family_mono" style:color="var(--{name})">
 							{name}
 						</span></Style_Variable_Button
 					> = <code>{computed_styles?.getPropertyValue('--' + name)}</code>
@@ -138,7 +138,7 @@
 			{#each line_height_names as name (name)}
 				<div>
 					<Style_Variable_Button {name}
-						><div style:line-height="var(--{name})" class="button_contents font_mono">
+						><div style:line-height="var(--{name})" class="button_contents font_family_mono">
 							<div>
 								{name} =
 								<code>{computed_styles?.getPropertyValue('--' + name)}</code>
