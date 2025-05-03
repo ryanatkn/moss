@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.27.0",
+  "version": "0.28.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -23,6 +23,10 @@
         },
         {
           "name": "Css_Class_Declaration",
+          "kind": "type"
+        },
+        {
+          "name": "Css_Class_Declaration_Base",
           "kind": "type"
         },
         {
@@ -132,19 +136,27 @@
           "kind": "type"
         },
         {
-          "name": "size_variants",
+          "name": "font_size_variants",
           "kind": "variable"
         },
         {
-          "name": "size_names",
+          "name": "font_size_names",
           "kind": "variable"
         },
         {
-          "name": "Text_Variant",
+          "name": "Font_Family_Variant",
           "kind": "type"
         },
         {
-          "name": "text_variants",
+          "name": "font_family_variants",
+          "kind": "variable"
+        },
+        {
+          "name": "Text_Color_Variant",
+          "kind": "type"
+        },
+        {
+          "name": "text_color_variants",
           "kind": "variable"
         },
         {
@@ -164,11 +176,11 @@
           "kind": "variable"
         },
         {
-          "name": "Radius_Variant",
+          "name": "Border_Radius_Variant",
           "kind": "type"
         },
         {
-          "name": "radius_variants",
+          "name": "border_radius_variants",
           "kind": "variable"
         },
         {
@@ -192,7 +204,7 @@
           "kind": "type"
         },
         {
-          "name": "shadow_size_variants",
+          "name": "shadow_font_size_variants",
           "kind": "variable"
         },
         {
@@ -890,6 +902,70 @@
           "kind": "variable"
         },
         {
+          "name": "font_family_sans",
+          "kind": "variable"
+        },
+        {
+          "name": "font_family_serif",
+          "kind": "variable"
+        },
+        {
+          "name": "font_family_mono",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xs",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_sm",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_md",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_lg",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl2",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl3",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl4",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl5",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl6",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl7",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl8",
+          "kind": "variable"
+        },
+        {
+          "name": "font_size_xl9",
+          "kind": "variable"
+        },
+        {
           "name": "line_height_xs",
           "kind": "variable"
         },
@@ -907,70 +983,6 @@
         },
         {
           "name": "line_height_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "font_sans",
-          "kind": "variable"
-        },
-        {
-          "name": "font_serif",
-          "kind": "variable"
-        },
-        {
-          "name": "font_mono",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xs",
-          "kind": "variable"
-        },
-        {
-          "name": "size_sm",
-          "kind": "variable"
-        },
-        {
-          "name": "size_md",
-          "kind": "variable"
-        },
-        {
-          "name": "size_lg",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl2",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl3",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl4",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl5",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl6",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl7",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl8",
-          "kind": "variable"
-        },
-        {
-          "name": "size_xl9",
           "kind": "variable"
         },
         {
@@ -1230,31 +1242,31 @@
           "kind": "variable"
         },
         {
-          "name": "radius_xl",
+          "name": "border_radius_xs3",
           "kind": "variable"
         },
         {
-          "name": "radius_lg",
+          "name": "border_radius_xs2",
           "kind": "variable"
         },
         {
-          "name": "radius_md",
+          "name": "border_radius_xs",
           "kind": "variable"
         },
         {
-          "name": "radius_sm",
+          "name": "border_radius_sm",
           "kind": "variable"
         },
         {
-          "name": "radius_xs",
+          "name": "border_radius_md",
           "kind": "variable"
         },
         {
-          "name": "radius_xs2",
+          "name": "border_radius_lg",
           "kind": "variable"
         },
         {
-          "name": "radius_xs3",
+          "name": "border_radius_xl",
           "kind": "variable"
         },
         {
