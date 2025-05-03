@@ -489,13 +489,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	display_contents: {declaration: 'display: contents;'},
 	/* TODO others like `list-item` and `table` variants? after optimizing, sure - https://developer.mozilla.org/en-US/docs/Web/CSS/display */
 	inline: {declaration: 'display: inline;'},
-	inline_block: {declaration: 'display: inline-block;'},
-	inline_flex: {declaration: 'display: inline-flex;'},
-	inline_grid: {declaration: 'display: inline-grid;'},
+	inline_block: {declaration: 'display: inline flow-root;'},
+	inline_flex: {declaration: 'display: inline flex;'},
+	inline_grid: {declaration: 'display: inline grid;'},
 	block: {declaration: 'display: block;'},
-
 	flex: {declaration: 'display: flex;'},
+	grid: {declaration: 'display: grid;'},
+
 	flex_1: {declaration: 'flex: 1;'},
+	// TODO maybe align these with the full declaration form
 	flex_wrap: {declaration: 'flex-wrap: wrap;'},
 	flex_wrap_reverse: {declaration: 'flex-wrap: wrap-reverse;'},
 	flex_nowrap: {declaration: 'flex-wrap: nowrap;'},
@@ -555,7 +557,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	justify_self_right: {declaration: 'justify-self: right;'},
 	justify_self_baseline: {declaration: 'justify-self: baseline;'},
 	justify_self_stretch: {declaration: 'justify-self: stretch;'},
-	grid: {declaration: 'display: grid;'},
 	float_none: {declaration: 'float: none;'},
 	float_left: {declaration: 'float: left;'},
 	float_right: {declaration: 'float: right;'},
