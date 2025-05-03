@@ -1,5 +1,19 @@
 # @ryanatkn/moss
 
+## 0.28.0
+
+### Minor Changes
+
+- rework some utility classes ([#55](https://github.com/ryanatkn/moss/pull/55))
+
+  - rename `border_$STYLE` variants to `border_style_$STYLE`
+  - rename `radius_` variants to `border_radius_`
+  - add top/right/bottom/left border radius variants, e.g. `border_top_left_radius`
+  - support `.unstyled` on more base elements
+  - prefix `font_sans`, `font_serif`, and `font_mono` with `font_family_`
+  - prefix display classes with `display_` and
+    remove classes `inline|inline_block|inline_flex|inline_grid|block|flex|grid`
+
 ## 0.27.0
 
 ### Minor Changes
