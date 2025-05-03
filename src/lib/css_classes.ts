@@ -563,8 +563,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	/** @deprecated - use the `display_`-prefixed variant */
 	block: {declaration: 'display: block;', comment: '@deprecated'}, // `block flow`
 	/** @deprecated - use the `display_`-prefixed variant */
-	flow_root: {declaration: 'display: flow-root;', comment: '@deprecated'}, // `block flow-root`
-	/** @deprecated - use the `display_`-prefixed variant */
 	flex: {declaration: 'display: flex;', comment: '@deprecated'}, // `block flex`
 	/** @deprecated - use the `display_`-prefixed variant */
 	grid: {declaration: 'display: grid;', comment: '@deprecated'}, // `block grid`
