@@ -454,8 +454,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	overflow_y_scroll: {declaration: 'overflow-y: scroll;'},
 	overflow_y_clip: {declaration: 'overflow-y: clip;'},
 	overflow_y_visible: {declaration: 'overflow-y: visible;'},
+
+	overflow_wrap_normal: {declaration: 'overflow-wrap: normal;'},
 	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
 	overflow_wrap_break_word: {declaration: 'overflow-wrap: break-word;'},
+	overflow_wrap_inherit: {declaration: 'overflow-wrap: inherit;'},
+	overflow_wrap_initial: {declaration: 'overflow-wrap: initial;'},
+	overflow_wrap_revert: {declaration: 'overflow-wrap: revert;'},
+	overflow_wrap_revert_layer: {declaration: 'overflow-wrap: revert-layer;'},
+	overflow_wrap_unset: {declaration: 'overflow-wrap: unset;'},
 
 	scrollbar_width_auto: {declaration: 'scrollbar-width: auto;'},
 	scrollbar_width_thin: {declaration: 'scrollbar-width: thin;'},
@@ -551,6 +558,11 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		declaration: 'display: inline-table;',
 		comment: 'Same as `display: inline table`.',
 	},
+	display_inherit: {declaration: 'display: inherit;'},
+	display_initial: {declaration: 'display: initial;'},
+	display_revert: {declaration: 'display: revert;'},
+	display_revert_layer: {declaration: 'display: revert-layer;'},
+	display_unset: {declaration: 'display: unset;'},
 	// TODO migrate these
 	/** @deprecated - use the `display_`-prefixed variant */
 	inline: {declaration: 'display: inline;', comment: '@deprecated'}, // `inline flow`

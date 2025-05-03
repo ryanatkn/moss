@@ -18,11 +18,11 @@
 		'relative|absolute|fixed|sticky|static',
 		'overflow_auto|hidden|scroll|clip|visible',
 		'overflow_x|y_auto|hidden|scroll|clip|visible',
-		'overflow_wrap_anywhere|break_word',
+		`overflow_wrap_normal|anywhere|break_word|${style_global_values}`,
 		`scrollbar_width_auto|thin|none|${style_global_values}`,
 		`scrollbar_gutter_auto|stable|stable_both_edges|${style_global_values}`,
 		`visibility_visible|hidden|collapse|${style_global_values}`,
-		'display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table',
+		`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
 		'flex_1',
 		'flex_wrap|wrap_reverse|nowrap',
 		'flex_row|column|row_reverse|column_reverse',
@@ -142,7 +142,7 @@ ${'<' as string}script>
 		</p>
 		<ul class="classes unstyled">
 			{#each style_utilities_items as c (c)}
-				<li>.{c}</li>
+				<li class="overflow_wrap_break_word">.{c}</li>
 			{/each}
 		</ul>
 	</Tome_Section>

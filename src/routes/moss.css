@@ -189,6 +189,9 @@ a.chip {
 .overflow_wrap_anywhere {
 	overflow-wrap: anywhere;
 }
+.overflow_wrap_break_word {
+	overflow-wrap: break-word;
+}
 /** Same as `display: inline flow`. */
 .display_inline {
 	display: inline;
