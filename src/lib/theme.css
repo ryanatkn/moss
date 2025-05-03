@@ -160,28 +160,28 @@
 	--text_color_10: var(--fg_0);
 	--text_color_disabled: var(--text_color_5);
 	--text_active: hsl(var(--hue_a) 55% 40%);
+	--font_family_sans:
+		system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* @source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+	--font_family_serif: 'DM Serif Display', Georgia, serif; /* @source https://svelte.dev/ */
+	--font_family_mono: ui-monospace, 'Fira Mono', monospace;
+	--font_size_xs: 1rem;
+	--font_size_sm: 1.3rem;
+	--font_size_md: 1.6rem;
+	--font_size_lg: 2.04rem;
+	--font_size_xl: 2.59rem;
+	--font_size_xl2: 3.29rem;
+	--font_size_xl3: 4.19rem;
+	--font_size_xl4: 5.33rem;
+	--font_size_xl5: 6.78rem;
+	--font_size_xl6: 8.62rem;
+	--font_size_xl7: 10.97rem;
+	--font_size_xl8: 13.95rem;
+	--font_size_xl9: 17.74rem;
 	--line_height_xs: 1;
 	--line_height_sm: 1.2;
 	--line_height_md: 1.4;
 	--line_height_lg: 1.6;
 	--line_height_xl: 2;
-	--font_sans:
-		system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* @source https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
-	--font_serif: 'DM Serif Display', Georgia, serif; /* @source https://svelte.dev/ */
-	--font_mono: ui-monospace, 'Fira Mono', monospace;
-	--size_xs: 1rem;
-	--size_sm: 1.3rem;
-	--size_md: 1.6rem;
-	--size_lg: 2.04rem;
-	--size_xl: 2.59rem;
-	--size_xl2: 3.29rem;
-	--size_xl3: 4.19rem;
-	--size_xl4: 5.33rem;
-	--size_xl5: 6.78rem;
-	--size_xl6: 8.62rem;
-	--size_xl7: 10.97rem;
-	--size_xl8: 13.95rem;
-	--size_xl9: 17.74rem;
 	--link_color: hsl(var(--hue_a) 61% 35%);
 	--text_decoration: none;
 	--text_decoration_hover: underline;
@@ -246,13 +246,13 @@
 	--outline_width_active: var(--border_width_1);
 	--outline_style: solid;
 	--outline_color: var(--border_color_a);
-	--radius_xl: 5.5rem;
-	--radius_lg: 3.4rem;
-	--radius_md: 2.1rem;
-	--radius_sm: 1.3rem;
-	--radius_xs: 0.8rem;
-	--radius_xs2: 0.5rem;
-	--radius_xs3: 0.3rem;
+	--border_radius_xs3: 0.3rem;
+	--border_radius_xs2: 0.5rem;
+	--border_radius_xs: 0.8rem;
+	--border_radius_sm: 1.3rem;
+	--border_radius_md: 2.1rem;
+	--border_radius_lg: 3.4rem;
+	--border_radius_xl: 5.5rem;
 	--button_shadow:
 		var(--shadow_inset_bottom_xs)
 			color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_1), transparent),

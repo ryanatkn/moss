@@ -17,11 +17,11 @@
 	<section class="box">
 		<h1 class="mb_sm" style:margin-top={MAIN_HEADER_MARGIN_TOP}>moss</h1>
 		<Svg data={moss_logo} size="var(--icon_size_xl2)" />
-		<div class="p_xl mt_lg radius_lg shadow_inset_bottom_xs">
+		<div class="p_xl mt_lg border_radius_lg shadow_inset_bottom_xs">
 			<blockquote class="shadow_inset_top_xs">magical organic stylesheets 🌿</blockquote>
 		</div>
 	</section>
-	<section class="width_sm p_sm radius_md shadow_xs">
+	<section class="width_sm p_sm border_radius_md shadow_xs">
 		<div class="panel p_lg bg shadow_sm">
 			<Introduction />
 			<p>
@@ -43,7 +43,7 @@
 	<section>
 		<Card href="{base}/docs">docs{#snippet icon()}🌿{/snippet}</Card>
 	</section>
-	<section class="p_xl radius_lg shadow_inset_bottom_xs">
+	<section class="p_xl border_radius_lg shadow_inset_bottom_xs">
 		<Docs_Footer {pkg}>
 			{#snippet logo_header()}
 				<a href="{base}/about" class="mb_xs">about</a>

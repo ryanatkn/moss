@@ -14,33 +14,40 @@
 	import Icon_Sizes from '$routes/docs/typography/Icon_Sizes.svelte';
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import {line_height_names, size_names, text_variants} from '$lib/variable_data.js';
+	import {
+		line_height_names,
+		font_size_names,
+		text_color_variants,
+		font_family_variants,
+	} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'typography';
 
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
-	// TODO refactor
+	// TODO refactor, also maybe add `950`?
 	const font_weights = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-	const size_variants = default_variables.filter((p) => size_names.includes(p.name));
+	const font_size_variants = default_variables.filter((p) => font_size_names.includes(p.name));
 
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
 
-	// TODO selected_font_family
 	let selected_font_weight = $state(400);
 	let selected_size = $state(3);
+
+	// TODO needed for class inclusion
+	// class="font_family_sans font_family_serif font_family_mono"
 </script>
 
 <Tome_Content {tome}>
 	<section>
-		<h1 title="--size_xl3">h1</h1>
-		<h2 title="--size_xl2">h2</h2>
-		<h3 title="--size_xl">h3</h3>
-		<h4 title="--size_lg">h4</h4>
-		<h5 title="--size_md">h5</h5>
-		<h6 title="--size_sm">h6</h6>
+		<h1 title="--font_size_xl3">h1</h1>
+		<h2 title="--font_size_xl2">h2</h2>
+		<h3 title="--font_size_xl">h3</h3>
+		<h4 title="--font_size_lg">h4</h4>
+		<h5 title="--font_size_md">h5</h5>
+		<h6 title="--font_size_sm">h6</h6>
 		<p>paragraphs</p>
 		<p>paragraphs</p>
 		<p>paragraphs</p>
@@ -50,12 +57,12 @@
 			{#snippet summary()}show code{/snippet}
 			<Code
 				content={`<section>
-	<h1 title="--size_xl3">h1</h1>
-	<h2 title="--size_xl2">h2</h2>
-	<h3 title="--size_xl">h3</h3>
-	<h4 title="--size_lg">h4</h4>
-	<h5 title="--size_md">h5</h5>
-	<h6 title="--size_sm">h6</h6>
+	<h1 title="--font_size_xl3">h1</h1>
+	<h2 title="--font_size_xl2">h2</h2>
+	<h3 title="--font_size_xl">h3</h3>
+	<h4 title="--font_size_lg">h4</h4>
+	<h5 title="--font_size_md">h5</h5>
+	<h6 title="--font_size_sm">h6</h6>
 	<p>paragraphs</p>
 	<p>paragraphs</p>
 	<p>paragraphs</p>
@@ -70,17 +77,37 @@
 		</Details>
 	</section>
 	<Tome_Section>
+		<Tome_Section_Header text="Font families" />
+		<div>
+			{#each font_family_variants as font_family (font_family)}
+				<div
+					class="row my_md"
+					style:font-weight={selected_font_weight}
+					style:font-size="var(--{font_size_names[selected_size - 1]})"
+				>
+					<Style_Variable_Button name={font_family}>
+						<span class={font_family}>{font_family}</span>
+					</Style_Variable_Button>
+					<div class="row">
+						<span class="pr_sm">=</span>
+						<code>{computed_styles?.getPropertyValue('--' + font_family)}</code>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</Tome_Section>
+	<Tome_Section>
 		<Tome_Section_Header text="Font sizes" />
 		<form class="width_sm">
 			<Font_Weight_Control bind:selected_font_weight></Font_Weight_Control>
 		</form>
-		{#each size_variants as size (size.name)}
+		{#each font_size_variants as size (size.name)}
 			<div class="row flex_wrap">
 				<Style_Variable_Button attrs={{title: size.light}} name={size.name}
 					><span
 						style:font-size="var(--{size.name})"
 						style:font-weight={selected_font_weight}
-						class="font_sans">{size.name}</span
+						class="font_family_sans">{size.name}</span
 					></Style_Variable_Button
 				>
 				<div class="row">
@@ -105,7 +132,7 @@
 				<div
 					class="white_space_nowrap"
 					style:font-weight={font_weight}
-					style:font-size="var(--{size_names[selected_size - 1]})"
+					style:font-size="var(--{font_size_names[selected_size - 1]})"
 				>
 					font-weight: {font_weight}
 				</div>
@@ -118,11 +145,11 @@
 			Add color-scheme-adaptive versions?
 		</Unfinished_Implementation_Warning>
 		<div class="panel">
-			{#each text_variants as text_variant (text_variant)}
+			{#each text_color_variants as text_variant (text_variant)}
 				{@const name = 'text_color_' + text_variant}
 				<div class="row">
 					<Style_Variable_Button {name}
-						><span class="font_mono" style:color="var(--{name})">
+						><span class="font_family_mono" style:color="var(--{name})">
 							{name}
 						</span></Style_Variable_Button
 					> = <code>{computed_styles?.getPropertyValue('--' + name)}</code>
@@ -138,7 +165,7 @@
 			{#each line_height_names as name (name)}
 				<div>
 					<Style_Variable_Button {name}
-						><div style:line-height="var(--{name})" class="button_contents font_mono">
+						><div style:line-height="var(--{name})" class="button_contents font_family_mono">
 							<div>
 								{name} =
 								<code>{computed_styles?.getPropertyValue('--' + name)}</code>

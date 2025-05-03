@@ -8,7 +8,7 @@
 
 	let {selected_font_weight = $bindable(400), children}: Props = $props();
 
-	// TODO @many publish in $lib when ready
+	// TODO @many publish in $lib when ready, the 950 thing has me wack
 </script>
 
 <label
@@ -19,7 +19,7 @@
 			font-weight
 		{/if} =
 		<input
-			class="inline flex_1"
+			class="display_inline flex_1"
 			type="number"
 			bind:value={selected_font_weight}
 			min={100}

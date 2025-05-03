@@ -39,7 +39,7 @@
 	li {
 		display: flex;
 		align-items: stretch;
-		font-family: var(--font_mono);
+		font-family: var(--font_family_mono);
 		min-height: var(--input_height_sm);
 	}
 	li:hover {
@@ -53,16 +53,16 @@
 	}
 	.hex {
 		width: 73px;
-		font-size: var(--size_sm);
+		font-size: var(--font_size_sm);
 		padding-left: var(--space_sm);
 	}
 	.hsl {
 		width: 149px;
-		font-size: var(--size_sm);
+		font-size: var(--font_size_sm);
 		padding-left: var(--space_sm);
 	}
 	.rgb {
-		font-size: var(--size_sm);
+		font-size: var(--font_size_sm);
 		padding-left: var(--space_sm);
 	}
 	.color {

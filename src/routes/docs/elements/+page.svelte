@@ -32,11 +32,11 @@
 	</blockquote>
 	<Tome_Section>
 		<Tome_Section_Header text="blockquote">
-			<span class="size_xl3">👆</span>
+			<span class="font_size_xl3">👆</span>
 			<Mdn_Link path="Web/HTML/Element/blockquote" />
 		</Tome_Section_Header>
 		<Tome_Section_Header text="hr">
-			<span class="size_xl3">👇</span>
+			<span class="font_size_xl3">👇</span>
 			<Mdn_Link path="Web/HTML/Element/hr" />
 		</Tome_Section_Header>
 		<hr />
@@ -60,11 +60,11 @@
 		<Tome_Section_Header text="pre">
 			<Mdn_Link path="Web/HTML/Element/pre" />
 		</Tome_Section_Header>
-		<pre>a <code class="inline">pre</code> is
+		<pre>a <code class="display_inline">pre</code> is
   preformatted
 					text</pre>
 		<pre><code
-				><code class="inline">code</code> in a <code class="inline">pre</code>
+				><code class="display_inline">code</code> in a <code class="display_inline">pre</code>
 		 	is a
 				 block</code
 			></pre>

@@ -9,7 +9,7 @@
 		border_distance_variants,
 		color_variants,
 		outline_distance_variants,
-		radius_variants,
+		border_radius_variants,
 	} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
@@ -128,8 +128,8 @@
 	<Tome_Section>
 		<Tome_Section_Header text="Border radius" />
 		<div class="border_examples border_radii">
-			{#each radius_variants as radius (radius)}
-				{@const name = 'radius_' + radius}
+			{#each border_radius_variants as radius (radius)}
+				{@const name = 'border_radius_' + radius}
 				<div class="row">
 					<div class="border_example border_radius" style:border-radius="var(--{name})">
 						<Style_Variable_Button {name} />

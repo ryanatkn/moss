@@ -18,14 +18,11 @@
 		'relative|absolute|fixed|sticky|static',
 		'overflow_auto|hidden|scroll|clip|visible',
 		'overflow_x|y_auto|hidden|scroll|clip|visible',
-		'overflow_wrap_anywhere|break_word',
+		`overflow_wrap_normal|anywhere|break_word|${style_global_values}`,
 		`scrollbar_width_auto|thin|none|${style_global_values}`,
 		`scrollbar_gutter_auto|stable|stable_both_edges|${style_global_values}`,
 		`visibility_visible|hidden|collapse|${style_global_values}`,
-		'display_none|contents',
-		'inline|inline_block|inline_flex|inline_grid',
-		'block',
-		'flex',
+		`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
 		'flex_1',
 		'flex_wrap|wrap_reverse|nowrap',
 		'flex_row|column|row_reverse|column_reverse',
@@ -37,12 +34,11 @@
 		'justify_content_center|start|end|left|right|space_between|space_around|space_evenly|stretch',
 		'justify_items_center|start|end|left|right|baseline|stretch',
 		'justify_self_center|start|end|left|right|baseline|stretch',
-		'grid',
 		'float_none|left|right|inline_start|inline_end',
 		'flip_x|y|xy',
-		'font_sans|serif|mono',
+		'font_family_sans|serif|mono',
 		'line_height_xs-xl',
-		'size_xs-xl9',
+		'font_size_xs-xl9',
 		'icon_size_xs-xl3',
 		'text_align_start|end|left|right|center|justify|justify_all|match_parent',
 		'vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom',
@@ -67,9 +63,11 @@
 		'border_color_transparent',
 		'border_width_0-9',
 		'outline_width_0|focused|active', // `outline_width_0` isn't a variable, need to encode that information somewhere
-		'border_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset',
-		'radius_0|50|100', // TODO probably add 25/75 or 10-90
-		'radius_xs3-xl', // TODO change to 1-9
+		`border_style_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|${style_global_values}`,
+		'border_radius_0|10|20|30|40|50|60|70|80|90|100',
+		'border_radius_xs3-xl',
+		'border_top|bottom_left|right_radius_0|10|20|30|40|50|60|70|80|90|100',
+		'border_top|bottom_left|right_radius_xs3-xl',
 		'fade_0|100',
 		'fade_1-6',
 		'shadow_xs-xl',
@@ -137,9 +135,29 @@ ${'<' as string}script>
 	</Tome_Section>
 	<Tome_Section>
 		<Tome_Section_Header text="Utility classes" />
+		<p>
+			Moss supports utility classes. The API has been drifting to be more consistently match CSS at
+			the cost of verbosity.
+		</p>
+		<p>
+			Moss exports <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.ts"
+				>helpers</a
+			> to generate styles on demand based on class usage in your source files, so you can ship the minimal
+			code needed.
+		</p>
+		<aside>
+			⚠️ Moss does not fully support <a
+				href="https://svelte.dev/docs/svelte/class#Attributes-Objects-and-arrays"
+				>Svelte's object+array class syntax</a
+			>, added in 5.16. For now see
+			<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.test.ts"
+				>the tests</a
+			> for the supported forms. The current strategy uses a regexp for TS and Svelte files, but we'll
+			probably need to more robustly scan the parsed AST.
+		</aside>
 		<ul class="classes unstyled">
 			{#each style_utilities_items as c (c)}
-				<li>.{c}</li>
+				<li class="overflow_wrap_break_word">.{c}</li>
 			{/each}
 		</ul>
 	</Tome_Section>
@@ -147,7 +165,7 @@ ${'<' as string}script>
 
 <style>
 	.classes {
-		font-family: var(--font_mono);
+		font-family: var(--font_family_mono);
 	}
 	.classes li {
 		padding: var(--space_xs3);

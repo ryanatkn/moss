@@ -282,7 +282,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 						var(--shadow_bottom_md)
 						color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_3), transparent)
 				);
-				border-radius: var(--radius_xs);
+				border-radius: var(--border_radius_xs);
 			}
 		`,
 	},
@@ -290,7 +290,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		ruleset: `
 			/* A panel is a box embedded into the page, useful for visually isolating content. */
 			.panel {
-				border-radius: var(--radius_xs);
+				border-radius: var(--border_radius_xs);
 				background-color: var(--panel_bg, var(--fg_1));
 			}
 		`,
@@ -407,7 +407,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				padding-left: var(--space_xs);
 				padding-right: var(--space_xs);
 				background-color: var(--fg_1);
-				border-radius: var(--radius_xs);
+				border-radius: var(--border_radius_xs);
 			}
 			a.chip {
 				font-weight: 700;
@@ -418,13 +418,13 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		// keep in sync with `pre` styling in `style.css`, except the `.inline` exception
 		ruleset: `
 			.pre {
-				font-family: var(--font_mono);
+				font-family: var(--font_family_mono);
 				color: var(--text_color, var(--text_color_3));
 				overflow: auto;
 				max-width: 100%;
 			}
 			.pre > code {
-				font-size: var(--size_sm); /* TODO @many use a var? maybe computed from generic \`--size\`? */
+				font-size: var(--font_size_sm); /* TODO @many use a var? maybe computed from generic \`--font_size\`? */
 				font-weight: 500;
 			}
 			.pre:not(.inline) > code {
@@ -454,8 +454,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	overflow_y_scroll: {declaration: 'overflow-y: scroll;'},
 	overflow_y_clip: {declaration: 'overflow-y: clip;'},
 	overflow_y_visible: {declaration: 'overflow-y: visible;'},
+
+	overflow_wrap_normal: {declaration: 'overflow-wrap: normal;'},
 	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
 	overflow_wrap_break_word: {declaration: 'overflow-wrap: break-word;'},
+	overflow_wrap_inherit: {declaration: 'overflow-wrap: inherit;'},
+	overflow_wrap_initial: {declaration: 'overflow-wrap: initial;'},
+	overflow_wrap_revert: {declaration: 'overflow-wrap: revert;'},
+	overflow_wrap_revert_layer: {declaration: 'overflow-wrap: revert-layer;'},
+	overflow_wrap_unset: {declaration: 'overflow-wrap: unset;'},
 
 	scrollbar_width_auto: {declaration: 'scrollbar-width: auto;'},
 	scrollbar_width_thin: {declaration: 'scrollbar-width: thin;'},
@@ -484,18 +491,81 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
 	visibility_unset: {declaration: 'visibility: unset;'},
 
-	/* these include the longhand `display_` because they're less common and would be more ambiguous */
+	/*
+	
+	Display values - see https://drafts.csswg.org/css-display/#display-value-summary.
+	
+	*/
 	display_none: {declaration: 'display: none;'},
 	display_contents: {declaration: 'display: contents;'},
-	/* TODO others like `list-item` and `table` variants? after optimizing, sure - https://developer.mozilla.org/en-US/docs/Web/CSS/display */
-	inline: {declaration: 'display: inline;'},
-	inline_block: {declaration: 'display: inline-block;'},
-	inline_flex: {declaration: 'display: inline-flex;'},
-	inline_grid: {declaration: 'display: inline-grid;'},
-	block: {declaration: 'display: block;'},
+	display_block: {
+		declaration: 'display: block;',
+		comment: 'Same as `display: block flow`.',
+	},
+	display_flow_root: {
+		declaration: 'display: flow-root;',
+		comment: 'Same as `display: block flow-root`.',
+	},
+	display_inline: {
+		declaration: 'display: inline;',
+		comment: 'Same as `display: inline flow`.',
+	},
+	display_inline_block: {
+		declaration: 'display: inline-block;',
+		comment: 'Same as `display: inline flow-root`.',
+	},
+	display_run_in: {
+		declaration: 'display: run-in;',
+		comment: 'Same as `display: run-in flow`.',
+	},
+	display_list_item: {
+		declaration: 'display: list-item;',
+		comment: 'Same as `display: block flow list-item`.',
+	},
+	display_inline_list_item: {
+		declaration: 'display: inline list-item;',
+		comment: 'Same as `display: inline flow list-item`.',
+	},
+	display_flex: {
+		declaration: 'display: flex;',
+		comment: 'Same as `display: block flex`.',
+	},
+	display_inline_flex: {
+		declaration: 'display: inline-flex;',
+		comment: 'Same as `display: inline flex`.',
+	},
+	display_grid: {
+		declaration: 'display: grid;',
+		comment: 'Same as `display: block grid`.',
+	},
+	display_inline_grid: {
+		declaration: 'display: inline-grid;',
+		comment: 'Same as `display: inline grid`.',
+	},
+	display_ruby: {
+		declaration: 'display: ruby;',
+		comment: 'Same as `display: inline ruby`.',
+	},
+	display_block_ruby: {
+		declaration: 'display: block ruby;',
+		comment: 'Same as `display: block ruby`.',
+	},
+	display_table: {
+		declaration: 'display: table;',
+		comment: 'Same as `display: block table`.',
+	},
+	display_inline_table: {
+		declaration: 'display: inline-table;',
+		comment: 'Same as `display: inline table`.',
+	},
+	display_inherit: {declaration: 'display: inherit;'},
+	display_initial: {declaration: 'display: initial;'},
+	display_revert: {declaration: 'display: revert;'},
+	display_revert_layer: {declaration: 'display: revert-layer;'},
+	display_unset: {declaration: 'display: unset;'},
 
-	flex: {declaration: 'display: flex;'},
 	flex_1: {declaration: 'flex: 1;'},
+	// TODO maybe align these with the full declaration form
 	flex_wrap: {declaration: 'flex-wrap: wrap;'},
 	flex_wrap_reverse: {declaration: 'flex-wrap: wrap-reverse;'},
 	flex_nowrap: {declaration: 'flex-wrap: nowrap;'},
@@ -555,7 +625,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	justify_self_right: {declaration: 'justify-self: right;'},
 	justify_self_baseline: {declaration: 'justify-self: baseline;'},
 	justify_self_stretch: {declaration: 'justify-self: stretch;'},
-	grid: {declaration: 'display: grid;'},
 	float_none: {declaration: 'float: none;'},
 	float_left: {declaration: 'float: left;'},
 	float_right: {declaration: 'float: right;'},
@@ -565,9 +634,9 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	flip_y: {declaration: 'transform: scaleY(-1);'},
 	flip_xy: {declaration: 'transform: scaleX(-1) scaleY(-1);'},
 
-	font_sans: {declaration: 'font-family: var(--font_sans);'},
-	font_serif: {declaration: 'font-family: var(--font_serif);'},
-	font_mono: {declaration: 'font-family: var(--font_mono);'},
+	font_family_sans: {declaration: 'font-family: var(--font_family_sans);'},
+	font_family_serif: {declaration: 'font-family: var(--font_family_serif);'},
+	font_family_mono: {declaration: 'font-family: var(--font_family_mono);'},
 	line_height_0: {declaration: 'line-height: 0;'},
 	line_height_1: {declaration: 'line-height: 1;'},
 	line_height_xs: {declaration: 'line-height: var(--line_height_xs);'},
@@ -575,26 +644,56 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	line_height_md: {declaration: 'line-height: var(--line_height_md);'},
 	line_height_lg: {declaration: 'line-height: var(--line_height_lg);'},
 	line_height_xl: {declaration: 'line-height: var(--line_height_xl);'},
-	size_xs: {declaration: 'font-size: var(--size_xs); --size: var(--size_xs);'},
-	size_sm: {declaration: 'font-size: var(--size_sm); --size: var(--size_sm);'},
-	size_md: {declaration: 'font-size: var(--size_md); --size: var(--size_md);'},
-	size_lg: {declaration: 'font-size: var(--size_lg); --size: var(--size_lg);'},
-	size_xl: {declaration: 'font-size: var(--size_xl); --size: var(--size_xl);'},
-	size_xl2: {declaration: 'font-size: var(--size_xl2); --size: var(--size_xl2);'},
-	size_xl3: {declaration: 'font-size: var(--size_xl3); --size: var(--size_xl3);'},
-	size_xl4: {declaration: 'font-size: var(--size_xl4); --size: var(--size_xl4);'},
-	size_xl5: {declaration: 'font-size: var(--size_xl5); --size: var(--size_xl5);'},
-	size_xl6: {declaration: 'font-size: var(--size_xl6); --size: var(--size_xl6);'},
-	size_xl7: {declaration: 'font-size: var(--size_xl7); --size: var(--size_xl7);'},
-	size_xl8: {declaration: 'font-size: var(--size_xl8); --size: var(--size_xl8);'},
-	size_xl9: {declaration: 'font-size: var(--size_xl9); --size: var(--size_xl9);'},
-	icon_size_xs: {declaration: 'font-size: var(--icon_size_xs); --size: var(--icon_size_xs);'},
-	icon_size_sm: {declaration: 'font-size: var(--icon_size_sm); --size: var(--icon_size_sm);'},
-	icon_size_md: {declaration: 'font-size: var(--icon_size_md); --size: var(--icon_size_md);'},
-	icon_size_lg: {declaration: 'font-size: var(--icon_size_lg); --size: var(--icon_size_lg);'},
-	icon_size_xl: {declaration: 'font-size: var(--icon_size_xl); --size: var(--icon_size_xl);'},
-	icon_size_xl2: {declaration: 'font-size: var(--icon_size_xl2); --size: var(--icon_size_xl2);'},
-	icon_size_xl3: {declaration: 'font-size: var(--icon_size_xl3); --size: var(--icon_size_xl3);'},
+	font_size_xs: {declaration: 'font-size: var(--font_size_xs); --font_size: var(--font_size_xs);'},
+	font_size_sm: {declaration: 'font-size: var(--font_size_sm); --font_size: var(--font_size_sm);'},
+	font_size_md: {declaration: 'font-size: var(--font_size_md); --font_size: var(--font_size_md);'},
+	font_size_lg: {declaration: 'font-size: var(--font_size_lg); --font_size: var(--font_size_lg);'},
+	font_size_xl: {declaration: 'font-size: var(--font_size_xl); --font_size: var(--font_size_xl);'},
+	font_size_xl2: {
+		declaration: 'font-size: var(--font_size_xl2); --font_size: var(--font_size_xl2);',
+	},
+	font_size_xl3: {
+		declaration: 'font-size: var(--font_size_xl3); --font_size: var(--font_size_xl3);',
+	},
+	font_size_xl4: {
+		declaration: 'font-size: var(--font_size_xl4); --font_size: var(--font_size_xl4);',
+	},
+	font_size_xl5: {
+		declaration: 'font-size: var(--font_size_xl5); --font_size: var(--font_size_xl5);',
+	},
+	font_size_xl6: {
+		declaration: 'font-size: var(--font_size_xl6); --font_size: var(--font_size_xl6);',
+	},
+	font_size_xl7: {
+		declaration: 'font-size: var(--font_size_xl7); --font_size: var(--font_size_xl7);',
+	},
+	font_size_xl8: {
+		declaration: 'font-size: var(--font_size_xl8); --font_size: var(--font_size_xl8);',
+	},
+	font_size_xl9: {
+		declaration: 'font-size: var(--font_size_xl9); --font_size: var(--font_size_xl9);',
+	},
+	icon_size_xs: {
+		declaration: 'font-size: var(--icon_size_xs); --font_size: var(--icon_size_xs);',
+	},
+	icon_size_sm: {
+		declaration: 'font-size: var(--icon_size_sm); --font_size: var(--icon_size_sm);',
+	},
+	icon_size_md: {
+		declaration: 'font-size: var(--icon_size_md); --font_size: var(--icon_size_md);',
+	},
+	icon_size_lg: {
+		declaration: 'font-size: var(--icon_size_lg); --font_size: var(--icon_size_lg);',
+	},
+	icon_size_xl: {
+		declaration: 'font-size: var(--icon_size_xl); --font_size: var(--icon_size_xl);',
+	},
+	icon_size_xl2: {
+		declaration: 'font-size: var(--icon_size_xl2); --font_size: var(--icon_size_xl2);',
+	},
+	icon_size_xl3: {
+		declaration: 'font-size: var(--icon_size_xl3); --font_size: var(--icon_size_xl3);',
+	},
 	text_align_start: {declaration: 'text-align: start;'},
 	text_align_end: {declaration: 'text-align: end;'},
 	text_align_left: {declaration: 'text-align: left;'},
@@ -952,29 +1051,144 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	outline_width_focus: {declaration: 'outline-width: var(--outline_width_focus);'},
 	outline_width_active: {declaration: 'outline-width: var(--outline_width_active);'},
 
-	/* TODO add the top/right/bottom/left variants */
+	/* TODO add the top/right/bottom/left border-style multi-argument variants */
 	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
-	border_none: {declaration: 'border-style: none;'},
-	border_hidden: {declaration: 'border-style: hidden;'},
-	border_dotted: {declaration: 'border-style: dotted;'},
-	border_dashed: {declaration: 'border-style: dashed;'},
-	border_solid: {declaration: 'border-style: solid;'},
-	border_double: {declaration: 'border-style: double;'},
-	border_groove: {declaration: 'border-style: groove;'},
-	border_ridge: {declaration: 'border-style: ridge;'},
-	border_inset: {declaration: 'border-style: inset;'},
-	border_outset: {declaration: 'border-style: outset;'},
-	radius_100: {declaration: 'border-radius: 100%;'},
-	radius_50: {declaration: 'border-radius: 50%;'},
-	radius_0: {declaration: 'border-radius: 0;'},
-	radius_xs3: {declaration: 'border-radius: var(--radius_xs3);'},
-	radius_xs2: {declaration: 'border-radius: var(--radius_xs2);'},
-	radius_xs: {declaration: 'border-radius: var(--radius_xs);'},
-	radius_sm: {declaration: 'border-radius: var(--radius_sm);'},
-	radius_md: {declaration: 'border-radius: var(--radius_md);'},
-	radius_lg: {declaration: 'border-radius: var(--radius_lg);'},
-	radius_xl: {declaration: 'border-radius: var(--radius_xl);'},
+	// TODO think about an API using data+helpers, e.g. `...create_declarations({property_name: 'border-style', property_value: ['none', 'hidden', [...], css_global_values])`
+	border_style_none: {declaration: 'border-style: none;'},
+	border_style_hidden: {declaration: 'border-style: hidden;'},
+	border_style_dotted: {declaration: 'border-style: dotted;'},
+	border_style_dashed: {declaration: 'border-style: dashed;'},
+	border_style_solid: {declaration: 'border-style: solid;'},
+	border_style_double: {declaration: 'border-style: double;'},
+	border_style_groove: {declaration: 'border-style: groove;'},
+	border_style_ridge: {declaration: 'border-style: ridge;'},
+	border_style_inset: {declaration: 'border-style: inset;'},
+	border_style_outset: {declaration: 'border-style: outset;'},
+	border_style_inherit: {declaration: 'border-style: inherit;'},
+	border_style_initial: {declaration: 'border-style: initial;'},
+	border_style_revert: {declaration: 'border-style: revert;'},
+	border_style_revert_layer: {declaration: 'border-style: revert-layer;'},
+	border_style_unset: {declaration: 'border-style: unset;'},
+	border_radius_100: {declaration: 'border-radius: 100%;'},
+	border_radius_90: {declaration: 'border-radius: 90%;'},
+	border_radius_80: {declaration: 'border-radius: 80%;'},
+	border_radius_70: {declaration: 'border-radius: 70%;'},
+	border_radius_60: {declaration: 'border-radius: 60%;'},
+	border_radius_50: {declaration: 'border-radius: 50%;'},
+	border_radius_40: {declaration: 'border-radius: 40%;'},
+	border_radius_30: {declaration: 'border-radius: 30%;'},
+	border_radius_20: {declaration: 'border-radius: 20%;'},
+	border_radius_10: {declaration: 'border-radius: 10%;'},
+	border_radius_0: {declaration: 'border-radius: 0;'},
+	border_radius_xs3: {declaration: 'border-radius: var(--border_radius_xs3);'},
+	border_radius_xs2: {declaration: 'border-radius: var(--border_radius_xs2);'},
+	border_radius_xs: {declaration: 'border-radius: var(--border_radius_xs);'},
+	border_radius_sm: {declaration: 'border-radius: var(--border_radius_sm);'},
+	border_radius_md: {declaration: 'border-radius: var(--border_radius_md);'},
+	border_radius_lg: {declaration: 'border-radius: var(--border_radius_lg);'},
+	border_radius_xl: {declaration: 'border-radius: var(--border_radius_xl);'},
+	border_top_left_radius_100: {declaration: 'border-top-left-radius: 100%;'},
+	border_top_left_radius_90: {declaration: 'border-top-left-radius: 90%;'},
+	border_top_left_radius_80: {declaration: 'border-top-left-radius: 80%;'},
+	border_top_left_radius_70: {declaration: 'border-top-left-radius: 70%;'},
+	border_top_left_radius_60: {declaration: 'border-top-left-radius: 60%;'},
+	border_top_left_radius_50: {declaration: 'border-top-left-radius: 50%;'},
+	border_top_left_radius_40: {declaration: 'border-top-left-radius: 40%;'},
+	border_top_left_radius_30: {declaration: 'border-top-left-radius: 30%;'},
+	border_top_left_radius_20: {declaration: 'border-top-left-radius: 20%;'},
+	border_top_left_radius_10: {declaration: 'border-top-left-radius: 10%;'},
+	border_top_left_radius_0: {declaration: 'border-top-left-radius: 0;'},
+	border_top_left_radius_xs3: {declaration: 'border-top-left-radius: var(--border_radius_xs3);'},
+	border_top_left_radius_xs2: {declaration: 'border-top-left-radius: var(--border_radius_xs2);'},
+	border_top_left_radius_xs: {declaration: 'border-top-left-radius: var(--border_radius_xs);'},
+	border_top_left_radius_sm: {declaration: 'border-top-left-radius: var(--border_radius_sm);'},
+	border_top_left_radius_md: {declaration: 'border-top-left-radius: var(--border_radius_md);'},
+	border_top_left_radius_lg: {declaration: 'border-top-left-radius: var(--border_radius_lg);'},
+	border_top_left_radius_xl: {declaration: 'border-top-left-radius: var(--border_radius_xl);'},
+	border_top_right_radius_100: {declaration: 'border-top-right-radius: 100%;'},
+	border_top_right_radius_90: {declaration: 'border-top-right-radius: 90%;'},
+	border_top_right_radius_80: {declaration: 'border-top-right-radius: 80%;'},
+	border_top_right_radius_70: {declaration: 'border-top-right-radius: 70%;'},
+	border_top_right_radius_60: {declaration: 'border-top-right-radius: 60%;'},
+	border_top_right_radius_50: {declaration: 'border-top-right-radius: 50%;'},
+	border_top_right_radius_40: {declaration: 'border-top-right-radius: 40%;'},
+	border_top_right_radius_30: {declaration: 'border-top-right-radius: 30%;'},
+	border_top_right_radius_20: {declaration: 'border-top-right-radius: 20%;'},
+	border_top_right_radius_10: {declaration: 'border-top-right-radius: 10%;'},
+	border_top_right_radius_0: {declaration: 'border-top-right-radius: 0;'},
+	border_top_right_radius_xs3: {declaration: 'border-top-right-radius: var(--border_radius_xs3);'},
+	border_top_right_radius_xs2: {declaration: 'border-top-right-radius: var(--border_radius_xs2);'},
+	border_top_right_radius_xs: {declaration: 'border-top-right-radius: var(--border_radius_xs);'},
+	border_top_right_radius_sm: {declaration: 'border-top-right-radius: var(--border_radius_sm);'},
+	border_top_right_radius_md: {declaration: 'border-top-right-radius: var(--border_radius_md);'},
+	border_top_right_radius_lg: {declaration: 'border-top-right-radius: var(--border_radius_lg);'},
+	border_top_right_radius_xl: {declaration: 'border-top-right-radius: var(--border_radius_xl);'},
+	border_bottom_left_radius_100: {declaration: 'border-bottom-left-radius: 100%;'},
+	border_bottom_left_radius_90: {declaration: 'border-bottom-left-radius: 90%;'},
+	border_bottom_left_radius_80: {declaration: 'border-bottom-left-radius: 80%;'},
+	border_bottom_left_radius_70: {declaration: 'border-bottom-left-radius: 70%;'},
+	border_bottom_left_radius_60: {declaration: 'border-bottom-left-radius: 60%;'},
+	border_bottom_left_radius_50: {declaration: 'border-bottom-left-radius: 50%;'},
+	border_bottom_left_radius_40: {declaration: 'border-bottom-left-radius: 40%;'},
+	border_bottom_left_radius_30: {declaration: 'border-bottom-left-radius: 30%;'},
+	border_bottom_left_radius_20: {declaration: 'border-bottom-left-radius: 20%;'},
+	border_bottom_left_radius_10: {declaration: 'border-bottom-left-radius: 10%;'},
+	border_bottom_left_radius_0: {declaration: 'border-bottom-left-radius: 0;'},
+	border_bottom_left_radius_xs3: {
+		declaration: 'border-bottom-left-radius: var(--border_radius_xs3);',
+	},
+	border_bottom_left_radius_xs2: {
+		declaration: 'border-bottom-left-radius: var(--border_radius_xs2);',
+	},
+	border_bottom_left_radius_xs: {
+		declaration: 'border-bottom-left-radius: var(--border_radius_xs);',
+	},
+	border_bottom_left_radius_sm: {
+		declaration: 'border-bottom-left-radius: var(--border_radius_sm);',
+	},
+	border_bottom_left_radius_md: {
+		declaration: 'border-bottom-left-radius: var(--border_radius_md);',
+	},
+	border_bottom_left_radius_lg: {
+		declaration: 'border-bottom-left-radius: var(--border_radius_lg);',
+	},
+	border_bottom_left_radius_xl: {
+		declaration: 'border-bottom-left-radius: var(--border_radius_xl);',
+	},
+	border_bottom_right_radius_100: {declaration: 'border-bottom-right-radius: 100%;'},
+	border_bottom_right_radius_90: {declaration: 'border-bottom-right-radius: 90%;'},
+	border_bottom_right_radius_80: {declaration: 'border-bottom-right-radius: 80%;'},
+	border_bottom_right_radius_70: {declaration: 'border-bottom-right-radius: 70%;'},
+	border_bottom_right_radius_60: {declaration: 'border-bottom-right-radius: 60%;'},
+	border_bottom_right_radius_50: {declaration: 'border-bottom-right-radius: 50%;'},
+	border_bottom_right_radius_40: {declaration: 'border-bottom-right-radius: 40%;'},
+	border_bottom_right_radius_30: {declaration: 'border-bottom-right-radius: 30%;'},
+	border_bottom_right_radius_20: {declaration: 'border-bottom-right-radius: 20%;'},
+	border_bottom_right_radius_10: {declaration: 'border-bottom-right-radius: 10%;'},
+	border_bottom_right_radius_0: {declaration: 'border-bottom-right-radius: 0;'},
+	border_bottom_right_radius_xs3: {
+		declaration: 'border-bottom-right-radius: var(--border_radius_xs3);',
+	},
+	border_bottom_right_radius_xs2: {
+		declaration: 'border-bottom-right-radius: var(--border_radius_xs2);',
+	},
+	border_bottom_right_radius_xs: {
+		declaration: 'border-bottom-right-radius: var(--border_radius_xs);',
+	},
+	border_bottom_right_radius_sm: {
+		declaration: 'border-bottom-right-radius: var(--border_radius_sm);',
+	},
+	border_bottom_right_radius_md: {
+		declaration: 'border-bottom-right-radius: var(--border_radius_md);',
+	},
+	border_bottom_right_radius_lg: {
+		declaration: 'border-bottom-right-radius: var(--border_radius_lg);',
+	},
+	border_bottom_right_radius_xl: {
+		declaration: 'border-bottom-right-radius: var(--border_radius_xl);',
+	},
 
+	// TODO is incomplete
 	/*
 
 	shading

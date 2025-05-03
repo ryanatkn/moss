@@ -135,10 +135,14 @@ export class Css_Classes {
 
 export type Css_Class_Declaration = Css_Class_Declaration_Item | Css_Class_Declaration_Group;
 
-export interface Css_Class_Declaration_Item {
+export interface Css_Class_Declaration_Base {
+	comment?: string;
+}
+
+export interface Css_Class_Declaration_Item extends Css_Class_Declaration_Base {
 	declaration: string;
 }
-export interface Css_Class_Declaration_Group {
+export interface Css_Class_Declaration_Group extends Css_Class_Declaration_Base {
 	ruleset: string;
 }
 
@@ -170,6 +174,13 @@ export const generate_classes_css = (
 			// }
 			continue;
 		}
+
+		const {comment} = v;
+
+		if (comment) {
+			css += comment.includes('\n') ? `/*\n${comment}\n*/\n` : `/** ${comment} */\n`;
+		}
+
 		if ('declaration' in v) {
 			css += `.${c} { ${v.declaration} }\n`;
 		} else {

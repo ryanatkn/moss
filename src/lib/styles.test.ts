@@ -26,6 +26,10 @@ test('variables in the CSS exist', () => {
 	}
 });
 
+/**
+ * These variables are known to be in the CSS but not in the exported variables.
+ * This means they can be contextually used when defined, but otherwise have a fallback.
+ */
 const known_without_variables = new Set([
 	'button_fill',
 	'button_fill_hover',
@@ -39,6 +43,7 @@ const known_without_variables = new Set([
 	'pane_bg',
 	'pane_shadow',
 	'panel_bg',
+	'font_size',
 	'icon_size',
 	'border_radius',
 	'min_height',
