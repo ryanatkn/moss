@@ -189,6 +189,14 @@ a.chip {
 .overflow_wrap_anywhere {
 	overflow-wrap: anywhere;
 }
+/* inline flow */
+.display_inline {
+	display: inline;
+}
+/* block flex */
+.display_flex {
+	display: flex;
+}
 .inline {
 	display: inline;
 }

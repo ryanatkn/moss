@@ -129,7 +129,7 @@
 		<Tome_Section_Header text="Border radius" />
 		<div class="border_examples border_radii">
 			{#each border_radius_variants as radius (radius)}
-				{@const name = 'radius_' + radius}
+				{@const name = 'border_radius_' + radius}
 				<div class="row">
 					<div class="border_example border_radius" style:border-radius="var(--{name})">
 						<Style_Variable_Button {name} />

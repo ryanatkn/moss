@@ -99,6 +99,7 @@ export const src_json = {
 				{name: 'collect_css_classes', kind: 'function'},
 				{name: 'Css_Classes', kind: 'class'},
 				{name: 'Css_Class_Declaration', kind: 'type'},
+				{name: 'Css_Class_Declaration_Base', kind: 'type'},
 				{name: 'Css_Class_Declaration_Item', kind: 'type'},
 				{name: 'Css_Class_Declaration_Group', kind: 'type'},
 				{name: 'generate_classes_css', kind: 'function'},

@@ -29,7 +29,7 @@
 			font-size
 		{/if} =
 		<input
-			class="inline"
+			class="display_inline"
 			type="number"
 			style:width="var(--space_xl7)"
 			style:min-width="var(--space_xl7)"

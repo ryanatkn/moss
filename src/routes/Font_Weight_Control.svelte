@@ -19,7 +19,7 @@
 			font-weight
 		{/if} =
 		<input
-			class="inline flex_1"
+			class="display_inline flex_1"
 			type="number"
 			bind:value={selected_font_weight}
 			min={100}

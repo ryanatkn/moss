@@ -484,17 +484,48 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
 	visibility_unset: {declaration: 'visibility: unset;'},
 
-	/* these include the longhand `display_` because they're less common and would be more ambiguous */
+	/*
+	
+	Display values - see https://drafts.csswg.org/css-display/#display-value-summary.
+	
+	*/
 	display_none: {declaration: 'display: none;'},
 	display_contents: {declaration: 'display: contents;'},
-	/* TODO others like `list-item` and `table` variants? after optimizing, sure - https://developer.mozilla.org/en-US/docs/Web/CSS/display */
-	inline: {declaration: 'display: inline;'},
+	display_block: {declaration: 'display: block;', comment: 'block flow'},
+	display_flow_root: {declaration: 'display: flow-root;', comment: 'block flow-root'},
+	display_inline: {declaration: 'display: inline;', comment: 'inline flow'},
+	display_inline_block: {declaration: 'display: inline-block;', comment: 'inline flow-root'},
+	display_run_in: {declaration: 'display: run-in;', comment: 'run-in flow'},
+	display_list_item: {declaration: 'display: list-item;', comment: 'block flow list-item'},
+	display_inline_list_item: {
+		declaration: 'display: inline list-item;',
+		comment: 'inline flow list-item',
+	},
+	display_flex: {declaration: 'display: flex;', comment: 'block flex'},
+	display_inline_flex: {declaration: 'display: inline-flex;', comment: 'inline flex'},
+	display_grid: {declaration: 'display: grid;', comment: 'block grid'},
+	display_inline_grid: {declaration: 'display: inline-grid;', comment: 'inline grid'},
+	display_ruby: {declaration: 'display: ruby;', comment: 'inline ruby'},
+	display_block_ruby: {declaration: 'display: block ruby;', comment: 'block ruby'},
+	display_table: {declaration: 'display: table;', comment: 'block table'},
+	display_inline_table: {declaration: 'display: inline-table;', comment: 'inline table'},
+	// TODO migrate these
+	/** @deprecated - use the `display_`-prefixed variant */
+	inline: {declaration: 'display: inline;'}, // `inline flow`
+	/** @deprecated - use the `display_`-prefixed variant */
 	inline_block: {declaration: 'display: inline flow-root;'},
+	/** @deprecated - use the `display_`-prefixed variant */
 	inline_flex: {declaration: 'display: inline flex;'},
+	/** @deprecated - use the `display_`-prefixed variant */
 	inline_grid: {declaration: 'display: inline grid;'},
-	block: {declaration: 'display: block;'},
-	flex: {declaration: 'display: flex;'},
-	grid: {declaration: 'display: grid;'},
+	/** @deprecated - use the `display_`-prefixed variant */
+	block: {declaration: 'display: block;'}, // `block flow`
+	/** @deprecated - use the `display_`-prefixed variant */
+	flow_root: {declaration: 'display: flow-root;'}, // `block flow-root`
+	/** @deprecated - use the `display_`-prefixed variant */
+	flex: {declaration: 'display: flex;'}, // `block flex`
+	/** @deprecated - use the `display_`-prefixed variant */
+	grid: {declaration: 'display: grid;'}, // `block grid`
 
 	flex_1: {declaration: 'flex: 1;'},
 	// TODO maybe align these with the full declaration form
