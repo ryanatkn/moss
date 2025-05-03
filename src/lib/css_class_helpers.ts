@@ -178,7 +178,7 @@ export const generate_classes_css = (
 		const {comment} = v;
 
 		if (comment) {
-			css += comment.includes('\n') ? `/*\n${comment}\n*/\n` : `/* ${comment} */\n`;
+			css += comment.includes('\n') ? `/*\n${comment}\n*/\n` : `/** ${comment} */\n`;
 		}
 
 		if ('declaration' in v) {

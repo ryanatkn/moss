@@ -491,24 +491,66 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	*/
 	display_none: {declaration: 'display: none;'},
 	display_contents: {declaration: 'display: contents;'},
-	display_block: {declaration: 'display: block;', comment: 'block flow'},
-	display_flow_root: {declaration: 'display: flow-root;', comment: 'block flow-root'},
-	display_inline: {declaration: 'display: inline;', comment: 'inline flow'},
-	display_inline_block: {declaration: 'display: inline-block;', comment: 'inline flow-root'},
-	display_run_in: {declaration: 'display: run-in;', comment: 'run-in flow'},
-	display_list_item: {declaration: 'display: list-item;', comment: 'block flow list-item'},
+	display_block: {
+		declaration: 'display: block;',
+		comment: 'Same as `display: block flow`.',
+	},
+	display_flow_root: {
+		declaration: 'display: flow-root;',
+		comment: 'Same as `display: block flow-root`.',
+	},
+	display_inline: {
+		declaration: 'display: inline;',
+		comment: 'Same as `display: inline flow`.',
+	},
+	display_inline_block: {
+		declaration: 'display: inline-block;',
+		comment: 'Same as `display: inline flow-root`.',
+	},
+	display_run_in: {
+		declaration: 'display: run-in;',
+		comment: 'Same as `display: run-in flow`.',
+	},
+	display_list_item: {
+		declaration: 'display: list-item;',
+		comment: 'Same as `display: block flow list-item`.',
+	},
 	display_inline_list_item: {
 		declaration: 'display: inline list-item;',
-		comment: 'inline flow list-item',
+		comment: 'Same as `display: inline flow list-item`.',
 	},
-	display_flex: {declaration: 'display: flex;', comment: 'block flex'},
-	display_inline_flex: {declaration: 'display: inline-flex;', comment: 'inline flex'},
-	display_grid: {declaration: 'display: grid;', comment: 'block grid'},
-	display_inline_grid: {declaration: 'display: inline-grid;', comment: 'inline grid'},
-	display_ruby: {declaration: 'display: ruby;', comment: 'inline ruby'},
-	display_block_ruby: {declaration: 'display: block ruby;', comment: 'block ruby'},
-	display_table: {declaration: 'display: table;', comment: 'block table'},
-	display_inline_table: {declaration: 'display: inline-table;', comment: 'inline table'},
+	display_flex: {
+		declaration: 'display: flex;',
+		comment: 'Same as `display: block flex`.',
+	},
+	display_inline_flex: {
+		declaration: 'display: inline-flex;',
+		comment: 'Same as `display: inline flex`.',
+	},
+	display_grid: {
+		declaration: 'display: grid;',
+		comment: 'Same as `display: block grid`.',
+	},
+	display_inline_grid: {
+		declaration: 'display: inline-grid;',
+		comment: 'Same as `display: inline grid`.',
+	},
+	display_ruby: {
+		declaration: 'display: ruby;',
+		comment: 'Same as `display: inline ruby`.',
+	},
+	display_block_ruby: {
+		declaration: 'display: block ruby;',
+		comment: 'Same as `display: block ruby`.',
+	},
+	display_table: {
+		declaration: 'display: table;',
+		comment: 'Same as `display: block table`.',
+	},
+	display_inline_table: {
+		declaration: 'display: inline-table;',
+		comment: 'Same as `display: inline table`.',
+	},
 	// TODO migrate these
 	/** @deprecated - use the `display_`-prefixed variant */
 	inline: {declaration: 'display: inline;', comment: '@deprecated'}, // `inline flow`
