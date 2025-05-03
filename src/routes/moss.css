@@ -197,9 +197,11 @@ a.chip {
 .display_flex {
 	display: flex;
 }
+/* @deprecated */
 .inline {
 	display: inline;
 }
+/* @deprecated */
 .flex {
 	display: flex;
 }

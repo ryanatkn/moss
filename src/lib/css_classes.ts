@@ -511,21 +511,21 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	display_inline_table: {declaration: 'display: inline-table;', comment: 'inline table'},
 	// TODO migrate these
 	/** @deprecated - use the `display_`-prefixed variant */
-	inline: {declaration: 'display: inline;'}, // `inline flow`
+	inline: {declaration: 'display: inline;', comment: '@deprecated'}, // `inline flow`
 	/** @deprecated - use the `display_`-prefixed variant */
-	inline_block: {declaration: 'display: inline flow-root;'},
+	inline_block: {declaration: 'display: inline flow-root;', comment: '@deprecated'},
 	/** @deprecated - use the `display_`-prefixed variant */
-	inline_flex: {declaration: 'display: inline flex;'},
+	inline_flex: {declaration: 'display: inline flex;', comment: '@deprecated'},
 	/** @deprecated - use the `display_`-prefixed variant */
-	inline_grid: {declaration: 'display: inline grid;'},
+	inline_grid: {declaration: 'display: inline grid;', comment: '@deprecated'},
 	/** @deprecated - use the `display_`-prefixed variant */
-	block: {declaration: 'display: block;'}, // `block flow`
+	block: {declaration: 'display: block;', comment: '@deprecated'}, // `block flow`
 	/** @deprecated - use the `display_`-prefixed variant */
-	flow_root: {declaration: 'display: flow-root;'}, // `block flow-root`
+	flow_root: {declaration: 'display: flow-root;', comment: '@deprecated'}, // `block flow-root`
 	/** @deprecated - use the `display_`-prefixed variant */
-	flex: {declaration: 'display: flex;'}, // `block flex`
+	flex: {declaration: 'display: flex;', comment: '@deprecated'}, // `block flex`
 	/** @deprecated - use the `display_`-prefixed variant */
-	grid: {declaration: 'display: grid;'}, // `block grid`
+	grid: {declaration: 'display: grid;', comment: '@deprecated'}, // `block grid`
 
 	flex_1: {declaration: 'flex: 1;'},
 	// TODO maybe align these with the full declaration form
