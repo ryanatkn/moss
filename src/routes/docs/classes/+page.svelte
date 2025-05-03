@@ -136,10 +136,25 @@ ${'<' as string}script>
 	<Tome_Section>
 		<Tome_Section_Header text="Utility classes" />
 		<p>
-			Moss supports utility classes, and includes helpers to generate them on demand, so you can
-			ship the minimal code. The API has been drifting to be more consistently match CSS at the cost
-			of verbosity.
+			Moss supports utility classes. The API has been drifting to be more consistently match CSS at
+			the cost of verbosity.
 		</p>
+		<p>
+			Moss exports <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.ts"
+				>helpers</a
+			> to generate styles on demand based on class usage in your source files, so you can ship the minimal
+			code needed.
+		</p>
+		<aside>
+			⚠️ Moss does not fully support <a
+				href="https://svelte.dev/docs/svelte/class#Attributes-Objects-and-arrays"
+				>Svelte's object+array class syntax</a
+			>, added in 5.16. For now see
+			<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.test.ts"
+				>the tests</a
+			> for the supported forms. The current strategy uses a regexp for TS and Svelte files, but we'll
+			probably need to more robustly scan the parsed AST.
+		</aside>
 		<ul class="classes unstyled">
 			{#each style_utilities_items as c (c)}
 				<li class="overflow_wrap_break_word">.{c}</li>
