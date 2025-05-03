@@ -9,3 +9,5 @@ rework some utility classes
 - add top/right/bottom/left border radius variants, e.g. `border_top_left_radius`
 - support `.unstyled` on more base elements
 - prefix `font_sans`, `font_serif`, and `font_mono` with `font_family_`
+- prefix display classes with `display_` and
+  remove classes `inline|inline_block|inline_flex|inline_grid|block|flex|grid`
