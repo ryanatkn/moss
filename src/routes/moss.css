@@ -108,7 +108,7 @@
 	z-index: 2;
 	cursor: pointer;
 	width: 100%;
-	min-height: var(--min_height, var(--icon_font_size_sm));
+	min-height: var(--min_height, var(--icon_size_sm));
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -144,7 +144,7 @@
 	min-width: 0;
 }
 .menu_item .icon {
-	width: var(--icon_size, var(--icon_font_size_md));
+	width: var(--icon_size, var(--icon_size_md));
 	margin-right: var(--space_sm);
 	flex-shrink: 0;
 	text-align: center;

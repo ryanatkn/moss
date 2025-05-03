@@ -334,7 +334,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				z-index: 2;
 				cursor: pointer;
 				width: 100%;
-				min-height: var(--min_height, var(--icon_font_size_sm));
+				min-height: var(--min_height, var(--icon_size_sm));
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -370,7 +370,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				min-width: 0;
 			}
 			.menu_item .icon {
-				width: var(--icon_size, var(--icon_font_size_md));
+				width: var(--icon_size, var(--icon_size_md));
 				margin-right: var(--space_sm);
 				flex-shrink: 0;
 				text-align: center;
@@ -676,26 +676,26 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	font_size_xl9: {
 		declaration: 'font-size: var(--font_size_xl9); --font_size: var(--font_size_xl9);',
 	},
-	icon_font_size_xs: {
-		declaration: 'font-size: var(--icon_font_size_xs); --font_size: var(--icon_font_size_xs);',
+	icon_size_xs: {
+		declaration: 'font-size: var(--icon_size_xs); --font_size: var(--icon_size_xs);',
 	},
-	icon_font_size_sm: {
-		declaration: 'font-size: var(--icon_font_size_sm); --font_size: var(--icon_font_size_sm);',
+	icon_size_sm: {
+		declaration: 'font-size: var(--icon_size_sm); --font_size: var(--icon_size_sm);',
 	},
-	icon_font_size_md: {
-		declaration: 'font-size: var(--icon_font_size_md); --font_size: var(--icon_font_size_md);',
+	icon_size_md: {
+		declaration: 'font-size: var(--icon_size_md); --font_size: var(--icon_size_md);',
 	},
-	icon_font_size_lg: {
-		declaration: 'font-size: var(--icon_font_size_lg); --font_size: var(--icon_font_size_lg);',
+	icon_size_lg: {
+		declaration: 'font-size: var(--icon_size_lg); --font_size: var(--icon_size_lg);',
 	},
-	icon_font_size_xl: {
-		declaration: 'font-size: var(--icon_font_size_xl); --font_size: var(--icon_font_size_xl);',
+	icon_size_xl: {
+		declaration: 'font-size: var(--icon_size_xl); --font_size: var(--icon_size_xl);',
 	},
-	icon_font_size_xl2: {
-		declaration: 'font-size: var(--icon_font_size_xl2); --font_size: var(--icon_font_size_xl2);',
+	icon_size_xl2: {
+		declaration: 'font-size: var(--icon_size_xl2); --font_size: var(--icon_size_xl2);',
 	},
-	icon_font_size_xl3: {
-		declaration: 'font-size: var(--icon_font_size_xl3); --font_size: var(--icon_font_size_xl3);',
+	icon_size_xl3: {
+		declaration: 'font-size: var(--icon_size_xl3); --font_size: var(--icon_size_xl3);',
 	},
 	text_align_start: {declaration: 'text-align: start;'},
 	text_align_end: {declaration: 'text-align: end;'},

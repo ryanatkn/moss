@@ -1166,33 +1166,33 @@ export const shadow_alpha_5: Style_Variable = {
 /* icons */
 /* these decrease by the golden ratio, rounded to the nearest pixel,
 	and they're insensitive to font size (`px` not `rem`) */
-export const icon_font_size_xs: Style_Variable = {
-	name: 'icon_font_size_xs',
-	light: icon_sizes.icon_font_size_xs,
+export const icon_size_xs: Style_Variable = {
+	name: 'icon_size_xs',
+	light: icon_sizes.icon_size_xs,
 };
-export const icon_font_size_sm: Style_Variable = {
-	name: 'icon_font_size_sm',
-	light: icon_sizes.icon_font_size_sm,
+export const icon_size_sm: Style_Variable = {
+	name: 'icon_size_sm',
+	light: icon_sizes.icon_size_sm,
 };
-export const icon_font_size_md: Style_Variable = {
-	name: 'icon_font_size_md',
-	light: icon_sizes.icon_font_size_md,
+export const icon_size_md: Style_Variable = {
+	name: 'icon_size_md',
+	light: icon_sizes.icon_size_md,
 };
-export const icon_font_size_lg: Style_Variable = {
-	name: 'icon_font_size_lg',
-	light: icon_sizes.icon_font_size_lg,
+export const icon_size_lg: Style_Variable = {
+	name: 'icon_size_lg',
+	light: icon_sizes.icon_size_lg,
 };
-export const icon_font_size_xl: Style_Variable = {
-	name: 'icon_font_size_xl',
-	light: icon_sizes.icon_font_size_xl,
+export const icon_size_xl: Style_Variable = {
+	name: 'icon_size_xl',
+	light: icon_sizes.icon_size_xl,
 };
-export const icon_font_size_xl2: Style_Variable = {
-	name: 'icon_font_size_xl2',
-	light: icon_sizes.icon_font_size_xl2,
+export const icon_size_xl2: Style_Variable = {
+	name: 'icon_size_xl2',
+	light: icon_sizes.icon_size_xl2,
 };
-export const icon_font_size_xl3: Style_Variable = {
-	name: 'icon_font_size_xl3',
-	light: icon_sizes.icon_font_size_xl3,
+export const icon_size_xl3: Style_Variable = {
+	name: 'icon_size_xl3',
+	light: icon_sizes.icon_size_xl3,
 };
 
 /* durations */
@@ -1570,13 +1570,13 @@ export const default_variables: Array<Style_Variable> = [
 	shadow_alpha_5,
 
 	/* icons */
-	icon_font_size_xs,
-	icon_font_size_sm,
-	icon_font_size_md,
-	icon_font_size_lg,
-	icon_font_size_xl,
-	icon_font_size_xl2,
-	icon_font_size_xl3,
+	icon_size_xs,
+	icon_size_sm,
+	icon_size_md,
+	icon_size_lg,
+	icon_size_xl,
+	icon_size_xl2,
+	icon_size_xl3,
 
 	/* durations */
 	duration_1,

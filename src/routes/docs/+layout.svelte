@@ -26,10 +26,10 @@
 	{#snippet breadcrumb_children(is_primary_nav)}
 		{#if is_primary_nav}
 			<div class="icon row">
-				<Svg data={moss_logo} size="var(--icon_font_size_sm)" /> <span class="ml_sm">moss</span>
+				<Svg data={moss_logo} size="var(--icon_size_sm)" /> <span class="ml_sm">moss</span>
 			</div>
 		{:else}
-			<Svg data={moss_logo} size="var(--icon_font_size_sm)" />
+			<Svg data={moss_logo} size="var(--icon_size_sm)" />
 		{/if}
 	{/snippet}
 	{@render children()}
