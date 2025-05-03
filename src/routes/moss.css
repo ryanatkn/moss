@@ -186,6 +186,9 @@ a.chip {
 	display: block;
 }
 
+.relative {
+	position: relative;
+}
 .overflow_wrap_anywhere {
 	overflow-wrap: anywhere;
 }
@@ -195,6 +198,10 @@ a.chip {
 /** Same as `display: inline flow`. */
 .display_inline {
 	display: inline;
+}
+/** Same as `display: inline flow-root`. */
+.display_inline_block {
+	display: inline-block;
 }
 /** Same as `display: block flex`. */
 .display_flex {
