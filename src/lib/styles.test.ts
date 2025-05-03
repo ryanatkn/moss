@@ -39,6 +39,7 @@ const known_without_variables = new Set([
 	'pane_bg',
 	'pane_shadow',
 	'panel_bg',
+	'font_size',
 	'icon_size',
 	'border_radius',
 	'min_height',

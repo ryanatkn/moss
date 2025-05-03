@@ -135,6 +135,11 @@ ${'<' as string}script>
 	</Tome_Section>
 	<Tome_Section>
 		<Tome_Section_Header text="Utility classes" />
+		<p>
+			Moss supports utility classes, and includes helpers to generate them on demand, so you can
+			ship the minimal code. The API has been drifting to be more consistently match CSS at the cost
+			of verbosity.
+		</p>
 		<ul class="classes unstyled">
 			{#each style_utilities_items as c (c)}
 				<li>.{c}</li>
