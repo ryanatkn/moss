@@ -28,7 +28,7 @@
   },
   "type": "module",
   "engines": {
-    "node": ">=22.11"
+    "node": ">=22.15"
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.1",
