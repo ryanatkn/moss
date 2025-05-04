@@ -92,13 +92,17 @@ const extract_classes = (contents: string, {matcher, mapper}: Css_Extractor): Se
 };
 
 export class Css_Classes {
+	include_classes: Set<string> | null;
+
 	#all: Set<string> = new Set();
 
 	#by_id: Map<string, Set<string>> = new Map();
 
 	#dirty = true;
 
-	constructor(public include_classes: Set<string> | null = null) {}
+	constructor(include_classes: Set<string> | null = null) {
+		this.include_classes = include_classes;
+	}
 
 	add(id: string, classes: Set<string>): void {
 		this.#dirty = true;
