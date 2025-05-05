@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.29.0
+
+### Minor Changes
+
+- bump node@22.15 from 22.11 ([commit](https://github.com/ryanatkn/moss/commit/3c8154b49adfd6bd8295964d22b76c0521b92045)) ([f950917](https://github.com/ryanatkn/moss/commit/f950917))
+
 ## 0.28.0
 
 ### Minor Changes
