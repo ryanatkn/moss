@@ -4,11 +4,10 @@
 
 > CSS framework and design system 🌿 magical organic stylesheets
 
-⚠️ Moss is in early alpha and will have many breaking changes.
+See the [docs](https://moss.ryanatkn.com/docs)
+and [**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
 
-[**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
-
-Interested? See [contributing.md](contributing.md).
+also [contributing.md](contributing.md)
 
 ## License [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)
 
