@@ -9,6 +9,7 @@
 	import {pkg_context} from '$routes/pkg.js';
 	import Introduction from '$routes/Introduction.svelte';
 	import {MAIN_HEADER_MARGIN_TOP} from '$routes/constants.js';
+	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	const pkg = pkg_context.get();
 </script>
@@ -24,11 +25,21 @@
 	<section class="width_sm p_sm border_radius_md shadow_xs">
 		<div class="panel p_lg bg shadow_sm">
 			<Introduction />
+		</div>
+	</section>
+	<section>
+		<Card href="{base}/docs">docs{#snippet icon()}🌿{/snippet}</Card>
+	</section>
+	<section class="width_sm p_sm border_radius_md shadow_xs">
+		<div class="panel p_lg bg shadow_sm">
+			<Unfinished_Implementation_Warning>
+				Moss is in early alpha and will have many breaking changes to get to 1.0. Help is welcome,
+				see
+				<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>.
+			</Unfinished_Implementation_Warning>
 			<p>
-				To learn more see <a href="{base}/docs">the docs</a>
-				and <a href="https://github.com/ryanatkn/moss#readme">readme</a>. See also my Svelte UI
-				library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss. Feel free to take the
-				ideas and
+				See also my Svelte UI library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss.
+				Feel free to take the ideas and
 				<a href="https://github.com/ryanatkn/moss">code</a> for your own purposes.
 			</p>
 			<p>
@@ -39,9 +50,6 @@
 				And then I'll think about announcing it.
 			</p>
 		</div>
-	</section>
-	<section>
-		<Card href="{base}/docs">docs{#snippet icon()}🌿{/snippet}</Card>
 	</section>
 	<section class="p_xl border_radius_lg shadow_inset_bottom_xs">
 		<Docs_Footer {pkg}>

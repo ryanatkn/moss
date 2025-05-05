@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import {base} from '$app/paths';
 </script>
 
 <p>
@@ -18,7 +17,7 @@
 	<a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS data, types, and helpers for
 	more complex usage.
 </p>
-<Unfinished_Implementation_Warning>
-	Moss is in early alpha and will have many breaking changes to get to 1.0. Help is welcome, see
-	<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>.
-</Unfinished_Implementation_Warning>
+<p>
+	See <a href="{base}/docs">the docs</a>
+	and <a href="https://github.com/ryanatkn/moss#readme">readme</a>.
+</p>
