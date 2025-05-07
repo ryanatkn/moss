@@ -2,4 +2,4 @@
 '@ryanatkn/moss': minor
 ---
 
-replace `fade_` variables with `opacity_`
+remove `fade_` variables and replace with `opacity_` utility classes and hardcoded values
