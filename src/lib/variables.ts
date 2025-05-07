@@ -1205,21 +1205,9 @@ export const duration_4: Style_Variable = {name: 'duration_4', light: '1s'};
 export const duration_5: Style_Variable = {name: 'duration_5', light: '1.5s'};
 export const duration_6: Style_Variable = {name: 'duration_6', light: '3s'};
 
-/* transparencies */
-export const opacity_0: Style_Variable = {name: 'opacity_0', light: '0'};
-export const opacity_10: Style_Variable = {name: 'opacity_10', light: '10%'};
-export const opacity_20: Style_Variable = {name: 'opacity_20', light: '20%'};
-export const opacity_30: Style_Variable = {name: 'opacity_30', light: '30%'};
-export const opacity_40: Style_Variable = {name: 'opacity_40', light: '40%'};
-export const opacity_50: Style_Variable = {name: 'opacity_50', light: '50%'};
-export const opacity_60: Style_Variable = {name: 'opacity_60', light: '60%'};
-export const opacity_70: Style_Variable = {name: 'opacity_70', light: '70%'};
-export const opacity_80: Style_Variable = {name: 'opacity_80', light: '80%'};
-export const opacity_90: Style_Variable = {name: 'opacity_90', light: '90%'};
-export const opacity_100: Style_Variable = {name: 'opacity_100', light: '1'};
 export const disabled_opacity: Style_Variable = {
 	name: 'disabled_opacity',
-	light: 'var(--opacity_6)',
+	light: '60%',
 };
 
 /**
@@ -1592,17 +1580,5 @@ export const default_variables: Array<Style_Variable> = [
 	duration_6,
 
 	/* transparencies */
-	// TODO add one for 7 total?
-	opacity_0,
-	opacity_10,
-	opacity_20,
-	opacity_30,
-	opacity_40,
-	opacity_50,
-	opacity_60,
-	opacity_70,
-	opacity_80,
-	opacity_90,
-	opacity_100,
 	disabled_opacity,
 ];

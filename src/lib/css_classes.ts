@@ -491,6 +491,24 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
 	visibility_unset: {declaration: 'visibility: unset;'},
 
+	// TODO @many interpreted
+	opacity_0: {declaration: 'opacity: 0;'},
+	opacity_10: {declaration: 'opacity: 10%'},
+	opacity_20: {declaration: 'opacity: 20%'},
+	opacity_30: {declaration: 'opacity: 30%'},
+	opacity_40: {declaration: 'opacity: 40%'},
+	opacity_50: {declaration: 'opacity: 50%'},
+	opacity_60: {declaration: 'opacity: 60%'},
+	opacity_70: {declaration: 'opacity: 70%'},
+	opacity_80: {declaration: 'opacity: 80%'},
+	opacity_90: {declaration: 'opacity: 90%'},
+	opacity_100: {declaration: 'opacity: 1;'},
+
+	// TODO @many interpreted
+	// z_index_0: {declaration: 'z-index: 0;'},
+	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
+	// z_index_123: {declaration: 'z-index: 123;'},
+
 	/*
 	
 	Display values - see https://drafts.csswg.org/css-display/#display-value-summary.
@@ -1192,30 +1210,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	border_bottom_right_radius_xl: {
 		declaration: 'border-bottom-right-radius: var(--border_radius_xl);',
 	},
-
-	// TODO is incomplete
-	/*
-
-	opacity
-
-	*/
-	// TODO @many interpreted
-	opacity_0: {declaration: 'opacity: 0;'},
-	opacity_10: {declaration: 'opacity: 10%'},
-	opacity_20: {declaration: 'opacity: 20%'},
-	opacity_30: {declaration: 'opacity: 30%'},
-	opacity_40: {declaration: 'opacity: 40%'},
-	opacity_50: {declaration: 'opacity: 50%'},
-	opacity_60: {declaration: 'opacity: 60%'},
-	opacity_70: {declaration: 'opacity: 70%'},
-	opacity_80: {declaration: 'opacity: 80%'},
-	opacity_90: {declaration: 'opacity: 90%'},
-	opacity_100: {declaration: 'opacity: 1;'},
-
-	// TODO @many interpreted
-	// z_index_0: {declaration: 'z-index: 0;'},
-	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
-	// z_index_123: {declaration: 'z-index: 123;'},
 
 	/*
 

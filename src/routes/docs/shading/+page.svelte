@@ -19,6 +19,20 @@
 	const toggle_color_scheme = () => {
 		themer.color_scheme = themer.color_scheme === 'light' ? 'dark' : 'light';
 	};
+
+	const opacity_classes = [
+		'opacity_0',
+		'opacity_10',
+		'opacity_20',
+		'opacity_30',
+		'opacity_40',
+		'opacity_50',
+		'opacity_60',
+		'opacity_70',
+		'opacity_80',
+		'opacity_90',
+		'opacity_100',
+	];
 </script>
 
 <Tome_Content {tome}>
@@ -135,17 +149,12 @@
 	</section>
 	<Tome_Section>
 		<Tome_Section_Header text="Opacity" />
-		<Unfinished_Implementation_Warning />
+		<p>These are not variables, they're just utility classes that map to <code>%</code> values.</p>
 		<div class="swatch">
-			<div>
-				<div class="color bg_a_5"></div>
-				<small style:font-family="var(--font_family_sans)">full opacity</small>
-			</div>
-			{#each [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] as value (value)}
-				{@const name = 'opacity_' + value}
+			{#each opacity_classes as opacity_class (opacity_class)}
 				<div>
-					<div class="color bg_a_5" style:opacity="var(--{name})"></div>
-					<small><Style_Variable_Button {name} /></small>
+					<div class="color bg_a_5 {opacity_class}"></div>
+					<small>{opacity_class}</small>
 				</div>
 			{/each}
 		</div>

@@ -18,24 +18,26 @@
 		{
 			group: 'Position and display',
 			items: [
-				'relative|absolute|fixed|sticky|static',
+				'relative|absolute|fixed|sticky|static', // TODO @many align with platform
+				// TODO think about making `display_` bold, and making this more systematic in general
+				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
+				'float_none|left|right|inline_start|inline_end',
+				`visibility_visible|hidden|collapse|${style_global_values}`,
+				'opacity_0|10-100',
 				'overflow_auto|hidden|scroll|clip|visible',
 				'overflow_x|y_auto|hidden|scroll|clip|visible',
 				`overflow_wrap_normal|anywhere|break_word|${style_global_values}`,
 				`scrollbar_width_auto|thin|none|${style_global_values}`,
 				`scrollbar_gutter_auto|stable|stable_both_edges|${style_global_values}`,
-				`visibility_visible|hidden|collapse|${style_global_values}`,
-				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
-				'float_none|left|right|inline_start|inline_end',
 			],
 		},
 		{
 			group: 'Flexbox and grid',
 			items: [
 				'flex_1',
-				'flex_wrap|wrap_reverse|nowrap',
+				'flex_wrap|wrap_reverse|nowrap', // TODO @many align with platform
 				'flex_row|column|row_reverse|column_reverse',
-				'grow|shrink',
+				'grow|shrink', // TODO @many align with platform ?
 				'grow|shrink_0',
 				'align_items_center|start|end|baseline|stretch',
 				'align_content_center|start|end|baseline|space_between|space_around|space_evenly|stretch',
@@ -98,7 +100,6 @@
 				'hue_a-i',
 				'color_a-i_1-9',
 				'bg_a-i_1-9',
-				'opacity_0|10-100',
 			],
 		},
 		{
