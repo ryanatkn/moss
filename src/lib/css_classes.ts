@@ -731,6 +731,11 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	white_space_collapse_preserve_breaks: {declaration: 'white-space-collapse: preserve-breaks;'},
 	white_space_collapse_preserve_spaces: {declaration: 'white-space-collapse: preserve-spaces;'},
 	white_space_collapse_break_spaces: {declaration: 'white-space-collapse: break-spaces;'},
+	white_space_collapse_inherit: {declaration: 'white-space-collapse: inherit;'},
+	white_space_collapse_initial: {declaration: 'white-space-collapse: initial;'},
+	white_space_collapse_revert: {declaration: 'white-space-collapse: revert;'},
+	white_space_collapse_revert_layer: {declaration: 'white-space-collapse: revert-layer;'},
+	white_space_collapse_unset: {declaration: 'white-space-collapse: unset;'},
 
 	/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
 	text_wrap_wrap: {declaration: 'text-wrap: wrap;'},
@@ -1194,6 +1199,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	shading
 
 	*/
+	// TODO opacity 0-100?
 	fade_0: {declaration: 'opacity: 0;'},
 	fade_100: {declaration: 'opacity: 1;'},
 	fade_1: {declaration: 'opacity: var(--fade_1);'},
