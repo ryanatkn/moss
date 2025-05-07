@@ -269,6 +269,39 @@ a.chip {
 .border_radius_lg {
 	border-radius: var(--border_radius_lg);
 }
+.opacity_0 {
+	opacity: 0;
+}
+.opacity_10 {
+	opacity: 10%;
+}
+.opacity_20 {
+	opacity: 20%;
+}
+.opacity_30 {
+	opacity: 30%;
+}
+.opacity_40 {
+	opacity: 40%;
+}
+.opacity_50 {
+	opacity: 50%;
+}
+.opacity_60 {
+	opacity: 60%;
+}
+.opacity_70 {
+	opacity: 70%;
+}
+.opacity_80 {
+	opacity: 80%;
+}
+.opacity_90 {
+	opacity: 90%;
+}
+.opacity_100 {
+	opacity: 1;
+}
 .shadow_xs {
 	box-shadow: var(--shadow_xs)
 		color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);
@@ -489,6 +522,9 @@ a.chip {
 }
 .mt_lg {
 	margin-top: var(--space_lg);
+}
+.mt_xl2 {
+	margin-top: var(--space_xl2);
 }
 .mr_xs {
 	margin-right: var(--space_xs);

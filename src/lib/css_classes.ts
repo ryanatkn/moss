@@ -491,6 +491,24 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
 	visibility_unset: {declaration: 'visibility: unset;'},
 
+	// TODO @many interpreted
+	opacity_0: {declaration: 'opacity: 0;'},
+	opacity_10: {declaration: 'opacity: 10%'},
+	opacity_20: {declaration: 'opacity: 20%'},
+	opacity_30: {declaration: 'opacity: 30%'},
+	opacity_40: {declaration: 'opacity: 40%'},
+	opacity_50: {declaration: 'opacity: 50%'},
+	opacity_60: {declaration: 'opacity: 60%'},
+	opacity_70: {declaration: 'opacity: 70%'},
+	opacity_80: {declaration: 'opacity: 80%'},
+	opacity_90: {declaration: 'opacity: 90%'},
+	opacity_100: {declaration: 'opacity: 1;'},
+
+	// TODO @many interpreted
+	// z_index_0: {declaration: 'z-index: 0;'},
+	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
+	// z_index_123: {declaration: 'z-index: 123;'},
+
 	/*
 	
 	Display values - see https://drafts.csswg.org/css-display/#display-value-summary.
@@ -731,6 +749,11 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	white_space_collapse_preserve_breaks: {declaration: 'white-space-collapse: preserve-breaks;'},
 	white_space_collapse_preserve_spaces: {declaration: 'white-space-collapse: preserve-spaces;'},
 	white_space_collapse_break_spaces: {declaration: 'white-space-collapse: break-spaces;'},
+	white_space_collapse_inherit: {declaration: 'white-space-collapse: inherit;'},
+	white_space_collapse_initial: {declaration: 'white-space-collapse: initial;'},
+	white_space_collapse_revert: {declaration: 'white-space-collapse: revert;'},
+	white_space_collapse_revert_layer: {declaration: 'white-space-collapse: revert-layer;'},
+	white_space_collapse_unset: {declaration: 'white-space-collapse: unset;'},
 
 	/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
 	text_wrap_wrap: {declaration: 'text-wrap: wrap;'},
@@ -1187,21 +1210,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	border_bottom_right_radius_xl: {
 		declaration: 'border-bottom-right-radius: var(--border_radius_xl);',
 	},
-
-	// TODO is incomplete
-	/*
-
-	shading
-
-	*/
-	fade_0: {declaration: 'opacity: 0;'},
-	fade_100: {declaration: 'opacity: 1;'},
-	fade_1: {declaration: 'opacity: var(--fade_1);'},
-	fade_2: {declaration: 'opacity: var(--fade_2);'},
-	fade_3: {declaration: 'opacity: var(--fade_3);'},
-	fade_4: {declaration: 'opacity: var(--fade_4);'},
-	fade_5: {declaration: 'opacity: var(--fade_5);'},
-	fade_6: {declaration: 'opacity: var(--fade_6);'},
 
 	/*
 

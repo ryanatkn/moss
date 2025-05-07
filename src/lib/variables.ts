@@ -1205,17 +1205,10 @@ export const duration_4: Style_Variable = {name: 'duration_4', light: '1s'};
 export const duration_5: Style_Variable = {name: 'duration_5', light: '1.5s'};
 export const duration_6: Style_Variable = {name: 'duration_6', light: '3s'};
 
-// TODO `fade_0-10`
-/* transparencies */
-// TODO add one for 7 total?
-/* TODO maybe delete these? they do help with standardizing/consistency */
-export const fade_1: Style_Variable = {name: 'fade_1', light: '86%'};
-export const fade_2: Style_Variable = {name: 'fade_2', light: '62%'};
-export const fade_3: Style_Variable = {name: 'fade_3', light: '38%'};
-export const fade_4: Style_Variable = {name: 'fade_4', light: '24%'};
-export const fade_5: Style_Variable = {name: 'fade_5', light: '15%'};
-export const fade_6: Style_Variable = {name: 'fade_6', light: '9%'};
-export const disabled_opacity: Style_Variable = {name: 'disabled_opacity', light: 'var(--fade_2)'};
+export const disabled_opacity: Style_Variable = {
+	name: 'disabled_opacity',
+	light: '60%',
+};
 
 /**
  * These are implicitly the variables for the `base` theme.
@@ -1587,12 +1580,5 @@ export const default_variables: Array<Style_Variable> = [
 	duration_6,
 
 	/* transparencies */
-	// TODO add one for 7 total?
-	fade_1,
-	fade_2,
-	fade_3,
-	fade_4,
-	fade_5,
-	fade_6,
 	disabled_opacity,
 ];

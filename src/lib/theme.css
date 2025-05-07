@@ -338,13 +338,7 @@
 	--duration_4: 1s;
 	--duration_5: 1.5s;
 	--duration_6: 3s;
-	--fade_1: 86%;
-	--fade_2: 62%;
-	--fade_3: 38%;
-	--fade_4: 24%;
-	--fade_5: 15%;
-	--fade_6: 9%;
-	--disabled_opacity: var(--fade_2);
+	--disabled_opacity: 60%;
 }
 :root.dark {
 	--color_a_2: hsl(var(--hue_a) 62% 87%);
