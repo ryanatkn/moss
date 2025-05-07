@@ -96,16 +96,15 @@
 				'color_bg|fg',
 				'color_bg|fg_1-9',
 				'hue_a-i',
-				'color_a-i_1 -9',
+				'color_a-i_1-9',
 				'bg_a-i_1-9',
-				'fade_0|100',
-				'fade_1-6',
+				'opacity_0|10-100',
 			],
 		},
 		{
 			group: 'Borders and outlines',
 			items: [
-				'border_color_1-5',
+				'border_color_1-5', // TODO change this
 				'border_color_a-i',
 				'border_color_transparent',
 				'border_width_0-9',
@@ -135,7 +134,7 @@
 			items: ['flip_x|y|xy', 'pixelated'],
 		},
 		{
-			group: 'Components',
+			group: 'Composite classes',
 			items: [
 				'box',
 				'column',

@@ -52,7 +52,7 @@ body {
 }
 
 ::selection {
-	background-color: hsl(var(--hue_a) 90% 80% / var(--fade_3));
+	background-color: hsl(var(--hue_a) 90% 80% / var(--opacity_40));
 }
 
 /*

@@ -338,13 +338,18 @@
 	--duration_4: 1s;
 	--duration_5: 1.5s;
 	--duration_6: 3s;
-	--fade_1: 86%;
-	--fade_2: 62%;
-	--fade_3: 38%;
-	--fade_4: 24%;
-	--fade_5: 15%;
-	--fade_6: 9%;
-	--disabled_opacity: var(--fade_2);
+	--opacity_0: 0;
+	--opacity_10: 10%;
+	--opacity_20: 20%;
+	--opacity_30: 30%;
+	--opacity_40: 40%;
+	--opacity_50: 50%;
+	--opacity_60: 60%;
+	--opacity_70: 70%;
+	--opacity_80: 80%;
+	--opacity_90: 90%;
+	--opacity_100: 1;
+	--disabled_opacity: var(--opacity_6);
 }
 :root.dark {
 	--color_a_2: hsl(var(--hue_a) 62% 87%);

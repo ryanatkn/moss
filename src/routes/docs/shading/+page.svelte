@@ -124,9 +124,7 @@
 	</Tome_Section>
 	<section>
 		<Color_Scheme_Input />
-	</section>
-	<Tome_Section>
-		<aside>
+		<aside class="mt_xl2 width_sm mx_auto">
 			<p>
 				tip: Try <button type="button" onclick={toggle_color_scheme}>toggling</button> between light
 				and dark to see how <code>bg</code> and <code>fg</code>
@@ -134,7 +132,31 @@
 				different because of the context.
 			</p>
 		</aside>
-		<Tome_Section_Header text="Stacking opacity" />
+	</section>
+	<Tome_Section>
+		<Tome_Section_Header text="Opacity" />
+		<Unfinished_Implementation_Warning />
+		<div class="swatch">
+			<div>
+				<div class="color bg_a_5"></div>
+				<small style:font-family="var(--font_family_sans)">full opacity</small>
+			</div>
+			{#each [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] as value (value)}
+				{@const name = 'opacity_' + value}
+				<div>
+					<div class="color bg_a_5" style:opacity="var(--{name})"></div>
+					<small><Style_Variable_Button {name} /></small>
+				</div>
+			{/each}
+		</div>
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Stacking transparency" />
+		<p>
+			Many styles are designed to stack, so things can appear in different contexts while retaining
+			relative color value distinctiveness ("color value" as in darkness-lightness). Internally this
+			uses simple transparency instead of complex selectors or other structure.
+		</p>
 		<Code
 			content={`<div class="fg_1 p_sm">
 	<div class="fg_1 p_sm">
@@ -159,23 +181,11 @@
 				</div>
 			</div>
 		</div>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Fading opacity" />
-		<Unfinished_Implementation_Warning />
-		<div class="swatch">
-			<div>
-				<div class="color bg_a_5"></div>
-				<small style:font-family="var(--font_family_sans)">full opacity</small>
-			</div>
-			{#each {length: 6} as _, i (i)}
-				{@const name = 'fade_' + (i + 1)}
-				<div>
-					<div class="color bg_a_5" style:opacity="var(--{name})"></div>
-					<small><Style_Variable_Button {name} /></small>
-				</div>
-			{/each}
-		</div>
+		<p class="mt_lg">
+			This adds some complexity and potential performance differences, and it's currently
+			incomplete, but so far it feels like an elegant solution, and I plan to continue integrating
+			the idea in more places while considering alternative designs.
+		</p>
 	</Tome_Section>
 </Tome_Content>
 

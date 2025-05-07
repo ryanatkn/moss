@@ -1205,17 +1205,22 @@ export const duration_4: Style_Variable = {name: 'duration_4', light: '1s'};
 export const duration_5: Style_Variable = {name: 'duration_5', light: '1.5s'};
 export const duration_6: Style_Variable = {name: 'duration_6', light: '3s'};
 
-// TODO `fade_0-10`
 /* transparencies */
-// TODO add one for 7 total?
-/* TODO maybe delete these? they do help with standardizing/consistency */
-export const fade_1: Style_Variable = {name: 'fade_1', light: '86%'};
-export const fade_2: Style_Variable = {name: 'fade_2', light: '62%'};
-export const fade_3: Style_Variable = {name: 'fade_3', light: '38%'};
-export const fade_4: Style_Variable = {name: 'fade_4', light: '24%'};
-export const fade_5: Style_Variable = {name: 'fade_5', light: '15%'};
-export const fade_6: Style_Variable = {name: 'fade_6', light: '9%'};
-export const disabled_opacity: Style_Variable = {name: 'disabled_opacity', light: 'var(--fade_2)'};
+export const opacity_0: Style_Variable = {name: 'opacity_0', light: '0'};
+export const opacity_10: Style_Variable = {name: 'opacity_10', light: '10%'};
+export const opacity_20: Style_Variable = {name: 'opacity_20', light: '20%'};
+export const opacity_30: Style_Variable = {name: 'opacity_30', light: '30%'};
+export const opacity_40: Style_Variable = {name: 'opacity_40', light: '40%'};
+export const opacity_50: Style_Variable = {name: 'opacity_50', light: '50%'};
+export const opacity_60: Style_Variable = {name: 'opacity_60', light: '60%'};
+export const opacity_70: Style_Variable = {name: 'opacity_70', light: '70%'};
+export const opacity_80: Style_Variable = {name: 'opacity_80', light: '80%'};
+export const opacity_90: Style_Variable = {name: 'opacity_90', light: '90%'};
+export const opacity_100: Style_Variable = {name: 'opacity_100', light: '1'};
+export const disabled_opacity: Style_Variable = {
+	name: 'disabled_opacity',
+	light: 'var(--opacity_6)',
+};
 
 /**
  * These are implicitly the variables for the `base` theme.
@@ -1588,11 +1593,16 @@ export const default_variables: Array<Style_Variable> = [
 
 	/* transparencies */
 	// TODO add one for 7 total?
-	fade_1,
-	fade_2,
-	fade_3,
-	fade_4,
-	fade_5,
-	fade_6,
+	opacity_0,
+	opacity_10,
+	opacity_20,
+	opacity_30,
+	opacity_40,
+	opacity_50,
+	opacity_60,
+	opacity_70,
+	opacity_80,
+	opacity_90,
+	opacity_100,
 	disabled_opacity,
 ];

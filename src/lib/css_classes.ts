@@ -1196,18 +1196,26 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	// TODO is incomplete
 	/*
 
-	shading
+	opacity
 
 	*/
-	// TODO opacity 0-100?
-	fade_0: {declaration: 'opacity: 0;'},
-	fade_100: {declaration: 'opacity: 1;'},
-	fade_1: {declaration: 'opacity: var(--fade_1);'},
-	fade_2: {declaration: 'opacity: var(--fade_2);'},
-	fade_3: {declaration: 'opacity: var(--fade_3);'},
-	fade_4: {declaration: 'opacity: var(--fade_4);'},
-	fade_5: {declaration: 'opacity: var(--fade_5);'},
-	fade_6: {declaration: 'opacity: var(--fade_6);'},
+	// TODO @many interpreted
+	opacity_0: {declaration: 'opacity: 0;'},
+	opacity_10: {declaration: 'opacity: 10%'},
+	opacity_20: {declaration: 'opacity: 20%'},
+	opacity_30: {declaration: 'opacity: 30%'},
+	opacity_40: {declaration: 'opacity: 40%'},
+	opacity_50: {declaration: 'opacity: 50%'},
+	opacity_60: {declaration: 'opacity: 60%'},
+	opacity_70: {declaration: 'opacity: 70%'},
+	opacity_80: {declaration: 'opacity: 80%'},
+	opacity_90: {declaration: 'opacity: 90%'},
+	opacity_100: {declaration: 'opacity: 1;'},
+
+	// TODO @many interpreted
+	// z_index_0: {declaration: 'z-index: 0;'},
+	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
+	// z_index_123: {declaration: 'z-index: 123;'},
 
 	/*
 
