@@ -18,7 +18,7 @@
 		{
 			group: 'Position and display',
 			items: [
-				'relative|absolute|fixed|sticky|static', // TODO @many align with platform
+				`position_static|relative|absolute|fixed|sticky|${style_global_values}`,
 				// TODO think about making `display_` bold, and making this more systematic in general
 				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
 				'float_none|left|right|inline_start|inline_end',
