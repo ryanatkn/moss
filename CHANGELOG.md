@@ -1,5 +1,15 @@
 # @ryanatkn/moss
 
+## 0.30.0
+
+### Minor Changes
+
+- remove `fade_` variables and replace with `opacity_` utility classes and hardcoded values ([#57](https://github.com/ryanatkn/moss/pull/57))
+
+### Patch Changes
+
+- add more CSS utilities aligning with the platform ([#57](https://github.com/ryanatkn/moss/pull/57))
+
 ## 0.29.0
 
 ### Minor Changes
