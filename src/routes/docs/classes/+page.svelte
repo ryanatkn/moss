@@ -16,7 +16,9 @@
 
 	const style_global_values = 'inherit|initial|revert|revert_layer|unset';
 
-	// TODO show these with `Details` hiding their expanded set of values (interpolated using this shorthand as the source of truth? isn't that complex)
+	// TODO show these with `Details` hiding their expanded set of values or something better (interpolated using this shorthand as the source of truth? isn't that complex)
+
+	// TODO generate these from `$lib/css_classes.ts`
 	const style_utility_groups: Array<{group: string; items: Array<string>}> = [
 		{
 			group: 'Position and display',
@@ -24,8 +26,8 @@
 				`position_static|relative|absolute|fixed|sticky|${style_global_values}`,
 				// TODO think about making `display_` bold, and making this more systematic in general
 				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
-				`float_left|right|none|inline_start|inline_end|${style_global_values}`,
 				`visibility_visible|hidden|collapse|${style_global_values}`,
+				`float_left|right|none|inline_start|inline_end|${style_global_values}`,
 				'opacity_0|10-100',
 				'overflow_auto|hidden|scroll|clip|visible',
 				'overflow_x|y_auto|hidden|scroll|clip|visible',
@@ -242,27 +244,27 @@ ${'<' as string}script>
 			Moss-specific CSS classes - not utility classes in the strict sense - that provide common
 			generic functionality.
 		</p>
-		<ul class="unstyled">
-			<li>a</li>
-			<li>b</li>
-		</ul>
 		<h4><code>.unstyled</code></h4>
 		<Code
 			content={`<ul>
-<li>1</li>
-<li>2</li>
+	<li>1</li>
+	<li>2</li>
+</ul>`}
+		/>
+		<ul class="unstyled mb_lg">
+			<li>a</li>
+			<li>b</li>
+		</ul>
+		<Code
+			content={`<ul class="unstyled">
+	<li>a</li>
+	<li>b</li>
 </ul>`}
 		/>
 		<ul>
 			<li>1</li>
 			<li>2</li>
 		</ul>
-		<Code
-			content={`<ul class="unstyled">
-<li>a</li>
-<li>b</li>
-</ul>`}
-		/>
 		<p>
 			The <code>.unstyled</code> class lets Moss provide solid default element styles with a simple and
 			generic opt-out:
@@ -273,6 +275,11 @@ ${'<' as string}script>
 	padding-left: var(--space_xl4);
 }`}
 		/>
+		<p>
+			Respecting <code>.unstyled</code> isn't a straightforward choice in all cases. Help is
+			appreciated to refine the internals. For example, should <code>input</code> respect it? Maybe?
+			All styles or a subset?
+		</p>
 		<aside>
 			<p class="row">
 				{GLYPH_IDEA} Note this strategy supports semantic hooks for theming. A hypothetical change:
