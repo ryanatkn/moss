@@ -1,5 +1,14 @@
 # @ryanatkn/moss
 
+## 0.31.0
+
+### Minor Changes
+
+- change some classes to be more aligned with the platform ([#58](https://github.com/ryanatkn/moss/pull/58))
+
+  - add `position_` prefix
+  - fill out `float_` classes
+
 ## 0.30.0
 
 ### Minor Changes

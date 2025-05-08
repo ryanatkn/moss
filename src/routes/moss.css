@@ -189,6 +189,18 @@ a.chip {
 .position_sticky {
 	position: sticky;
 }
+/** Same as `display: inline flow`. */
+.display_inline {
+	display: inline;
+}
+/** Same as `display: inline flow-root`. */
+.display_inline_block {
+	display: inline-block;
+}
+/** Same as `display: block flex`. */
+.display_flex {
+	display: flex;
+}
 .overflow_wrap_anywhere {
 	overflow-wrap: anywhere;
 }
@@ -227,18 +239,6 @@ a.chip {
 }
 .opacity_100 {
 	opacity: 1;
-}
-/** Same as `display: inline flow`. */
-.display_inline {
-	display: inline;
-}
-/** Same as `display: inline flow-root`. */
-.display_inline_block {
-	display: inline-block;
-}
-/** Same as `display: block flex`. */
-.display_flex {
-	display: flex;
 }
 .flex_1 {
 	flex: 1;
