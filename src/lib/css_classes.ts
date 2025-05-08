@@ -6,6 +6,8 @@ import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
 
 // TODO think about variable support (much harder problem, need dependency graph)
 
+// TODO modifiers for :hover/:active/:focus (how? do we need to give up the compat with JS identifier names?)
+
 /**
  * @see `generate_classes_css`
  */
@@ -433,87 +435,19 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		`,
 	},
 
-	relative: {declaration: 'position: relative;'},
-	absolute: {declaration: 'position: absolute;'},
-	fixed: {declaration: 'position: fixed;'},
-	sticky: {declaration: 'position: sticky;'},
-	static: {declaration: 'position: static;'},
+	/** @see https://developer.mozilla.org/en-US/docs/Web/CSS/position */
+	position_static: {declaration: 'position: static;'},
+	position_relative: {declaration: 'position: relative;'},
+	position_absolute: {declaration: 'position: absolute;'},
+	position_fixed: {declaration: 'position: fixed;'},
+	position_sticky: {declaration: 'position: sticky;'},
+	position_inherit: {declaration: 'position: inherit;'},
+	position_initial: {declaration: 'position: initial;'},
+	position_revert: {declaration: 'position: revert;'},
+	position_revert_layer: {declaration: 'position: revert_layer;'},
+	position_unset: {declaration: 'position: unset;'},
 
-	overflow_auto: {declaration: 'overflow: auto;'},
-	overflow_hidden: {declaration: 'overflow: hidden;'},
-	overflow_scroll: {declaration: 'overflow: scroll;'},
-	overflow_clip: {declaration: 'overflow: clip;'},
-	overflow_visible: {declaration: 'overflow: visible;'},
-	overflow_x_auto: {declaration: 'overflow-x: auto;'},
-	overflow_x_hidden: {declaration: 'overflow-x: hidden;'},
-	overflow_x_scroll: {declaration: 'overflow-x: scroll;'},
-	overflow_x_clip: {declaration: 'overflow-x: clip;'},
-	overflow_x_visible: {declaration: 'overflow-x: visible;'},
-	overflow_y_auto: {declaration: 'overflow-y: auto;'},
-	overflow_y_hidden: {declaration: 'overflow-y: hidden;'},
-	overflow_y_scroll: {declaration: 'overflow-y: scroll;'},
-	overflow_y_clip: {declaration: 'overflow-y: clip;'},
-	overflow_y_visible: {declaration: 'overflow-y: visible;'},
-
-	overflow_wrap_normal: {declaration: 'overflow-wrap: normal;'},
-	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
-	overflow_wrap_break_word: {declaration: 'overflow-wrap: break-word;'},
-	overflow_wrap_inherit: {declaration: 'overflow-wrap: inherit;'},
-	overflow_wrap_initial: {declaration: 'overflow-wrap: initial;'},
-	overflow_wrap_revert: {declaration: 'overflow-wrap: revert;'},
-	overflow_wrap_revert_layer: {declaration: 'overflow-wrap: revert-layer;'},
-	overflow_wrap_unset: {declaration: 'overflow-wrap: unset;'},
-
-	scrollbar_width_auto: {declaration: 'scrollbar-width: auto;'},
-	scrollbar_width_thin: {declaration: 'scrollbar-width: thin;'},
-	scrollbar_width_none: {declaration: 'scrollbar-width: none;'},
-	scrollbar_width_inherit: {declaration: 'scrollbar-width: inherit;'},
-	scrollbar_width_initial: {declaration: 'scrollbar-width: initial;'},
-	scrollbar_width_revert: {declaration: 'scrollbar-width: revert;'},
-	scrollbar_width_revert_layer: {declaration: 'scrollbar-width: revert-layer;'},
-	scrollbar_width_unset: {declaration: 'scrollbar-width: unset;'},
-
-	scrollbar_gutter_auto: {declaration: 'scrollbar-gutter: auto;'},
-	scrollbar_gutter_stable: {declaration: 'scrollbar-gutter: stable;'},
-	scrollbar_gutter_stable_both_edges: {declaration: 'scrollbar-gutter: stable both-edges;'},
-	scrollbar_gutter_inherit: {declaration: 'scrollbar-gutter: inherit;'},
-	scrollbar_gutter_initial: {declaration: 'scrollbar-gutter: initial;'},
-	scrollbar_gutter_revert: {declaration: 'scrollbar-gutter: revert;'},
-	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
-	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
-
-	visibility_visible: {declaration: 'visibility: visible;'},
-	visibility_hidden: {declaration: 'visibility: hidden;'},
-	visibility_collapse: {declaration: 'visibility: collapse;'},
-	visibility_inherit: {declaration: 'visibility: inherit;'},
-	visibility_initial: {declaration: 'visibility: initial;'},
-	visibility_revert: {declaration: 'visibility: revert;'},
-	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
-	visibility_unset: {declaration: 'visibility: unset;'},
-
-	// TODO @many interpreted
-	opacity_0: {declaration: 'opacity: 0;'},
-	opacity_10: {declaration: 'opacity: 10%'},
-	opacity_20: {declaration: 'opacity: 20%'},
-	opacity_30: {declaration: 'opacity: 30%'},
-	opacity_40: {declaration: 'opacity: 40%'},
-	opacity_50: {declaration: 'opacity: 50%'},
-	opacity_60: {declaration: 'opacity: 60%'},
-	opacity_70: {declaration: 'opacity: 70%'},
-	opacity_80: {declaration: 'opacity: 80%'},
-	opacity_90: {declaration: 'opacity: 90%'},
-	opacity_100: {declaration: 'opacity: 1;'},
-
-	// TODO @many interpreted
-	// z_index_0: {declaration: 'z-index: 0;'},
-	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
-	// z_index_123: {declaration: 'z-index: 123;'},
-
-	/*
-	
-	Display values - see https://drafts.csswg.org/css-display/#display-value-summary.
-	
-	*/
+	/** @see https://drafts.csswg.org/css-display/#display-value-summary. */
 	display_none: {declaration: 'display: none;'},
 	display_contents: {declaration: 'display: contents;'},
 	display_block: {
@@ -582,6 +516,87 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	display_revert_layer: {declaration: 'display: revert-layer;'},
 	display_unset: {declaration: 'display: unset;'},
 
+	visibility_visible: {declaration: 'visibility: visible;'},
+	visibility_hidden: {declaration: 'visibility: hidden;'},
+	visibility_collapse: {declaration: 'visibility: collapse;'},
+	visibility_inherit: {declaration: 'visibility: inherit;'},
+	visibility_initial: {declaration: 'visibility: initial;'},
+	visibility_revert: {declaration: 'visibility: revert;'},
+	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
+	visibility_unset: {declaration: 'visibility: unset;'},
+
+	/** @see https://developer.mozilla.org/en-US/docs/Web/CSS/float */
+	float_none: {declaration: 'float: none;'},
+	float_left: {declaration: 'float: left;'},
+	float_right: {declaration: 'float: right;'},
+	float_inline_start: {declaration: 'float: inline-start;'},
+	float_inherit: {declaration: 'float: inherit;'},
+	float_initial: {declaration: 'float: initial;'},
+	float_revert: {declaration: 'float: revert;'},
+	float_revert_layer: {declaration: 'float: revert_layer;'},
+	float_unset: {declaration: 'float: unset;'},
+
+	overflow_auto: {declaration: 'overflow: auto;'},
+	overflow_hidden: {declaration: 'overflow: hidden;'},
+	overflow_scroll: {declaration: 'overflow: scroll;'},
+	overflow_clip: {declaration: 'overflow: clip;'},
+	overflow_visible: {declaration: 'overflow: visible;'},
+	overflow_x_auto: {declaration: 'overflow-x: auto;'},
+	overflow_x_hidden: {declaration: 'overflow-x: hidden;'},
+	overflow_x_scroll: {declaration: 'overflow-x: scroll;'},
+	overflow_x_clip: {declaration: 'overflow-x: clip;'},
+	overflow_x_visible: {declaration: 'overflow-x: visible;'},
+	overflow_y_auto: {declaration: 'overflow-y: auto;'},
+	overflow_y_hidden: {declaration: 'overflow-y: hidden;'},
+	overflow_y_scroll: {declaration: 'overflow-y: scroll;'},
+	overflow_y_clip: {declaration: 'overflow-y: clip;'},
+	overflow_y_visible: {declaration: 'overflow-y: visible;'},
+
+	overflow_wrap_normal: {declaration: 'overflow-wrap: normal;'},
+	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
+	overflow_wrap_break_word: {declaration: 'overflow-wrap: break-word;'},
+	overflow_wrap_inherit: {declaration: 'overflow-wrap: inherit;'},
+	overflow_wrap_initial: {declaration: 'overflow-wrap: initial;'},
+	overflow_wrap_revert: {declaration: 'overflow-wrap: revert;'},
+	overflow_wrap_revert_layer: {declaration: 'overflow-wrap: revert-layer;'},
+	overflow_wrap_unset: {declaration: 'overflow-wrap: unset;'},
+
+	scrollbar_width_auto: {declaration: 'scrollbar-width: auto;'},
+	scrollbar_width_thin: {declaration: 'scrollbar-width: thin;'},
+	scrollbar_width_none: {declaration: 'scrollbar-width: none;'},
+	scrollbar_width_inherit: {declaration: 'scrollbar-width: inherit;'},
+	scrollbar_width_initial: {declaration: 'scrollbar-width: initial;'},
+	scrollbar_width_revert: {declaration: 'scrollbar-width: revert;'},
+	scrollbar_width_revert_layer: {declaration: 'scrollbar-width: revert-layer;'},
+	scrollbar_width_unset: {declaration: 'scrollbar-width: unset;'},
+
+	scrollbar_gutter_auto: {declaration: 'scrollbar-gutter: auto;'},
+	scrollbar_gutter_stable: {declaration: 'scrollbar-gutter: stable;'},
+	scrollbar_gutter_stable_both_edges: {declaration: 'scrollbar-gutter: stable both-edges;'},
+	scrollbar_gutter_inherit: {declaration: 'scrollbar-gutter: inherit;'},
+	scrollbar_gutter_initial: {declaration: 'scrollbar-gutter: initial;'},
+	scrollbar_gutter_revert: {declaration: 'scrollbar-gutter: revert;'},
+	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
+	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
+
+	// TODO @many interpreted
+	opacity_0: {declaration: 'opacity: 0;'},
+	opacity_10: {declaration: 'opacity: 10%'},
+	opacity_20: {declaration: 'opacity: 20%'},
+	opacity_30: {declaration: 'opacity: 30%'},
+	opacity_40: {declaration: 'opacity: 40%'},
+	opacity_50: {declaration: 'opacity: 50%'},
+	opacity_60: {declaration: 'opacity: 60%'},
+	opacity_70: {declaration: 'opacity: 70%'},
+	opacity_80: {declaration: 'opacity: 80%'},
+	opacity_90: {declaration: 'opacity: 90%'},
+	opacity_100: {declaration: 'opacity: 1;'},
+
+	// TODO @many interpreted
+	// z_index_0: {declaration: 'z-index: 0;'},
+	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
+	// z_index_123: {declaration: 'z-index: 123;'},
+
 	flex_1: {declaration: 'flex: 1;'},
 	// TODO maybe align these with the full declaration form
 	flex_wrap: {declaration: 'flex-wrap: wrap;'},
@@ -643,11 +658,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	justify_self_right: {declaration: 'justify-self: right;'},
 	justify_self_baseline: {declaration: 'justify-self: baseline;'},
 	justify_self_stretch: {declaration: 'justify-self: stretch;'},
-	float_none: {declaration: 'float: none;'},
-	float_left: {declaration: 'float: left;'},
-	float_right: {declaration: 'float: right;'},
-	float_inline_start: {declaration: 'float: inline-start;'},
-	float_inline_end: {declaration: 'float: inline-end;'},
 	flip_x: {declaration: 'transform: scaleX(-1);'},
 	flip_y: {declaration: 'transform: scaleY(-1);'},
 	flip_xy: {declaration: 'transform: scaleX(-1) scaleY(-1);'},

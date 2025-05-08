@@ -5,14 +5,13 @@ import {icon_sizes} from '$lib/variable_data.js';
 
 TODO lots of things here to address:
 
+- either change colors with alpha transparency to opaque color values,
+	or make sure there are opaque variants available for everything
+	- by default we should avoid alpha to reduce base-case performance costs
+	- maybe move all shadows out of the base theme?
 - lots of inconsistencies, like the relationship between base and modified values
 	- in some cases the base value is just a value, in other cases it's the "current" value
-- going from `_lg` to `_1` is awkward - maybe replace all xs/sm/md/lg with 1/2/3/4
-	- issues with this:
-		- less semantically meaningful, harder to read/write so you'll have to learn the system
-			- 3 won't always be "medium" for each usage because of the lower end values
-		- changing the bottom end of the range will cause bad churn (can't just add a new `_xs4`)
-		- numbers will get into the double digits
+
 
 */
 

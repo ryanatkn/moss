@@ -230,6 +230,10 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	border-radius: var(--border_radius, var(--border_radius_xs));
 }
 
+:where(code.inline, p code) {
+	white-space: nowrap;
+}
+
 /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
 /* keep in sync with `.pre` styling in `css_classes.ts` */
 :where(pre:not(.unstyled)) {

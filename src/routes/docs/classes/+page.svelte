@@ -4,25 +4,30 @@
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'classes';
 
+	const GLYPH_IDEA = '⌆'; // TODO from Belt, upstreamed from Zzz?
+
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	const style_global_values = 'inherit|initial|revert|revert_layer|unset';
 
-	// TODO show these with `Details` hiding their expanded set of values (interpolated using this shorthand as the source of truth? isn't that complex)
+	// TODO show these with `Details` hiding their expanded set of values or something better (interpolated using this shorthand as the source of truth? isn't that complex)
+
+	// TODO generate these from `$lib/css_classes.ts`
 	const style_utility_groups: Array<{group: string; items: Array<string>}> = [
 		{
 			group: 'Position and display',
 			items: [
-				'relative|absolute|fixed|sticky|static', // TODO @many align with platform
+				`position_static|relative|absolute|fixed|sticky|${style_global_values}`,
 				// TODO think about making `display_` bold, and making this more systematic in general
 				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
-				'float_none|left|right|inline_start|inline_end',
 				`visibility_visible|hidden|collapse|${style_global_values}`,
+				`float_left|right|none|inline_start|inline_end|${style_global_values}`,
 				'opacity_0|10-100',
 				'overflow_auto|hidden|scroll|clip|visible',
 				'overflow_x|y_auto|hidden|scroll|clip|visible',
@@ -159,9 +164,9 @@
 </script>
 
 <Tome_Content {tome}>
-	<Unfinished_Implementation_Warning
-		>Both the docs and implementation of these need a lot more work.</Unfinished_Implementation_Warning
-	>
+	<Unfinished_Implementation_Warning>
+		Both the docs and implementation of these need a lot more work.
+	</Unfinished_Implementation_Warning>
 	<Tome_Section>
 		<Tome_Section_Header text="Optional CSS classes" />
 		<p>Moss has three CSS files, two of which are required:</p>
@@ -182,12 +187,18 @@ ${'<' as string}script>
 				>gro_plugin_moss.ts</a
 			>.
 		</p>
+		<Unfinished_Implementation_Warning>
+			Maybe <code>moss.css</code> should default to <code>moss_utilities.css</code> or
+			<code>moss_utility_classes.css</code>? idk
+		</Unfinished_Implementation_Warning>
 	</Tome_Section>
 	<Tome_Section>
 		<Tome_Section_Header text="Utility classes" />
 		<p>
-			Moss supports utility classes. The API has been drifting to be more consistently match CSS at
-			the cost of verbosity.
+			Moss supports utility classes that cost you nothing until you opt-in. The main stylesheet and
+			theme are required and build around CSS custom properties - utility classes offer an
+			orthogonal API that some developers prefer some of the time. They leverage Moss's base
+			frameworky parts, and are well-integrated with the other APIs and tools.
 		</p>
 		<p>
 			Moss exports <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.ts"
@@ -195,6 +206,11 @@ ${'<' as string}script>
 			> to generate styles on demand based on class usage in your source files, so you can ship the minimal
 			code needed.
 		</p>
+		<aside>
+			The API has been drifting to be more consistently match CSS at the cost of verbosity. I think
+			I like this direction but is <code>margin_x_xl</code> absurd? I don't think supporting both versions
+			by default is good but the APIs should make this easy to customize.
+		</aside>
 		<aside>
 			⚠️ Moss does not fully support <a
 				href="https://svelte.dev/docs/svelte/class#Attributes-Objects-and-arrays"
@@ -215,6 +231,75 @@ ${'<' as string}script>
 				</ul>
 			{/each}
 		</div>
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Builtin classes" />
+		<p>
+			Moss's <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
+				>main stylesheet</a
+			>
+			provides styles for the base HTML elements using the framework's <Tome_Link
+				name="variables"
+			/>, acting as a modern CSS reset with sensible defaults and integrated theming. It includes
+			Moss-specific CSS classes - not utility classes in the strict sense - that provide common
+			generic functionality.
+		</p>
+		<h4><code>.unstyled</code></h4>
+		<Code
+			content={`<ul>
+	<li>1</li>
+	<li>2</li>
+</ul>`}
+		/>
+		<ul class="unstyled mb_lg">
+			<li>a</li>
+			<li>b</li>
+		</ul>
+		<Code
+			content={`<ul class="unstyled">
+	<li>a</li>
+	<li>b</li>
+</ul>`}
+		/>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+		</ul>
+		<p>
+			The <code>.unstyled</code> class lets Moss provide solid default element styles with a simple and
+			generic opt-out:
+		</p>
+		<Code
+			lang="css"
+			content={`:where(:is(ul, ol, menu):not(.unstyled)) {
+	padding-left: var(--space_xl4);
+}`}
+		/>
+		<p>
+			Respecting <code>.unstyled</code> isn't a straightforward choice in all cases. Help is
+			appreciated to refine the internals. For example, should <code>input</code> respect it? Maybe?
+			All styles or a subset?
+		</p>
+		<aside>
+			<p class="row">
+				{GLYPH_IDEA} Note this strategy supports semantic hooks for theming. A hypothetical change:
+			</p>
+			<Code
+				lang="css"
+				content={`:where(:is(ul, ol, menu):not(.unstyled)) {
+	padding-left: var(--list_padding_left, var(--space_xl4));
+}`}
+			/>
+			<p>
+				Moss uses this pattern in some places, and maybe more in the future. One nice aspect is that
+				<code>--list_padding_left</code> need not exist anywhere else but this declaration and maybe
+				your code, and in practice it's backwards compatible.
+			</p>
+			<aside>
+				Note the <code>:where()</code> is used for Moss's default styles, so its specificity is as low
+				as possible to minimize interference with your styles.
+			</aside>
+		</aside>
 	</Tome_Section>
 </Tome_Content>
 
