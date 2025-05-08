@@ -1,0 +1,5 @@
+import{t as c,a as o,b}from"./DTfCIiy5.js";import{f,s as t,c as n,n as s,r as i}from"./BnUth-Uv.js";import{a as u}from"./D9czmhex.js";import{M as y}from"./BxmbhZWQ.js";import{b as S}from"./BSlgBjy6.js";var g=c(`<p>Moss is a CSS framework and design system that's built around <em>style variables</em>, which are
+	design tokens/<!> with particular capabilities
+	and conventions.</p> <p>Moss can be used with any website and JS framework. It exports <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css">one main stylesheet</a> and <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.css">a theme stylesheet</a>, and
+	it also <a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS data, types, and helpers for
+	more complex usage.</p> <p>See <a>the docs</a> and <a href="https://github.com/ryanatkn/moss#readme">readme</a>.</p>`,1);function M(m){var e=g(),a=f(e),p=t(n(a),3);y(p,{path:"Web/CSS/--*",children:(d,v)=>{s();var l=b("CSS custom properties");o(d,l)},$$slots:{default:!0}}),s(),i(a);var r=t(a,4),h=t(n(r));u(h,"href",`${S??""}/docs`),s(3),i(r),o(m,e)}export{M as I};
