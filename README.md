@@ -5,7 +5,7 @@
 > CSS framework and design system 🌿 magical organic stylesheets
 
 See the [docs](https://moss.ryanatkn.com/docs)
-and [**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
+at [**moss.ryanatkn.com**](https://moss.ryanatkn.com/)
 
 also [contributing.md](contributing.md)
 
