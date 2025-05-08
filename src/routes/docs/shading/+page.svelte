@@ -148,18 +148,6 @@
 		</aside>
 	</section>
 	<Tome_Section>
-		<Tome_Section_Header text="Opacity" />
-		<p>These are not variables, they're just utility classes that map to <code>%</code> values.</p>
-		<div class="swatch">
-			{#each opacity_classes as opacity_class (opacity_class)}
-				<div>
-					<div class="color bg_a_5 {opacity_class}"></div>
-					<small>{opacity_class}</small>
-				</div>
-			{/each}
-		</div>
-	</Tome_Section>
-	<Tome_Section>
 		<Tome_Section_Header text="Stacking transparency" />
 		<p>
 			Many styles are designed to stack, so things can appear in different contexts while retaining
@@ -182,19 +170,34 @@
 			<div class="fg_1 p_sm">
 				<div class="fg_1 p_sm">
 					<div class="fg_1 p_sm">
-						<div class="bg p_sm">
+						<p class="bg p_sm">
 							these shades use opacity, but notice how contrast changes with depth, creating
 							limitations
-						</div>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<p class="mt_lg">
-			This adds some complexity and potential performance differences, and it's currently
-			incomplete, but so far it feels like an elegant solution, and I plan to continue integrating
-			the idea in more places while considering alternative designs.
+			This adds some complexity and performance costs, and it's currently incomplete, but so far it
+			feels like an elegant solution with many unfinished details, and I plan to continue
+			integrating the idea in more places while considering alternative designs. However alpha
+			transparency has multiple costs, so I'm trying to be mindful to not use alpha for text and
+			other cases that are more performance-sensitive, but we may need to change this behavior for
+			the base cases, or include performance themes.
 		</p>
+	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Opacity" />
+		<p>These are not variables, they're just utility classes that map to <code>%</code> values.</p>
+		<div class="swatch">
+			{#each opacity_classes as opacity_class (opacity_class)}
+				<div>
+					<div class="color bg_a_5 {opacity_class}"></div>
+					<small>.{opacity_class}</small>
+				</div>
+			{/each}
+		</div>
 	</Tome_Section>
 </Tome_Content>
 

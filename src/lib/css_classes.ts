@@ -6,6 +6,8 @@ import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
 
 // TODO think about variable support (much harder problem, need dependency graph)
 
+// TODO modifiers for :hover/:active/:focus (how? do we need to give up the compat with JS identifier names?)
+
 /**
  * @see `generate_classes_css`
  */
@@ -444,6 +446,16 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	position_revert_layer: {declaration: 'position: revert_layer;'},
 	position_unset: {declaration: 'position: unset;'},
 
+	float_none: {declaration: 'float: none;'},
+	float_left: {declaration: 'float: left;'},
+	float_right: {declaration: 'float: right;'},
+	float_inline_start: {declaration: 'float: inline-start;'},
+	float_inherit: {declaration: 'float: inherit;'},
+	float_initial: {declaration: 'float: initial;'},
+	float_revert: {declaration: 'float: revert;'},
+	float_revert_layer: {declaration: 'float: revert_layer;'},
+	float_unset: {declaration: 'float: unset;'},
+
 	overflow_auto: {declaration: 'overflow: auto;'},
 	overflow_hidden: {declaration: 'overflow: hidden;'},
 	overflow_scroll: {declaration: 'overflow: scroll;'},
@@ -648,11 +660,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	justify_self_right: {declaration: 'justify-self: right;'},
 	justify_self_baseline: {declaration: 'justify-self: baseline;'},
 	justify_self_stretch: {declaration: 'justify-self: stretch;'},
-	float_none: {declaration: 'float: none;'},
-	float_left: {declaration: 'float: left;'},
-	float_right: {declaration: 'float: right;'},
-	float_inline_start: {declaration: 'float: inline-start;'},
-	float_inline_end: {declaration: 'float: inline-end;'},
 	flip_x: {declaration: 'transform: scaleX(-1);'},
 	flip_y: {declaration: 'transform: scaleY(-1);'},
 	flip_xy: {declaration: 'transform: scaleX(-1) scaleY(-1);'},

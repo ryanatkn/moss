@@ -186,8 +186,8 @@ a.chip {
 	display: block;
 }
 
-.relative {
-	position: relative;
+.position_sticky {
+	position: sticky;
 }
 .overflow_wrap_anywhere {
 	overflow-wrap: anywhere;
