@@ -186,6 +186,9 @@ a.chip {
 	display: block;
 }
 
+.position_relative {
+	position: relative;
+}
 .position_sticky {
 	position: sticky;
 }
