@@ -1,4 +1,4 @@
-import{t as c,a as o,b}from"./NVWS3V4U.js";import{f,s as t,c as n,n as s,r as i}from"./xlH9aj8z.js";import{a as u}from"./Cpuy4IUX.js";import{M as y}from"./g0yro4gb.js";import{b as S}from"./D4nJIJR3.js";var g=c(`<p>Moss is a CSS framework and design system that's built around <em>style variables</em>, which are
+import{t as c,a as o,b}from"./NVWS3V4U.js";import{f,s as t,c as n,n as s,r as i}from"./xlH9aj8z.js";import{a as u}from"./Cpuy4IUX.js";import{M as y}from"./g0yro4gb.js";import{b as S}from"./BYGdqZtP.js";var g=c(`<p>Moss is a CSS framework and design system that's built around <em>style variables</em>, which are
 	design tokens and <!> with particular capabilities
 	and conventions.</p> <p>Moss can be used with any website and JS framework. It exports <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css">one main stylesheet</a> and <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.css">a theme stylesheet</a>, and
 	it also <a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS data, types, and helpers for
