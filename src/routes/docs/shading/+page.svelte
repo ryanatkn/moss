@@ -6,6 +6,7 @@
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import {themer_context} from '@ryanatkn/fuz/themer.svelte.js';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
+	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
@@ -44,9 +45,10 @@
 		</Unfinished_Implementation_Warning>
 		<p>
 			Moss is designed around two simplistic models of light, one for dark mode and one for light
-			mode. The goal is easy authoring with simple and consistent rules for arbitrary compositions
-			and states. Each <Tome_Link name="themes">theme</Tome_Link> can choose to implement either light
-			mode or dark mode or both.
+			mode, mapping to the web platform's <Mdn_Link path="Web/CSS/color-scheme" />. The goal is easy
+			authoring with simple and consistent rules for arbitrary compositions and states. Each <Tome_Link
+				name="themes">theme</Tome_Link
+			> can choose to implement either light mode or dark mode or both.
 		</p>
 		<p>
 			Light mode's starting point is plain white documents (like paper) where we can think of UI
@@ -74,7 +76,8 @@
 			and <code>bg</code> are equivalent values that swap places in dark mode. Thus <code>bg</code>
 			and <code>fg</code> are called color-scheme-aware, and <code>lighten</code> and
 			<code>darken</code> are color-scheme-agnostic. (maybe you can think of better terminology? I
-			like the word "adaptive" but idk) The <Tome_Link name="colors" /> docs elaborate more on this point.
+			like the word "adaptive" but idk) The <Tome_Link name="colors" /> docs elaborate more on this point
+			and the <Tome_Link name="shadows" /> docs implement more of the idea.
 		</p>
 		<p>
 			Opacity is used to enable arbitrary stacking that visually inherits its context. Not all cases

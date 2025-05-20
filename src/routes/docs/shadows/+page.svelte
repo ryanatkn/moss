@@ -4,6 +4,7 @@
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
 	import {
@@ -33,6 +34,9 @@
 		>This is unfinished and will change. It feels simultaneously limiting in usage and bloated in
 		the implementation.</Unfinished_Implementation_Warning
 	>
+	<p>
+		Moss's shadows build on the light model discussed in the <Tome_Link name="shading" /> docs.
+	</p>
 	<Tome_Section>
 		<Tome_Section_Header text="Shadow" />
 		<p>Shadows darken in light mode and lighten in dark mode.</p>

@@ -49,7 +49,7 @@
 		<h4>Adapting colors to dark mode</h4>
 		<p>
 			A color's subjective appearance depends on the context in which it's viewed, especially the
-			surrounding colors and values. Moss' semantic colors are designed to work across color
+			surrounding colors and values. Moss's semantic colors are designed to work across color
 			schemes, so each Moss color <Tome_Link name="variables">variable</Tome_Link> has two values, one
 			for light and one for dark mode. The exceptions are the lightest (1) and darkest (9) variants,
 			although this may change if it yields better results.
@@ -107,7 +107,7 @@
 		</p>
 		<p>
 			Hue variables are also useful to construct custom colors not covered by the color variables.
-			For example, Moss' base stylesheet uses <code>hue_a</code> for the semi-transparent
+			For example, Moss's base stylesheet uses <code>hue_a</code> for the semi-transparent
 			<code>::selection</code>. (try selecting some text -
 			<span class="color_a_5">same hue!</span>)
 		</p>
