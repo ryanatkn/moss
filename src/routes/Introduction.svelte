@@ -5,7 +5,7 @@
 
 <p>
 	Moss is a CSS framework and design system that's built around <em>style variables</em>, which are
-	design tokens/<Mdn_Link path="Web/CSS/--*">CSS custom properties</Mdn_Link> with particular capabilities
+	design tokens and <Mdn_Link path="Web/CSS/--*">CSS custom properties</Mdn_Link> with particular capabilities
 	and conventions.
 </p>
 <p>
