@@ -76,7 +76,7 @@
 			> and <Module_Link path="themes.ts"><code>@ryanatkn/moss/themes.ts</code></Module_Link>.
 		</p>
 		<!-- TODO explain when exported <Code code={`<Theme_Input\n\t{themes}\n\t{selected_theme}\n/>`} /> -->
-		<div class="width_sm mb_lg">
+		<div class="width_xs mb_lg">
 			<Theme_Input {themes} enable_editing onedit={(t) => (editing_theme = t)} />
 		</div>
 		<!-- <button class="mb_lg" onclick={() => (show_create_theme_dialog = true)} disabled

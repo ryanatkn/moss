@@ -21,6 +21,11 @@
 	text-overflow: ellipsis;
 }
 
+.width_xs {
+	width: 100%;
+	max-width: var(--distance_xs);
+}
+
 .width_sm {
 	width: 100%;
 	max-width: var(--distance_sm);

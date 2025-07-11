@@ -132,7 +132,7 @@
 		</nav>
 		<section>
 			<Code content={`<button class="selected">...</button>`} />
-			<button type="button" class="w_100 selected">a button with <code>.selected</code></button>
+			<button type="button" class="w_100 selected">a button with .selected</button>
 		</section>
 		<section>
 			<p>
@@ -147,11 +147,10 @@
 				class="w_100 deselectable"
 				class:selected={selected_deselectable_button}
 				onclick={() => (selected_deselectable_button = !selected_deselectable_button)}
-				>a <code>.deselectable</code>
-				{#if selected_deselectable_button}<code>.selected</code>{:else}unselected{/if} button</button
+				>a .deselectable{#if selected_deselectable_button}.selected{:else}&nbsp;unselected{/if} button</button
 			>
 			<button type="button" class="w_100 selected deselectable" disabled
-				>disabled <code>.deselectable</code> <code>.selected</code></button
+				>disabled .deselectable.selected</button
 			>
 		</section>
 	</Tome_Section>
