@@ -54,7 +54,7 @@
 		</p>
 		<p>
 			The result is a flexible system that aligns with modern CSS to deliver high-capability UX and
-			DX with minimal overhead.
+			DX with low overhead.
 		</p>
 	</section>
 	<section>
