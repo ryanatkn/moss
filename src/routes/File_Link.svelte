@@ -32,7 +32,7 @@
 	const href = $derived(base_path + final_path);
 </script>
 
-<a {...attrs} {href} class:chip={!unstyled}
+<a {...attrs} {href} class:chip={!unstyled} class:white_space_nowrap={true}
 	>{#if typeof icon === 'string'}{icon}{:else}{@render icon()}{/if}
 	{#if children}{@render children()}{:else}{final_path}{/if}</a
 >
