@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.1",
-    "@ryanatkn/belt": "file:../belt",
+    "@ryanatkn/belt": "^0.32.0",
     "@ryanatkn/eslint-config": "^0.8.0",
     "@ryanatkn/fuz": "file:../fuz",
     "@ryanatkn/fuz_code": "^0.24.0",
