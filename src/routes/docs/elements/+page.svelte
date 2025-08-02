@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-	import {base} from '$app/paths';
+	import {resolve} from '$app/paths';
 	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
@@ -45,9 +45,9 @@
 		<Tome_Section_Header text="a">
 			<Mdn_Link path="Web/HTML/Element/a" />
 		</Tome_Section_Header>
-		<p><a href="{base}/">a link</a> in a <code>p</code></p>
-		<div><a href="{base}/">a link</a> in a <code>div</code></div>
-		<p><a class="selected" href="{base}/">a link</a> with <code>.selected</code></p>
+		<p><a href={resolve('/')}>a link</a> in a <code>p</code></p>
+		<div><a href={resolve('/')}>a link</a> in a <code>div</code></div>
+		<p><a class="selected" href={resolve('/')}>a link</a> with <code>.selected</code></p>
 	</Tome_Section>
 	<Tome_Section>
 		<Tome_Section_Header text="code">
