@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import {base} from '$app/paths';
+	import {resolve} from '$app/paths';
 </script>
 
 <p>
@@ -18,6 +18,6 @@
 	more complex usage.
 </p>
 <p>
-	See <a href="{base}/docs">the docs</a>
+	See <a href={resolve('/docs')}>the docs</a>
 	and <a href="https://github.com/ryanatkn/moss#readme">readme</a>.
 </p>

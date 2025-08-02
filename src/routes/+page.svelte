@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {base} from '$app/paths';
+	import {resolve} from '$app/paths';
 	import Docs_Footer from '@ryanatkn/fuz/Docs_Footer.svelte';
 	import Card from '@ryanatkn/fuz/Card.svelte';
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
@@ -28,7 +28,7 @@
 		</div>
 	</section>
 	<section>
-		<Card href="{base}/docs">docs{#snippet icon()}🌿{/snippet}</Card>
+		<Card href={resolve('/docs')}>docs{#snippet icon()}🌿{/snippet}</Card>
 	</section>
 	<section class="width_sm p_sm border_radius_md shadow_xs">
 		<div class="panel p_lg bg shadow_sm">
@@ -54,7 +54,7 @@
 	<section class="p_xl border_radius_lg shadow_inset_bottom_xs">
 		<Docs_Footer {pkg}>
 			{#snippet logo_header()}
-				<a href="{base}/about" class="mb_xs">about</a>
+				<a href={resolve('/about')} class="mb_xs">about</a>
 			{/snippet}
 			<Hidden_Personal_Links />
 		</Docs_Footer>

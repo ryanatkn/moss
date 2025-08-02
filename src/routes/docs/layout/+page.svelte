@@ -3,7 +3,7 @@
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
 	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
-	import {base} from '$app/paths';
+	import {resolve} from '$app/paths';
 
 	import {space_variants, distance_variants} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
@@ -31,7 +31,7 @@
 			{/each}
 		</ul>
 		<p>
-			Space variants are used in <a href="{base}/docs/classes">classes</a> like
+			Space variants are used in <a href={resolve('/docs/classes')}>classes</a> like
 			<code>.p_md</code>
 			for padding, margin, other forms of spacing like gap, positioning, dimensions, etc.
 		</p>
@@ -51,7 +51,7 @@
 			{/each}
 		</ul>
 		<p>
-			Width variants have <a href="{base}/docs/classes">classes</a> like <code>.width_sm</code>
+			Width variants have <a href={resolve('/docs/classes')}>classes</a> like <code>.width_sm</code>
 			and <code>.min_width_md</code>.
 		</p>
 	</Tome_Section>
