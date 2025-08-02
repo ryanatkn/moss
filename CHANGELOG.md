@@ -1,11 +1,16 @@
 # @ryanatkn/moss
 
+## 0.32.0
+
+### Minor Changes
+
+- upgrade deps ([#60](https://github.com/ryanatkn/moss/pull/60))
+
 ## 0.31.0
 
 ### Minor Changes
 
 - change some classes to be more aligned with the platform ([#58](https://github.com/ryanatkn/moss/pull/58))
-
   - add `position_` prefix
   - fill out `float_` classes
 
@@ -30,7 +35,6 @@
 ### Minor Changes
 
 - rework some utility classes ([#55](https://github.com/ryanatkn/moss/pull/55))
-
   - rename `border_$STYLE` variants to `border_style_$STYLE`
   - rename `radius_` variants to `border_radius_`
   - add top/right/bottom/left border radius variants, e.g. `border_top_left_radius`
@@ -44,7 +48,6 @@
 ### Minor Changes
 
 - rework some styles and classes ([#49](https://github.com/ryanatkn/moss/pull/49))
-
   - rename `--distance_` vars from `--width_`
   - add `border_width_7-9` and change them to default to 1px increments
   - replace `outline_width_1` with `outline_width_0` and remove its variable,
@@ -234,7 +237,6 @@
 ### Minor Changes
 
 - rework shadows ([738f4dd](https://github.com/ryanatkn/moss/commit/738f4dd))
-
   - rename `shadow_color_a-i` from `shadow_a-i_color`
   - rename `shadow_color_highlight` from `highlight_color`
   - rename `shadow_color_glow` from `glow_color`
@@ -258,7 +260,6 @@
 ### Minor Changes
 
 - improve shadows ([#37](https://github.com/ryanatkn/moss/pull/37))
-
   - add `inner` and `outer` shadow variants
   - remove `x` offset from all shadows
 
@@ -285,7 +286,6 @@
 ### Patch Changes
 
 - add some flex utility classes ([#34](https://github.com/ryanatkn/moss/pull/34))
-
   - add variants for `.align|justify_items|content|self_`
   - add `.grow`, `.grow_0`, `.shrink`, and `.shrink_1`
   - add `.column`
@@ -334,7 +334,6 @@
 ### Patch Changes
 
 - rework styles ([#31](https://github.com/ryanatkn/moss/pull/31))
-
   - rework button styles
   - reduce input border radius
   - rework shadow styles, reducing variable count by separating shadow position/blue/spread and color
@@ -344,7 +343,6 @@
 ### Patch Changes
 
 - refactor some variables ([#28](https://github.com/ryanatkn/moss/pull/28))
-
   - add `button_shadow`, `button_shadow_hover`, and `button_shadow_active`
 
 - soften xs and sm shadows ([d309880](https://github.com/ryanatkn/moss/commit/d309880))
@@ -380,7 +378,6 @@
 ### Minor Changes
 
 - update some theme-related styles ([#22](https://github.com/ryanatkn/moss/pull/22))
-
   - remove `.themed` styles
   - support `light` inside `.dark`, but as the fallback
   - add explicit `color-scheme: light dark` to `:root`
@@ -444,7 +441,6 @@
 
 - upstream Svelte-specific theme helpers ([#9](https://github.com/ryanatkn/moss/pull/9))
 - rename some variables ([#8](https://github.com/ryanatkn/moss/pull/8))
-
   - `button_fill` from `button_bg`
   - `button_fill_hover` from `button_bg_hover`
   - `button_fill_active` from `button_bg_active`
