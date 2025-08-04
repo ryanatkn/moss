@@ -32,3 +32,8 @@ ignore
 # Os
 .DS_Store
 Thumbs.db
+
+# LLMs
+.github/copilot-instructions.md
+CLAUDE.md
+.claude
