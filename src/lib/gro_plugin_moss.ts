@@ -74,23 +74,20 @@ export const gro_plugin_moss = ({
 
 	return {
 		name: 'gro_plugin_moss',
-		setup: async ({watch, dev, log, filer}) => {
-			// Only run in watch mode
+		setup: async ({watch, log, filer}) => {
+			// For non-watch mode, generate once and exit
 			if (!watch) {
-				// For non-watch mode, generate once and exit
-				if (dev) {
-					// Scan all existing files to collect classes
-					for (const node of filer.nodes.values()) {
-						if (node.is_external || node.kind === 'directory') continue;
-						if (filter_file && !filter_file(node.id)) continue;
+				// Scan all existing files to collect classes
+				for (const node of filer.nodes.values()) {
+					if (node.is_external || node.kind === 'directory') continue;
+					if (filter_file && !filter_file(node.id)) continue;
 
-						const contents = node.contents;
-						if (contents !== null) {
-							const classes = collect_css_classes(contents);
-							css_classes.add(node.id, classes);
-						}
+					const contents = node.contents;
+					if (contents !== null) {
+						const classes = collect_css_classes(contents);
+						css_classes.add(node.id, classes);
 					}
-					await flush_gen_queue();
+					await flush_gen_queue(); // TODO BLOCK idk about this design
 				}
 				return;
 			}
