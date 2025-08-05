@@ -69,7 +69,7 @@ export const gro_plugin_moss = ({
 			previous_output = output;
 			writeFileSync(outfile, output);
 		},
-		{delay: flush_debounce_delay},
+		{delay: flush_debounce_delay, when: 'trailing'},
 	);
 
 	return {
