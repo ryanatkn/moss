@@ -1,12 +1,11 @@
 import {EMPTY_OBJECT} from '@ryanatkn/belt/object.js';
 import {throttle} from '@ryanatkn/belt/throttle.js';
 import {writeFileSync} from 'node:fs';
-
-import type {Plugin} from './plugin.ts';
-import type {Args} from './args.ts';
-import type {Filer_Observer} from './filer.ts';
-import type {Path_Id} from './path.ts';
-import {format_file} from './format_file.ts';
+import type {Plugin} from '@ryanatkn/gro/plugin.js';
+import type {Args} from '@ryanatkn/gro/args.js';
+import type {Filer_Observer} from '@ryanatkn/gro/filer.js';
+import type {Path_Id} from '@ryanatkn/gro/path.js';
+import {format_file} from '@ryanatkn/gro/format_file.js';
 
 import {collect_css_classes, Css_Classes, generate_classes_css} from './css_class_helpers.js';
 import {css_classes_by_name} from './css_classes.js';
