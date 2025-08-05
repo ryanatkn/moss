@@ -79,16 +79,24 @@ export const gro_plugin_moss = ({
 			if (!watch) {
 				// Scan all existing files to collect classes
 				for (const node of filer.nodes.values()) {
-					if (node.is_external || node.kind === 'directory') continue;
-					if (filter_file && !filter_file(node.id)) continue;
+					if (
+						node.is_external ||
+						node.kind === 'directory' ||
+						(filter_file && !filter_file(node.id)) ||
+						(!node.is_svelte && !node.is_typescript && !node.is_js)
+					) {
+						continue;
+					}
 
 					const contents = node.contents;
 					if (contents !== null) {
 						const classes = collect_css_classes(contents);
 						css_classes.add(node.id, classes);
 					}
-					await flush_gen_queue(); // TODO BLOCK idk about this design
 				}
+
+				// Generate CSS once
+				await flush_gen_queue();
 				return;
 			}
 
