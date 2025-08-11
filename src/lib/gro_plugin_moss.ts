@@ -1,5 +1,3 @@
-// gro_plugin_moss.ts - note this module is in a different repo, `from '@ryanatkn/moss/gro_plugin_moss.js';`
-
 import {EMPTY_OBJECT} from '@ryanatkn/belt/object.js';
 import {throttle} from '@ryanatkn/belt/throttle.js';
 import {writeFileSync} from 'node:fs';
