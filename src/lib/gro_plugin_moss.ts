@@ -1,3 +1,5 @@
+// gro_plugin_moss.ts - note this module is in a different repo, `from '@ryanatkn/moss/gro_plugin_moss.js';`
+
 import {EMPTY_OBJECT} from '@ryanatkn/belt/object.js';
 import {throttle} from '@ryanatkn/belt/throttle.js';
 import {writeFileSync} from 'node:fs';
@@ -78,7 +80,7 @@ export const gro_plugin_moss = ({
 			// For non-watch mode, generate once and exit
 			if (!watch) {
 				// Scan all existing files to collect classes
-				for (const node of filer.nodes.values()) {
+				for (const node of filer.disknodes.values()) {
 					if (
 						node.is_external ||
 						node.kind === 'directory' ||
@@ -112,12 +114,12 @@ export const gro_plugin_moss = ({
 					// Apply user filter
 					if (filter_file && !filter_file(node.id)) return false;
 
-					// Check for Svelte, TypeScript, and JavaScript files
+					// Check for Svelte, TypeScript, and JS files
 					return node.is_svelte || node.is_typescript || node.is_js;
 				},
 
-				// No special invalidation needed
-				invalidate: 'self',
+				// Batch expansion strategy - no special expansion needed
+				expand_to: 'self',
 
 				// We need file contents to extract CSS classes
 				needs_contents: true,
@@ -142,7 +144,7 @@ export const gro_plugin_moss = ({
 					let changed = false;
 
 					// Process added/updated files
-					for (const node of batch.all_nodes) {
+					for (const node of batch.all_disknodes) {
 						const contents = node.contents;
 						if (contents !== null) {
 							const classes = collect_css_classes(contents);
@@ -172,7 +174,7 @@ export const gro_plugin_moss = ({
 			};
 
 			// Initial scan to collect all existing classes
-			for (const node of filer.nodes.values()) {
+			for (const node of filer.disknodes.values()) {
 				if (moss_observer.match!(node)) {
 					const contents = node.contents;
 					if (contents !== null) {
