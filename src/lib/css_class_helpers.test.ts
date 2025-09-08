@@ -1,5 +1,4 @@
-import {test} from 'uvu';
-import * as assert from 'uvu/assert';
+import {test, assert} from 'vitest';
 
 import {collect_css_classes} from '$lib/css_class_helpers.js';
 
@@ -281,12 +280,10 @@ bar;
 for (const [contents, expected] of values) {
 	test(`collects CSS classes from a string of Svelte or TS with expression \`${contents}\``, () => {
 		const found = collect_css_classes(contents);
-		assert.equal(
+		assert.deepEqual(
 			Array.from(found),
 			expected,
 			`failed to collect classes for input \`${contents}\``,
 		);
 	});
 }
-
-test.run();
