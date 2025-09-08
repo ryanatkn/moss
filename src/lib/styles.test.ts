@@ -1,9 +1,12 @@
-import {test} from 'uvu';
-import * as assert from 'uvu/assert';
+import {test, assert} from 'vitest';
+import {readFileSync} from 'node:fs';
 
-import main_stylesheet_text from '$lib/style.css?raw';
-import css_classes_text from '$lib/css_classes.ts?raw';
 import * as exported_variables from '$lib/variables.js';
+import css_classes_text from '$lib/css_classes.ts?raw';
+
+// vitest replaces this with an empty string because CSS isn't opted into being processed,
+// and it has no CLI option, so just read it directly
+const main_stylesheet_text = readFileSync('./src/lib/style.css', 'utf8');
 
 const css_files = [main_stylesheet_text, css_classes_text];
 
@@ -22,7 +25,7 @@ test('variables in the CSS exist', () => {
 		}
 	}
 	if (unknowns.size) {
-		assert.unreachable(`unknown variables found: ${Array.from(unknowns).join(', ')}`);
+		throw new Error(`unknown variables found: ${Array.from(unknowns).join(', ')}`);
 	}
 });
 
@@ -68,5 +71,3 @@ const known_without_variables = new Set([
 	'hue',
 	'shadow_alpha',
 ]);
-
-test.run();

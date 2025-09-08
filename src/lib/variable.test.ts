@@ -1,5 +1,4 @@
-import {test} from 'uvu';
-import * as assert from 'uvu/assert';
+import {test, assert} from 'vitest';
 
 import {is_style_variable_name} from '$lib/variable.js';
 
@@ -22,5 +21,3 @@ test('is_style_variable_name', () => {
 	assert.ok(!is_style_variable_name('9a'));
 	assert.ok(!is_style_variable_name('9_a'));
 });
-
-test.run();

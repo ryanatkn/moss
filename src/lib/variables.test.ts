@@ -1,5 +1,4 @@
-import {test} from 'uvu';
-import * as assert from 'uvu/assert';
+import {test, assert} from 'vitest';
 
 import {default_variables} from '$lib/variables.js';
 import * as exported_variables from '$lib/variables.js';
@@ -32,7 +31,7 @@ test('variable identifiers are all included in `default_variables`', () => {
 	for (const identifier in exported_variables) {
 		const exported = (exported_variables as any)[identifier];
 		if (!is_style_variable(exported)) continue;
-		assert.is(
+		assert.strictEqual(
 			identifier,
 			exported.name,
 			`variable identifier "${identifier}" does not match its name ${exported.name}`,
@@ -43,10 +42,6 @@ test('variable identifiers are all included in `default_variables`', () => {
 		);
 	}
 });
-
-// TODO test color_variants
-
-test.run();
 
 // TODO extract?
 const is_style_variable = (v: any): v is Style_Variable => typeof v === 'object' && 'name' in v;
