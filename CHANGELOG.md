@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.33.0
+
+### Minor Changes
+
+- remove gro plugin and switch to a gen file for CSS, see `$lib/gen_moss_css.ts` and `$routes/moss.gen.css.ts` ([#62](https://github.com/ryanatkn/moss/pull/62))
+
 ## 0.32.0
 
 ### Minor Changes
