@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "modules": {
     "./package.json": {
       "path": "package.json",
@@ -57,19 +57,15 @@
         }
       ]
     },
-    "./gro_plugin_moss.js": {
-      "path": "gro_plugin_moss.ts",
+    "./gen_moss_css.js": {
+      "path": "gen_moss_css.ts",
       "declarations": [
         {
-          "name": "Task_Args",
+          "name": "Gen_Moss_Css_Options",
           "kind": "type"
         },
         {
-          "name": "Gro_Plugin_Moss_Options",
-          "kind": "type"
-        },
-        {
-          "name": "gro_plugin_moss",
+          "name": "gen_moss_css",
           "kind": "function"
         }
       ]
