@@ -181,8 +181,8 @@ ${'<' as string}script>
 		/>
 		<p>
 			The <code>moss.css</code> file is created on demand with the utility classes that your code
-			uses, if any. For now it requires <a href="https://github.com/ryanatkn/gro">Gro</a> to build
-			it, but it isn't hard to make your own integration. See the example integration in
+			uses, if any. For now it requires <a href="https://github.com/ryanatkn/gro">Gro</a> to
+			generate it, but it isn't hard to make your own integration using the helpers
 			<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/gen_moss_css.ts"
 				>gen_moss_css.ts</a
 			>.
