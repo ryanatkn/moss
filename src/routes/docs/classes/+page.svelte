@@ -185,7 +185,7 @@ ${'<' as string}script>
 			generate it, but it isn't hard to make your own integration using the helpers
 			<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/gen_moss_css.ts"
 				>gen_moss_css.ts</a
-			>.
+			>. I can add a Vite plugin if there's demand.
 		</p>
 		<Unfinished_Implementation_Warning>
 			Maybe <code>moss.css</code> should default to <code>moss_utilities.css</code> or
