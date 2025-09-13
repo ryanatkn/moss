@@ -35,7 +35,7 @@ export const package_json: Package_Json = {
 		'@ryanatkn/eslint-config': '^0.8.0',
 		'@ryanatkn/fuz': '^0.145.0',
 		'@ryanatkn/fuz_code': '^0.24.0',
-		'@ryanatkn/gro': '^0.163.0',
+		'@ryanatkn/gro': '^0.164.0',
 		'@sveltejs/adapter-static': '^3.0.9',
 		'@sveltejs/kit': '^2.37.1',
 		'@sveltejs/package': '^2.5.0',
@@ -72,10 +72,7 @@ export const package_json: Package_Json = {
 			default: './dist/css_class_helpers.js',
 		},
 		'./css_classes.js': {types: './dist/css_classes.d.ts', default: './dist/css_classes.js'},
-		'./gro_plugin_moss.js': {
-			types: './dist/gro_plugin_moss.d.ts',
-			default: './dist/gro_plugin_moss.js',
-		},
+		'./gen_moss_css.js': {types: './dist/gen_moss_css.d.ts', default: './dist/gen_moss_css.js'},
 		'./style.css': {default: './dist/style.css'},
 		'./theme.css': {default: './dist/theme.css'},
 		'./theme.gen.css.js': {types: './dist/theme.gen.css.d.ts', default: './dist/theme.gen.css.js'},
@@ -109,12 +106,11 @@ export const src_json: Src_Json = {
 			path: 'css_classes.ts',
 			declarations: [{name: 'css_classes_by_name', kind: 'variable'}],
 		},
-		'./gro_plugin_moss.js': {
-			path: 'gro_plugin_moss.ts',
+		'./gen_moss_css.js': {
+			path: 'gen_moss_css.ts',
 			declarations: [
-				{name: 'Task_Args', kind: 'type'},
-				{name: 'Gro_Plugin_Moss_Options', kind: 'type'},
-				{name: 'gro_plugin_moss', kind: 'function'},
+				{name: 'Gen_Moss_Css_Options', kind: 'type'},
+				{name: 'gen_moss_css', kind: 'function'},
 			],
 		},
 		'./style.css': {path: 'style.css', declarations: [{name: 'default', kind: 'css'}]},
