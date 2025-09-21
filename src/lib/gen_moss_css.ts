@@ -18,7 +18,7 @@ const filer_file_default: File_Filter = (path) => {
 };
 
 export const gen_moss_css = (options: Gen_Moss_Css_Options = {}): Gen => {
-	const {filter_file = filer_file_default, include_stats = true} = options;
+	const {filter_file = filer_file_default, include_stats = false} = options;
 
 	return async ({filer, log, origin_path}) => {
 		log.info('generating Moss CSS classes...');
