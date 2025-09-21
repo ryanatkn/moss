@@ -1,16 +1,7 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.33.0",
+  "version": "0.34.0",
   "modules": {
-    "./package.json": {
-      "path": "package.json",
-      "declarations": [
-        {
-          "name": "default",
-          "kind": "json"
-        }
-      ]
-    },
     "./css_class_helpers.js": {
       "path": "css_class_helpers.ts",
       "declarations": [
@@ -67,24 +58,6 @@
         {
           "name": "gen_moss_css",
           "kind": "function"
-        }
-      ]
-    },
-    "./style.css": {
-      "path": "style.css",
-      "declarations": [
-        {
-          "name": "default",
-          "kind": "css"
-        }
-      ]
-    },
-    "./theme.css": {
-      "path": "theme.css",
-      "declarations": [
-        {
-          "name": "default",
-          "kind": "css"
         }
       ]
     },
@@ -1571,6 +1544,24 @@
         {
           "name": "default_variables",
           "kind": "variable"
+        }
+      ]
+    },
+    "./style.css": {
+      "path": "style.css",
+      "declarations": [
+        {
+          "name": "default",
+          "kind": "css"
+        }
+      ]
+    },
+    "./theme.css": {
+      "path": "theme.css",
+      "declarations": [
+        {
+          "name": "default",
+          "kind": "css"
         }
       ]
     }
