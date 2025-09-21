@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.34.0
+
+### Minor Changes
+
+- default `include_stats` to false in `gen_moss_css` ([#63](https://github.com/ryanatkn/moss/pull/63))
+
 ## 0.33.0
 
 ### Minor Changes
