@@ -35,7 +35,7 @@ export const package_json: Package_Json = {
 		'@ryanatkn/eslint-config': '^0.8.0',
 		'@ryanatkn/fuz': '^0.145.0',
 		'@ryanatkn/fuz_code': '^0.24.0',
-		'@ryanatkn/gro': '^0.164.1',
+		'@ryanatkn/gro': '^0.165.0',
 		'@sveltejs/adapter-static': '^3.0.9',
 		'@sveltejs/kit': '^2.37.1',
 		'@sveltejs/package': '^2.5.0',
@@ -67,20 +67,8 @@ export const package_json: Package_Json = {
 	files: ['dist', 'src/lib/**/*.ts', '!src/lib/**/*.test.*', '!dist/**/*.test.*'],
 	exports: {
 		'./package.json': './package.json',
-		'./css_class_helpers.js': {
-			types: './dist/css_class_helpers.d.ts',
-			default: './dist/css_class_helpers.js',
-		},
-		'./css_classes.js': {types: './dist/css_classes.d.ts', default: './dist/css_classes.js'},
-		'./gen_moss_css.js': {types: './dist/gen_moss_css.d.ts', default: './dist/gen_moss_css.js'},
-		'./style.css': {default: './dist/style.css'},
-		'./theme.css': {default: './dist/theme.css'},
-		'./theme.gen.css.js': {types: './dist/theme.gen.css.d.ts', default: './dist/theme.gen.css.js'},
-		'./theme.js': {types: './dist/theme.d.ts', default: './dist/theme.js'},
-		'./themes.js': {types: './dist/themes.d.ts', default: './dist/themes.js'},
-		'./variable_data.js': {types: './dist/variable_data.d.ts', default: './dist/variable_data.js'},
-		'./variable.js': {types: './dist/variable.d.ts', default: './dist/variable.js'},
-		'./variables.js': {types: './dist/variables.d.ts', default: './dist/variables.js'},
+		'./*.js': {types: './dist/*.d.ts', default: './dist/*.js'},
+		'./*.css': {default: './dist/*.css'},
 	},
 } as any;
 
@@ -88,7 +76,6 @@ export const src_json: Src_Json = {
 	name: '@ryanatkn/moss',
 	version: '0.33.0',
 	modules: {
-		'./package.json': {path: 'package.json', declarations: [{name: 'default', kind: 'json'}]},
 		'./css_class_helpers.js': {
 			path: 'css_class_helpers.ts',
 			declarations: [
@@ -113,8 +100,6 @@ export const src_json: Src_Json = {
 				{name: 'gen_moss_css', kind: 'function'},
 			],
 		},
-		'./style.css': {path: 'style.css', declarations: [{name: 'default', kind: 'css'}]},
-		'./theme.css': {path: 'theme.css', declarations: [{name: 'default', kind: 'css'}]},
 		'./theme.gen.css.js': {
 			path: 'theme.gen.css.ts',
 			declarations: [{name: 'gen', kind: 'function'}],
@@ -507,6 +492,8 @@ export const src_json: Src_Json = {
 				{name: 'default_variables', kind: 'variable'},
 			],
 		},
+		'./style.css': {path: 'style.css', declarations: [{name: 'default', kind: 'css'}]},
+		'./theme.css': {path: 'theme.css', declarations: [{name: 'default', kind: 'css'}]},
 	},
 } as any;
 
