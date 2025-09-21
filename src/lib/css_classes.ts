@@ -405,14 +405,14 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	chip: {
 		ruleset: `
 			.chip {
-				font-weight: 600;
+				font-weight: 500;
 				padding-left: var(--space_xs);
 				padding-right: var(--space_xs);
 				background-color: var(--fg_1);
 				border-radius: var(--border_radius_xs);
 			}
 			a.chip {
-				font-weight: 700;
+				font-weight: 600;
 			}
 		`,
 	},
