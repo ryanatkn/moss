@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.34.0",
+  "version": "0.34.1",
   "modules": {
     "./css_class_helpers.js": {
       "path": "css_class_helpers.ts",
@@ -287,6 +287,10 @@
         },
         {
           "name": "hue_i",
+          "kind": "variable"
+        },
+        {
+          "name": "hue_j",
           "kind": "variable"
         },
         {
@@ -614,6 +618,42 @@
           "kind": "variable"
         },
         {
+          "name": "color_j_1",
+          "kind": "variable"
+        },
+        {
+          "name": "color_j_2",
+          "kind": "variable"
+        },
+        {
+          "name": "color_j_3",
+          "kind": "variable"
+        },
+        {
+          "name": "color_j_4",
+          "kind": "variable"
+        },
+        {
+          "name": "color_j_5",
+          "kind": "variable"
+        },
+        {
+          "name": "color_j_6",
+          "kind": "variable"
+        },
+        {
+          "name": "color_j_7",
+          "kind": "variable"
+        },
+        {
+          "name": "color_j_8",
+          "kind": "variable"
+        },
+        {
+          "name": "color_j_9",
+          "kind": "variable"
+        },
+        {
           "name": "tint_hue",
           "kind": "variable"
         },
@@ -827,6 +867,10 @@
         },
         {
           "name": "fill_i",
+          "kind": "variable"
+        },
+        {
+          "name": "fill_j",
           "kind": "variable"
         },
         {
@@ -1166,6 +1210,10 @@
           "kind": "variable"
         },
         {
+          "name": "border_color_j",
+          "kind": "variable"
+        },
+        {
           "name": "border_width",
           "kind": "variable"
         },
@@ -1463,6 +1511,10 @@
         },
         {
           "name": "shadow_color_i",
+          "kind": "variable"
+        },
+        {
+          "name": "shadow_color_j",
           "kind": "variable"
         },
         {

@@ -1,0 +1,15 @@
+import"../chunks/DsnmJJEf.js";import{p as U,c as j,f as C,a as T,y as n,b as o,s as t,d as l,u as M,x as s,r as i,v as z}from"../chunks/DFqGL5dz.js";import{e as B}from"../chunks/-YkxiqEk.js";import{C as W}from"../chunks/C2DJL-2A.js";import{T as N}from"../chunks/fxy40jSX.js";import{T as X}from"../chunks/DzXIwVHd.js";import{M as w}from"../chunks/Cj-tX6Da.js";import{g as Y}from"../chunks/C0Z5zyyy.js";import{T as D,a as F}from"../chunks/DERwsczH.js";import{d as H}from"../chunks/C7vpWQgs.js";import{S as J}from"../chunks/DFmiNyMY.js";import{M as q}from"../chunks/CPyifWH8.js";import{U as G}from"../chunks/ClvDKR_2.js";var K=C('<!> <!> <div class="variables svelte-tdxmcj"></div>',1),O=C(`<section><p>Style variables, or just "variables" in Moss, are <!> that can be grouped into a <!>. Each variable can
+			have values for light and/or dark <!>. They're design tokens with an API.</p> <p>The goal of the variables system is to provide runtime theming that's efficient and ergnomic
+			for both developers and end-users. Variables can be composed in multiple ways:</p> <ul><li>by CSS classes, both utility and component</li> <li>by other variables, both in calculations and to add useful semantics (e.g. <code>button_fill_hover</code> defaults to <code>fg_2</code> but can be themed independently)</li> <li>in JS like the <a href="https://svelte.dev/">Svelte</a> components in <a href="https://www.fuz.dev/">Fuz</a></li></ul> <p>Variables also provide an interface that's generally secure for user-generated content, if
+			you're into that kind of thing.</p> <p>The result is a flexible system that aligns with modern CSS to deliver high-capability UX and
+			DX with low overhead.</p></section> <section><div class="mb_md"><!></div> <!></section> <!>`,1);function pe(k,P){U(P,!0);const A=Y("variables"),v=H.slice().sort((m,_)=>m.name.localeCompare(_.name));N(k,{get tome(){return A},children:(m,_)=>{var f=O(),d=T(f),u=l(d),b=t(l(u));w(b,{path:"https://developer.mozilla.org/en-US/docs/Web/CSS/--*",children:(a,h)=>{s();var e=n("CSS custom properties");o(a,e)},$$slots:{default:!0}});var g=t(b,2);X(g,{name:"themes",children:(a,h)=>{s();var e=n("theme");o(a,e)},$$slots:{default:!0}});var I=t(g,2);w(I,{path:"Web/CSS/color-scheme",children:(a,h)=>{s();var e=n("color-schemes");o(a,e)},$$slots:{default:!0}}),s(),i(u),s(8),i(d);var c=t(d,2),p=l(c),E=l(p);q(E,{path:"theme.js"}),i(p);var L=t(p,2);W(L,{lang:"ts",content:`export interface Theme {
+	name: string;
+	variables: Style_Variable[];
+}
+
+export interface Style_Variable {
+	name: string;
+	light?: string;
+	dark?: string;
+	summary?: string;
+}`}),i(c);var V=t(c,2);D(V,{children:(a,h)=>{var e=K(),$=T(e);{let r=z(()=>`All ${v.length} style variables`);F($,{get text(){return M(r)}})}var y=t($,2);G(y,{children:(r,x)=>{s();var R=n("Many of these will change.");o(r,R)}});var S=t(y,2);B(S,21,()=>v,r=>r.name,(r,x)=>{J(r,{get name(){return M(x).name},classes:"menu_item"})}),i(S),o(a,e)},$$slots:{default:!0}}),o(m,f)},$$slots:{default:!0}}),j()}export{pe as component};
