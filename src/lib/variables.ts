@@ -29,7 +29,8 @@ export const hue_e: Style_Variable = {name: 'hue_e', light: '50', summary: 'yell
 export const hue_f: Style_Variable = {name: 'hue_f', light: '27', summary: 'brown'};
 export const hue_g: Style_Variable = {name: 'hue_g', light: '335', summary: 'pink'};
 export const hue_h: Style_Variable = {name: 'hue_h', light: '17', summary: 'orange'};
-export const hue_i: Style_Variable = {name: 'hue_i', light: '180', summary: 'cyan'};
+export const hue_i: Style_Variable = {name: 'hue_i', light: '185', summary: 'cyan'};
+export const hue_j: Style_Variable = {name: 'hue_j', light: '165', summary: 'teal'};
 export const color_a_1: Style_Variable = {
 	name: 'color_a_1',
 	light: 'hsl(var(--hue_a) 65% 91%)',
@@ -37,27 +38,27 @@ export const color_a_1: Style_Variable = {
 export const color_a_2: Style_Variable = {
 	name: 'color_a_2',
 	light: 'hsl(var(--hue_a) 62% 84%)',
-	dark: 'hsl(var(--hue_a) 62% 87%)',
+	dark: 'hsl(var(--hue_a) 62% 84%)',
 };
 export const color_a_3: Style_Variable = {
 	name: 'color_a_3',
 	light: 'hsl(var(--hue_a) 60% 73%)',
-	dark: 'hsl(var(--hue_a) 60% 82%)',
+	dark: 'hsl(var(--hue_a) 60% 76%)',
 };
 export const color_a_4: Style_Variable = {
 	name: 'color_a_4',
 	light: 'hsl(var(--hue_a) 60% 62%)',
-	dark: 'hsl(var(--hue_a) 60% 76%)',
+	dark: 'hsl(var(--hue_a) 60% 72%)',
 };
 export const color_a_5: Style_Variable = {
 	name: 'color_a_5',
 	light: 'hsl(var(--hue_a) 55% 50%)',
-	dark: 'hsl(var(--hue_a) 55% 70%)',
+	dark: 'hsl(var(--hue_a) 55% 65%)',
 };
 export const color_a_6: Style_Variable = {
 	name: 'color_a_6',
 	light: 'hsl(var(--hue_a) 55% 40%)',
-	dark: 'hsl(var(--hue_a) 55% 55%)',
+	dark: 'hsl(var(--hue_a) 55% 52%)',
 };
 export const color_a_7: Style_Variable = {
 	name: 'color_a_7',
@@ -122,8 +123,8 @@ export const color_c_1: Style_Variable = {
 };
 export const color_c_2: Style_Variable = {
 	name: 'color_c_2',
-	light: 'hsl(var(--hue_c) 80% 83%)',
-	dark: 'hsl(var(--hue_c) 81% 83%)',
+	light: 'hsl(var(--hue_c) 80% 84%)',
+	dark: 'hsl(var(--hue_c) 81% 84%)',
 };
 export const color_c_3: Style_Variable = {
 	name: 'color_c_3',
@@ -166,27 +167,27 @@ export const color_d_1: Style_Variable = {
 export const color_d_2: Style_Variable = {
 	name: 'color_d_2',
 	light: 'hsl(var(--hue_d) 50% 82%)',
-	dark: 'hsl(var(--hue_d) 50% 86%)',
+	dark: 'hsl(var(--hue_d) 50% 82%)',
 };
 export const color_d_3: Style_Variable = {
 	name: 'color_d_3',
 	light: 'hsl(var(--hue_d) 50% 72%)',
-	dark: 'hsl(var(--hue_d) 50% 81%)',
+	dark: 'hsl(var(--hue_d) 50% 75%)',
 };
 export const color_d_4: Style_Variable = {
 	name: 'color_d_4',
 	light: 'hsl(var(--hue_d) 50% 62%)',
-	dark: 'hsl(var(--hue_d) 50% 76%)',
+	dark: 'hsl(var(--hue_d) 50% 70%)',
 };
 export const color_d_5: Style_Variable = {
 	name: 'color_d_5',
 	light: 'hsl(var(--hue_d) 50% 50%)',
-	dark: 'hsl(var(--hue_d) 50% 70%)',
+	dark: 'hsl(var(--hue_d) 50% 62%)',
 };
 export const color_d_6: Style_Variable = {
 	name: 'color_d_6',
 	light: 'hsl(var(--hue_d) 50% 40%)',
-	dark: 'hsl(var(--hue_d) 50% 55%)',
+	dark: 'hsl(var(--hue_d) 50% 52%)',
 };
 export const color_d_7: Style_Variable = {
 	name: 'color_d_7',
@@ -376,32 +377,32 @@ export const color_h_9: Style_Variable = {
 };
 export const color_i_1: Style_Variable = {
 	name: 'color_i_1',
-	light: 'hsl(var(--hue_i) 75% 91%)',
+	light: 'hsl(var(--hue_i) 75% 89%)',
 };
 export const color_i_2: Style_Variable = {
 	name: 'color_i_2',
 	light: 'hsl(var(--hue_i) 75% 77%)',
-	dark: 'hsl(var(--hue_i) 75% 86%)',
+	dark: 'hsl(var(--hue_i) 75% 82%)',
 };
 export const color_i_3: Style_Variable = {
 	name: 'color_i_3',
 	light: 'hsl(var(--hue_i) 75% 60%)',
-	dark: 'hsl(var(--hue_i) 75% 81%)',
+	dark: 'hsl(var(--hue_i) 75% 75%)',
 };
 export const color_i_4: Style_Variable = {
 	name: 'color_i_4',
 	light: 'hsl(var(--hue_i) 75% 47%)',
-	dark: 'hsl(var(--hue_i) 75% 76%)',
+	dark: 'hsl(var(--hue_i) 75% 68%)',
 };
 export const color_i_5: Style_Variable = {
 	name: 'color_i_5',
 	light: 'hsl(var(--hue_i) 75% 40%)',
-	dark: 'hsl(var(--hue_i) 75% 70%)',
+	dark: 'hsl(var(--hue_i) 75% 60%)',
 };
 export const color_i_6: Style_Variable = {
 	name: 'color_i_6',
 	light: 'hsl(var(--hue_i) 75% 33%)',
-	dark: 'hsl(var(--hue_i) 75% 55%)',
+	dark: 'hsl(var(--hue_i) 75% 48%)',
 };
 export const color_i_7: Style_Variable = {
 	name: 'color_i_7',
@@ -416,6 +417,49 @@ export const color_i_8: Style_Variable = {
 export const color_i_9: Style_Variable = {
 	name: 'color_i_9',
 	light: 'hsl(var(--hue_i) 75% 10%)',
+};
+export const color_j_1: Style_Variable = {
+	name: 'color_j_1',
+	light: 'hsl(var(--hue_j) 60% 89%)',
+};
+export const color_j_2: Style_Variable = {
+	name: 'color_j_2',
+	light: 'hsl(var(--hue_j) 58% 77%)',
+	dark: 'hsl(var(--hue_j) 58% 82%)',
+};
+export const color_j_3: Style_Variable = {
+	name: 'color_j_3',
+	light: 'hsl(var(--hue_j) 55% 60%)',
+	dark: 'hsl(var(--hue_j) 55% 75%)',
+};
+export const color_j_4: Style_Variable = {
+	name: 'color_j_4',
+	light: 'hsl(var(--hue_j) 55% 47%)',
+	dark: 'hsl(var(--hue_j) 55% 68%)',
+};
+export const color_j_5: Style_Variable = {
+	name: 'color_j_5',
+	light: 'hsl(var(--hue_j) 55% 40%)',
+	dark: 'hsl(var(--hue_j) 55% 60%)',
+};
+export const color_j_6: Style_Variable = {
+	name: 'color_j_6',
+	light: 'hsl(var(--hue_j) 60% 33%)',
+	dark: 'hsl(var(--hue_j) 60% 48%)',
+};
+export const color_j_7: Style_Variable = {
+	name: 'color_j_7',
+	light: 'hsl(var(--hue_j) 65% 25%)',
+	dark: 'hsl(var(--hue_j) 65% 40%)',
+};
+export const color_j_8: Style_Variable = {
+	name: 'color_j_8',
+	light: 'hsl(var(--hue_j) 70% 18%)',
+	dark: 'hsl(var(--hue_j) 70% 25%)',
+};
+export const color_j_9: Style_Variable = {
+	name: 'color_j_9',
+	light: 'hsl(var(--hue_j) 75% 10%)',
 };
 
 /*
@@ -630,6 +674,11 @@ export const fill_i: Style_Variable = {
 	name: 'fill_i',
 	light: 'var(--color_i_4)',
 	dark: 'var(--color_i_6)',
+};
+export const fill_j: Style_Variable = {
+	name: 'fill_j',
+	light: 'var(--color_j_4)',
+	dark: 'var(--color_j_6)',
 };
 
 /*
@@ -866,6 +915,10 @@ export const border_color_h: Style_Variable = {
 export const border_color_i: Style_Variable = {
 	name: 'border_color_i',
 	light: 'var(--color_i_5)',
+};
+export const border_color_j: Style_Variable = {
+	name: 'border_color_j',
+	light: 'var(--color_j_5)',
 };
 export const border_width: Style_Variable = {name: 'border_width', light: 'var(--border_width_1)'};
 // These use numbers instead of named size variants because
@@ -1140,6 +1193,11 @@ export const shadow_color_i: Style_Variable = {
 	light: 'var(--color_i_6)',
 	dark: 'var(--color_i_4)',
 };
+export const shadow_color_j: Style_Variable = {
+	name: 'shadow_color_j',
+	light: 'var(--color_j_6)',
+	dark: 'var(--color_j_4)',
+};
 
 export const shadow_alpha_1: Style_Variable = {
 	name: 'shadow_alpha_1',
@@ -1227,6 +1285,7 @@ export const default_variables: Array<Style_Variable> = [
 	hue_g,
 	hue_h,
 	hue_i,
+	hue_j,
 	color_a_1,
 	color_a_2,
 	color_a_3,
@@ -1308,6 +1367,15 @@ export const default_variables: Array<Style_Variable> = [
 	color_i_7,
 	color_i_8,
 	color_i_9,
+	color_j_1,
+	color_j_2,
+	color_j_3,
+	color_j_4,
+	color_j_5,
+	color_j_6,
+	color_j_7,
+	color_j_8,
+	color_j_9,
 
 	/* tint colors */
 	tint_hue,
@@ -1374,6 +1442,7 @@ export const default_variables: Array<Style_Variable> = [
 	fill_g,
 	fill_h,
 	fill_i,
+	fill_j,
 	// TODO probably need more variants, 5 total?
 	/* text colors don't use alpha because it affects performance too much */
 	text_color,
@@ -1472,6 +1541,7 @@ export const default_variables: Array<Style_Variable> = [
 	border_color_g,
 	border_color_h,
 	border_color_i,
+	border_color_j,
 	border_width,
 	border_width_1,
 	border_width_2,
@@ -1555,6 +1625,7 @@ export const default_variables: Array<Style_Variable> = [
 	shadow_color_g,
 	shadow_color_h,
 	shadow_color_i,
+	shadow_color_j,
 	shadow_alpha_1,
 	shadow_alpha_2,
 	shadow_alpha_3,

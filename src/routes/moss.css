@@ -466,6 +466,9 @@ a.chip {
 .shadow_color_i {
 	--shadow_color: var(--shadow_color_i);
 }
+.shadow_color_j {
+	--shadow_color: var(--shadow_color_j);
+}
 .shadow_alpha_1 {
 	--shadow_alpha: var(--shadow_alpha_1);
 }

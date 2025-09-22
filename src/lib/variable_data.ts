@@ -94,7 +94,7 @@ export const icon_sizes = {
 };
 
 export type Color_Variant = Array_Element<typeof color_variants>;
-export const color_variants = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] as const;
+export const color_variants = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'] as const;
 
 export type Border_Distance_Variant = Array_Element<typeof border_distance_variants>;
 export const border_distance_variants = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
