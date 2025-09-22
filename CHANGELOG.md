@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.34.1
+
+### Patch Changes
+
+- add color j ([#64](https://github.com/ryanatkn/moss/pull/64))
+
 ## 0.34.0
 
 ### Minor Changes
