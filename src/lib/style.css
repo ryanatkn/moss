@@ -579,6 +579,12 @@ TODO think through these patterns to get somewhere consistent
 	--border_color: var(--border_color_i);
 	--outline_color: var(--border_color_i);
 }
+:where(button.color_j) {
+	--text_color: var(--color_j_5);
+	--fill: var(--fill_j);
+	--border_color: var(--border_color_j);
+	--outline_color: var(--border_color_j);
+}
 
 /* TODO try to rearrange some of this to go after the colored variants */
 :where(button:disabled) {

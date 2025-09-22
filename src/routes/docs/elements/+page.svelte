@@ -23,7 +23,8 @@
 
 <Tome_Content {tome}>
 	<Unfinished_Implementation_Warning
-		>Element styles are incomplete. Any requests?</Unfinished_Implementation_Warning
+		>Element styles are incomplete. Any <a href="https://github.com/ryanatkn/moss">requests</a
+		>?</Unfinished_Implementation_Warning
 	>
 	<blockquote>
 		Styles for plain <Mdn_Link path="Web/HTML/Element">HTML elements</Mdn_Link>. See also <Tome_Link
