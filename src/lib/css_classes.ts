@@ -293,7 +293,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			/* A panel is a box embedded into the page, useful for visually isolating content. */
 			.panel {
 				border-radius: var(--border_radius_xs);
-				background-color: var(--panel_bg, var(--fg_1));
+				background-color: var(--panel_bg, var(--bg_1));
 			}
 		`,
 	},
@@ -345,7 +345,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			.menu_item.selected {
 				/* TODO different patterns for border and bg? */
 				--border_color: var(--color_a_5);
-				background-color: var(--fg_1);
+				background-color: var(--bg_1);
 				z-index: 1;
 				cursor: default;
 			}
@@ -354,12 +354,12 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			}
 			.menu_item:hover {
 				--border_color: var(--border_color_3);
-				background-color: var(--fg_0);
+				background-color: var(--bg_0);
 			}
 			.menu_item:active,
 			.menu_item.selected:hover {
 				--border_color: var(--border_color_3);
-				background-color: var(--fg_2);
+				background-color: var(--bg_2);
 			}
 			.menu_item.plain {
 				border: none;
@@ -408,7 +408,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 				font-weight: 500;
 				padding-left: var(--space_xs);
 				padding-right: var(--space_xs);
-				background-color: var(--fg_1);
+				background-color: var(--bg_1);
 				border-radius: var(--border_radius_xs);
 			}
 			a.chip {
@@ -837,15 +837,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	bg_7: {declaration: 'background-color: var(--bg_7);'},
 	bg_8: {declaration: 'background-color: var(--bg_8);'},
 	bg_9: {declaration: 'background-color: var(--bg_9);'},
-	fg_1: {declaration: 'background-color: var(--fg_1);'},
-	fg_2: {declaration: 'background-color: var(--fg_2);'},
-	fg_3: {declaration: 'background-color: var(--fg_3);'},
-	fg_4: {declaration: 'background-color: var(--fg_4);'},
-	fg_5: {declaration: 'background-color: var(--fg_5);'},
-	fg_6: {declaration: 'background-color: var(--fg_6);'},
-	fg_7: {declaration: 'background-color: var(--fg_7);'},
-	fg_8: {declaration: 'background-color: var(--fg_8);'},
-	fg_9: {declaration: 'background-color: var(--fg_9);'},
+	fg_1: {declaration: 'background-color: var(--bg_1);'},
+	fg_2: {declaration: 'background-color: var(--bg_2);'},
+	fg_3: {declaration: 'background-color: var(--bg_3);'},
+	fg_4: {declaration: 'background-color: var(--bg_4);'},
+	fg_5: {declaration: 'background-color: var(--bg_5);'},
+	fg_6: {declaration: 'background-color: var(--bg_6);'},
+	fg_7: {declaration: 'background-color: var(--bg_7);'},
+	fg_8: {declaration: 'background-color: var(--bg_8);'},
+	fg_9: {declaration: 'background-color: var(--bg_9);'},
 	color_darken_1: {declaration: 'color: var(--darken_1);'},
 	color_darken_2: {declaration: 'color: var(--darken_2);'},
 	color_darken_3: {declaration: 'color: var(--darken_3);'},

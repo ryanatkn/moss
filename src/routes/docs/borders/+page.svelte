@@ -194,6 +194,6 @@
 		padding: var(--space_xl5) var(--space_md);
 	}
 	.border_radius {
-		background-color: var(--fg_2);
+		background-color: var(--bg_2);
 	}
 </style>

@@ -477,6 +477,7 @@ shading - using these usually means handling both light and dark modes separatel
 the semantic variants	that handle `color-schema` automatically include `--bg_1` and `--bg_2`
 
 */
+// TODO BLOCK what to do with these? were used in bg previously
 // TODO some of these may be too subtle, but there may be cases where it's needed so keeping them for now
 // TODO no tint here? is that best?
 export const darken_1: Style_Variable = {name: 'darken_1', light: '#0000000f', summary: '6%'};
@@ -522,50 +523,48 @@ export const bg_0: Style_Variable = {
 };
 export const bg_1: Style_Variable = {
 	name: 'bg_1',
-	// TODO BLOCK consider making these plain opaque values, but tinted?
-	// what to do with lighten/darken? keep?
-	light: 'var(--lighten_1)',
-	dark: 'var(--darken_1)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 6%)',
 };
 export const bg_2: Style_Variable = {
 	name: 'bg_2',
-	light: 'var(--lighten_2)',
-	dark: 'var(--darken_2)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 88%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 12%)',
 };
 export const bg_3: Style_Variable = {
 	name: 'bg_3',
-	light: 'var(--lighten_3)',
-	dark: 'var(--darken_3)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 79%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 21%)',
 };
 export const bg_4: Style_Variable = {
 	name: 'bg_4',
-	light: 'var(--lighten_4)',
-	dark: 'var(--darken_4)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 68%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 32%)',
 };
 export const bg_5: Style_Variable = {
 	name: 'bg_5',
-	light: 'var(--lighten_5)',
-	dark: 'var(--darken_5)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 55%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 45%)',
 };
 export const bg_6: Style_Variable = {
 	name: 'bg_6',
-	light: 'var(--lighten_6)',
-	dark: 'var(--darken_6)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 35%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 65%)',
 };
 export const bg_7: Style_Variable = {
 	name: 'bg_7',
-	light: 'var(--lighten_7)',
-	dark: 'var(--darken_7)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 20%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 80%)',
 };
 export const bg_8: Style_Variable = {
 	name: 'bg_8',
-	light: 'var(--lighten_8)',
-	dark: 'var(--darken_8)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 11%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 89%)',
 };
 export const bg_9: Style_Variable = {
 	name: 'bg_9',
-	light: 'var(--lighten_9)',
-	dark: 'var(--darken_9)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 4%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
 };
 export const bg_10: Style_Variable = {
 	name: 'bg_10',
@@ -579,48 +578,48 @@ export const fg_0: Style_Variable = {
 };
 export const fg_1: Style_Variable = {
 	name: 'fg_1',
-	light: 'var(--darken_1)',
-	dark: 'var(--lighten_1)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 6%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 94%)',
 };
 export const fg_2: Style_Variable = {
 	name: 'fg_2',
-	light: 'var(--darken_2)',
-	dark: 'var(--lighten_2)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 12%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 88%)',
 };
 export const fg_3: Style_Variable = {
 	name: 'fg_3',
-	light: 'var(--darken_3)',
-	dark: 'var(--lighten_3)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 21%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 79%)',
 };
 export const fg_4: Style_Variable = {
 	name: 'fg_4',
-	light: 'var(--darken_4)',
-	dark: 'var(--lighten_4)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 32%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 68%)',
 };
 export const fg_5: Style_Variable = {
 	name: 'fg_5',
-	light: 'var(--darken_5)',
-	dark: 'var(--lighten_5)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 45%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 55%)',
 };
 export const fg_6: Style_Variable = {
 	name: 'fg_6',
-	light: 'var(--darken_6)',
-	dark: 'var(--lighten_6)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 65%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 35%)',
 };
 export const fg_7: Style_Variable = {
 	name: 'fg_7',
-	light: 'var(--darken_7)',
-	dark: 'var(--lighten_7)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 80%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 20%)',
 };
 export const fg_8: Style_Variable = {
 	name: 'fg_8',
-	light: 'var(--darken_8)',
-	dark: 'var(--lighten_8)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 89%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 11%)',
 };
 export const fg_9: Style_Variable = {
 	name: 'fg_9',
-	light: 'var(--darken_9)',
-	dark: 'var(--lighten_9)',
+	light: 'hsl(var(--tint_hue) var(--tint_saturation) 96%)',
+	dark: 'hsl(var(--tint_hue) var(--tint_saturation) 4%)',
 };
 export const fg_10: Style_Variable = {
 	name: 'fg_10',
@@ -1384,7 +1383,7 @@ export const default_variables: Array<Style_Variable> = [
 	tint_saturation,
 
 	/*
-		color variants - using these usually means handling both light and dark modes separately -
+		shading variants - using these usually means handling both light and dark modes separately -
 		the semantic variants	that handle `color-schema` automatically include `--bg_1` and `--bg_2`
 	*/
 	// TODO some of these may be too subtle, but there may be cases where it's needed so keeping them for now
