@@ -598,7 +598,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	// z_index_123: {declaration: 'z-index: 123;'},
 
 	flex_1: {declaration: 'flex: 1;'},
-	// TODO maybe align these with the full declaration form
+	// TODO BLOCK align these with the full declaration form
 	flex_wrap: {declaration: 'flex-wrap: wrap;'},
 	flex_wrap_reverse: {declaration: 'flex-wrap: wrap-reverse;'},
 	flex_nowrap: {declaration: 'flex-wrap: nowrap;'},
