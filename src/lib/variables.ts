@@ -522,6 +522,8 @@ export const bg_0: Style_Variable = {
 };
 export const bg_1: Style_Variable = {
 	name: 'bg_1',
+	// TODO BLOCK consider making these plain opaque values, but tinted?
+	// what to do with lighten/darken? keep?
 	light: 'var(--lighten_1)',
 	dark: 'var(--darken_1)',
 };
