@@ -7,6 +7,7 @@
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import Module_Link from '$routes/Module_Link.svelte';
 
 	const LIBRARY_ITEM_NAME = 'classes';
 
@@ -183,9 +184,8 @@ ${'<' as string}script>
 			The <code>moss.css</code> file is created on demand with the utility classes that your code
 			uses, if any. For now it requires <a href="https://github.com/ryanatkn/gro">Gro</a> to
 			generate it, but it isn't hard to make your own integration using the helpers
-			<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/gen_moss_css.ts"
-				>gen_moss_css.ts</a
-			>. I can add a Vite plugin if there's demand.
+			<Module_Link path="gen_moss_css.ts">gen_moss_css.ts</Module_Link>. I can add a Vite plugin if
+			there's demand.
 		</p>
 		<Unfinished_Implementation_Warning>
 			Maybe <code>moss.css</code> should default to <code>moss_utilities.css</code> or
@@ -201,10 +201,8 @@ ${'<' as string}script>
 			frameworky parts, and are well-integrated with the other APIs and tools.
 		</p>
 		<p>
-			Moss exports <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.ts"
-				>helpers</a
-			> to generate styles on demand based on class usage in your source files, so you can ship the minimal
-			code needed.
+			Moss exports <Module_Link path="css_class_helpers.ts">helpers</Module_Link> to generate styles
+			on demand based on class usage in your source files, so you can ship the minimal code needed.
 		</p>
 		<aside>
 			The API has been drifting to be more consistently match CSS at the cost of verbosity. I think
@@ -216,10 +214,9 @@ ${'<' as string}script>
 				href="https://svelte.dev/docs/svelte/class#Attributes-Objects-and-arrays"
 				>Svelte's object+array class syntax</a
 			>, added in 5.16. For now see
-			<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.test.ts"
-				>the tests</a
-			> for the supported forms. The current strategy uses a regexp for TS and Svelte files, but we'll
-			probably need to more robustly scan the parsed AST.
+			<Module_Link path="css_class_helpers.test.ts">the tests</Module_Link> for the supported forms.
+			The current strategy uses a regexp for TS and Svelte files, but we'll probably need to more robustly
+			scan the parsed AST.
 		</aside>
 		<div class="utility_classes">
 			{#each style_utility_groups as group (group.group)}
@@ -235,9 +232,7 @@ ${'<' as string}script>
 	<Tome_Section>
 		<Tome_Section_Header text="Builtin classes" />
 		<p>
-			Moss's <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-				>main stylesheet</a
-			>
+			Moss's <Module_Link path="style.css">main stylesheet</Module_Link>
 			provides styles for the base HTML elements using the framework's <Tome_Link
 				name="variables"
 			/>, acting as a modern CSS reset with sensible defaults and integrated theming. It includes
