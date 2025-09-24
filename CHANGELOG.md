@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.35.0
+
+### Minor Changes
+
+- fix gen CSS watch ([#65](https://github.com/ryanatkn/moss/pull/65))
+
 ## 0.34.1
 
 ### Patch Changes
