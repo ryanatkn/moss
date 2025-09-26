@@ -15,8 +15,6 @@
 
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
-	const style_global_values = 'inherit|initial|revert|revert_layer|unset';
-
 	// TODO show these with `Details` hiding their expanded set of values or something better (interpolated using this shorthand as the source of truth? isn't that complex)
 
 	// TODO generate these from `$lib/css_classes.ts`
@@ -24,17 +22,17 @@
 		{
 			group: 'Position and display',
 			items: [
-				`position_static|relative|absolute|fixed|sticky|${style_global_values}`,
+				`position_static|relative|absolute|fixed|sticky|$globals`,
 				// TODO think about making `display_` bold, and making this more systematic in general
-				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
-				`visibility_visible|hidden|collapse|${style_global_values}`,
-				`float_left|right|none|inline_start|inline_end|${style_global_values}`,
+				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|$globals`,
+				`visibility_visible|hidden|collapse|$globals`,
+				`float_left|right|none|inline_start|inline_end|$globals`,
 				'opacity_0|10-100',
 				'overflow_auto|hidden|scroll|clip|visible',
 				'overflow_x|y_auto|hidden|scroll|clip|visible',
-				`overflow_wrap_normal|anywhere|break_word|${style_global_values}`,
-				`scrollbar_width_auto|thin|none|${style_global_values}`,
-				`scrollbar_gutter_auto|stable|stable_both_edges|${style_global_values}`,
+				`overflow_wrap_normal|anywhere|break_word|$globals`,
+				`scrollbar_width_auto|thin|none|$globals`,
+				`scrollbar_gutter_auto|stable|stable_both_edges|$globals`,
 			],
 		},
 		{
@@ -84,11 +82,11 @@
 				'icon_size_xs-xl3',
 				'text_align_start|end|left|right|center|justify|justify_all|match_parent',
 				'vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom',
-				`word_break_normal|break_all|keep_all|${style_global_values}`,
+				`word_break_normal|break_all|keep_all|$globals`,
 				'white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces',
-				`white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces|${style_global_values}`,
+				`white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces|$globals`,
 				'text_wrap_wrap|nowrap|balance|pretty|stable',
-				`user_select_none|auto|text|all|${style_global_values}`,
+				`user_select_none|auto|text|all|$globals`,
 				'font_weight_100-900',
 				'ellipsis',
 			],
@@ -116,7 +114,7 @@
 				'border_color_transparent',
 				'border_width_0-9',
 				'outline_width_0|focused|active',
-				`border_style_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|${style_global_values}`,
+				`border_style_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|$globals`,
 				'border_radius_0|10|20|30|40|50|60|70|80|90|100',
 				'border_radius_xs3-xl',
 				'border_top|bottom_left|right_radius_0|10|20|30|40|50|60|70|80|90|100',
@@ -218,6 +216,9 @@ ${'<' as string}script>
 			The current strategy uses a regexp for TS and Svelte files, but we'll probably need to more robustly
 			scan the parsed AST.
 		</aside>
+		<p>
+			<code>$globals</code> include <code>inherit|initial|revert|revert_layer|unset</code>.
+		</p>
 		<div class="utility_classes">
 			{#each style_utility_groups as group (group.group)}
 				<h4>{group.group}</h4>
