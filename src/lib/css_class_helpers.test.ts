@@ -8,6 +8,12 @@ const values: Array<[contents: string, expected: Array<string>]> = [
 	['class="a b"', ['a', 'b']],
 	['class="a b c"', ['a', 'b', 'c']],
 	["class='a b c'", ['a', 'b', 'c']],
+	['class = "a"', ['a']],
+	['class= "a"', ['a']],
+	['class ="a"', ['a']],
+	['class = "a b c"', ['a', 'b', 'c']],
+	['class= "a b c"', ['a', 'b', 'c']],
+	['class ="a b c"', ['a', 'b', 'c']],
 	// `class:` object property
 	['class: "a"', ['a']],
 	['class: "a b"', ['a', 'b']],
