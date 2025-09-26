@@ -65,17 +65,15 @@ Moss is a CSS framework and design system built on **style variables** - design 
 
 ### TypeScript/JS
 
-- **Tabs for indentation** (not spaces)
-- **Snake_case naming** for variables and types (e.g., `Style_Variable`, `bg_color_1`)
-- **Single quotes** for strings
-- **No trailing semicolons** in TypeScript interfaces
-- **Explicit type exports** (e.g., `export type`, `export interface`)
+- tabs for indentation (not spaces)
+- snake_case and Upper_Snake_Case naming for variables and types (e.g., `Style_Variable`, `bg_color_1`)
+- prefer `const fn = () =>` arrow functions instead of using the `function` keyword.
 
 ### CSS variables
 
 - CSS variable names use lowercase and underscores: `--bg_1`, `--color_a_1`
-- Semantic naming patterns:
+- semantic naming patterns:
   - `bg_*` and `fg_*` - color-scheme-aware (swap in dark mode)
   - `text_color_*` - text color variants
   - `color_[a-j]_[1-10]` - hue-based color palette
-  - Size variants: `xs5` through `xl15` for spacing/sizing
+  - size variants: `xs5` through `xl15` for spacing/sizing
