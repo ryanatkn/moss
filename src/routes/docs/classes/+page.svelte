@@ -306,7 +306,7 @@ ${'<' as string}script>
 		padding: var(--space_xs3);
 	}
 	.utility_classes li:nth-child(odd) {
-		background-color: var(--bg_1);
+		background-color: var(--fg_1);
 		padding: var(--space_xs3);
 	}
 </style>
