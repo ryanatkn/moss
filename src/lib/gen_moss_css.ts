@@ -21,14 +21,16 @@ export const gen_moss_css = (options: Gen_Moss_Css_Options = {}): Gen => {
 	const {filter_file = filer_file_default, include_stats = false} = options;
 
 	return {
-		dependencies: ({changed_file_id, filer}) => {
-			if (!changed_file_id) return 'all';
-			const disknode = filer.get_by_id(changed_file_id);
-			if (disknode?.contents && collect_css_classes(disknode.contents).size) {
-				return 'all';
-			}
-			return null;
-		},
+		dependencies: 'all',
+		// TODO BLOCK to optimize I think we'd need to regenate if files are removed or go to 0 classes too, so we'd need the previous contents at minimum right?
+		// dependencies: ({changed_file_id, filer}) => {
+		// 	if (!changed_file_id) return 'all';
+		// 	const disknode = filer.get_by_id(changed_file_id);
+		// 	if (disknode?.contents && collect_css_classes(disknode.contents).size) {
+		// 		return 'all';
+		// 	}
+		// 	return null;
+		// },
 		generate: async ({filer, log, origin_path}) => {
 			log.info('generating Moss CSS classes...');
 
