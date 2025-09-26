@@ -206,7 +206,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	border-radius: var(--border_radius, var(--border_radius_xs));
 	padding: var(--space_md);
 	color: var(--text_color, var(--text_color_3));
-	background-color: var(--bg_1);
+	background-color: var(--fg_1);
 }
 :where(aside:not(.unstyled):hover) {
 	border-left-color: var(--border_color_4);
@@ -216,7 +216,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	border-radius: var(--border_radius, var(--border_radius_xs));
 	padding: var(--space_md);
 	color: var(--text_color, var(--text_color_3));
-	background-color: var(--bg_1);
+	background-color: var(--fg_1);
 }
 
 :where(code:not(.unstyled)) {
@@ -225,7 +225,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	-webkit-hyphens: none;
 	hyphens: none;
 	color: var(--text_color, var(--text_color_3));
-	background-color: var(--bg_1);
+	background-color: var(--fg_1);
 	padding: 0 var(--space_xs2);
 	border-radius: var(--border_radius, var(--border_radius_xs));
 }
@@ -493,8 +493,8 @@ TODO think through these patterns to get somewhere consistent
 	--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
 	--button_border_color: var(--border_color);
 	/* TODO give real values, 90%? */
-	--button_border_color_hover: color-mix(in hsl, var(--border_color) 90%, var(--bg_0));
-	--button_border_color_active: color-mix(in hsl, var(--border_color) 80%, var(--bg_0));
+	--button_border_color_hover: color-mix(in hsl, var(--border_color) 90%, var(--fg_10));
+	--button_border_color_active: color-mix(in hsl, var(--border_color) 80%, var(--fg_10));
 	color: var(--button_text_color);
 	background-color: var(--button_fill);
 	cursor: pointer;
@@ -617,7 +617,7 @@ TODO think through these patterns to get somewhere consistent
 :where(button:not(.selected):not(:disabled):hover) {
 	/* TODO or set a hover var? make consistent with fill */
 	--button_border_color: var(--button_border_color_hover);
-	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--bg_0));
+	--button_text_color: color-mix(in hsl, var(--text_color) 90%, var(--fg_10));
 }
 :where(button.selected.deselectable:not(:disabled):hover) {
 	--button_text_color: var(--text_color_10);
@@ -669,10 +669,10 @@ TODO think through these patterns to get somewhere consistent
 	border-radius: var(--border_radius, var(--border_radius_xs));
 }
 :where(summary:hover:not(.unstyled)) {
-	background-color: var(--bg_1);
+	background-color: var(--fg_1);
 }
 :where(summary:active:not(.unstyled)) {
-	background-color: var(--bg_2);
+	background-color: var(--fg_2);
 }
 :where(details[open] summary:not(.unstyled)) {
 	margin-bottom: var(--space_sm);
@@ -694,5 +694,5 @@ TODO think through these patterns to get somewhere consistent
 	border-bottom: 1px solid var(--border_color_1);
 }
 :where(tr:hover) {
-	background-color: var(--bg_1);
+	background-color: var(--fg_1);
 }
