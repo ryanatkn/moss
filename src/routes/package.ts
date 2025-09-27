@@ -76,6 +76,22 @@ export const src_json: Src_Json = {
 	name: '@ryanatkn/moss',
 	version: '0.35.0',
 	modules: {
+		'./css_class_generators.js': {
+			path: 'css_class_generators.ts',
+			declarations: [
+				{name: 'Class_Template_Result', kind: 'type'},
+				{name: 'Class_Template_Fn', kind: 'type'},
+				{name: 'generate_classes', kind: 'function'},
+				{name: 'CSS_GLOBALS', kind: 'variable'},
+				{name: 'Css_Global', kind: 'type'},
+				{name: 'CSS_DIRECTIONS', kind: 'variable'},
+				{name: 'Css_Direction', kind: 'type'},
+				{name: 'COLOR_INTENSITIES', kind: 'variable'},
+				{name: 'Color_Intensity', kind: 'type'},
+				{name: 'to_kebab', kind: 'function'},
+				{name: 'generate_global_classes', kind: 'function'},
+			],
+		},
 		'./css_class_helpers.js': {
 			path: 'css_class_helpers.ts',
 			declarations: [
