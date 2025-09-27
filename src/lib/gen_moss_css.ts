@@ -1,13 +1,13 @@
 import type {Gen} from '@ryanatkn/gro/gen.js';
 import type {File_Filter} from '@ryanatkn/gro/path.js';
+
 import type {
 	Css_Class_Declaration,
 	Css_Class_Declaration_Interpreter,
-} from './css_class_helpers.js';
-
-import {collect_css_classes, Css_Classes, generate_classes_css} from './css_class_helpers.js';
-import {css_classes_by_name} from './css_classes.js';
-import {css_class_interpreters} from './css_class_interpreters.js';
+} from '$lib/css_class_helpers.js';
+import {collect_css_classes, Css_Classes, generate_classes_css} from '$lib/css_class_helpers.js';
+import {css_classes_by_name} from '$lib/css_classes.js';
+import {css_class_interpreters} from '$lib/css_class_interpreters.js';
 
 export interface Gen_Moss_Css_Options {
 	filter_file?: File_Filter | null;
