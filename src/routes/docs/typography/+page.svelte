@@ -99,7 +99,7 @@
 	</Tome_Section>
 	<Tome_Section>
 		<Tome_Section_Header text="Font sizes" />
-		<form class="width_sm">
+		<form class="width_upto_sm">
 			<Font_Weight_Control bind:selected_font_weight></Font_Weight_Control>
 		</form>
 		{#each font_size_variants as size (size.name)}

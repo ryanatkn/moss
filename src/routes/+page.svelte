@@ -23,7 +23,7 @@
 			<blockquote class="shadow_inset_top_xs">magical organic stylesheets 🌿</blockquote>
 		</div>
 	</section>
-	<section class="width_sm p_sm border_radius_md shadow_xs">
+	<section class="width_upto_sm p_sm border_radius_md shadow_xs">
 		<div class="panel p_lg bg shadow_sm">
 			<Introduction />
 		</div>
@@ -31,7 +31,7 @@
 	<section>
 		<Card href={resolve('/docs')}>docs{#snippet icon()}🌿{/snippet}</Card>
 	</section>
-	<section class="width_sm p_sm border_radius_md shadow_xs">
+	<section class="width_upto_sm p_sm border_radius_md shadow_xs">
 		<div class="panel p_lg bg shadow_sm">
 			<Unfinished_Implementation_Warning>
 				Moss is in early alpha and will have many breaking changes to get to 1.0. Help is welcome,

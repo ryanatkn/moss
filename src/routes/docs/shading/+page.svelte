@@ -136,7 +136,7 @@
 	</Tome_Section>
 	<section>
 		<Color_Scheme_Input />
-		<aside class="mt_xl2 width_sm mx_auto">
+		<aside class="mt_xl2 width_upto_sm mx_auto">
 			<p>
 				tip: Try <button type="button" onclick={toggle_color_scheme}>toggling</button> between light
 				and dark to see how <code>bg</code> and <code>fg</code>

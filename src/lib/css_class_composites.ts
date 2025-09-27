@@ -50,162 +50,162 @@ export const css_class_composites: Record<string, Css_Class_Declaration | undefi
 	ellipsis: {
 		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
 	},
-	width_xs: {
+	width_upto_xs: {
 		ruleset: `
-			.width_xs {
+			.width_upto_xs {
 				width: 100%;
 				max-width: var(--distance_xs);
 			}
 		`,
 	},
-	width_sm: {
+	width_upto_sm: {
 		ruleset: `
-			.width_sm {
+			.width_upto_sm {
 				width: 100%;
 				max-width: var(--distance_sm);
 			}
 		`,
 	},
-	width_md: {
+	width_upto_md: {
 		ruleset: `
-			.width_md {
+			.width_upto_md {
 				width: 100%;
 				max-width: var(--distance_md);
 			}
 		`,
 	},
-	width_lg: {
+	width_upto_lg: {
 		ruleset: `
-			.width_lg {
+			.width_upto_lg {
 				width: 100%;
 				max-width: var(--distance_lg);
 			}
 		`,
 	},
-	width_xl: {
+	width_upto_xl: {
 		ruleset: `
-			.width_xl {
+			.width_upto_xl {
 				width: 100%;
 				max-width: var(--distance_xl);
 			}
 		`,
 	},
-	min_width_xs: {
+	width_atleast_xs: {
 		ruleset: `
-			.min_width_xs {
+			.width_atleast_xs {
 				width: 100%;
 				min-width: var(--distance_xs);
 			}
 		`,
 	},
-	min_width_sm: {
+	width_atleast_sm: {
 		ruleset: `
-			.min_width_sm {
+			.width_atleast_sm {
 				width: 100%;
 				min-width: var(--distance_sm);
 			}
 		`,
 	},
-	min_width_md: {
+	width_atleast_md: {
 		ruleset: `
-			.min_width_md {
+			.width_atleast_md {
 				width: 100%;
 				min-width: var(--distance_md);
 			}
 		`,
 	},
-	min_width_lg: {
+	width_atleast_lg: {
 		ruleset: `
-			.min_width_lg {
+			.width_atleast_lg {
 				width: 100%;
 				min-width: var(--distance_lg);
 			}
 		`,
 	},
-	min_width_xl: {
+	width_atleast_xl: {
 		ruleset: `
-			.min_width_xl {
+			.width_atleast_xl {
 				width: 100%;
 				min-width: var(--distance_xl);
 			}
 		`,
 	},
 	// TODO rethink if this breaks too often or confusingly, `height: 100%` depends on the parent and often won't take effect
-	height_xs: {
+	height_upto_xs: {
 		ruleset: `
-			.height_xs {
+			.height_upto_xs {
 				height: 100%;
 				max-height: var(--distance_xs);
 			}
 		`,
 	},
-	height_sm: {
+	height_upto_sm: {
 		ruleset: `
-			.height_sm {
+			.height_upto_sm {
 				height: 100%;
 				max-height: var(--distance_sm);
 			}
 		`,
 	},
-	height_md: {
+	height_upto_md: {
 		ruleset: `
-			.height_md {
+			.height_upto_md {
 				height: 100%;
 				max-height: var(--distance_md);
 			}
 		`,
 	},
-	height_lg: {
+	height_upto_lg: {
 		ruleset: `
-			.height_lg {
+			.height_upto_lg {
 				height: 100%;
 				max-height: var(--distance_lg);
 			}
 		`,
 	},
-	height_xl: {
+	height_upto_xl: {
 		ruleset: `
-			.height_xl {
+			.height_upto_xl {
 				height: 100%;
 				max-height: var(--distance_xl);
 			}
 		`,
 	},
-	min_height_xs: {
+	height_atleast_xs: {
 		ruleset: `
-			.min_height_xs {
+			.height_atleast_xs {
 				height: 100%;
 				min-height: var(--distance_xs);
 			}
 		`,
 	},
-	min_height_sm: {
+	height_atleast_sm: {
 		ruleset: `
-			.min_height_sm {
+			.height_atleast_sm {
 				height: 100%;
 				min-height: var(--distance_sm);
 			}
 		`,
 	},
-	min_height_md: {
+	height_atleast_md: {
 		ruleset: `
-			.min_height_md {
+			.height_atleast_md {
 				height: 100%;
 				min-height: var(--distance_md);
 			}
 		`,
 	},
-	min_height_lg: {
+	height_atleast_lg: {
 		ruleset: `
-			.min_height_lg {
+			.height_atleast_lg {
 				height: 100%;
 				min-height: var(--distance_lg);
 			}
 		`,
 	},
-	min_height_xl: {
+	height_atleast_xl: {
 		ruleset: `
-			.min_height_xl {
+			.height_atleast_xl {
 				height: 100%;
 				min-height: var(--distance_xl);
 			}

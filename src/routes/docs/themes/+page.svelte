@@ -76,7 +76,7 @@
 			> and <Module_Link path="themes.ts"><code>@ryanatkn/moss/themes.ts</code></Module_Link>.
 		</p>
 		<!-- TODO explain when exported <Code code={`<Theme_Input\n\t{themes}\n\t{selected_theme}\n/>`} /> -->
-		<div class="width_xs mb_lg">
+		<div class="width_upto_xs mb_lg">
 			<Theme_Input {themes} enable_editing onedit={(t) => (editing_theme = t)} />
 		</div>
 		<!-- <button class="mb_lg" onclick={() => (show_create_theme_dialog = true)} disabled
@@ -91,7 +91,7 @@
 <!-- TODO enable creating themes -->
 <!-- {#if show_create_theme_dialog}
 	<Dialog onclose={() => (show_create_theme_dialog = false)} let:close>
-		<div class="pane p_md width_md mx_auto">
+		<div class="pane p_md width_upto_md mx_auto">
 			<div class="theme_editor_wrapper panel">
 				<Theme_Form
 					oncreate={(theme) => {
@@ -105,7 +105,7 @@
 {/if} -->
 {#if editing_theme}
 	<Dialog onclose={() => (editing_theme = null)}>
-		<div class="pane p_md width_md mx_auto">
+		<div class="pane p_md width_upto_md mx_auto">
 			<div class="theme_editor_wrapper">
 				<Theme_Form
 					theme={editing_theme}
