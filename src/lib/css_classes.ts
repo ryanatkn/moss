@@ -53,37 +53,26 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	// Composite classes go first, so they can be overridden by the more specific classes.
 	...css_class_composites,
 
-	/** @see https://developer.mozilla.org/en-US/docs/Web/CSS/position */
-	// Position
 	...generate_property_classes('position', position_values),
 	...generate_property_classes('position', CSS_GLOBALS, to_kebab),
 
-	/** @see https://drafts.csswg.org/css-display/#display-value-summary. */
-	// Display properties
 	...generate_property_classes('display', display_values),
 	...generate_property_classes('display', CSS_GLOBALS, to_kebab),
 
-	// Visibility
 	...generate_property_classes('visibility', visibility_values),
 	...generate_property_classes('visibility', CSS_GLOBALS, to_kebab),
 
-	/** @see https://developer.mozilla.org/en-US/docs/Web/CSS/float */
-	// Float
 	...generate_property_classes('float', float_values),
 	...generate_property_classes('float', CSS_GLOBALS, to_kebab),
 
-	// Overflow properties with axis variants
 	...generate_property_with_axes('overflow', overflow_values),
 
-	// Overflow wrap
 	...generate_property_classes('overflow-wrap', overflow_wrap_values),
 	...generate_property_classes('overflow-wrap', CSS_GLOBALS, to_kebab, 'overflow_wrap'),
 
-	// Scrollbar width
 	...generate_property_classes('scrollbar-width', scrollbar_width_values),
 	...generate_property_classes('scrollbar-width', CSS_GLOBALS, to_kebab, 'scrollbar_width'),
 
-	// Scrollbar gutter
 	...generate_property_classes('scrollbar-gutter', scrollbar_gutter_values),
 	...generate_property_classes('scrollbar-gutter', CSS_GLOBALS, to_kebab, 'scrollbar_gutter'),
 
@@ -111,20 +100,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	shrink: {declaration: 'flex-shrink: 1;'},
 	shrink_0: {declaration: 'flex-shrink: 0;'},
 
-	// Align items
 	...generate_property_classes('align-items', alignment_values),
-	// Align content
 	...generate_property_classes('align-content', [
 		...alignment_values,
 		'space-between',
 		'space-around',
 		'space-evenly',
 	]),
-	// Align self
 	...generate_property_classes('align-self', alignment_values),
-	// Justify content
 	...generate_property_classes('justify-content', justify_values),
-	// Justify items
 	...generate_property_classes('justify-items', [
 		'center',
 		'start',
@@ -134,7 +118,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		'baseline',
 		'stretch',
 	]),
-	// Justify self
 	...generate_property_classes('justify-self', [
 		'center',
 		'start',
@@ -151,31 +134,25 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	font_family_sans: {declaration: 'font-family: var(--font_family_sans);'},
 	font_family_serif: {declaration: 'font-family: var(--font_family_serif);'},
 	font_family_mono: {declaration: 'font-family: var(--font_family_mono);'},
-	// Line height
+
 	...generate_property_classes('line-height', ['0', '1', ...line_height_variants], (v) =>
 		v === '0' || v === '1' ? v : `var(--line_height_${v})`,
 	),
-	// Font size
 	...generate_property_classes(
 		'font-size',
 		font_size_variants,
 		(v) => `var(--font_size_${v}); --font_size: var(--font_size_${v})`,
 	),
-	// Icon sizes
 	...generate_property_classes(
 		'font-size',
 		icon_size_variants,
 		(v) => `var(--icon_size_${v}); --font_size: var(--icon_size_${v})`,
 		'icon_size',
 	),
-	// Text alignment
 	...generate_property_classes('text-align', text_align_values),
-	// Vertical alignment
 	...generate_property_classes('vertical-align', vertical_align_values),
-	// Word break
 	...generate_property_classes('word-break', word_break_values),
 	...generate_property_classes('word-break', CSS_GLOBALS, to_kebab),
-	// White space
 	...generate_property_classes('white-space', [
 		'normal',
 		'nowrap',
@@ -184,9 +161,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		'pre-line',
 		'break-spaces',
 	]),
-
-	/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
-	// White space collapse
 	...generate_property_classes('white-space-collapse', [
 		'collapse',
 		'preserve',
@@ -195,12 +169,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		'break-spaces',
 	]),
 	...generate_property_classes('white-space-collapse', CSS_GLOBALS, to_kebab),
-
-	/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
-	// Text wrap
 	...generate_property_classes('text-wrap', ['wrap', 'nowrap', 'balance', 'pretty', 'stable']),
-
-	// User select
 	...generate_property_classes('user-select', ['none', 'auto', 'text', 'all']),
 	...generate_property_classes('user-select', CSS_GLOBALS, to_kebab),
 
@@ -209,14 +178,12 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	colors
 
 	*/
-	// Text color properties
 	...generate_property_classes(
 		'color',
 		text_color_variants.map(String),
 		(v) => `var(--text_color_${v})`,
 		'text_color',
 	),
-	// Darken/lighten background colors
 	...generate_property_classes(
 		'background-color',
 		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
@@ -229,7 +196,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		(v) => `var(--lighten_${v})`,
 		'lighten',
 	),
-	// Semantic background colors
 	bg: {declaration: 'background-color: var(--bg);'},
 	fg: {declaration: 'background-color: var(--fg);'},
 	...generate_property_classes(
@@ -244,7 +210,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		(v) => `var(--fg_${v})`,
 		'fg',
 	),
-	// Darken/lighten text colors
 	...generate_property_classes(
 		'color',
 		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
@@ -257,7 +222,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		(v) => `var(--lighten_${v})`,
 		'color_lighten',
 	),
-	// Semantic text colors
 	color_bg: {declaration: 'color: var(--bg);'},
 	color_fg: {declaration: 'color: var(--fg);'},
 	...generate_property_classes(
@@ -272,7 +236,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		(v) => `var(--fg_${v})`,
 		'color_fg',
 	),
-	// Hue classes
 	...generate_classes(
 		(hue: string) => ({
 			name: `hue_${hue}`,
@@ -280,7 +243,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		}),
 		color_variants,
 	),
-	// Color properties - all hues × intensities
 	...generate_classes(
 		(hue: string, intensity: string) => ({
 			name: `color_${hue}_${intensity}`,
@@ -289,7 +251,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		color_variants,
 		COLOR_INTENSITIES,
 	),
-	// Background colors - all hues × intensities
 	...generate_classes(
 		(hue: string, intensity: string) => ({
 			name: `bg_${hue}_${intensity}`,
@@ -298,17 +259,14 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		color_variants,
 		COLOR_INTENSITIES,
 	),
-	// Border colors - numeric variants
 	...generate_property_classes(
 		'border-color',
 		[1, 2, 3, 4, 5].map(String),
 		(v) => `var(--border_color_${v})`,
 	),
-	// Border colors - hue variants
 	...generate_property_classes('border-color', color_variants, (v) => `var(--border_color_${v})`),
 	border_color_transparent: {declaration: 'border-color: transparent;'},
 
-	// Border width
 	...generate_property_classes(
 		'border-width',
 		['0', ...border_distance_variants.map(String)],
@@ -318,31 +276,24 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	outline_width_focus: {declaration: 'outline-width: var(--outline_width_focus);'},
 	outline_width_active: {declaration: 'outline-width: var(--outline_width_active);'},
 
-	/* TODO add the top/right/bottom/left border-style multi-argument variants */
-	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
-	// Border style
 	...generate_property_classes('border-style', border_style_values),
 	...generate_property_classes('border-style', CSS_GLOBALS, to_kebab),
 
-	// Border radius - generated from variants
 	...generate_property_classes(
 		'border-radius',
 		border_radius_variants,
 		(v) => `var(--border_radius_${v})`,
 	),
 	// TODO BLOCK interpret
-	// Border radius - percentage and zero
 	...generate_property_classes(
 		'border-radius',
 		['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
 		(v) => (v === '0' ? '0' : `${v}%`),
 	),
-	// Border radius corners - percentage and zero
 	...generate_border_radius_corners(
 		['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
 		(v) => (v === '0' ? '0' : `${v}%`),
 	),
-	// Border radius corners - using radius variants
 	...generate_border_radius_corners(border_radius_variants, (v) => `var(--border_radius_${v})`),
 
 	/*
@@ -350,7 +301,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	shadows
 
 	*/
-	// Shadow classes generated from sizes and alpha mappings
 	...generate_shadow_classes(['xs', 'sm', 'md', 'lg', 'xl'], {
 		xs: '1',
 		sm: '2',
@@ -358,7 +308,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		lg: '4',
 		xl: '5',
 	}),
-	// Shadow color classes - semantic
 	...generate_classes(
 		(value: string) => ({
 			name: `shadow_color_${value}`,
@@ -366,7 +315,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		}),
 		shadow_semantic_values,
 	),
-	// Shadow color classes - hue variants
 	...generate_classes(
 		(hue: string) => ({
 			name: `shadow_color_${hue}`,
@@ -374,7 +322,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		}),
 		color_variants,
 	),
-	// Shadow alpha classes
 	...generate_classes(
 		(alpha: number) => ({
 			name: `shadow_alpha_${alpha}`,
@@ -393,7 +340,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	layout
 
 	*/
-	// Width properties
 	...generate_property_classes(
 		'width',
 		[
@@ -412,7 +358,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		format_dimension_value,
 		'w',
 	),
-	// Height properties
 	...generate_property_classes(
 		'height',
 		[
@@ -433,7 +378,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	),
 
 	// TODO BLOCK maybe longhand names here? and width/height above? then the current `width_` vars need to change
-	// Position offset properties (top, right, bottom, left)
 	...generate_property_classes(
 		'top',
 		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
@@ -459,28 +403,22 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		'l',
 	),
 
-	// Inset property
 	...generate_property_classes(
 		'inset',
 		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
 		format_spacing_value,
 	),
 
-	// Padding classes - all variants (p, pt, pr, pb, pl, px, py)
 	...generate_directional_classes(
 		'padding',
 		['0', '100', '1px', '2px', '3px', ...space_variants],
 		format_spacing_value,
 	),
-
-	// Margin classes - all variants (m, mt, mr, mb, ml, mx, my)
 	...generate_directional_classes(
 		'margin',
 		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
 		format_spacing_value,
 	),
-
-	// Gap properties
 	...generate_property_classes('gap', space_variants, format_spacing_value),
 	...generate_property_classes('column-gap', space_variants, format_spacing_value),
 	...generate_property_classes('row-gap', space_variants, format_spacing_value),
