@@ -2870,6 +2870,9 @@
 	"p_3px": {
 		"declaration": "padding: 3px;"
 	},
+	"p_100": {
+		"declaration": "padding: 100%;"
+	},
 	"p_xs5": {
 		"declaration": "padding: var(--space_xs5);"
 	},
@@ -2942,9 +2945,6 @@
 	"pt_0": {
 		"declaration": "padding-top: 0;"
 	},
-	"pt_100": {
-		"declaration": "padding-top: 100%;"
-	},
 	"pt_1px": {
 		"declaration": "padding-top: 1px;"
 	},
@@ -2953,6 +2953,9 @@
 	},
 	"pt_3px": {
 		"declaration": "padding-top: 3px;"
+	},
+	"pt_100": {
+		"declaration": "padding-top: 100%;"
 	},
 	"pt_xs5": {
 		"declaration": "padding-top: var(--space_xs5);"
@@ -3026,9 +3029,6 @@
 	"pr_0": {
 		"declaration": "padding-right: 0;"
 	},
-	"pr_100": {
-		"declaration": "padding-right: 100%;"
-	},
 	"pr_1px": {
 		"declaration": "padding-right: 1px;"
 	},
@@ -3037,6 +3037,9 @@
 	},
 	"pr_3px": {
 		"declaration": "padding-right: 3px;"
+	},
+	"pr_100": {
+		"declaration": "padding-right: 100%;"
 	},
 	"pr_xs5": {
 		"declaration": "padding-right: var(--space_xs5);"
@@ -3110,9 +3113,6 @@
 	"pb_0": {
 		"declaration": "padding-bottom: 0;"
 	},
-	"pb_100": {
-		"declaration": "padding-bottom: 100%;"
-	},
 	"pb_1px": {
 		"declaration": "padding-bottom: 1px;"
 	},
@@ -3121,6 +3121,9 @@
 	},
 	"pb_3px": {
 		"declaration": "padding-bottom: 3px;"
+	},
+	"pb_100": {
+		"declaration": "padding-bottom: 100%;"
 	},
 	"pb_xs5": {
 		"declaration": "padding-bottom: var(--space_xs5);"
@@ -3194,9 +3197,6 @@
 	"pl_0": {
 		"declaration": "padding-left: 0;"
 	},
-	"pl_100": {
-		"declaration": "padding-left: 100%;"
-	},
 	"pl_1px": {
 		"declaration": "padding-left: 1px;"
 	},
@@ -3205,6 +3205,9 @@
 	},
 	"pl_3px": {
 		"declaration": "padding-left: 3px;"
+	},
+	"pl_100": {
+		"declaration": "padding-left: 100%;"
 	},
 	"pl_xs5": {
 		"declaration": "padding-left: var(--space_xs5);"
@@ -3287,6 +3290,9 @@
 	"px_3px": {
 		"declaration": "padding-left: 3px;\tpadding-right: 3px;"
 	},
+	"px_100": {
+		"declaration": "padding-left: 100%;\tpadding-right: 100%;"
+	},
 	"px_xs5": {
 		"declaration": "padding-left: var(--space_xs5);\tpadding-right: var(--space_xs5);"
 	},
@@ -3367,6 +3373,9 @@
 	},
 	"py_3px": {
 		"declaration": "padding-top: 3px;\tpadding-bottom: 3px;"
+	},
+	"py_100": {
+		"declaration": "padding-top: 100%;\tpadding-bottom: 100%;"
 	},
 	"py_xs5": {
 		"declaration": "padding-top: var(--space_xs5);\tpadding-bottom: var(--space_xs5);"
