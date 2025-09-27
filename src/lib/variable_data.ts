@@ -82,6 +82,10 @@ export const shadow_font_size_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const
 export type Shadow_Alpha_Variant = Array_Element<typeof shadow_alpha_variants>;
 export const shadow_alpha_variants = [1, 2, 3, 4, 5] as const;
 
+// Icon size variants
+export type Icon_Size_Variant = Array_Element<typeof icon_size_variants>;
+export const icon_size_variants = ['xs', 'sm', 'md', 'lg', 'xl', 'xl2', 'xl3'] as const;
+
 // TODO maybe put this inline? factor out the pieces with `icon_size_variants`?
 export const icon_sizes = {
 	icon_size_xs: '18px',
@@ -160,3 +164,33 @@ export const display_values = [
 	'table',
 	'inline-table',
 ] as const;
+
+// Text alignment values
+export type Text_Align_Value = Array_Element<typeof text_align_values>;
+export const text_align_values = [
+	'start',
+	'end',
+	'left',
+	'right',
+	'center',
+	'justify',
+	'justify-all',
+	'match-parent',
+] as const;
+
+// Vertical alignment values
+export type Vertical_Align_Value = Array_Element<typeof vertical_align_values>;
+export const vertical_align_values = [
+	'baseline',
+	'sub',
+	'super',
+	'text-top',
+	'text-bottom',
+	'middle',
+	'top',
+	'bottom',
+] as const;
+
+// Word break values
+export type Word_Break_Value = Array_Element<typeof word_break_values>;
+export const word_break_values = ['normal', 'break-all', 'keep-all'] as const;

@@ -80,8 +80,11 @@ export type Css_Direction = (typeof CSS_DIRECTIONS)[number];
 export const COLOR_INTENSITIES = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] as const; // TODO BLOCK '0' and '10' ?
 export type Color_Intensity = (typeof COLOR_INTENSITIES)[number];
 
-// Helper to convert snake_case to kebab-case for CSS properties
+// Helper to convert snake_case to kebab-case for CSS property values
 export const to_kebab = (str: string): string => str.replace(/_/g, '-');
+
+// Helper to convert any string to a valid CSS variable name (snake_case)
+export const to_variable_name = (str: string): string => str.replace(/[-\s]+/g, '_');
 
 // Helper to generate global value classes for any CSS property
 export const generate_global_classes = (
@@ -109,6 +112,21 @@ export const format_spacing_value = (value: string): string => {
 };
 
 /**
+ * Format width/height values for CSS (handles 0, auto, percentages, pixels, content values, and CSS variables).
+ * Used by width and height properties.
+ */
+export const format_dimension_value = (value: string): string => {
+	if (value === '0') return '0';
+	if (value === 'auto') return 'auto';
+	if (value === '100') return '100%';
+	if (value.endsWith('px')) return value;
+	if (value === 'max-content' || value === 'min-content' || value === 'fit-content' || value === 'stretch') {
+		return value;
+	}
+	return `var(--space_${value})`;
+};
+
+/**
  * Generate classes for a single CSS property with various values.
  * This is the most common pattern, used by display, visibility, float, etc.
  *
@@ -128,7 +146,7 @@ export const generate_property_classes = (
 
 	return generate_classes(
 		(value: string) => ({
-			name: `${class_prefix}_${value.replace(/-/g, '_')}`,
+			name: `${class_prefix}_${to_variable_name(value)}`,
 			css: `${property}: ${format(value)};`,
 		}),
 		values,
@@ -157,17 +175,17 @@ export const generate_directional_classes = (
 
 			// Map variants to their configurations
 			const configs: Record<string, {name: string; css: string}> = {
-				'': {name: `${prefix}_${value}`, css: `${property}: ${formatted};`},
-				t: {name: `${prefix}t_${value}`, css: `${property}-top: ${formatted};`},
-				r: {name: `${prefix}r_${value}`, css: `${property}-right: ${formatted};`},
-				b: {name: `${prefix}b_${value}`, css: `${property}-bottom: ${formatted};`},
-				l: {name: `${prefix}l_${value}`, css: `${property}-left: ${formatted};`},
+				'': {name: `${prefix}_${to_variable_name(value)}`, css: `${property}: ${formatted};`},
+				t: {name: `${prefix}t_${to_variable_name(value)}`, css: `${property}-top: ${formatted};`},
+				r: {name: `${prefix}r_${to_variable_name(value)}`, css: `${property}-right: ${formatted};`},
+				b: {name: `${prefix}b_${to_variable_name(value)}`, css: `${property}-bottom: ${formatted};`},
+				l: {name: `${prefix}l_${to_variable_name(value)}`, css: `${property}-left: ${formatted};`},
 				x: {
-					name: `${prefix}x_${value}`,
+					name: `${prefix}x_${to_variable_name(value)}`,
 					css: `${property}-left: ${formatted};\t${property}-right: ${formatted};`,
 				},
 				y: {
-					name: `${prefix}y_${value}`,
+					name: `${prefix}y_${to_variable_name(value)}`,
 					css: `${property}-top: ${formatted};\t${property}-bottom: ${formatted};`,
 				},
 			};
@@ -194,7 +212,7 @@ export const generate_property_with_axes = (
 			const prop = axis === '' ? property : `${property}-${axis}`;
 			const prefix = axis === '' ? property : `${property}_${axis}`;
 			return {
-				name: `${prefix.replace(/-/g, '_')}_${value}`,
+				name: `${prefix.replace(/-/g, '_')}_${to_variable_name(value)}`,
 				css: `${prop}: ${value};`,
 			};
 		},
