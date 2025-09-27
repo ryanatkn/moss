@@ -39,7 +39,7 @@
 			group: 'Flexbox and grid',
 			items: [
 				'flex_1',
-				'flex_wrap|wrap_reverse|nowrap', // TODO @many align with platform
+				'flex_wrap_wrap|wrap_reverse|nowrap', // TODO @many align with platform
 				'flex_row|column|row_reverse|column_reverse',
 				'grow|shrink', // TODO @many align with platform ?
 				'grow|shrink_0',

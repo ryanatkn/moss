@@ -102,7 +102,7 @@
 			<Font_Weight_Control bind:selected_font_weight></Font_Weight_Control>
 		</form>
 		{#each font_size_variants as size (size.name)}
-			<div class="row flex_wrap">
+			<div class="row flex_wrap_wrap">
 				<Style_Variable_Button attrs={{title: size.light}} name={size.name}
 					><span
 						style:font-size="var(--{size.name})"

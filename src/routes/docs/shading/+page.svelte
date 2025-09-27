@@ -27,7 +27,7 @@
 		'opacity_20',
 		'opacity_30',
 		'opacity_40',
-		'opacity_50',
+		'opacity_54',
 		'opacity_60',
 		'opacity_70',
 		'opacity_80',

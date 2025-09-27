@@ -1,12 +1,34 @@
-import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
-
-// TODO support iterpretable class names, for e.g. arbitrary numbers - lots here, UnoCSS is similar
+import type {
+	Css_Class_Declaration,
+	Css_Class_Declaration_Interpreted,
+} from '$lib/css_class_helpers.js';
 
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
 
 // TODO think about variable support (much harder problem, need dependency graph)
 
 // TODO modifiers for :hover/:active/:focus (how? do we need to give up the compat with JS identifier names?)
+
+/**
+ * Interpreter for opacity classes (opacity_0 through opacity_100)
+ */
+export const opacity_interpreter: Css_Class_Declaration_Interpreted = {
+	pattern: /^opacity_(\d+)$/,
+	interpret: (match) => {
+		const value = parseInt(match[1]);
+		if (value < 0 || value > 100) return null;
+		return `opacity: ${value === 0 ? '0' : value === 100 ? '1' : `${value}%`};`;
+	},
+	// comment: 'Interpreted opacity value',
+};
+
+/**
+ * Collection of all interpreters for dynamic CSS class generation
+ */
+export const css_class_interpreters: Array<Css_Class_Declaration_Interpreted> = [
+	opacity_interpreter,
+	// add new interpreters here
+];
 
 /**
  * @see `generate_classes_css`
@@ -579,18 +601,8 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
 	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
 
-	// TODO @many interpreted
-	opacity_0: {declaration: 'opacity: 0;'},
-	opacity_10: {declaration: 'opacity: 10%'},
-	opacity_20: {declaration: 'opacity: 20%'},
-	opacity_30: {declaration: 'opacity: 30%'},
-	opacity_40: {declaration: 'opacity: 40%'},
-	opacity_50: {declaration: 'opacity: 50%'},
-	opacity_60: {declaration: 'opacity: 60%'},
-	opacity_70: {declaration: 'opacity: 70%'},
-	opacity_80: {declaration: 'opacity: 80%'},
-	opacity_90: {declaration: 'opacity: 90%'},
-	opacity_100: {declaration: 'opacity: 1;'},
+	// Opacity classes are now handled by the opacity_interpreter
+	// Supports opacity_0 through opacity_100 dynamically
 
 	// TODO @many interpreted
 	// z_index_0: {declaration: 'z-index: 0;'},
@@ -598,10 +610,9 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	// z_index_123: {declaration: 'z-index: 123;'},
 
 	flex_1: {declaration: 'flex: 1;'},
-	// TODO maybe align these with the full declaration form
-	flex_wrap: {declaration: 'flex-wrap: wrap;'},
-	flex_wrap_reverse: {declaration: 'flex-wrap: wrap-reverse;'},
-	flex_nowrap: {declaration: 'flex-wrap: nowrap;'},
+	flex_wrap_nowrap: {declaration: 'flex-wrap: nowrap;'},
+	flex_wrap_wrap: {declaration: 'flex-wrap: wrap;'},
+	flex_wrap_wrap_reverse: {declaration: 'flex-wrap: wrap-reverse;'},
 	flex_row: {declaration: 'flex-direction: row;'},
 	flex_row_reverse: {declaration: 'flex-direction: row-reverse;'},
 	flex_column: {declaration: 'flex-direction: column;'},
