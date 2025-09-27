@@ -601,10 +601,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
 	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
 
-	// Opacity classes are now handled by the opacity_interpreter
-	// Supports opacity_0 through opacity_100 dynamically
-
-	// TODO @many interpreted
+	// TODO make interpreted like opacity
 	// z_index_0: {declaration: 'z-index: 0;'},
 	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
 	// z_index_123: {declaration: 'z-index: 123;'},
