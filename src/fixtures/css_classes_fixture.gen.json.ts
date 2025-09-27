@@ -1,0 +1,10 @@
+import type {Gen} from '@ryanatkn/gro';
+
+import {css_classes_by_name} from '$lib/css_classes.js';
+
+export const gen: Gen = {
+	dependencies: 'all',
+	generate: () => {
+		return JSON.stringify(css_classes_by_name);
+	},
+};

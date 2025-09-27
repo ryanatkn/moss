@@ -8,6 +8,7 @@
 
 	import {pkg_context} from '$routes/pkg.js';
 	import Introduction from '$routes/Introduction.svelte';
+	import File_Link from '$routes/File_Link.svelte';
 	import {MAIN_HEADER_MARGIN_TOP} from '$routes/constants.js';
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
@@ -35,7 +36,7 @@
 			<Unfinished_Implementation_Warning>
 				Moss is in early alpha and will have many breaking changes to get to 1.0. Help is welcome,
 				see
-				<a href="https://github.com/ryanatkn/moss/blob/main/contributing.md">contributing.md</a>.
+				<File_Link path="contributing.md">contributing.md</File_Link>.
 			</Unfinished_Implementation_Warning>
 			<p>
 				See also my Svelte UI library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss.

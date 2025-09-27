@@ -1382,7 +1382,7 @@ export const default_variables: Array<Style_Variable> = [
 	tint_saturation,
 
 	/*
-		color variants - using these usually means handling both light and dark modes separately -
+		shading variants - using these usually means handling both light and dark modes separately -
 		the semantic variants	that handle `color-schema` automatically include `--bg_1` and `--bg_2`
 	*/
 	// TODO some of these may be too subtle, but there may be cases where it's needed so keeping them for now

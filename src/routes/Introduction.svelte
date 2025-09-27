@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
 	import {resolve} from '$app/paths';
+
+	import Module_Link from '$routes/Module_Link.svelte';
 </script>
 
 <p>
@@ -10,10 +12,9 @@
 </p>
 <p>
 	Moss can be used with any website and JS framework. It exports
-	<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css">one main stylesheet</a>
+	<Module_Link path="style.css">one main stylesheet</Module_Link>
 	and
-	<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/theme.css">a theme stylesheet</a>, and
-	it also
+	<Module_Link path="theme.css">a theme stylesheet</Module_Link>, and it also
 	<a href="https://moss.ryanatkn.com/about">exports</a> the underlying CSS data, types, and helpers for
 	more complex usage.
 </p>
