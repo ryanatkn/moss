@@ -335,7 +335,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			...space_variants,
 		],
 		format_dimension_value,
-		'w',
+		'w', // TODO use longhand names here, but collides with the current `width` usage
 	),
 	...generate_property_classes(
 		'height',
@@ -356,7 +356,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		'h',
 	),
 
-	// TODO BLOCK maybe longhand names here? and width/height above? then the current `width_` vars need to change
 	...generate_property_classes(
 		'top',
 		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
