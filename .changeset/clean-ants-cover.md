@@ -11,3 +11,7 @@ rename utility classes for consistency with CSS declarations
 - rename `flex_direction_row_reverse` from `flex_row_reverse`
 - rename `flex_direction_column` from `flex_column`
 - rename `flex_direction_column_reverse` from `flex_column_reverse`
+- rename `top_N` from `t_N`
+- rename `right_N` from `r_N`
+- rename `bottom_N` from `b_N`
+- rename `left_N` from `l_N`

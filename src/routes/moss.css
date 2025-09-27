@@ -469,6 +469,9 @@ a.chip {
 .h_100 {
 	height: 100%;
 }
+.top_0 {
+	top: 0;
+}
 .inset_0 {
 	inset: 0;
 }

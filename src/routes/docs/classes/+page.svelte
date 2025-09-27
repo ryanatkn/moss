@@ -56,8 +56,8 @@
 			items: [
 				'w|h_0|100|1px-3px|auto|max_content|min_content|fit_content|stretch',
 				'w|h_xs5-xl15',
-				't|b|l|r_0|100|1px-3px|auto',
-				't|b|l|r_xs5-xl15',
+				'top|bottom|left|right_0|100|1px-3px|auto',
+				'top|bottom|left|right_xs5-xl15',
 				'inset_0|1px-3px|xs5-xl15',
 				'p|pt|pr|pb|pl|px|py_xs5-xl15',
 				'p|pt|pr|pb|pl|px|py_0|1px-3px',

@@ -361,25 +361,21 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		'top',
 		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
 		format_spacing_value,
-		't',
 	),
 	...generate_property_classes(
 		'right',
 		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
 		format_spacing_value,
-		'r',
 	),
 	...generate_property_classes(
 		'bottom',
 		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
 		format_spacing_value,
-		'b',
 	),
 	...generate_property_classes(
 		'left',
 		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
 		format_spacing_value,
-		'l',
 	),
 
 	...generate_property_classes(
