@@ -1511,7 +1511,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	// Inset property
 	...generate_property_classes(
 		'inset',
-		['0', '1px', '2px', '3px', ...space_variants],
+		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
 		format_spacing_value,
 	),
 

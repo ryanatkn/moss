@@ -2780,6 +2780,9 @@
 	"inset_0": {
 		"declaration": "inset: 0;"
 	},
+	"inset_100": {
+		"declaration": "inset: 100%;"
+	},
 	"inset_1px": {
 		"declaration": "inset: 1px;"
 	},
@@ -2788,6 +2791,9 @@
 	},
 	"inset_3px": {
 		"declaration": "inset: 3px;"
+	},
+	"inset_auto": {
+		"declaration": "inset: auto;"
 	},
 	"inset_xs5": {
 		"declaration": "inset: var(--space_xs5);"
