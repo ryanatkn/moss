@@ -95,3 +95,110 @@ export const generate_global_classes = (
 		CSS_GLOBALS,
 	);
 };
+
+/**
+ * Format spacing values for CSS (handles 0, auto, percentages, pixels, and CSS variables).
+ * Used by margin, padding, gap, inset, top/right/bottom/left, etc.
+ */
+export const format_spacing_value = (value: string): string => {
+	if (value === '0') return '0';
+	if (value === 'auto') return 'auto';
+	if (value === '100') return '100%';
+	if (value.endsWith('px')) return value;
+	return `var(--space_${value})`;
+};
+
+/**
+ * Generate classes for a single CSS property with various values.
+ * This is the most common pattern, used by display, visibility, float, etc.
+ *
+ * @param property - The CSS property name (e.g. 'display', 'gap')
+ * @param values - The values to generate classes for
+ * @param formatter - Optional function to format values (e.g. v => `var(--space_${v})`)
+ * @param prefix - Optional class name prefix (defaults to property with dashes replaced by underscores)
+ */
+export const generate_property_classes = (
+	property: string,
+	values: Iterable<string>,
+	formatter?: (value: string) => string,
+	prefix?: string,
+): Record<string, Css_Class_Declaration> => {
+	const format = formatter || ((v) => v);
+	const class_prefix = prefix || property.replace(/-/g, '_');
+
+	return generate_classes(
+		(value: string) => ({
+			name: `${class_prefix}_${value}`,
+			css: `${property}: ${format(value)};`,
+		}),
+		values,
+	);
+};
+
+/**
+ * Generate directional classes for properties like margin and padding.
+ * Creates classes for all directions: base, top, right, bottom, left, x (horizontal), y (vertical).
+ *
+ * @param property - The base CSS property name (e.g. 'margin', 'padding')
+ * @param values - The values to generate classes for
+ * @param value_formatter - Optional function to format values (defaults to identity)
+ */
+export const generate_directional_classes = (
+	property: string,
+	values: Iterable<string>,
+	value_formatter?: (v: string) => string,
+): Record<string, Css_Class_Declaration> => {
+	const format = value_formatter || ((v) => v);
+	const prefix = property[0]; // 'm' for margin, 'p' for padding
+
+	return generate_classes(
+		(variant: string, value: string) => {
+			const formatted = format(value);
+
+			// Map variants to their configurations
+			const configs: Record<string, {name: string; css: string}> = {
+				'': {name: `${prefix}_${value}`, css: `${property}: ${formatted};`},
+				t: {name: `${prefix}t_${value}`, css: `${property}-top: ${formatted};`},
+				r: {name: `${prefix}r_${value}`, css: `${property}-right: ${formatted};`},
+				b: {name: `${prefix}b_${value}`, css: `${property}-bottom: ${formatted};`},
+				l: {name: `${prefix}l_${value}`, css: `${property}-left: ${formatted};`},
+				x: {
+					name: `${prefix}x_${value}`,
+					css: `${property}-left: ${formatted};\t${property}-right: ${formatted};`,
+				},
+				y: {
+					name: `${prefix}y_${value}`,
+					css: `${property}-top: ${formatted};\t${property}-bottom: ${formatted};`,
+				},
+			};
+
+			return configs[variant] || null;
+		},
+		['', 't', 'r', 'b', 'l', 'x', 'y'],
+		values,
+	);
+};
+
+/**
+ * Generate classes for properties with axis variants (e.g. overflow, overflow-x, overflow-y).
+ *
+ * @param property - The base CSS property name (e.g. 'overflow')
+ * @param values - The values to generate classes for
+ */
+export const generate_property_with_axes = (
+	property: string,
+	values: Iterable<string>,
+): Record<string, Css_Class_Declaration> => {
+	return generate_classes(
+		(axis: string, value: string) => {
+			const prop = axis === '' ? property : `${property}-${axis}`;
+			const prefix = axis === '' ? property : `${property}_${axis}`;
+			return {
+				name: `${prefix.replace(/-/g, '_')}_${value}`,
+				css: `${prop}: ${value};`,
+			};
+		},
+		['', 'x', 'y'],
+		values,
+	);
+};

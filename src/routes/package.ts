@@ -90,6 +90,10 @@ export const src_json: Src_Json = {
 				{name: 'Color_Intensity', kind: 'type'},
 				{name: 'to_kebab', kind: 'function'},
 				{name: 'generate_global_classes', kind: 'function'},
+				{name: 'format_spacing_value', kind: 'function'},
+				{name: 'generate_property_classes', kind: 'function'},
+				{name: 'generate_directional_classes', kind: 'function'},
+				{name: 'generate_property_with_axes', kind: 'function'},
 			],
 		},
 		'./css_class_helpers.js': {

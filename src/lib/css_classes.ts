@@ -7,6 +7,10 @@ import {
 	to_kebab,
 	CSS_GLOBALS,
 	COLOR_INTENSITIES,
+	generate_property_classes,
+	generate_directional_classes,
+	generate_property_with_axes,
+	format_spacing_value,
 } from '$lib/css_class_generators.js';
 import {space_variants, color_variants} from '$lib/variable_data.js';
 
@@ -1740,46 +1744,10 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	py_xl15: {declaration: 'padding-top: var(--space_xl15);	padding-bottom: var(--space_xl15);'},
 
 	// Margin classes - all variants (m, mt, mr, mb, ml, mx, my)
-	...generate_classes(
-		(variant: string, value: string) => {
-			// Handle the value formatting
-			const css_value =
-				value === '0'
-					? '0'
-					: value === 'auto'
-						? 'auto'
-						: value === '100'
-							? '100%'
-							: value.endsWith('px')
-								? value
-								: `var(--space_${value})`;
-
-			// Handle different margin variants
-			if (variant === '') {
-				return {name: `m_${value}`, css: `margin: ${css_value};`};
-			} else if (variant === 't') {
-				return {name: `mt_${value}`, css: `margin-top: ${css_value};`};
-			} else if (variant === 'r') {
-				return {name: `mr_${value}`, css: `margin-right: ${css_value};`};
-			} else if (variant === 'b') {
-				return {name: `mb_${value}`, css: `margin-bottom: ${css_value};`};
-			} else if (variant === 'l') {
-				return {name: `ml_${value}`, css: `margin-left: ${css_value};`};
-			} else if (variant === 'x') {
-				return {
-					name: `mx_${value}`,
-					css: `margin-left: ${css_value};\tmargin-right: ${css_value};`,
-				};
-			} else if (variant === 'y') {
-				return {
-					name: `my_${value}`,
-					css: `margin-top: ${css_value};\tmargin-bottom: ${css_value};`,
-				};
-			}
-			return null;
-		},
-		['', 't', 'r', 'b', 'l', 'x', 'y'],
+	...generate_directional_classes(
+		'margin',
 		['0', '1px', '2px', '3px', 'auto', '100', ...space_variants],
+		format_spacing_value,
 	),
 
 	gap_xs5: {declaration: 'gap: var(--space_xs5);'},
