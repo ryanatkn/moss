@@ -76,6 +76,10 @@ export const src_json: Src_Json = {
 	name: '@ryanatkn/moss',
 	version: '0.35.0',
 	modules: {
+		'./css_class_composites.js': {
+			path: 'css_class_composites.ts',
+			declarations: [{name: 'css_class_composites', kind: 'variable'}],
+		},
 		'./css_class_generators.js': {
 			path: 'css_class_generators.ts',
 			declarations: [
@@ -110,18 +114,21 @@ export const src_json: Src_Json = {
 				{name: 'Css_Class_Declaration_Base', kind: 'type'},
 				{name: 'Css_Class_Declaration_Item', kind: 'type'},
 				{name: 'Css_Class_Declaration_Group', kind: 'type'},
-				{name: 'Css_Class_Declaration_Interpreted', kind: 'type'},
+				{name: 'Css_Class_Declaration_Interpreter', kind: 'type'},
 				{name: 'generate_classes_css', kind: 'function'},
 			],
 		},
-		'./css_classes.js': {
-			path: 'css_classes.ts',
+		'./css_class_interpreters.js': {
+			path: 'css_class_interpreters.ts',
 			declarations: [
 				{name: 'opacity_interpreter', kind: 'variable'},
 				{name: 'font_weight_interpreter', kind: 'variable'},
 				{name: 'css_class_interpreters', kind: 'variable'},
-				{name: 'css_classes_by_name', kind: 'variable'},
 			],
+		},
+		'./css_classes.js': {
+			path: 'css_classes.ts',
+			declarations: [{name: 'css_classes_by_name', kind: 'variable'}],
 		},
 		'./gen_moss_css.js': {
 			path: 'gen_moss_css.ts',

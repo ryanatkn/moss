@@ -140,7 +140,7 @@ export class Css_Classes {
 export type Css_Class_Declaration =
 	| Css_Class_Declaration_Item
 	| Css_Class_Declaration_Group
-	| Css_Class_Declaration_Interpreted;
+	| Css_Class_Declaration_Interpreter;
 
 export interface Css_Class_Declaration_Base {
 	comment?: string;
@@ -152,21 +152,20 @@ export interface Css_Class_Declaration_Item extends Css_Class_Declaration_Base {
 export interface Css_Class_Declaration_Group extends Css_Class_Declaration_Base {
 	ruleset: string;
 }
-export interface Css_Class_Declaration_Interpreted extends Css_Class_Declaration_Base {
+export interface Css_Class_Declaration_Interpreter extends Css_Class_Declaration_Base {
 	pattern: RegExp;
 	interpret: (match: RegExpMatchArray) => string | null;
 }
 
-// TODO this API is going to change to allow non-static classes that get interpreted like a language at buildtime
 export const generate_classes_css = (
 	classes: Iterable<string>,
-	css_classes_by_name: Record<string, Css_Class_Declaration | undefined>,
-	interpreters: Array<Css_Class_Declaration_Interpreted>,
+	classes_by_name: Record<string, Css_Class_Declaration | undefined>,
+	interpreters: Array<Css_Class_Declaration_Interpreter>,
 ): string => {
 	// TODO when the API is redesigned this kind of thing should be cached
 	// Create a map that has the index of each class name as the key
 	const indexes: Map<string, number> = new Map();
-	const keys = Object.keys(css_classes_by_name);
+	const keys = Object.keys(classes_by_name);
 	for (let i = 0; i < keys.length; i++) {
 		indexes.set(keys[i], i);
 	}
@@ -178,7 +177,7 @@ export const generate_classes_css = (
 
 	let css = '';
 	for (const c of sorted_classes) {
-		let v = css_classes_by_name[c];
+		let v = classes_by_name[c];
 
 		// If not found statically, try interpreters
 		if (!v) {

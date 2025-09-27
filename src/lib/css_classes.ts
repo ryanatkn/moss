@@ -1,7 +1,4 @@
-import type {
-	Css_Class_Declaration,
-	Css_Class_Declaration_Interpreted,
-} from '$lib/css_class_helpers.js';
+import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
 import {
 	generate_classes,
 	to_kebab,
@@ -44,47 +41,6 @@ import {
 // TODO think about variable support (much harder problem, need dependency graph)
 
 // TODO modifiers for :hover/:active/:focus (how? do we need to give up the compat with JS identifier names?)
-
-/**
- * Interpreter for opacity classes (opacity_0 through opacity_100)
- */
-export const opacity_interpreter: Css_Class_Declaration_Interpreted = {
-	pattern: /^opacity_(\d+)$/,
-	interpret: (match) => {
-		const value = parseInt(match[1]);
-		if (value < 0 || value > 100) {
-			console.warn(`Invalid opacity value: ${value}. Must be between 0 and 100.`);
-			return null;
-		}
-		return `opacity: ${value === 0 ? '0' : value === 100 ? '1' : `${value}%`};`;
-	},
-	// comment: 'Interpreted opacity value',
-};
-
-/**
- * Interpreter for font-weight classes (font_weight_1 through font_weight_1000)
- * Supports the full 1-1000 range as per CSS spec
- */
-export const font_weight_interpreter: Css_Class_Declaration_Interpreted = {
-	pattern: /^font_weight_(\d+)$/,
-	interpret: (match) => {
-		const value = parseInt(match[1]);
-		if (value < 1 || value > 1000) {
-			console.warn(`Invalid font-weight value: ${value}. Must be between 1 and 1000.`);
-			return null;
-		}
-		return `font-weight: ${value}; --font_weight: ${value};`;
-	},
-};
-
-/**
- * Collection of all interpreters for dynamic CSS class generation
- */
-export const css_class_interpreters: Array<Css_Class_Declaration_Interpreted> = [
-	opacity_interpreter,
-	font_weight_interpreter,
-	// add new interpreters here
-];
 
 /**
  * @see `generate_classes_css`
@@ -736,16 +692,14 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		(v) => `var(--fg_${v})`,
 		'color_fg',
 	),
-	hue_a: {declaration: '--hue: var(--hue_a);'},
-	hue_b: {declaration: '--hue: var(--hue_b);'},
-	hue_c: {declaration: '--hue: var(--hue_c);'},
-	hue_d: {declaration: '--hue: var(--hue_d);'},
-	hue_e: {declaration: '--hue: var(--hue_e);'},
-	hue_f: {declaration: '--hue: var(--hue_f);'},
-	hue_g: {declaration: '--hue: var(--hue_g);'},
-	hue_h: {declaration: '--hue: var(--hue_h);'},
-	hue_i: {declaration: '--hue: var(--hue_i);'},
-	hue_j: {declaration: '--hue: var(--hue_j);'},
+	// Hue classes
+	...generate_classes(
+		(hue: string) => ({
+			name: `hue_${hue}`,
+			css: `--hue: var(--hue_${hue});`,
+		}),
+		color_variants,
+	),
 	// Color properties - all hues × intensities
 	...generate_classes(
 		(hue: string, intensity: string) => ({
