@@ -613,6 +613,12 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	flex_wrap_nowrap: {declaration: 'flex-wrap: nowrap;'},
 	flex_wrap_wrap: {declaration: 'flex-wrap: wrap;'},
 	flex_wrap_wrap_reverse: {declaration: 'flex-wrap: wrap-reverse;'},
+	flex_wrap_inherit: {declaration: 'flex-wrap: inherit;'},
+	flex_wrap_initial: {declaration: 'flex-wrap: initial;'},
+	flex_wrap_revert: {declaration: 'flex-wrap: revert;'},
+	flex_wrap_revert_layer: {declaration: 'flex-wrap: revert-layer;'},
+	flex_wrap_unset: {declaration: 'flex-wrap: unset;'},
+	// TODO BLOCk rename
 	flex_row: {declaration: 'flex-direction: row;'},
 	flex_row_reverse: {declaration: 'flex-direction: row-reverse;'},
 	flex_column: {declaration: 'flex-direction: column;'},
