@@ -77,7 +77,7 @@ export type Css_Global = (typeof CSS_GLOBALS)[number];
 export const CSS_DIRECTIONS = ['top', 'right', 'bottom', 'left'] as const;
 export type Css_Direction = (typeof CSS_DIRECTIONS)[number];
 
-export const COLOR_INTENSITIES = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] as const;
+export const COLOR_INTENSITIES = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] as const; // TODO BLOCK '0' and '10' ?
 export type Color_Intensity = (typeof COLOR_INTENSITIES)[number];
 
 // Helper to convert snake_case to kebab-case for CSS properties

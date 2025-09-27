@@ -138,3 +138,25 @@ export const border_style_values = [
 	'inset',
 	'outset',
 ] as const;
+
+// Display property values
+export type Display_Value = Array_Element<typeof display_values>;
+export const display_values = [
+	'none',
+	'contents',
+	'block',
+	'flow-root',
+	'inline',
+	'inline-block',
+	'run-in',
+	'list-item',
+	'inline list-item',
+	'flex',
+	'inline-flex',
+	'grid',
+	'inline-grid',
+	'ruby',
+	'block ruby',
+	'table',
+	'inline-table',
+] as const;

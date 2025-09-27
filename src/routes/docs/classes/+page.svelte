@@ -193,7 +193,7 @@ ${'<' as string}script>
 	<Tome_Section>
 		<Tome_Section_Header text="Utility classes" />
 		<p>
-			Moss supports utility classes that cost you nothing until you opt-in. The main stylesheet and
+			Moss supports utility classes that cost nothing until you opt-in. The main stylesheet and
 			theme are required and build around CSS custom properties - utility classes offer an
 			orthogonal API that some developers prefer some of the time. They leverage Moss's base
 			frameworky parts, and are well-integrated with the other APIs and tools.

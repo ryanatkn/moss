@@ -187,6 +187,8 @@ export const src_json: Src_Json = {
 				{name: 'overflow_values', kind: 'variable'},
 				{name: 'Border_Style_Value', kind: 'type'},
 				{name: 'border_style_values', kind: 'variable'},
+				{name: 'Display_Value', kind: 'type'},
+				{name: 'display_values', kind: 'variable'},
 			],
 		},
 		'./variable.js': {
