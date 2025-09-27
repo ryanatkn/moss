@@ -82,11 +82,9 @@ export const shadow_font_size_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const
 export type Shadow_Alpha_Variant = Array_Element<typeof shadow_alpha_variants>;
 export const shadow_alpha_variants = [1, 2, 3, 4, 5] as const;
 
-// Shadow semantic color values
 export type Shadow_Semantic_Value = Array_Element<typeof shadow_semantic_values>;
 export const shadow_semantic_values = ['highlight', 'glow', 'shroud'] as const;
 
-// Icon size variants
 export type Icon_Size_Variant = Array_Element<typeof icon_size_variants>;
 export const icon_size_variants = ['xs', 'sm', 'md', 'lg', 'xl', 'xl2', 'xl3'] as const;
 
@@ -110,11 +108,9 @@ export const border_distance_variants = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
 export type Outline_Distance_Variant = Array_Element<typeof outline_distance_variants>;
 export const outline_distance_variants = ['focus', 'active'] as const;
 
-// Common alignment values used in flexbox/grid properties
 export type Alignment_Value = Array_Element<typeof alignment_values>;
 export const alignment_values = ['center', 'start', 'end', 'baseline', 'stretch'] as const;
 
-// Common flexbox justify values
 export type Justify_Value = Array_Element<typeof justify_values>;
 export const justify_values = [
 	'center',
@@ -128,11 +124,9 @@ export const justify_values = [
 	'stretch',
 ] as const;
 
-// Overflow property values
 export type Overflow_Value = Array_Element<typeof overflow_values>;
 export const overflow_values = ['auto', 'hidden', 'scroll', 'clip', 'visible'] as const;
 
-// Border style values
 export type Border_Style_Value = Array_Element<typeof border_style_values>;
 export const border_style_values = [
 	'none',
@@ -147,7 +141,6 @@ export const border_style_values = [
 	'outset',
 ] as const;
 
-// Display property values
 export type Display_Value = Array_Element<typeof display_values>;
 export const display_values = [
 	'none',
@@ -169,7 +162,6 @@ export const display_values = [
 	'inline-table',
 ] as const;
 
-// Text alignment values
 export type Text_Align_Value = Array_Element<typeof text_align_values>;
 export const text_align_values = [
 	'start',
@@ -182,7 +174,6 @@ export const text_align_values = [
 	'match-parent',
 ] as const;
 
-// Vertical alignment values
 export type Vertical_Align_Value = Array_Element<typeof vertical_align_values>;
 export const vertical_align_values = [
 	'baseline',
@@ -195,30 +186,29 @@ export const vertical_align_values = [
 	'bottom',
 ] as const;
 
-// Word break values
 export type Word_Break_Value = Array_Element<typeof word_break_values>;
 export const word_break_values = ['normal', 'break-all', 'keep-all'] as const;
 
-// Position values
 export type Position_Value = Array_Element<typeof position_values>;
 export const position_values = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const;
 
-// Visibility values
 export type Visibility_Value = Array_Element<typeof visibility_values>;
 export const visibility_values = ['visible', 'hidden', 'collapse'] as const;
 
-// Float values
 export type Float_Value = Array_Element<typeof float_values>;
 export const float_values = ['none', 'left', 'right', 'inline-start'] as const;
 
-// Overflow wrap values
+export type Flex_Wrap_Value = Array_Element<typeof flex_wrap_values>;
+export const flex_wrap_values = ['nowrap', 'wrap', 'wrap-reverse'] as const;
+
+export type Flex_Direction_Value = Array_Element<typeof flex_direction_values>;
+export const flex_direction_values = ['row', 'row-reverse', 'column', 'column-reverse'] as const;
+
 export type Overflow_Wrap_Value = Array_Element<typeof overflow_wrap_values>;
 export const overflow_wrap_values = ['normal', 'anywhere', 'break-word'] as const;
 
-// Scrollbar width values
 export type Scrollbar_Width_Value = Array_Element<typeof scrollbar_width_values>;
 export const scrollbar_width_values = ['auto', 'thin', 'none'] as const;
 
-// Scrollbar gutter values
 export type Scrollbar_Gutter_Value = Array_Element<typeof scrollbar_gutter_values>;
 export const scrollbar_gutter_values = ['auto', 'stable', 'stable both-edges'] as const;

@@ -39,9 +39,9 @@
 			group: 'Flexbox and grid',
 			items: [
 				'flex_1',
-				'flex_wrap_wrap|wrap_reverse|nowrap|$globals', // TODO @many align with platform
-				'flex_row|column|row_reverse|column_reverse',
-				'grow|shrink', // TODO @many align with platform ?
+				'flex_wrap_wrap|wrap_reverse|nowrap|$globals',
+				'flex_direction_row|column|row_reverse|column_reverse|$globals',
+				'grow|shrink', // TODO BLOCK align with platform ?
 				'grow|shrink_0',
 				'align_items_center|start|end|baseline|stretch',
 				'align_content_center|start|end|baseline|space_between|space_around|space_evenly|stretch',
