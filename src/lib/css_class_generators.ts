@@ -144,14 +144,13 @@ export const generate_property_classes = (
 	property: string,
 	values: Iterable<string>,
 	formatter?: (value: string) => string,
-	prefix?: string,
+	prefix: string = to_variable_name(property),
 ): Record<string, Css_Class_Declaration> => {
 	const format = formatter || ((v) => v);
-	const class_prefix = prefix || to_variable_name(property);
 
 	return generate_classes(
 		(value: string) => ({
-			name: `${class_prefix}_${to_variable_name(value)}`,
+			name: `${prefix}_${to_variable_name(value)}`,
 			css: `${property}: ${format(value)};`,
 		}),
 		values,
