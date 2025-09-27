@@ -11,6 +11,7 @@ import {
 	generate_directional_classes,
 	generate_property_with_axes,
 	generate_border_radius_corners,
+	generate_shadow_classes,
 	format_spacing_value,
 	format_dimension_value,
 } from '$lib/css_class_generators.js';
@@ -657,41 +658,46 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	// Word break
 	...generate_property_classes('word-break', word_break_values),
 	...generate_property_classes('word-break', CSS_GLOBALS, to_kebab),
-	white_space_normal: {declaration: 'white-space: normal;'},
-	white_space_nowrap: {declaration: 'white-space: nowrap;'},
-	white_space_pre: {declaration: 'white-space: pre;'},
-	white_space_pre_wrap: {declaration: 'white-space: pre-wrap;'},
-	white_space_pre_line: {declaration: 'white-space: pre-line;'},
-	white_space_break_spaces: {declaration: 'white-space: break-spaces;'},
+	// White space
+	...generate_property_classes(
+		'white-space',
+		['normal', 'nowrap', 'pre', 'pre-wrap', 'pre-line', 'break-spaces'],
+		undefined,
+		'white_space',
+	),
 
 	/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
-	white_space_collapse_collapse: {declaration: 'white-space-collapse: collapse;'},
-	white_space_collapse_preserve: {declaration: 'white-space-collapse: preserve;'},
-	white_space_collapse_preserve_breaks: {declaration: 'white-space-collapse: preserve-breaks;'},
-	white_space_collapse_preserve_spaces: {declaration: 'white-space-collapse: preserve-spaces;'},
-	white_space_collapse_break_spaces: {declaration: 'white-space-collapse: break-spaces;'},
-	white_space_collapse_inherit: {declaration: 'white-space-collapse: inherit;'},
-	white_space_collapse_initial: {declaration: 'white-space-collapse: initial;'},
-	white_space_collapse_revert: {declaration: 'white-space-collapse: revert;'},
-	white_space_collapse_revert_layer: {declaration: 'white-space-collapse: revert-layer;'},
-	white_space_collapse_unset: {declaration: 'white-space-collapse: unset;'},
+	// White space collapse
+	...generate_property_classes(
+		'white-space-collapse',
+		['collapse', 'preserve', 'preserve-breaks', 'preserve-spaces', 'break-spaces'],
+		undefined,
+		'white_space_collapse',
+	),
+	...generate_property_classes(
+		'white-space-collapse',
+		CSS_GLOBALS,
+		to_kebab,
+		'white_space_collapse',
+	),
 
 	/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
-	text_wrap_wrap: {declaration: 'text-wrap: wrap;'},
-	text_wrap_nowrap: {declaration: 'text-wrap: nowrap;'},
-	text_wrap_balance: {declaration: 'text-wrap: balance;'},
-	text_wrap_pretty: {declaration: 'text-wrap: pretty;'},
-	text_wrap_stable: {declaration: 'text-wrap: stable;'},
+	// Text wrap
+	...generate_property_classes(
+		'text-wrap',
+		['wrap', 'nowrap', 'balance', 'pretty', 'stable'],
+		undefined,
+		'text_wrap',
+	),
 
-	user_select_none: {declaration: 'user-select: none;'},
-	user_select_auto: {declaration: 'user-select: auto;'},
-	user_select_text: {declaration: 'user-select: text;'},
-	user_select_all: {declaration: 'user-select: all;'},
-	user_select_inherit: {declaration: 'user-select: inherit;'},
-	user_select_initial: {declaration: 'user-select: initial;'},
-	user_select_revert: {declaration: 'user-select: revert;'},
-	user_select_revert_layer: {declaration: 'user-select: revert-layer;'},
-	user_select_unset: {declaration: 'user-select: unset;'},
+	// User select
+	...generate_property_classes(
+		'user-select',
+		['none', 'auto', 'text', 'all'],
+		undefined,
+		'user_select',
+	),
+	...generate_property_classes('user-select', CSS_GLOBALS, to_kebab, 'user_select'),
 
 	/*
 
@@ -850,144 +856,38 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	shadows
 
 	*/
-	shadow_xs: {
-		declaration:
-			'box-shadow: var(--shadow_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_sm: {
-		declaration:
-			'box-shadow: var(--shadow_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_md: {
-		declaration:
-			'box-shadow: var(--shadow_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_lg: {
-		declaration:
-			'box-shadow: var(--shadow_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_xl: {
-		declaration:
-			'box-shadow: var(--shadow_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_top_xs: {
-		declaration:
-			'box-shadow: var(--shadow_top_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_top_sm: {
-		declaration:
-			'box-shadow: var(--shadow_top_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_top_md: {
-		declaration:
-			'box-shadow: var(--shadow_top_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_top_lg: {
-		declaration:
-			'box-shadow: var(--shadow_top_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_top_xl: {
-		declaration:
-			'box-shadow: var(--shadow_top_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_bottom_xs: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_bottom_sm: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_bottom_md: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_bottom_lg: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_bottom_xl: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_inset_xs: {
-		declaration:
-			'box-shadow: var(--shadow_inset_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_inset_sm: {
-		declaration:
-			'box-shadow: var(--shadow_inset_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_inset_md: {
-		declaration:
-			'box-shadow: var(--shadow_inset_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_inset_lg: {
-		declaration:
-			'box-shadow: var(--shadow_inset_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_inset_xl: {
-		declaration:
-			'box-shadow: var(--shadow_inset_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_inset_top_xs: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_inset_top_sm: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_inset_top_md: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_inset_top_lg: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_inset_top_xl: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_inset_bottom_xs: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_inset_bottom_sm: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_inset_bottom_md: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_inset_bottom_lg: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_inset_bottom_xl: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_color_highlight: {declaration: '--shadow_color: var(--shadow_color_highlight);'},
-	shadow_color_glow: {declaration: '--shadow_color: var(--shadow_color_glow);'},
-	shadow_color_shroud: {declaration: '--shadow_color: var(--shadow_color_shroud);'},
-	shadow_color_a: {declaration: '--shadow_color: var(--shadow_color_a);'},
-	shadow_color_b: {declaration: '--shadow_color: var(--shadow_color_b);'},
-	shadow_color_c: {declaration: '--shadow_color: var(--shadow_color_c);'},
-	shadow_color_d: {declaration: '--shadow_color: var(--shadow_color_d);'},
-	shadow_color_e: {declaration: '--shadow_color: var(--shadow_color_e);'},
-	shadow_color_f: {declaration: '--shadow_color: var(--shadow_color_f);'},
-	shadow_color_g: {declaration: '--shadow_color: var(--shadow_color_g);'},
-	shadow_color_h: {declaration: '--shadow_color: var(--shadow_color_h);'},
-	shadow_color_i: {declaration: '--shadow_color: var(--shadow_color_i);'},
-	shadow_color_j: {declaration: '--shadow_color: var(--shadow_color_j);'},
-	shadow_alpha_1: {declaration: '--shadow_alpha: var(--shadow_alpha_1);'},
-	shadow_alpha_2: {declaration: '--shadow_alpha: var(--shadow_alpha_2);'},
-	shadow_alpha_3: {declaration: '--shadow_alpha: var(--shadow_alpha_3);'},
-	shadow_alpha_4: {declaration: '--shadow_alpha: var(--shadow_alpha_4);'},
-	shadow_alpha_5: {declaration: '--shadow_alpha: var(--shadow_alpha_5);'},
+	// Shadow classes generated from sizes and alpha mappings
+	...generate_shadow_classes(['xs', 'sm', 'md', 'lg', 'xl'], {
+		xs: '1',
+		sm: '2',
+		md: '3',
+		lg: '4',
+		xl: '5',
+	}),
+	// Shadow color classes - semantic
+	...generate_classes(
+		(value: string) => ({
+			name: `shadow_color_${value}`,
+			css: `--shadow_color: var(--shadow_color_${value});`,
+		}),
+		['highlight', 'glow', 'shroud'],
+	),
+	// Shadow color classes - hue variants
+	...generate_classes(
+		(hue: string) => ({
+			name: `shadow_color_${hue}`,
+			css: `--shadow_color: var(--shadow_color_${hue});`,
+		}),
+		color_variants,
+	),
+	// Shadow alpha classes
+	...generate_classes(
+		(alpha: string) => ({
+			name: `shadow_alpha_${alpha}`,
+			css: `--shadow_alpha: var(--shadow_alpha_${alpha});`,
+		}),
+		['1', '2', '3', '4', '5'],
+	),
 
 	/* higher specificity */
 	/* TODO which order should these be in? */

@@ -257,3 +257,34 @@ export const generate_border_radius_corners = (
 		values,
 	);
 };
+
+/**
+ * Generate shadow classes for various shadow types and sizes.
+ * Creates classes for regular, top, bottom, inset, inset-top, and inset-bottom shadows.
+ * Each shadow uses color-mix with alpha values for transparency.
+ *
+ * @param sizes - The shadow size variants (xs, sm, md, lg, xl)
+ * @param alpha_mapping - Mapping of sizes to alpha numbers (1-5)
+ */
+export const generate_shadow_classes = (
+	sizes: Iterable<string>,
+	alpha_mapping: Record<string, string>,
+): Record<string, Css_Class_Declaration> => {
+	const shadow_types = [
+		{prefix: 'shadow', var_prefix: 'shadow'},
+		{prefix: 'shadow_top', var_prefix: 'shadow_top'},
+		{prefix: 'shadow_bottom', var_prefix: 'shadow_bottom'},
+		{prefix: 'shadow_inset', var_prefix: 'shadow_inset'},
+		{prefix: 'shadow_inset_top', var_prefix: 'shadow_inset_top'},
+		{prefix: 'shadow_inset_bottom', var_prefix: 'shadow_inset_bottom'},
+	];
+
+	return generate_classes(
+		(type: (typeof shadow_types)[0], size: string) => ({
+			name: `${type.prefix}_${size}`,
+			css: `box-shadow: var(--${type.var_prefix}_${size}) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_${alpha_mapping[size]})), transparent);`,
+		}),
+		shadow_types,
+		sizes,
+	);
+};

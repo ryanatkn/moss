@@ -97,6 +97,7 @@ export const src_json: Src_Json = {
 				{name: 'generate_directional_classes', kind: 'function'},
 				{name: 'generate_property_with_axes', kind: 'function'},
 				{name: 'generate_border_radius_corners', kind: 'function'},
+				{name: 'generate_shadow_classes', kind: 'function'},
 			],
 		},
 		'./css_class_helpers.js': {
