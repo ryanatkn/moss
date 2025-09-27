@@ -83,10 +83,10 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	...generate_property_classes('flex-wrap', CSS_GLOBALS, to_kebab),
 	...generate_property_classes('flex-direction', flex_direction_values),
 	...generate_property_classes('flex-direction', CSS_GLOBALS, to_kebab),
-	grow: {declaration: 'flex-grow: 1;'},
-	grow_0: {declaration: 'flex-grow: 0;'},
-	shrink: {declaration: 'flex-shrink: 1;'},
-	shrink_0: {declaration: 'flex-shrink: 0;'},
+	flex_grow_1: {declaration: 'flex-grow: 1;'},
+	flex_grow_0: {declaration: 'flex-grow: 0;'},
+	flex_shrink_1: {declaration: 'flex-shrink: 1;'},
+	flex_shrink_0: {declaration: 'flex-shrink: 0;'},
 
 	...generate_property_classes('align-items', alignment_values),
 	...generate_property_classes('align-content', [

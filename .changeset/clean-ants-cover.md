@@ -15,3 +15,7 @@ rename utility classes for consistency with CSS declarations
 - rename `right_N` from `r_N`
 - rename `bottom_N` from `b_N`
 - rename `left_N` from `l_N`
+- rename `flex_shrink_1` from `shrink`
+- rename `flex_shrink_0` from `shrink_0`
+- rename `flex_grow_1` from `grow`
+- rename `flex_grow_0` from `grow_0`
