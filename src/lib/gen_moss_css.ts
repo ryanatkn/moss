@@ -34,7 +34,8 @@ export const gen_moss_css = (options: Gen_Moss_Css_Options = {}): Gen => {
 
 	return {
 		dependencies: 'all',
-		// TODO BLOCK to optimize I think we'd need to regenate if files are removed or go to 0 classes too, so we'd need the previous contents at minimum right?
+		// TODO BLOCK optimize, do we need to handle deleted files or removed classes though?
+		// This isn't as much a problem in watch mode but isn't clean.
 		// dependencies: ({changed_file_id, filer}) => {
 		// 	if (!changed_file_id) return 'all';
 		// 	const disknode = filer.get_by_id(changed_file_id);

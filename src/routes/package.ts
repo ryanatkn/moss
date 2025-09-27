@@ -123,6 +123,9 @@ export const src_json: Src_Json = {
 			declarations: [
 				{name: 'opacity_interpreter', kind: 'variable'},
 				{name: 'font_weight_interpreter', kind: 'variable'},
+				{name: 'border_radius_interpreter', kind: 'variable'},
+				{name: 'border_radius_corners_interpreter', kind: 'variable'},
+				{name: 'z_index_interpreter', kind: 'variable'},
 				{name: 'css_class_interpreters', kind: 'variable'},
 			],
 		},
@@ -226,6 +229,7 @@ export const src_json: Src_Json = {
 				{name: 'scrollbar_width_values', kind: 'variable'},
 				{name: 'Scrollbar_Gutter_Value', kind: 'type'},
 				{name: 'scrollbar_gutter_values', kind: 'variable'},
+				{name: 'Z_INDEX_MAX', kind: 'variable'},
 			],
 		},
 		'./variable.js': {

@@ -115,10 +115,10 @@
 				'border_width_0-9',
 				'outline_width_0|focused|active',
 				`border_style_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|$globals`,
-				'border_radius_0|10|20|30|40|50|60|70|80|90|100',
 				'border_radius_xs3-xl',
-				'border_top|bottom_left|right_radius_0|10|20|30|40|50|60|70|80|90|100',
+				'border_radius_0-100',
 				'border_top|bottom_left|right_radius_xs3-xl',
+				'border_top|bottom_left|right_radius_0-100',
 			],
 		},
 		{

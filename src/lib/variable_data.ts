@@ -212,3 +212,8 @@ export const scrollbar_width_values = ['auto', 'thin', 'none'] as const;
 
 export type Scrollbar_Gutter_Value = Array_Element<typeof scrollbar_gutter_values>;
 export const scrollbar_gutter_values = ['auto', 'stable', 'stable both-edges'] as const;
+
+/**
+ * Maximum value for CSS z-index property (32-bit signed integer max).
+ */
+export const Z_INDEX_MAX = 2_147_483_647;

@@ -78,11 +78,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	...generate_property_classes('scrollbar-gutter', scrollbar_gutter_values),
 	...generate_property_classes('scrollbar-gutter', CSS_GLOBALS, to_kebab, 'scrollbar_gutter'),
 
-	// TODO make interpreted like opacity
-	// z_index_0: {declaration: 'z-index: 0;'},
-	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
-	// z_index_123: {declaration: 'z-index: 123;'},
-
 	flex_1: {declaration: 'flex: 1;'},
 	...generate_property_classes('flex-wrap', flex_wrap_values),
 	...generate_property_classes('flex-wrap', CSS_GLOBALS, to_kebab),
@@ -142,6 +137,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		(v) => `var(--icon_size_${v}); --font_size: var(--icon_size_${v})`,
 		'icon_size',
 	),
+	// TODO some of these need to be filled out and include CSS_GLOBALS (but maybe the API should be opt-out?)
 	...generate_property_classes('text-align', text_align_values),
 	...generate_property_classes('vertical-align', vertical_align_values),
 	...generate_property_classes('word-break', word_break_values),
@@ -276,16 +272,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 		'border-radius',
 		border_radius_variants,
 		(v) => `var(--border_radius_${v})`,
-	),
-	// TODO BLOCK interpret
-	...generate_property_classes(
-		'border-radius',
-		['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
-		(v) => (v === '0' ? '0' : `${v}%`),
-	),
-	...generate_border_radius_corners(
-		['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
-		(v) => (v === '0' ? '0' : `${v}%`),
 	),
 	...generate_border_radius_corners(border_radius_variants, (v) => `var(--border_radius_${v})`),
 

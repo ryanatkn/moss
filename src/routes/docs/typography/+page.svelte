@@ -135,7 +135,7 @@
 					class="white_space_nowrap font_weight_{font_weight}"
 					style:font-size="var(--{font_size_names[selected_size - 1]})"
 				>
-					font-weight: {font_weight}
+					.font_weight_{font_weight}
 				</div>
 			{/each}
 		</div>

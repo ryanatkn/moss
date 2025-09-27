@@ -21,7 +21,27 @@
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
 
-	// TODO add `border_style_` variables from data
+	// TODO demo `border_style_values` from the data
+
+	const border_radius_classes = [
+		'border_radius_0',
+		'border_radius_14',
+		'border_radius_32',
+		'border_radius_100',
+	];
+
+	const border_radius_corner_classes = [
+		'border_top_left_radius_26',
+		'border_top_right_radius_100 border_bottom_left_radius_100',
+		'border_bottom_right_radius_77',
+	];
+
+	const border_radius_corner_size_classes = [
+		'border_top_left_radius_lg border_top_right_radius_sm',
+		'border_bottom_left_radius_md border_bottom_right_radius_xl',
+	];
+	// TODO improve class detection
+	// classes="border_top_right_radius_100 border_bottom_left_radius_100 border_top_left_radius_lg border_top_right_radius_sm border_bottom_left_radius_md border_bottom_right_radius_xl"
 </script>
 
 <Tome_Content {tome}>
@@ -137,6 +157,53 @@
 					<span class="pl_sm pr_sm">=</span><code
 						>{computed_styles?.getPropertyValue('--' + name)}</code
 					>
+				</div>
+			{/each}
+		</div>
+		<Tome_Section_Header tag="h4" text="Border radius corners" />
+		<div class="border_examples border_radii">
+			{#each border_radius_corner_size_classes as classes}
+				<div class="row">
+					<div
+						class="border_example border_radius {classes}"
+						style="width: 100px; height: 100px;"
+					></div>
+					<div class="pl_md column">
+						{#each classes.split(' ') as className}
+							<code>.{className}</code>
+						{/each}
+					</div>
+				</div>
+			{/each}
+		</div>
+		<Tome_Section_Header tag="h4" text="Border radius percentages" />
+		<p>Interpreted utility classes, 0 to 100 (%).</p>
+		<div class="border_examples border_radii">
+			{#each border_radius_classes as border_radius_class (border_radius_class)}
+				<div class="row">
+					<div
+						class="border_example border_radius {border_radius_class} font_family_mono"
+						style="width: 200px; height: 100px;"
+					>
+						.{border_radius_class}
+					</div>
+				</div>
+			{/each}
+		</div>
+		<Tome_Section_Header tag="h4" text="Border radius corner percentages" />
+		<p>Interpreted utility classes, 0 to 100 (%).</p>
+		<div class="border_examples border_radii">
+			{#each border_radius_corner_classes as classes}
+				<div class="row">
+					<div
+						class="border_example border_radius {classes}"
+						style="width: 100px; height: 100px;"
+					></div>
+					<div class="pl_md column">
+						{#each classes.split(' ') as className}
+							<code>.{className}</code>
+						{/each}
+					</div>
 				</div>
 			{/each}
 		</div>
