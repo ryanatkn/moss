@@ -34,7 +34,7 @@ export const gen_moss_css = (options: Gen_Moss_Css_Options = {}): Gen => {
 
 	return {
 		dependencies: 'all',
-		// TODO BLOCK optimize, do we need to handle deleted files or removed classes though?
+		// TODO optimize, do we need to handle deleted files or removed classes though?
 		// This isn't as much a problem in watch mode but isn't clean.
 		// dependencies: ({changed_file_id, filer}) => {
 		// 	if (!changed_file_id) return 'all';
