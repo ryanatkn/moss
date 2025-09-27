@@ -1509,19 +1509,23 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	r_xl15: {declaration: 'right: var(--space_xl15);'},
 
 	// Inset property
-	...generate_property_classes('inset', ['0', '1px', '2px', '3px', ...space_variants], format_spacing_value),
+	...generate_property_classes(
+		'inset',
+		['0', '1px', '2px', '3px', ...space_variants],
+		format_spacing_value,
+	),
 
 	// Padding classes - all variants (p, pt, pr, pb, pl, px, py)
 	...generate_directional_classes(
 		'padding',
-		['0', '1px', '2px', '3px', '100', ...space_variants],
+		['0', '100', '1px', '2px', '3px', ...space_variants],
 		format_spacing_value,
 	),
 
 	// Margin classes - all variants (m, mt, mr, mb, ml, mx, my)
 	...generate_directional_classes(
 		'margin',
-		['0', '1px', '2px', '3px', 'auto', '100', ...space_variants],
+		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
 		format_spacing_value,
 	),
 
