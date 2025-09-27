@@ -194,3 +194,23 @@ export const vertical_align_values = [
 // Word break values
 export type Word_Break_Value = Array_Element<typeof word_break_values>;
 export const word_break_values = ['normal', 'break-all', 'keep-all'] as const;
+
+// Visibility values
+export type Visibility_Value = Array_Element<typeof visibility_values>;
+export const visibility_values = ['visible', 'hidden', 'collapse'] as const;
+
+// Float values
+export type Float_Value = Array_Element<typeof float_values>;
+export const float_values = ['none', 'left', 'right', 'inline-start'] as const;
+
+// Overflow wrap values
+export type Overflow_Wrap_Value = Array_Element<typeof overflow_wrap_values>;
+export const overflow_wrap_values = ['normal', 'anywhere', 'break-word'] as const;
+
+// Scrollbar width values
+export type Scrollbar_Width_Value = Array_Element<typeof scrollbar_width_values>;
+export const scrollbar_width_values = ['auto', 'thin', 'none'] as const;
+
+// Scrollbar gutter values
+export type Scrollbar_Gutter_Value = Array_Element<typeof scrollbar_gutter_values>;
+export const scrollbar_gutter_values = ['auto', 'stable', 'stable both-edges'] as const;

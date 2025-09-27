@@ -32,6 +32,11 @@ import {
 	text_align_values,
 	vertical_align_values,
 	word_break_values,
+	visibility_values,
+	float_values,
+	overflow_wrap_values,
+	scrollbar_width_values,
+	scrollbar_gutter_values,
 } from '$lib/variable_data.js';
 
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
@@ -522,55 +527,29 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	...generate_property_classes('display', display_values),
 	...generate_property_classes('display', CSS_GLOBALS, to_kebab),
 
-	visibility_visible: {declaration: 'visibility: visible;'},
-	visibility_hidden: {declaration: 'visibility: hidden;'},
-	visibility_collapse: {declaration: 'visibility: collapse;'},
-	visibility_inherit: {declaration: 'visibility: inherit;'},
-	visibility_initial: {declaration: 'visibility: initial;'},
-	visibility_revert: {declaration: 'visibility: revert;'},
-	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
-	visibility_unset: {declaration: 'visibility: unset;'},
+	// Visibility
+	...generate_property_classes('visibility', visibility_values),
+	...generate_property_classes('visibility', CSS_GLOBALS, to_kebab),
 
 	/** @see https://developer.mozilla.org/en-US/docs/Web/CSS/float */
-	float_none: {declaration: 'float: none;'},
-	float_left: {declaration: 'float: left;'},
-	float_right: {declaration: 'float: right;'},
-	float_inline_start: {declaration: 'float: inline-start;'},
-	float_inherit: {declaration: 'float: inherit;'},
-	float_initial: {declaration: 'float: initial;'},
-	float_revert: {declaration: 'float: revert;'},
-	float_revert_layer: {declaration: 'float: revert_layer;'},
-	float_unset: {declaration: 'float: unset;'},
+	// Float
+	...generate_property_classes('float', float_values),
+	...generate_property_classes('float', CSS_GLOBALS, to_kebab),
 
 	// Overflow properties with axis variants
 	...generate_property_with_axes('overflow', overflow_values),
 
-	overflow_wrap_normal: {declaration: 'overflow-wrap: normal;'},
-	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
-	overflow_wrap_break_word: {declaration: 'overflow-wrap: break-word;'},
-	overflow_wrap_inherit: {declaration: 'overflow-wrap: inherit;'},
-	overflow_wrap_initial: {declaration: 'overflow-wrap: initial;'},
-	overflow_wrap_revert: {declaration: 'overflow-wrap: revert;'},
-	overflow_wrap_revert_layer: {declaration: 'overflow-wrap: revert-layer;'},
-	overflow_wrap_unset: {declaration: 'overflow-wrap: unset;'},
+	// Overflow wrap
+	...generate_property_classes('overflow-wrap', overflow_wrap_values, undefined, 'overflow_wrap'),
+	...generate_property_classes('overflow-wrap', CSS_GLOBALS, to_kebab, 'overflow_wrap'),
 
-	scrollbar_width_auto: {declaration: 'scrollbar-width: auto;'},
-	scrollbar_width_thin: {declaration: 'scrollbar-width: thin;'},
-	scrollbar_width_none: {declaration: 'scrollbar-width: none;'},
-	scrollbar_width_inherit: {declaration: 'scrollbar-width: inherit;'},
-	scrollbar_width_initial: {declaration: 'scrollbar-width: initial;'},
-	scrollbar_width_revert: {declaration: 'scrollbar-width: revert;'},
-	scrollbar_width_revert_layer: {declaration: 'scrollbar-width: revert-layer;'},
-	scrollbar_width_unset: {declaration: 'scrollbar-width: unset;'},
+	// Scrollbar width
+	...generate_property_classes('scrollbar-width', scrollbar_width_values, undefined, 'scrollbar_width'),
+	...generate_property_classes('scrollbar-width', CSS_GLOBALS, to_kebab, 'scrollbar_width'),
 
-	scrollbar_gutter_auto: {declaration: 'scrollbar-gutter: auto;'},
-	scrollbar_gutter_stable: {declaration: 'scrollbar-gutter: stable;'},
-	scrollbar_gutter_stable_both_edges: {declaration: 'scrollbar-gutter: stable both-edges;'},
-	scrollbar_gutter_inherit: {declaration: 'scrollbar-gutter: inherit;'},
-	scrollbar_gutter_initial: {declaration: 'scrollbar-gutter: initial;'},
-	scrollbar_gutter_revert: {declaration: 'scrollbar-gutter: revert;'},
-	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
-	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
+	// Scrollbar gutter
+	...generate_property_classes('scrollbar-gutter', scrollbar_gutter_values, undefined, 'scrollbar_gutter'),
+	...generate_property_classes('scrollbar-gutter', CSS_GLOBALS, to_kebab, 'scrollbar_gutter'),
 
 	// TODO make interpreted like opacity
 	// z_index_0: {declaration: 'z-index: 0;'},

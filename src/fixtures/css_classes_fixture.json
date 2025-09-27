@@ -154,7 +154,7 @@
 	"float_inherit": {"declaration": "float: inherit;"},
 	"float_initial": {"declaration": "float: initial;"},
 	"float_revert": {"declaration": "float: revert;"},
-	"float_revert_layer": {"declaration": "float: revert_layer;"},
+	"float_revert_layer": {"declaration": "float: revert-layer;"},
 	"float_unset": {"declaration": "float: unset;"},
 	"overflow_auto": {"declaration": "overflow: auto;"},
 	"overflow_hidden": {"declaration": "overflow: hidden;"},
