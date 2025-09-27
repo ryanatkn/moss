@@ -20,20 +20,6 @@
 	const toggle_color_scheme = () => {
 		themer.color_scheme = themer.color_scheme === 'light' ? 'dark' : 'light';
 	};
-
-	const opacity_classes = [
-		'opacity_0',
-		'opacity_10',
-		'opacity_20',
-		'opacity_30',
-		'opacity_40',
-		'opacity_54',
-		'opacity_60',
-		'opacity_70',
-		'opacity_80',
-		'opacity_90',
-		'opacity_100',
-	];
 </script>
 
 <Tome_Content {tome}>
@@ -189,18 +175,6 @@
 			other cases that are more performance-sensitive, but we may need to change this behavior for
 			the base cases, or include performance themes.
 		</p>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Opacity" />
-		<p>These are not variables, they're just utility classes that map to <code>%</code> values.</p>
-		<div class="swatch">
-			{#each opacity_classes as opacity_class (opacity_class)}
-				<div>
-					<div class="color bg_a_5 {opacity_class}"></div>
-					<small>.{opacity_class}</small>
-				</div>
-			{/each}
-		</div>
 	</Tome_Section>
 </Tome_Content>
 
