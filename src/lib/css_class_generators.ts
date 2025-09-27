@@ -92,7 +92,7 @@ export const generate_global_classes = (
 ): Record<string, Css_Class_Declaration> => {
 	return generate_classes(
 		(global: (typeof CSS_GLOBALS)[number]) => ({
-			name: `${property.replace(/-/g, '_')}_${global}`,
+			name: `${to_variable_name(property)}_${global}`,
 			css: `${property}: ${to_kebab(global)};`,
 		}),
 		CSS_GLOBALS,
@@ -120,7 +120,12 @@ export const format_dimension_value = (value: string): string => {
 	if (value === 'auto') return 'auto';
 	if (value === '100') return '100%';
 	if (value.endsWith('px')) return value;
-	if (value === 'max-content' || value === 'min-content' || value === 'fit-content' || value === 'stretch') {
+	if (
+		value === 'max-content' ||
+		value === 'min-content' ||
+		value === 'fit-content' ||
+		value === 'stretch'
+	) {
 		return value;
 	}
 	return `var(--space_${value})`;
@@ -142,7 +147,7 @@ export const generate_property_classes = (
 	prefix?: string,
 ): Record<string, Css_Class_Declaration> => {
 	const format = formatter || ((v) => v);
-	const class_prefix = prefix || property.replace(/-/g, '_');
+	const class_prefix = prefix || to_variable_name(property);
 
 	return generate_classes(
 		(value: string) => ({
@@ -178,7 +183,10 @@ export const generate_directional_classes = (
 				'': {name: `${prefix}_${to_variable_name(value)}`, css: `${property}: ${formatted};`},
 				t: {name: `${prefix}t_${to_variable_name(value)}`, css: `${property}-top: ${formatted};`},
 				r: {name: `${prefix}r_${to_variable_name(value)}`, css: `${property}-right: ${formatted};`},
-				b: {name: `${prefix}b_${to_variable_name(value)}`, css: `${property}-bottom: ${formatted};`},
+				b: {
+					name: `${prefix}b_${to_variable_name(value)}`,
+					css: `${property}-bottom: ${formatted};`,
+				},
 				l: {name: `${prefix}l_${to_variable_name(value)}`, css: `${property}-left: ${formatted};`},
 				x: {
 					name: `${prefix}x_${to_variable_name(value)}`,
@@ -212,11 +220,40 @@ export const generate_property_with_axes = (
 			const prop = axis === '' ? property : `${property}-${axis}`;
 			const prefix = axis === '' ? property : `${property}_${axis}`;
 			return {
-				name: `${prefix.replace(/-/g, '_')}_${to_variable_name(value)}`,
+				name: `${to_variable_name(prefix)}_${to_variable_name(value)}`,
 				css: `${prop}: ${value};`,
 			};
 		},
 		['', 'x', 'y'],
+		values,
+	);
+};
+
+/**
+ * Generate border radius corner classes for all four corners.
+ * Creates classes for top-left, top-right, bottom-left, bottom-right corners.
+ *
+ * @param values - The values to generate classes for
+ * @param formatter - Optional function to format values
+ */
+export const generate_border_radius_corners = (
+	values: Iterable<string>,
+	formatter?: (value: string) => string,
+): Record<string, Css_Class_Declaration> => {
+	const format = formatter || ((v) => v);
+	const corners = [
+		{prop: 'border-top-left-radius', name: 'border_top_left_radius'},
+		{prop: 'border-top-right-radius', name: 'border_top_right_radius'},
+		{prop: 'border-bottom-left-radius', name: 'border_bottom_left_radius'},
+		{prop: 'border-bottom-right-radius', name: 'border_bottom_right_radius'},
+	];
+
+	return generate_classes(
+		(corner: (typeof corners)[0], value: string) => ({
+			name: `${corner.name}_${to_variable_name(value)}`,
+			css: `${corner.prop}: ${format(value)};`,
+		}),
+		corners,
 		values,
 	);
 };
