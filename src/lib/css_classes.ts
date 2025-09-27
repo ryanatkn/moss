@@ -693,42 +693,20 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	font_family_sans: {declaration: 'font-family: var(--font_family_sans);'},
 	font_family_serif: {declaration: 'font-family: var(--font_family_serif);'},
 	font_family_mono: {declaration: 'font-family: var(--font_family_mono);'},
-	line_height_0: {declaration: 'line-height: 0;'},
-	line_height_1: {declaration: 'line-height: 1;'},
-	line_height_xs: {declaration: 'line-height: var(--line_height_xs);'},
-	line_height_sm: {declaration: 'line-height: var(--line_height_sm);'},
-	line_height_md: {declaration: 'line-height: var(--line_height_md);'},
-	line_height_lg: {declaration: 'line-height: var(--line_height_lg);'},
-	line_height_xl: {declaration: 'line-height: var(--line_height_xl);'},
-	font_size_xs: {declaration: 'font-size: var(--font_size_xs); --font_size: var(--font_size_xs);'},
-	font_size_sm: {declaration: 'font-size: var(--font_size_sm); --font_size: var(--font_size_sm);'},
-	font_size_md: {declaration: 'font-size: var(--font_size_md); --font_size: var(--font_size_md);'},
-	font_size_lg: {declaration: 'font-size: var(--font_size_lg); --font_size: var(--font_size_lg);'},
-	font_size_xl: {declaration: 'font-size: var(--font_size_xl); --font_size: var(--font_size_xl);'},
-	font_size_xl2: {
-		declaration: 'font-size: var(--font_size_xl2); --font_size: var(--font_size_xl2);',
-	},
-	font_size_xl3: {
-		declaration: 'font-size: var(--font_size_xl3); --font_size: var(--font_size_xl3);',
-	},
-	font_size_xl4: {
-		declaration: 'font-size: var(--font_size_xl4); --font_size: var(--font_size_xl4);',
-	},
-	font_size_xl5: {
-		declaration: 'font-size: var(--font_size_xl5); --font_size: var(--font_size_xl5);',
-	},
-	font_size_xl6: {
-		declaration: 'font-size: var(--font_size_xl6); --font_size: var(--font_size_xl6);',
-	},
-	font_size_xl7: {
-		declaration: 'font-size: var(--font_size_xl7); --font_size: var(--font_size_xl7);',
-	},
-	font_size_xl8: {
-		declaration: 'font-size: var(--font_size_xl8); --font_size: var(--font_size_xl8);',
-	},
-	font_size_xl9: {
-		declaration: 'font-size: var(--font_size_xl9); --font_size: var(--font_size_xl9);',
-	},
+	// Line height
+	...generate_property_classes(
+		'line-height',
+		['0', '1', ...line_height_variants],
+		v => (v === '0' || v === '1') ? v : `var(--line_height_${v})`,
+		'line_height'
+	),
+	// Font size
+	...generate_property_classes(
+		'font-size',
+		font_size_variants,
+		v => `var(--font_size_${v}); --font_size: var(--font_size_${v})`,
+		'font_size'
+	),
 	icon_size_xs: {
 		declaration: 'font-size: var(--icon_size_xs); --font_size: var(--icon_size_xs);',
 	},
@@ -1028,16 +1006,14 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	border_color_i: {declaration: 'border-color: var(--border_color_i);'},
 	border_color_j: {declaration: 'border-color: var(--border_color_j);'},
 	border_color_transparent: {declaration: 'border-color: transparent;'},
-	border_width_0: {declaration: 'border-width: 0;'},
-	border_width_1: {declaration: 'border-width: var(--border_width_1);'},
-	border_width_2: {declaration: 'border-width: var(--border_width_2);'},
-	border_width_3: {declaration: 'border-width: var(--border_width_3);'},
-	border_width_4: {declaration: 'border-width: var(--border_width_4);'},
-	border_width_5: {declaration: 'border-width: var(--border_width_5);'},
-	border_width_6: {declaration: 'border-width: var(--border_width_6);'},
-	border_width_7: {declaration: 'border-width: var(--border_width_7);'},
-	border_width_8: {declaration: 'border-width: var(--border_width_8);'},
-	border_width_9: {declaration: 'border-width: var(--border_width_9);'},
+
+	// Border width
+	...generate_property_classes(
+		'border-width',
+		['0', ...border_distance_variants.map(String)],
+		v => v === '0' ? '0' : `var(--border_width_${v})`,
+		'border_width'
+	),
 	outline_width_0: {declaration: 'outline-width: 0;'}, // TODO has no corresponding CSS variable, how to encode this?
 	outline_width_focus: {declaration: 'outline-width: var(--outline_width_focus);'},
 	outline_width_active: {declaration: 'outline-width: var(--outline_width_active);'},
@@ -1047,6 +1023,15 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	// Border style
 	...generate_property_classes('border-style', border_style_values, undefined, 'border_style'),
 	...generate_property_classes('border-style', CSS_GLOBALS, to_kebab, 'border_style'),
+
+	// Border radius - generated from variants
+	...generate_property_classes(
+		'border-radius',
+		border_radius_variants,
+		v => `var(--border_radius_${v})`,
+		'border_radius'
+	),
+	// Border radius - percentage based
 	border_radius_100: {declaration: 'border-radius: 100%;'},
 	border_radius_90: {declaration: 'border-radius: 90%;'},
 	border_radius_80: {declaration: 'border-radius: 80%;'},
