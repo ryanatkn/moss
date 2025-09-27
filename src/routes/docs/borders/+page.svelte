@@ -160,22 +160,6 @@
 				</div>
 			{/each}
 		</div>
-		<Tome_Section_Header tag="h4" text="Border radius corners" />
-		<div class="border_examples border_radii">
-			{#each border_radius_corner_size_classes as classes}
-				<div class="row">
-					<div
-						class="border_example border_radius {classes}"
-						style="width: 100px; height: 100px;"
-					></div>
-					<div class="pl_md column">
-						{#each classes.split(' ') as className}
-							<code>.{className}</code>
-						{/each}
-					</div>
-				</div>
-			{/each}
-		</div>
 		<Tome_Section_Header tag="h4" text="Border radius percentages" />
 		<p>Interpreted utility classes, 0 to 100 (%).</p>
 		<div class="border_examples border_radii">
@@ -190,18 +174,32 @@
 				</div>
 			{/each}
 		</div>
+		<Tome_Section_Header tag="h4" text="Border radius corners" />
+		<div class="border_examples border_radii">
+			{#each border_radius_corner_size_classes as classes}
+				<div class="row">
+					<div
+						class="border_example border_radius {classes} font_family_mono"
+						style="width: 320px; height: 100px;"
+					>
+						{#each classes.split(' ') as className}
+							<div>.{className}</div>
+						{/each}
+					</div>
+				</div>
+			{/each}
+		</div>
 		<Tome_Section_Header tag="h4" text="Border radius corner percentages" />
 		<p>Interpreted utility classes, 0 to 100 (%).</p>
 		<div class="border_examples border_radii">
 			{#each border_radius_corner_classes as classes}
 				<div class="row">
 					<div
-						class="border_example border_radius {classes}"
-						style="width: 100px; height: 100px;"
-					></div>
-					<div class="pl_md column">
+						class="border_example border_radius {classes} font_family_mono"
+						style="width: 320px; height: 100px;"
+					>
 						{#each classes.split(' ') as className}
-							<code>.{className}</code>
+							<div>.{className}</div>
 						{/each}
 					</div>
 				</div>
@@ -219,6 +217,7 @@
 	.border_example {
 		width: 200px;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		margin-bottom: var(--space_md);
 		padding: var(--space_md);
