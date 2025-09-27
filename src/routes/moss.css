@@ -194,6 +194,9 @@ a.chip {
 .position_relative {
 	position: relative;
 }
+.position_absolute {
+	position: absolute;
+}
 .position_sticky {
 	position: sticky;
 }
@@ -264,6 +267,9 @@ a.chip {
 }
 .color_a_5 {
 	color: var(--color_a_5);
+}
+.bg_a_7 {
+	background-color: var(--color_a_7);
 }
 .border_radius_md {
 	border-radius: var(--border_radius_md);
@@ -463,6 +469,9 @@ a.chip {
 .h_100 {
 	height: 100%;
 }
+.inset_0 {
+	inset: 0;
+}
 .p_sm {
 	padding: var(--space_sm);
 }
@@ -613,6 +622,24 @@ a.chip {
 .font_weight_1000 {
 	font-weight: 1000;
 	--font_weight: 1000;
+}
+.opacity_0 {
+	opacity: 0;
+}
+.opacity_17 {
+	opacity: 17%;
+}
+.opacity_38 {
+	opacity: 38%;
+}
+.opacity_51 {
+	opacity: 51%;
+}
+.opacity_79 {
+	opacity: 79%;
+}
+.opacity_100 {
+	opacity: 1;
 }
 .border_top_right_radius_100 {
 	border-top-right-radius: 100%;

@@ -20,6 +20,15 @@
 	const toggle_color_scheme = () => {
 		themer.color_scheme = themer.color_scheme === 'light' ? 'dark' : 'light';
 	};
+
+	const opacity_classes = [
+		'opacity_0',
+		'opacity_17',
+		'opacity_38',
+		'opacity_51',
+		'opacity_79',
+		'opacity_100',
+	];
 </script>
 
 <Tome_Content {tome}>
@@ -138,6 +147,7 @@
 	</section>
 	<Tome_Section>
 		<Tome_Section_Header text="Stacking transparency" />
+		<Unfinished_Implementation_Warning />
 		<p>
 			Many styles are designed to stack, so things can appear in different contexts while retaining
 			relative color value distinctiveness ("color value" as in darkness-lightness). Internally this
@@ -176,6 +186,18 @@
 			the base cases, or include performance themes.
 		</p>
 	</Tome_Section>
+	<Tome_Section>
+		<Tome_Section_Header text="Opacity" />
+		<p>Interpreted utility classes, 0 to 100 (%).</p>
+		<div>
+			{#each opacity_classes as opacity_class (opacity_class)}
+				<div class="opacity_example font_family_mono relative">
+					<div class="position_absolute inset_0 bg_a_7 {opacity_class}"></div>
+					<div class="position_relative">.{opacity_class}</div>
+				</div>
+			{/each}
+		</div>
+	</Tome_Section>
 </Tome_Content>
 
 <style>
@@ -194,5 +216,14 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	.opacity_example {
+		position: relative;
+		width: 150px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		margin-bottom: var(--space_md);
+		padding: var(--space_md);
 	}
 </style>
