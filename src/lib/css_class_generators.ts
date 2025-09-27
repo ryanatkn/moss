@@ -128,7 +128,7 @@ export const generate_property_classes = (
 
 	return generate_classes(
 		(value: string) => ({
-			name: `${class_prefix}_${value}`,
+			name: `${class_prefix}_${value.replace(/-/g, '_')}`,
 			css: `${property}: ${format(value)};`,
 		}),
 		values,

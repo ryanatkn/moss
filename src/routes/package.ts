@@ -114,6 +114,7 @@ export const src_json: Src_Json = {
 			path: 'css_classes.ts',
 			declarations: [
 				{name: 'opacity_interpreter', kind: 'variable'},
+				{name: 'font_weight_interpreter', kind: 'variable'},
 				{name: 'css_class_interpreters', kind: 'variable'},
 				{name: 'css_classes_by_name', kind: 'variable'},
 			],
@@ -178,6 +179,14 @@ export const src_json: Src_Json = {
 				{name: 'border_distance_variants', kind: 'variable'},
 				{name: 'Outline_Distance_Variant', kind: 'type'},
 				{name: 'outline_distance_variants', kind: 'variable'},
+				{name: 'Alignment_Value', kind: 'type'},
+				{name: 'alignment_values', kind: 'variable'},
+				{name: 'Justify_Value', kind: 'type'},
+				{name: 'justify_values', kind: 'variable'},
+				{name: 'Overflow_Value', kind: 'type'},
+				{name: 'overflow_values', kind: 'variable'},
+				{name: 'Border_Style_Value', kind: 'type'},
+				{name: 'border_style_values', kind: 'variable'},
 			],
 		},
 		'./variable.js': {

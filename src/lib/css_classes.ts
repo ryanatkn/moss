@@ -12,7 +12,18 @@ import {
 	generate_property_with_axes,
 	format_spacing_value,
 } from '$lib/css_class_generators.js';
-import {space_variants, color_variants} from '$lib/variable_data.js';
+import {
+	space_variants,
+	color_variants,
+	font_size_variants,
+	line_height_variants,
+	border_radius_variants,
+	border_distance_variants,
+	alignment_values,
+	justify_values,
+	overflow_values,
+	border_style_values,
+} from '$lib/variable_data.js';
 
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
 
@@ -27,10 +38,29 @@ export const opacity_interpreter: Css_Class_Declaration_Interpreted = {
 	pattern: /^opacity_(\d+)$/,
 	interpret: (match) => {
 		const value = parseInt(match[1]);
-		if (value < 0 || value > 100) return null;
+		if (value < 0 || value > 100) {
+			console.warn(`Invalid opacity value: ${value}. Must be between 0 and 100.`);
+			return null;
+		}
 		return `opacity: ${value === 0 ? '0' : value === 100 ? '1' : `${value}%`};`;
 	},
 	// comment: 'Interpreted opacity value',
+};
+
+/**
+ * Interpreter for font-weight classes (font_weight_1 through font_weight_1000)
+ * Supports the full 1-1000 range as per CSS spec
+ */
+export const font_weight_interpreter: Css_Class_Declaration_Interpreted = {
+	pattern: /^font_weight_(\d+)$/,
+	interpret: (match) => {
+		const value = parseInt(match[1]);
+		if (value < 1 || value > 1000) {
+			console.warn(`Invalid font-weight value: ${value}. Must be between 1 and 1000.`);
+			return null;
+		}
+		return `font-weight: ${value}; --font_weight: ${value};`;
+	},
 };
 
 /**
@@ -38,6 +68,7 @@ export const opacity_interpreter: Css_Class_Declaration_Interpreted = {
  */
 export const css_class_interpreters: Array<Css_Class_Declaration_Interpreted> = [
 	opacity_interpreter,
+	font_weight_interpreter,
 	// add new interpreters here
 ];
 
@@ -567,7 +598,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	float_unset: {declaration: 'float: unset;'},
 
 	// Overflow properties with axis variants
-	...generate_property_with_axes('overflow', ['auto', 'hidden', 'scroll', 'clip', 'visible']),
+	...generate_property_with_axes('overflow', overflow_values),
 
 	overflow_wrap_normal: {declaration: 'overflow-wrap: normal;'},
 	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
@@ -620,12 +651,8 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	shrink: {declaration: 'flex-shrink: 1;'},
 	shrink_0: {declaration: 'flex-shrink: 0;'},
 
-	/* TODO omitting some values, generating on demand will fill in the gaps */
-	align_items_center: {declaration: 'align-items: center;'},
-	align_items_start: {declaration: 'align-items: start;'},
-	align_items_end: {declaration: 'align-items: end;'},
-	align_items_baseline: {declaration: 'align-items: baseline;'},
-	align_items_stretch: {declaration: 'align-items: stretch;'},
+	// Align items
+	...generate_property_classes('align-items', alignment_values, undefined, 'align_items'),
 	/* TODO omitting some values, generating on demand will fill in the gaps */
 	align_content_center: {declaration: 'align-content: center;'},
 	align_content_start: {declaration: 'align-content: start;'},
@@ -641,16 +668,8 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	align_self_end: {declaration: 'align-self: end;'},
 	align_self_baseline: {declaration: 'align-self: baseline;'},
 	align_self_stretch: {declaration: 'align-self: stretch;'},
-	/* TODO omitting some values, generating on demand will fill in the gaps */
-	justify_content_center: {declaration: 'justify-content: center;'},
-	justify_content_start: {declaration: 'justify-content: start;'},
-	justify_content_end: {declaration: 'justify-content: end;'},
-	justify_content_left: {declaration: 'justify-content: left;'},
-	justify_content_right: {declaration: 'justify-content: right;'},
-	justify_content_space_between: {declaration: 'justify-content: space-between;'},
-	justify_content_space_around: {declaration: 'justify-content: space-around;'},
-	justify_content_space_evenly: {declaration: 'justify-content: space-evenly;'},
-	justify_content_stretch: {declaration: 'justify-content: stretch;'},
+	// Justify content
+	...generate_property_classes('justify-content', justify_values, undefined, 'justify_content'),
 	/* TODO omitting some values, generating on demand will fill in the gaps */
 	justify_items_center: {declaration: 'justify-items: center;'},
 	justify_items_start: {declaration: 'justify-items: start;'},
@@ -791,15 +810,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	user_select_revert_layer: {declaration: 'user-select: revert-layer;'},
 	user_select_unset: {declaration: 'user-select: unset;'},
 
-	font_weight_100: {declaration: 'font-weight: 100; --font_weight: 100;'},
-	font_weight_200: {declaration: 'font-weight: 200; --font_weight: 200;'},
-	font_weight_300: {declaration: 'font-weight: 300; --font_weight: 300;'},
-	font_weight_400: {declaration: 'font-weight: 400; --font_weight: 400;'},
-	font_weight_500: {declaration: 'font-weight: 500; --font_weight: 500;'},
-	font_weight_600: {declaration: 'font-weight: 600; --font_weight: 600;'},
-	font_weight_700: {declaration: 'font-weight: 700; --font_weight: 700;'},
-	font_weight_800: {declaration: 'font-weight: 800; --font_weight: 800;'},
-	font_weight_900: {declaration: 'font-weight: 900; --font_weight: 900;'},
 
 	/*
 
@@ -1034,22 +1044,9 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 
 	/* TODO add the top/right/bottom/left border-style multi-argument variants */
 	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
-	// TODO think about an API using data+helpers, e.g. `...create_declarations({property_name: 'border-style', property_value: ['none', 'hidden', [...], css_global_values])`
-	border_style_none: {declaration: 'border-style: none;'},
-	border_style_hidden: {declaration: 'border-style: hidden;'},
-	border_style_dotted: {declaration: 'border-style: dotted;'},
-	border_style_dashed: {declaration: 'border-style: dashed;'},
-	border_style_solid: {declaration: 'border-style: solid;'},
-	border_style_double: {declaration: 'border-style: double;'},
-	border_style_groove: {declaration: 'border-style: groove;'},
-	border_style_ridge: {declaration: 'border-style: ridge;'},
-	border_style_inset: {declaration: 'border-style: inset;'},
-	border_style_outset: {declaration: 'border-style: outset;'},
-	border_style_inherit: {declaration: 'border-style: inherit;'},
-	border_style_initial: {declaration: 'border-style: initial;'},
-	border_style_revert: {declaration: 'border-style: revert;'},
-	border_style_revert_layer: {declaration: 'border-style: revert-layer;'},
-	border_style_unset: {declaration: 'border-style: unset;'},
+	// Border style
+	...generate_property_classes('border-style', border_style_values, undefined, 'border_style'),
+	...generate_property_classes('border-style', CSS_GLOBALS, to_kebab, 'border_style'),
 	border_radius_100: {declaration: 'border-radius: 100%;'},
 	border_radius_90: {declaration: 'border-radius: 90%;'},
 	border_radius_80: {declaration: 'border-radius: 80%;'},

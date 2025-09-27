@@ -101,3 +101,40 @@ export const border_distance_variants = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
 
 export type Outline_Distance_Variant = Array_Element<typeof outline_distance_variants>;
 export const outline_distance_variants = ['focus', 'active'] as const;
+
+// Common alignment values used in flexbox/grid properties
+export type Alignment_Value = Array_Element<typeof alignment_values>;
+export const alignment_values = ['center', 'start', 'end', 'baseline', 'stretch'] as const;
+
+// Common flexbox justify values
+export type Justify_Value = Array_Element<typeof justify_values>;
+export const justify_values = [
+	'center',
+	'start',
+	'end',
+	'left',
+	'right',
+	'space-between',
+	'space-around',
+	'space-evenly',
+	'stretch',
+] as const;
+
+// Overflow property values
+export type Overflow_Value = Array_Element<typeof overflow_values>;
+export const overflow_values = ['auto', 'hidden', 'scroll', 'clip', 'visible'] as const;
+
+// Border style values
+export type Border_Style_Value = Array_Element<typeof border_style_values>;
+export const border_style_values = [
+	'none',
+	'hidden',
+	'dotted',
+	'dashed',
+	'solid',
+	'double',
+	'groove',
+	'ridge',
+	'inset',
+	'outset',
+] as const;

@@ -26,7 +26,8 @@
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 
 	// TODO refactor, also maybe add `950`?
-	const font_weights = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+	const font_weights = [100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1, 234, 555, 1000];
+	// classes="font_weight_100 font_weight_200 font_weight_300 font_weight_400 font_weight_500 font_weight_600 font_weight_700 font_weight_800 font_weight_900 font_weight_950 font_weight_1 font_weight_234 font_weight_555 font_weight_1000"
 
 	const font_size_variants = default_variables.filter((p) => font_size_names.includes(p.name));
 
@@ -120,18 +121,18 @@
 	<Tome_Section>
 		<!-- TODO add a slider for the font size here -->
 		<Tome_Section_Header text="Font weights" />
-		<aside>
+		<p>Font weight values can be any integer from 1 to 1000.</p>
+		<p>
 			There are no variables for <Mdn_Link path="Web/CSS/font-weight" /> but there are
 			<Tome_Link name="classes" hash="utility-classes">utility classes</Tome_Link>.
-		</aside>
+		</p>
 		<form>
 			<Font_Size_Control bind:selected_size />
 		</form>
 		<div>
 			{#each font_weights as font_weight (font_weight)}
 				<div
-					class="white_space_nowrap"
-					style:font-weight={font_weight}
+					class="white_space_nowrap font_weight_{font_weight}"
 					style:font-size="var(--{font_size_names[selected_size - 1]})"
 				>
 					font-weight: {font_weight}

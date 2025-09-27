@@ -202,7 +202,8 @@ ${'<' as string}script>
 			Moss exports <Module_Link path="css_class_helpers.ts">helpers</Module_Link> to generate styles
 			on demand based on class usage in your source files, so you can ship the minimal code needed. Some
 			values are interpreted to efficiently support large value ranges, e.g. <code>opacity_0</code>
-			through <code>opacity_100</code>.
+			through <code>opacity_100</code> and <code>font_weight_1</code> to
+			<code>font_weight_1000</code>.
 		</p>
 		<aside>
 			The API has been drifting to be more consistently match CSS at the cost of verbosity. I think
