@@ -82,6 +82,10 @@ export const shadow_font_size_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const
 export type Shadow_Alpha_Variant = Array_Element<typeof shadow_alpha_variants>;
 export const shadow_alpha_variants = [1, 2, 3, 4, 5] as const;
 
+// Shadow semantic color values
+export type Shadow_Semantic_Value = Array_Element<typeof shadow_semantic_values>;
+export const shadow_semantic_values = ['highlight', 'glow', 'shroud'] as const;
+
 // Icon size variants
 export type Icon_Size_Variant = Array_Element<typeof icon_size_variants>;
 export const icon_size_variants = ['xs', 'sm', 'md', 'lg', 'xl', 'xl2', 'xl3'] as const;
@@ -194,6 +198,10 @@ export const vertical_align_values = [
 // Word break values
 export type Word_Break_Value = Array_Element<typeof word_break_values>;
 export const word_break_values = ['normal', 'break-all', 'keep-all'] as const;
+
+// Position values
+export type Position_Value = Array_Element<typeof position_values>;
+export const position_values = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const;
 
 // Visibility values
 export type Visibility_Value = Array_Element<typeof visibility_values>;

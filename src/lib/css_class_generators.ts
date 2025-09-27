@@ -143,15 +143,13 @@ export const format_dimension_value = (value: string): string => {
 export const generate_property_classes = (
 	property: string,
 	values: Iterable<string>,
-	formatter?: (value: string) => string,
+	value_formatter?: (value: string) => string,
 	prefix: string = to_variable_name(property),
 ): Record<string, Css_Class_Declaration> => {
-	const format = formatter || ((v) => v);
-
 	return generate_classes(
 		(value: string) => ({
 			name: `${prefix}_${to_variable_name(value)}`,
-			css: `${property}: ${format(value)};`,
+			css: `${property}: ${value_formatter?.(value) ?? value};`,
 		}),
 		values,
 	);
@@ -170,12 +168,11 @@ export const generate_directional_classes = (
 	values: Iterable<string>,
 	value_formatter?: (v: string) => string,
 ): Record<string, Css_Class_Declaration> => {
-	const format = value_formatter || ((v) => v);
 	const prefix = property[0]; // 'm' for margin, 'p' for padding
 
 	return generate_classes(
 		(variant: string, value: string) => {
-			const formatted = format(value);
+			const formatted = value_formatter?.(value) ?? value;
 
 			// Map variants to their configurations
 			const configs: Record<string, {name: string; css: string}> = {

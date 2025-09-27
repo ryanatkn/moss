@@ -29,11 +29,14 @@ import {
 	text_align_values,
 	vertical_align_values,
 	word_break_values,
+	position_values,
 	visibility_values,
 	float_values,
 	overflow_wrap_values,
 	scrollbar_width_values,
 	scrollbar_gutter_values,
+	shadow_semantic_values,
+	shadow_alpha_variants,
 } from '$lib/variable_data.js';
 import {css_class_composites} from '$lib/css_class_composites.js';
 
@@ -51,13 +54,9 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	...css_class_composites,
 
 	/** @see https://developer.mozilla.org/en-US/docs/Web/CSS/position */
-	...generate_classes(
-		(v: string) => ({
-			name: `position_${v}`,
-			css: `position: ${to_kebab(v)};`,
-		}),
-		['static', 'relative', 'absolute', 'fixed', 'sticky', ...CSS_GLOBALS],
-	),
+	// Position
+	...generate_property_classes('position', position_values),
+	...generate_property_classes('position', CSS_GLOBALS, to_kebab),
 
 	/** @see https://drafts.csswg.org/css-display/#display-value-summary. */
 	// Display properties
@@ -365,7 +364,7 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			name: `shadow_color_${value}`,
 			css: `--shadow_color: var(--shadow_color_${value});`,
 		}),
-		['highlight', 'glow', 'shroud'],
+		shadow_semantic_values,
 	),
 	// Shadow color classes - hue variants
 	...generate_classes(
@@ -377,11 +376,11 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	),
 	// Shadow alpha classes
 	...generate_classes(
-		(alpha: string) => ({
+		(alpha: number) => ({
 			name: `shadow_alpha_${alpha}`,
 			css: `--shadow_alpha: var(--shadow_alpha_${alpha});`,
 		}),
-		['1', '2', '3', '4', '5'],
+		shadow_alpha_variants,
 	),
 
 	/* higher specificity */
