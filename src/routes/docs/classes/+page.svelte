@@ -27,7 +27,7 @@
 				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|$globals`,
 				`visibility_visible|hidden|collapse|$globals`,
 				`float_left|right|none|inline_start|inline_end|$globals`,
-				'opacity_0|10-100',
+				'opacity_0-100',
 				'overflow_auto|hidden|scroll|clip|visible',
 				'overflow_x|y_auto|hidden|scroll|clip|visible',
 				`overflow_wrap_normal|anywhere|break_word|$globals`,
@@ -200,7 +200,9 @@ ${'<' as string}script>
 		</p>
 		<p>
 			Moss exports <Module_Link path="css_class_helpers.ts">helpers</Module_Link> to generate styles
-			on demand based on class usage in your source files, so you can ship the minimal code needed.
+			on demand based on class usage in your source files, so you can ship the minimal code needed. Some
+			values are interpreted to efficiently support large value ranges, e.g. <code>opacity_0</code>
+			through <code>opacity_100</code>.
 		</p>
 		<aside>
 			The API has been drifting to be more consistently match CSS at the cost of verbosity. I think
