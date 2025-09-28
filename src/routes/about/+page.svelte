@@ -14,9 +14,9 @@
 	// TODO standardize
 </script>
 
-<main class="width_md">
+<main class="width_upto_md">
 	<section>
-		<header class="box width_sm">
+		<header class="box width_upto_sm">
 			<h1 class="mb_xl5" style:margin-top={MAIN_HEADER_MARGIN_TOP}>
 				{pkg.repo_name}
 			</h1>
@@ -25,7 +25,7 @@
 	</section>
 	<Community_Links_Panel />
 	<section>
-		<div class="panel p_md width_md">
+		<div class="panel p_md width_upto_md">
 			<Package_Detail {pkg} />
 		</div>
 	</section>

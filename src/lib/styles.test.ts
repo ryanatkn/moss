@@ -2,7 +2,7 @@ import {test, assert} from 'vitest';
 import {readFileSync} from 'node:fs';
 
 import * as exported_variables from '$lib/variables.js';
-import css_classes_text from '$lib/css_classes.ts?raw';
+import css_classes_text from '../fixtures/css_classes_fixture.json?raw';
 
 // vitest replaces this with an empty string because CSS isn't opted into being processed,
 // and it has no CLI option, so just read it directly
@@ -10,22 +10,42 @@ const main_stylesheet_text = readFileSync('./src/lib/style.css', 'utf8');
 
 const css_files = [main_stylesheet_text, css_classes_text];
 
-const extract_custom_properties = (css: string) =>
-	Array.from(css.matchAll(/--([a-z][a-z0-9_]*(?<!_))/g)).map((m) => m[1]);
+const extract_custom_properties_usage = (css: string) =>
+	Array.from(css.matchAll(/var\((?:\s|\\[nt])*--([a-z][a-z0-9_]*(?<!_))(?:[,)])/g)).map(
+		(m) => m[1],
+	);
 
 test('variables in the CSS exist', () => {
+	// Track which known variables we actually find in the CSS
+	const found_known = new Set();
 	const unknowns = new Set();
+
 	for (const css of css_files) {
 		assert.ok(css);
-		const variable_names = extract_custom_properties(css);
+		const variable_names = extract_custom_properties_usage(css);
 		for (const name of variable_names) {
-			if (!(name in exported_variables) && !known_without_variables.has(name)) {
+			if (name in exported_variables) {
+				// Variable exists in exported variables, all good
+				continue;
+			} else if (known_without_variables.has(name)) {
+				// Found a known variable that doesn't have an export
+				found_known.add(name);
+			} else {
+				// Unknown variable that's neither exported nor in our known list
 				unknowns.add(name);
 			}
 		}
 	}
+
+	// Verify no unknown variables were found
 	if (unknowns.size) {
 		throw new Error(`unknown variables found: ${Array.from(unknowns).join(', ')}`);
+	}
+
+	// Verify all known variables were actually found in the CSS
+	const missing_known = new Set([...known_without_variables].filter((x) => !found_known.has(x)));
+	if (missing_known.size) {
+		throw new Error(`known variables not found in CSS: ${Array.from(missing_known).join(', ')}`);
 	}
 });
 
@@ -51,9 +71,6 @@ const known_without_variables = new Set([
 	'border_radius',
 	'min_height',
 	'menu_item_padding',
-	'size',
-	'color',
-	'padding_left',
 	'font_weight',
 	'checkbox_content',
 	'checkbox_content_empty',
@@ -68,6 +85,5 @@ const known_without_variables = new Set([
 	'button_border_color_hover',
 	'button_border_color_active',
 	'shadow',
-	'hue',
 	'shadow_alpha',
 ]);

@@ -1,6 +1,46 @@
 import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
-
-// TODO support iterpretable class names, for e.g. arbitrary numbers - lots here, UnoCSS is similar
+import {
+	generate_classes,
+	to_kebab,
+	CSS_GLOBALS,
+	COLOR_INTENSITIES,
+	generate_property_classes,
+	generate_directional_classes,
+	generate_property_with_axes,
+	generate_border_radius_corners,
+	generate_shadow_classes,
+	format_spacing_value,
+	format_dimension_value,
+} from '$lib/css_class_generators.js';
+import {
+	space_variants,
+	color_variants,
+	text_color_variants,
+	font_size_variants,
+	icon_size_variants,
+	line_height_variants,
+	border_radius_variants,
+	border_width_variants,
+	alignment_values,
+	justify_values,
+	overflow_values,
+	border_style_values,
+	display_values,
+	text_align_values,
+	vertical_align_values,
+	word_break_values,
+	position_values,
+	visibility_values,
+	float_values,
+	flex_wrap_values,
+	flex_direction_values,
+	overflow_wrap_values,
+	scrollbar_width_values,
+	scrollbar_gutter_values,
+	shadow_semantic_values,
+	shadow_alpha_variants,
+} from '$lib/variable_data.js';
+import {css_class_composites} from '$lib/css_class_composites.js';
 
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
 
@@ -13,651 +53,68 @@ import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
  */
 export const css_classes_by_name: Record<string, Css_Class_Declaration | undefined> = {
 	// Composite classes go first, so they can be overridden by the more specific classes.
-	pixelated: {
-		declaration: `
-			image-rendering: -webkit-optimize-contrast; /* Safari */
-			image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
-			image-rendering: pixelated; /* in case crisp-edges isn't supported */
-			image-rendering: crisp-edges; /* the recommended pixel art setting according to MDN */
-		`,
-	},
-	box: {
-		ruleset: `
-			.box {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-			}
-		`,
-	},
-	column: {
-		ruleset: `
-			/* like \`.box\` but uncentered */
-			.column {
-				display: flex;
-				flex-direction: column;
-			}
-		`,
-	},
-	row: {
-		ruleset: `
-			/* can be used to override the direction of a \`.box\` */
-			.row {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-			}
-		`,
-	},
-	formatted: {
-		ruleset: `
-			/* Formats content to wrap long strings and preserve displayed whitespace. */
-			.formatted {
-				overflow: hidden;
-				white-space: break-spaces;
-			}
-		`,
-	},
-	ellipsis: {
-		declaration: 'display: block;	white-space: nowrap;	overflow: hidden;	text-overflow: ellipsis;',
-	},
-	width_xs: {
-		ruleset: `
-			.width_xs {
-				width: 100%;
-				max-width: var(--distance_xs);
-			}
-		`,
-	},
-	width_sm: {
-		ruleset: `
-			.width_sm {
-				width: 100%;
-				max-width: var(--distance_sm);
-			}
-		`,
-	},
-	width_md: {
-		ruleset: `
-			.width_md {
-				width: 100%;
-				max-width: var(--distance_md);
-			}
-		`,
-	},
-	width_lg: {
-		ruleset: `
-			.width_lg {
-				width: 100%;
-				max-width: var(--distance_lg);
-			}
-		`,
-	},
-	width_xl: {
-		ruleset: `
-			.width_xl {
-				width: 100%;
-				max-width: var(--distance_xl);
-			}
-		`,
-	},
-	min_width_xs: {
-		ruleset: `
-			.min_width_xs {
-				width: 100%;
-				min-width: var(--distance_xs);
-			}
-		`,
-	},
-	min_width_sm: {
-		ruleset: `
-			.min_width_sm {
-				width: 100%;
-				min-width: var(--distance_sm);
-			}
-		`,
-	},
-	min_width_md: {
-		ruleset: `
-			.min_width_md {
-				width: 100%;
-				min-width: var(--distance_md);
-			}
-		`,
-	},
-	min_width_lg: {
-		ruleset: `
-			.min_width_lg {
-				width: 100%;
-				min-width: var(--distance_lg);
-			}
-		`,
-	},
-	min_width_xl: {
-		ruleset: `
-			.min_width_xl {
-				width: 100%;
-				min-width: var(--distance_xl);
-			}
-		`,
-	},
-	// TODO rethink if this breaks too often or confusingly, `height: 100%` depends on the parent and often won't take effect
-	height_xs: {
-		ruleset: `
-			.height_xs {
-				height: 100%;
-				max-height: var(--distance_xs);
-			}
-		`,
-	},
-	height_sm: {
-		ruleset: `
-			.height_sm {
-				height: 100%;
-				max-height: var(--distance_sm);
-			}
-		`,
-	},
-	height_md: {
-		ruleset: `
-			.height_md {
-				height: 100%;
-				max-height: var(--distance_md);
-			}
-		`,
-	},
-	height_lg: {
-		ruleset: `
-			.height_lg {
-				height: 100%;
-				max-height: var(--distance_lg);
-			}
-		`,
-	},
-	height_xl: {
-		ruleset: `
-			.height_xl {
-				height: 100%;
-				max-height: var(--distance_xl);
-			}
-		`,
-	},
-	min_height_xs: {
-		ruleset: `
-			.min_height_xs {
-				height: 100%;
-				min-height: var(--distance_xs);
-			}
-		`,
-	},
-	min_height_sm: {
-		ruleset: `
-			.min_height_sm {
-				height: 100%;
-				min-height: var(--distance_sm);
-			}
-		`,
-	},
-	min_height_md: {
-		ruleset: `
-			.min_height_md {
-				height: 100%;
-				min-height: var(--distance_md);
-			}
-		`,
-	},
-	min_height_lg: {
-		ruleset: `
-			.min_height_lg {
-				height: 100%;
-				min-height: var(--distance_lg);
-			}
-		`,
-	},
-	min_height_xl: {
-		ruleset: `
-			.min_height_xl {
-				height: 100%;
-				min-height: var(--distance_xl);
-			}
-		`,
-	},
-	selectable: {
-		ruleset: `
-			.selectable {
-				--button_fill: color-mix(in hsl, var(--fill) 8%, transparent);
-				--button_fill_hover: color-mix(in hsl, var(--fill) 16%, transparent);
-				--button_fill_active: color-mix(in hsl, var(--fill) 24%, transparent);
-				cursor: pointer;
-				background-color: var(--button_fill);
-				border-color: var(--border_color_3);
-				border-style: var(--border_style);
-				border-width: var(--border_width);
-			}
-			.selectable:hover {
-				background-color: var(--button_fill_hover);
-				border-color: var(--border_color_2);
-			}
-			.selectable.selected,
-			.selectable:active {
-				background-color: var(--button_fill_active);
-				border-color: var(--color_a_5);
-			}
-			.selectable.selected {
-				cursor: default;
-			}
-			.selectable.selected.deselectable:not(:disabled) {
-				cursor: pointer;
-			}
-		`,
-	},
-	clickable: {
-		ruleset: `
-			.clickable {
-				cursor: pointer;
-				transform: var(--clickable_transform, scale3d(1, 1, 1));
-				transform-origin: var(--clickable_transform_origin);
-				transition-duration: var(--clickable_transition_duration); /* default to instant, chunky/lofi */
-			}
-			.clickable:focus {
-				transform: var(--clickable_transform_focus, scale3d(1.07, 1.07, 1.07));
-			}
-			.clickable:hover {
-				transform: var(--clickable_transform_hover, scale3d(1.1, 1.1, 1.1));
-			}
-			.clickable:active,
-			.clickable.active {
-				transform: var(--clickable_transform_active, scale3d(1.2, 1.2, 1.2));
-			}
-		`,
-	},
-	pane: {
-		ruleset: `
-			/* A pane is a box floating over the page, like for dialogs.
-			By default it's opaque, resetting the background to the initial depth. */
-			.pane {
-				background-color: var(--pane_bg, var(--bg));
-				box-shadow: var(
-					--pane_shadow,
-					/* TODO this is terrible, maybe add all the variables? should be culled anyway? */
-						var(--shadow_bottom_md)
-						color-mix(in hsl, var(--shadow_color) var(--shadow_alpha_3), transparent)
-				);
-				border-radius: var(--border_radius_xs);
-			}
-		`,
-	},
-	panel: {
-		ruleset: `
-			/* A panel is a box embedded into the page, useful for visually isolating content. */
-			.panel {
-				border-radius: var(--border_radius_xs);
-				background-color: var(--panel_bg, var(--fg_1));
-			}
-		`,
-	},
-	icon_button: {
-		ruleset: `
-			/* TODO other button variants? */
-			/* TODO this is slightly strange that it doesn't use --icon_size */
-			/* These are used as modifiers to buttons, and so they use \`:where\` so they cascade. */
-			.icon_button {
-				width: var(--input_height);
-				height: var(--input_height);
-				min-width: var(--input_height);
-				min-height: var(--input_height);
-				flex-shrink: 0;
-				line-height: 1;
-				font-weight: 900;
-				padding: 0;
-			}
-		`,
-	},
-	plain: {
-		ruleset: `
-			/* TODO maybe this belongs with the reset, like \`selected\`? or does \`selected\` belong here? */
-			.plain:not(:hover) {
-				--border_color: transparent;
-				box-shadow: none;
-				--button_fill: transparent;
-			}
-			.plain:hover, .plain:active {
-				--border_color: transparent;
-			}
-		`,
-	},
-	menu_item: {
-		ruleset: `
-			.menu_item {
-				--border_radius: 0;
-				--border_color: var(--border_color_3);
-				position: relative;
-				z-index: 2;
-				cursor: pointer;
-				width: 100%;
-				min-height: var(--min_height, var(--icon_size_sm));
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: var(--menu_item_padding, var(--space_xs3) var(--space_xs));
-			}
-			.menu_item.selected {
-				/* TODO different patterns for border and bg? */
-				--border_color: var(--color_a_5);
-				background-color: var(--fg_1);
-				z-index: 1;
-				cursor: default;
-			}
-			.menu_item.selected.deselectable:not(:disabled) {
-				cursor: pointer;
-			}
-			.menu_item:hover {
-				--border_color: var(--border_color_3);
-				background-color: var(--fg_0);
-			}
-			.menu_item:active,
-			.menu_item.selected:hover {
-				--border_color: var(--border_color_3);
-				background-color: var(--fg_2);
-			}
-			.menu_item.plain {
-				border: none;
-			}
-			.menu_item .content {
-				display: flex;
-				align-items: center;
-				flex: 1;
-				/* allows the flex children to shrink */
-				min-width: 0;
-			}
-			.menu_item .icon {
-				width: var(--icon_size, var(--icon_size_md));
-				margin-right: var(--space_sm);
-				flex-shrink: 0;
-				text-align: center;
-				font-weight: 900;
-			}
-			.menu_item .title {
-				margin-right: var(--space_lg);
-				flex-shrink: 1;
-				overflow: hidden;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				line-height: var(--line_height_lg); /* prevents the bottom of g's and others from being cut off */
-			}
-		`,
-	},
-	chevron: {
-		ruleset: `
-			.chevron {
-				position: relative;
-				height: 8px;
-			}
-			.chevron::before {
-				display: block;
-				content: '';
-				border: 4px solid transparent;
-				border-left-color: var(--text_color_3);
-			}
-		`,
-	},
-	chip: {
-		ruleset: `
-			.chip {
-				font-weight: 500;
-				padding-left: var(--space_xs);
-				padding-right: var(--space_xs);
-				background-color: var(--fg_1);
-				border-radius: var(--border_radius_xs);
-			}
-			a.chip {
-				font-weight: 600;
-			}
-		`,
-	},
-	pre: {
-		// keep in sync with `pre` styling in `style.css`, except the `.inline` exception
-		ruleset: `
-			.pre {
-				font-family: var(--font_family_mono);
-				color: var(--text_color, var(--text_color_3));
-				overflow: auto;
-				max-width: 100%;
-			}
-			.pre > code {
-				font-size: var(--font_size_sm); /* TODO @many use a var? maybe computed from generic \`--font_size\`? */
-				font-weight: 500;
-			}
-			.pre:not(.inline) > code {
-				display: block;
-			}
-		`,
-	},
+	...css_class_composites,
 
-	/** @see https://developer.mozilla.org/en-US/docs/Web/CSS/position */
-	position_static: {declaration: 'position: static;'},
-	position_relative: {declaration: 'position: relative;'},
-	position_absolute: {declaration: 'position: absolute;'},
-	position_fixed: {declaration: 'position: fixed;'},
-	position_sticky: {declaration: 'position: sticky;'},
-	position_inherit: {declaration: 'position: inherit;'},
-	position_initial: {declaration: 'position: initial;'},
-	position_revert: {declaration: 'position: revert;'},
-	position_revert_layer: {declaration: 'position: revert_layer;'},
-	position_unset: {declaration: 'position: unset;'},
+	...generate_property_classes('position', position_values),
+	...generate_property_classes('position', CSS_GLOBALS, to_kebab),
 
-	/** @see https://drafts.csswg.org/css-display/#display-value-summary. */
-	display_none: {declaration: 'display: none;'},
-	display_contents: {declaration: 'display: contents;'},
-	display_block: {
-		declaration: 'display: block;',
-		comment: 'Same as `display: block flow`.',
-	},
-	display_flow_root: {
-		declaration: 'display: flow-root;',
-		comment: 'Same as `display: block flow-root`.',
-	},
-	display_inline: {
-		declaration: 'display: inline;',
-		comment: 'Same as `display: inline flow`.',
-	},
-	display_inline_block: {
-		declaration: 'display: inline-block;',
-		comment: 'Same as `display: inline flow-root`.',
-	},
-	display_run_in: {
-		declaration: 'display: run-in;',
-		comment: 'Same as `display: run-in flow`.',
-	},
-	display_list_item: {
-		declaration: 'display: list-item;',
-		comment: 'Same as `display: block flow list-item`.',
-	},
-	display_inline_list_item: {
-		declaration: 'display: inline list-item;',
-		comment: 'Same as `display: inline flow list-item`.',
-	},
-	display_flex: {
-		declaration: 'display: flex;',
-		comment: 'Same as `display: block flex`.',
-	},
-	display_inline_flex: {
-		declaration: 'display: inline-flex;',
-		comment: 'Same as `display: inline flex`.',
-	},
-	display_grid: {
-		declaration: 'display: grid;',
-		comment: 'Same as `display: block grid`.',
-	},
-	display_inline_grid: {
-		declaration: 'display: inline-grid;',
-		comment: 'Same as `display: inline grid`.',
-	},
-	display_ruby: {
-		declaration: 'display: ruby;',
-		comment: 'Same as `display: inline ruby`.',
-	},
-	display_block_ruby: {
-		declaration: 'display: block ruby;',
-		comment: 'Same as `display: block ruby`.',
-	},
-	display_table: {
-		declaration: 'display: table;',
-		comment: 'Same as `display: block table`.',
-	},
-	display_inline_table: {
-		declaration: 'display: inline-table;',
-		comment: 'Same as `display: inline table`.',
-	},
-	display_inherit: {declaration: 'display: inherit;'},
-	display_initial: {declaration: 'display: initial;'},
-	display_revert: {declaration: 'display: revert;'},
-	display_revert_layer: {declaration: 'display: revert-layer;'},
-	display_unset: {declaration: 'display: unset;'},
+	...generate_property_classes('display', display_values),
+	...generate_property_classes('display', CSS_GLOBALS, to_kebab),
 
-	visibility_visible: {declaration: 'visibility: visible;'},
-	visibility_hidden: {declaration: 'visibility: hidden;'},
-	visibility_collapse: {declaration: 'visibility: collapse;'},
-	visibility_inherit: {declaration: 'visibility: inherit;'},
-	visibility_initial: {declaration: 'visibility: initial;'},
-	visibility_revert: {declaration: 'visibility: revert;'},
-	visibility_revert_layer: {declaration: 'visibility: revert-layer;'},
-	visibility_unset: {declaration: 'visibility: unset;'},
+	...generate_property_classes('visibility', visibility_values),
+	...generate_property_classes('visibility', CSS_GLOBALS, to_kebab),
 
-	/** @see https://developer.mozilla.org/en-US/docs/Web/CSS/float */
-	float_none: {declaration: 'float: none;'},
-	float_left: {declaration: 'float: left;'},
-	float_right: {declaration: 'float: right;'},
-	float_inline_start: {declaration: 'float: inline-start;'},
-	float_inherit: {declaration: 'float: inherit;'},
-	float_initial: {declaration: 'float: initial;'},
-	float_revert: {declaration: 'float: revert;'},
-	float_revert_layer: {declaration: 'float: revert_layer;'},
-	float_unset: {declaration: 'float: unset;'},
+	...generate_property_classes('float', float_values),
+	...generate_property_classes('float', CSS_GLOBALS, to_kebab),
 
-	overflow_auto: {declaration: 'overflow: auto;'},
-	overflow_hidden: {declaration: 'overflow: hidden;'},
-	overflow_scroll: {declaration: 'overflow: scroll;'},
-	overflow_clip: {declaration: 'overflow: clip;'},
-	overflow_visible: {declaration: 'overflow: visible;'},
-	overflow_x_auto: {declaration: 'overflow-x: auto;'},
-	overflow_x_hidden: {declaration: 'overflow-x: hidden;'},
-	overflow_x_scroll: {declaration: 'overflow-x: scroll;'},
-	overflow_x_clip: {declaration: 'overflow-x: clip;'},
-	overflow_x_visible: {declaration: 'overflow-x: visible;'},
-	overflow_y_auto: {declaration: 'overflow-y: auto;'},
-	overflow_y_hidden: {declaration: 'overflow-y: hidden;'},
-	overflow_y_scroll: {declaration: 'overflow-y: scroll;'},
-	overflow_y_clip: {declaration: 'overflow-y: clip;'},
-	overflow_y_visible: {declaration: 'overflow-y: visible;'},
+	...generate_property_with_axes('overflow', overflow_values),
 
-	overflow_wrap_normal: {declaration: 'overflow-wrap: normal;'},
-	overflow_wrap_anywhere: {declaration: 'overflow-wrap: anywhere;'},
-	overflow_wrap_break_word: {declaration: 'overflow-wrap: break-word;'},
-	overflow_wrap_inherit: {declaration: 'overflow-wrap: inherit;'},
-	overflow_wrap_initial: {declaration: 'overflow-wrap: initial;'},
-	overflow_wrap_revert: {declaration: 'overflow-wrap: revert;'},
-	overflow_wrap_revert_layer: {declaration: 'overflow-wrap: revert-layer;'},
-	overflow_wrap_unset: {declaration: 'overflow-wrap: unset;'},
+	...generate_property_classes('overflow-wrap', overflow_wrap_values),
+	...generate_property_classes('overflow-wrap', CSS_GLOBALS, to_kebab, 'overflow_wrap'),
 
-	scrollbar_width_auto: {declaration: 'scrollbar-width: auto;'},
-	scrollbar_width_thin: {declaration: 'scrollbar-width: thin;'},
-	scrollbar_width_none: {declaration: 'scrollbar-width: none;'},
-	scrollbar_width_inherit: {declaration: 'scrollbar-width: inherit;'},
-	scrollbar_width_initial: {declaration: 'scrollbar-width: initial;'},
-	scrollbar_width_revert: {declaration: 'scrollbar-width: revert;'},
-	scrollbar_width_revert_layer: {declaration: 'scrollbar-width: revert-layer;'},
-	scrollbar_width_unset: {declaration: 'scrollbar-width: unset;'},
+	...generate_property_classes('scrollbar-width', scrollbar_width_values),
+	...generate_property_classes('scrollbar-width', CSS_GLOBALS, to_kebab, 'scrollbar_width'),
 
-	scrollbar_gutter_auto: {declaration: 'scrollbar-gutter: auto;'},
-	scrollbar_gutter_stable: {declaration: 'scrollbar-gutter: stable;'},
-	scrollbar_gutter_stable_both_edges: {declaration: 'scrollbar-gutter: stable both-edges;'},
-	scrollbar_gutter_inherit: {declaration: 'scrollbar-gutter: inherit;'},
-	scrollbar_gutter_initial: {declaration: 'scrollbar-gutter: initial;'},
-	scrollbar_gutter_revert: {declaration: 'scrollbar-gutter: revert;'},
-	scrollbar_gutter_revert_layer: {declaration: 'scrollbar-gutter: revert-layer;'},
-	scrollbar_gutter_unset: {declaration: 'scrollbar-gutter: unset;'},
-
-	// TODO @many interpreted
-	opacity_0: {declaration: 'opacity: 0;'},
-	opacity_10: {declaration: 'opacity: 10%'},
-	opacity_20: {declaration: 'opacity: 20%'},
-	opacity_30: {declaration: 'opacity: 30%'},
-	opacity_40: {declaration: 'opacity: 40%'},
-	opacity_50: {declaration: 'opacity: 50%'},
-	opacity_60: {declaration: 'opacity: 60%'},
-	opacity_70: {declaration: 'opacity: 70%'},
-	opacity_80: {declaration: 'opacity: 80%'},
-	opacity_90: {declaration: 'opacity: 90%'},
-	opacity_100: {declaration: 'opacity: 1;'},
-
-	// TODO @many interpreted
-	// z_index_0: {declaration: 'z-index: 0;'},
-	// z_index_-1: {declaration: 'z-index: -1;'}, // TODO how to do negative numbers? `n1`? `negative_1`? `minus_1`?
-	// z_index_123: {declaration: 'z-index: 123;'},
+	...generate_property_classes('scrollbar-gutter', scrollbar_gutter_values),
+	...generate_property_classes('scrollbar-gutter', CSS_GLOBALS, to_kebab, 'scrollbar_gutter'),
 
 	flex_1: {declaration: 'flex: 1;'},
-	// TODO maybe align these with the full declaration form
-	flex_wrap: {declaration: 'flex-wrap: wrap;'},
-	flex_wrap_reverse: {declaration: 'flex-wrap: wrap-reverse;'},
-	flex_nowrap: {declaration: 'flex-wrap: nowrap;'},
-	flex_row: {declaration: 'flex-direction: row;'},
-	flex_row_reverse: {declaration: 'flex-direction: row-reverse;'},
-	flex_column: {declaration: 'flex-direction: column;'},
-	flex_column_reverse: {declaration: 'flex-direction: column-reverse;'},
-	grow: {declaration: 'flex-grow: 1;'},
-	grow_0: {declaration: 'flex-grow: 0;'},
-	shrink: {declaration: 'flex-shrink: 1;'},
-	shrink_0: {declaration: 'flex-shrink: 0;'},
+	...generate_property_classes('flex-wrap', flex_wrap_values),
+	...generate_property_classes('flex-wrap', CSS_GLOBALS, to_kebab),
+	...generate_property_classes('flex-direction', flex_direction_values),
+	...generate_property_classes('flex-direction', CSS_GLOBALS, to_kebab),
+	flex_grow_1: {declaration: 'flex-grow: 1;'},
+	flex_grow_0: {declaration: 'flex-grow: 0;'},
+	flex_shrink_1: {declaration: 'flex-shrink: 1;'},
+	flex_shrink_0: {declaration: 'flex-shrink: 0;'},
 
-	/* TODO omitting some values, generating on demand will fill in the gaps */
-	align_items_center: {declaration: 'align-items: center;'},
-	align_items_start: {declaration: 'align-items: start;'},
-	align_items_end: {declaration: 'align-items: end;'},
-	align_items_baseline: {declaration: 'align-items: baseline;'},
-	align_items_stretch: {declaration: 'align-items: stretch;'},
-	/* TODO omitting some values, generating on demand will fill in the gaps */
-	align_content_center: {declaration: 'align-content: center;'},
-	align_content_start: {declaration: 'align-content: start;'},
-	align_content_end: {declaration: 'align-content: end;'},
-	align_content_baseline: {declaration: 'align-content: baseline;'},
-	align_content_space_between: {declaration: 'align-content: space-between;'},
-	align_content_space_around: {declaration: 'align-content: space-around;'},
-	align_content_space_evenly: {declaration: 'align-content: space-evenly;'},
-	align_content_stretch: {declaration: 'align-content: stretch;'},
-	/* TODO omitting some values, generating on demand will fill in the gaps */
-	align_self_center: {declaration: 'align-self: center;'},
-	align_self_start: {declaration: 'align-self: start;'},
-	align_self_end: {declaration: 'align-self: end;'},
-	align_self_baseline: {declaration: 'align-self: baseline;'},
-	align_self_stretch: {declaration: 'align-self: stretch;'},
-	/* TODO omitting some values, generating on demand will fill in the gaps */
-	justify_content_center: {declaration: 'justify-content: center;'},
-	justify_content_start: {declaration: 'justify-content: start;'},
-	justify_content_end: {declaration: 'justify-content: end;'},
-	justify_content_left: {declaration: 'justify-content: left;'},
-	justify_content_right: {declaration: 'justify-content: right;'},
-	justify_content_space_between: {declaration: 'justify-content: space-between;'},
-	justify_content_space_around: {declaration: 'justify-content: space-around;'},
-	justify_content_space_evenly: {declaration: 'justify-content: space-evenly;'},
-	justify_content_stretch: {declaration: 'justify-content: stretch;'},
-	/* TODO omitting some values, generating on demand will fill in the gaps */
-	justify_items_center: {declaration: 'justify-items: center;'},
-	justify_items_start: {declaration: 'justify-items: start;'},
-	justify_items_end: {declaration: 'justify-items: end;'},
-	justify_items_left: {declaration: 'justify-items: left;'},
-	justify_items_right: {declaration: 'justify-items: right;'},
-	justify_items_baseline: {declaration: 'justify-items: baseline;'},
-	justify_items_stretch: {declaration: 'justify-items: stretch;'},
-	/* TODO omitting some values, generating on demand will fill in the gaps */
-	justify_self_center: {declaration: 'justify-self: center;'},
-	justify_self_start: {declaration: 'justify-self: start;'},
-	justify_self_end: {declaration: 'justify-self: end;'},
-	justify_self_left: {declaration: 'justify-self: left;'},
-	justify_self_right: {declaration: 'justify-self: right;'},
-	justify_self_baseline: {declaration: 'justify-self: baseline;'},
-	justify_self_stretch: {declaration: 'justify-self: stretch;'},
+	...generate_property_classes('align-items', alignment_values),
+	...generate_property_classes('align-content', [
+		...alignment_values,
+		'space-between',
+		'space-around',
+		'space-evenly',
+	]),
+	...generate_property_classes('align-self', alignment_values),
+	...generate_property_classes('justify-content', justify_values),
+	...generate_property_classes('justify-items', [
+		'center',
+		'start',
+		'end',
+		'left',
+		'right',
+		'baseline',
+		'stretch',
+	]),
+	...generate_property_classes('justify-self', [
+		'center',
+		'start',
+		'end',
+		'left',
+		'right',
+		'baseline',
+		'stretch',
+	]),
 	flip_x: {declaration: 'transform: scaleX(-1);'},
 	flip_y: {declaration: 'transform: scaleY(-1);'},
 	flip_xy: {declaration: 'transform: scaleX(-1) scaleY(-1);'},
@@ -665,725 +122,202 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	font_family_sans: {declaration: 'font-family: var(--font_family_sans);'},
 	font_family_serif: {declaration: 'font-family: var(--font_family_serif);'},
 	font_family_mono: {declaration: 'font-family: var(--font_family_mono);'},
-	line_height_0: {declaration: 'line-height: 0;'},
-	line_height_1: {declaration: 'line-height: 1;'},
-	line_height_xs: {declaration: 'line-height: var(--line_height_xs);'},
-	line_height_sm: {declaration: 'line-height: var(--line_height_sm);'},
-	line_height_md: {declaration: 'line-height: var(--line_height_md);'},
-	line_height_lg: {declaration: 'line-height: var(--line_height_lg);'},
-	line_height_xl: {declaration: 'line-height: var(--line_height_xl);'},
-	font_size_xs: {declaration: 'font-size: var(--font_size_xs); --font_size: var(--font_size_xs);'},
-	font_size_sm: {declaration: 'font-size: var(--font_size_sm); --font_size: var(--font_size_sm);'},
-	font_size_md: {declaration: 'font-size: var(--font_size_md); --font_size: var(--font_size_md);'},
-	font_size_lg: {declaration: 'font-size: var(--font_size_lg); --font_size: var(--font_size_lg);'},
-	font_size_xl: {declaration: 'font-size: var(--font_size_xl); --font_size: var(--font_size_xl);'},
-	font_size_xl2: {
-		declaration: 'font-size: var(--font_size_xl2); --font_size: var(--font_size_xl2);',
-	},
-	font_size_xl3: {
-		declaration: 'font-size: var(--font_size_xl3); --font_size: var(--font_size_xl3);',
-	},
-	font_size_xl4: {
-		declaration: 'font-size: var(--font_size_xl4); --font_size: var(--font_size_xl4);',
-	},
-	font_size_xl5: {
-		declaration: 'font-size: var(--font_size_xl5); --font_size: var(--font_size_xl5);',
-	},
-	font_size_xl6: {
-		declaration: 'font-size: var(--font_size_xl6); --font_size: var(--font_size_xl6);',
-	},
-	font_size_xl7: {
-		declaration: 'font-size: var(--font_size_xl7); --font_size: var(--font_size_xl7);',
-	},
-	font_size_xl8: {
-		declaration: 'font-size: var(--font_size_xl8); --font_size: var(--font_size_xl8);',
-	},
-	font_size_xl9: {
-		declaration: 'font-size: var(--font_size_xl9); --font_size: var(--font_size_xl9);',
-	},
-	icon_size_xs: {
-		declaration: 'font-size: var(--icon_size_xs); --font_size: var(--icon_size_xs);',
-	},
-	icon_size_sm: {
-		declaration: 'font-size: var(--icon_size_sm); --font_size: var(--icon_size_sm);',
-	},
-	icon_size_md: {
-		declaration: 'font-size: var(--icon_size_md); --font_size: var(--icon_size_md);',
-	},
-	icon_size_lg: {
-		declaration: 'font-size: var(--icon_size_lg); --font_size: var(--icon_size_lg);',
-	},
-	icon_size_xl: {
-		declaration: 'font-size: var(--icon_size_xl); --font_size: var(--icon_size_xl);',
-	},
-	icon_size_xl2: {
-		declaration: 'font-size: var(--icon_size_xl2); --font_size: var(--icon_size_xl2);',
-	},
-	icon_size_xl3: {
-		declaration: 'font-size: var(--icon_size_xl3); --font_size: var(--icon_size_xl3);',
-	},
-	text_align_start: {declaration: 'text-align: start;'},
-	text_align_end: {declaration: 'text-align: end;'},
-	text_align_left: {declaration: 'text-align: left;'},
-	text_align_right: {declaration: 'text-align: right;'},
-	text_align_center: {declaration: 'text-align: center;'},
-	text_align_justify: {declaration: 'text-align: justify;'},
-	text_align_justify_all: {declaration: 'text-align: justify-all;'},
-	text_align_match_parent: {declaration: 'text-align: match-parent;'},
-	vertical_align_baseline: {declaration: 'vertical-align: baseline;'},
-	vertical_align_sub: {declaration: 'vertical-align: sub;'},
-	vertical_align_super: {declaration: 'vertical-align: super;'},
-	vertical_align_text_top: {declaration: 'vertical-align: text-top;'},
-	vertical_align_text_bottom: {declaration: 'vertical-align: text-bottom;'},
-	vertical_align_middle: {declaration: 'vertical-align: middle;'},
-	vertical_align_top: {declaration: 'vertical-align: top;'},
-	vertical_align_bottom: {declaration: 'vertical-align: bottom;'},
-	word_break_normal: {declaration: 'word-break: normal;'},
-	word_break_break_all: {declaration: 'word-break: break-all;'},
-	word_break_keep_all: {declaration: 'word-break: keep-all;'},
-	word_break_inherit: {declaration: 'word-break: inherit;'},
-	word_break_initial: {declaration: 'word-break: initial;'},
-	word_break_revert: {declaration: 'word-break: revert;'},
-	word_break_revert_layer: {declaration: 'word-break: revert-layer;'},
-	word_break_unset: {declaration: 'word-break: unset;'},
-	white_space_normal: {declaration: 'white-space: normal;'},
-	white_space_nowrap: {declaration: 'white-space: nowrap;'},
-	white_space_pre: {declaration: 'white-space: pre;'},
-	white_space_pre_wrap: {declaration: 'white-space: pre-wrap;'},
-	white_space_pre_line: {declaration: 'white-space: pre-line;'},
-	white_space_break_spaces: {declaration: 'white-space: break-spaces;'},
 
-	/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
-	white_space_collapse_collapse: {declaration: 'white-space-collapse: collapse;'},
-	white_space_collapse_preserve: {declaration: 'white-space-collapse: preserve;'},
-	white_space_collapse_preserve_breaks: {declaration: 'white-space-collapse: preserve-breaks;'},
-	white_space_collapse_preserve_spaces: {declaration: 'white-space-collapse: preserve-spaces;'},
-	white_space_collapse_break_spaces: {declaration: 'white-space-collapse: break-spaces;'},
-	white_space_collapse_inherit: {declaration: 'white-space-collapse: inherit;'},
-	white_space_collapse_initial: {declaration: 'white-space-collapse: initial;'},
-	white_space_collapse_revert: {declaration: 'white-space-collapse: revert;'},
-	white_space_collapse_revert_layer: {declaration: 'white-space-collapse: revert-layer;'},
-	white_space_collapse_unset: {declaration: 'white-space-collapse: unset;'},
-
-	/* TODO maybe use `initial` here instead of being consistent? because it looks weird */
-	text_wrap_wrap: {declaration: 'text-wrap: wrap;'},
-	text_wrap_nowrap: {declaration: 'text-wrap: nowrap;'},
-	text_wrap_balance: {declaration: 'text-wrap: balance;'},
-	text_wrap_pretty: {declaration: 'text-wrap: pretty;'},
-	text_wrap_stable: {declaration: 'text-wrap: stable;'},
-
-	user_select_none: {declaration: 'user-select: none;'},
-	user_select_auto: {declaration: 'user-select: auto;'},
-	user_select_text: {declaration: 'user-select: text;'},
-	user_select_all: {declaration: 'user-select: all;'},
-	user_select_inherit: {declaration: 'user-select: inherit;'},
-	user_select_initial: {declaration: 'user-select: initial;'},
-	user_select_revert: {declaration: 'user-select: revert;'},
-	user_select_revert_layer: {declaration: 'user-select: revert-layer;'},
-	user_select_unset: {declaration: 'user-select: unset;'},
-
-	font_weight_100: {declaration: 'font-weight: 100; --font_weight: 100;'},
-	font_weight_200: {declaration: 'font-weight: 200; --font_weight: 200;'},
-	font_weight_300: {declaration: 'font-weight: 300; --font_weight: 300;'},
-	font_weight_400: {declaration: 'font-weight: 400; --font_weight: 400;'},
-	font_weight_500: {declaration: 'font-weight: 500; --font_weight: 500;'},
-	font_weight_600: {declaration: 'font-weight: 600; --font_weight: 600;'},
-	font_weight_700: {declaration: 'font-weight: 700; --font_weight: 700;'},
-	font_weight_800: {declaration: 'font-weight: 800; --font_weight: 800;'},
-	font_weight_900: {declaration: 'font-weight: 900; --font_weight: 900;'},
+	...generate_property_classes('line-height', ['0', '1', ...line_height_variants], (v) =>
+		v === '0' || v === '1' ? v : `var(--line_height_${v})`,
+	),
+	...generate_property_classes(
+		'font-size',
+		font_size_variants,
+		(v) => `var(--font_size_${v}); --font_size: var(--font_size_${v})`,
+	),
+	...generate_property_classes(
+		'font-size',
+		icon_size_variants,
+		(v) => `var(--icon_size_${v}); --font_size: var(--icon_size_${v})`,
+		'icon_size',
+	),
+	// TODO some of these need to be filled out and include CSS_GLOBALS (but maybe the API should be opt-out?)
+	...generate_property_classes('text-align', text_align_values),
+	...generate_property_classes('vertical-align', vertical_align_values),
+	...generate_property_classes('word-break', word_break_values),
+	...generate_property_classes('word-break', CSS_GLOBALS, to_kebab),
+	...generate_property_classes('white-space', [
+		'normal',
+		'nowrap',
+		'pre',
+		'pre-wrap',
+		'pre-line',
+		'break-spaces',
+	]),
+	...generate_property_classes('white-space-collapse', [
+		'collapse',
+		'preserve',
+		'preserve-breaks',
+		'preserve-spaces',
+		'break-spaces',
+	]),
+	...generate_property_classes('white-space-collapse', CSS_GLOBALS, to_kebab),
+	...generate_property_classes('text-wrap', ['wrap', 'nowrap', 'balance', 'pretty', 'stable']),
+	...generate_property_classes('user-select', ['none', 'auto', 'text', 'all']),
+	...generate_property_classes('user-select', CSS_GLOBALS, to_kebab),
 
 	/*
 
 	colors
 
 	*/
-	text_color_0: {declaration: 'color: var(--text_color_0);'},
-	text_color_1: {declaration: 'color: var(--text_color_1);'},
-	text_color_2: {declaration: 'color: var(--text_color_2);'},
-	text_color_3: {declaration: 'color: var(--text_color_3);'},
-	text_color_4: {declaration: 'color: var(--text_color_4);'},
-	text_color_5: {declaration: 'color: var(--text_color_5);'},
-	text_color_6: {declaration: 'color: var(--text_color_6);'},
-	text_color_7: {declaration: 'color: var(--text_color_7);'},
-	text_color_8: {declaration: 'color: var(--text_color_8);'},
-	text_color_9: {declaration: 'color: var(--text_color_9);'},
-	text_color_10: {declaration: 'color: var(--text_color_10);'},
-	darken_1: {declaration: 'background-color: var(--darken_1);'},
-	darken_2: {declaration: 'background-color: var(--darken_2);'},
-	darken_3: {declaration: 'background-color: var(--darken_3);'},
-	darken_4: {declaration: 'background-color: var(--darken_4);'},
-	darken_5: {declaration: 'background-color: var(--darken_5);'},
-	darken_6: {declaration: 'background-color: var(--darken_6);'},
-	darken_7: {declaration: 'background-color: var(--darken_7);'},
-	darken_8: {declaration: 'background-color: var(--darken_8);'},
-	darken_9: {declaration: 'background-color: var(--darken_9);'},
-	lighten_1: {declaration: 'background-color: var(--lighten_1);'},
-	lighten_2: {declaration: 'background-color: var(--lighten_2);'},
-	lighten_3: {declaration: 'background-color: var(--lighten_3);'},
-	lighten_4: {declaration: 'background-color: var(--lighten_4);'},
-	lighten_5: {declaration: 'background-color: var(--lighten_5);'},
-	lighten_6: {declaration: 'background-color: var(--lighten_6);'},
-	lighten_7: {declaration: 'background-color: var(--lighten_7);'},
-	lighten_8: {declaration: 'background-color: var(--lighten_8);'},
-	lighten_9: {declaration: 'background-color: var(--lighten_9);'},
+	...generate_property_classes(
+		'color',
+		text_color_variants.map(String),
+		(v) => `var(--text_color_${v})`,
+		'text_color',
+	),
+	...generate_property_classes(
+		'background-color',
+		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
+		(v) => `var(--darken_${v})`,
+		'darken',
+	),
+	...generate_property_classes(
+		'background-color',
+		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
+		(v) => `var(--lighten_${v})`,
+		'lighten',
+	),
 	bg: {declaration: 'background-color: var(--bg);'},
 	fg: {declaration: 'background-color: var(--fg);'},
-	bg_1: {declaration: 'background-color: var(--bg_1);'},
-	bg_2: {declaration: 'background-color: var(--bg_2);'},
-	bg_3: {declaration: 'background-color: var(--bg_3);'},
-	bg_4: {declaration: 'background-color: var(--bg_4);'},
-	bg_5: {declaration: 'background-color: var(--bg_5);'},
-	bg_6: {declaration: 'background-color: var(--bg_6);'},
-	bg_7: {declaration: 'background-color: var(--bg_7);'},
-	bg_8: {declaration: 'background-color: var(--bg_8);'},
-	bg_9: {declaration: 'background-color: var(--bg_9);'},
-	fg_1: {declaration: 'background-color: var(--fg_1);'},
-	fg_2: {declaration: 'background-color: var(--fg_2);'},
-	fg_3: {declaration: 'background-color: var(--fg_3);'},
-	fg_4: {declaration: 'background-color: var(--fg_4);'},
-	fg_5: {declaration: 'background-color: var(--fg_5);'},
-	fg_6: {declaration: 'background-color: var(--fg_6);'},
-	fg_7: {declaration: 'background-color: var(--fg_7);'},
-	fg_8: {declaration: 'background-color: var(--fg_8);'},
-	fg_9: {declaration: 'background-color: var(--fg_9);'},
-	color_darken_1: {declaration: 'color: var(--darken_1);'},
-	color_darken_2: {declaration: 'color: var(--darken_2);'},
-	color_darken_3: {declaration: 'color: var(--darken_3);'},
-	color_darken_4: {declaration: 'color: var(--darken_4);'},
-	color_darken_5: {declaration: 'color: var(--darken_5);'},
-	color_darken_6: {declaration: 'color: var(--darken_6);'},
-	color_darken_7: {declaration: 'color: var(--darken_7);'},
-	color_darken_8: {declaration: 'color: var(--darken_8);'},
-	color_darken_9: {declaration: 'color: var(--darken_9);'},
-	color_lighten_1: {declaration: 'color: var(--lighten_1);'},
-	color_lighten_2: {declaration: 'color: var(--lighten_2);'},
-	color_lighten_3: {declaration: 'color: var(--lighten_3);'},
-	color_lighten_4: {declaration: 'color: var(--lighten_4);'},
-	color_lighten_5: {declaration: 'color: var(--lighten_5);'},
-	color_lighten_6: {declaration: 'color: var(--lighten_6);'},
-	color_lighten_7: {declaration: 'color: var(--lighten_7);'},
-	color_lighten_8: {declaration: 'color: var(--lighten_8);'},
-	color_lighten_9: {declaration: 'color: var(--lighten_9);'},
+	...generate_property_classes(
+		'background-color',
+		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
+		(v) => `var(--bg_${v})`,
+		'bg',
+	),
+	...generate_property_classes(
+		'background-color',
+		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
+		(v) => `var(--fg_${v})`,
+		'fg',
+	),
+	...generate_property_classes(
+		'color',
+		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
+		(v) => `var(--darken_${v})`,
+		'color_darken',
+	),
+	...generate_property_classes(
+		'color',
+		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
+		(v) => `var(--lighten_${v})`,
+		'color_lighten',
+	),
 	color_bg: {declaration: 'color: var(--bg);'},
 	color_fg: {declaration: 'color: var(--fg);'},
-	color_bg_1: {declaration: 'color: var(--bg_1);'},
-	color_bg_2: {declaration: 'color: var(--bg_2);'},
-	color_bg_3: {declaration: 'color: var(--bg_3);'},
-	color_bg_4: {declaration: 'color: var(--bg_4);'},
-	color_bg_5: {declaration: 'color: var(--bg_5);'},
-	color_bg_6: {declaration: 'color: var(--bg_6);'},
-	color_bg_7: {declaration: 'color: var(--bg_7);'},
-	color_bg_8: {declaration: 'color: var(--bg_8);'},
-	color_bg_9: {declaration: 'color: var(--bg_9);'},
-	color_fg_1: {declaration: 'color: var(--fg_1);'},
-	color_fg_2: {declaration: 'color: var(--fg_2);'},
-	color_fg_3: {declaration: 'color: var(--fg_3);'},
-	color_fg_4: {declaration: 'color: var(--fg_4);'},
-	color_fg_5: {declaration: 'color: var(--fg_5);'},
-	color_fg_6: {declaration: 'color: var(--fg_6);'},
-	color_fg_7: {declaration: 'color: var(--fg_7);'},
-	color_fg_8: {declaration: 'color: var(--fg_8);'},
-	color_fg_9: {declaration: 'color: var(--fg_9);'},
-	hue_a: {declaration: '--hue: var(--hue_a);'},
-	hue_b: {declaration: '--hue: var(--hue_b);'},
-	hue_c: {declaration: '--hue: var(--hue_c);'},
-	hue_d: {declaration: '--hue: var(--hue_d);'},
-	hue_e: {declaration: '--hue: var(--hue_e);'},
-	hue_f: {declaration: '--hue: var(--hue_f);'},
-	hue_g: {declaration: '--hue: var(--hue_g);'},
-	hue_h: {declaration: '--hue: var(--hue_h);'},
-	hue_i: {declaration: '--hue: var(--hue_i);'},
-	hue_j: {declaration: '--hue: var(--hue_j);'},
-	color_a_1: {declaration: 'color: var(--color_a_1);'},
-	color_a_2: {declaration: 'color: var(--color_a_2);'},
-	color_a_3: {declaration: 'color: var(--color_a_3);'},
-	color_a_4: {declaration: 'color: var(--color_a_4);'},
-	color_a_5: {declaration: 'color: var(--color_a_5);'},
-	color_a_6: {declaration: 'color: var(--color_a_6);'},
-	color_a_7: {declaration: 'color: var(--color_a_7);'},
-	color_a_8: {declaration: 'color: var(--color_a_8);'},
-	color_a_9: {declaration: 'color: var(--color_a_9);'},
-	color_b_1: {declaration: 'color: var(--color_b_1);'},
-	color_b_2: {declaration: 'color: var(--color_b_2);'},
-	color_b_3: {declaration: 'color: var(--color_b_3);'},
-	color_b_4: {declaration: 'color: var(--color_b_4);'},
-	color_b_5: {declaration: 'color: var(--color_b_5);'},
-	color_b_6: {declaration: 'color: var(--color_b_6);'},
-	color_b_7: {declaration: 'color: var(--color_b_7);'},
-	color_b_8: {declaration: 'color: var(--color_b_8);'},
-	color_b_9: {declaration: 'color: var(--color_b_9);'},
-	color_c_1: {declaration: 'color: var(--color_c_1);'},
-	color_c_2: {declaration: 'color: var(--color_c_2);'},
-	color_c_3: {declaration: 'color: var(--color_c_3);'},
-	color_c_4: {declaration: 'color: var(--color_c_4);'},
-	color_c_5: {declaration: 'color: var(--color_c_5);'},
-	color_c_6: {declaration: 'color: var(--color_c_6);'},
-	color_c_7: {declaration: 'color: var(--color_c_7);'},
-	color_c_8: {declaration: 'color: var(--color_c_8);'},
-	color_c_9: {declaration: 'color: var(--color_c_9);'},
-	color_d_1: {declaration: 'color: var(--color_d_1);'},
-	color_d_2: {declaration: 'color: var(--color_d_2);'},
-	color_d_3: {declaration: 'color: var(--color_d_3);'},
-	color_d_4: {declaration: 'color: var(--color_d_4);'},
-	color_d_5: {declaration: 'color: var(--color_d_5);'},
-	color_d_6: {declaration: 'color: var(--color_d_6);'},
-	color_d_7: {declaration: 'color: var(--color_d_7);'},
-	color_d_8: {declaration: 'color: var(--color_d_8);'},
-	color_d_9: {declaration: 'color: var(--color_d_9);'},
-	color_e_1: {declaration: 'color: var(--color_e_1);'},
-	color_e_2: {declaration: 'color: var(--color_e_2);'},
-	color_e_3: {declaration: 'color: var(--color_e_3);'},
-	color_e_4: {declaration: 'color: var(--color_e_4);'},
-	color_e_5: {declaration: 'color: var(--color_e_5);'},
-	color_e_6: {declaration: 'color: var(--color_e_6);'},
-	color_e_7: {declaration: 'color: var(--color_e_7);'},
-	color_e_8: {declaration: 'color: var(--color_e_8);'},
-	color_e_9: {declaration: 'color: var(--color_e_9);'},
-	color_f_1: {declaration: 'color: var(--color_f_1);'},
-	color_f_2: {declaration: 'color: var(--color_f_2);'},
-	color_f_3: {declaration: 'color: var(--color_f_3);'},
-	color_f_4: {declaration: 'color: var(--color_f_4);'},
-	color_f_5: {declaration: 'color: var(--color_f_5);'},
-	color_f_6: {declaration: 'color: var(--color_f_6);'},
-	color_f_7: {declaration: 'color: var(--color_f_7);'},
-	color_f_8: {declaration: 'color: var(--color_f_8);'},
-	color_f_9: {declaration: 'color: var(--color_f_9);'},
-	color_g_1: {declaration: 'color: var(--color_g_1);'},
-	color_g_2: {declaration: 'color: var(--color_g_2);'},
-	color_g_3: {declaration: 'color: var(--color_g_3);'},
-	color_g_4: {declaration: 'color: var(--color_g_4);'},
-	color_g_5: {declaration: 'color: var(--color_g_5);'},
-	color_g_6: {declaration: 'color: var(--color_g_6);'},
-	color_g_7: {declaration: 'color: var(--color_g_7);'},
-	color_g_8: {declaration: 'color: var(--color_g_8);'},
-	color_g_9: {declaration: 'color: var(--color_g_9);'},
-	color_h_1: {declaration: 'color: var(--color_h_1);'},
-	color_h_2: {declaration: 'color: var(--color_h_2);'},
-	color_h_3: {declaration: 'color: var(--color_h_3);'},
-	color_h_4: {declaration: 'color: var(--color_h_4);'},
-	color_h_5: {declaration: 'color: var(--color_h_5);'},
-	color_h_6: {declaration: 'color: var(--color_h_6);'},
-	color_h_7: {declaration: 'color: var(--color_h_7);'},
-	color_h_8: {declaration: 'color: var(--color_h_8);'},
-	color_h_9: {declaration: 'color: var(--color_h_9);'},
-	color_i_1: {declaration: 'color: var(--color_i_1);'},
-	color_i_2: {declaration: 'color: var(--color_i_2);'},
-	color_i_3: {declaration: 'color: var(--color_i_3);'},
-	color_i_4: {declaration: 'color: var(--color_i_4);'},
-	color_i_5: {declaration: 'color: var(--color_i_5);'},
-	color_i_6: {declaration: 'color: var(--color_i_6);'},
-	color_i_7: {declaration: 'color: var(--color_i_7);'},
-	color_i_8: {declaration: 'color: var(--color_i_8);'},
-	color_i_9: {declaration: 'color: var(--color_i_9);'},
-	color_j_1: {declaration: 'color: var(--color_j_1);'},
-	color_j_2: {declaration: 'color: var(--color_j_2);'},
-	color_j_3: {declaration: 'color: var(--color_j_3);'},
-	color_j_4: {declaration: 'color: var(--color_j_4);'},
-	color_j_5: {declaration: 'color: var(--color_j_5);'},
-	color_j_6: {declaration: 'color: var(--color_j_6);'},
-	color_j_7: {declaration: 'color: var(--color_j_7);'},
-	color_j_8: {declaration: 'color: var(--color_j_8);'},
-	color_j_9: {declaration: 'color: var(--color_j_9);'},
-	bg_a_1: {declaration: 'background-color: var(--color_a_1);'},
-	bg_a_2: {declaration: 'background-color: var(--color_a_2);'},
-	bg_a_3: {declaration: 'background-color: var(--color_a_3);'},
-	bg_a_4: {declaration: 'background-color: var(--color_a_4);'},
-	bg_a_5: {declaration: 'background-color: var(--color_a_5);'},
-	bg_a_6: {declaration: 'background-color: var(--color_a_6);'},
-	bg_a_7: {declaration: 'background-color: var(--color_a_7);'},
-	bg_a_8: {declaration: 'background-color: var(--color_a_8);'},
-	bg_a_9: {declaration: 'background-color: var(--color_a_9);'},
-	bg_b_1: {declaration: 'background-color: var(--color_b_1);'},
-	bg_b_2: {declaration: 'background-color: var(--color_b_2);'},
-	bg_b_3: {declaration: 'background-color: var(--color_b_3);'},
-	bg_b_4: {declaration: 'background-color: var(--color_b_4);'},
-	bg_b_5: {declaration: 'background-color: var(--color_b_5);'},
-	bg_b_6: {declaration: 'background-color: var(--color_b_6);'},
-	bg_b_7: {declaration: 'background-color: var(--color_b_7);'},
-	bg_b_8: {declaration: 'background-color: var(--color_b_8);'},
-	bg_b_9: {declaration: 'background-color: var(--color_b_9);'},
-	bg_c_1: {declaration: 'background-color: var(--color_c_1);'},
-	bg_c_2: {declaration: 'background-color: var(--color_c_2);'},
-	bg_c_3: {declaration: 'background-color: var(--color_c_3);'},
-	bg_c_4: {declaration: 'background-color: var(--color_c_4);'},
-	bg_c_5: {declaration: 'background-color: var(--color_c_5);'},
-	bg_c_6: {declaration: 'background-color: var(--color_c_6);'},
-	bg_c_7: {declaration: 'background-color: var(--color_c_7);'},
-	bg_c_8: {declaration: 'background-color: var(--color_c_8);'},
-	bg_c_9: {declaration: 'background-color: var(--color_c_9);'},
-	bg_d_1: {declaration: 'background-color: var(--color_d_1);'},
-	bg_d_2: {declaration: 'background-color: var(--color_d_2);'},
-	bg_d_3: {declaration: 'background-color: var(--color_d_3);'},
-	bg_d_4: {declaration: 'background-color: var(--color_d_4);'},
-	bg_d_5: {declaration: 'background-color: var(--color_d_5);'},
-	bg_d_6: {declaration: 'background-color: var(--color_d_6);'},
-	bg_d_7: {declaration: 'background-color: var(--color_d_7);'},
-	bg_d_8: {declaration: 'background-color: var(--color_d_8);'},
-	bg_d_9: {declaration: 'background-color: var(--color_d_9);'},
-	bg_e_1: {declaration: 'background-color: var(--color_e_1);'},
-	bg_e_2: {declaration: 'background-color: var(--color_e_2);'},
-	bg_e_3: {declaration: 'background-color: var(--color_e_3);'},
-	bg_e_4: {declaration: 'background-color: var(--color_e_4);'},
-	bg_e_5: {declaration: 'background-color: var(--color_e_5);'},
-	bg_e_6: {declaration: 'background-color: var(--color_e_6);'},
-	bg_e_7: {declaration: 'background-color: var(--color_e_7);'},
-	bg_e_8: {declaration: 'background-color: var(--color_e_8);'},
-	bg_e_9: {declaration: 'background-color: var(--color_e_9);'},
-	bg_f_1: {declaration: 'background-color: var(--color_f_1);'},
-	bg_f_2: {declaration: 'background-color: var(--color_f_2);'},
-	bg_f_3: {declaration: 'background-color: var(--color_f_3);'},
-	bg_f_4: {declaration: 'background-color: var(--color_f_4);'},
-	bg_f_5: {declaration: 'background-color: var(--color_f_5);'},
-	bg_f_6: {declaration: 'background-color: var(--color_f_6);'},
-	bg_f_7: {declaration: 'background-color: var(--color_f_7);'},
-	bg_f_8: {declaration: 'background-color: var(--color_f_8);'},
-	bg_f_9: {declaration: 'background-color: var(--color_f_9);'},
-	bg_g_1: {declaration: 'background-color: var(--color_g_1);'},
-	bg_g_2: {declaration: 'background-color: var(--color_g_2);'},
-	bg_g_3: {declaration: 'background-color: var(--color_g_3);'},
-	bg_g_4: {declaration: 'background-color: var(--color_g_4);'},
-	bg_g_5: {declaration: 'background-color: var(--color_g_5);'},
-	bg_g_6: {declaration: 'background-color: var(--color_g_6);'},
-	bg_g_7: {declaration: 'background-color: var(--color_g_7);'},
-	bg_g_8: {declaration: 'background-color: var(--color_g_8);'},
-	bg_g_9: {declaration: 'background-color: var(--color_g_9);'},
-	bg_h_1: {declaration: 'background-color: var(--color_h_1);'},
-	bg_h_2: {declaration: 'background-color: var(--color_h_2);'},
-	bg_h_3: {declaration: 'background-color: var(--color_h_3);'},
-	bg_h_4: {declaration: 'background-color: var(--color_h_4);'},
-	bg_h_5: {declaration: 'background-color: var(--color_h_5);'},
-	bg_h_6: {declaration: 'background-color: var(--color_h_6);'},
-	bg_h_7: {declaration: 'background-color: var(--color_h_7);'},
-	bg_h_8: {declaration: 'background-color: var(--color_h_8);'},
-	bg_h_9: {declaration: 'background-color: var(--color_h_9);'},
-	bg_i_1: {declaration: 'background-color: var(--color_i_1);'},
-	bg_i_2: {declaration: 'background-color: var(--color_i_2);'},
-	bg_i_3: {declaration: 'background-color: var(--color_i_3);'},
-	bg_i_4: {declaration: 'background-color: var(--color_i_4);'},
-	bg_i_5: {declaration: 'background-color: var(--color_i_5);'},
-	bg_i_6: {declaration: 'background-color: var(--color_i_6);'},
-	bg_i_7: {declaration: 'background-color: var(--color_i_7);'},
-	bg_i_8: {declaration: 'background-color: var(--color_i_8);'},
-	bg_i_9: {declaration: 'background-color: var(--color_i_9);'},
-	bg_j_1: {declaration: 'background-color: var(--color_j_1);'},
-	bg_j_2: {declaration: 'background-color: var(--color_j_2);'},
-	bg_j_3: {declaration: 'background-color: var(--color_j_3);'},
-	bg_j_4: {declaration: 'background-color: var(--color_j_4);'},
-	bg_j_5: {declaration: 'background-color: var(--color_j_5);'},
-	bg_j_6: {declaration: 'background-color: var(--color_j_6);'},
-	bg_j_7: {declaration: 'background-color: var(--color_j_7);'},
-	bg_j_8: {declaration: 'background-color: var(--color_j_8);'},
-	bg_j_9: {declaration: 'background-color: var(--color_j_9);'},
-	border_color_1: {declaration: 'border-color: var(--border_color_1);'},
-	border_color_2: {declaration: 'border-color: var(--border_color_2);'},
-	border_color_3: {declaration: 'border-color: var(--border_color_3);'},
-	border_color_4: {declaration: 'border-color: var(--border_color_4);'},
-	border_color_5: {declaration: 'border-color: var(--border_color_5);'},
-	border_color_a: {declaration: 'border-color: var(--border_color_a);'},
-	border_color_b: {declaration: 'border-color: var(--border_color_b);'},
-	border_color_c: {declaration: 'border-color: var(--border_color_c);'},
-	border_color_d: {declaration: 'border-color: var(--border_color_d);'},
-	border_color_e: {declaration: 'border-color: var(--border_color_e);'},
-	border_color_f: {declaration: 'border-color: var(--border_color_f);'},
-	border_color_g: {declaration: 'border-color: var(--border_color_g);'},
-	border_color_h: {declaration: 'border-color: var(--border_color_h);'},
-	border_color_i: {declaration: 'border-color: var(--border_color_i);'},
-	border_color_j: {declaration: 'border-color: var(--border_color_j);'},
+	...generate_property_classes(
+		'color',
+		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
+		(v) => `var(--bg_${v})`,
+		'color_bg',
+	),
+	...generate_property_classes(
+		'color',
+		[1, 2, 3, 4, 5, 6, 7, 8, 9].map(String),
+		(v) => `var(--fg_${v})`,
+		'color_fg',
+	),
+	...generate_classes(
+		(hue: string) => ({
+			name: `hue_${hue}`,
+			css: `--hue: var(--hue_${hue});`,
+		}),
+		color_variants,
+	),
+	...generate_classes(
+		(hue: string, intensity: string) => ({
+			name: `color_${hue}_${intensity}`,
+			css: `color: var(--color_${hue}_${intensity});`,
+		}),
+		color_variants,
+		COLOR_INTENSITIES,
+	),
+	...generate_classes(
+		(hue: string, intensity: string) => ({
+			name: `bg_${hue}_${intensity}`,
+			css: `background-color: var(--color_${hue}_${intensity});`,
+		}),
+		color_variants,
+		COLOR_INTENSITIES,
+	),
+	...generate_property_classes(
+		'border-color',
+		[1, 2, 3, 4, 5].map(String),
+		(v) => `var(--border_color_${v})`,
+	),
+	...generate_property_classes('border-color', color_variants, (v) => `var(--border_color_${v})`),
 	border_color_transparent: {declaration: 'border-color: transparent;'},
-	border_width_0: {declaration: 'border-width: 0;'},
-	border_width_1: {declaration: 'border-width: var(--border_width_1);'},
-	border_width_2: {declaration: 'border-width: var(--border_width_2);'},
-	border_width_3: {declaration: 'border-width: var(--border_width_3);'},
-	border_width_4: {declaration: 'border-width: var(--border_width_4);'},
-	border_width_5: {declaration: 'border-width: var(--border_width_5);'},
-	border_width_6: {declaration: 'border-width: var(--border_width_6);'},
-	border_width_7: {declaration: 'border-width: var(--border_width_7);'},
-	border_width_8: {declaration: 'border-width: var(--border_width_8);'},
-	border_width_9: {declaration: 'border-width: var(--border_width_9);'},
-	outline_width_0: {declaration: 'outline-width: 0;'}, // TODO has no corresponding CSS variable, how to encode this?
+	...generate_property_classes(
+		'outline-color',
+		[1, 2, 3, 4, 5].map(String),
+		(v) => `var(--border_color_${v})`,
+	),
+	...generate_property_classes('outline-color', color_variants, (v) => `var(--border_color_${v})`),
+	outline_color_transparent: {declaration: 'outline-color: transparent;'},
+
+	...generate_property_classes('border-width', ['0', ...border_width_variants.map(String)], (v) =>
+		v === '0' ? '0' : `var(--border_width_${v})`,
+	),
+	...generate_property_classes('outline-width', ['0', ...border_width_variants.map(String)], (v) =>
+		v === '0' ? '0' : `var(--border_width_${v})`,
+	),
 	outline_width_focus: {declaration: 'outline-width: var(--outline_width_focus);'},
 	outline_width_active: {declaration: 'outline-width: var(--outline_width_active);'},
 
-	/* TODO add the top/right/bottom/left border-style multi-argument variants */
-	/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-style */
-	// TODO think about an API using data+helpers, e.g. `...create_declarations({property_name: 'border-style', property_value: ['none', 'hidden', [...], css_global_values])`
-	border_style_none: {declaration: 'border-style: none;'},
-	border_style_hidden: {declaration: 'border-style: hidden;'},
-	border_style_dotted: {declaration: 'border-style: dotted;'},
-	border_style_dashed: {declaration: 'border-style: dashed;'},
-	border_style_solid: {declaration: 'border-style: solid;'},
-	border_style_double: {declaration: 'border-style: double;'},
-	border_style_groove: {declaration: 'border-style: groove;'},
-	border_style_ridge: {declaration: 'border-style: ridge;'},
-	border_style_inset: {declaration: 'border-style: inset;'},
-	border_style_outset: {declaration: 'border-style: outset;'},
-	border_style_inherit: {declaration: 'border-style: inherit;'},
-	border_style_initial: {declaration: 'border-style: initial;'},
-	border_style_revert: {declaration: 'border-style: revert;'},
-	border_style_revert_layer: {declaration: 'border-style: revert-layer;'},
-	border_style_unset: {declaration: 'border-style: unset;'},
-	border_radius_100: {declaration: 'border-radius: 100%;'},
-	border_radius_90: {declaration: 'border-radius: 90%;'},
-	border_radius_80: {declaration: 'border-radius: 80%;'},
-	border_radius_70: {declaration: 'border-radius: 70%;'},
-	border_radius_60: {declaration: 'border-radius: 60%;'},
-	border_radius_50: {declaration: 'border-radius: 50%;'},
-	border_radius_40: {declaration: 'border-radius: 40%;'},
-	border_radius_30: {declaration: 'border-radius: 30%;'},
-	border_radius_20: {declaration: 'border-radius: 20%;'},
-	border_radius_10: {declaration: 'border-radius: 10%;'},
-	border_radius_0: {declaration: 'border-radius: 0;'},
-	border_radius_xs3: {declaration: 'border-radius: var(--border_radius_xs3);'},
-	border_radius_xs2: {declaration: 'border-radius: var(--border_radius_xs2);'},
-	border_radius_xs: {declaration: 'border-radius: var(--border_radius_xs);'},
-	border_radius_sm: {declaration: 'border-radius: var(--border_radius_sm);'},
-	border_radius_md: {declaration: 'border-radius: var(--border_radius_md);'},
-	border_radius_lg: {declaration: 'border-radius: var(--border_radius_lg);'},
-	border_radius_xl: {declaration: 'border-radius: var(--border_radius_xl);'},
-	border_top_left_radius_100: {declaration: 'border-top-left-radius: 100%;'},
-	border_top_left_radius_90: {declaration: 'border-top-left-radius: 90%;'},
-	border_top_left_radius_80: {declaration: 'border-top-left-radius: 80%;'},
-	border_top_left_radius_70: {declaration: 'border-top-left-radius: 70%;'},
-	border_top_left_radius_60: {declaration: 'border-top-left-radius: 60%;'},
-	border_top_left_radius_50: {declaration: 'border-top-left-radius: 50%;'},
-	border_top_left_radius_40: {declaration: 'border-top-left-radius: 40%;'},
-	border_top_left_radius_30: {declaration: 'border-top-left-radius: 30%;'},
-	border_top_left_radius_20: {declaration: 'border-top-left-radius: 20%;'},
-	border_top_left_radius_10: {declaration: 'border-top-left-radius: 10%;'},
-	border_top_left_radius_0: {declaration: 'border-top-left-radius: 0;'},
-	border_top_left_radius_xs3: {declaration: 'border-top-left-radius: var(--border_radius_xs3);'},
-	border_top_left_radius_xs2: {declaration: 'border-top-left-radius: var(--border_radius_xs2);'},
-	border_top_left_radius_xs: {declaration: 'border-top-left-radius: var(--border_radius_xs);'},
-	border_top_left_radius_sm: {declaration: 'border-top-left-radius: var(--border_radius_sm);'},
-	border_top_left_radius_md: {declaration: 'border-top-left-radius: var(--border_radius_md);'},
-	border_top_left_radius_lg: {declaration: 'border-top-left-radius: var(--border_radius_lg);'},
-	border_top_left_radius_xl: {declaration: 'border-top-left-radius: var(--border_radius_xl);'},
-	border_top_right_radius_100: {declaration: 'border-top-right-radius: 100%;'},
-	border_top_right_radius_90: {declaration: 'border-top-right-radius: 90%;'},
-	border_top_right_radius_80: {declaration: 'border-top-right-radius: 80%;'},
-	border_top_right_radius_70: {declaration: 'border-top-right-radius: 70%;'},
-	border_top_right_radius_60: {declaration: 'border-top-right-radius: 60%;'},
-	border_top_right_radius_50: {declaration: 'border-top-right-radius: 50%;'},
-	border_top_right_radius_40: {declaration: 'border-top-right-radius: 40%;'},
-	border_top_right_radius_30: {declaration: 'border-top-right-radius: 30%;'},
-	border_top_right_radius_20: {declaration: 'border-top-right-radius: 20%;'},
-	border_top_right_radius_10: {declaration: 'border-top-right-radius: 10%;'},
-	border_top_right_radius_0: {declaration: 'border-top-right-radius: 0;'},
-	border_top_right_radius_xs3: {declaration: 'border-top-right-radius: var(--border_radius_xs3);'},
-	border_top_right_radius_xs2: {declaration: 'border-top-right-radius: var(--border_radius_xs2);'},
-	border_top_right_radius_xs: {declaration: 'border-top-right-radius: var(--border_radius_xs);'},
-	border_top_right_radius_sm: {declaration: 'border-top-right-radius: var(--border_radius_sm);'},
-	border_top_right_radius_md: {declaration: 'border-top-right-radius: var(--border_radius_md);'},
-	border_top_right_radius_lg: {declaration: 'border-top-right-radius: var(--border_radius_lg);'},
-	border_top_right_radius_xl: {declaration: 'border-top-right-radius: var(--border_radius_xl);'},
-	border_bottom_left_radius_100: {declaration: 'border-bottom-left-radius: 100%;'},
-	border_bottom_left_radius_90: {declaration: 'border-bottom-left-radius: 90%;'},
-	border_bottom_left_radius_80: {declaration: 'border-bottom-left-radius: 80%;'},
-	border_bottom_left_radius_70: {declaration: 'border-bottom-left-radius: 70%;'},
-	border_bottom_left_radius_60: {declaration: 'border-bottom-left-radius: 60%;'},
-	border_bottom_left_radius_50: {declaration: 'border-bottom-left-radius: 50%;'},
-	border_bottom_left_radius_40: {declaration: 'border-bottom-left-radius: 40%;'},
-	border_bottom_left_radius_30: {declaration: 'border-bottom-left-radius: 30%;'},
-	border_bottom_left_radius_20: {declaration: 'border-bottom-left-radius: 20%;'},
-	border_bottom_left_radius_10: {declaration: 'border-bottom-left-radius: 10%;'},
-	border_bottom_left_radius_0: {declaration: 'border-bottom-left-radius: 0;'},
-	border_bottom_left_radius_xs3: {
-		declaration: 'border-bottom-left-radius: var(--border_radius_xs3);',
-	},
-	border_bottom_left_radius_xs2: {
-		declaration: 'border-bottom-left-radius: var(--border_radius_xs2);',
-	},
-	border_bottom_left_radius_xs: {
-		declaration: 'border-bottom-left-radius: var(--border_radius_xs);',
-	},
-	border_bottom_left_radius_sm: {
-		declaration: 'border-bottom-left-radius: var(--border_radius_sm);',
-	},
-	border_bottom_left_radius_md: {
-		declaration: 'border-bottom-left-radius: var(--border_radius_md);',
-	},
-	border_bottom_left_radius_lg: {
-		declaration: 'border-bottom-left-radius: var(--border_radius_lg);',
-	},
-	border_bottom_left_radius_xl: {
-		declaration: 'border-bottom-left-radius: var(--border_radius_xl);',
-	},
-	border_bottom_right_radius_100: {declaration: 'border-bottom-right-radius: 100%;'},
-	border_bottom_right_radius_90: {declaration: 'border-bottom-right-radius: 90%;'},
-	border_bottom_right_radius_80: {declaration: 'border-bottom-right-radius: 80%;'},
-	border_bottom_right_radius_70: {declaration: 'border-bottom-right-radius: 70%;'},
-	border_bottom_right_radius_60: {declaration: 'border-bottom-right-radius: 60%;'},
-	border_bottom_right_radius_50: {declaration: 'border-bottom-right-radius: 50%;'},
-	border_bottom_right_radius_40: {declaration: 'border-bottom-right-radius: 40%;'},
-	border_bottom_right_radius_30: {declaration: 'border-bottom-right-radius: 30%;'},
-	border_bottom_right_radius_20: {declaration: 'border-bottom-right-radius: 20%;'},
-	border_bottom_right_radius_10: {declaration: 'border-bottom-right-radius: 10%;'},
-	border_bottom_right_radius_0: {declaration: 'border-bottom-right-radius: 0;'},
-	border_bottom_right_radius_xs3: {
-		declaration: 'border-bottom-right-radius: var(--border_radius_xs3);',
-	},
-	border_bottom_right_radius_xs2: {
-		declaration: 'border-bottom-right-radius: var(--border_radius_xs2);',
-	},
-	border_bottom_right_radius_xs: {
-		declaration: 'border-bottom-right-radius: var(--border_radius_xs);',
-	},
-	border_bottom_right_radius_sm: {
-		declaration: 'border-bottom-right-radius: var(--border_radius_sm);',
-	},
-	border_bottom_right_radius_md: {
-		declaration: 'border-bottom-right-radius: var(--border_radius_md);',
-	},
-	border_bottom_right_radius_lg: {
-		declaration: 'border-bottom-right-radius: var(--border_radius_lg);',
-	},
-	border_bottom_right_radius_xl: {
-		declaration: 'border-bottom-right-radius: var(--border_radius_xl);',
-	},
+	...generate_property_classes('border-style', border_style_values),
+	...generate_property_classes('border-style', CSS_GLOBALS, to_kebab),
+
+	...generate_property_classes('outline-style', border_style_values),
+	...generate_property_classes('outline-style', CSS_GLOBALS, to_kebab),
+
+	...generate_property_classes(
+		'border-radius',
+		border_radius_variants,
+		(v) => `var(--border_radius_${v})`,
+	),
+	...generate_border_radius_corners(border_radius_variants, (v) => `var(--border_radius_${v})`),
 
 	/*
 
 	shadows
 
 	*/
-	shadow_xs: {
-		declaration:
-			'box-shadow: var(--shadow_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_sm: {
-		declaration:
-			'box-shadow: var(--shadow_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_md: {
-		declaration:
-			'box-shadow: var(--shadow_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_lg: {
-		declaration:
-			'box-shadow: var(--shadow_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_xl: {
-		declaration:
-			'box-shadow: var(--shadow_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_top_xs: {
-		declaration:
-			'box-shadow: var(--shadow_top_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_top_sm: {
-		declaration:
-			'box-shadow: var(--shadow_top_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_top_md: {
-		declaration:
-			'box-shadow: var(--shadow_top_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_top_lg: {
-		declaration:
-			'box-shadow: var(--shadow_top_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_top_xl: {
-		declaration:
-			'box-shadow: var(--shadow_top_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_bottom_xs: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_bottom_sm: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_bottom_md: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_bottom_lg: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_bottom_xl: {
-		declaration:
-			'box-shadow: var(--shadow_bottom_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_inset_xs: {
-		declaration:
-			'box-shadow: var(--shadow_inset_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_inset_sm: {
-		declaration:
-			'box-shadow: var(--shadow_inset_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_inset_md: {
-		declaration:
-			'box-shadow: var(--shadow_inset_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_inset_lg: {
-		declaration:
-			'box-shadow: var(--shadow_inset_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_inset_xl: {
-		declaration:
-			'box-shadow: var(--shadow_inset_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_inset_top_xs: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_inset_top_sm: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_inset_top_md: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_inset_top_lg: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_inset_top_xl: {
-		declaration:
-			'box-shadow: var(--shadow_inset_top_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_inset_bottom_xs: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_xs) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_1)), transparent);',
-	},
-	shadow_inset_bottom_sm: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_sm) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_2)), transparent);',
-	},
-	shadow_inset_bottom_md: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_md) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_3)), transparent);',
-	},
-	shadow_inset_bottom_lg: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_lg) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_4)), transparent);',
-	},
-	shadow_inset_bottom_xl: {
-		declaration:
-			'box-shadow: var(--shadow_inset_bottom_xl) color-mix(in hsl, var(--shadow_color) var(--shadow_alpha, var(--shadow_alpha_5)), transparent);',
-	},
-	shadow_color_highlight: {declaration: '--shadow_color: var(--shadow_color_highlight);'},
-	shadow_color_glow: {declaration: '--shadow_color: var(--shadow_color_glow);'},
-	shadow_color_shroud: {declaration: '--shadow_color: var(--shadow_color_shroud);'},
-	shadow_color_a: {declaration: '--shadow_color: var(--shadow_color_a);'},
-	shadow_color_b: {declaration: '--shadow_color: var(--shadow_color_b);'},
-	shadow_color_c: {declaration: '--shadow_color: var(--shadow_color_c);'},
-	shadow_color_d: {declaration: '--shadow_color: var(--shadow_color_d);'},
-	shadow_color_e: {declaration: '--shadow_color: var(--shadow_color_e);'},
-	shadow_color_f: {declaration: '--shadow_color: var(--shadow_color_f);'},
-	shadow_color_g: {declaration: '--shadow_color: var(--shadow_color_g);'},
-	shadow_color_h: {declaration: '--shadow_color: var(--shadow_color_h);'},
-	shadow_color_i: {declaration: '--shadow_color: var(--shadow_color_i);'},
-	shadow_color_j: {declaration: '--shadow_color: var(--shadow_color_j);'},
-	shadow_alpha_1: {declaration: '--shadow_alpha: var(--shadow_alpha_1);'},
-	shadow_alpha_2: {declaration: '--shadow_alpha: var(--shadow_alpha_2);'},
-	shadow_alpha_3: {declaration: '--shadow_alpha: var(--shadow_alpha_3);'},
-	shadow_alpha_4: {declaration: '--shadow_alpha: var(--shadow_alpha_4);'},
-	shadow_alpha_5: {declaration: '--shadow_alpha: var(--shadow_alpha_5);'},
+	...generate_shadow_classes(['xs', 'sm', 'md', 'lg', 'xl'], {
+		xs: '1',
+		sm: '2',
+		md: '3',
+		lg: '4',
+		xl: '5',
+	}),
+	...generate_classes(
+		(value: string) => ({
+			name: `shadow_color_${value}`,
+			css: `--shadow_color: var(--shadow_color_${value});`,
+		}),
+		shadow_semantic_values,
+	),
+	...generate_classes(
+		(hue: string) => ({
+			name: `shadow_color_${hue}`,
+			css: `--shadow_color: var(--shadow_color_${hue});`,
+		}),
+		color_variants,
+	),
+	...generate_classes(
+		(alpha: number) => ({
+			name: `shadow_alpha_${alpha}`,
+			css: `--shadow_alpha: var(--shadow_alpha_${alpha});`,
+		}),
+		shadow_alpha_variants,
+	),
 
 	/* higher specificity */
 	/* TODO which order should these be in? */
@@ -1395,681 +329,79 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	layout
 
 	*/
-	w_0: {declaration: 'width: 0;'},
-	w_100: {declaration: 'width: 100%;'},
-	w_1px: {declaration: 'width: 1px;'}, // TODO maybe 🔢 to specify replacement? and/or regexps?
-	w_2px: {declaration: 'width: 2px;'},
-	w_3px: {declaration: 'width: 3px;'},
-	w_auto: {declaration: 'width: auto;'},
-	w_max_content: {declaration: 'width: max-content;'},
-	w_min_content: {declaration: 'width: min-content;'},
-	w_fit_content: {declaration: 'width: fit-content;'},
-	w_stretch: {declaration: 'width: stretch;'},
-	w_xs5: {declaration: 'width: var(--space_xs5);'},
-	w_xs4: {declaration: 'width: var(--space_xs4);'},
-	w_xs3: {declaration: 'width: var(--space_xs3);'},
-	w_xs2: {declaration: 'width: var(--space_xs2);'},
-	w_xs: {declaration: 'width: var(--space_xs);'},
-	w_sm: {declaration: 'width: var(--space_sm);'},
-	w_md: {declaration: 'width: var(--space_md);'},
-	w_lg: {declaration: 'width: var(--space_lg);'},
-	w_xl: {declaration: 'width: var(--space_xl);'},
-	w_xl2: {declaration: 'width: var(--space_xl2);'},
-	w_xl3: {declaration: 'width: var(--space_xl3);'},
-	w_xl4: {declaration: 'width: var(--space_xl4);'},
-	w_xl5: {declaration: 'width: var(--space_xl5);'},
-	w_xl6: {declaration: 'width: var(--space_xl6);'},
-	w_xl7: {declaration: 'width: var(--space_xl7);'},
-	w_xl8: {declaration: 'width: var(--space_xl8);'},
-	w_xl9: {declaration: 'width: var(--space_xl9);'},
-	w_xl10: {declaration: 'width: var(--space_xl10);'},
-	w_xl11: {declaration: 'width: var(--space_xl11);'},
-	w_xl12: {declaration: 'width: var(--space_xl12);'},
-	w_xl13: {declaration: 'width: var(--space_xl13);'},
-	w_xl14: {declaration: 'width: var(--space_xl14);'},
-	w_xl15: {declaration: 'width: var(--space_xl15);'},
-	h_0: {declaration: 'height: 0;'},
-	h_100: {declaration: 'height: 100%;'},
-	h_1px: {declaration: 'height: 1px;'},
-	h_2px: {declaration: 'height: 2px;'},
-	h_3px: {declaration: 'height: 3px;'},
-	h_auto: {declaration: 'height: auto;'},
-	h_max_content: {declaration: 'height: max-content;'},
-	h_min_content: {declaration: 'height: min-content;'},
-	h_fit_content: {declaration: 'height: fit-content;'},
-	h_stretch: {declaration: 'height: stretch;'},
-	h_xs5: {declaration: 'height: var(--space_xs5);'},
-	h_xs4: {declaration: 'height: var(--space_xs4);'},
-	h_xs3: {declaration: 'height: var(--space_xs3);'},
-	h_xs2: {declaration: 'height: var(--space_xs2);'},
-	h_xs: {declaration: 'height: var(--space_xs);'},
-	h_sm: {declaration: 'height: var(--space_sm);'},
-	h_md: {declaration: 'height: var(--space_md);'},
-	h_lg: {declaration: 'height: var(--space_lg);'},
-	h_xl: {declaration: 'height: var(--space_xl);'},
-	h_xl2: {declaration: 'height: var(--space_xl2);'},
-	h_xl3: {declaration: 'height: var(--space_xl3);'},
-	h_xl4: {declaration: 'height: var(--space_xl4);'},
-	h_xl5: {declaration: 'height: var(--space_xl5);'},
-	h_xl6: {declaration: 'height: var(--space_xl6);'},
-	h_xl7: {declaration: 'height: var(--space_xl7);'},
-	h_xl8: {declaration: 'height: var(--space_xl8);'},
-	h_xl9: {declaration: 'height: var(--space_xl9);'},
-	h_xl10: {declaration: 'height: var(--space_xl10);'},
-	h_xl11: {declaration: 'height: var(--space_xl11);'},
-	h_xl12: {declaration: 'height: var(--space_xl12);'},
-	h_xl13: {declaration: 'height: var(--space_xl13);'},
-	h_xl14: {declaration: 'height: var(--space_xl14);'},
-	h_xl15: {declaration: 'height: var(--space_xl15);'},
+	...generate_property_classes(
+		'width',
+		[
+			'0',
+			'100',
+			'1px',
+			'2px',
+			'3px',
+			'auto',
+			'max-content',
+			'min-content',
+			'fit-content',
+			'stretch',
+			...space_variants,
+		],
+		format_dimension_value,
+	),
+	...generate_property_classes(
+		'height',
+		[
+			'0',
+			'100',
+			'1px',
+			'2px',
+			'3px',
+			'auto',
+			'max-content',
+			'min-content',
+			'fit-content',
+			'stretch',
+			...space_variants,
+		],
+		format_dimension_value,
+	),
 
-	/* TODO % variants? */
-	t_0: {declaration: 'top: 0;'},
-	t_100: {declaration: 'top: 100%;'},
-	t_1px: {declaration: 'top: 1px;'},
-	t_2px: {declaration: 'top: 2px;'},
-	t_3px: {declaration: 'top: 3px;'},
-	t_auto: {declaration: 'top: auto;'},
-	t_xs5: {declaration: 'top: var(--space_xs5);'},
-	t_xs4: {declaration: 'top: var(--space_xs4);'},
-	t_xs3: {declaration: 'top: var(--space_xs3);'},
-	t_xs2: {declaration: 'top: var(--space_xs2);'},
-	t_xs: {declaration: 'top: var(--space_xs);'},
-	t_sm: {declaration: 'top: var(--space_sm);'},
-	t_md: {declaration: 'top: var(--space_md);'},
-	t_lg: {declaration: 'top: var(--space_lg);'},
-	t_xl: {declaration: 'top: var(--space_xl);'},
-	t_xl2: {declaration: 'top: var(--space_xl2);'},
-	t_xl3: {declaration: 'top: var(--space_xl3);'},
-	t_xl4: {declaration: 'top: var(--space_xl4);'},
-	t_xl5: {declaration: 'top: var(--space_xl5);'},
-	t_xl6: {declaration: 'top: var(--space_xl6);'},
-	t_xl7: {declaration: 'top: var(--space_xl7);'},
-	t_xl8: {declaration: 'top: var(--space_xl8);'},
-	t_xl9: {declaration: 'top: var(--space_xl9);'},
-	t_xl10: {declaration: 'top: var(--space_xl10);'},
-	t_xl11: {declaration: 'top: var(--space_xl11);'},
-	t_xl12: {declaration: 'top: var(--space_xl12);'},
-	t_xl13: {declaration: 'top: var(--space_xl13);'},
-	t_xl14: {declaration: 'top: var(--space_xl14);'},
-	t_xl15: {declaration: 'top: var(--space_xl15);'},
-	b_0: {declaration: 'bottom: 0;'},
-	b_100: {declaration: 'bottom: 100%;'},
-	b_1px: {declaration: 'bottom: 1px;'},
-	b_2px: {declaration: 'bottom: 2px;'},
-	b_3px: {declaration: 'bottom: 3px;'},
-	b_auto: {declaration: 'bottom: auto;'},
-	b_xs5: {declaration: 'bottom: var(--space_xs5);'},
-	b_xs4: {declaration: 'bottom: var(--space_xs4);'},
-	b_xs3: {declaration: 'bottom: var(--space_xs3);'},
-	b_xs2: {declaration: 'bottom: var(--space_xs2);'},
-	b_xs: {declaration: 'bottom: var(--space_xs);'},
-	b_sm: {declaration: 'bottom: var(--space_sm);'},
-	b_md: {declaration: 'bottom: var(--space_md);'},
-	b_lg: {declaration: 'bottom: var(--space_lg);'},
-	b_xl: {declaration: 'bottom: var(--space_xl);'},
-	b_xl2: {declaration: 'bottom: var(--space_xl2);'},
-	b_xl3: {declaration: 'bottom: var(--space_xl3);'},
-	b_xl4: {declaration: 'bottom: var(--space_xl4);'},
-	b_xl5: {declaration: 'bottom: var(--space_xl5);'},
-	b_xl6: {declaration: 'bottom: var(--space_xl6);'},
-	b_xl7: {declaration: 'bottom: var(--space_xl7);'},
-	b_xl8: {declaration: 'bottom: var(--space_xl8);'},
-	b_xl9: {declaration: 'bottom: var(--space_xl9);'},
-	b_xl10: {declaration: 'bottom: var(--space_xl10);'},
-	b_xl11: {declaration: 'bottom: var(--space_xl11);'},
-	b_xl12: {declaration: 'bottom: var(--space_xl12);'},
-	b_xl13: {declaration: 'bottom: var(--space_xl13);'},
-	b_xl14: {declaration: 'bottom: var(--space_xl14);'},
-	b_xl15: {declaration: 'bottom: var(--space_xl15);'},
-	l_0: {declaration: 'left: 0;'},
-	l_100: {declaration: 'left: 100%;'},
-	l_1px: {declaration: 'left: 1px;'},
-	l_2px: {declaration: 'left: 2px;'},
-	l_3px: {declaration: 'left: 3px;'},
-	l_auto: {declaration: 'left: auto;'},
-	l_xs5: {declaration: 'left: var(--space_xs5);'},
-	l_xs4: {declaration: 'left: var(--space_xs4);'},
-	l_xs3: {declaration: 'left: var(--space_xs3);'},
-	l_xs2: {declaration: 'left: var(--space_xs2);'},
-	l_xs: {declaration: 'left: var(--space_xs);'},
-	l_sm: {declaration: 'left: var(--space_sm);'},
-	l_md: {declaration: 'left: var(--space_md);'},
-	l_lg: {declaration: 'left: var(--space_lg);'},
-	l_xl: {declaration: 'left: var(--space_xl);'},
-	l_xl2: {declaration: 'left: var(--space_xl2);'},
-	l_xl3: {declaration: 'left: var(--space_xl3);'},
-	l_xl4: {declaration: 'left: var(--space_xl4);'},
-	l_xl5: {declaration: 'left: var(--space_xl5);'},
-	l_xl6: {declaration: 'left: var(--space_xl6);'},
-	l_xl7: {declaration: 'left: var(--space_xl7);'},
-	l_xl8: {declaration: 'left: var(--space_xl8);'},
-	l_xl9: {declaration: 'left: var(--space_xl9);'},
-	l_xl10: {declaration: 'left: var(--space_xl10);'},
-	l_xl11: {declaration: 'left: var(--space_xl11);'},
-	l_xl12: {declaration: 'left: var(--space_xl12);'},
-	l_xl13: {declaration: 'left: var(--space_xl13);'},
-	l_xl14: {declaration: 'left: var(--space_xl14);'},
-	l_xl15: {declaration: 'left: var(--space_xl15);'},
-	r_0: {declaration: 'right: 0;'},
-	r_100: {declaration: 'right: 100%;'},
-	r_1px: {declaration: 'right: 1px;'},
-	r_2px: {declaration: 'right: 2px;'},
-	r_3px: {declaration: 'right: 3px;'},
-	r_auto: {declaration: 'right: auto;'},
-	r_xs5: {declaration: 'right: var(--space_xs5);'},
-	r_xs4: {declaration: 'right: var(--space_xs4);'},
-	r_xs3: {declaration: 'right: var(--space_xs3);'},
-	r_xs2: {declaration: 'right: var(--space_xs2);'},
-	r_xs: {declaration: 'right: var(--space_xs);'},
-	r_sm: {declaration: 'right: var(--space_sm);'},
-	r_md: {declaration: 'right: var(--space_md);'},
-	r_lg: {declaration: 'right: var(--space_lg);'},
-	r_xl: {declaration: 'right: var(--space_xl);'},
-	r_xl2: {declaration: 'right: var(--space_xl2);'},
-	r_xl3: {declaration: 'right: var(--space_xl3);'},
-	r_xl4: {declaration: 'right: var(--space_xl4);'},
-	r_xl5: {declaration: 'right: var(--space_xl5);'},
-	r_xl6: {declaration: 'right: var(--space_xl6);'},
-	r_xl7: {declaration: 'right: var(--space_xl7);'},
-	r_xl8: {declaration: 'right: var(--space_xl8);'},
-	r_xl9: {declaration: 'right: var(--space_xl9);'},
-	r_xl10: {declaration: 'right: var(--space_xl10);'},
-	r_xl11: {declaration: 'right: var(--space_xl11);'},
-	r_xl12: {declaration: 'right: var(--space_xl12);'},
-	r_xl13: {declaration: 'right: var(--space_xl13);'},
-	r_xl14: {declaration: 'right: var(--space_xl14);'},
-	r_xl15: {declaration: 'right: var(--space_xl15);'},
+	...generate_property_classes(
+		'top',
+		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
+		format_spacing_value,
+	),
+	...generate_property_classes(
+		'right',
+		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
+		format_spacing_value,
+	),
+	...generate_property_classes(
+		'bottom',
+		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
+		format_spacing_value,
+	),
+	...generate_property_classes(
+		'left',
+		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
+		format_spacing_value,
+	),
 
-	inset_0: {declaration: 'inset: 0;'},
-	inset_1px: {declaration: 'inset: 1px;'},
-	inset_2px: {declaration: 'inset: 2px;'},
-	inset_3px: {declaration: 'inset: 3px;'},
-	inset_xs5: {declaration: 'inset: var(--space_xs5);'},
-	inset_xs4: {declaration: 'inset: var(--space_xs4);'},
-	inset_xs3: {declaration: 'inset: var(--space_xs3);'},
-	inset_xs2: {declaration: 'inset: var(--space_xs2);'},
-	inset_xs: {declaration: 'inset: var(--space_xs);'},
-	inset_sm: {declaration: 'inset: var(--space_sm);'},
-	inset_md: {declaration: 'inset: var(--space_md);'},
-	inset_lg: {declaration: 'inset: var(--space_lg);'},
-	inset_xl: {declaration: 'inset: var(--space_xl);'},
-	inset_xl2: {declaration: 'inset: var(--space_xl2);'},
-	inset_xl3: {declaration: 'inset: var(--space_xl3);'},
-	inset_xl4: {declaration: 'inset: var(--space_xl4);'},
-	inset_xl5: {declaration: 'inset: var(--space_xl5);'},
-	inset_xl6: {declaration: 'inset: var(--space_xl6);'},
-	inset_xl7: {declaration: 'inset: var(--space_xl7);'},
-	inset_xl8: {declaration: 'inset: var(--space_xl8);'},
-	inset_xl9: {declaration: 'inset: var(--space_xl9);'},
-	inset_xl10: {declaration: 'inset: var(--space_xl10);'},
-	inset_xl11: {declaration: 'inset: var(--space_xl11);'},
-	inset_xl12: {declaration: 'inset: var(--space_xl12);'},
-	inset_xl13: {declaration: 'inset: var(--space_xl13);'},
-	inset_xl14: {declaration: 'inset: var(--space_xl14);'},
-	inset_xl15: {declaration: 'inset: var(--space_xl15);'},
+	...generate_property_classes(
+		'inset',
+		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
+		format_spacing_value,
+	),
 
-	p_0: {declaration: 'padding: 0;'},
-	p_1px: {declaration: 'padding: 1px;'},
-	p_2px: {declaration: 'padding: 2px;'},
-	p_3px: {declaration: 'padding: 3px;'},
-	p_xs5: {declaration: 'padding: var(--space_xs5);'},
-	p_xs4: {declaration: 'padding: var(--space_xs4);'},
-	p_xs3: {declaration: 'padding: var(--space_xs3);'},
-	p_xs2: {declaration: 'padding: var(--space_xs2);'},
-	p_xs: {declaration: 'padding: var(--space_xs);'},
-	p_sm: {declaration: 'padding: var(--space_sm);'},
-	p_md: {declaration: 'padding: var(--space_md);'},
-	p_lg: {declaration: 'padding: var(--space_lg);'},
-	p_xl: {declaration: 'padding: var(--space_xl);'},
-	p_xl2: {declaration: 'padding: var(--space_xl2);'},
-	p_xl3: {declaration: 'padding: var(--space_xl3);'},
-	p_xl4: {declaration: 'padding: var(--space_xl4);'},
-	p_xl5: {declaration: 'padding: var(--space_xl5);'},
-	p_xl6: {declaration: 'padding: var(--space_xl6);'},
-	p_xl7: {declaration: 'padding: var(--space_xl7);'},
-	p_xl8: {declaration: 'padding: var(--space_xl8);'},
-	p_xl9: {declaration: 'padding: var(--space_xl9);'},
-	p_xl10: {declaration: 'padding: var(--space_xl10);'},
-	p_xl11: {declaration: 'padding: var(--space_xl11);'},
-	p_xl12: {declaration: 'padding: var(--space_xl12);'},
-	p_xl13: {declaration: 'padding: var(--space_xl13);'},
-	p_xl14: {declaration: 'padding: var(--space_xl14);'},
-	p_xl15: {declaration: 'padding: var(--space_xl15);'},
-	pt_0: {declaration: 'padding-top: 0;'},
-	pt_100: {declaration: 'padding-top: 100%;'},
-	pt_1px: {declaration: 'padding-top: 1px;'},
-	pt_2px: {declaration: 'padding-top: 2px;'},
-	pt_3px: {declaration: 'padding-top: 3px;'},
-	pt_xs5: {declaration: 'padding-top: var(--space_xs5);'},
-	pt_xs4: {declaration: 'padding-top: var(--space_xs4);'},
-	pt_xs3: {declaration: 'padding-top: var(--space_xs3);'},
-	pt_xs2: {declaration: 'padding-top: var(--space_xs2);'},
-	pt_xs: {declaration: 'padding-top: var(--space_xs);'},
-	pt_sm: {declaration: 'padding-top: var(--space_sm);'},
-	pt_md: {declaration: 'padding-top: var(--space_md);'},
-	pt_lg: {declaration: 'padding-top: var(--space_lg);'},
-	pt_xl: {declaration: 'padding-top: var(--space_xl);'},
-	pt_xl2: {declaration: 'padding-top: var(--space_xl2);'},
-	pt_xl3: {declaration: 'padding-top: var(--space_xl3);'},
-	pt_xl4: {declaration: 'padding-top: var(--space_xl4);'},
-	pt_xl5: {declaration: 'padding-top: var(--space_xl5);'},
-	pt_xl6: {declaration: 'padding-top: var(--space_xl6);'},
-	pt_xl7: {declaration: 'padding-top: var(--space_xl7);'},
-	pt_xl8: {declaration: 'padding-top: var(--space_xl8);'},
-	pt_xl9: {declaration: 'padding-top: var(--space_xl9);'},
-	pt_xl10: {declaration: 'padding-top: var(--space_xl10);'},
-	pt_xl11: {declaration: 'padding-top: var(--space_xl11);'},
-	pt_xl12: {declaration: 'padding-top: var(--space_xl12);'},
-	pt_xl13: {declaration: 'padding-top: var(--space_xl13);'},
-	pt_xl14: {declaration: 'padding-top: var(--space_xl14);'},
-	pt_xl15: {declaration: 'padding-top: var(--space_xl15);'},
-	pr_0: {declaration: 'padding-right: 0;'},
-	pr_100: {declaration: 'padding-right: 100%;'},
-	pr_1px: {declaration: 'padding-right: 1px;'},
-	pr_2px: {declaration: 'padding-right: 2px;'},
-	pr_3px: {declaration: 'padding-right: 3px;'},
-	pr_xs5: {declaration: 'padding-right: var(--space_xs5);'},
-	pr_xs4: {declaration: 'padding-right: var(--space_xs4);'},
-	pr_xs3: {declaration: 'padding-right: var(--space_xs3);'},
-	pr_xs2: {declaration: 'padding-right: var(--space_xs2);'},
-	pr_xs: {declaration: 'padding-right: var(--space_xs);'},
-	pr_sm: {declaration: 'padding-right: var(--space_sm);'},
-	pr_md: {declaration: 'padding-right: var(--space_md);'},
-	pr_lg: {declaration: 'padding-right: var(--space_lg);'},
-	pr_xl: {declaration: 'padding-right: var(--space_xl);'},
-	pr_xl2: {declaration: 'padding-right: var(--space_xl2);'},
-	pr_xl3: {declaration: 'padding-right: var(--space_xl3);'},
-	pr_xl4: {declaration: 'padding-right: var(--space_xl4);'},
-	pr_xl5: {declaration: 'padding-right: var(--space_xl5);'},
-	pr_xl6: {declaration: 'padding-right: var(--space_xl6);'},
-	pr_xl7: {declaration: 'padding-right: var(--space_xl7);'},
-	pr_xl8: {declaration: 'padding-right: var(--space_xl8);'},
-	pr_xl9: {declaration: 'padding-right: var(--space_xl9);'},
-	pr_xl10: {declaration: 'padding-right: var(--space_xl10);'},
-	pr_xl11: {declaration: 'padding-right: var(--space_xl11);'},
-	pr_xl12: {declaration: 'padding-right: var(--space_xl12);'},
-	pr_xl13: {declaration: 'padding-right: var(--space_xl13);'},
-	pr_xl14: {declaration: 'padding-right: var(--space_xl14);'},
-	pr_xl15: {declaration: 'padding-right: var(--space_xl15);'},
-	pb_0: {declaration: 'padding-bottom: 0;'},
-	pb_100: {declaration: 'padding-bottom: 100%;'},
-	pb_1px: {declaration: 'padding-bottom: 1px;'},
-	pb_2px: {declaration: 'padding-bottom: 2px;'},
-	pb_3px: {declaration: 'padding-bottom: 3px;'},
-	pb_xs5: {declaration: 'padding-bottom: var(--space_xs5);'},
-	pb_xs4: {declaration: 'padding-bottom: var(--space_xs4);'},
-	pb_xs3: {declaration: 'padding-bottom: var(--space_xs3);'},
-	pb_xs2: {declaration: 'padding-bottom: var(--space_xs2);'},
-	pb_xs: {declaration: 'padding-bottom: var(--space_xs);'},
-	pb_sm: {declaration: 'padding-bottom: var(--space_sm);'},
-	pb_md: {declaration: 'padding-bottom: var(--space_md);'},
-	pb_lg: {declaration: 'padding-bottom: var(--space_lg);'},
-	pb_xl: {declaration: 'padding-bottom: var(--space_xl);'},
-	pb_xl2: {declaration: 'padding-bottom: var(--space_xl2);'},
-	pb_xl3: {declaration: 'padding-bottom: var(--space_xl3);'},
-	pb_xl4: {declaration: 'padding-bottom: var(--space_xl4);'},
-	pb_xl5: {declaration: 'padding-bottom: var(--space_xl5);'},
-	pb_xl6: {declaration: 'padding-bottom: var(--space_xl6);'},
-	pb_xl7: {declaration: 'padding-bottom: var(--space_xl7);'},
-	pb_xl8: {declaration: 'padding-bottom: var(--space_xl8);'},
-	pb_xl9: {declaration: 'padding-bottom: var(--space_xl9);'},
-	pb_xl10: {declaration: 'padding-bottom: var(--space_xl10);'},
-	pb_xl11: {declaration: 'padding-bottom: var(--space_xl11);'},
-	pb_xl12: {declaration: 'padding-bottom: var(--space_xl12);'},
-	pb_xl13: {declaration: 'padding-bottom: var(--space_xl13);'},
-	pb_xl14: {declaration: 'padding-bottom: var(--space_xl14);'},
-	pb_xl15: {declaration: 'padding-bottom: var(--space_xl15);'},
-	pl_0: {declaration: 'padding-left: 0;'},
-	pl_100: {declaration: 'padding-left: 100%;'},
-	pl_1px: {declaration: 'padding-left: 1px;'},
-	pl_2px: {declaration: 'padding-left: 2px;'},
-	pl_3px: {declaration: 'padding-left: 3px;'},
-	pl_xs5: {declaration: 'padding-left: var(--space_xs5);'},
-	pl_xs4: {declaration: 'padding-left: var(--space_xs4);'},
-	pl_xs3: {declaration: 'padding-left: var(--space_xs3);'},
-	pl_xs2: {declaration: 'padding-left: var(--space_xs2);'},
-	pl_xs: {declaration: 'padding-left: var(--space_xs);'},
-	pl_sm: {declaration: 'padding-left: var(--space_sm);'},
-	pl_md: {declaration: 'padding-left: var(--space_md);'},
-	pl_lg: {declaration: 'padding-left: var(--space_lg);'},
-	pl_xl: {declaration: 'padding-left: var(--space_xl);'},
-	pl_xl2: {declaration: 'padding-left: var(--space_xl2);'},
-	pl_xl3: {declaration: 'padding-left: var(--space_xl3);'},
-	pl_xl4: {declaration: 'padding-left: var(--space_xl4);'},
-	pl_xl5: {declaration: 'padding-left: var(--space_xl5);'},
-	pl_xl6: {declaration: 'padding-left: var(--space_xl6);'},
-	pl_xl7: {declaration: 'padding-left: var(--space_xl7);'},
-	pl_xl8: {declaration: 'padding-left: var(--space_xl8);'},
-	pl_xl9: {declaration: 'padding-left: var(--space_xl9);'},
-	pl_xl10: {declaration: 'padding-left: var(--space_xl10);'},
-	pl_xl11: {declaration: 'padding-left: var(--space_xl11);'},
-	pl_xl12: {declaration: 'padding-left: var(--space_xl12);'},
-	pl_xl13: {declaration: 'padding-left: var(--space_xl13);'},
-	pl_xl14: {declaration: 'padding-left: var(--space_xl14);'},
-	pl_xl15: {declaration: 'padding-left: var(--space_xl15);'},
-	px_0: {declaration: 'padding-left: 0;	padding-right: 0;'},
-	px_1px: {declaration: 'padding-left: 1px;	padding-right: 1px;'},
-	px_2px: {declaration: 'padding-left: 2px;	padding-right: 2px;'},
-	px_3px: {declaration: 'padding-left: 3px;	padding-right: 3px;'},
-	px_xs5: {declaration: 'padding-left: var(--space_xs5);	padding-right: var(--space_xs5);'},
-	px_xs4: {declaration: 'padding-left: var(--space_xs4);	padding-right: var(--space_xs4);'},
-	px_xs3: {declaration: 'padding-left: var(--space_xs3);	padding-right: var(--space_xs3);'},
-	px_xs2: {declaration: 'padding-left: var(--space_xs2);	padding-right: var(--space_xs2);'},
-	px_xs: {declaration: 'padding-left: var(--space_xs);	padding-right: var(--space_xs);'},
-	px_sm: {declaration: 'padding-left: var(--space_sm);	padding-right: var(--space_sm);'},
-	px_md: {declaration: 'padding-left: var(--space_md);	padding-right: var(--space_md);'},
-	px_lg: {declaration: 'padding-left: var(--space_lg);	padding-right: var(--space_lg);'},
-	px_xl: {declaration: 'padding-left: var(--space_xl);	padding-right: var(--space_xl);'},
-	px_xl2: {declaration: 'padding-left: var(--space_xl2);	padding-right: var(--space_xl2);'},
-	px_xl3: {declaration: 'padding-left: var(--space_xl3);	padding-right: var(--space_xl3);'},
-	px_xl4: {declaration: 'padding-left: var(--space_xl4);	padding-right: var(--space_xl4);'},
-	px_xl5: {declaration: 'padding-left: var(--space_xl5);	padding-right: var(--space_xl5);'},
-	px_xl6: {declaration: 'padding-left: var(--space_xl6);	padding-right: var(--space_xl6);'},
-	px_xl7: {declaration: 'padding-left: var(--space_xl7);	padding-right: var(--space_xl7);'},
-	px_xl8: {declaration: 'padding-left: var(--space_xl8);	padding-right: var(--space_xl8);'},
-	px_xl9: {declaration: 'padding-left: var(--space_xl9);	padding-right: var(--space_xl9);'},
-	px_xl10: {declaration: 'padding-left: var(--space_xl10);	padding-right: var(--space_xl10);'},
-	px_xl11: {declaration: 'padding-left: var(--space_xl11);	padding-right: var(--space_xl11);'},
-	px_xl12: {declaration: 'padding-left: var(--space_xl12);	padding-right: var(--space_xl12);'},
-	px_xl13: {declaration: 'padding-left: var(--space_xl13);	padding-right: var(--space_xl13);'},
-	px_xl14: {declaration: 'padding-left: var(--space_xl14);	padding-right: var(--space_xl14);'},
-	px_xl15: {declaration: 'padding-left: var(--space_xl15);	padding-right: var(--space_xl15);'},
-	py_0: {declaration: 'padding-top: 0;	padding-bottom: 0;'},
-	py_1px: {declaration: 'padding-top: 1px;	padding-bottom: 1px;'},
-	py_2px: {declaration: 'padding-top: 2px;	padding-bottom: 2px;'},
-	py_3px: {declaration: 'padding-top: 3px;	padding-bottom: 3px;'},
-	py_xs5: {declaration: 'padding-top: var(--space_xs5);	padding-bottom: var(--space_xs5);'},
-	py_xs4: {declaration: 'padding-top: var(--space_xs4);	padding-bottom: var(--space_xs4);'},
-	py_xs3: {declaration: 'padding-top: var(--space_xs3);	padding-bottom: var(--space_xs3);'},
-	py_xs2: {declaration: 'padding-top: var(--space_xs2);	padding-bottom: var(--space_xs2);'},
-	py_xs: {declaration: 'padding-top: var(--space_xs);	padding-bottom: var(--space_xs);'},
-	py_sm: {declaration: 'padding-top: var(--space_sm);	padding-bottom: var(--space_sm);'},
-	py_md: {declaration: 'padding-top: var(--space_md);	padding-bottom: var(--space_md);'},
-	py_lg: {declaration: 'padding-top: var(--space_lg);	padding-bottom: var(--space_lg);'},
-	py_xl: {declaration: 'padding-top: var(--space_xl);	padding-bottom: var(--space_xl);'},
-	py_xl2: {declaration: 'padding-top: var(--space_xl2);	padding-bottom: var(--space_xl2);'},
-	py_xl3: {declaration: 'padding-top: var(--space_xl3);	padding-bottom: var(--space_xl3);'},
-	py_xl4: {declaration: 'padding-top: var(--space_xl4);	padding-bottom: var(--space_xl4);'},
-	py_xl5: {declaration: 'padding-top: var(--space_xl5);	padding-bottom: var(--space_xl5);'},
-	py_xl6: {declaration: 'padding-top: var(--space_xl6);	padding-bottom: var(--space_xl6);'},
-	py_xl7: {declaration: 'padding-top: var(--space_xl7);	padding-bottom: var(--space_xl7);'},
-	py_xl8: {declaration: 'padding-top: var(--space_xl8);	padding-bottom: var(--space_xl8);'},
-	py_xl9: {declaration: 'padding-top: var(--space_xl9);	padding-bottom: var(--space_xl9);'},
-	py_xl10: {declaration: 'padding-top: var(--space_xl10);	padding-bottom: var(--space_xl10);'},
-	py_xl11: {declaration: 'padding-top: var(--space_xl11);	padding-bottom: var(--space_xl11);'},
-	py_xl12: {declaration: 'padding-top: var(--space_xl12);	padding-bottom: var(--space_xl12);'},
-	py_xl13: {declaration: 'padding-top: var(--space_xl13);	padding-bottom: var(--space_xl13);'},
-	py_xl14: {declaration: 'padding-top: var(--space_xl14);	padding-bottom: var(--space_xl14);'},
-	py_xl15: {declaration: 'padding-top: var(--space_xl15);	padding-bottom: var(--space_xl15);'},
-
-	m_0: {declaration: 'margin: 0;'},
-	m_1px: {declaration: 'margin: 1px;'},
-	m_2px: {declaration: 'margin: 2px;'},
-	m_3px: {declaration: 'margin: 3px;'},
-	m_auto: {declaration: 'margin: auto;'},
-	m_xs5: {declaration: 'margin: var(--space_xs5);'},
-	m_xs4: {declaration: 'margin: var(--space_xs4);'},
-	m_xs3: {declaration: 'margin: var(--space_xs3);'},
-	m_xs2: {declaration: 'margin: var(--space_xs2);'},
-	m_xs: {declaration: 'margin: var(--space_xs);'},
-	m_sm: {declaration: 'margin: var(--space_sm);'},
-	m_md: {declaration: 'margin: var(--space_md);'},
-	m_lg: {declaration: 'margin: var(--space_lg);'},
-	m_xl: {declaration: 'margin: var(--space_xl);'},
-	m_xl2: {declaration: 'margin: var(--space_xl2);'},
-	m_xl3: {declaration: 'margin: var(--space_xl3);'},
-	m_xl4: {declaration: 'margin: var(--space_xl4);'},
-	m_xl5: {declaration: 'margin: var(--space_xl5);'},
-	m_xl6: {declaration: 'margin: var(--space_xl6);'},
-	m_xl7: {declaration: 'margin: var(--space_xl7);'},
-	m_xl8: {declaration: 'margin: var(--space_xl8);'},
-	m_xl9: {declaration: 'margin: var(--space_xl9);'},
-	m_xl10: {declaration: 'margin: var(--space_xl10);'},
-	m_xl11: {declaration: 'margin: var(--space_xl11);'},
-	m_xl12: {declaration: 'margin: var(--space_xl12);'},
-	m_xl13: {declaration: 'margin: var(--space_xl13);'},
-	m_xl14: {declaration: 'margin: var(--space_xl14);'},
-	m_xl15: {declaration: 'margin: var(--space_xl15);'},
-	mt_0: {declaration: 'margin-top: 0;'},
-	mt_100: {declaration: 'margin-top: 100%;'},
-	mt_1px: {declaration: 'margin-top: 1px;'},
-	mt_2px: {declaration: 'margin-top: 2px;'},
-	mt_3px: {declaration: 'margin-top: 3px;'},
-	mt_auto: {declaration: 'margin-top: auto;'},
-	mt_xs5: {declaration: 'margin-top: var(--space_xs5);'},
-	mt_xs4: {declaration: 'margin-top: var(--space_xs4);'},
-	mt_xs3: {declaration: 'margin-top: var(--space_xs3);'},
-	mt_xs2: {declaration: 'margin-top: var(--space_xs2);'},
-	mt_xs: {declaration: 'margin-top: var(--space_xs);'},
-	mt_sm: {declaration: 'margin-top: var(--space_sm);'},
-	mt_md: {declaration: 'margin-top: var(--space_md);'},
-	mt_lg: {declaration: 'margin-top: var(--space_lg);'},
-	mt_xl: {declaration: 'margin-top: var(--space_xl);'},
-	mt_xl2: {declaration: 'margin-top: var(--space_xl2);'},
-	mt_xl3: {declaration: 'margin-top: var(--space_xl3);'},
-	mt_xl4: {declaration: 'margin-top: var(--space_xl4);'},
-	mt_xl5: {declaration: 'margin-top: var(--space_xl5);'},
-	mt_xl6: {declaration: 'margin-top: var(--space_xl6);'},
-	mt_xl7: {declaration: 'margin-top: var(--space_xl7);'},
-	mt_xl8: {declaration: 'margin-top: var(--space_xl8);'},
-	mt_xl9: {declaration: 'margin-top: var(--space_xl9);'},
-	mt_xl10: {declaration: 'margin-top: var(--space_xl10);'},
-	mt_xl11: {declaration: 'margin-top: var(--space_xl11);'},
-	mt_xl12: {declaration: 'margin-top: var(--space_xl12);'},
-	mt_xl13: {declaration: 'margin-top: var(--space_xl13);'},
-	mt_xl14: {declaration: 'margin-top: var(--space_xl14);'},
-	mt_xl15: {declaration: 'margin-top: var(--space_xl15);'},
-	mr_0: {declaration: 'margin-right: 0;'},
-	mr_100: {declaration: 'margin-right: 100%;'},
-	mr_1px: {declaration: 'margin-right: 1px;'},
-	mr_2px: {declaration: 'margin-right: 2px;'},
-	mr_3px: {declaration: 'margin-right: 3px;'},
-	mr_auto: {declaration: 'margin-right: auto;'},
-	mr_xs5: {declaration: 'margin-right: var(--space_xs5);'},
-	mr_xs4: {declaration: 'margin-right: var(--space_xs4);'},
-	mr_xs3: {declaration: 'margin-right: var(--space_xs3);'},
-	mr_xs2: {declaration: 'margin-right: var(--space_xs2);'},
-	mr_xs: {declaration: 'margin-right: var(--space_xs);'},
-	mr_sm: {declaration: 'margin-right: var(--space_sm);'},
-	mr_md: {declaration: 'margin-right: var(--space_md);'},
-	mr_lg: {declaration: 'margin-right: var(--space_lg);'},
-	mr_xl: {declaration: 'margin-right: var(--space_xl);'},
-	mr_xl2: {declaration: 'margin-right: var(--space_xl2);'},
-	mr_xl3: {declaration: 'margin-right: var(--space_xl3);'},
-	mr_xl4: {declaration: 'margin-right: var(--space_xl4);'},
-	mr_xl5: {declaration: 'margin-right: var(--space_xl5);'},
-	mr_xl6: {declaration: 'margin-right: var(--space_xl6);'},
-	mr_xl7: {declaration: 'margin-right: var(--space_xl7);'},
-	mr_xl8: {declaration: 'margin-right: var(--space_xl8);'},
-	mr_xl9: {declaration: 'margin-right: var(--space_xl9);'},
-	mr_xl10: {declaration: 'margin-right: var(--space_xl10);'},
-	mr_xl11: {declaration: 'margin-right: var(--space_xl11);'},
-	mr_xl12: {declaration: 'margin-right: var(--space_xl12);'},
-	mr_xl13: {declaration: 'margin-right: var(--space_xl13);'},
-	mr_xl14: {declaration: 'margin-right: var(--space_xl14);'},
-	mr_xl15: {declaration: 'margin-right: var(--space_xl15);'},
-	mb_0: {declaration: 'margin-bottom: 0;'},
-	mb_100: {declaration: 'margin-bottom: 100%;'},
-	mb_1px: {declaration: 'margin-bottom: 1px;'},
-	mb_2px: {declaration: 'margin-bottom: 2px;'},
-	mb_3px: {declaration: 'margin-bottom: 3px;'},
-	mb_auto: {declaration: 'margin-bottom: auto;'},
-	mb_xs5: {declaration: 'margin-bottom: var(--space_xs5);'},
-	mb_xs4: {declaration: 'margin-bottom: var(--space_xs4);'},
-	mb_xs3: {declaration: 'margin-bottom: var(--space_xs3);'},
-	mb_xs2: {declaration: 'margin-bottom: var(--space_xs2);'},
-	mb_xs: {declaration: 'margin-bottom: var(--space_xs);'},
-	mb_sm: {declaration: 'margin-bottom: var(--space_sm);'},
-	mb_md: {declaration: 'margin-bottom: var(--space_md);'},
-	mb_lg: {declaration: 'margin-bottom: var(--space_lg);'},
-	mb_xl: {declaration: 'margin-bottom: var(--space_xl);'},
-	mb_xl2: {declaration: 'margin-bottom: var(--space_xl2);'},
-	mb_xl3: {declaration: 'margin-bottom: var(--space_xl3);'},
-	mb_xl4: {declaration: 'margin-bottom: var(--space_xl4);'},
-	mb_xl5: {declaration: 'margin-bottom: var(--space_xl5);'},
-	mb_xl6: {declaration: 'margin-bottom: var(--space_xl6);'},
-	mb_xl7: {declaration: 'margin-bottom: var(--space_xl7);'},
-	mb_xl8: {declaration: 'margin-bottom: var(--space_xl8);'},
-	mb_xl9: {declaration: 'margin-bottom: var(--space_xl9);'},
-	mb_xl10: {declaration: 'margin-bottom: var(--space_xl10);'},
-	mb_xl11: {declaration: 'margin-bottom: var(--space_xl11);'},
-	mb_xl12: {declaration: 'margin-bottom: var(--space_xl12);'},
-	mb_xl13: {declaration: 'margin-bottom: var(--space_xl13);'},
-	mb_xl14: {declaration: 'margin-bottom: var(--space_xl14);'},
-	mb_xl15: {declaration: 'margin-bottom: var(--space_xl15);'},
-	ml_0: {declaration: 'margin-left: 0;'},
-	ml_100: {declaration: 'margin-left: 100%;'},
-	ml_1px: {declaration: 'margin-left: 1px;'},
-	ml_2px: {declaration: 'margin-left: 2px;'},
-	ml_3px: {declaration: 'margin-left: 3px;'},
-	ml_auto: {declaration: 'margin-left: auto;'},
-	ml_xs5: {declaration: 'margin-left: var(--space_xs5);'},
-	ml_xs4: {declaration: 'margin-left: var(--space_xs4);'},
-	ml_xs3: {declaration: 'margin-left: var(--space_xs3);'},
-	ml_xs2: {declaration: 'margin-left: var(--space_xs2);'},
-	ml_xs: {declaration: 'margin-left: var(--space_xs);'},
-	ml_sm: {declaration: 'margin-left: var(--space_sm);'},
-	ml_md: {declaration: 'margin-left: var(--space_md);'},
-	ml_lg: {declaration: 'margin-left: var(--space_lg);'},
-	ml_xl: {declaration: 'margin-left: var(--space_xl);'},
-	ml_xl2: {declaration: 'margin-left: var(--space_xl2);'},
-	ml_xl3: {declaration: 'margin-left: var(--space_xl3);'},
-	ml_xl4: {declaration: 'margin-left: var(--space_xl4);'},
-	ml_xl5: {declaration: 'margin-left: var(--space_xl5);'},
-	ml_xl6: {declaration: 'margin-left: var(--space_xl6);'},
-	ml_xl7: {declaration: 'margin-left: var(--space_xl7);'},
-	ml_xl8: {declaration: 'margin-left: var(--space_xl8);'},
-	ml_xl9: {declaration: 'margin-left: var(--space_xl9);'},
-	ml_xl10: {declaration: 'margin-left: var(--space_xl10);'},
-	ml_xl11: {declaration: 'margin-left: var(--space_xl11);'},
-	ml_xl12: {declaration: 'margin-left: var(--space_xl12);'},
-	ml_xl13: {declaration: 'margin-left: var(--space_xl13);'},
-	ml_xl14: {declaration: 'margin-left: var(--space_xl14);'},
-	ml_xl15: {declaration: 'margin-left: var(--space_xl15);'},
-	mx_0: {declaration: 'margin-left: 0;	margin-right: 0;'},
-	mx_1px: {declaration: 'margin-left: 1px;	margin-right: 1px;'},
-	mx_2px: {declaration: 'margin-left: 2px;	margin-right: 2px;'},
-	mx_3px: {declaration: 'margin-left: 3px;	margin-right: 3px;'},
-	mx_auto: {declaration: 'margin-left: auto;	margin-right: auto;'},
-	mx_xs5: {declaration: 'margin-left: var(--space_xs5);	margin-right: var(--space_xs5);'},
-	mx_xs4: {declaration: 'margin-left: var(--space_xs4);	margin-right: var(--space_xs4);'},
-	mx_xs3: {declaration: 'margin-left: var(--space_xs3);	margin-right: var(--space_xs3);'},
-	mx_xs2: {declaration: 'margin-left: var(--space_xs2);	margin-right: var(--space_xs2);'},
-	mx_xs: {declaration: 'margin-left: var(--space_xs);	margin-right: var(--space_xs);'},
-	mx_sm: {declaration: 'margin-left: var(--space_sm);	margin-right: var(--space_sm);'},
-	mx_md: {declaration: 'margin-left: var(--space_md);	margin-right: var(--space_md);'},
-	mx_lg: {declaration: 'margin-left: var(--space_lg);	margin-right: var(--space_lg);'},
-	mx_xl: {declaration: 'margin-left: var(--space_xl);	margin-right: var(--space_xl);'},
-	mx_xl2: {declaration: 'margin-left: var(--space_xl2);	margin-right: var(--space_xl2);'},
-	mx_xl3: {declaration: 'margin-left: var(--space_xl3);	margin-right: var(--space_xl3);'},
-	mx_xl4: {declaration: 'margin-left: var(--space_xl4);	margin-right: var(--space_xl4);'},
-	mx_xl5: {declaration: 'margin-left: var(--space_xl5);	margin-right: var(--space_xl5);'},
-	mx_xl6: {declaration: 'margin-left: var(--space_xl6);	margin-right: var(--space_xl6);'},
-	mx_xl7: {declaration: 'margin-left: var(--space_xl7);	margin-right: var(--space_xl7);'},
-	mx_xl8: {declaration: 'margin-left: var(--space_xl8);	margin-right: var(--space_xl8);'},
-	mx_xl9: {declaration: 'margin-left: var(--space_xl9);	margin-right: var(--space_xl9);'},
-	mx_xl10: {declaration: 'margin-left: var(--space_xl10);	margin-right: var(--space_xl10);'},
-	mx_xl11: {declaration: 'margin-left: var(--space_xl11);	margin-right: var(--space_xl11);'},
-	mx_xl12: {declaration: 'margin-left: var(--space_xl12);	margin-right: var(--space_xl12);'},
-	mx_xl13: {declaration: 'margin-left: var(--space_xl13);	margin-right: var(--space_xl13);'},
-	mx_xl14: {declaration: 'margin-left: var(--space_xl14);	margin-right: var(--space_xl14);'},
-	mx_xl15: {declaration: 'margin-left: var(--space_xl15);	margin-right: var(--space_xl15);'},
-	my_0: {declaration: 'margin-top: 0;	margin-bottom: 0;'},
-	my_1px: {declaration: 'margin-top: 1px;	margin-bottom: 1px;'},
-	my_2px: {declaration: 'margin-top: 2px;	margin-bottom: 2px;'},
-	my_3px: {declaration: 'margin-top: 3px;	margin-bottom: 3px;'},
-	my_auto: {declaration: 'margin-top: auto;	margin-bottom: auto;'},
-	my_xs5: {declaration: 'margin-top: var(--space_xs5);	margin-bottom: var(--space_xs5);'},
-	my_xs4: {declaration: 'margin-top: var(--space_xs4);	margin-bottom: var(--space_xs4);'},
-	my_xs3: {declaration: 'margin-top: var(--space_xs3);	margin-bottom: var(--space_xs3);'},
-	my_xs2: {declaration: 'margin-top: var(--space_xs2);	margin-bottom: var(--space_xs2);'},
-	my_xs: {declaration: 'margin-top: var(--space_xs);	margin-bottom: var(--space_xs);'},
-	my_sm: {declaration: 'margin-top: var(--space_sm);	margin-bottom: var(--space_sm);'},
-	my_md: {declaration: 'margin-top: var(--space_md);	margin-bottom: var(--space_md);'},
-	my_lg: {declaration: 'margin-top: var(--space_lg);	margin-bottom: var(--space_lg);'},
-	my_xl: {declaration: 'margin-top: var(--space_xl);	margin-bottom: var(--space_xl);'},
-	my_xl2: {declaration: 'margin-top: var(--space_xl2);	margin-bottom: var(--space_xl2);'},
-	my_xl3: {declaration: 'margin-top: var(--space_xl3);	margin-bottom: var(--space_xl3);'},
-	my_xl4: {declaration: 'margin-top: var(--space_xl4);	margin-bottom: var(--space_xl4);'},
-	my_xl5: {declaration: 'margin-top: var(--space_xl5);	margin-bottom: var(--space_xl5);'},
-	my_xl6: {declaration: 'margin-top: var(--space_xl6);	margin-bottom: var(--space_xl6);'},
-	my_xl7: {declaration: 'margin-top: var(--space_xl7);	margin-bottom: var(--space_xl7);'},
-	my_xl8: {declaration: 'margin-top: var(--space_xl8);	margin-bottom: var(--space_xl8);'},
-	my_xl9: {declaration: 'margin-top: var(--space_xl9);	margin-bottom: var(--space_xl9);'},
-	my_xl10: {declaration: 'margin-top: var(--space_xl10);	margin-bottom: var(--space_xl10);'},
-	my_xl11: {declaration: 'margin-top: var(--space_xl11);	margin-bottom: var(--space_xl11);'},
-	my_xl12: {declaration: 'margin-top: var(--space_xl12);	margin-bottom: var(--space_xl12);'},
-	my_xl13: {declaration: 'margin-top: var(--space_xl13);	margin-bottom: var(--space_xl13);'},
-	my_xl14: {declaration: 'margin-top: var(--space_xl14);	margin-bottom: var(--space_xl14);'},
-	my_xl15: {declaration: 'margin-top: var(--space_xl15);	margin-bottom: var(--space_xl15);'},
-
-	gap_xs5: {declaration: 'gap: var(--space_xs5);'},
-	gap_xs4: {declaration: 'gap: var(--space_xs4);'},
-	gap_xs3: {declaration: 'gap: var(--space_xs3);'},
-	gap_xs2: {declaration: 'gap: var(--space_xs2);'},
-	gap_xs: {declaration: 'gap: var(--space_xs);'},
-	gap_sm: {declaration: 'gap: var(--space_sm);'},
-	gap_md: {declaration: 'gap: var(--space_md);'},
-	gap_lg: {declaration: 'gap: var(--space_lg);'},
-	gap_xl: {declaration: 'gap: var(--space_xl);'},
-	gap_xl2: {declaration: 'gap: var(--space_xl2);'},
-	gap_xl3: {declaration: 'gap: var(--space_xl3);'},
-	gap_xl4: {declaration: 'gap: var(--space_xl4);'},
-	gap_xl5: {declaration: 'gap: var(--space_xl5);'},
-	gap_xl6: {declaration: 'gap: var(--space_xl6);'},
-	gap_xl7: {declaration: 'gap: var(--space_xl7);'},
-	gap_xl8: {declaration: 'gap: var(--space_xl8);'},
-	gap_xl9: {declaration: 'gap: var(--space_xl9);'},
-	gap_xl10: {declaration: 'gap: var(--space_xl10);'},
-	gap_xl11: {declaration: 'gap: var(--space_xl11);'},
-	gap_xl12: {declaration: 'gap: var(--space_xl12);'},
-	gap_xl13: {declaration: 'gap: var(--space_xl13);'},
-	gap_xl14: {declaration: 'gap: var(--space_xl14);'},
-	gap_xl15: {declaration: 'gap: var(--space_xl15);'},
-	column_gap_xs5: {declaration: 'column-gap: var(--space_xs5);'},
-	column_gap_xs4: {declaration: 'column-gap: var(--space_xs4);'},
-	column_gap_xs3: {declaration: 'column-gap: var(--space_xs3);'},
-	column_gap_xs2: {declaration: 'column-gap: var(--space_xs2);'},
-	column_gap_xs: {declaration: 'column-gap: var(--space_xs);'},
-	column_gap_sm: {declaration: 'column-gap: var(--space_sm);'},
-	column_gap_md: {declaration: 'column-gap: var(--space_md);'},
-	column_gap_lg: {declaration: 'column-gap: var(--space_lg);'},
-	column_gap_xl: {declaration: 'column-gap: var(--space_xl);'},
-	column_gap_xl2: {declaration: 'column-gap: var(--space_xl2);'},
-	column_gap_xl3: {declaration: 'column-gap: var(--space_xl3);'},
-	column_gap_xl4: {declaration: 'column-gap: var(--space_xl4);'},
-	column_gap_xl5: {declaration: 'column-gap: var(--space_xl5);'},
-	column_gap_xl6: {declaration: 'column-gap: var(--space_xl6);'},
-	column_gap_xl7: {declaration: 'column-gap: var(--space_xl7);'},
-	column_gap_xl8: {declaration: 'column-gap: var(--space_xl8);'},
-	column_gap_xl9: {declaration: 'column-gap: var(--space_xl9);'},
-	column_gap_xl10: {declaration: 'column-gap: var(--space_xl10);'},
-	column_gap_xl11: {declaration: 'column-gap: var(--space_xl11);'},
-	column_gap_xl12: {declaration: 'column-gap: var(--space_xl12);'},
-	column_gap_xl13: {declaration: 'column-gap: var(--space_xl13);'},
-	column_gap_xl14: {declaration: 'column-gap: var(--space_xl14);'},
-	column_gap_xl15: {declaration: 'column-gap: var(--space_xl15);'},
-	row_gap_xs5: {declaration: 'row-gap: var(--space_xs5);'},
-	row_gap_xs4: {declaration: 'row-gap: var(--space_xs4);'},
-	row_gap_xs3: {declaration: 'row-gap: var(--space_xs3);'},
-	row_gap_xs2: {declaration: 'row-gap: var(--space_xs2);'},
-	row_gap_xs: {declaration: 'row-gap: var(--space_xs);'},
-	row_gap_sm: {declaration: 'row-gap: var(--space_sm);'},
-	row_gap_md: {declaration: 'row-gap: var(--space_md);'},
-	row_gap_lg: {declaration: 'row-gap: var(--space_lg);'},
-	row_gap_xl: {declaration: 'row-gap: var(--space_xl);'},
-	row_gap_xl2: {declaration: 'row-gap: var(--space_xl2);'},
-	row_gap_xl3: {declaration: 'row-gap: var(--space_xl3);'},
-	row_gap_xl4: {declaration: 'row-gap: var(--space_xl4);'},
-	row_gap_xl5: {declaration: 'row-gap: var(--space_xl5);'},
-	row_gap_xl6: {declaration: 'row-gap: var(--space_xl6);'},
-	row_gap_xl7: {declaration: 'row-gap: var(--space_xl7);'},
-	row_gap_xl8: {declaration: 'row-gap: var(--space_xl8);'},
-	row_gap_xl9: {declaration: 'row-gap: var(--space_xl9);'},
-	row_gap_xl10: {declaration: 'row-gap: var(--space_xl10);'},
-	row_gap_xl11: {declaration: 'row-gap: var(--space_xl11);'},
-	row_gap_xl12: {declaration: 'row-gap: var(--space_xl12);'},
-	row_gap_xl13: {declaration: 'row-gap: var(--space_xl13);'},
-	row_gap_xl14: {declaration: 'row-gap: var(--space_xl14);'},
-	row_gap_xl15: {declaration: 'row-gap: var(--space_xl15);'},
+	...generate_directional_classes(
+		'padding',
+		['0', '100', '1px', '2px', '3px', ...space_variants],
+		format_spacing_value,
+	),
+	...generate_directional_classes(
+		'margin',
+		['0', '100', '1px', '2px', '3px', 'auto', ...space_variants],
+		format_spacing_value,
+	),
+	...generate_property_classes('gap', space_variants, format_spacing_value),
+	...generate_property_classes('column-gap', space_variants, format_spacing_value),
+	...generate_property_classes('row-gap', space_variants, format_spacing_value),
 };

@@ -14,6 +14,8 @@
 
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
+
+	// TODO width/height classes
 </script>
 
 <Tome_Content {tome}>
@@ -75,7 +77,7 @@
 	}
 
 	.variable_wrapper {
-		width: 110px;
+		width: 120px;
 	}
 
 	.computed_value {

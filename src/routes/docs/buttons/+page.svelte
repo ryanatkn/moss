@@ -56,7 +56,7 @@
 	</section>
 
 	<section>
-		<div class="box w_100 mb_lg">
+		<div class="box width_100 mb_lg">
 			<Color_Scheme_Input />
 		</div>
 	</section>
@@ -88,7 +88,7 @@
 				>
 			</section>
 		{/each}
-		<div class="box w_100 mb_lg">
+		<div class="box width_100 mb_lg">
 			<Color_Scheme_Input />
 		</div>
 	</Tome_Section>
@@ -132,7 +132,7 @@
 		</nav>
 		<section>
 			<Code content={`<button class="selected">...</button>`} />
-			<button type="button" class="w_100 selected">a button with .selected</button>
+			<button type="button" class="width_100 selected">a button with .selected</button>
 		</section>
 		<section>
 			<p>
@@ -144,12 +144,12 @@
 		<section>
 			<button
 				type="button"
-				class="w_100 deselectable"
+				class="width_100 deselectable"
 				class:selected={selected_deselectable_button}
 				onclick={() => (selected_deselectable_button = !selected_deselectable_button)}
 				>a .deselectable{#if selected_deselectable_button}.selected{:else}&nbsp;unselected{/if} button</button
 			>
-			<button type="button" class="w_100 selected deselectable" disabled
+			<button type="button" class="width_100 selected deselectable" disabled
 				>disabled .deselectable.selected</button
 			>
 		</section>

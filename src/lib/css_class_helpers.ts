@@ -1,3 +1,5 @@
+import type {Logger} from '@ryanatkn/belt/log.js';
+
 // TODO maybe just use the Svelte (and Oxc?) parser instead of this regexp madness?
 
 export interface Css_Extractor {
@@ -137,7 +139,10 @@ export class Css_Classes {
 	}
 }
 
-export type Css_Class_Declaration = Css_Class_Declaration_Item | Css_Class_Declaration_Group;
+export type Css_Class_Declaration =
+	| Css_Class_Declaration_Item
+	| Css_Class_Declaration_Group
+	| Css_Class_Declaration_Interpreter;
 
 export interface Css_Class_Declaration_Base {
 	comment?: string;
@@ -149,16 +154,21 @@ export interface Css_Class_Declaration_Item extends Css_Class_Declaration_Base {
 export interface Css_Class_Declaration_Group extends Css_Class_Declaration_Base {
 	ruleset: string;
 }
+export interface Css_Class_Declaration_Interpreter extends Css_Class_Declaration_Base {
+	pattern: RegExp;
+	interpret: (matched: RegExpMatchArray, log?: Logger) => string | null;
+}
 
-// TODO this API is going to change to allow non-static classes that get interpreted like a language at buildtime
 export const generate_classes_css = (
 	classes: Iterable<string>,
-	css_classes_by_name: Record<string, Css_Class_Declaration | undefined>,
+	classes_by_name: Record<string, Css_Class_Declaration | undefined>,
+	interpreters: Array<Css_Class_Declaration_Interpreter>,
+	log?: Logger,
 ): string => {
 	// TODO when the API is redesigned this kind of thing should be cached
 	// Create a map that has the index of each class name as the key
 	const indexes: Map<string, number> = new Map();
-	const keys = Object.keys(css_classes_by_name);
+	const keys = Object.keys(classes_by_name);
 	for (let i = 0; i < keys.length; i++) {
 		indexes.set(keys[i], i);
 	}
@@ -170,7 +180,22 @@ export const generate_classes_css = (
 
 	let css = '';
 	for (const c of sorted_classes) {
-		const v = css_classes_by_name[c];
+		let v = classes_by_name[c];
+
+		// If not found statically, try interpreters
+		if (!v) {
+			for (const interpreter of interpreters) {
+				const matched = c.match(interpreter.pattern);
+				if (matched) {
+					const declaration = interpreter.interpret(matched, log);
+					if (declaration) {
+						v = {declaration, comment: interpreter.comment};
+						break;
+					}
+				}
+			}
+		}
+
 		if (!v) {
 			// diagnostic
 			// if (!/^[a-z_0-9]+$/.test(c)) {
@@ -187,9 +212,10 @@ export const generate_classes_css = (
 
 		if ('declaration' in v) {
 			css += `.${c} { ${v.declaration} }\n`;
-		} else {
+		} else if ('ruleset' in v) {
 			css += v.ruleset + '\n';
 		}
+		// Note: Interpreted types are converted to declaration above, so no else clause needed
 	}
 
 	return css;

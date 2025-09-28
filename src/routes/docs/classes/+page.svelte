@@ -7,14 +7,13 @@
 	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
 
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import Module_Link from '$routes/Module_Link.svelte';
 
 	const LIBRARY_ITEM_NAME = 'classes';
 
 	const GLYPH_IDEA = '⌆'; // TODO from Belt, upstreamed from Zzz?
 
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
-
-	const style_global_values = 'inherit|initial|revert|revert_layer|unset';
 
 	// TODO show these with `Details` hiding their expanded set of values or something better (interpolated using this shorthand as the source of truth? isn't that complex)
 
@@ -23,27 +22,26 @@
 		{
 			group: 'Position and display',
 			items: [
-				`position_static|relative|absolute|fixed|sticky|${style_global_values}`,
+				`position_static|relative|absolute|fixed|sticky|$globals`,
 				// TODO think about making `display_` bold, and making this more systematic in general
-				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|${style_global_values}`,
-				`visibility_visible|hidden|collapse|${style_global_values}`,
-				`float_left|right|none|inline_start|inline_end|${style_global_values}`,
-				'opacity_0|10-100',
+				`display_none|contents|block|flow_root|inline|inline_block|run_in|list_item|inline_list_item|flex|inline_flex|grid|inline_grid|ruby|block_ruby|table|inline_table|$globals`,
+				`visibility_visible|hidden|collapse|$globals`,
+				`float_left|right|none|inline_start|inline_end|$globals`,
+				'opacity_0-100',
 				'overflow_auto|hidden|scroll|clip|visible',
 				'overflow_x|y_auto|hidden|scroll|clip|visible',
-				`overflow_wrap_normal|anywhere|break_word|${style_global_values}`,
-				`scrollbar_width_auto|thin|none|${style_global_values}`,
-				`scrollbar_gutter_auto|stable|stable_both_edges|${style_global_values}`,
+				`overflow_wrap_normal|anywhere|break_word|$globals`,
+				`scrollbar_width_auto|thin|none|$globals`,
+				`scrollbar_gutter_auto|stable|stable_both_edges|$globals`,
 			],
 		},
 		{
 			group: 'Flexbox and grid',
 			items: [
 				'flex_1',
-				'flex_wrap|wrap_reverse|nowrap', // TODO @many align with platform
-				'flex_row|column|row_reverse|column_reverse',
-				'grow|shrink', // TODO @many align with platform ?
-				'grow|shrink_0',
+				'flex_wrap_wrap|wrap_reverse|nowrap|$globals',
+				'flex_direction_row|column|row_reverse|column_reverse|$globals',
+				'flex_grow|shrink_1|0',
 				'align_items_center|start|end|baseline|stretch',
 				'align_content_center|start|end|baseline|space_between|space_around|space_evenly|stretch',
 				'align_self_center|start|end|baseline|stretch',
@@ -55,10 +53,10 @@
 		{
 			group: 'Sizing and spacing',
 			items: [
-				'w|h_0|100|1px-3px|auto|max_content|min_content|fit_content|stretch',
-				'w|h_xs5-xl15',
-				't|b|l|r_0|100|1px-3px|auto',
-				't|b|l|r_xs5-xl15',
+				'width|height_0|100|1px-3px|auto|max_content|min_content|fit_content|stretch',
+				'width|height_xs5-xl15',
+				'top|bottom|left|right_0|100|1px-3px|auto',
+				'top|bottom|left|right_xs5-xl15',
 				'inset_0|1px-3px|xs5-xl15',
 				'p|pt|pr|pb|pl|px|py_xs5-xl15',
 				'p|pt|pr|pb|pl|px|py_0|1px-3px',
@@ -68,10 +66,10 @@
 				'mt|mr|mb|ml_100',
 				'gap_xs5-xl15',
 				'column|row_gap_xs5-xl15',
-				'width_xs-xl',
-				'min_width_xs-xl',
-				'height_xs-xl',
-				'min_height_xs-xl',
+				'width_upto_xs-xl', // TODO rename? min/max? minned/maxxed? atmost/atleast?
+				'width_atleast_xs-xl',
+				'height_upto_xs-xl',
+				'height_atleast_xs-xl',
 			],
 		},
 		{
@@ -83,11 +81,11 @@
 				'icon_size_xs-xl3',
 				'text_align_start|end|left|right|center|justify|justify_all|match_parent',
 				'vertical_align_baseline|sub|super|text_top|text_bottom|middle|top|bottom',
-				`word_break_normal|break_all|keep_all|${style_global_values}`,
+				`word_break_normal|break_all|keep_all|$globals`,
 				'white_space_normal|nowrap|pre|pre_wrap|pre_line|break_spaces',
-				`white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces|${style_global_values}`,
+				`white_space_collapse_collapse|preserve|preserve_breaks|preserve_spaces|break_spaces|$globals`,
 				'text_wrap_wrap|nowrap|balance|pretty|stable',
-				`user_select_none|auto|text|all|${style_global_values}`,
+				`user_select_none|auto|text|all|$globals`,
 				'font_weight_100-900',
 				'ellipsis',
 			],
@@ -115,11 +113,11 @@
 				'border_color_transparent',
 				'border_width_0-9',
 				'outline_width_0|focused|active',
-				`border_style_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|${style_global_values}`,
-				'border_radius_0|10|20|30|40|50|60|70|80|90|100',
+				`border_style_none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|$globals`,
 				'border_radius_xs3-xl',
-				'border_top|bottom_left|right_radius_0|10|20|30|40|50|60|70|80|90|100',
+				'border_radius_0-100',
 				'border_top|bottom_left|right_radius_xs3-xl',
+				'border_top|bottom_left|right_radius_0-100',
 			],
 		},
 		{
@@ -183,9 +181,8 @@ ${'<' as string}script>
 			The <code>moss.css</code> file is created on demand with the utility classes that your code
 			uses, if any. For now it requires <a href="https://github.com/ryanatkn/gro">Gro</a> to
 			generate it, but it isn't hard to make your own integration using the helpers
-			<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/gen_moss_css.ts"
-				>gen_moss_css.ts</a
-			>. I can add a Vite plugin if there's demand.
+			<Module_Link path="gen_moss_css.ts">gen_moss_css.ts</Module_Link>. I can add a Vite plugin if
+			there's demand.
 		</p>
 		<Unfinished_Implementation_Warning>
 			Maybe <code>moss.css</code> should default to <code>moss_utilities.css</code> or
@@ -195,16 +192,17 @@ ${'<' as string}script>
 	<Tome_Section>
 		<Tome_Section_Header text="Utility classes" />
 		<p>
-			Moss supports utility classes that cost you nothing until you opt-in. The main stylesheet and
+			Moss supports utility classes that cost nothing until you opt-in. The main stylesheet and
 			theme are required and build around CSS custom properties - utility classes offer an
 			orthogonal API that some developers prefer some of the time. They leverage Moss's base
 			frameworky parts, and are well-integrated with the other APIs and tools.
 		</p>
 		<p>
-			Moss exports <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.ts"
-				>helpers</a
-			> to generate styles on demand based on class usage in your source files, so you can ship the minimal
-			code needed.
+			Moss exports <Module_Link path="css_class_helpers.ts">helpers</Module_Link> to generate styles
+			on demand based on class usage in your source files, so you can ship the minimal code needed. Some
+			values are interpreted to efficiently support large value ranges, e.g. <code>opacity_0</code>
+			through <code>opacity_100</code> and <code>font_weight_1</code> to
+			<code>font_weight_1000</code>.
 		</p>
 		<aside>
 			The API has been drifting to be more consistently match CSS at the cost of verbosity. I think
@@ -216,11 +214,13 @@ ${'<' as string}script>
 				href="https://svelte.dev/docs/svelte/class#Attributes-Objects-and-arrays"
 				>Svelte's object+array class syntax</a
 			>, added in 5.16. For now see
-			<a href="https://github.com/ryanatkn/moss/blob/main/src/lib/css_class_helpers.test.ts"
-				>the tests</a
-			> for the supported forms. The current strategy uses a regexp for TS and Svelte files, but we'll
-			probably need to more robustly scan the parsed AST.
+			<Module_Link path="css_class_helpers.test.ts">the tests</Module_Link> for the supported forms.
+			The current strategy uses a regexp for TS and Svelte files, but we'll probably need to more robustly
+			scan the parsed AST.
 		</aside>
+		<p>
+			<code>$globals</code> include <code>inherit|initial|revert|revert_layer|unset</code>.
+		</p>
 		<div class="utility_classes">
 			{#each style_utility_groups as group (group.group)}
 				<h4>{group.group}</h4>
@@ -235,9 +235,7 @@ ${'<' as string}script>
 	<Tome_Section>
 		<Tome_Section_Header text="Builtin classes" />
 		<p>
-			Moss's <a href="https://github.com/ryanatkn/moss/blob/main/src/lib/style.css"
-				>main stylesheet</a
-			>
+			Moss's <Module_Link path="style.css">main stylesheet</Module_Link>
 			provides styles for the base HTML elements using the framework's <Tome_Link
 				name="variables"
 			/>, acting as a modern CSS reset with sensible defaults and integrated theming. It includes
