@@ -173,7 +173,8 @@
 				<div class="row">
 					<div
 						class="border_example border_radius {border_radius_class} font_family_mono"
-						style="width: 200px; height: 100px;"
+						style:width="200px"
+						style:height="100px"
 					>
 						.{border_radius_class}
 					</div>
@@ -182,14 +183,15 @@
 		</div>
 		<Tome_Section_Header tag="h4" text="Border radius corners" />
 		<div class="border_examples border_radii">
-			{#each border_radius_corner_size_classes as classes}
+			{#each border_radius_corner_size_classes as classes (classes)}
 				<div class="row">
 					<div
 						class="border_example border_radius {classes} font_family_mono"
-						style="width: 320px; height: 100px;"
+						style:width="320px"
+						style:height="100px"
 					>
-						{#each classes.split(' ') as className}
-							<div>.{className}</div>
+						{#each classes.split(' ') as class_name (class_name)}
+							<div>.{class_name}</div>
 						{/each}
 					</div>
 				</div>
@@ -198,14 +200,15 @@
 		<Tome_Section_Header tag="h4" text="Border radius corner percentages" />
 		<p>Interpreted utility classes, 0 to 100 (%).</p>
 		<div class="border_examples border_radii">
-			{#each border_radius_corner_classes as classes}
+			{#each border_radius_corner_classes as classes (classes)}
 				<div class="row">
 					<div
 						class="border_example border_radius {classes} font_family_mono"
-						style="width: 320px; height: 100px;"
+						style:width="320px"
+						style:height="100px"
 					>
-						{#each classes.split(' ') as className}
-							<div>.{className}</div>
+						{#each classes.split(' ') as class_name (class_name)}
+							<div>.{class_name}</div>
 						{/each}
 					</div>
 				</div>
