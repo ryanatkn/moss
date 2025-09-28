@@ -5,7 +5,7 @@ import type {Src_Json} from '@ryanatkn/belt/src_json.js';
 
 export const package_json: Package_Json = {
 	name: '@ryanatkn/moss',
-	version: '0.35.0',
+	version: '0.36.0',
 	description: 'CSS framework and design system',
 	motto: 'magical organic stylesheets',
 	glyph: '🌿',
@@ -74,7 +74,7 @@ export const package_json: Package_Json = {
 
 export const src_json: Src_Json = {
 	name: '@ryanatkn/moss',
-	version: '0.35.0',
+	version: '0.36.0',
 	modules: {
 		'./css_class_composites.js': {
 			path: 'css_class_composites.ts',
