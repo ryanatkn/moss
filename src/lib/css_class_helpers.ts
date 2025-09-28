@@ -1,3 +1,5 @@
+import type {Logger} from '@ryanatkn/belt/log.js';
+
 // TODO maybe just use the Svelte (and Oxc?) parser instead of this regexp madness?
 
 export interface Css_Extractor {
@@ -154,13 +156,14 @@ export interface Css_Class_Declaration_Group extends Css_Class_Declaration_Base 
 }
 export interface Css_Class_Declaration_Interpreter extends Css_Class_Declaration_Base {
 	pattern: RegExp;
-	interpret: (match: RegExpMatchArray) => string | null;
+	interpret: (matched: RegExpMatchArray, log?: Logger) => string | null;
 }
 
 export const generate_classes_css = (
 	classes: Iterable<string>,
 	classes_by_name: Record<string, Css_Class_Declaration | undefined>,
 	interpreters: Array<Css_Class_Declaration_Interpreter>,
+	log?: Logger,
 ): string => {
 	// TODO when the API is redesigned this kind of thing should be cached
 	// Create a map that has the index of each class name as the key
@@ -182,9 +185,9 @@ export const generate_classes_css = (
 		// If not found statically, try interpreters
 		if (!v) {
 			for (const interpreter of interpreters) {
-				const match = c.match(interpreter.pattern);
-				if (match) {
-					const declaration = interpreter.interpret(match);
+				const matched = c.match(interpreter.pattern);
+				if (matched) {
+					const declaration = interpreter.interpret(matched, log);
 					if (declaration) {
 						v = {declaration, comment: interpreter.comment};
 						break;
