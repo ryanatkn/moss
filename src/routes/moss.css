@@ -271,6 +271,18 @@ a.chip {
 .bg_a_7 {
 	background-color: var(--color_a_7);
 }
+.outline_color_3 {
+	outline-color: var(--border_color_3);
+}
+.outline_width_focus {
+	outline-width: var(--outline_width_focus);
+}
+.outline_width_active {
+	outline-width: var(--outline_width_active);
+}
+.outline_style_solid {
+	outline-style: solid;
+}
 .border_radius_md {
 	border-radius: var(--border_radius_md);
 }

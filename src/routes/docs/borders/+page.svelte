@@ -6,9 +6,9 @@
 	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
 
 	import {
-		border_distance_variants,
+		border_width_variants,
 		color_variants,
-		outline_distance_variants,
+		outline_width_variants,
 		border_radius_variants,
 	} from '$lib/variable_data.js';
 	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
@@ -42,6 +42,7 @@
 	];
 	// TODO improve class detection
 	// classes="border_top_right_radius_100 border_bottom_left_radius_100 border_top_left_radius_lg border_top_right_radius_sm border_bottom_left_radius_md border_bottom_right_radius_xl"
+	// classes="outline_width_focus outline_width_active"
 </script>
 
 <Tome_Content {tome}>
@@ -54,7 +55,7 @@
 	<!-- <div>outline_color</div> -->
 
 	<Tome_Section>
-		<Tome_Section_Header text="Border colors" />
+		<Tome_Section_Header text="Border shades" />
 		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_colors">
 			{#each {length: 5} as _, i (i)}
@@ -85,7 +86,7 @@
 		<Color_Scheme_Input />
 	</section>
 	<Tome_Section>
-		<Tome_Section_Header text="Colorful border variants" />
+		<Tome_Section_Header text="Border colors" />
 		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_colors">
 			{#each color_variants as color_variant (color_variant)}
@@ -116,7 +117,7 @@
 		<Tome_Section_Header text="Border widths" />
 		<Unfinished_Implementation_Warning />
 		<div class="border_examples border_widths">
-			{#each border_distance_variants as border_width_variant (border_width_variant)}
+			{#each border_width_variants as border_width_variant (border_width_variant)}
 				{@const name = 'border_width_' + border_width_variant}
 				<div class="row">
 					<div class="border_example border_width" style:border-width="var(--{name})">
@@ -130,12 +131,17 @@
 		</div>
 	</Tome_Section>
 	<Tome_Section>
-		<Tome_Section_Header text="Outline widths" />
+		<Tome_Section_Header text="Outlines" />
+		<p>
+			Each border utility class has a corresponding outline variant using the same border variables
+			(like <code>outline_color_b</code>, <code>outline_width_4</code>, and
+			<code>outline_style_solid</code>), and there are also two special outline variables:
+		</p>
 		<div class="border_examples outline_widths">
-			{#each outline_distance_variants as outline_width_variant (outline_width_variant)}
+			{#each outline_width_variants as outline_width_variant (outline_width_variant)}
 				{@const name = 'outline_width_' + outline_width_variant}
 				<div class="row">
-					<div class="border_example {name}">
+					<div class="border_example {name} outline_style_solid outline_color_3">
 						<Style_Variable_Button {name} />
 					</div>
 					<span class="pl_sm pr_sm">=</span><code

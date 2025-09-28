@@ -20,7 +20,7 @@ import {
 	icon_size_variants,
 	line_height_variants,
 	border_radius_variants,
-	border_distance_variants,
+	border_width_variants,
 	alignment_values,
 	justify_values,
 	overflow_values,
@@ -255,18 +255,28 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 	),
 	...generate_property_classes('border-color', color_variants, (v) => `var(--border_color_${v})`),
 	border_color_transparent: {declaration: 'border-color: transparent;'},
-
 	...generate_property_classes(
-		'border-width',
-		['0', ...border_distance_variants.map(String)],
-		(v) => (v === '0' ? '0' : `var(--border_width_${v})`),
+		'outline-color',
+		[1, 2, 3, 4, 5].map(String),
+		(v) => `var(--border_color_${v})`,
 	),
-	outline_width_0: {declaration: 'outline-width: 0;'}, // TODO has no corresponding CSS variable, how to encode this?
+	...generate_property_classes('outline-color', color_variants, (v) => `var(--border_color_${v})`),
+	outline_color_transparent: {declaration: 'outline-color: transparent;'},
+
+	...generate_property_classes('border-width', ['0', ...border_width_variants.map(String)], (v) =>
+		v === '0' ? '0' : `var(--border_width_${v})`,
+	),
+	...generate_property_classes('outline-width', ['0', ...border_width_variants.map(String)], (v) =>
+		v === '0' ? '0' : `var(--border_width_${v})`,
+	),
 	outline_width_focus: {declaration: 'outline-width: var(--outline_width_focus);'},
 	outline_width_active: {declaration: 'outline-width: var(--outline_width_active);'},
 
 	...generate_property_classes('border-style', border_style_values),
 	...generate_property_classes('border-style', CSS_GLOBALS, to_kebab),
+
+	...generate_property_classes('outline-style', border_style_values),
+	...generate_property_classes('outline-style', CSS_GLOBALS, to_kebab),
 
 	...generate_property_classes(
 		'border-radius',
