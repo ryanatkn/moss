@@ -15,7 +15,7 @@
 	const computed_styles =
 		typeof window === 'undefined' ? null : window.getComputedStyle(document.documentElement);
 
-	// TODO BLOCK width/height classes
+	// TODO width/height classes
 </script>
 
 <Tome_Content {tome}>

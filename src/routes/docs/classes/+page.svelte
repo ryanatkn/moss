@@ -66,7 +66,7 @@
 				'mt|mr|mb|ml_100',
 				'gap_xs5-xl15',
 				'column|row_gap_xs5-xl15',
-				'width_upto_xs-xl', // TODO BLOCK rename?
+				'width_upto_xs-xl', // TODO rename? min/max? minned/maxxed? atmost/atleast?
 				'width_atleast_xs-xl',
 				'height_upto_xs-xl',
 				'height_atleast_xs-xl',
