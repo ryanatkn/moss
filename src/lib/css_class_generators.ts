@@ -16,7 +16,7 @@ export type Class_Template_Fn<T1 = string, T2 = string, T3 = string> =
  *
  * @param template - Function that generates CSS from values, can return null to skip
  * @param values - Primary iterable of values
- * @param multipliers - Optional second dimension (makes it multiplicative)
+ * @param secondary - Optional second dimension (makes it multiplicative)
  * @param tertiary - Optional third dimension for even more combinations
  *
  * @example
@@ -37,14 +37,14 @@ export type Class_Template_Fn<T1 = string, T2 = string, T3 = string> =
 export const generate_classes = <T1 = string, T2 = string, T3 = string>(
 	template: Class_Template_Fn<T1, T2, T3>,
 	values: Iterable<T1>,
-	multipliers?: Iterable<T2>,
+	secondary?: Iterable<T2>,
 	tertiary?: Iterable<T3>,
 ): Record<string, Css_Class_Declaration> => {
 	const result: Record<string, Css_Class_Declaration> = {};
 
 	for (const v1 of values) {
-		if (multipliers) {
-			for (const v2 of multipliers) {
+		if (secondary) {
+			for (const v2 of secondary) {
 				if (tertiary) {
 					for (const v3 of tertiary) {
 						const generated = (template as any)(v1, v2, v3);
@@ -70,7 +70,7 @@ export const generate_classes = <T1 = string, T2 = string, T3 = string>(
 	return result;
 };
 
-// Common value sets for CSS properties
+// TODO refactor with `src/lib/variable_data.ts`, we may want `css_data.ts` or something
 export const CSS_GLOBALS = ['inherit', 'initial', 'revert', 'revert_layer', 'unset'] as const;
 export type Css_Global = (typeof CSS_GLOBALS)[number];
 
@@ -144,13 +144,13 @@ export const format_dimension_value = (value: string): string => {
 export const generate_property_classes = (
 	property: string,
 	values: Iterable<string>,
-	value_formatter?: (value: string) => string,
+	formatter?: (value: string) => string,
 	prefix: string = to_variable_name(property),
 ): Record<string, Css_Class_Declaration> => {
 	return generate_classes(
 		(value: string) => ({
 			name: `${prefix}_${to_variable_name(value)}`,
-			css: `${property}: ${value_formatter?.(value) ?? value};`,
+			css: `${property}: ${formatter?.(value) ?? value};`,
 		}),
 		values,
 	);
@@ -162,18 +162,18 @@ export const generate_property_classes = (
  *
  * @param property - The base CSS property name (e.g. 'margin', 'padding')
  * @param values - The values to generate classes for
- * @param value_formatter - Optional function to format values (defaults to identity)
+ * @param formatter - Optional function to format values (defaults to identity)
  */
 export const generate_directional_classes = (
 	property: string,
 	values: Iterable<string>,
-	value_formatter?: (v: string) => string,
+	formatter?: (v: string) => string,
 ): Record<string, Css_Class_Declaration> => {
 	const prefix = property[0]; // 'm' for margin, 'p' for padding
 
 	return generate_classes(
 		(variant: string, value: string) => {
-			const formatted = value_formatter?.(value) ?? value;
+			const formatted = formatter?.(value) ?? value;
 
 			// Map variants to their configurations
 			const configs: Record<string, {name: string; css: string} | undefined> = {
@@ -237,7 +237,6 @@ export const generate_border_radius_corners = (
 	values: Iterable<string>,
 	formatter?: (value: string) => string,
 ): Record<string, Css_Class_Declaration> => {
-	const format = formatter || ((v) => v);
 	const corners = [
 		{prop: 'border-top-left-radius', name: 'border_top_left_radius'},
 		{prop: 'border-top-right-radius', name: 'border_top_right_radius'},
@@ -248,7 +247,7 @@ export const generate_border_radius_corners = (
 	return generate_classes(
 		(corner: (typeof corners)[0], value: string) => ({
 			name: `${corner.name}_${to_variable_name(value)}`,
-			css: `${corner.prop}: ${format(value)};`,
+			css: `${corner.prop}: ${formatter?.(value) ?? value};`,
 		}),
 		corners,
 		values,
