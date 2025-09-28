@@ -1,7 +1,97 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.35.0",
+  "version": "0.36.0",
   "modules": {
+    "./css_class_composites.js": {
+      "path": "css_class_composites.ts",
+      "declarations": [
+        {
+          "name": "css_class_composites",
+          "kind": "variable"
+        }
+      ]
+    },
+    "./css_class_generators.js": {
+      "path": "css_class_generators.ts",
+      "declarations": [
+        {
+          "name": "Class_Template_Result",
+          "kind": "type"
+        },
+        {
+          "name": "Class_Template_Fn",
+          "kind": "type"
+        },
+        {
+          "name": "generate_classes",
+          "kind": "function"
+        },
+        {
+          "name": "CSS_GLOBALS",
+          "kind": "variable"
+        },
+        {
+          "name": "Css_Global",
+          "kind": "type"
+        },
+        {
+          "name": "CSS_DIRECTIONS",
+          "kind": "variable"
+        },
+        {
+          "name": "Css_Direction",
+          "kind": "type"
+        },
+        {
+          "name": "COLOR_INTENSITIES",
+          "kind": "variable"
+        },
+        {
+          "name": "Color_Intensity",
+          "kind": "type"
+        },
+        {
+          "name": "to_kebab",
+          "kind": "function"
+        },
+        {
+          "name": "to_variable_name",
+          "kind": "function"
+        },
+        {
+          "name": "generate_global_classes",
+          "kind": "function"
+        },
+        {
+          "name": "format_spacing_value",
+          "kind": "function"
+        },
+        {
+          "name": "format_dimension_value",
+          "kind": "function"
+        },
+        {
+          "name": "generate_property_classes",
+          "kind": "function"
+        },
+        {
+          "name": "generate_directional_classes",
+          "kind": "function"
+        },
+        {
+          "name": "generate_property_with_axes",
+          "kind": "function"
+        },
+        {
+          "name": "generate_border_radius_corners",
+          "kind": "function"
+        },
+        {
+          "name": "generate_shadow_classes",
+          "kind": "function"
+        }
+      ]
+    },
     "./css_class_helpers.js": {
       "path": "css_class_helpers.ts",
       "declarations": [
@@ -34,8 +124,41 @@
           "kind": "type"
         },
         {
+          "name": "Css_Class_Declaration_Interpreter",
+          "kind": "type"
+        },
+        {
           "name": "generate_classes_css",
           "kind": "function"
+        }
+      ]
+    },
+    "./css_class_interpreters.js": {
+      "path": "css_class_interpreters.ts",
+      "declarations": [
+        {
+          "name": "opacity_interpreter",
+          "kind": "variable"
+        },
+        {
+          "name": "font_weight_interpreter",
+          "kind": "variable"
+        },
+        {
+          "name": "border_radius_interpreter",
+          "kind": "variable"
+        },
+        {
+          "name": "border_radius_corners_interpreter",
+          "kind": "variable"
+        },
+        {
+          "name": "z_index_interpreter",
+          "kind": "variable"
+        },
+        {
+          "name": "css_class_interpreters",
+          "kind": "variable"
         }
       ]
     },
@@ -200,6 +323,22 @@
           "kind": "variable"
         },
         {
+          "name": "Shadow_Semantic_Value",
+          "kind": "type"
+        },
+        {
+          "name": "shadow_semantic_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Icon_Size_Variant",
+          "kind": "type"
+        },
+        {
+          "name": "icon_size_variants",
+          "kind": "variable"
+        },
+        {
           "name": "icon_sizes",
           "kind": "variable"
         },
@@ -212,19 +351,151 @@
           "kind": "variable"
         },
         {
-          "name": "Border_Distance_Variant",
+          "name": "Border_Width_Variant",
           "kind": "type"
         },
         {
-          "name": "border_distance_variants",
+          "name": "border_width_variants",
           "kind": "variable"
         },
         {
-          "name": "Outline_Distance_Variant",
+          "name": "Outline_Width_Variant",
           "kind": "type"
         },
         {
-          "name": "outline_distance_variants",
+          "name": "outline_width_variants",
+          "kind": "variable"
+        },
+        {
+          "name": "Alignment_Value",
+          "kind": "type"
+        },
+        {
+          "name": "alignment_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Justify_Value",
+          "kind": "type"
+        },
+        {
+          "name": "justify_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Overflow_Value",
+          "kind": "type"
+        },
+        {
+          "name": "overflow_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Border_Style_Value",
+          "kind": "type"
+        },
+        {
+          "name": "border_style_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Display_Value",
+          "kind": "type"
+        },
+        {
+          "name": "display_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Text_Align_Value",
+          "kind": "type"
+        },
+        {
+          "name": "text_align_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Vertical_Align_Value",
+          "kind": "type"
+        },
+        {
+          "name": "vertical_align_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Word_Break_Value",
+          "kind": "type"
+        },
+        {
+          "name": "word_break_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Position_Value",
+          "kind": "type"
+        },
+        {
+          "name": "position_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Visibility_Value",
+          "kind": "type"
+        },
+        {
+          "name": "visibility_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Float_Value",
+          "kind": "type"
+        },
+        {
+          "name": "float_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Flex_Wrap_Value",
+          "kind": "type"
+        },
+        {
+          "name": "flex_wrap_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Flex_Direction_Value",
+          "kind": "type"
+        },
+        {
+          "name": "flex_direction_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Overflow_Wrap_Value",
+          "kind": "type"
+        },
+        {
+          "name": "overflow_wrap_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Scrollbar_Width_Value",
+          "kind": "type"
+        },
+        {
+          "name": "scrollbar_width_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Scrollbar_Gutter_Value",
+          "kind": "type"
+        },
+        {
+          "name": "scrollbar_gutter_values",
+          "kind": "variable"
+        },
+        {
+          "name": "Z_INDEX_MAX",
           "kind": "variable"
         }
       ]
