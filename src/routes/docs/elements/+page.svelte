@@ -211,8 +211,8 @@
 				<tr><td>td</td><td>td</td><td>td</td></tr>
 			</tbody>
 		</table>
-		<Code content={`<table class="w_100">\n\t...\n</table>`} />
-		<table class="w_100">
+		<Code content={`<table class="width_100">\n\t...\n</table>`} />
+		<table class="width_100">
 			<thead>
 				<tr>
 					<th>th</th>

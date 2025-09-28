@@ -345,7 +345,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			...space_variants,
 		],
 		format_dimension_value,
-		'w', // TODO use longhand names here, but collides with the current `width` usage
 	),
 	...generate_property_classes(
 		'height',
@@ -363,7 +362,6 @@ export const css_classes_by_name: Record<string, Css_Class_Declaration | undefin
 			...space_variants,
 		],
 		format_dimension_value,
-		'h',
 	),
 
 	...generate_property_classes(

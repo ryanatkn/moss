@@ -53,8 +53,8 @@
 		{
 			group: 'Sizing and spacing',
 			items: [
-				'w|h_0|100|1px-3px|auto|max_content|min_content|fit_content|stretch',
-				'w|h_xs5-xl15',
+				'width|height_0|100|1px-3px|auto|max_content|min_content|fit_content|stretch',
+				'width|height_xs5-xl15',
 				'top|bottom|left|right_0|100|1px-3px|auto',
 				'top|bottom|left|right_xs5-xl15',
 				'inset_0|1px-3px|xs5-xl15',
@@ -66,7 +66,7 @@
 				'mt|mr|mb|ml_100',
 				'gap_xs5-xl15',
 				'column|row_gap_xs5-xl15',
-				'width_upto_xs-xl',
+				'width_upto_xs-xl', // TODO BLOCK rename?
 				'width_atleast_xs-xl',
 				'height_upto_xs-xl',
 				'height_atleast_xs-xl',

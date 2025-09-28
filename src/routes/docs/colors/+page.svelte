@@ -134,7 +134,7 @@
 			{/each}
 		</ul>
 	</Tome_Section>
-	<div class="box w_100 mb_lg">
+	<div class="box width_100 mb_lg">
 		<Color_Scheme_Input />
 	</div>
 </Tome_Content>

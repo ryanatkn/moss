@@ -74,7 +74,8 @@
 	<header>
 		<div class="variables_header">
 			<p>variables: {light_count} light, {dark_count} dark</p>
-			<button type="button" class="w_100" onclick={add_variable} disabled>add a variable</button>
+			<button type="button" class="width_100" onclick={add_variable} disabled>add a variable</button
+			>
 		</div>
 		<form>
 			<label>

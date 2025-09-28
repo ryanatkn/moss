@@ -475,11 +475,11 @@ a.chip {
 .shadow_alpha_5 {
 	--shadow_alpha: var(--shadow_alpha_5);
 }
-.w_100 {
+.width_100 {
 	width: 100%;
 }
-.h_100 {
-	height: 100%;
+.width_md {
+	width: var(--space_md);
 }
 .top_0 {
 	top: 0;
