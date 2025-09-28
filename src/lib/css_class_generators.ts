@@ -176,7 +176,7 @@ export const generate_directional_classes = (
 			const formatted = value_formatter?.(value) ?? value;
 
 			// Map variants to their configurations
-			const configs: Record<string, {name: string; css: string}> = {
+			const configs: Record<string, {name: string; css: string} | undefined> = {
 				'': {name: `${prefix}_${to_variable_name(value)}`, css: `${property}: ${formatted};`},
 				t: {name: `${prefix}t_${to_variable_name(value)}`, css: `${property}-top: ${formatted};`},
 				r: {name: `${prefix}r_${to_variable_name(value)}`, css: `${property}-right: ${formatted};`},
