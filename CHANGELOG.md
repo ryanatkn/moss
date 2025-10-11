@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.36.2
+
+### Patch Changes
+
+- fix class sort order ([ff438fd](https://github.com/ryanatkn/moss/commit/ff438fd))
+
 ## 0.36.1
 
 ### Patch Changes
