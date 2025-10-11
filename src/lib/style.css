@@ -263,6 +263,9 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 :where(fieldset:not(.unstyled)) {
 	display: flex;
 	flex-direction: column;
+}
+:where(fieldset) {
+	/* TODO consider a global border reset */
 	border: 0;
 }
 
