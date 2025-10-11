@@ -1,5 +1,12 @@
 # @ryanatkn/moss
 
+## 0.36.1
+
+### Patch Changes
+
+- remove default fieldset border ([48ec114](https://github.com/ryanatkn/moss/commit/48ec114))
+- fix a type import ([88ec26e](https://github.com/ryanatkn/moss/commit/88ec26e))
+
 ## 0.36.0
 
 ### Minor Changes
