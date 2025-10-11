@@ -174,9 +174,12 @@ export const generate_classes_css = (
 	}
 
 	// If any classes are unknown, just put them at the end
-	const sorted_classes = (Array.isArray(classes) ? classes : Array.from(classes)).sort(
-		(a, b) => (indexes.get(a) ?? Number.MAX_VALUE) - (indexes.get(b) ?? Number.MAX_VALUE),
-	);
+	const sorted_classes = (Array.isArray(classes) ? classes : Array.from(classes)).sort((a, b) => {
+		const index_a = indexes.get(a) ?? Number.MAX_VALUE;
+		const index_b = indexes.get(b) ?? Number.MAX_VALUE;
+		if (index_a !== index_b) return index_a - index_b;
+		return a.localeCompare(b); // alphabetic tiebreaker for stable sort
+	});
 
 	let css = '';
 	for (const c of sorted_classes) {
