@@ -45,8 +45,6 @@ export const package_json: Package_Json = {
 		'eslint-plugin-svelte': '^3.12.2',
 		prettier: '^3.6.2',
 		'prettier-plugin-svelte': '^3.4.0',
-		'prism-svelte': '^0.5.0',
-		prismjs: '^1.30.0',
 		svelte: '^5.38.7',
 		'svelte-check': '^4.3.2',
 		tslib: '^2.8.1',
