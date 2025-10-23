@@ -270,7 +270,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 }
 
 :where(legend:not(.unstyled)) {
-	font-size: var(--font_size_xl);
+	font-size: var(--font_size_lg);
 	margin-bottom: var(--space_lg);
 }
 
