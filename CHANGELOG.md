@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.36.3
+
+### Patch Changes
+
+- reduce `legend` text soze to lg from xl ([a86caed](https://github.com/ryanatkn/moss/commit/a86caed))
+
 ## 0.36.2
 
 ### Patch Changes
