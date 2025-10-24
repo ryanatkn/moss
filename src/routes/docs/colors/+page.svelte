@@ -24,14 +24,15 @@
 	// TODO maybe add this to the variable data as comments
 	const descriptions = [
 		'primary',
-		'success/help',
+		'success',
 		'error/danger',
-		'secondary',
-		'tertiary',
-		'quaternary',
-		'quinary',
-		'senary',
-		'septenary',
+		'secondary/accent',
+		'tertiary/highlight',
+		'quaternary/muted',
+		'quinary/decorative',
+		'senary/caution',
+		'septenary/info',
+		'octonary/flourish',
 	];
 </script>
 
