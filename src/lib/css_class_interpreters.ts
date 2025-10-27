@@ -7,7 +7,7 @@ import {Z_INDEX_MAX} from '$lib/variable_data.js';
 export const opacity_interpreter: Css_Class_Declaration_Interpreter = {
 	pattern: /^opacity_(\d+)$/,
 	interpret: (matched, log) => {
-		const value = parseInt(matched[1], 10);
+		const value = parseInt(matched[1]!, 10);
 		if (value < 0 || value > 100) {
 			log?.warn(`Invalid opacity value: ${value}. Must be between 0 and 100.`);
 			return null;
@@ -24,7 +24,7 @@ export const opacity_interpreter: Css_Class_Declaration_Interpreter = {
 export const font_weight_interpreter: Css_Class_Declaration_Interpreter = {
 	pattern: /^font_weight_(\d+)$/,
 	interpret: (matched, log) => {
-		const value = parseInt(matched[1], 10);
+		const value = parseInt(matched[1]!, 10);
 		if (value < 1 || value > 1000) {
 			log?.warn(`Invalid font-weight value: ${value}. Must be between 1 and 1000.`);
 			return null;
@@ -40,7 +40,7 @@ export const font_weight_interpreter: Css_Class_Declaration_Interpreter = {
 export const border_radius_interpreter: Css_Class_Declaration_Interpreter = {
 	pattern: /^border_radius_(\d+)$/,
 	interpret: (matched, log) => {
-		const value = parseInt(matched[1], 10);
+		const value = parseInt(matched[1]!, 10);
 		if (value < 0 || value > 100) {
 			log?.warn(`Invalid border-radius percentage: ${value}. Must be between 0 and 100.`);
 			return null;
@@ -57,9 +57,9 @@ export const border_radius_interpreter: Css_Class_Declaration_Interpreter = {
 export const border_radius_corners_interpreter: Css_Class_Declaration_Interpreter = {
 	pattern: /^border_(top|bottom)_(left|right)_radius_(\d+)$/,
 	interpret: (matched, log) => {
-		const vertical = matched[1];
-		const horizontal = matched[2];
-		const value = parseInt(matched[3], 10);
+		const vertical = matched[1]!;
+		const horizontal = matched[2]!;
+		const value = parseInt(matched[3]!, 10);
 		if (value < 0 || value > 100) {
 			log?.warn(
 				`Invalid border-${vertical}-${horizontal}-radius percentage: ${value}. Must be between 0 and 100.`,
@@ -77,7 +77,7 @@ export const border_radius_corners_interpreter: Css_Class_Declaration_Interprete
 export const z_index_interpreter: Css_Class_Declaration_Interpreter = {
 	pattern: /^z_index_(\d+)$/,
 	interpret: (matched, log) => {
-		const value = parseInt(matched[1], 10);
+		const value = parseInt(matched[1]!, 10);
 		if (value < 0 || value > Z_INDEX_MAX) {
 			log?.warn(`Invalid z-index value: ${value}. Must be between 0 and ${Z_INDEX_MAX}.`);
 			return null;

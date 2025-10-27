@@ -11,14 +11,14 @@ const CSS_CLASS_EXTRACTORS: Array<Css_Extractor> = [
 	// `class:a`
 	{
 		matcher: /(?<!['"`])class:([^\s=>]+)/gi,
-		mapper: (matched) => [matched[1]],
+		mapper: (matched) => [matched[1]!],
 	}, // initial capture group is fake just because the second regexp uses a capture group for its back reference
 
 	// `class="a"`, `classes="a"`, `classes = 'a b'`, `classes: 'a b'` with any whitespace around the `=`/`:`
 	{
 		matcher: /(?<!['"`])class(?:es)?\s*[=:]\s*(["'`])([\s\S]+?)\1/gi, // omit leading quotes in case it's obviously a string, like in tests (even though tests are separately filtered by default in the plugin)
 		mapper: (matched) =>
-			matched[2]
+			matched[2]!
 				.replace(
 					// omit all expressions with best-effort - it's not perfect especially
 					// around double quote strings in JS in Svelte expressions, but using single quotes is better imo
@@ -36,7 +36,7 @@ const CSS_CLASS_EXTRACTORS: Array<Css_Extractor> = [
 	{
 		matcher: /(?<!['"`])class(?:es)?\s*[=:]\{?\s*\[([\s\S]*?)\]/g,
 		mapper: (matched: RegExpExecArray): Array<string> => {
-			const content = matched[1];
+			const content = matched[1]!;
 			if (content.includes('[')) return []; // TODO @many ideally fix instead of bailing, but maybe we need a real JS parser?
 			const items = content.split(',').map((item) => item.trim());
 
@@ -170,7 +170,7 @@ export const generate_classes_css = (
 	const indexes: Map<string, number> = new Map();
 	const keys = Object.keys(classes_by_name);
 	for (let i = 0; i < keys.length; i++) {
-		indexes.set(keys[i], i);
+		indexes.set(keys[i]!, i);
 	}
 
 	// If any classes are unknown, just put them at the end

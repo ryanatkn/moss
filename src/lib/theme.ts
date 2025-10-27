@@ -31,7 +31,7 @@ export const render_theme_style = (
 ): string => {
 	const {comments = false, id = null, empty_default_theme = true, specificity = 2} = options;
 	const variables =
-		theme.name === default_themes[0].name
+		theme.name === default_themes[0]!.name
 			? empty_default_theme
 				? null
 				: default_variables

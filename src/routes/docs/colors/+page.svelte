@@ -22,6 +22,7 @@
 	// TODO button to add an inline hue input for runtime modification of the theme
 
 	// TODO maybe add this to the variable data as comments
+	// Note: This array must stay in sync with color_variants (a-j = 10 elements)
 	const descriptions = [
 		'primary',
 		'success',
@@ -115,7 +116,7 @@
 		<p>Unlike the color variables, the hue variables are the same in both light and dark modes.</p>
 		<ul class="palette unstyled">
 			{#each color_variants as color_name, i (color_name)}
-				<Hue_Swatch {color_name} {computed_styles} description={descriptions[i]} />
+				<Hue_Swatch {color_name} {computed_styles} description={descriptions[i]!} />
 			{/each}
 		</ul>
 	</Tome_Section>

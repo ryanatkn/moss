@@ -12,7 +12,7 @@ const css_files = [main_stylesheet_text, css_classes_text];
 
 const extract_custom_properties_usage = (css: string) =>
 	Array.from(css.matchAll(/var\((?:\s|\\[nt])*--([a-z][a-z0-9_]*(?<!_))(?:[,)])/g)).map(
-		(m) => m[1],
+		(m) => m[1]!,
 	);
 
 test('variables in the CSS exist', () => {
