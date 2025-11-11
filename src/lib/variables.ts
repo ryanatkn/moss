@@ -30,7 +30,7 @@ export const hue_f: Style_Variable = {name: 'hue_f', light: '27', summary: 'brow
 export const hue_g: Style_Variable = {name: 'hue_g', light: '335', summary: 'pink'};
 export const hue_h: Style_Variable = {name: 'hue_h', light: '17', summary: 'orange'};
 export const hue_i: Style_Variable = {name: 'hue_i', light: '185', summary: 'cyan'};
-export const hue_j: Style_Variable = {name: 'hue_j', light: '157', summary: 'teal'};
+export const hue_j: Style_Variable = {name: 'hue_j', light: '155', summary: 'teal'};
 export const color_a_1: Style_Variable = {
 	name: 'color_a_1',
 	light: 'hsl(var(--hue_a) 65% 91%)',
