@@ -2,4 +2,4 @@
 '@ryanatkn/moss': minor
 ---
 
-remove `.pre`
+improve code element styles and remove `.pre`
