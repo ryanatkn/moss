@@ -486,6 +486,9 @@ a.chip {
 	padding-left: var(--space_lg);
 	padding-right: var(--space_lg);
 }
+.mt_0 {
+	margin-top: 0;
+}
 .mt_lg {
 	margin-top: var(--space_lg);
 }

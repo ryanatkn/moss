@@ -1,5 +1,15 @@
 # @ryanatkn/moss
 
+## 0.37.0
+
+### Minor Changes
+
+- improve code element styles and remove `.pre` ([#67](https://github.com/ryanatkn/moss/pull/67))
+
+### Patch Changes
+
+- tweak teal hue to be greener and further from cyan ([9b288f3](https://github.com/ryanatkn/moss/commit/9b288f3))
+
 ## 0.36.3
 
 ### Patch Changes
