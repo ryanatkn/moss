@@ -14,13 +14,6 @@
 	align-items: center;
 }
 
-.ellipsis {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
 .width_upto_xs {
 	width: 100%;
 	max-width: var(--distance_xs);
@@ -193,9 +186,6 @@ a.chip {
 .display_flex {
 	display: flex;
 }
-.overflow_wrap_anywhere {
-	overflow-wrap: anywhere;
-}
 .overflow_wrap_break_word {
 	overflow-wrap: break-word;
 }
@@ -214,12 +204,6 @@ a.chip {
 .font_family_mono {
 	font-family: var(--font_family_mono);
 }
-.line_height_sm {
-	line-height: var(--line_height_sm);
-}
-.line_height_lg {
-	line-height: var(--line_height_lg);
-}
 .font_size_xl3 {
 	font-size: var(--font_size_xl3);
 	--font_size: var(--font_size_xl3);
@@ -230,6 +214,9 @@ a.chip {
 }
 .text_align_center {
 	text-align: center;
+}
+.vertical_align_middle {
+	vertical-align: middle;
 }
 .white_space_nowrap {
 	white-space: nowrap;
@@ -462,9 +449,6 @@ a.chip {
 .width_100 {
 	width: 100%;
 }
-.height_100 {
-	height: 100%;
-}
 .top_0 {
 	top: 0;
 }
@@ -498,19 +482,9 @@ a.chip {
 .pl_sm {
 	padding-left: var(--space_sm);
 }
-.pl_xl4 {
-	padding-left: var(--space_xl4);
-}
 .px_lg {
 	padding-left: var(--space_lg);
 	padding-right: var(--space_lg);
-}
-.px_xl {
-	padding-left: var(--space_xl);
-	padding-right: var(--space_xl);
-}
-.mt_0 {
-	margin-top: 0;
 }
 .mt_lg {
 	margin-top: var(--space_lg);

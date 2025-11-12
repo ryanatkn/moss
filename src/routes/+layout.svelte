@@ -4,7 +4,7 @@
 	import '$routes/moss.css';
 	import '@ryanatkn/fuz_code/theme.css';
 
-	import {parse_pkg} from '@ryanatkn/belt/pkg.js';
+	import {parse_pkg} from '@ryanatkn/fuz/pkg.svelte.js';
 	import type {Snippet} from 'svelte';
 	import Themed from '@ryanatkn/fuz/Themed.svelte';
 	import Spiders from '@ryanatkn/fuz/Spiders.svelte';
