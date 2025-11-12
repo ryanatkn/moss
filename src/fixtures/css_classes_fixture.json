@@ -104,9 +104,6 @@
 	"chip": {
 		"ruleset": "\n\t\t\t.chip {\n\t\t\t\tfont-weight: 500;\n\t\t\t\tpadding-left: var(--space_xs);\n\t\t\t\tpadding-right: var(--space_xs);\n\t\t\t\tbackground-color: var(--fg_1);\n\t\t\t\tborder-radius: var(--border_radius_xs);\n\t\t\t}\n\t\t\ta.chip {\n\t\t\t\tfont-weight: 600;\n\t\t\t}\n\t\t"
 	},
-	"pre": {
-		"ruleset": "\n\t\t\t.pre {\n\t\t\t\tfont-family: var(--font_family_mono);\n\t\t\t\tcolor: var(--text_color, var(--text_color_3));\n\t\t\t\toverflow: auto;\n\t\t\t\tmax-width: 100%;\n\t\t\t}\n\t\t\t.pre > code {\n\t\t\t\tfont-size: var(--font_size_sm); /* TODO @many use a var? maybe computed from generic `--font_size`? */\n\t\t\t\tfont-weight: 500;\n\t\t\t}\n\t\t\t.pre:not(.inline) > code {\n\t\t\t\tdisplay: block;\n\t\t\t}\n\t\t"
-	},
 	"position_static": {"declaration": "position: static;"},
 	"position_relative": {"declaration": "position: relative;"},
 	"position_absolute": {"declaration": "position: absolute;"},

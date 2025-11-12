@@ -404,22 +404,4 @@ export const css_class_composites: Record<string, Css_Class_Declaration | undefi
 			}
 		`,
 	},
-	pre: {
-		// keep in sync with `pre` styling in `style.css`, except the `.inline` exception
-		ruleset: `
-			.pre {
-				font-family: var(--font_family_mono);
-				color: var(--text_color, var(--text_color_3));
-				overflow: auto;
-				max-width: 100%;
-			}
-			.pre > code {
-				font-size: var(--font_size_sm); /* TODO @many use a var? maybe computed from generic \`--font_size\`? */
-				font-weight: 500;
-			}
-			.pre:not(.inline) > code {
-				display: block;
-			}
-		`,
-	},
 };
