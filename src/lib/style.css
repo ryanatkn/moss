@@ -221,33 +221,26 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 
 :where(code:not(.unstyled)) {
 	font-family: var(--font_family_mono);
-	font-weight: 600;
 	-webkit-hyphens: none;
 	hyphens: none;
 	color: var(--text_color, var(--text_color_3));
 	background-color: var(--fg_1);
 	padding: 0 var(--space_xs2);
 	border-radius: var(--border_radius, var(--border_radius_xs));
+	white-space: pre-wrap;
 }
 
 :where(code.inline, p code) {
-	white-space: nowrap;
+	display: inline-block;
+	vertical-align: baseline;
 }
 
-/* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
-/* keep in sync with `.pre` styling in `css_classes.ts` */
 :where(pre:not(.unstyled)) {
 	font-family: var(--font_family_mono);
 	color: var(--text_color, var(--text_color_3));
+	white-space: pre;
 	overflow: auto;
 	max-width: 100%;
-}
-:where(pre:not(.unstyled) > code) {
-	display: block;
-	font-size: var(
-		--font_size_sm
-	); /* TODO @many use a var? maybe computed from generic `--font_size`? */
-	font-weight: 500;
 }
 
 :where(hr:not(.unstyled)) {
