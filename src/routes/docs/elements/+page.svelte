@@ -64,11 +64,6 @@
 		<pre>a <code class="display_inline">pre</code> is
   preformatted
 					text</pre>
-		<pre><code
-				><code class="display_inline">code</code> in a <code class="display_inline">pre</code>
-		 	is a
-				 block</code
-			></pre>
 	</Tome_Section>
 	<Tome_Section>
 		<Tome_Section_Header text="details and summary">
