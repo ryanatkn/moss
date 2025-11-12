@@ -235,7 +235,6 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 }
 
 /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#break-spaces */
-/* keep in sync with `.pre` styling in `css_classes.ts` */
 :where(pre:not(.unstyled)) {
 	font-family: var(--font_family_mono);
 	color: var(--text_color, var(--text_color_3));
