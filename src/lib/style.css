@@ -280,6 +280,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	border-style: var(--border_style);
 	border-width: var(--border_width);
 	border-radius: var(--border_radius, var(--border_radius_sm));
+	/* TODO --outline_color should default to --hue when available, but can't be set above */
 	outline: var(--outline_width) var(--outline_style) var(--outline_color);
 	padding: var(--input_padding_y) var(--input_padding_x);
 	width: 100%;
