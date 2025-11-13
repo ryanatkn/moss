@@ -220,6 +220,7 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 }
 
 :where(code:not(.unstyled)) {
+	white-space: pre-wrap;
 	font-family: var(--font_family_mono);
 	-webkit-hyphens: none;
 	hyphens: none;
@@ -227,7 +228,6 @@ currently can break based on DOM structure - https://developer.mozilla.org/en-US
 	background-color: var(--fg_1);
 	padding: 0 var(--space_xs2);
 	border-radius: var(--border_radius, var(--border_radius_xs));
-	white-space: pre-wrap;
 }
 
 :where(code.inline, p code) {
