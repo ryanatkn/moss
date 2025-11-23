@@ -2,7 +2,7 @@ import {test, assert} from 'vitest';
 import {readFileSync} from 'node:fs';
 
 import * as exported_variables from '$lib/variables.js';
-import css_classes_text from '../fixtures/css_classes_fixture.json?raw';
+import css_classes_text from './fixtures/css_classes_fixture.json?raw';
 
 // vitest replaces this with an empty string because CSS isn't opted into being processed,
 // and it has no CLI option, so just read it directly

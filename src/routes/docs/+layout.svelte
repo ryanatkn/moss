@@ -4,11 +4,11 @@
 	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
+	import {pkg_context} from '@ryanatkn/fuz/pkg.svelte.js';
 
 	import {tomes} from '$routes/docs/tomes.js';
 	import {selected_variable_context} from '$routes/style_variable_helpers.svelte.js';
 	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
-	import {pkg_context} from '$routes/pkg.js';
 	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
 
 	interface Props {

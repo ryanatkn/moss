@@ -5,8 +5,8 @@
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 	import Hidden_Personal_Links from '@ryanatkn/fuz/Hidden_Personal_Links.svelte';
+	import {pkg_context} from '@ryanatkn/fuz/pkg.svelte.js';
 
-	import {pkg_context} from '$routes/pkg.js';
 	import Introduction from '$routes/Introduction.svelte';
 	import File_Link from '$routes/File_Link.svelte';
 	import {MAIN_HEADER_MARGIN_TOP} from '$routes/constants.js';

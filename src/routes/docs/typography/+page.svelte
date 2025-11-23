@@ -124,7 +124,7 @@
 		<p>Font weight values can be any integer from 1 to 1000.</p>
 		<p>
 			There are no variables for <Mdn_Link path="Web/CSS/font-weight" /> but there are
-			<Tome_Link name="classes" hash="utility-classes">utility classes</Tome_Link>.
+			<Tome_Link name="classes" hash="Utility-classes">utility classes</Tome_Link>.
 		</p>
 		<form>
 			<Font_Size_Control bind:selected_size />

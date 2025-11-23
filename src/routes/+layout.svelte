@@ -4,12 +4,11 @@
 	import '$routes/moss.css';
 	import '@ryanatkn/fuz_code/theme.css';
 
-	import {Pkg} from '@ryanatkn/fuz/pkg.svelte.js';
+	import {Pkg, pkg_context} from '@ryanatkn/fuz/pkg.svelte.js';
 	import type {Snippet} from 'svelte';
 	import Themed from '@ryanatkn/fuz/Themed.svelte';
 	import Spiders from '@ryanatkn/fuz/Spiders.svelte';
 
-	import {pkg_context} from '$routes/pkg.js';
 	import {package_json, src_json} from '$routes/package.js';
 	// TODO re-enable this, see comment below
 	// import Contextmenu_Root from '$lib/Contextmenu_Root.svelte';
