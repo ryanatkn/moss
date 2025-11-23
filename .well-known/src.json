@@ -1,19 +1,19 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.37.0",
-  "modules": {
-    "./css_class_composites.js": {
+  "version": "0.38.0",
+  "modules": [
+    {
       "path": "css_class_composites.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "css_class_composites",
           "kind": "variable"
         }
       ]
     },
-    "./css_class_generators.js": {
+    {
       "path": "css_class_generators.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "Class_Template_Result",
           "kind": "type"
@@ -92,9 +92,9 @@
         }
       ]
     },
-    "./css_class_helpers.js": {
+    {
       "path": "css_class_helpers.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "Css_Extractor",
           "kind": "type"
@@ -133,9 +133,9 @@
         }
       ]
     },
-    "./css_class_interpreters.js": {
+    {
       "path": "css_class_interpreters.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "opacity_interpreter",
           "kind": "variable"
@@ -162,18 +162,18 @@
         }
       ]
     },
-    "./css_classes.js": {
+    {
       "path": "css_classes.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "css_classes_by_name",
           "kind": "variable"
         }
       ]
     },
-    "./gen_moss_css.js": {
+    {
       "path": "gen_moss_css.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "Gen_Moss_Css_Options",
           "kind": "type"
@@ -184,18 +184,18 @@
         }
       ]
     },
-    "./theme.gen.css.js": {
+    {
       "path": "theme.gen.css.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "gen",
           "kind": "function"
         }
       ]
     },
-    "./theme.js": {
+    {
       "path": "theme.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "Color_Scheme",
           "kind": "type"
@@ -222,9 +222,9 @@
         }
       ]
     },
-    "./themes.js": {
+    {
       "path": "themes.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "DEFAULT_THEME",
           "kind": "variable"
@@ -235,9 +235,9 @@
         }
       ]
     },
-    "./variable_data.js": {
+    {
       "path": "variable_data.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "Size_Variant",
           "kind": "type"
@@ -500,9 +500,9 @@
         }
       ]
     },
-    "./variable.js": {
+    {
       "path": "variable.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "Style_Variable_Name",
           "kind": "type"
@@ -521,9 +521,9 @@
         }
       ]
     },
-    "./variables.js": {
+    {
       "path": "variables.ts",
-      "declarations": [
+      "identifiers": [
         {
           "name": "hue_a",
           "kind": "variable"
@@ -1870,23 +1870,23 @@
         }
       ]
     },
-    "./style.css": {
+    {
       "path": "style.css",
-      "declarations": [
+      "identifiers": [
         {
           "name": "default",
           "kind": "css"
         }
       ]
     },
-    "./theme.css": {
+    {
       "path": "theme.css",
-      "declarations": [
+      "identifiers": [
         {
           "name": "default",
           "kind": "css"
         }
       ]
     }
-  }
+  ]
 }
