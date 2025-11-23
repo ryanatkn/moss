@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.38.0
+
+### Minor Changes
+
+- improve code element styles and remove `.pre` ([#68](https://github.com/ryanatkn/moss/pull/68))
+
 ## 0.37.0
 
 ### Minor Changes
