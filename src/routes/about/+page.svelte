@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Docs_Footer from '@ryanatkn/fuz/Docs_Footer.svelte';
 	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
-	import Community_Links_Panel from '@ryanatkn/fuz/Community_Links_Panel.svelte';
+	import Ecosystem_Links_Panel from '@ryanatkn/fuz/Ecosystem_Links_Panel.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
+	import {pkg_context} from '@ryanatkn/fuz/pkg.svelte.js';
 
-	import {pkg_context} from '$routes/pkg.js';
 	import {MAIN_HEADER_MARGIN_TOP} from '$routes/constants.js';
 
 	const pkg = pkg_context.get();
@@ -23,7 +23,7 @@
 		</header>
 		<Breadcrumb><Svg data={moss_logo} size="var(--icon_size_sm)" /></Breadcrumb>
 	</section>
-	<Community_Links_Panel />
+	<Ecosystem_Links_Panel />
 	<section>
 		<div class="panel p_md width_upto_md">
 			<Package_Detail {pkg} />

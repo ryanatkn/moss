@@ -1,4 +1,4 @@
-import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
+import type {Css_Class_Declaration} from './css_class_helpers.js';
 
 export type Class_Template_Result = {
 	name: string;

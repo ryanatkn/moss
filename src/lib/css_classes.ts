@@ -1,4 +1,4 @@
-import type {Css_Class_Declaration} from '$lib/css_class_helpers.js';
+import type {Css_Class_Declaration} from './css_class_helpers.js';
 import {
 	generate_classes,
 	to_kebab,
@@ -11,7 +11,7 @@ import {
 	generate_shadow_classes,
 	format_spacing_value,
 	format_dimension_value,
-} from '$lib/css_class_generators.js';
+} from './css_class_generators.js';
 import {
 	space_variants,
 	color_variants,
@@ -39,8 +39,8 @@ import {
 	scrollbar_gutter_values,
 	shadow_semantic_values,
 	shadow_alpha_variants,
-} from '$lib/variable_data.js';
-import {css_class_composites} from '$lib/css_class_composites.js';
+} from './variable_data.js';
+import {css_class_composites} from './css_class_composites.js';
 
 // TODO add animation support, either as a separate thing or rename `css_classes_by_name` to be more generic, like `css_by_name` - need to collect `animation: foo ...` names like we do classes
 

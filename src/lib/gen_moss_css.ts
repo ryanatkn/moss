@@ -7,9 +7,9 @@ import {
 	generate_classes_css,
 	type Css_Class_Declaration,
 	type Css_Class_Declaration_Interpreter,
-} from '$lib/css_class_helpers.js';
-import {css_classes_by_name} from '$lib/css_classes.js';
-import {css_class_interpreters} from '$lib/css_class_interpreters.js';
+} from './css_class_helpers.js';
+import {css_classes_by_name} from './css_classes.js';
+import {css_class_interpreters} from './css_class_interpreters.js';
 
 export interface Gen_Moss_Css_Options {
 	filter_file?: File_Filter | null;

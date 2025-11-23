@@ -1,5 +1,5 @@
-import type {Style_Variable} from '$lib/variable.js';
-import {icon_sizes} from '$lib/variable_data.js';
+import type {Style_Variable} from './variable.js';
+import {icon_sizes} from './variable_data.js';
 
 /*
 
