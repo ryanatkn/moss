@@ -2,7 +2,7 @@
 // Do not edit directly - regenerated on build
 
 import type {Package_Json} from '@ryanatkn/belt/package_json.js';
-import type {Src_Json} from './src_json.js';
+import type {Src_Json} from '@ryanatkn/belt/src_json.js';
 
 export const package_json: Package_Json = {
 	name: '@ryanatkn/moss',
@@ -38,27 +38,27 @@ export const package_json: Package_Json = {
 	},
 	devDependencies: {
 		'@changesets/changelog-git': '^0.2.1',
-		'@ryanatkn/belt': '^0.36.1',
-		'@ryanatkn/eslint-config': '^0.8.0',
-		'@ryanatkn/fuz': '^0.148.0',
-		'@ryanatkn/fuz_code': '^0.30.1',
-		'@ryanatkn/gro': '^0.172.0',
+		'@ryanatkn/belt': '^0.38.0',
+		'@ryanatkn/eslint-config': '^0.9.0',
+		'@ryanatkn/fuz': '^0.157.0',
+		'@ryanatkn/fuz_code': '^0.33.0',
+		'@ryanatkn/gro': '^0.174.1',
 		'@sveltejs/adapter-static': '^3.0.9',
-		'@sveltejs/kit': '^2.37.1',
-		'@sveltejs/package': '^2.5.0',
-		'@sveltejs/vite-plugin-svelte': '^6.1.4',
+		'@sveltejs/kit': '^2.49.0',
+		'@sveltejs/package': '^2.5.6',
+		'@sveltejs/vite-plugin-svelte': '^6.2.1',
 		'@types/node': '^24.3.1',
 		eslint: '^9.35.0',
 		'eslint-plugin-svelte': '^3.12.2',
 		prettier: '^3.6.2',
 		'prettier-plugin-svelte': '^3.4.0',
-		svelte: '^5.38.7',
-		'svelte-check': '^4.3.2',
+		svelte: '^5.43.14',
+		'svelte-check': '^4.3.4',
 		tslib: '^2.8.1',
-		typescript: '^5.9.2',
+		typescript: '^5.9.3',
 		'typescript-eslint': '^8.42.0',
-		vitest: '^3.2.4',
-		zod: '^4.1.5',
+		vitest: '^4.0.13',
+		zod: '^4.1.12',
 	},
 	prettier: {
 		plugins: ['prettier-plugin-svelte'],
@@ -107,6 +107,7 @@ export const src_json: Src_Json = {
 					type_signature: 'Record<string, Css_Class_Declaration | undefined>',
 				},
 			],
+			dependents: ['css_classes.ts'],
 		},
 		{
 			path: 'css_class_generators.ts',
@@ -428,6 +429,7 @@ export const src_json: Src_Json = {
 					],
 				},
 			],
+			dependents: ['css_classes.ts'],
 		},
 		{
 			path: 'css_class_helpers.ts',
@@ -483,38 +485,55 @@ export const src_json: Src_Json = {
 							type_signature: 'Set<string> | null',
 						},
 						{
-							name: '#all',
-							kind: 'variable',
-							type_signature: 'Set<string>',
-						},
-						{
-							name: '#by_id',
-							kind: 'variable',
-							type_signature: 'Map<string, Set<string>>',
-						},
-						{
-							name: '#dirty',
-							kind: 'variable',
+							name: 'constructor',
+							kind: 'constructor',
+							type_signature: '(include_classes?: Set<string> | null): Css_Classes',
+							parameters: [
+								{
+									name: 'include_classes',
+									type: 'Set<string> | null',
+									optional: false,
+									default_value: 'null',
+								},
+							],
 						},
 						{
 							name: 'add',
 							kind: 'function',
-							type_signature: '(id: string, classes: Set<string>) => void',
+							type_signature: '(id: string, classes: Set<string>): void',
+							return_type: 'void',
+							parameters: [
+								{
+									name: 'id',
+									type: 'string',
+									optional: false,
+								},
+								{
+									name: 'classes',
+									type: 'Set<string>',
+									optional: false,
+								},
+							],
 						},
 						{
 							name: 'delete',
 							kind: 'function',
-							type_signature: '(id: string) => void',
+							type_signature: '(id: string): void',
+							return_type: 'void',
+							parameters: [
+								{
+									name: 'id',
+									type: 'string',
+									optional: false,
+								},
+							],
 						},
 						{
 							name: 'get',
 							kind: 'function',
-							type_signature: '() => Set<string>',
-						},
-						{
-							name: '#recalculate',
-							kind: 'function',
-							type_signature: '() => void',
+							type_signature: '(): Set<string>',
+							return_type: 'Set<string>',
+							parameters: [],
 						},
 					],
 				},
@@ -615,6 +634,7 @@ export const src_json: Src_Json = {
 					],
 				},
 			],
+			dependents: ['gen_moss_css.ts'],
 		},
 		{
 			path: 'css_class_interpreters.ts',
@@ -666,6 +686,8 @@ export const src_json: Src_Json = {
 					type_signature: 'Css_Class_Declaration_Interpreter[]',
 				},
 			],
+			dependencies: ['variable_data.ts'],
+			dependents: ['gen_moss_css.ts'],
 		},
 		{
 			path: 'css_classes.ts',
@@ -674,11 +696,13 @@ export const src_json: Src_Json = {
 					name: 'css_classes_by_name',
 					kind: 'variable',
 					doc_comment: '',
-					see_also: ['`generate_classes_css`'],
+					see_also: ['``generate_classes_css``'],
 					source_line: 54,
 					type_signature: 'Record<string, Css_Class_Declaration | undefined>',
 				},
 			],
+			dependencies: ['css_class_composites.ts', 'css_class_generators.ts', 'variable_data.ts'],
+			dependents: ['gen_moss_css.ts'],
 		},
 		{
 			path: 'gen_moss_css.ts',
@@ -727,6 +751,7 @@ export const src_json: Src_Json = {
 					],
 				},
 			],
+			dependencies: ['css_class_helpers.ts', 'css_class_interpreters.ts', 'css_classes.ts'],
 		},
 		{
 			path: 'theme.gen.css.ts',
@@ -737,6 +762,7 @@ export const src_json: Src_Json = {
 					source_line: 10,
 				},
 			],
+			dependencies: ['theme.ts', 'themes.ts'],
 		},
 		{
 			path: 'theme.ts',
@@ -850,6 +876,8 @@ export const src_json: Src_Json = {
 					],
 				},
 			],
+			dependencies: ['themes.ts', 'variables.ts'],
+			dependents: ['theme.gen.css.ts'],
 		},
 		{
 			path: 'themes.ts',
@@ -868,6 +896,7 @@ export const src_json: Src_Json = {
 					type_signature: 'Theme[]',
 				},
 			],
+			dependents: ['theme.gen.css.ts', 'theme.ts'],
 		},
 		{
 			path: 'variable_data.ts',
@@ -1280,6 +1309,7 @@ export const src_json: Src_Json = {
 					type_signature: '2147483647',
 				},
 			],
+			dependents: ['css_class_interpreters.ts', 'css_classes.ts', 'variables.ts'],
 		},
 		{
 			path: 'variable.ts',
@@ -3362,6 +3392,8 @@ export const src_json: Src_Json = {
 					type_signature: 'Style_Variable[]',
 				},
 			],
+			dependencies: ['variable_data.ts'],
+			dependents: ['theme.ts'],
 		},
 	],
 };

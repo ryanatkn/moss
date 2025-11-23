@@ -14,6 +14,13 @@
 	align-items: center;
 }
 
+.ellipsis {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .width_upto_xs {
 	width: 100%;
 	max-width: var(--distance_xs);
@@ -203,6 +210,10 @@ a.chip {
 }
 .font_family_mono {
 	font-family: var(--font_family_mono);
+}
+.font_size_xl {
+	font-size: var(--font_size_xl);
+	--font_size: var(--font_size_xl);
 }
 .font_size_xl3 {
 	font-size: var(--font_size_xl3);
@@ -449,6 +460,9 @@ a.chip {
 .width_100 {
 	width: 100%;
 }
+.height_100 {
+	height: 100%;
+}
 .top_0 {
 	top: 0;
 }
@@ -482,9 +496,22 @@ a.chip {
 .pl_sm {
 	padding-left: var(--space_sm);
 }
+.pl_xl {
+	padding-left: var(--space_xl);
+}
+.pl_xl2 {
+	padding-left: var(--space_xl2);
+}
+.pl_xl3 {
+	padding-left: var(--space_xl3);
+}
 .px_lg {
 	padding-left: var(--space_lg);
 	padding-right: var(--space_lg);
+}
+.px_xl {
+	padding-left: var(--space_xl);
+	padding-right: var(--space_xl);
 }
 .mt_0 {
 	margin-top: 0;
