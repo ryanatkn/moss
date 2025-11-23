@@ -1,4 +1,4 @@
-import type {Theme} from '$lib/theme.js';
+import type {Theme} from './theme.js';
 
 export const DEFAULT_THEME: Theme = {
 	name: 'base',

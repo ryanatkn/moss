@@ -1,5 +1,5 @@
-import type {Css_Class_Declaration_Interpreter} from '$lib/css_class_helpers.js';
-import {Z_INDEX_MAX} from '$lib/variable_data.js';
+import type {Css_Class_Declaration_Interpreter} from './css_class_helpers.js';
+import {Z_INDEX_MAX} from './variable_data.js';
 
 /**
  * Interpreter for opacity classes (opacity_0 through opacity_100).

@@ -1,6 +1,6 @@
-import {default_variables} from '$lib/variables.js';
-import {default_themes} from '$lib/themes.js'; // TODO shoudln't be a dep, see usage below
-import type {Style_Variable} from '$lib/variable.js';
+import {default_variables} from './variables.js';
+import {default_themes} from './themes.js'; // TODO shoudln't be a dep, see usage below
+import type {Style_Variable} from './variable.js';
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
