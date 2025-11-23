@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Docs_Footer from '@ryanatkn/fuz/Docs_Footer.svelte';
-	// import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
+	import Package_Detail from '@ryanatkn/fuz/Package_Detail.svelte';
 	import Ecosystem_Links_Panel from '@ryanatkn/fuz/Ecosystem_Links_Panel.svelte';
 	import Breadcrumb from '@ryanatkn/fuz/Breadcrumb.svelte';
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
@@ -24,11 +24,11 @@
 		<Breadcrumb><Svg data={moss_logo} size="var(--icon_size_sm)" /></Breadcrumb>
 	</section>
 	<Ecosystem_Links_Panel />
-	<!-- <section>
+	<section>
 		<div class="panel p_md width_upto_md">
 			<Package_Detail {pkg} />
 		</div>
-	</section> -->
+	</section>
 	<section class="box mb_xl7">
 		<Docs_Footer {pkg}>
 			<div class="mb_xl5">

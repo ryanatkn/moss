@@ -1,6 +1,7 @@
 import type {Tome} from '@ryanatkn/fuz/tome.js';
 
 import introduction from '$routes/docs/introduction/+page.svelte';
+import api from '$routes/docs/api/+page.svelte';
 import themes from '$routes/docs/themes/+page.svelte';
 import colors from '$routes/docs/colors/+page.svelte';
 import buttons from '$routes/docs/buttons/+page.svelte';
@@ -22,6 +23,14 @@ export const tomes: Array<Tome> = [
 		name: 'introduction',
 		category: 'guide',
 		component: introduction,
+		related_tomes: ['api'],
+		related_modules: [],
+		related_identifiers: [],
+	},
+	{
+		name: 'api',
+		category: 'guide',
+		component: api,
 		related_tomes: [],
 		related_modules: [],
 		related_identifiers: [],
