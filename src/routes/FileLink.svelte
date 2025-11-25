@@ -32,6 +32,7 @@
 	const href = $derived(base_path + final_path);
 </script>
 
+<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 <a {...attrs} {href} class:chip={!unstyled} class:white_space_nowrap={true}
 	>{#if typeof icon === 'string'}{icon}{:else}{@render icon()}{/if}
 	{#if children}{@render children()}{:else}{final_path}{/if}</a

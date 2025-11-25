@@ -22,7 +22,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'introduction',
 		category: 'guide',
-		component: introduction,
+		Component: introduction,
 		related_tomes: ['api'],
 		related_modules: [],
 		related_identifiers: [],
@@ -30,7 +30,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'api',
 		category: 'guide',
-		component: api,
+		Component: api,
 		related_tomes: [],
 		related_modules: [],
 		related_identifiers: [],
@@ -38,7 +38,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'themes',
 		category: 'systems',
-		component: themes,
+		Component: themes,
 		related_tomes: ['variables', 'colors', 'typography'],
 		related_modules: [],
 		related_identifiers: [],
@@ -46,7 +46,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'variables',
 		category: 'systems',
-		component: variables,
+		Component: variables,
 		related_tomes: ['themes'],
 		related_modules: [],
 		related_identifiers: [],
@@ -54,7 +54,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'classes',
 		category: 'systems',
-		component: classes,
+		Component: classes,
 		related_tomes: ['elements'],
 		related_modules: [],
 		related_identifiers: [],
@@ -62,7 +62,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'colors',
 		category: 'styles',
-		component: colors,
+		Component: colors,
 		related_tomes: ['themes', 'buttons', 'borders', 'shading', 'shadows'],
 		related_modules: [],
 		related_identifiers: [],
@@ -70,7 +70,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'buttons',
 		category: 'styles',
-		component: buttons,
+		Component: buttons,
 		related_tomes: ['colors', 'elements', 'forms', 'borders'],
 		related_modules: [],
 		related_identifiers: [],
@@ -78,7 +78,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'elements',
 		category: 'styles',
-		component: elements,
+		Component: elements,
 		related_tomes: ['buttons', 'forms', 'classes', 'typography', 'borders', 'layout'],
 		related_modules: [],
 		related_identifiers: [],
@@ -86,7 +86,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'forms',
 		category: 'styles',
-		component: forms,
+		Component: forms,
 		related_tomes: ['buttons', 'elements', 'borders'],
 		related_modules: [],
 		related_identifiers: [],
@@ -94,7 +94,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'typography',
 		category: 'styles',
-		component: typography,
+		Component: typography,
 		related_tomes: ['themes', 'elements'],
 		related_modules: [],
 		related_identifiers: [],
@@ -102,7 +102,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'borders',
 		category: 'styles',
-		component: borders,
+		Component: borders,
 		related_tomes: ['colors', 'buttons', 'elements', 'forms', 'shading', 'shadows'],
 		related_modules: [],
 		related_identifiers: [],
@@ -110,7 +110,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'shading',
 		category: 'styles',
-		component: shading,
+		Component: shading,
 		related_tomes: ['colors', 'borders', 'shadows'],
 		related_modules: [],
 		related_identifiers: [],
@@ -118,7 +118,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'shadows',
 		category: 'styles',
-		component: shadows,
+		Component: shadows,
 		related_tomes: ['colors', 'borders', 'shading'],
 		related_modules: [],
 		related_identifiers: [],
@@ -126,7 +126,7 @@ export const tomes: Array<Tome> = [
 	{
 		name: 'layout',
 		category: 'styles',
-		component: layout,
+		Component: layout,
 		related_tomes: ['elements'],
 		related_modules: [],
 		related_identifiers: [],
@@ -135,7 +135,7 @@ export const tomes: Array<Tome> = [
 	// {
 	// 	name: 'menu item',
 	// 	category: 'styles',
-	// component: menu_item,
+	// Component: menu_item,
 	// 	related_tomes: [],
 	// related_modules: [],
 	// related_identifiers: [],

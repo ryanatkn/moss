@@ -25,10 +25,7 @@ export interface RenderThemeStyleOptions {
 	specificity?: number;
 }
 
-export const render_theme_style = (
-	theme: Theme,
-	options: RenderThemeStyleOptions = {},
-): string => {
+export const render_theme_style = (theme: Theme, options: RenderThemeStyleOptions = {}): string => {
 	const {comments = false, id = null, empty_default_theme = true, specificity = 2} = options;
 	const variables =
 		theme.name === default_themes[0]!.name

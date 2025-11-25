@@ -198,8 +198,8 @@ ${'<' as string}script>
 			frameworky parts, and are well-integrated with the other APIs and tools.
 		</p>
 		<p>
-			Moss exports <ModuleLink path="css_class_helpers.ts">helpers</ModuleLink> to generate styles
-			on demand based on class usage in your source files, so you can ship the minimal code needed. Some
+			Moss exports <ModuleLink path="css_class_helpers.ts">helpers</ModuleLink> to generate styles on
+			demand based on class usage in your source files, so you can ship the minimal code needed. Some
 			values are interpreted to efficiently support large value ranges, e.g. <code>opacity_0</code>
 			through <code>opacity_100</code> and <code>font_weight_1</code> to
 			<code>font_weight_1000</code>.
@@ -214,8 +214,8 @@ ${'<' as string}script>
 				href="https://svelte.dev/docs/svelte/class#Attributes-Objects-and-arrays"
 				>Svelte's object+array class syntax</a
 			>, added in 5.16. For now see
-			<ModuleLink path="css_class_helpers.test.ts">the tests</ModuleLink> for the supported forms.
-			The current strategy uses a regexp for TS and Svelte files, but we'll probably need to more robustly
+			<ModuleLink path="css_class_helpers.test.ts">the tests</ModuleLink> for the supported forms. The
+			current strategy uses a regexp for TS and Svelte files, but we'll probably need to more robustly
 			scan the parsed AST.
 		</aside>
 		<p>

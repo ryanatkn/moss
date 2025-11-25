@@ -88,9 +88,7 @@ export const to_kebab = (str: string): string => str.replace(/_/g, '-');
 export const to_variable_name = (str: string): string => str.replace(/[-\s]+/g, '_');
 
 // Helper to generate global value classes for any CSS property
-export const generate_global_classes = (
-	property: string,
-): Record<string, CssClassDeclaration> => {
+export const generate_global_classes = (property: string): Record<string, CssClassDeclaration> => {
 	return generate_classes(
 		(global: (typeof CSS_GLOBALS)[number]) => ({
 			name: `${to_variable_name(property)}_${global}`,
