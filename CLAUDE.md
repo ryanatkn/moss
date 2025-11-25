@@ -66,7 +66,7 @@ Moss is a CSS framework and design system built on **style variables** - design 
 ### TypeScript/JS
 
 - tabs for indentation (not spaces)
-- snake_case and UpperSnakeCase naming for variables and types (e.g., `StyleVariable`, `bg_color_1`)
+- snake_case and PascalCase naming for variables and types (e.g., `StyleVariable`, `bg_color_1`)
 - prefer `const fn = () =>` arrow functions instead of using the `function` keyword.
 
 ### CSS variables
