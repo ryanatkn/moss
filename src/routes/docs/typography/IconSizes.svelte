@@ -1,24 +1,24 @@
 <script lang="ts">
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
-	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import StyleVariableButton from '$routes/StyleVariableButton.svelte';
 	import {icon_sizes} from '$lib/variable_data.js';
 </script>
 
-<Tome_Section>
-	<Tome_Section_Header text="Icon sizes" />
+<TomeSection>
+	<TomeSectionHeader text="Icon sizes" />
 	<aside>
 		unlike <code>--font_size_</code> variables, <code>--icon_</code> variables are in
 		<code>px</code>
 		not <code>rem</code>, so they're insensitive to browser font size
 	</aside>
-</Tome_Section>
+</TomeSection>
 <div class="icon_sizes">
 	{#each Object.entries(icon_sizes) as [name, value] (name)}
 		<figure>
 			<figcaption>
-				<Style_Variable_Button {name} /> =
+				<StyleVariableButton {name} /> =
 				<code>{value}</code>
 			</figcaption>
 			<div

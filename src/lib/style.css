@@ -69,7 +69,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 
 @media (prefers-reduced-motion) {
 	:root {
-		/* setting to `initial` disables animations but allows for fallbacks (see Pending_Animation)  */
+		/* setting to `initial` disables animations but allows for fallbacks (see PendingAnimation)  */
 		--duration_6: initial;
 		--duration_5: initial;
 		--duration_4: initial;
@@ -121,7 +121,7 @@ The `!important` makes this `hidden` behavior much higher specificity.
 	font-weight: var(--font_weight);
 	line-height: var(--line_height_sm);
 	text-wrap: balance; /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#balance */
-	/* TODO use this pattern elsewhere? provides API to components like `Mdn_Logo` */
+	/* TODO use this pattern elsewhere? provides API to components like `MdnLogo` */
 	overflow-wrap: break-word; /* TODO @many is this best? `anywhere` instead? what about adding elsewhere? */
 }
 

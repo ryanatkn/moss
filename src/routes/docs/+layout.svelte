@@ -8,8 +8,8 @@
 
 	import {tomes} from '$routes/docs/tomes.js';
 	import {selected_variable_context} from '$routes/style_variable_helpers.svelte.js';
-	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import StyleVariableDetail from '$routes/StyleVariableDetail.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	interface Props {
 		children: Snippet;
@@ -39,8 +39,8 @@
 	<Dialog onclose={() => (selected_variable.value = null)}>
 		{#snippet children(close)}
 			<div class="pane p_xl width_upto_md mx_auto">
-				<Style_Variable_Detail variable={selected_variable.value} />
-				<Unfinished_Implementation_Warning />
+				<StyleVariableDetail variable={selected_variable.value} />
+				<UnfinishedImplementationWarning />
 				<button type="button" onclick={close}>ok</button>
 			</div>
 		{/snippet}

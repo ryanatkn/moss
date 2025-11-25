@@ -1,21 +1,21 @@
 <script lang="ts">
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
-	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
+	import ColorSchemeInput from '@ryanatkn/fuz/ColorSchemeInput.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
-	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
+	import TomeLink from '@ryanatkn/fuz/TomeLink.svelte';
 
-	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import StyleVariableButton from '$routes/StyleVariableButton.svelte';
 	import {
 		color_variants,
 		shadow_font_size_variants,
 		shadow_variant_prefixes,
 		shadow_alpha_variants,
-		type Shadow_Size_Variant,
-		type Color_Variant,
+		type ShadowSizeVariant,
+		type ColorVariant,
 	} from '$lib/variable_data.js';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'shadows';
 
@@ -29,38 +29,38 @@
 	// TODO duplicate shadows links
 </script>
 
-<Tome_Content {tome}>
-	<Unfinished_Implementation_Warning
+<TomeContent {tome}>
+	<UnfinishedImplementationWarning
 		>This is unfinished and will change. It feels simultaneously limiting in usage and bloated in
-		the implementation.</Unfinished_Implementation_Warning
+		the implementation.</UnfinishedImplementationWarning
 	>
 	<p>
-		Moss's shadows build on the light model discussed in the <Tome_Link name="shading" /> docs.
+		Moss's shadows build on the light model discussed in the <TomeLink name="shading" /> docs.
 	</p>
-	<Tome_Section>
-		<Tome_Section_Header text="Shadow" />
+	<TomeSection>
+		<TomeSectionHeader text="Shadow" />
 		<p>Shadows darken in light mode and lighten in dark mode.</p>
-		<Unfinished_Implementation_Warning
-			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</Unfinished_Implementation_Warning
+		<UnfinishedImplementationWarning
+			>Maybe rename for clarity? It's weird that shadows lighten in dark mode.</UnfinishedImplementationWarning
 		>
 		{@render shadow_example_header()}
 		{#each shadow_variant_prefixes as shadow_variant_prefix (shadow_variant_prefix)}
 			{#each shadow_font_size_variants as shadow_font_size_variant (shadow_font_size_variant)}
 				<div class="shadow_example">
 					<div class="shadow_main_example {shadow_variant_prefix}{shadow_font_size_variant}">
-						<Style_Variable_Button name="{shadow_variant_prefix}{shadow_font_size_variant}" />
-						<Style_Variable_Button name="shadow_color" />
+						<StyleVariableButton name="{shadow_variant_prefix}{shadow_font_size_variant}" />
+						<StyleVariableButton name="shadow_color" />
 					</div>
 					{@render shadow_variant_examples(null, shadow_font_size_variant, shadow_variant_prefix)}
 				</div>
 			{/each}
 		{/each}
-	</Tome_Section>
+	</TomeSection>
 	<section>
-		<Color_Scheme_Input />
+		<ColorSchemeInput />
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Highlight" />
+	<TomeSection>
+		<TomeSectionHeader text="Highlight" />
 		<p>Hightlights lighten in light mode and darken in dark mode.</p>
 		<div class="panel fg_3 p_md">
 			{@render shadow_example_header()}
@@ -70,8 +70,8 @@
 						<div
 							class="shadow_main_example {shadow_variant_prefix}{shadow_font_size_variant} shadow_color_highlight"
 						>
-							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_font_size_variant}" />
-							<Style_Variable_Button name="shadow_color_highlight" />
+							<StyleVariableButton name="{shadow_variant_prefix}{shadow_font_size_variant}" />
+							<StyleVariableButton name="shadow_color_highlight" />
 						</div>
 						{@render shadow_variant_examples(
 							'highlight',
@@ -82,12 +82,12 @@
 				{/each}
 			{/each}
 		</div>
-	</Tome_Section>
+	</TomeSection>
 	<section>
-		<Color_Scheme_Input />
+		<ColorSchemeInput />
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Glow" />
+	<TomeSection>
+		<TomeSectionHeader text="Glow" />
 		<p>Glows lighten in both light and dark mode.</p>
 		<div class="panel darken_3 p_md">
 			{@render shadow_example_header()}
@@ -97,8 +97,8 @@
 						<div
 							class="shadow_main_example {shadow_variant_prefix}{shadow_font_size_variant} shadow_color_glow"
 						>
-							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_font_size_variant}" />
-							<Style_Variable_Button name="shadow_color_glow" />
+							<StyleVariableButton name="{shadow_variant_prefix}{shadow_font_size_variant}" />
+							<StyleVariableButton name="shadow_color_glow" />
 						</div>
 						{@render shadow_variant_examples(
 							'glow',
@@ -109,12 +109,12 @@
 				{/each}
 			{/each}
 		</div>
-	</Tome_Section>
+	</TomeSection>
 	<section>
-		<Color_Scheme_Input />
+		<ColorSchemeInput />
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Shroud" />
+	<TomeSection>
+		<TomeSectionHeader text="Shroud" />
 		<p>Shrouds darken in both light and dark mode.</p>
 		<div class="panel lighten_3 p_md">
 			{@render shadow_example_header()}
@@ -124,8 +124,8 @@
 						<div
 							class="shadow_main_example {shadow_variant_prefix}{shadow_font_size_variant} shadow_color_shroud"
 						>
-							<Style_Variable_Button name="{shadow_variant_prefix}{shadow_font_size_variant}" />
-							<Style_Variable_Button name="shadow_color_shroud" />
+							<StyleVariableButton name="{shadow_variant_prefix}{shadow_font_size_variant}" />
+							<StyleVariableButton name="shadow_color_shroud" />
 						</div>
 						{@render shadow_variant_examples(
 							'shroud',
@@ -136,12 +136,12 @@
 				{/each}
 			{/each}
 		</div>
-	</Tome_Section>
+	</TomeSection>
 	<section>
-		<Color_Scheme_Input />
+		<ColorSchemeInput />
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Colorful shadows" />
+	<TomeSection>
+		<TomeSectionHeader text="Colorful shadows" />
 		<p>These are darker in light mode than in dark mode.</p>
 		{@render shadow_example_header()}
 		{#each color_variants as color_variant (color_variant)}
@@ -153,11 +153,11 @@
 							<div
 								class="shadow_main_example {shadow_variant_prefix}{shadow_font_size_variant} shadow_color_{color_variant}"
 							>
-								<Style_Variable_Button
+								<StyleVariableButton
 									name="{shadow_variant_prefix}{shadow_font_size_variant}"
 									{classes}
 								/>
-								<Style_Variable_Button name="shadow_color_{color_variant}" {classes} />
+								<StyleVariableButton name="shadow_color_{color_variant}" {classes} />
 							</div>
 							{@render shadow_variant_examples(
 								color_variant,
@@ -169,11 +169,11 @@
 				{/each}
 			</section>
 		{/each}
-	</Tome_Section>
+	</TomeSection>
 	<section>
-		<Color_Scheme_Input />
+		<ColorSchemeInput />
 	</section>
-</Tome_Content>
+</TomeContent>
 
 {#snippet shadow_example_header()}
 	<div class="shadow_example">
@@ -181,7 +181,7 @@
 		<div class="row gap_lg">
 			{#each shadow_alpha_variants as alpha (alpha)}
 				<code class="shadow_variant_example box">
-					<Style_Variable_Button name="shadow_alpha_{alpha}">{alpha}</Style_Variable_Button>
+					<StyleVariableButton name="shadow_alpha_{alpha}">{alpha}</StyleVariableButton>
 				</code>
 			{/each}
 		</div>
@@ -189,8 +189,8 @@
 {/snippet}
 
 {#snippet shadow_variant_examples(
-	color_variant: Color_Variant | 'highlight' | 'glow' | 'shroud' | null,
-	shadow_font_size_variant: Shadow_Size_Variant,
+	color_variant: ColorVariant | 'highlight' | 'glow' | 'shroud' | null,
+	shadow_font_size_variant: ShadowSizeVariant,
 	shadow_variant_prefix: string,
 )}
 	<div class="row gap_lg">

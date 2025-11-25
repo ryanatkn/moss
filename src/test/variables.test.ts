@@ -2,7 +2,7 @@ import {test, assert} from 'vitest';
 
 import {default_variables} from '$lib/variables.js';
 import * as exported_variables from '$lib/variables.js';
-import {is_style_variable_name, type Style_Variable} from '$lib/variable.js';
+import {is_style_variable_name, type StyleVariable} from '$lib/variable.js';
 
 test('variable names are valid', () => {
 	for (const v of default_variables) {
@@ -44,4 +44,4 @@ test('variable identifiers are all included in `default_variables`', () => {
 });
 
 // TODO extract?
-const is_style_variable = (v: any): v is Style_Variable => typeof v === 'object' && 'name' in v;
+const is_style_variable = (v: any): v is StyleVariable => typeof v === 'object' && 'name' in v;

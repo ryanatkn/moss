@@ -1,4 +1,4 @@
-import type {Css_Class_Declaration} from './css_class_helpers.js';
+import type {CssClassDeclaration} from './css_class_helpers.js';
 import {
 	generate_classes,
 	to_kebab,
@@ -51,7 +51,7 @@ import {css_class_composites} from './css_class_composites.js';
 /**
  * @see `generate_classes_css`
  */
-export const css_classes_by_name: Record<string, Css_Class_Declaration | undefined> = {
+export const css_classes_by_name: Record<string, CssClassDeclaration | undefined> = {
 	// Composite classes go first, so they can be overridden by the more specific classes.
 	...css_class_composites,
 

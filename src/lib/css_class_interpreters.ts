@@ -1,10 +1,10 @@
-import type {Css_Class_Declaration_Interpreter} from './css_class_helpers.js';
+import type {CssClassDeclarationInterpreter} from './css_class_helpers.js';
 import {Z_INDEX_MAX} from './variable_data.js';
 
 /**
  * Interpreter for opacity classes (opacity_0 through opacity_100).
  */
-export const opacity_interpreter: Css_Class_Declaration_Interpreter = {
+export const opacity_interpreter: CssClassDeclarationInterpreter = {
 	pattern: /^opacity_(\d+)$/,
 	interpret: (matched, log) => {
 		const value = parseInt(matched[1]!, 10);
@@ -21,7 +21,7 @@ export const opacity_interpreter: Css_Class_Declaration_Interpreter = {
  * Interpreter for font-weight classes,
  * `font_weight_1` through `font_weight_1000` following the CSS spec.
  */
-export const font_weight_interpreter: Css_Class_Declaration_Interpreter = {
+export const font_weight_interpreter: CssClassDeclarationInterpreter = {
 	pattern: /^font_weight_(\d+)$/,
 	interpret: (matched, log) => {
 		const value = parseInt(matched[1]!, 10);
@@ -37,7 +37,7 @@ export const font_weight_interpreter: Css_Class_Declaration_Interpreter = {
  * Interpreter for border-radius percentage classes,
  * `border_radius_0` through `border_radius_100`.
  */
-export const border_radius_interpreter: Css_Class_Declaration_Interpreter = {
+export const border_radius_interpreter: CssClassDeclarationInterpreter = {
 	pattern: /^border_radius_(\d+)$/,
 	interpret: (matched, log) => {
 		const value = parseInt(matched[1]!, 10);
@@ -54,7 +54,7 @@ export const border_radius_interpreter: Css_Class_Declaration_Interpreter = {
  * handles all four corners: top-left, top-right, bottom-left, bottom-right.
  * Examples: `border_top_left_radius_50`, `border_bottom_right_radius_100`.
  */
-export const border_radius_corners_interpreter: Css_Class_Declaration_Interpreter = {
+export const border_radius_corners_interpreter: CssClassDeclarationInterpreter = {
 	pattern: /^border_(top|bottom)_(left|right)_radius_(\d+)$/,
 	interpret: (matched, log) => {
 		const vertical = matched[1]!;
@@ -74,7 +74,7 @@ export const border_radius_corners_interpreter: Css_Class_Declaration_Interprete
  * Interpreter for z-index classes,
  * `z_index_0` through `z_index_${Z_INDEX_MAX}` (max CSS z-index).
  */
-export const z_index_interpreter: Css_Class_Declaration_Interpreter = {
+export const z_index_interpreter: CssClassDeclarationInterpreter = {
 	pattern: /^z_index_(\d+)$/,
 	interpret: (matched, log) => {
 		const value = parseInt(matched[1]!, 10);
@@ -89,7 +89,7 @@ export const z_index_interpreter: Css_Class_Declaration_Interpreter = {
 /**
  * Collection of all builtin interpreters for dynamic CSS class generation.
  */
-export const css_class_interpreters: Array<Css_Class_Declaration_Interpreter> = [
+export const css_class_interpreters: Array<CssClassDeclarationInterpreter> = [
 	opacity_interpreter,
 	font_weight_interpreter,
 	border_radius_interpreter,

@@ -2,9 +2,9 @@
 	import {swallow} from '@ryanatkn/belt/dom.js';
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
 	const LIBRARY_ITEM_NAME = 'menu item';
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
@@ -26,12 +26,12 @@
 
 <!-- eslint-disable svelte/no-useless-mustaches -->
 
-<Tome_Content {tome}>
-	<Tome_Section>
+<TomeContent {tome}>
+	<TomeSection>
 		<section>
-			<Tome_Section_Header text=".menu-item CSS class">
+			<TomeSectionHeader text=".menu-item CSS class">
 				<code>.menu_item</code> CSS class
-			</Tome_Section_Header>
+			</TomeSectionHeader>
 			<blockquote>This is experimental and may change or be removed.</blockquote>
 		</section>
 		<section>
@@ -141,5 +141,5 @@
 				</li>
 			</ul>
 		</section>
-	</Tome_Section>
-</Tome_Content>
+	</TomeSection>
+</TomeContent>

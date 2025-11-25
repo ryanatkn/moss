@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Color_Swatch_Item from '$routes/docs/colors/Color_Swatch_Item.svelte';
+	import ColorSwatchItem from '$routes/docs/colors/ColorSwatchItem.svelte';
 
 	interface Props {
 		color_name: string;
@@ -11,7 +11,7 @@
 
 <ul class="unstyled">
 	{#each {length: 9} as _, index (index)}
-		<Color_Swatch_Item {index} {color_name} {computed_styles} />
+		<ColorSwatchItem {index} {color_name} {computed_styles} />
 	{/each}
 </ul>
 

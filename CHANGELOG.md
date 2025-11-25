@@ -411,7 +411,7 @@
 ### Minor Changes
 
 - change colors back to including `hsl()` ([#30](https://github.com/ryanatkn/moss/pull/30))
-- move `Style_Variable` to `variables.ts` ([#29](https://github.com/ryanatkn/moss/pull/29))
+- move `StyleVariable` to `variables.ts` ([#29](https://github.com/ryanatkn/moss/pull/29))
 
 ### Patch Changes
 

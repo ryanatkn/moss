@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
-	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
+	import MdnLink from '@ryanatkn/fuz/MdnLink.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 
-	import Module_Link from '$routes/Module_Link.svelte';
-	import File_Link from '$routes/File_Link.svelte';
+	import ModuleLink from '$routes/ModuleLink.svelte';
+	import FileLink from '$routes/FileLink.svelte';
 	import Introduction from '$routes/Introduction.svelte';
 
 	const LIBRARY_ITEM_NAME = 'introduction';
@@ -12,7 +12,7 @@
 	const tome = get_tome_by_name(LIBRARY_ITEM_NAME);
 </script>
 
-<Tome_Content {tome}>
+<TomeContent {tome}>
 	<section>
 		<Introduction />
 		<p>Details:</p>
@@ -37,7 +37,7 @@
 			<li>themes are groups of variables</li>
 			<li>
 				dark mode is a first-class concept in the system, not a theme, instead each theme can
-				support light and/or dark <Mdn_Link path="Web/CSS/color-scheme">color-schemes</Mdn_Link>
+				support light and/or dark <MdnLink path="Web/CSS/color-scheme">color-schemes</MdnLink>
 			</li>
 			<li>
 				is agnostic to JS frameworks, for example usage see <a
@@ -49,19 +49,19 @@
 		<p>The stylesheets:</p>
 		<ul>
 			<li>
-				<Module_Link path="style.css" /> - the main stylesheet and CSS reset
+				<ModuleLink path="style.css" /> - the main stylesheet and CSS reset
 			</li>
 			<li>
-				<Module_Link path="theme.css" /> - or bring your own
+				<ModuleLink path="theme.css" /> - or bring your own
 			</li>
 			<li>
-				<File_Link path="src/routes/moss.css">src/routes/moss.css</File_Link> - a generated reference
+				<FileLink path="src/routes/moss.css">src/routes/moss.css</FileLink> - a generated reference
 				implementation using Moss's helpers that includes only the utility classes your code uses, generated
 				by
-				<a href="https://github.com/ryanatkn/gro">Gro</a> with <File_Link
-					path="src/routes/moss.gen.css.ts">src/routes/moss.gen.css.ts</File_Link
+				<a href="https://github.com/ryanatkn/gro">Gro</a> with <FileLink
+					path="src/routes/moss.gen.css.ts">src/routes/moss.gen.css.ts</FileLink
 				> using the Moss helpers in
-				<Module_Link path="gen_moss_css.js" />. I can add a Vite plugin if there's demand.
+				<ModuleLink path="gen_moss_css.js" />. I can add a Vite plugin if there's demand.
 			</li>
 			<li>
 				There are not yet tools for optimizing away unused variables, so <code>style.css</code> and
@@ -80,7 +80,7 @@
 			<a href="https://github.com/ryanatkn/moss/issues">issues</a> and
 			<a href="https://github.com/ryanatkn/moss/discussions">discussions</a>, or find me on
 			<a href="https://bsky.app/profile/ryanatkn.com">Bluesky</a>. See
-			<File_Link path="contributing.md">contributing.md</File_Link> for more 🌿
+			<FileLink path="contributing.md">contributing.md</FileLink> for more 🌿
 		</p>
 	</section>
-</Tome_Content>
+</TomeContent>

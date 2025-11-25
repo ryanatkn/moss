@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {resolve} from '$app/paths';
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
-	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
+	import TomeLink from '@ryanatkn/fuz/TomeLink.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import MdnLink from '@ryanatkn/fuz/MdnLink.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'elements';
 
@@ -21,56 +21,56 @@
 
 <!-- eslint-disable svelte/no-useless-mustaches -->
 
-<Tome_Content {tome}>
-	<Unfinished_Implementation_Warning
+<TomeContent {tome}>
+	<UnfinishedImplementationWarning
 		>Element styles are incomplete. Any <a href="https://github.com/ryanatkn/moss">requests</a
-		>?</Unfinished_Implementation_Warning
+		>?</UnfinishedImplementationWarning
 	>
 	<blockquote>
-		Styles for plain <Mdn_Link path="Web/HTML/Element">HTML elements</Mdn_Link>. See also <Tome_Link
+		Styles for plain <MdnLink path="Web/HTML/Element">HTML elements</MdnLink>. See also <TomeLink
 			name="typography"
-		/> and <Tome_Link name="forms" />.
+		/> and <TomeLink name="forms" />.
 	</blockquote>
-	<Tome_Section>
-		<Tome_Section_Header text="blockquote">
+	<TomeSection>
+		<TomeSectionHeader text="blockquote">
 			<span class="font_size_xl3">👆</span>
-			<Mdn_Link path="Web/HTML/Element/blockquote" />
-		</Tome_Section_Header>
-		<Tome_Section_Header text="hr">
+			<MdnLink path="Web/HTML/Element/blockquote" />
+		</TomeSectionHeader>
+		<TomeSectionHeader text="hr">
 			<span class="font_size_xl3">👇</span>
-			<Mdn_Link path="Web/HTML/Element/hr" />
-		</Tome_Section_Header>
+			<MdnLink path="Web/HTML/Element/hr" />
+		</TomeSectionHeader>
 		<hr />
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="a">
-			<Mdn_Link path="Web/HTML/Element/a" />
-		</Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="a">
+			<MdnLink path="Web/HTML/Element/a" />
+		</TomeSectionHeader>
 		<p><a href={resolve('/')}>a link</a> in a <code>p</code></p>
 		<div><a href={resolve('/')}>a link</a> in a <code>div</code></div>
 		<p><a class="selected" href={resolve('/')}>a link</a> with <code>.selected</code></p>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="code">
-			<Mdn_Link path="Web/HTML/Element/code" />
-		</Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="code">
+			<MdnLink path="Web/HTML/Element/code" />
+		</TomeSectionHeader>
 		<p><code>code</code> in a <code>p</code></p>
 		<div><code>code</code> in a <code>div</code></div>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="pre">
-			<Mdn_Link path="Web/HTML/Element/pre" />
-		</Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="pre">
+			<MdnLink path="Web/HTML/Element/pre" />
+		</TomeSectionHeader>
 		<pre>a <code class="display_inline">pre</code> is
   preformatted
 					text</pre>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="details and summary">
-			<Mdn_Link path="Web/HTML/Element/details" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="details and summary">
+			<MdnLink path="Web/HTML/Element/details" />
 			and
-			<Mdn_Link path="Web/HTML/Element/summary" />
-		</Tome_Section_Header>
+			<MdnLink path="Web/HTML/Element/summary" />
+		</TomeSectionHeader>
 		<details>
 			<summary>Click this <code>summary</code> to see the rest of the <code>details</code></summary>
 			<p>The children of the <code>details</code> excluding the <code>summary</code>.</p>
@@ -85,11 +85,11 @@
 </details>`}
 			/>
 		</details>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="aside">
-			<Mdn_Link path="Web/HTML/Element/aside" />
-		</Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="aside">
+			<MdnLink path="Web/HTML/Element/aside" />
+		</TomeSectionHeader>
 		<aside>
 			the <code>aside</code> looks like this
 		</aside>
@@ -107,30 +107,30 @@
 				</aside>
 			</aside>
 		</aside>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="header">
-			<Mdn_Link path="Web/HTML/Element/header" />
-		</Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="header">
+			<MdnLink path="Web/HTML/Element/header" />
+		</TomeSectionHeader>
 		<Code content={`<header>header</header>`} />
 		<header>header</header>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="footer">
-			<Mdn_Link path="Web/HTML/Element/footer" />
-		</Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="footer">
+			<MdnLink path="Web/HTML/Element/footer" />
+		</TomeSectionHeader>
 		<Code content={`<footer>footer</footer>`} />
 		<footer>footer</footer>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="section">
-			<Mdn_Link path="Web/HTML/Element/section" />
-		</Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="section">
+			<MdnLink path="Web/HTML/Element/section" />
+		</TomeSectionHeader>
 		<Code content={`<section>section</section>`} />
 		<section>section</section>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="ul"><code>ul</code></Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="ul"><code>ul</code></TomeSectionHeader>
 		<ul>
 			<li>a</li>
 			<li>b</li>
@@ -142,9 +142,9 @@
 			<li>b</li>
 			<li>see</li>
 		</ul>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="ol"><code>ol</code></Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="ol"><code>ol</code></TomeSectionHeader>
 		<ol>
 			<li>one</li>
 			<li>two</li>
@@ -156,9 +156,9 @@
 			<li>two</li>
 			<li>etc</li>
 		</ol>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="menu"><code>menu</code></Tome_Section_Header>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="menu"><code>menu</code></TomeSectionHeader>
 		<menu>
 			<li>1</li>
 			<li>2</li>
@@ -170,12 +170,12 @@
 			<li>2</li>
 			<li>3</li>
 		</menu>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="table">
-			<Mdn_Link path="Web/HTML/Element/table" />
-		</Tome_Section_Header>
-		<Unfinished_Implementation_Warning />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="table">
+			<MdnLink path="Web/HTML/Element/table" />
+		</TomeSectionHeader>
+		<UnfinishedImplementationWarning />
 		<Code
 			content={`<table>
 	<thead>
@@ -221,6 +221,6 @@
 				<tr><td>td</td><td>td</td><td>td</td></tr>
 			</tbody>
 		</table>
-	</Tome_Section>
+	</TomeSection>
 	<p>TODO more!</p>
-</Tome_Content>
+</TomeContent>

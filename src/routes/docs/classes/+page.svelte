@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
-	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
+	import TomeLink from '@ryanatkn/fuz/TomeLink.svelte';
 
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
-	import Module_Link from '$routes/Module_Link.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
+	import ModuleLink from '$routes/ModuleLink.svelte';
 
 	const LIBRARY_ITEM_NAME = 'classes';
 
@@ -158,15 +158,15 @@
 		},
 	];
 
-	// TODO extract a `Github_Link` like `Mdn_Link`
+	// TODO extract a `GithubLink` like `MdnLink`
 </script>
 
-<Tome_Content {tome}>
-	<Unfinished_Implementation_Warning>
+<TomeContent {tome}>
+	<UnfinishedImplementationWarning>
 		Both the docs and implementation of these need a lot more work.
-	</Unfinished_Implementation_Warning>
-	<Tome_Section>
-		<Tome_Section_Header text="Optional CSS classes" />
+	</UnfinishedImplementationWarning>
+	<TomeSection>
+		<TomeSectionHeader text="Optional CSS classes" />
 		<p>Moss has three CSS files, two of which are required:</p>
 		<Code
 			content={`<!-- +layout.svelte -->
@@ -181,16 +181,16 @@ ${'<' as string}script>
 			The <code>moss.css</code> file is created on demand with the utility classes that your code
 			uses, if any. For now it requires <a href="https://github.com/ryanatkn/gro">Gro</a> to
 			generate it, but it isn't hard to make your own integration using the helpers
-			<Module_Link path="gen_moss_css.ts">gen_moss_css.ts</Module_Link>. I can add a Vite plugin if
+			<ModuleLink path="gen_moss_css.ts">gen_moss_css.ts</ModuleLink>. I can add a Vite plugin if
 			there's demand.
 		</p>
-		<Unfinished_Implementation_Warning>
+		<UnfinishedImplementationWarning>
 			Maybe <code>moss.css</code> should default to <code>moss_utilities.css</code> or
 			<code>moss_utility_classes.css</code>? idk
-		</Unfinished_Implementation_Warning>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Utility classes" />
+		</UnfinishedImplementationWarning>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Utility classes" />
 		<p>
 			Moss supports utility classes that cost nothing until you opt-in. The main stylesheet and
 			theme are required and build around CSS custom properties - utility classes offer an
@@ -198,7 +198,7 @@ ${'<' as string}script>
 			frameworky parts, and are well-integrated with the other APIs and tools.
 		</p>
 		<p>
-			Moss exports <Module_Link path="css_class_helpers.ts">helpers</Module_Link> to generate styles
+			Moss exports <ModuleLink path="css_class_helpers.ts">helpers</ModuleLink> to generate styles
 			on demand based on class usage in your source files, so you can ship the minimal code needed. Some
 			values are interpreted to efficiently support large value ranges, e.g. <code>opacity_0</code>
 			through <code>opacity_100</code> and <code>font_weight_1</code> to
@@ -214,7 +214,7 @@ ${'<' as string}script>
 				href="https://svelte.dev/docs/svelte/class#Attributes-Objects-and-arrays"
 				>Svelte's object+array class syntax</a
 			>, added in 5.16. For now see
-			<Module_Link path="css_class_helpers.test.ts">the tests</Module_Link> for the supported forms.
+			<ModuleLink path="css_class_helpers.test.ts">the tests</ModuleLink> for the supported forms.
 			The current strategy uses a regexp for TS and Svelte files, but we'll probably need to more robustly
 			scan the parsed AST.
 		</aside>
@@ -231,12 +231,12 @@ ${'<' as string}script>
 				</ul>
 			{/each}
 		</div>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Builtin classes" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Builtin classes" />
 		<p>
-			Moss's <Module_Link path="style.css">main stylesheet</Module_Link>
-			provides styles for the base HTML elements using the framework's <Tome_Link
+			Moss's <ModuleLink path="style.css">main stylesheet</ModuleLink>
+			provides styles for the base HTML elements using the framework's <TomeLink
 				name="variables"
 			/>, acting as a modern CSS reset with sensible defaults and integrated theming. It includes
 			Moss-specific CSS classes - not utility classes in the strict sense - that provide common
@@ -298,8 +298,8 @@ ${'<' as string}script>
 				as possible to minimize interference with your styles.
 			</aside>
 		</aside>
-	</Tome_Section>
-</Tome_Content>
+	</TomeSection>
+</TomeContent>
 
 <style>
 	.utility_classes {

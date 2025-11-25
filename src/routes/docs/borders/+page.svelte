@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
-	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
+	import ColorSchemeInput from '@ryanatkn/fuz/ColorSchemeInput.svelte';
 
 	import {
 		border_width_variants,
@@ -11,8 +11,8 @@
 		outline_width_variants,
 		border_radius_variants,
 	} from '$lib/variable_data.js';
-	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import StyleVariableButton from '$routes/StyleVariableButton.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'borders';
 
@@ -45,7 +45,7 @@
 	// classes="outline_width_focus outline_width_active"
 </script>
 
-<Tome_Content {tome}>
+<TomeContent {tome}>
 	<!-- TODO  -->
 	<!-- <div>border_color</div> -->
 	<!-- <div>border_style</div> -->
@@ -54,16 +54,16 @@
 	<!-- <div>outline_style</div> -->
 	<!-- <div>outline_color</div> -->
 
-	<Tome_Section>
-		<Tome_Section_Header text="Border shades" />
-		<Unfinished_Implementation_Warning />
+	<TomeSection>
+		<TomeSectionHeader text="Border shades" />
+		<UnfinishedImplementationWarning />
 		<div class="border_examples border_colors">
 			{#each {length: 5} as _, i (i)}
 				{@const name = 'border_color_' + (i + 1)}
 				<div class="border_color_outer">
 					<div class="border_color_inner">
 						<div class="border_example border_color" style:border-color="var(--{name})">
-							<Style_Variable_Button {name} />
+							<StyleVariableButton {name} />
 						</div>
 						{#each {length: 5} as _, i (i)}
 							<div
@@ -81,20 +81,20 @@
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
+	</TomeSection>
 	<section>
-		<Color_Scheme_Input />
+		<ColorSchemeInput />
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Border colors" />
-		<Unfinished_Implementation_Warning />
+	<TomeSection>
+		<TomeSectionHeader text="Border colors" />
+		<UnfinishedImplementationWarning />
 		<div class="border_examples border_colors">
 			{#each color_variants as color_variant (color_variant)}
 				{@const name = 'border_color_' + color_variant}
 				<div class="border_color_outer">
 					<div class="border_color_inner">
 						<div class="border_example border_color" style:border-color="var(--{name})">
-							<Style_Variable_Button {name} />
+							<StyleVariableButton {name} />
 						</div>
 						{#each {length: 5} as _, i (i)}
 							<div
@@ -112,16 +112,16 @@
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Border widths" />
-		<Unfinished_Implementation_Warning />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Border widths" />
+		<UnfinishedImplementationWarning />
 		<div class="border_examples border_widths">
 			{#each border_width_variants as border_width_variant (border_width_variant)}
 				{@const name = 'border_width_' + border_width_variant}
 				<div class="row">
 					<div class="border_example border_width" style:border-width="var(--{name})">
-						<Style_Variable_Button {name} />
+						<StyleVariableButton {name} />
 					</div>
 					<span class="pl_sm pr_sm">=</span><code
 						>{computed_styles?.getPropertyValue('--' + name)}</code
@@ -129,9 +129,9 @@
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Outlines" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Outlines" />
 		<p>
 			Each border utility class has a corresponding outline variant using the same border variables
 			(like <code>outline_color_b</code>, <code>outline_width_4</code>, and
@@ -142,7 +142,7 @@
 				{@const name = 'outline_width_' + outline_width_variant}
 				<div class="row">
 					<div class="border_example {name} outline_style_solid outline_color_3">
-						<Style_Variable_Button {name} />
+						<StyleVariableButton {name} />
 					</div>
 					<span class="pl_sm pr_sm">=</span><code
 						>{computed_styles?.getPropertyValue('--' + name)}</code
@@ -150,15 +150,15 @@
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Border radius" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Border radius" />
 		<div class="border_examples border_radii">
 			{#each border_radius_variants as radius (radius)}
 				{@const name = 'border_radius_' + radius}
 				<div class="row">
 					<div class="border_example border_radius" style:border-radius="var(--{name})">
-						<Style_Variable_Button {name} />
+						<StyleVariableButton {name} />
 					</div>
 					<span class="pl_sm pr_sm">=</span><code
 						>{computed_styles?.getPropertyValue('--' + name)}</code
@@ -166,7 +166,7 @@
 				</div>
 			{/each}
 		</div>
-		<Tome_Section_Header tag="h4" text="Border radius percentages" />
+		<TomeSectionHeader tag="h4" text="Border radius percentages" />
 		<p>Interpreted utility classes, 0 to 100 (%).</p>
 		<div class="border_examples border_radii">
 			{#each border_radius_classes as border_radius_class (border_radius_class)}
@@ -181,7 +181,7 @@
 				</div>
 			{/each}
 		</div>
-		<Tome_Section_Header tag="h4" text="Border radius corners" />
+		<TomeSectionHeader tag="h4" text="Border radius corners" />
 		<div class="border_examples border_radii">
 			{#each border_radius_corner_size_classes as classes (classes)}
 				<div class="row">
@@ -197,7 +197,7 @@
 				</div>
 			{/each}
 		</div>
-		<Tome_Section_Header tag="h4" text="Border radius corner percentages" />
+		<TomeSectionHeader tag="h4" text="Border radius corner percentages" />
 		<p>Interpreted utility classes, 0 to 100 (%).</p>
 		<div class="border_examples border_radii">
 			{#each border_radius_corner_classes as classes (classes)}
@@ -214,8 +214,8 @@
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
-</Tome_Content>
+	</TomeSection>
+</TomeContent>
 
 <style>
 	.border_examples {

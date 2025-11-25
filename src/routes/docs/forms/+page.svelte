@@ -2,13 +2,13 @@
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {fly} from 'svelte/transition';
 	import Alert from '@ryanatkn/fuz/Alert.svelte';
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
-	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
+	import MdnLink from '@ryanatkn/fuz/MdnLink.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'forms';
 
@@ -34,18 +34,18 @@
 
 <!-- eslint-disable svelte/no-useless-mustaches -->
 
-<Tome_Content {tome}>
-	<Unfinished_Implementation_Warning>Forms need more work.</Unfinished_Implementation_Warning>
+<TomeContent {tome}>
+	<UnfinishedImplementationWarning>Forms need more work.</UnfinishedImplementationWarning>
 
-	<Tome_Section>
-		<Tome_Section_Header text="form with a fieldset">
-			<Mdn_Link path="Web/HTML/Element/form" /> with a <Mdn_Link path="Web/HTML/Element/fieldset" />
-		</Tome_Section_Header>
+	<TomeSection>
+		<TomeSectionHeader text="form with a fieldset">
+			<MdnLink path="Web/HTML/Element/form" /> with a <MdnLink path="Web/HTML/Element/fieldset" />
+		</TomeSectionHeader>
 		<Code
 			content={`<form>
 	<fieldset>
 		<legend>
-			a <Mdn_Link path="Web/HTML/Element/legend" />
+			a <MdnLink path="Web/HTML/Element/legend" />
 		</legend>
 		<label>
 			<div class="title">
@@ -64,7 +64,7 @@
 		<div class="width_upto_sm">
 			<form>
 				<fieldset>
-					<legend>This is a <Mdn_Link path="Web/HTML/Element/legend" /></legend>
+					<legend>This is a <MdnLink path="Web/HTML/Element/legend" /></legend>
 					<label class:disabled={created_account}>
 						<div class="title">username</div>
 						<input bind:value={username} disabled={created_account} placeholder=">" />
@@ -112,12 +112,12 @@
 				</form>
 			{/if}
 		</div>
-	</Tome_Section>
+	</TomeSection>
 
-	<Tome_Section>
-		<Tome_Section_Header text="form with range input">
+	<TomeSection>
+		<TomeSectionHeader text="form with range input">
 			<code>form</code> with range input
-		</Tome_Section_Header>
+		</TomeSectionHeader>
 		<form>
 			<fieldset>
 				<Code content={`<input type="range" />`} />
@@ -128,14 +128,14 @@
 				<input type="range" step={1} min={0} max={100} disabled />
 			</fieldset>
 		</form>
-	</Tome_Section>
+	</TomeSection>
 
-	<Tome_Section>
-		<Tome_Section_Header text="form with checkboxes">
+	<TomeSection>
+		<TomeSectionHeader text="form with checkboxes">
 			<code>form</code> with checkboxes
-		</Tome_Section_Header>
-		<Unfinished_Implementation_Warning
-			>This will change, probably to toggles.</Unfinished_Implementation_Warning
+		</TomeSectionHeader>
+		<UnfinishedImplementationWarning
+			>This will change, probably to toggles.</UnfinishedImplementationWarning
 		>
 		<!-- TODO make this a form, but figure out the checkbox problem -- maybe a last-child exception? -->
 		<form>
@@ -162,12 +162,12 @@
 			The above are wrapped with: <Code content={`<label class="row">`} />
 			with <code>.disabled</code> as needed: <Code content={`<label class="row disabled">`} />
 		</aside>
-	</Tome_Section>
+	</TomeSection>
 
-	<Tome_Section>
-		<Tome_Section_Header text="form with radio inputs">
+	<TomeSection>
+		<TomeSectionHeader text="form with radio inputs">
 			<code>form</code> with radio inputs
-		</Tome_Section_Header>
+		</TomeSectionHeader>
 		<form>
 			<fieldset>
 				{#each radio_items as radio_item (radio_item)}
@@ -193,5 +193,5 @@
 				</label>
 			</fieldset>
 		</form>
-	</Tome_Section>
-</Tome_Content>
+	</TomeSection>
+</TomeContent>

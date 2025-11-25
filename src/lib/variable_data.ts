@@ -1,6 +1,6 @@
-import type {Array_Element} from '@ryanatkn/belt/types.js';
+import type {ArrayElement} from '@ryanatkn/belt/types.js';
 
-export type Size_Variant = Array_Element<typeof font_size_variants>;
+export type SizeVariant = ArrayElement<typeof font_size_variants>;
 export const font_size_variants = [
 	'xs',
 	'sm',
@@ -19,17 +19,17 @@ export const font_size_variants = [
 
 export const font_size_names = font_size_variants.map((s) => 'font_size_' + s);
 
-export type Font_Family_Variant = Array_Element<typeof font_family_variants>;
+export type FontFamilyVariant = ArrayElement<typeof font_family_variants>;
 export const font_family_variants = [
 	'font_family_sans',
 	'font_family_serif',
 	'font_family_mono',
 ] as const;
 
-export type Text_Color_Variant = Array_Element<typeof text_color_variants>;
+export type TextColorVariant = ArrayElement<typeof text_color_variants>;
 export const text_color_variants = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
-export type Space_Variant = Array_Element<typeof space_variants>;
+export type SpaceVariant = ArrayElement<typeof space_variants>;
 export const space_variants = [
 	'xs5',
 	'xs4',
@@ -56,13 +56,13 @@ export const space_variants = [
 	'xl15',
 ] as const;
 
-export type Distance_Variant = Array_Element<typeof distance_variants>;
+export type DistanceVariant = ArrayElement<typeof distance_variants>;
 export const distance_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
-export type Border_Radius_Variant = Array_Element<typeof border_radius_variants>;
+export type BorderRadiusVariant = ArrayElement<typeof border_radius_variants>;
 export const border_radius_variants = ['xs3', 'xs2', 'xs', 'sm', 'md', 'lg', 'xl'] as const;
 
-export type Line_Height_Variant = Array_Element<typeof line_height_variants>;
+export type LineHeightVariant = ArrayElement<typeof line_height_variants>;
 export const line_height_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
 export const line_height_names = line_height_variants.map((s) => 'line_height_' + s);
@@ -76,16 +76,16 @@ export const shadow_variant_prefixes = [
 	'shadow_inset_bottom_',
 ] as const;
 
-export type Shadow_Size_Variant = Array_Element<typeof shadow_font_size_variants>;
+export type ShadowSizeVariant = ArrayElement<typeof shadow_font_size_variants>;
 export const shadow_font_size_variants = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
-export type Shadow_Alpha_Variant = Array_Element<typeof shadow_alpha_variants>;
+export type ShadowAlphaVariant = ArrayElement<typeof shadow_alpha_variants>;
 export const shadow_alpha_variants = [1, 2, 3, 4, 5] as const;
 
-export type Shadow_Semantic_Value = Array_Element<typeof shadow_semantic_values>;
+export type ShadowSemanticValue = ArrayElement<typeof shadow_semantic_values>;
 export const shadow_semantic_values = ['highlight', 'glow', 'shroud'] as const;
 
-export type Icon_Size_Variant = Array_Element<typeof icon_size_variants>;
+export type IconSizeVariant = ArrayElement<typeof icon_size_variants>;
 export const icon_size_variants = ['xs', 'sm', 'md', 'lg', 'xl', 'xl2', 'xl3'] as const;
 
 // TODO maybe put this inline? factor out the pieces with `icon_size_variants`?
@@ -99,19 +99,19 @@ export const icon_sizes = {
 	icon_size_xl3: '256px',
 };
 
-export type Color_Variant = Array_Element<typeof color_variants>;
+export type ColorVariant = ArrayElement<typeof color_variants>;
 export const color_variants = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'] as const;
 
-export type Border_Width_Variant = Array_Element<typeof border_width_variants>;
+export type BorderWidthVariant = ArrayElement<typeof border_width_variants>;
 export const border_width_variants = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
 
-export type Outline_Width_Variant = Array_Element<typeof outline_width_variants>;
+export type OutlineWidthVariant = ArrayElement<typeof outline_width_variants>;
 export const outline_width_variants = ['focus', 'active'] as const;
 
-export type Alignment_Value = Array_Element<typeof alignment_values>;
+export type AlignmentValue = ArrayElement<typeof alignment_values>;
 export const alignment_values = ['center', 'start', 'end', 'baseline', 'stretch'] as const;
 
-export type Justify_Value = Array_Element<typeof justify_values>;
+export type JustifyValue = ArrayElement<typeof justify_values>;
 export const justify_values = [
 	'center',
 	'start',
@@ -124,10 +124,10 @@ export const justify_values = [
 	'stretch',
 ] as const;
 
-export type Overflow_Value = Array_Element<typeof overflow_values>;
+export type OverflowValue = ArrayElement<typeof overflow_values>;
 export const overflow_values = ['auto', 'hidden', 'scroll', 'clip', 'visible'] as const;
 
-export type Border_Style_Value = Array_Element<typeof border_style_values>;
+export type BorderStyleValue = ArrayElement<typeof border_style_values>;
 export const border_style_values = [
 	'none',
 	'hidden',
@@ -141,7 +141,7 @@ export const border_style_values = [
 	'outset',
 ] as const;
 
-export type Display_Value = Array_Element<typeof display_values>;
+export type DisplayValue = ArrayElement<typeof display_values>;
 export const display_values = [
 	'none',
 	'contents',
@@ -162,7 +162,7 @@ export const display_values = [
 	'inline-table',
 ] as const;
 
-export type Text_Align_Value = Array_Element<typeof text_align_values>;
+export type TextAlignValue = ArrayElement<typeof text_align_values>;
 export const text_align_values = [
 	'start',
 	'end',
@@ -174,7 +174,7 @@ export const text_align_values = [
 	'match-parent',
 ] as const;
 
-export type Vertical_Align_Value = Array_Element<typeof vertical_align_values>;
+export type VerticalAlignValue = ArrayElement<typeof vertical_align_values>;
 export const vertical_align_values = [
 	'baseline',
 	'sub',
@@ -186,31 +186,31 @@ export const vertical_align_values = [
 	'bottom',
 ] as const;
 
-export type Word_Break_Value = Array_Element<typeof word_break_values>;
+export type WordBreakValue = ArrayElement<typeof word_break_values>;
 export const word_break_values = ['normal', 'break-all', 'keep-all'] as const;
 
-export type Position_Value = Array_Element<typeof position_values>;
+export type PositionValue = ArrayElement<typeof position_values>;
 export const position_values = ['static', 'relative', 'absolute', 'fixed', 'sticky'] as const;
 
-export type Visibility_Value = Array_Element<typeof visibility_values>;
+export type VisibilityValue = ArrayElement<typeof visibility_values>;
 export const visibility_values = ['visible', 'hidden', 'collapse'] as const;
 
-export type Float_Value = Array_Element<typeof float_values>;
+export type FloatValue = ArrayElement<typeof float_values>;
 export const float_values = ['none', 'left', 'right', 'inline-start'] as const;
 
-export type Flex_Wrap_Value = Array_Element<typeof flex_wrap_values>;
+export type FlexWrapValue = ArrayElement<typeof flex_wrap_values>;
 export const flex_wrap_values = ['nowrap', 'wrap', 'wrap-reverse'] as const;
 
-export type Flex_Direction_Value = Array_Element<typeof flex_direction_values>;
+export type FlexDirectionValue = ArrayElement<typeof flex_direction_values>;
 export const flex_direction_values = ['row', 'row-reverse', 'column', 'column-reverse'] as const;
 
-export type Overflow_Wrap_Value = Array_Element<typeof overflow_wrap_values>;
+export type OverflowWrapValue = ArrayElement<typeof overflow_wrap_values>;
 export const overflow_wrap_values = ['normal', 'anywhere', 'break-word'] as const;
 
-export type Scrollbar_Width_Value = Array_Element<typeof scrollbar_width_values>;
+export type ScrollbarWidthValue = ArrayElement<typeof scrollbar_width_values>;
 export const scrollbar_width_values = ['auto', 'thin', 'none'] as const;
 
-export type Scrollbar_Gutter_Value = Array_Element<typeof scrollbar_gutter_values>;
+export type ScrollbarGutterValue = ArrayElement<typeof scrollbar_gutter_values>;
 export const scrollbar_gutter_values = ['auto', 'stable', 'stable both-edges'] as const;
 
 /**

@@ -1,20 +1,20 @@
 import {default_variables} from './variables.js';
 import {default_themes} from './themes.js'; // TODO shoudln't be a dep, see usage below
-import type {Style_Variable} from './variable.js';
+import type {StyleVariable} from './variable.js';
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
  */
-export type Color_Scheme = 'dark' | 'light' | 'auto';
+export type ColorScheme = 'dark' | 'light' | 'auto';
 
-export const color_schemes: Array<Color_Scheme> = ['light', 'auto', 'dark'];
+export const color_schemes: Array<ColorScheme> = ['light', 'auto', 'dark'];
 
 export interface Theme {
 	name: string;
-	variables: Array<Style_Variable>;
+	variables: Array<StyleVariable>;
 }
 
-export interface Render_Theme_Style_Options {
+export interface RenderThemeStyleOptions {
 	comments?: boolean;
 	id?: string | null;
 	empty_default_theme?: boolean;
@@ -27,7 +27,7 @@ export interface Render_Theme_Style_Options {
 
 export const render_theme_style = (
 	theme: Theme,
-	options: Render_Theme_Style_Options = {},
+	options: RenderThemeStyleOptions = {},
 ): string => {
 	const {comments = false, id = null, empty_default_theme = true, specificity = 2} = options;
 	const variables =
@@ -60,7 +60,7 @@ ${
 };
 
 export const render_theme_variable = (
-	variable: Style_Variable,
+	variable: StyleVariable,
 	dark = false,
 	comments = true,
 ): string => {

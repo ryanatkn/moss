@@ -11,7 +11,7 @@
 
 	import {package_json, src_json} from '$routes/package.js';
 	// TODO re-enable this, see comment below
-	// import Contextmenu_Root from '$lib/Contextmenu_Root.svelte';
+	// import ContextmenuRoot from '$lib/ContextmenuRoot.svelte';
 	// import Dialog from '$lib/Dialog.svelte';
 	// import Settings from '$routes/Settings.svelte';
 	// import {contextmenu_action} from '$lib/contextmenu_helpers.svelte.js';
@@ -34,10 +34,10 @@
 <Themed>
 	<!-- TODO add all of this and fixed scoped, so the docs examples work as expected,
 		or maybe disable this main contextmenu when in the docs -->
-	<!-- <Contextmenu_Root> -->
+	<!-- <ContextmenuRoot> -->
 	{@render children()}
 	<Spiders />
-	<!-- </Contextmenu_Root> -->
+	<!-- </ContextmenuRoot> -->
 	<!-- {#if show_settings}
 		<Dialog onclose={() => (show_settings = false)}>
 			<div class="pane p_md width_upto_md mx_auto">

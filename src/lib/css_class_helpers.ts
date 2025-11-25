@@ -2,12 +2,12 @@ import type {Logger} from '@ryanatkn/belt/log.js';
 
 // TODO maybe just use the Svelte (and Oxc?) parser instead of this regexp madness?
 
-export interface Css_Extractor {
+export interface CssExtractor {
 	matcher: RegExp;
 	mapper: (matched: RegExpExecArray) => Array<string>;
 }
 
-const CSS_CLASS_EXTRACTORS: Array<Css_Extractor> = [
+const CSS_CLASS_EXTRACTORS: Array<CssExtractor> = [
 	// `class:a`
 	{
 		matcher: /(?<!['"`])class:([^\s=>]+)/gi,
@@ -69,7 +69,7 @@ const CSS_CLASS_EXTRACTORS: Array<Css_Extractor> = [
  */
 export const collect_css_classes = (
 	contents: string,
-	extractors: Array<Css_Extractor> = CSS_CLASS_EXTRACTORS,
+	extractors: Array<CssExtractor> = CSS_CLASS_EXTRACTORS,
 ): Set<string> => {
 	const all_classes: Set<string> = new Set();
 
@@ -82,7 +82,7 @@ export const collect_css_classes = (
 	return all_classes;
 };
 
-const extract_classes = (contents: string, {matcher, mapper}: Css_Extractor): Set<string> => {
+const extract_classes = (contents: string, {matcher, mapper}: CssExtractor): Set<string> => {
 	const classes: Set<string> = new Set();
 	let matched: RegExpExecArray | null;
 	while ((matched = matcher.exec(contents)) !== null) {
@@ -93,7 +93,7 @@ const extract_classes = (contents: string, {matcher, mapper}: Css_Extractor): Se
 	return classes;
 };
 
-export class Css_Classes {
+export class CssClasses {
 	include_classes: Set<string> | null;
 
 	#all: Set<string> = new Set();
@@ -139,30 +139,30 @@ export class Css_Classes {
 	}
 }
 
-export type Css_Class_Declaration =
-	| Css_Class_Declaration_Item
-	| Css_Class_Declaration_Group
-	| Css_Class_Declaration_Interpreter;
+export type CssClassDeclaration =
+	| CssClassDeclarationItem
+	| CssClassDeclarationGroup
+	| CssClassDeclarationInterpreter;
 
-export interface Css_Class_Declaration_Base {
+export interface CssClassDeclarationBase {
 	comment?: string;
 }
 
-export interface Css_Class_Declaration_Item extends Css_Class_Declaration_Base {
+export interface CssClassDeclarationItem extends CssClassDeclarationBase {
 	declaration: string;
 }
-export interface Css_Class_Declaration_Group extends Css_Class_Declaration_Base {
+export interface CssClassDeclarationGroup extends CssClassDeclarationBase {
 	ruleset: string;
 }
-export interface Css_Class_Declaration_Interpreter extends Css_Class_Declaration_Base {
+export interface CssClassDeclarationInterpreter extends CssClassDeclarationBase {
 	pattern: RegExp;
 	interpret: (matched: RegExpMatchArray, log?: Logger) => string | null;
 }
 
 export const generate_classes_css = (
 	classes: Iterable<string>,
-	classes_by_name: Record<string, Css_Class_Declaration | undefined>,
-	interpreters: Array<Css_Class_Declaration_Interpreter>,
+	classes_by_name: Record<string, CssClassDeclaration | undefined>,
+	interpreters: Array<CssClassDeclarationInterpreter>,
 	log?: Logger,
 ): string => {
 	// TODO when the API is redesigned this kind of thing should be cached

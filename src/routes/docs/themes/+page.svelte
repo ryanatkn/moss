@@ -1,19 +1,19 @@
 <script lang="ts">
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
 	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
-	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
-	import Theme_Input from '@ryanatkn/fuz/Theme_Input.svelte';
-	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
+	import ColorSchemeInput from '@ryanatkn/fuz/ColorSchemeInput.svelte';
+	import TomeLink from '@ryanatkn/fuz/TomeLink.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
+	import ThemeInput from '@ryanatkn/fuz/ThemeInput.svelte';
+	import MdnLink from '@ryanatkn/fuz/MdnLink.svelte';
 
-	import Module_Link from '$routes/Module_Link.svelte';
+	import ModuleLink from '$routes/ModuleLink.svelte';
 	import {default_themes} from '$lib/themes.js';
 	import type {Theme} from '$lib/theme.js';
-	import Theme_Form from '$routes/Theme_Form.svelte';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import ThemeForm from '$routes/ThemeForm.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'themes';
 
@@ -25,13 +25,13 @@
 	let editing_theme: null | Theme = $state(null);
 </script>
 
-<Tome_Content {tome}>
+<TomeContent {tome}>
 	<section>
 		<p>
 			Moss supports both the browser's
-			<Mdn_Link path="Web/CSS/color-scheme" />
-			and custom themes based on <Tome_Link name="variables" />, which use
-			<Mdn_Link path="Web/CSS/--*">CSS custom properties</Mdn_Link>.
+			<MdnLink path="Web/CSS/color-scheme" />
+			and custom themes based on <TomeLink name="variables" />, which use
+			<MdnLink path="Web/CSS/--*">CSS custom properties</MdnLink>.
 		</p>
 		<p>
 			Moss works with any JS framework, but it provides only stylesheets, not integrations. This
@@ -39,61 +39,61 @@
 			to provide the UI below to control the Moss color scheme and themes.
 		</p>
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Color scheme" />
+	<TomeSection>
+		<TomeSectionHeader text="Color scheme" />
 		<p>
 			Moss supports
-			<Mdn_Link path="Web/CSS/color-scheme" /> with dark and light modes. To apply dark mode manually,
+			<MdnLink path="Web/CSS/color-scheme" /> with dark and light modes. To apply dark mode manually,
 			add the <code>dark</code> class to the root <code>html</code>
 			element.
 		</p>
 		<p>
 			The Fuz integration detects the default with
-			<Mdn_Link path="Web/CSS/@media/prefers-color-scheme" />, and users can also set it directly
+			<MdnLink path="Web/CSS/@media/prefers-color-scheme" />, and users can also set it directly
 			with a component like
-			<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/Color_Scheme_Input.svelte"
+			<a href="https://github.com/ryanatkn/fuz/blob/main/src/lib/ColorSchemeInput.svelte"
 				>this one</a
 			>:
 		</p>
 		<div class="display_flex mb_lg">
-			<Color_Scheme_Input />
+			<ColorSchemeInput />
 		</div>
 		<p>
 			The builtin themes support both dark and light color schemes. Custom themes may support one or
 			both color schemes.
 		</p>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Builtin themes" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Builtin themes" />
 		<p>
-			A theme is a simple JSON collection of <Tome_Link name="variables" /> that can be transformed into
+			A theme is a simple JSON collection of <TomeLink name="variables" /> that can be transformed into
 			CSS that set custom properties. Each variable can have values for light and/or dark color schemes.
 			In other words, "dark" isn't a theme, it's a mode that any theme can implement.
 		</p>
 		<p>
-			These docs are a work in progress, for now see <Module_Link path="theme.ts"
-				><code>@ryanatkn/moss/theme.ts</code></Module_Link
-			> and <Module_Link path="themes.ts"><code>@ryanatkn/moss/themes.ts</code></Module_Link>.
+			These docs are a work in progress, for now see <ModuleLink path="theme.ts"
+				><code>@ryanatkn/moss/theme.ts</code></ModuleLink
+			> and <ModuleLink path="themes.ts"><code>@ryanatkn/moss/themes.ts</code></ModuleLink>.
 		</p>
-		<!-- TODO explain when exported <Code code={`<Theme_Input\n\t{themes}\n\t{selected_theme}\n/>`} /> -->
+		<!-- TODO explain when exported <Code code={`<ThemeInput\n\t{themes}\n\t{selected_theme}\n/>`} /> -->
 		<div class="width_upto_xs mb_lg">
-			<Theme_Input {themes} enable_editing onedit={(t) => (editing_theme = t)} />
+			<ThemeInput {themes} enable_editing onedit={(t) => (editing_theme = t)} />
 		</div>
 		<!-- <button class="mb_lg" onclick={() => (show_create_theme_dialog = true)} disabled
 				>create a new theme (todo)</button
 			> -->
-		<Unfinished_Implementation_Warning
-			>The builtin themes need more work, but the proof of concept is ready!</Unfinished_Implementation_Warning
+		<UnfinishedImplementationWarning
+			>The builtin themes need more work, but the proof of concept is ready!</UnfinishedImplementationWarning
 		>
-	</Tome_Section>
-</Tome_Content>
+	</TomeSection>
+</TomeContent>
 
 <!-- TODO enable creating themes -->
 <!-- {#if show_create_theme_dialog}
 	<Dialog onclose={() => (show_create_theme_dialog = false)} let:close>
 		<div class="pane p_md width_upto_md mx_auto">
 			<div class="theme_editor_wrapper panel">
-				<Theme_Form
+				<ThemeForm
 					oncreate={(theme) => {
 						themes = themes.concat(theme);
 						close();
@@ -107,7 +107,7 @@
 	<Dialog onclose={() => (editing_theme = null)}>
 		<div class="pane p_md width_upto_md mx_auto">
 			<div class="theme_editor_wrapper">
-				<Theme_Form
+				<ThemeForm
 					theme={editing_theme}
 					onsave={(theme) => {
 						console.log(`update theme`, theme); // eslint-disable-line no-console

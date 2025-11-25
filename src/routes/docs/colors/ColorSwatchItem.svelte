@@ -2,7 +2,7 @@
 	import {hsl_to_hex_string, hsl_to_rgb, parse_hsl_string} from '@ryanatkn/belt/colors.js';
 	import {themer_context} from '@ryanatkn/fuz/themer.svelte.js';
 
-	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import StyleVariableButton from '$routes/StyleVariableButton.svelte';
 
 	interface Props {
 		index: number;
@@ -28,7 +28,7 @@
 <li style:--bg_color="var(--{name})">
 	<div class="color"></div>
 	<div class="text">
-		<Style_Variable_Button {name} />
+		<StyleVariableButton {name} />
 		<div class="hex">{hsl && hsl_to_hex_string(...hsl)}</div>
 		<div class="hsl">{value}</div>
 		<div class="rgb">rgb({hsl && hsl_to_rgb(...hsl).join(' ')})</div>

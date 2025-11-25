@@ -1,24 +1,24 @@
 import type {Gen} from '@ryanatkn/gro/gen.js';
-import type {File_Filter} from '@ryanatkn/belt/path.js';
+import type {FileFilter} from '@ryanatkn/belt/path.js';
 
 import {
 	collect_css_classes,
-	Css_Classes,
+	CssClasses,
 	generate_classes_css,
-	type Css_Class_Declaration,
-	type Css_Class_Declaration_Interpreter,
+	type CssClassDeclaration,
+	type CssClassDeclarationInterpreter,
 } from './css_class_helpers.js';
 import {css_classes_by_name} from './css_classes.js';
 import {css_class_interpreters} from './css_class_interpreters.js';
 
-export interface Gen_Moss_Css_Options {
-	filter_file?: File_Filter | null;
+export interface GenMossCssOptions {
+	filter_file?: FileFilter | null;
 	include_stats?: boolean;
-	classes_by_name?: Record<string, Css_Class_Declaration | undefined>;
-	class_interpreters?: Array<Css_Class_Declaration_Interpreter>;
+	classes_by_name?: Record<string, CssClassDeclaration | undefined>;
+	class_interpreters?: Array<CssClassDeclarationInterpreter>;
 }
 
-const filter_file_default: File_Filter = (path) => {
+const filter_file_default: FileFilter = (path) => {
 	if (path.includes('.test.') || path.includes('/test/') || path.includes('.gen.')) {
 		return false;
 	}
@@ -26,7 +26,7 @@ const filter_file_default: File_Filter = (path) => {
 	return ext === '.svelte' || ext === '.ts' || ext === '.js';
 };
 
-export const gen_moss_css = (options: Gen_Moss_Css_Options = {}): Gen => {
+export const gen_moss_css = (options: GenMossCssOptions = {}): Gen => {
 	const {
 		filter_file = filter_file_default,
 		include_stats = false,
@@ -51,7 +51,7 @@ export const gen_moss_css = (options: Gen_Moss_Css_Options = {}): Gen => {
 
 			await filer.init();
 
-			const css_classes = new Css_Classes();
+			const css_classes = new CssClasses();
 
 			const stats = {
 				total_files: filer.files.size,

@@ -1,16 +1,16 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
-	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
+	import TomeLink from '@ryanatkn/fuz/TomeLink.svelte';
+	import MdnLink from '@ryanatkn/fuz/MdnLink.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
 	import {default_variables} from '$lib/variables.js';
-	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import Module_Link from '$routes/Module_Link.svelte';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import StyleVariableButton from '$routes/StyleVariableButton.svelte';
+	import ModuleLink from '$routes/ModuleLink.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'variables';
 
@@ -21,14 +21,14 @@
 	// TODO maybe FAQ? need a standardized pattern -- first add the "on this page" menu functionality
 </script>
 
-<Tome_Content {tome}>
+<TomeContent {tome}>
 	<section>
 		<p>
-			Style variables, or just "variables" in Moss, are <Mdn_Link
-				path="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</Mdn_Link
-			> that can be grouped into a <Tome_Link name="themes">theme</Tome_Link>. Each variable can
-			have values for light and/or dark <Mdn_Link path="Web/CSS/color-scheme"
-				>color-schemes</Mdn_Link
+			Style variables, or just "variables" in Moss, are <MdnLink
+				path="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">CSS custom properties</MdnLink
+			> that can be grouped into a <TomeLink name="themes">theme</TomeLink>. Each variable can
+			have values for light and/or dark <MdnLink path="Web/CSS/color-scheme"
+				>color-schemes</MdnLink
 			>. They're design tokens with an API.
 		</p>
 		<p>
@@ -59,16 +59,16 @@
 	</section>
 	<section>
 		<div class="mb_md">
-			<Module_Link path="theme.js" />
+			<ModuleLink path="theme.js" />
 		</div>
 		<Code
 			lang="ts"
 			content={`export interface Theme {
 	name: string;
-	variables: Style_Variable[];
+	variables: StyleVariable[];
 }
 
-export interface Style_Variable {
+export interface StyleVariable {
 	name: string;
 	light?: string;
 	dark?: string;
@@ -76,18 +76,18 @@ export interface Style_Variable {
 }`}
 		/>
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text={`All ${variables.length} style variables`} />
-		<Unfinished_Implementation_Warning>Many of these will change.</Unfinished_Implementation_Warning
+	<TomeSection>
+		<TomeSectionHeader text={`All ${variables.length} style variables`} />
+		<UnfinishedImplementationWarning>Many of these will change.</UnfinishedImplementationWarning
 		>
 		<!-- TODO add info through the contextmenu or dialog -->
 		<div class="variables">
 			{#each variables as variable (variable.name)}
-				<Style_Variable_Button name={variable.name} classes="menu_item" />
+				<StyleVariableButton name={variable.name} classes="menu_item" />
 			{/each}
 		</div>
-	</Tome_Section>
-</Tome_Content>
+	</TomeSection>
+</TomeContent>
 
 <style>
 	.variables {
