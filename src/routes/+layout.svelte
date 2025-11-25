@@ -14,7 +14,7 @@
 	// import ContextmenuRoot from '$lib/ContextmenuRoot.svelte';
 	// import Dialog from '$lib/Dialog.svelte';
 	// import Settings from '$routes/Settings.svelte';
-	// import {contextmenu_action} from '$lib/contextmenu_helpers.svelte.js';
+	// import {contextmenu_attachment} from '$lib/contextmenu_helpers.svelte.js';
 
 	interface Props {
 		children: Snippet;
@@ -48,7 +48,7 @@
 </Themed>
 
 <!-- <svelte:body
-	use:contextmenu_action={[
+	{@attach contextmenu_attachment([
 		{
 			snippet: 'text',
 			props: {
@@ -69,5 +69,5 @@
 				},
 			},
 		},
-	]}
+	])}
 /> -->
