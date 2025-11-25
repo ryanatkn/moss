@@ -1,16 +1,16 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
-	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
-	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
+	import ColorSchemeInput from '@ryanatkn/fuz/ColorSchemeInput.svelte';
+	import TomeLink from '@ryanatkn/fuz/TomeLink.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import {themer_context} from '@ryanatkn/fuz/themer.svelte.js';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import MdnLink from '@ryanatkn/fuz/MdnLink.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
-	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import StyleVariableButton from '$routes/StyleVariableButton.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	const LIBRARY_ITEM_NAME = 'shading';
 
@@ -31,18 +31,18 @@
 	];
 </script>
 
-<Tome_Content {tome}>
+<TomeContent {tome}>
 	<section>
-		<Unfinished_Implementation_Warning>
+		<UnfinishedImplementationWarning>
 			These concepts are still developing - some things are incomplete or inconsistent, and there
 			will be a lot of breaking changes. I'm thinking of splitting this "light and shadow" section
 			into "shadows" and "shading" something.
-		</Unfinished_Implementation_Warning>
+		</UnfinishedImplementationWarning>
 		<p>
 			Moss is designed around two simplistic models of light, one for dark mode and one for light
-			mode, mapping to the web platform's <Mdn_Link path="Web/CSS/color-scheme" />. The goal is easy
-			authoring with simple and consistent rules for arbitrary compositions and states. Each <Tome_Link
-				name="themes">theme</Tome_Link
+			mode, mapping to the web platform's <MdnLink path="Web/CSS/color-scheme" />. The goal is easy
+			authoring with simple and consistent rules for arbitrary compositions and states. Each <TomeLink
+				name="themes">theme</TomeLink
 			> can choose to implement either light mode or dark mode or both.
 		</p>
 		<p>
@@ -71,8 +71,8 @@
 			and <code>bg</code> are equivalent values that swap places in dark mode. Thus <code>bg</code>
 			and <code>fg</code> are called color-scheme-aware, and <code>lighten</code> and
 			<code>darken</code> are color-scheme-agnostic. (maybe you can think of better terminology? I
-			like the word "adaptive" but idk) The <Tome_Link name="colors" /> docs elaborate more on this point
-			and the <Tome_Link name="shadows" /> docs implement more of the idea.
+			like the word "adaptive" but idk) The <TomeLink name="colors" /> docs elaborate more on this point
+			and the <TomeLink name="shadows" /> docs implement more of the idea.
 		</p>
 		<p>
 			Opacity is used to enable arbitrary stacking that visually inherits its context. Not all cases
@@ -80,19 +80,19 @@
 			opacity on text. (assuming this is still a thing?)
 		</p>
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Shades and highlights" />
-		<Tome_Section>
-			<Tome_Section_Header text="darken and lighten" tag="h4"
-				><code>darken</code> and <code>lighten</code></Tome_Section_Header
+	<TomeSection>
+		<TomeSectionHeader text="Shades and highlights" />
+		<TomeSection>
+			<TomeSectionHeader text="darken and lighten" tag="h4"
+				><code>darken</code> and <code>lighten</code></TomeSectionHeader
 			>
-			<Unfinished_Implementation_Warning />
+			<UnfinishedImplementationWarning />
 			<div class="swatch">
 				{#each {length: 9} as _, i (i)}
 					{@const name = 'darken_' + (i + 1)}
 					<div>
 						<div class="color" style:background-color="var(--{name})"></div>
-						<small><Style_Variable_Button {name} /></small>
+						<small><StyleVariableButton {name} /></small>
 					</div>
 				{/each}
 			</div>
@@ -101,14 +101,14 @@
 					{@const name = 'lighten_' + (i + 1)}
 					<div>
 						<div class="color" style:background-color="var(--{name})"></div>
-						<small><Style_Variable_Button {name} /></small>
+						<small><StyleVariableButton {name} /></small>
 					</div>
 				{/each}
 			</div>
-		</Tome_Section>
-		<Tome_Section>
-			<Tome_Section_Header text="bg and fg" tag="h4"
-				><code>bg</code> and <code>fg</code></Tome_Section_Header
+		</TomeSection>
+		<TomeSection>
+			<TomeSectionHeader text="bg and fg" tag="h4"
+				><code>bg</code> and <code>fg</code></TomeSectionHeader
 			>
 			<p>
 				In light mode, <code>bg</code> is the same as <code>lighten</code> and <code>fg</code> is
@@ -119,7 +119,7 @@
 					{@const name = 'bg_' + (i + 1)}
 					<div>
 						<div class="color" style:background-color="var(--{name})"></div>
-						<small><Style_Variable_Button {name} /></small>
+						<small><StyleVariableButton {name} /></small>
 					</div>
 				{/each}
 			</div>
@@ -128,14 +128,14 @@
 					{@const name = 'fg_' + (i + 1)}
 					<div>
 						<div class="color" style:background-color="var(--{name})"></div>
-						<small><Style_Variable_Button {name} /></small>
+						<small><StyleVariableButton {name} /></small>
 					</div>
 				{/each}
 			</div>
-		</Tome_Section>
-	</Tome_Section>
+		</TomeSection>
+	</TomeSection>
 	<section>
-		<Color_Scheme_Input />
+		<ColorSchemeInput />
 		<aside class="mt_xl2 width_upto_sm mx_auto">
 			<p>
 				tip: Try <button type="button" onclick={toggle_color_scheme}>toggling</button> between light
@@ -145,9 +145,9 @@
 			</p>
 		</aside>
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Stacking transparency" />
-		<Unfinished_Implementation_Warning />
+	<TomeSection>
+		<TomeSectionHeader text="Stacking transparency" />
+		<UnfinishedImplementationWarning />
 		<p>
 			Many styles are designed to stack, so things can appear in different contexts while retaining
 			relative color value distinctiveness ("color value" as in darkness-lightness). Internally this
@@ -185,9 +185,9 @@
 			other cases that are more performance-sensitive, but we may need to change this behavior for
 			the base cases, or include performance themes.
 		</p>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Opacity" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Opacity" />
 		<p>Interpreted utility classes, 0 to 100 (%).</p>
 		<div>
 			{#each opacity_classes as opacity_class (opacity_class)}
@@ -197,8 +197,8 @@
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
-</Tome_Content>
+	</TomeSection>
+</TomeContent>
 
 <style>
 	.swatch {

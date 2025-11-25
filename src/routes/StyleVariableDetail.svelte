@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type {Style_Variable} from '$lib/variable.js';
+	import type {StyleVariable} from '$lib/variable.js';
 
 	interface Props {
-		variable: Style_Variable | null;
+		variable: StyleVariable | null;
 	}
 
 	const {variable}: Props = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import StyleVariableButton from '$routes/StyleVariableButton.svelte';
 
 	interface Props {
 		color_name: string;
@@ -20,7 +20,7 @@
 <li style:--hue="var(--{variable_name})">
 	<div class="color" style:width="{width}px" style:height="{height}px"></div>
 	<div class="text">
-		<Style_Variable_Button name={variable_name} />
+		<StyleVariableButton name={variable_name} />
 		<div class="hue">{hue}</div>
 		<small class="description">{description}</small>
 	</div>

@@ -1,17 +1,17 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {swallow} from '@ryanatkn/belt/dom.js';
-	import Copy_To_Clipboard from '@ryanatkn/fuz/Copy_To_Clipboard.svelte';
+	import CopyToClipboard from '@ryanatkn/fuz/CopyToClipboard.svelte';
 	import Dialog from '@ryanatkn/fuz/Dialog.svelte';
 
 	import {render_theme_style, type Theme} from '$lib/theme.js';
-	import type {Style_Variable} from '$lib/variable.js';
-	import Style_Variable_Detail from '$routes/Style_Variable_Detail.svelte';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import type {StyleVariable} from '$lib/variable.js';
+	import StyleVariableDetail from '$routes/StyleVariableDetail.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	// TODO @many add to $lib?
 
-	// TODO should this be merged with `Theme_Input`?
+	// TODO should this be merged with `ThemeInput`?
 
 	// TODO add UI to change the tint hue/saturation
 
@@ -28,7 +28,7 @@
 
 	let new_name = $state(theme ? theme.name : 'new theme');
 
-	let new_variables = $state(theme ? theme.variables : []); // TODO `updateVariables` to `Style_Variable_Detail` ?
+	let new_variables = $state(theme ? theme.variables : []); // TODO `updateVariables` to `StyleVariableDetail` ?
 
 	const new_theme: Theme = $derived({name: new_name, variables: new_variables});
 
@@ -39,14 +39,14 @@
 	const light_count = $derived(new_variables.reduce((c, v) => (v.light ? c + 1 : c), 0));
 	const dark_count = $derived(new_variables.reduce((c, v) => (v.dark ? c + 1 : c), 0));
 
-	let selected_variable: Style_Variable | null = $state(null);
+	let selected_variable: StyleVariable | null = $state(null);
 
 	const save = (): void => {
 		if (!changed) return;
 		onsave?.(new_theme);
 	};
 
-	const edit_variable = (e: MouseEvent, variable: Style_Variable): void => {
+	const edit_variable = (e: MouseEvent, variable: StyleVariable): void => {
 		swallow(e);
 		selected_variable = variable;
 		new_variables = new_variables.slice(); // TODO
@@ -98,7 +98,7 @@
 		<div class="rendered">
 			{#if code}
 				<div class="copy">
-					<Copy_To_Clipboard text={code} />
+					<CopyToClipboard text={code} />
 				</div>
 				<Code content={code} lang="css" />
 			{/if}
@@ -110,8 +110,8 @@
 		{#snippet children(close)}
 			<div class="pane p_md width_upto_md mx_auto">
 				<div class="panel p_lg box">
-					<Style_Variable_Detail variable={selected_variable} />
-					<Unfinished_Implementation_Warning />
+					<StyleVariableDetail variable={selected_variable} />
+					<UnfinishedImplementationWarning />
 					<button type="button" onclick={close}>ok</button>
 				</div>
 			</div>

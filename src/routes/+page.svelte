@@ -1,16 +1,16 @@
 <script lang="ts">
 	import {resolve} from '$app/paths';
-	import Docs_Footer from '@ryanatkn/fuz/Docs_Footer.svelte';
+	import DocsFooter from '@ryanatkn/fuz/DocsFooter.svelte';
 	import Card from '@ryanatkn/fuz/Card.svelte';
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
-	import Hidden_Personal_Links from '@ryanatkn/fuz/Hidden_Personal_Links.svelte';
+	import HiddenPersonalLinks from '@ryanatkn/fuz/HiddenPersonalLinks.svelte';
 	import {pkg_context} from '@ryanatkn/fuz/pkg.svelte.js';
 
 	import Introduction from '$routes/Introduction.svelte';
-	import File_Link from '$routes/File_Link.svelte';
+	import FileLink from '$routes/FileLink.svelte';
 	import {MAIN_HEADER_MARGIN_TOP} from '$routes/constants.js';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
 	const pkg = pkg_context.get();
 </script>
@@ -33,11 +33,11 @@
 	</section>
 	<section class="width_upto_sm p_sm border_radius_md shadow_xs">
 		<div class="panel p_lg bg shadow_sm">
-			<Unfinished_Implementation_Warning>
+			<UnfinishedImplementationWarning>
 				Moss is in early alpha and will have many breaking changes to get to 1.0. Help is welcome,
 				see
-				<File_Link path="contributing.md">contributing.md</File_Link>.
-			</Unfinished_Implementation_Warning>
+				<FileLink path="contributing.md">contributing.md</FileLink>.
+			</UnfinishedImplementationWarning>
 			<p>
 				See also my Svelte UI library <a href="https://www.fuz.dev/">Fuz</a> that builds on Moss.
 				Feel free to take the ideas and
@@ -53,11 +53,11 @@
 		</div>
 	</section>
 	<section class="p_xl border_radius_lg shadow_inset_bottom_xs">
-		<Docs_Footer {pkg}>
+		<DocsFooter {pkg}>
 			{#snippet logo_header()}
 				<a href={resolve('/about')} class="mb_xs">about</a>
 			{/snippet}
-			<Hidden_Personal_Links />
-		</Docs_Footer>
+			<HiddenPersonalLinks />
+		</DocsFooter>
 	</section>
 </main>

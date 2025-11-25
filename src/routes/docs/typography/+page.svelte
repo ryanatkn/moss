@@ -1,19 +1,19 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
-	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
+	import MdnLink from '@ryanatkn/fuz/MdnLink.svelte';
+	import TomeLink from '@ryanatkn/fuz/TomeLink.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
 	import Details from '@ryanatkn/fuz/Details.svelte';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
-	import Font_Weight_Control from '$routes/Font_Weight_Control.svelte';
-	import Font_Size_Control from '$routes/Font_Size_Control.svelte';
+	import FontWeightControl from '$routes/FontWeightControl.svelte';
+	import FontSizeControl from '$routes/FontSizeControl.svelte';
 	import {default_variables} from '$lib/variables.js';
-	import Icon_Sizes from '$routes/docs/typography/Icon_Sizes.svelte';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
-	import Style_Variable_Button from '$routes/Style_Variable_Button.svelte';
+	import IconSizes from '$routes/docs/typography/IconSizes.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
+	import StyleVariableButton from '$routes/StyleVariableButton.svelte';
 	import {
 		line_height_names,
 		font_size_names,
@@ -41,7 +41,7 @@
 	// class="font_family_sans font_family_serif font_family_mono"
 </script>
 
-<Tome_Content {tome}>
+<TomeContent {tome}>
 	<section>
 		<h1 title="--font_size_xl3">h1</h1>
 		<h2 title="--font_size_xl2">h2</h2>
@@ -77,8 +77,8 @@
 			/>
 		</Details>
 	</section>
-	<Tome_Section>
-		<Tome_Section_Header text="Font families" />
+	<TomeSection>
+		<TomeSectionHeader text="Font families" />
 		<div>
 			{#each font_family_variants as font_family (font_family)}
 				<div
@@ -86,9 +86,9 @@
 					style:font-weight={selected_font_weight}
 					style:font-size="var(--{font_size_names[selected_size - 1]})"
 				>
-					<Style_Variable_Button name={font_family}>
+					<StyleVariableButton name={font_family}>
 						<span class={font_family}>{font_family}</span>
-					</Style_Variable_Button>
+					</StyleVariableButton>
 					<div class="row">
 						<span class="pr_sm">=</span>
 						<code>{computed_styles?.getPropertyValue('--' + font_family)}</code>
@@ -96,20 +96,20 @@
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Font sizes" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Font sizes" />
 		<form class="width_upto_sm">
-			<Font_Weight_Control bind:selected_font_weight></Font_Weight_Control>
+			<FontWeightControl bind:selected_font_weight></FontWeightControl>
 		</form>
 		{#each font_size_variants as size (size.name)}
 			<div class="row flex_wrap_wrap">
-				<Style_Variable_Button attrs={{title: size.light}} name={size.name}
+				<StyleVariableButton attrs={{title: size.light}} name={size.name}
 					><span
 						style:font-size="var(--{size.name})"
 						style:font-weight={selected_font_weight}
 						class="font_family_sans">{size.name}</span
-					></Style_Variable_Button
+					></StyleVariableButton
 				>
 				<div class="row">
 					<span class="pr_sm">=</span>
@@ -117,17 +117,17 @@
 				</div>
 			</div>
 		{/each}
-	</Tome_Section>
-	<Tome_Section>
+	</TomeSection>
+	<TomeSection>
 		<!-- TODO add a slider for the font size here -->
-		<Tome_Section_Header text="Font weights" />
+		<TomeSectionHeader text="Font weights" />
 		<p>Font weight values can be any integer from 1 to 1000.</p>
 		<p>
-			There are no variables for <Mdn_Link path="Web/CSS/font-weight" /> but there are
-			<Tome_Link name="classes" hash="Utility-classes">utility classes</Tome_Link>.
+			There are no variables for <MdnLink path="Web/CSS/font-weight" /> but there are
+			<TomeLink name="classes" hash="Utility-classes">utility classes</TomeLink>.
 		</p>
 		<form>
-			<Font_Size_Control bind:selected_size />
+			<FontSizeControl bind:selected_size />
 		</form>
 		<div>
 			{#each font_weights as font_weight (font_weight)}
@@ -139,33 +139,33 @@
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Text colors">Text colors</Tome_Section_Header>
-		<Unfinished_Implementation_Warning>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Text colors">Text colors</TomeSectionHeader>
+		<UnfinishedImplementationWarning>
 			Add color-scheme-adaptive versions?
-		</Unfinished_Implementation_Warning>
+		</UnfinishedImplementationWarning>
 		<div class="panel">
 			{#each text_color_variants as text_variant (text_variant)}
 				{@const name = 'text_color_' + text_variant}
 				<div class="row">
-					<Style_Variable_Button {name}
+					<StyleVariableButton {name}
 						><span class="font_family_mono" style:color="var(--{name})">
 							{name}
-						</span></Style_Variable_Button
+						</span></StyleVariableButton
 					> = <code>{computed_styles?.getPropertyValue('--' + name)}</code>
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
+	</TomeSection>
 	<!-- <section> 'text_color_disabled' 'text_active'</section> -->
-	<Tome_Section>
-		<Tome_Section_Header text="Line heights" />
-		<aside>Learn more about <Mdn_Link path="Web/CSS/line-height" />.</aside>
+	<TomeSection>
+		<TomeSectionHeader text="Line heights" />
+		<aside>Learn more about <MdnLink path="Web/CSS/line-height" />.</aside>
 		<div>
 			{#each line_height_names as name (name)}
 				<div>
-					<Style_Variable_Button {name}
+					<StyleVariableButton {name}
 						><div style:line-height="var(--{name})" class="button_contents font_family_mono">
 							<div>
 								{name} =
@@ -173,14 +173,14 @@
 							</div>
 							<div>{name}</div>
 							<div>{name}</div>
-						</div></Style_Variable_Button
+						</div></StyleVariableButton
 					>
 				</div>
 			{/each}
 		</div>
-	</Tome_Section>
-	<Icon_Sizes />
-</Tome_Content>
+	</TomeSection>
+	<IconSizes />
+</TomeContent>
 
 <style>
 	.button_contents {

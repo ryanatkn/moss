@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Tome_Link from '@ryanatkn/fuz/Tome_Link.svelte';
-	import Mdn_Link from '@ryanatkn/fuz/Mdn_Link.svelte';
-	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import TomeLink from '@ryanatkn/fuz/TomeLink.svelte';
+	import MdnLink from '@ryanatkn/fuz/MdnLink.svelte';
+	import ColorSchemeInput from '@ryanatkn/fuz/ColorSchemeInput.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
-	import Hue_Swatch from '$routes/docs/colors/Hue_Swatch.svelte';
-	import Color_Swatch from '$routes/docs/colors/Color_Swatch.svelte';
-	import Unfinished_Implementation_Warning from '$routes/docs/Unfinished_Implementation_Warning.svelte';
+	import HueSwatch from '$routes/docs/colors/HueSwatch.svelte';
+	import ColorSwatch from '$routes/docs/colors/ColorSwatch.svelte';
+	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 	import {color_variants} from '$lib/variable_data.js';
 
 	const LIBRARY_ITEM_NAME = 'colors';
@@ -37,13 +37,13 @@
 	];
 </script>
 
-<Tome_Content {tome}>
-	<Tome_Section>
-		<Tome_Section_Header text="Color semantics" />
+<TomeContent {tome}>
+	<TomeSection>
+		<TomeSectionHeader text="Color semantics" />
 		<p>
-			Moss provides a palette of color and hue <Tome_Link name="variables" /> designed to support concise
-			authoring in light and dark modes, as well as straightforward <Tome_Link name="themes"
-				>theming</Tome_Link
+			Moss provides a palette of color and hue <TomeLink name="variables" /> designed to support concise
+			authoring in light and dark modes, as well as straightforward <TomeLink name="themes"
+				>theming</TomeLink
 			> by both developers and end-users at runtime. The colors have more semantics than just plain values,
 			so they automatically adapt to dark mode and custom themes, at the cost of having different values
 			depending on color scheme and theme.
@@ -52,7 +52,7 @@
 		<p>
 			A color's subjective appearance depends on the context in which it's viewed, especially the
 			surrounding colors and values. Moss's semantic colors are designed to work across color
-			schemes, so each Moss color <Tome_Link name="variables">variable</Tome_Link> has two values, one
+			schemes, so each Moss color <TomeLink name="variables">variable</TomeLink> has two values, one
 			for light and one for dark mode. The exceptions are the lightest (1) and darkest (9) variants,
 			although this may change if it yields better results.
 		</p>
@@ -71,15 +71,15 @@
 			most libraries, Moss provides fewer handles for granular color customizations, but the
 			benefits include consistency, efficiency, DRY authoring, and ease of app-wide theming.
 		</p>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Caveats" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Caveats" />
 		<p>
 			For performance reasons, Moss does not currently have an extensive set of variants, like
 			specialized states for elements or color values like "blue". Each of the 7 hues has 9 HSL
 			color values (e.g. <code>hsl(120 55% 36%)</code>) and 9 HSL component values (e.g.
 			<code>120 55% 36%</code>, useful to efficiently apply custom alpha), handling most cases, and
-			the base colors can be customized with platform APIs like the <Mdn_Link
+			the base colors can be customized with platform APIs like the <MdnLink
 				path="Web/CSS/color_value/color-mix"
 			/> CSS function.
 		</p>
@@ -89,17 +89,17 @@
 			end-users at runtime. We'll probably end up with an interpreted language like Tailwind's
 			just-in-time compiler.
 		</p>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Hue variables" />
-		<Unfinished_Implementation_Warning>
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Hue variables" />
+		<UnfinishedImplementationWarning>
 			Colors are unfinished. I'm thinking of adding orange and cyan for a total of 9 hues. Moss may
-			also change from HSL to <Mdn_Link
+			also change from HSL to <MdnLink
 				path="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch"
 			/>.
-		</Unfinished_Implementation_Warning>
+		</UnfinishedImplementationWarning>
 		<p>
-			Hue variables contain a single <Mdn_Link path="Web/CSS/hue" /> number. Each color variable combines
+			Hue variables contain a single <MdnLink path="Web/CSS/hue" /> number. Each color variable combines
 			a hue variable with hardcoded saturation and lightness values for light and dark modes.
 		</p>
 		<p>
@@ -116,15 +116,15 @@
 		<p>Unlike the color variables, the hue variables are the same in both light and dark modes.</p>
 		<ul class="palette unstyled">
 			{#each color_variants as color_name, i (color_name)}
-				<Hue_Swatch {color_name} {computed_styles} description={descriptions[i]!} />
+				<HueSwatch {color_name} {computed_styles} description={descriptions[i]!} />
 			{/each}
 		</ul>
-	</Tome_Section>
-	<Tome_Section>
-		<Tome_Section_Header text="Color variables" />
+	</TomeSection>
+	<TomeSection>
+		<TomeSectionHeader text="Color variables" />
 		<p>
 			There are 9 variables per color, numbered 1 to 9, lightest to darkest. The 5th variable of
-			each color is used as the base for things like <Tome_Link name="buttons" />.
+			each color is used as the base for things like <TomeLink name="buttons" />.
 		</p>
 		<p>
 			Note that these values differ between light and dark modes! See the discussion above for why.
@@ -132,14 +132,14 @@
 		<p>These colors were eyeballed by a programmer, and will change :]</p>
 		<ul class="palette unstyled pt_xl2">
 			{#each color_variants as color_name (color_name)}
-				<Color_Swatch {color_name} {computed_styles} />
+				<ColorSwatch {color_name} {computed_styles} />
 			{/each}
 		</ul>
-	</Tome_Section>
+	</TomeSection>
 	<div class="box width_100 mb_lg">
-		<Color_Scheme_Input />
+		<ColorSchemeInput />
 	</div>
-</Tome_Content>
+</TomeContent>
 
 <style>
 	.palette {

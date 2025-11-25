@@ -1,14 +1,14 @@
-import type {Css_Class_Declaration} from './css_class_helpers.js';
+import type {CssClassDeclaration} from './css_class_helpers.js';
 
-export type Class_Template_Result = {
+export type ClassTemplateResult = {
 	name: string;
 	css: string;
 } | null;
 
-export type Class_Template_Fn<T1 = string, T2 = string, T3 = string> =
-	| ((v1: T1) => Class_Template_Result)
-	| ((v1: T1, v2: T2) => Class_Template_Result)
-	| ((v1: T1, v2: T2, v3: T3) => Class_Template_Result);
+export type ClassTemplateFn<T1 = string, T2 = string, T3 = string> =
+	| ((v1: T1) => ClassTemplateResult)
+	| ((v1: T1, v2: T2) => ClassTemplateResult)
+	| ((v1: T1, v2: T2, v3: T3) => ClassTemplateResult);
 
 /**
  * Generates CSS class declarations from templates.
@@ -35,12 +35,12 @@ export type Class_Template_Fn<T1 = string, T2 = string, T3 = string> =
  * )
  */
 export const generate_classes = <T1 = string, T2 = string, T3 = string>(
-	template: Class_Template_Fn<T1, T2, T3>,
+	template: ClassTemplateFn<T1, T2, T3>,
 	values: Iterable<T1>,
 	secondary?: Iterable<T2>,
 	tertiary?: Iterable<T3>,
-): Record<string, Css_Class_Declaration> => {
-	const result: Record<string, Css_Class_Declaration> = {};
+): Record<string, CssClassDeclaration> => {
+	const result: Record<string, CssClassDeclaration> = {};
 
 	for (const v1 of values) {
 		if (secondary) {
@@ -72,14 +72,14 @@ export const generate_classes = <T1 = string, T2 = string, T3 = string>(
 
 // TODO refactor with `src/lib/variable_data.ts`, we may want `css_data.ts` or something
 export const CSS_GLOBALS = ['inherit', 'initial', 'revert', 'revert_layer', 'unset'] as const;
-export type Css_Global = (typeof CSS_GLOBALS)[number];
+export type CssGlobal = (typeof CSS_GLOBALS)[number];
 
 export const CSS_DIRECTIONS = ['top', 'right', 'bottom', 'left'] as const;
-export type Css_Direction = (typeof CSS_DIRECTIONS)[number];
+export type CssDirection = (typeof CSS_DIRECTIONS)[number];
 
 // TODO add '0' and '10' ?
 export const COLOR_INTENSITIES = ['1', '2', '3', '4', '5', '6', '7', '8', '9'] as const;
-export type Color_Intensity = (typeof COLOR_INTENSITIES)[number];
+export type ColorIntensity = (typeof COLOR_INTENSITIES)[number];
 
 // Helper to convert snake_case to kebab-case for CSS property values
 export const to_kebab = (str: string): string => str.replace(/_/g, '-');
@@ -90,7 +90,7 @@ export const to_variable_name = (str: string): string => str.replace(/[-\s]+/g, 
 // Helper to generate global value classes for any CSS property
 export const generate_global_classes = (
 	property: string,
-): Record<string, Css_Class_Declaration> => {
+): Record<string, CssClassDeclaration> => {
 	return generate_classes(
 		(global: (typeof CSS_GLOBALS)[number]) => ({
 			name: `${to_variable_name(property)}_${global}`,
@@ -146,7 +146,7 @@ export const generate_property_classes = (
 	values: Iterable<string>,
 	formatter?: (value: string) => string,
 	prefix: string = to_variable_name(property),
-): Record<string, Css_Class_Declaration> => {
+): Record<string, CssClassDeclaration> => {
 	return generate_classes(
 		(value: string) => ({
 			name: `${prefix}_${to_variable_name(value)}`,
@@ -168,7 +168,7 @@ export const generate_directional_classes = (
 	property: string,
 	values: Iterable<string>,
 	formatter?: (v: string) => string,
-): Record<string, Css_Class_Declaration> => {
+): Record<string, CssClassDeclaration> => {
 	const prefix = property[0]; // 'm' for margin, 'p' for padding
 
 	return generate_classes(
@@ -211,7 +211,7 @@ export const generate_directional_classes = (
 export const generate_property_with_axes = (
 	property: string,
 	values: Iterable<string>,
-): Record<string, Css_Class_Declaration> => {
+): Record<string, CssClassDeclaration> => {
 	return generate_classes(
 		(axis: string, value: string) => {
 			const prop = axis === '' ? property : `${property}-${axis}`;
@@ -236,7 +236,7 @@ export const generate_property_with_axes = (
 export const generate_border_radius_corners = (
 	values: Iterable<string>,
 	formatter?: (value: string) => string,
-): Record<string, Css_Class_Declaration> => {
+): Record<string, CssClassDeclaration> => {
 	const corners = [
 		{prop: 'border-top-left-radius', name: 'border_top_left_radius'},
 		{prop: 'border-top-right-radius', name: 'border_top_right_radius'},
@@ -265,7 +265,7 @@ export const generate_border_radius_corners = (
 export const generate_shadow_classes = (
 	sizes: Iterable<string>,
 	alpha_mapping: Record<string, string>,
-): Record<string, Css_Class_Declaration> => {
+): Record<string, CssClassDeclaration> => {
 	const shadow_types = [
 		{prefix: 'shadow', var_prefix: 'shadow'},
 		{prefix: 'shadow_top', var_prefix: 'shadow_top'},

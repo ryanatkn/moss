@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Code from '@ryanatkn/fuz_code/Code.svelte';
 	import {slide} from 'svelte/transition';
-	import Tome_Content from '@ryanatkn/fuz/Tome_Content.svelte';
+	import TomeContent from '@ryanatkn/fuz/TomeContent.svelte';
 	import {get_tome_by_name} from '@ryanatkn/fuz/tome.js';
-	import Color_Scheme_Input from '@ryanatkn/fuz/Color_Scheme_Input.svelte';
-	import Tome_Section_Header from '@ryanatkn/fuz/Tome_Section_Header.svelte';
-	import Tome_Section from '@ryanatkn/fuz/Tome_Section.svelte';
+	import ColorSchemeInput from '@ryanatkn/fuz/ColorSchemeInput.svelte';
+	import TomeSectionHeader from '@ryanatkn/fuz/TomeSectionHeader.svelte';
+	import TomeSection from '@ryanatkn/fuz/TomeSection.svelte';
 
 	import {color_variants} from '$lib/variable_data.js';
 
@@ -25,7 +25,7 @@
 
 <!-- eslint-disable svelte/no-useless-mustaches -->
 
-<Tome_Content {tome}>
+<TomeContent {tome}>
 	<section>
 		<p>
 			Buttons have a <code>.selected</code> state that can be used for various UI purposes, like
@@ -57,12 +57,12 @@
 
 	<section>
 		<div class="box width_100 mb_lg">
-			<Color_Scheme_Input />
+			<ColorSchemeInput />
 		</div>
 	</section>
 
-	<Tome_Section>
-		<Tome_Section_Header text="Colorful buttons" />
+	<TomeSection>
+		<TomeSectionHeader text="Colorful buttons" />
 		{#each color_variants as c (c)}
 			{@const color_name = `color_${c}`}
 			<section>
@@ -89,21 +89,21 @@
 			</section>
 		{/each}
 		<div class="box width_100 mb_lg">
-			<Color_Scheme_Input />
+			<ColorSchemeInput />
 		</div>
-	</Tome_Section>
+	</TomeSection>
 
-	<Tome_Section>
-		<Tome_Section_Header text="With disabled attribute" />
+	<TomeSection>
+		<TomeSectionHeader text="With disabled attribute" />
 		<Code content={`<button disabled>\n\t:|\n</button>`} />
 		<button type="button" disabled class:mb_xs>:|</button>
 		<button type="button" disabled>a bigger disabled button</button>
-	</Tome_Section>
+	</TomeSection>
 
-	<Tome_Section>
-		<Tome_Section_Header text="With .selected">
+	<TomeSection>
+		<TomeSectionHeader text="With .selected">
 			With <code>.selected</code>
-		</Tome_Section_Header>
+		</TomeSectionHeader>
 		<nav>
 			<button
 				type="button"
@@ -153,12 +153,12 @@
 				>disabled .deselectable.selected</button
 			>
 		</section>
-	</Tome_Section>
+	</TomeSection>
 
-	<Tome_Section>
-		<Tome_Section_Header text="With .plain and .icon_button">
+	<TomeSection>
+		<TomeSectionHeader text="With .plain and .icon_button">
 			With <code>.plain</code> and <code>.icon_button</code>
-		</Tome_Section_Header>
+		</TomeSectionHeader>
 		<Code
 			content={`<button class="plain">
 	+
@@ -218,5 +218,5 @@
 </button>`}
 		/>
 		<button type="button" class="plain icon_button selected deselectable">+</button>
-	</Tome_Section>
-</Tome_Content>
+	</TomeSection>
+</TomeContent>
