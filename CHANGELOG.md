@@ -1,5 +1,11 @@
 # @ryanatkn/moss
 
+## 0.39.0
+
+### Minor Changes
+
+- rename `PascalCase` from `Upper_Snake_Case` (lol) ([#69](https://github.com/ryanatkn/moss/pull/69))
+
 ## 0.38.0
 
 ### Minor Changes
