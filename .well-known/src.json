@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/moss",
-  "version": "0.38.0",
+  "version": "0.39.0",
   "modules": [
     {
       "path": "css_class_composites.ts",
@@ -15,11 +15,11 @@
       "path": "css_class_generators.ts",
       "identifiers": [
         {
-          "name": "Class_Template_Result",
+          "name": "ClassTemplateResult",
           "kind": "type"
         },
         {
-          "name": "Class_Template_Fn",
+          "name": "ClassTemplateFn",
           "kind": "type"
         },
         {
@@ -31,7 +31,7 @@
           "kind": "variable"
         },
         {
-          "name": "Css_Global",
+          "name": "CssGlobal",
           "kind": "type"
         },
         {
@@ -39,7 +39,7 @@
           "kind": "variable"
         },
         {
-          "name": "Css_Direction",
+          "name": "CssDirection",
           "kind": "type"
         },
         {
@@ -47,7 +47,7 @@
           "kind": "variable"
         },
         {
-          "name": "Color_Intensity",
+          "name": "ColorIntensity",
           "kind": "type"
         },
         {
@@ -96,7 +96,7 @@
       "path": "css_class_helpers.ts",
       "identifiers": [
         {
-          "name": "Css_Extractor",
+          "name": "CssExtractor",
           "kind": "type"
         },
         {
@@ -104,27 +104,27 @@
           "kind": "function"
         },
         {
-          "name": "Css_Classes",
+          "name": "CssClasses",
           "kind": "class"
         },
         {
-          "name": "Css_Class_Declaration",
+          "name": "CssClassDeclaration",
           "kind": "type"
         },
         {
-          "name": "Css_Class_Declaration_Base",
+          "name": "CssClassDeclarationBase",
           "kind": "type"
         },
         {
-          "name": "Css_Class_Declaration_Item",
+          "name": "CssClassDeclarationItem",
           "kind": "type"
         },
         {
-          "name": "Css_Class_Declaration_Group",
+          "name": "CssClassDeclarationGroup",
           "kind": "type"
         },
         {
-          "name": "Css_Class_Declaration_Interpreter",
+          "name": "CssClassDeclarationInterpreter",
           "kind": "type"
         },
         {
@@ -175,7 +175,7 @@
       "path": "gen_moss_css.ts",
       "identifiers": [
         {
-          "name": "Gen_Moss_Css_Options",
+          "name": "GenMossCssOptions",
           "kind": "type"
         },
         {
@@ -197,7 +197,7 @@
       "path": "theme.ts",
       "identifiers": [
         {
-          "name": "Color_Scheme",
+          "name": "ColorScheme",
           "kind": "type"
         },
         {
@@ -209,7 +209,7 @@
           "kind": "type"
         },
         {
-          "name": "Render_Theme_Style_Options",
+          "name": "RenderThemeStyleOptions",
           "kind": "type"
         },
         {
@@ -239,7 +239,7 @@
       "path": "variable_data.ts",
       "identifiers": [
         {
-          "name": "Size_Variant",
+          "name": "SizeVariant",
           "kind": "type"
         },
         {
@@ -251,7 +251,7 @@
           "kind": "variable"
         },
         {
-          "name": "Font_Family_Variant",
+          "name": "FontFamilyVariant",
           "kind": "type"
         },
         {
@@ -259,7 +259,7 @@
           "kind": "variable"
         },
         {
-          "name": "Text_Color_Variant",
+          "name": "TextColorVariant",
           "kind": "type"
         },
         {
@@ -267,7 +267,7 @@
           "kind": "variable"
         },
         {
-          "name": "Space_Variant",
+          "name": "SpaceVariant",
           "kind": "type"
         },
         {
@@ -275,7 +275,7 @@
           "kind": "variable"
         },
         {
-          "name": "Distance_Variant",
+          "name": "DistanceVariant",
           "kind": "type"
         },
         {
@@ -283,7 +283,7 @@
           "kind": "variable"
         },
         {
-          "name": "Border_Radius_Variant",
+          "name": "BorderRadiusVariant",
           "kind": "type"
         },
         {
@@ -291,7 +291,7 @@
           "kind": "variable"
         },
         {
-          "name": "Line_Height_Variant",
+          "name": "LineHeightVariant",
           "kind": "type"
         },
         {
@@ -307,7 +307,7 @@
           "kind": "variable"
         },
         {
-          "name": "Shadow_Size_Variant",
+          "name": "ShadowSizeVariant",
           "kind": "type"
         },
         {
@@ -315,7 +315,7 @@
           "kind": "variable"
         },
         {
-          "name": "Shadow_Alpha_Variant",
+          "name": "ShadowAlphaVariant",
           "kind": "type"
         },
         {
@@ -323,7 +323,7 @@
           "kind": "variable"
         },
         {
-          "name": "Shadow_Semantic_Value",
+          "name": "ShadowSemanticValue",
           "kind": "type"
         },
         {
@@ -331,7 +331,7 @@
           "kind": "variable"
         },
         {
-          "name": "Icon_Size_Variant",
+          "name": "IconSizeVariant",
           "kind": "type"
         },
         {
@@ -343,7 +343,7 @@
           "kind": "variable"
         },
         {
-          "name": "Color_Variant",
+          "name": "ColorVariant",
           "kind": "type"
         },
         {
@@ -351,7 +351,7 @@
           "kind": "variable"
         },
         {
-          "name": "Border_Width_Variant",
+          "name": "BorderWidthVariant",
           "kind": "type"
         },
         {
@@ -359,7 +359,7 @@
           "kind": "variable"
         },
         {
-          "name": "Outline_Width_Variant",
+          "name": "OutlineWidthVariant",
           "kind": "type"
         },
         {
@@ -367,7 +367,7 @@
           "kind": "variable"
         },
         {
-          "name": "Alignment_Value",
+          "name": "AlignmentValue",
           "kind": "type"
         },
         {
@@ -375,7 +375,7 @@
           "kind": "variable"
         },
         {
-          "name": "Justify_Value",
+          "name": "JustifyValue",
           "kind": "type"
         },
         {
@@ -383,7 +383,7 @@
           "kind": "variable"
         },
         {
-          "name": "Overflow_Value",
+          "name": "OverflowValue",
           "kind": "type"
         },
         {
@@ -391,7 +391,7 @@
           "kind": "variable"
         },
         {
-          "name": "Border_Style_Value",
+          "name": "BorderStyleValue",
           "kind": "type"
         },
         {
@@ -399,7 +399,7 @@
           "kind": "variable"
         },
         {
-          "name": "Display_Value",
+          "name": "DisplayValue",
           "kind": "type"
         },
         {
@@ -407,7 +407,7 @@
           "kind": "variable"
         },
         {
-          "name": "Text_Align_Value",
+          "name": "TextAlignValue",
           "kind": "type"
         },
         {
@@ -415,7 +415,7 @@
           "kind": "variable"
         },
         {
-          "name": "Vertical_Align_Value",
+          "name": "VerticalAlignValue",
           "kind": "type"
         },
         {
@@ -423,7 +423,7 @@
           "kind": "variable"
         },
         {
-          "name": "Word_Break_Value",
+          "name": "WordBreakValue",
           "kind": "type"
         },
         {
@@ -431,7 +431,7 @@
           "kind": "variable"
         },
         {
-          "name": "Position_Value",
+          "name": "PositionValue",
           "kind": "type"
         },
         {
@@ -439,7 +439,7 @@
           "kind": "variable"
         },
         {
-          "name": "Visibility_Value",
+          "name": "VisibilityValue",
           "kind": "type"
         },
         {
@@ -447,7 +447,7 @@
           "kind": "variable"
         },
         {
-          "name": "Float_Value",
+          "name": "FloatValue",
           "kind": "type"
         },
         {
@@ -455,7 +455,7 @@
           "kind": "variable"
         },
         {
-          "name": "Flex_Wrap_Value",
+          "name": "FlexWrapValue",
           "kind": "type"
         },
         {
@@ -463,7 +463,7 @@
           "kind": "variable"
         },
         {
-          "name": "Flex_Direction_Value",
+          "name": "FlexDirectionValue",
           "kind": "type"
         },
         {
@@ -471,7 +471,7 @@
           "kind": "variable"
         },
         {
-          "name": "Overflow_Wrap_Value",
+          "name": "OverflowWrapValue",
           "kind": "type"
         },
         {
@@ -479,7 +479,7 @@
           "kind": "variable"
         },
         {
-          "name": "Scrollbar_Width_Value",
+          "name": "ScrollbarWidthValue",
           "kind": "type"
         },
         {
@@ -487,7 +487,7 @@
           "kind": "variable"
         },
         {
-          "name": "Scrollbar_Gutter_Value",
+          "name": "ScrollbarGutterValue",
           "kind": "type"
         },
         {
@@ -504,11 +504,11 @@
       "path": "variable.ts",
       "identifiers": [
         {
-          "name": "Style_Variable_Name",
+          "name": "StyleVariableName",
           "kind": "type"
         },
         {
-          "name": "Style_Variable",
+          "name": "StyleVariable",
           "kind": "type"
         },
         {
