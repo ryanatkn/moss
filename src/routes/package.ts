@@ -40,7 +40,7 @@ export const package_json: PackageJson = {
 		'@changesets/changelog-git': '^0.2.1',
 		'@ryanatkn/belt': '^0.39.0',
 		'@ryanatkn/eslint-config': '^0.9.0',
-		'@ryanatkn/fuz': '^0.162.0',
+		'@ryanatkn/fuz': '^0.162.1',
 		'@ryanatkn/fuz_code': '^0.36.0',
 		'@ryanatkn/gro': '^0.177.1',
 		'@sveltejs/adapter-static': '^3.0.10',
@@ -755,13 +755,7 @@ export const src_json: SrcJson = {
 		},
 		{
 			path: 'theme.gen.css.ts',
-			identifiers: [
-				{
-					name: 'gen',
-					kind: 'function',
-					source_line: 10,
-				},
-			],
+			identifiers: [],
 			dependencies: ['theme.ts', 'themes.ts'],
 		},
 		{
