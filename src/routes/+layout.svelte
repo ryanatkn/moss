@@ -4,12 +4,12 @@
 	import '$routes/moss.css';
 	import '@ryanatkn/fuz_code/theme.css';
 
-	import {Pkg, pkg_context} from '@ryanatkn/fuz/pkg.svelte.js';
+	import {Library, library_context} from '@ryanatkn/fuz/library.svelte.js';
 	import type {Snippet} from 'svelte';
 	import Themed from '@ryanatkn/fuz/Themed.svelte';
 	import Spiders from '@ryanatkn/fuz/Spiders.svelte';
 
-	import {package_json, src_json} from '$routes/package.js';
+	import {library_json} from '$routes/library.js';
 	// TODO re-enable this, see comment below
 	// import ContextmenuRoot from '$lib/ContextmenuRoot.svelte';
 	// import Dialog from '$lib/Dialog.svelte';
@@ -22,7 +22,7 @@
 
 	const {children}: Props = $props();
 
-	pkg_context.set(new Pkg(package_json, src_json));
+	library_context.set(new Library(library_json));
 
 	// let show_settings = $state(false);
 </script>

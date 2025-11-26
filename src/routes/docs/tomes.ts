@@ -25,7 +25,7 @@ export const tomes: Array<Tome> = [
 		Component: introduction,
 		related_tomes: ['api'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'api',
@@ -33,7 +33,7 @@ export const tomes: Array<Tome> = [
 		Component: api,
 		related_tomes: [],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'themes',
@@ -41,7 +41,7 @@ export const tomes: Array<Tome> = [
 		Component: themes,
 		related_tomes: ['variables', 'colors', 'typography'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'variables',
@@ -49,7 +49,7 @@ export const tomes: Array<Tome> = [
 		Component: variables,
 		related_tomes: ['themes'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'classes',
@@ -57,7 +57,7 @@ export const tomes: Array<Tome> = [
 		Component: classes,
 		related_tomes: ['elements'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'colors',
@@ -65,7 +65,7 @@ export const tomes: Array<Tome> = [
 		Component: colors,
 		related_tomes: ['themes', 'buttons', 'borders', 'shading', 'shadows'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'buttons',
@@ -73,7 +73,7 @@ export const tomes: Array<Tome> = [
 		Component: buttons,
 		related_tomes: ['colors', 'elements', 'forms', 'borders'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'elements',
@@ -81,7 +81,7 @@ export const tomes: Array<Tome> = [
 		Component: elements,
 		related_tomes: ['buttons', 'forms', 'classes', 'typography', 'borders', 'layout'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'forms',
@@ -89,7 +89,7 @@ export const tomes: Array<Tome> = [
 		Component: forms,
 		related_tomes: ['buttons', 'elements', 'borders'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'typography',
@@ -97,7 +97,7 @@ export const tomes: Array<Tome> = [
 		Component: typography,
 		related_tomes: ['themes', 'elements'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'borders',
@@ -105,7 +105,7 @@ export const tomes: Array<Tome> = [
 		Component: borders,
 		related_tomes: ['colors', 'buttons', 'elements', 'forms', 'shading', 'shadows'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'shading',
@@ -113,7 +113,7 @@ export const tomes: Array<Tome> = [
 		Component: shading,
 		related_tomes: ['colors', 'borders', 'shadows'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'shadows',
@@ -121,7 +121,7 @@ export const tomes: Array<Tome> = [
 		Component: shadows,
 		related_tomes: ['colors', 'borders', 'shading'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	{
 		name: 'layout',
@@ -129,7 +129,7 @@ export const tomes: Array<Tome> = [
 		Component: layout,
 		related_tomes: ['elements'],
 		related_modules: [],
-		related_identifiers: [],
+		related_declarations: [],
 	},
 	// TODO maybe? or do styles like this belong elsewhere? classes? problem is we'll have a classes page for the variables
 	// {
@@ -138,6 +138,6 @@ export const tomes: Array<Tome> = [
 	// Component: menu_item,
 	// 	related_tomes: [],
 	// related_modules: [],
-	// related_identifiers: [],
+	// related_declarations: [],
 	// },
 ];

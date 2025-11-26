@@ -5,14 +5,14 @@
 	import Svg from '@ryanatkn/fuz/Svg.svelte';
 	import {moss_logo} from '@ryanatkn/fuz/logos.js';
 	import HiddenPersonalLinks from '@ryanatkn/fuz/HiddenPersonalLinks.svelte';
-	import {pkg_context} from '@ryanatkn/fuz/pkg.svelte.js';
+	import {library_context} from '@ryanatkn/fuz/library.svelte.js';
 
 	import Introduction from '$routes/Introduction.svelte';
 	import FileLink from '$routes/FileLink.svelte';
 	import {MAIN_HEADER_MARGIN_TOP} from '$routes/constants.js';
 	import UnfinishedImplementationWarning from '$routes/docs/UnfinishedImplementationWarning.svelte';
 
-	const pkg = pkg_context.get();
+	const library = library_context.get();
 </script>
 
 <main class="box mb_xl7">
@@ -53,7 +53,7 @@
 		</div>
 	</section>
 	<section class="p_xl border_radius_lg shadow_inset_bottom_xs">
-		<DocsFooter {pkg}>
+		<DocsFooter {library}>
 			{#snippet logo_header()}
 				<a href={resolve('/about')} class="mb_xs">about</a>
 			{/snippet}
